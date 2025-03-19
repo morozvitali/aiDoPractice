@@ -1,4 +1,4 @@
-package regex.task15_;
+package regex.task15;
 
 public class Main {
 
