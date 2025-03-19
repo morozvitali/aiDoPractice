@@ -3,7 +3,7 @@ package regex.task17;
 public class FileNameValidator {
 
     public boolean isValidFilename(String filename) {
-        return filename.matches("^[a-zA-Z0-9][a-zA-Z0-9.-_]{3,50}\\.(txt|pdf|docx|jpg|png|zip|rar|exe)$");
+        return filename.matches("^[a-zA-Z0-9][a-zA-Z0-9._-]{2,49}\\.(txt|pdf|docx|jpg|png|zip|rar|exe)$");
     }
 
     public static void main(String[] args) {
