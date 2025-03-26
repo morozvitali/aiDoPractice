@@ -5,18 +5,15 @@ public class CardDesriptor {
 
         cardNumber = cardNumber.replaceAll("\\s", "");
 
-
-
-        if (cardNumber.matches("^[4][0-9]{15}$")) {return "Visa";}
+        if (cardNumber.matches("^4[0-9]{15}$")) {return "Visa";}
         if (cardNumber.matches("^5[1-5]\\d{14}$")) {return "MasterCard";}
         if (cardNumber.matches("^(34|37)[0-9]{13}$")) {return "American Express";}
-        if (cardNumber.matches("^(6011)[0-9]{12}$")) {return "Discover";}
+        if (cardNumber.matches("^6011[0-9]{12}$")) {return "Discover";}
 return "UNKNOWN";
     }
 
     public static void main(String[] args) {
         CardDesriptor cardDesriptor = new CardDesriptor();
-
 
         System.out.println(cardDesriptor.getCardType("4111111111111111"));
         System.out.println(cardDesriptor.getCardType("5500000000000004"));

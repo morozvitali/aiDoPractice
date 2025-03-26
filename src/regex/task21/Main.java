@@ -8,7 +8,9 @@ public class Main {
         String[] words = input.split(" ");
 
         return Arrays.stream(words)
-                .reduce(words[0], (shortest, current) -> current.length() <= shortest.length() ? current : shortest);
+                .reduce(words[0], (
+                        shortest,
+                        current) -> current.length() <= shortest.length() ? current : shortest);
     }
 
     public static void main(String[] args) {

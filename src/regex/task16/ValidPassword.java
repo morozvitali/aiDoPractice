@@ -2,7 +2,7 @@ package regex.task16;
 
 public class ValidPassword {
     public boolean isValidPassword (String password) {
-        return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()-+=])\\S{8,20}$");
+        return password.matches("^(?=.*[a-zA-Z0-9])(?=.*[!@#$%^&*()-+=])\\S{8,20}$");
     }
 
     public static void main(String[] args) {

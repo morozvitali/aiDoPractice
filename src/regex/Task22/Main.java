@@ -20,6 +20,9 @@ public class Main {
         System.out.println(main.isValidEmail("qsfadg@gmail.co2345m"));
         System.out.println(main.isValidEmail("qsfadg@gmail.cm"));
 
+
+        System.out.println(main.countDigits());
+
     }
 
     public boolean isValidUkrPhone(String phone) {
@@ -33,8 +36,10 @@ public class Main {
     public boolean isValidEmail(String email) {
         return email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}");
 
+    }
+    public int countDigits() {
 
-
-
+        String str = "Java123 is cool45";
+        return str.replaceAll("[^\\d]", "").length();
     }
 }

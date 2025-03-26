@@ -3,7 +3,8 @@ package regex.task19;
 public class Main {
 
     public boolean isStrongPassword(String password) {
-        return password.matches("^(?!.*(.)\1\1)(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()-+=])\\S{10,20}$");
+        return password
+        .matches("^(?!.*(.)\1\1)(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()-+=])\\S{10,20}$");
     }
 
     public static void main(String[] args) {
