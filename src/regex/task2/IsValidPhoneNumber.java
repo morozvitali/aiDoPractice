@@ -15,4 +15,3 @@ public class IsValidPhoneNumber {
         System.out.println(is.isValidPhoneNumber("+38 0501234567"));
     }
 }
-

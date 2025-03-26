@@ -33,6 +33,7 @@ public class Main {
         }
         return strBuilder;
     }
+
     public static void main(String[] args) {
         System.out.println(toLeetSpeak("Hello World"));
         System.out.println(toLeetSpeak("Java is cool"));

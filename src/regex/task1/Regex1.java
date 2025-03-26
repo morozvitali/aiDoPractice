@@ -9,6 +9,8 @@ public class Regex1 {
         return str.replaceAll("\\D","").length()>0;
     }
 
+
+
     public boolean hasDigit2 (String str) {
         return str.matches("\".*\\d.*\"");
     }
@@ -31,10 +33,10 @@ public class Regex1 {
     public static void main(String[] args) {
         Regex1 regex = new Regex1();
         System.out.println("---using-----replaceAll---method------");
-        System.out.println(regex.hasDigit2("hello123"));
-        System.out.println(regex.hasDigit2("world"));
-        System.out.println(regex.hasDigit2("abc5xyz"));
-        System.out.println(regex.hasDigit2("!@#$%^"));
+        System.out.println(regex.hasDigit1("hello123"));
+        System.out.println(regex.hasDigit1("world"));
+        System.out.println(regex.hasDigit1("abc5xyz"));
+        System.out.println(regex.hasDigit1("!@#$%^"));
 
     }
 }
