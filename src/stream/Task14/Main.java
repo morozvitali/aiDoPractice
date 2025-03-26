@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -28,13 +29,21 @@ public class Main {
                 .map(a -> a.toLowerCase())
                 .collect(Collectors.toList());
     }
-/*
-    public Map<Character, List<String>> myMaper (String [] array) {
-        return Arrays.stream(array)
-                .collect(Collectors.toMap (a -> a.charAt(0), a-> Collections.singletonList(a));
 
+    public Map<Character, List<String>> myMaper4 (String [] array) {
+        return Arrays.stream(array).filter(word -> word.length() > 4)
+                .collect(Collectors.groupingBy(b->b.charAt(0)));
     }
 
-*/
-
+    public Map<String, Integer> myMaper5 (String [] array) {
+        return Arrays.stream(array)
+                .filter(word -> word.chars()
+                .filter(ch -> "aouei".indexOf(ch) >=0)
+                .count() >1)
+                .collect(Collectors.toMap(
+                word->word,
+                word-> (int) word.chars()
+                        .filter(ch -> "aouei".indexOf(ch) >= 0)
+                        .count()));
+    }
 }
