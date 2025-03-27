@@ -11,10 +11,31 @@ public class Main {
         return Arrays.stream(array)
                 .map(String::toUpperCase)
                 .collect(Collectors.groupingBy(word->word.length()));
-        // але як зробити так?? groupingBy(..., mapping(..., toList()))
     }
 
+    public Map<Integer, Long> mapGrouping2 (String [] array) {
+        return Arrays.stream(array)
+                .filter(word -> word.chars()
+                        .filter(c -> "aeoui".indexOf(c) >= 0)
+                        .count() > 0)
+                .collect(Collectors.groupingBy(
+                        word -> word.length(),
+                        Collectors.counting()
+                ));
+    }
 
+    public Map<Boolean, List <String>> mapGrouping3 (String [] array) {
+        return Arrays.stream(array)
+                .collect(Collectors.partitioningBy(
+                        word -> word.chars().anyMatch(c -> "aeoui".indexOf(c) >= 0)
+                ));
+    }
 
-
+    public Map<Integer, Long> mapGrouping4 (String [] array) {
+        return Arrays.stream(array)
+        .filter(word -> "aeoui".indexOf(word.charAt(0)) >= 0) // починається з голосної
+                .collect(Collectors.groupingBy(
+                        word -> word.length(),
+                        Collectors.counting()
+                ));
 }
