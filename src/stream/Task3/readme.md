@@ -9,6 +9,26 @@
 "apple orange banana"  ➜ "orange"  // 3 голосні vs 3 vs 3 → беремо останнє
 "sky dry why"          ➜ "sky"     // всі 0 голосних → беремо останнє
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ✍️ Скелет методу:
 public static String wordWithMostVowels(String sentence) {
 String[] words = sentence.split(" ");
@@ -16,6 +36,15 @@ return Arrays.stream(words)
 .reduce(words[0], (w1, w2) ->
 countVowels(w2) >= countVowels(w1) ? w2 : w1);
 }
+
+
+
+
+
+
+
+
+
 
 🧩 Допоміжний метод:
 private static int countVowels(String word) {
