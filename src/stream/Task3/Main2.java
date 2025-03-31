@@ -2,7 +2,7 @@ package stream.Task3;
 
 import java.util.Arrays;
 
-public class Try3 {
+public class Main2 {
 
     public String myReducer (String sentence) {
         String [] array = sentence.split(" ");

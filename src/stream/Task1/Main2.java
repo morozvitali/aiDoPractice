@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Try2 {
+public class Main2 {
 
     public static List<Integer> myMethod (int [] array) {
         return Arrays.stream(array)

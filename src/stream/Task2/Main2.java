@@ -2,7 +2,7 @@ package stream.Task2;
 
 import java.util.Arrays;
 
-public class Try2 {
+public class Main2 {
 
     public String wordFinder (String value) {
 
@@ -14,7 +14,7 @@ public class Try2 {
 
     public static void main(String[] args) {
         String sentense = "home is where the heart is";
-        Try2 try2 = new Try2();
+        Main2 try2 = new Main2();
         System.out.print(try2.wordFinder(sentense));
     }
 }

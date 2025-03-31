@@ -2,7 +2,7 @@ package stream.Task4;
 
 import java.util.Arrays;
 
-public class Try2 {
+public class Main2 {
     public void mySum () {
         System.out.println(Arrays.stream(new int [] {1,2,3,4,5} )
                 .reduce(0, Integer::sum));
