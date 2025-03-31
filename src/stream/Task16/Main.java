@@ -24,16 +24,16 @@ public class Main {
                 ));
     }
 
-    public Map<Boolean, List<String>> mapGrouping3(String[] array) {
+    public Map <Boolean, List<String>> mapGrouping3(String[] array) {
         return Arrays.stream(array)
                 .collect(Collectors.partitioningBy(
                         word -> word.chars().anyMatch(c -> "aeoui".indexOf(c) >= 0)
                 ));
     }
 
-    public Map<Integer, Long> mapGrouping4(String[] array) {
+    public Map <Integer, Long> mapGrouping4(String[] array) {
         return Arrays.stream(array)
-                .filter(word -> "aeoui".indexOf(word.charAt(0)) >= 0) // починається з голосної
+                .filter(word -> "aeoui".indexOf(word.charAt(0)) >= 0)
                 .collect(Collectors.groupingBy(
                         word -> word.length(),
                         Collectors.counting()
