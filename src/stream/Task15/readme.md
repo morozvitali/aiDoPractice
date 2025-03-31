@@ -15,7 +15,7 @@ String[] words = {"apple", "dog", "banana", "cat", "kiwi", "plum", "watermelon"}
 Тип: Map<Integer, List<String>>
 Підказка: .groupingBy(word -> word.length())
 
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+
 
 ✅ Завдання 2: Групування за першою літерою, але всі слова в нижньому регістрі
 List<String> words = List.of("Apple", "apricot", "Banana", "blue", "Cherry", "cranberry");
@@ -30,7 +30,7 @@ c=[cherry, cranberry]
 Тип: Map<Character, List<String>>
 Підказка: .map(String::toLowerCase) перед groupingBy
 
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+
 
 ✅ Завдання 3: Порахуй, скільки слів починається на кожну літеру
 String[] words = {"apple", "banana", "apricot", "blue", "berry", "cherry"};
@@ -44,7 +44,7 @@ c=1
 Тип: Map<Character, Long>
 Підказка: groupingBy(..., counting())
 
-✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+
 
 ✅ Завдання 4: Побудуй Map<String, Boolean> — слово ➜ чи містить воно голосні
 String[] words = {"sky", "apple", "dry", "orange", "sun"};
