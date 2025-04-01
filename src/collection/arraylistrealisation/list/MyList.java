@@ -1,6 +1,6 @@
 package collection.arraylistrealisation.list;
 
-public interface MyList <E> {
+public interface MyList <E> extends  Iterable <E>{
     boolean isEmpty ();
     boolean add(E el);
     E get (int index);

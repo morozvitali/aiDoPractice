@@ -3,9 +3,10 @@ package collection.arraylistrealisation.list;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 
-public class MyArrayList <E> implements MyList<E>{
+public class MyArrayList <E> implements MyList<E> {
 
     /*
     не реалізовано
@@ -83,4 +84,25 @@ public class MyArrayList <E> implements MyList<E>{
     }
 
 
+    private class MyListIterator implements Iterator <E> {
+
+        private int cursor;
+
+
+        @Override
+        public boolean hasNext() {
+            return cursor < size;
+        }
+
+        @Override
+        public E next() {
+            return array[cursor++];
+        }
+    }
+
+
+    @Override
+    public Iterator<E> iterator() {
+        return new MyListIterator();
+    }
 }
