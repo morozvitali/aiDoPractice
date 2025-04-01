@@ -1,7 +1,7 @@
-package collection.arraylistrealisation;
+package collection.list.arraylistrealisation;
 
-import collection.arraylistrealisation.list.MyArrayList;
-import collection.arraylistrealisation.list.MyList;
+import collection.list.arraylistrealisation.list.MyArrayList;
+import collection.list.arraylistrealisation.list.MyList;
 
 import java.util.Iterator;
 

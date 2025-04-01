@@ -1,4 +1,4 @@
-package collection.arraylistrealisation.list;
+package collection.list.arraylistrealisation.list;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

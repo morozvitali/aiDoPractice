@@ -1,4 +1,4 @@
-package collection.arraylistrealisation.list;
+package collection.list.arraylistrealisation.list;
 
 public interface MyList <E> extends  Iterable <E>{
     boolean isEmpty ();
