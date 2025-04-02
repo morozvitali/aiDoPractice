@@ -2,6 +2,9 @@ package regex.task17;
 
 public class FileNameValidator {
 
+
+        // букви, цифри, від 2-49 потім крапка і розширення (в середині ._-) а в кінці (txt|pdf|docx|jpg|png|zip|rar|exe)$
+
     public boolean isValidFilename(String filename) {
         return filename.matches("^[a-zA-Z0-9][a-zA-Z0-9._-]{2,49}\\.(txt|pdf|docx|jpg|png|zip|rar|exe)$");
     }
