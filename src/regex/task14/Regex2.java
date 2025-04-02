@@ -24,5 +24,4 @@ public class Regex2 {
         String string = "Contact me at test@example.com or at info@regex.com.";
         System.out.println(main.isEmail(string).toString());
     }
-
 }
