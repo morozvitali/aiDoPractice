@@ -1,10 +1,10 @@
 package collection.list.linkedlistrealisation.linked;
 
-public interface MyList<E> extends  Iterable <E>{
+public interface MyList<E>  extends  Iterable <E>{
     boolean isEmpty ();
-    boolean add(E el);
+    void add(E el);
     E get (int index);
     int mySize ();
-    void add(int index, E el);
-    void remove (int index);
+    //void add(int index, E el);
+    //void remove (int index);
 }
