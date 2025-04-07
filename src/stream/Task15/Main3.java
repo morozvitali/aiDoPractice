@@ -28,7 +28,6 @@ public class Main3 {
                         .collect(Collectors.toMap(
                                 a->a,
                                 a->a.chars().anyMatch(c->"aeiou".indexOf(c)>=0)));
-
     }
 }
 
