@@ -1,8 +1,7 @@
 package stream.Task21_myMiniProject;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Student {
 
@@ -21,13 +20,23 @@ public class Student {
     }
 
     public double getAverageGrade() {
-
         return grades.stream()
                 .mapToInt(i->i)
                 .average()
                 .orElse(0);
     }
 
+    public String getTopGroup(List<Student> students) {
+        return students.stream()
+                .collect(Collectors.groupingBy(
+                        Student::getGroup,
+                        Collectors.averagingDouble(Student::getAverageGrade)
+                ))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse(null);
+    }
 
     public Optional<Student> getMaxGradeStudent(List<Student> students) {
         return students.stream()
