@@ -38,6 +38,12 @@ public class Student {
                 .orElse(null);
     }
 
+    public List <Student> getOutsiders (List <Student> list) {
+        return list.stream().filter(a->a.getAverageGrade() < 60)
+        .collect(Collectors.toList());
+    }
+
+
     public Optional<Student> getMaxGradeStudent(List<Student> students) {
         return students.stream()
                 .max(Comparator.comparingDouble(Student::getAverageGrade));
