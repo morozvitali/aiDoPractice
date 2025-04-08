@@ -26,6 +26,14 @@ public class Student {
                 .orElse(0);
     }
 
+
+    public Student getMaxGradeStudent (List <Student> students) {
+            return students.stream().reduce(students.get(0),(a,b)->a.
+                            getAverageGrade() > b.getAverageGrade() ? a:b);
+    }
+
+
+
     public String getName() {
         return name;
     }
