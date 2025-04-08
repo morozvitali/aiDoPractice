@@ -20,7 +20,7 @@ String[] words = {"apple", "banana", "dog", "kiwi", "plum"};
 ✅ Завдання 2: Порахуй кількість слів для кожної довжини, але тільки
 якщо слово містить голосну
 
-String[] words = {"apple", "sky", "banana", "dry", "orange"};
+String[] words = {};
 Очікуваний результат:
 
 {
@@ -64,3 +64,34 @@ String[] words = {"apple", "banana", "orange", "umbrella",
 
 📌 Тип: Map<Integer, Long>
 🧠 Підказка: перевірка startsWith(...), groupingBy(length, counting())
+
+
+    public Map<Integer, List<String>> myGrouping1() {
+
+        return Arrays.stream(new String[]{"apple", "banana", "dog", "kiwi", "plum"})
+                .map(a -> a.toUpperCase())
+                .collect(Collectors.groupingBy(a -> a.length()));
+    }
+
+    public Map<Integer, Long> myGrouping2() {
+        return Arrays.stream(new String [] {"apple", "sky", "banana", "dry", "orange"})
+                .filter(a->a.chars().anyMatch(c->"aeiou".indexOf(c)>=0))
+                .collect(Collectors.groupingBy(a-> a.length(), Collectors.counting()));
+    }
+
+    public Map <Boolean, List <String>> myGrouping3 () {
+        return Arrays.stream(new String [] {"apple", "sky", "banana", "dry", "orange"})
+                .collect(Collectors.partitioningBy(a->isContains(a)));
+    }
+
+    public boolean isContains (String s) {
+        return s.toLowerCase().chars().anyMatch(c->"aeiou".indexOf(c)>=0);
+    }
+
+    public Map <Integer, Long> myGrouping4 () {
+        return Arrays.stream(new String [] {"apple", "banana", "orange", "umbrella",
+                "ant", "dog", "egg"})
+                .filter(a->a.chars().anyMatch(c->"aeiou".indexOf(c) == 0))
+                .collect(Collectors.toMap(a->a.length(), Collectors.counting()));
+    }
+}

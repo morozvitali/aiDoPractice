@@ -33,32 +33,29 @@ u1.equals(u2); // true, якщо перевизначено правильно
 
 🧑‍💻 Як реалізувати equals()?
 ✅ Приклад класу:
-java
-Копіювати
-Редагувати
 import java.util.Objects;
 
 public class User {
 private String name;
 private int age;
 
-    public User(String name, int age) {
+public User(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    @Override
+@Override
     public boolean equals(Object o) {
         if (this == o) return true; // перевірка посилання
         if (o == null || getClass() != o.getClass()) return false; // перевірка типу
 
-        User user = (User) o; // кастинг
+User user = (User) o; // кастинг
 
-        // порівняння полів
+// порівняння полів
         return age == user.age && Objects.equals(name, user.name);
     }
 
-    @Override
+@Override
     public int hashCode() {
         return Objects.hash(name, age); // якщо перевизначаєш equals — обов'язково перевизнач hashCode()
     }
