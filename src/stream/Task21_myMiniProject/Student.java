@@ -1,6 +1,8 @@
 package stream.Task21_myMiniProject;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class Student {
 
@@ -27,9 +29,9 @@ public class Student {
     }
 
 
-    public Student getMaxGradeStudent (List <Student> students) {
-            return students.stream().reduce(students.get(0),(a,b)->a.
-                            getAverageGrade() > b.getAverageGrade() ? a:b);
+    public Optional<Student> getMaxGradeStudent(List<Student> students) {
+        return students.stream()
+                .max(Comparator.comparingDouble(Student::getAverageGrade));
     }
 
 
