@@ -29,6 +29,22 @@ public class Main3 {
             return words.stream().collect(Collectors.groupingBy(a->a.length()));
         }
 
-        // public Map <Integer, Integer> myGroupCounting() {
-        // }
+         public Map <Integer, Long> myGroupCounting() {
+            List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
+            return words.stream().collect(Collectors.groupingBy(a->a.length(),
+                    Collectors.counting()));
+         }
+
+         public Map <Boolean, List <Integer>> myGrouping5 () {
+             List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+             return numbers.stream().collect(Collectors.partitioningBy((a-> a%2 == 0)));
+         }
+
+        public Map <Character, List <String>> myGrouping6 () {
+            List<String> words = List.of("apple", "ant", "banana", "bat", "car");
+            return words.stream().collect(Collectors.groupingBy(
+                    a->a.charAt(0),
+                    Collectors.mapping(a->a.toUpperCase(), Collectors.toList())
+            ));
+        }
 }
