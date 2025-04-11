@@ -31,3 +31,22 @@ return password.matches(
 (?=.*\d)	Має містити хоча б одну цифру (0-9)
 (?=.*[!@#$%^&*()\-+=])	Має містити хоча б один спеціальний символ з !@#$%^&*()-+=
 [^\\s]{8,20}$	Не містить пробілів, довжина від 8 до 20 символів
+
+public class Regex3 {
+public boolean isValidPassword(String password) {
+return password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\\-+=])[^\\s]{8,20}$");
+}
+
+
+    public static void main(String[] args) {
+        Regex3 reg = new Regex3();
+        System.out.println(reg.isValidPassword("StrongP@ss1"));
+        System.out.println(reg.isValidPassword("weakpass"));
+        System.out.println(reg.isValidPassword("SHORT1!"));
+        System.out.println(reg.isValidPassword("longpassword123456789!"));
+        System.out.println(reg.isValidPassword("NoSpecialChar1"));
+        System.out.println(reg.isValidPassword("White space 1!"));
+    }
+}
+
+
