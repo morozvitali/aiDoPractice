@@ -9,7 +9,7 @@ XX — дві цифри (від 00 до 99),
 YYYYYYY — сім цифр (від 0000000 до 9999999).
 Приклади роботи:
 
-isValidPhoneNumber("+380501234567")  -> true
+isValidPhoneNumber("+380 501 234567")  -> true
 isValidPhoneNumber("380501234567")   -> false  // Немає "+"
 isValidPhoneNumber("+380991234")     -> false  // Замало цифр
 isValidPhoneNumber("+380AA1234567")  -> false  // Літери замість цифр
