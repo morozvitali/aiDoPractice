@@ -1,6 +1,6 @@
 package regex.task2;
 
-public class Regex3 {
+public class Regex4 {
 
 
 
@@ -9,7 +9,7 @@ public class Regex3 {
     }
 
     public static void main(String[] args) {
-        Regex3 is = new Regex3();
+        Regex4 is = new Regex4();
         System.out.println(is.isValidPhoneNumber("+380 50 1234567"));
         System.out.println(is.isValidPhoneNumber("380 50 1234567"));
         System.out.println(is.isValidPhoneNumber("+380 99 1234"));
