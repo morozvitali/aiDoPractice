@@ -1,5 +1,8 @@
 package regex.task5;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Regex4 {
     public boolean isValidIPv4(String ip) {
         String[] array = ip.split("\\.");
@@ -15,8 +18,26 @@ public class Regex4 {
         return true;
     }
 
+    public List <String> findCapitalizedWords(String text) {
+
+        String [] array = text.split(" ");
+        List<String> list = new ArrayList<>();
+
+            for (String s: array)
+
+            if (s.matches("[A-Z][a-z]*\\S")) {
+                list.add(s);
+            }
+        System.out.println(list.toString());
+        return list;
+    }
+
+
     public static void main(String[] args) {
         Regex4 reg = new Regex4();
+        System.out.println(reg.findCapitalizedWords("Today is a Great Day!"));
+
+
         System.out.println(reg.isValidIPv4("192.168.1.1"));
         System.out.println(reg.isValidIPv4("0.0.0.0"));
         System.out.println(reg.isValidIPv4("256.100.100.100"));
