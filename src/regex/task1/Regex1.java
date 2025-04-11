@@ -30,6 +30,7 @@ public class Regex1 {
         return matcher.find();
     }
 
+
     public static void main(String[] args) {
         Regex1 regex = new Regex1();
         System.out.println("---using-----replaceAll---method------");
@@ -39,4 +40,7 @@ public class Regex1 {
         System.out.println(regex.hasDigit1("!@#$%^"));
 
     }
+
+
+
 }

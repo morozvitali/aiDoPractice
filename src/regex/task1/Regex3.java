@@ -15,12 +15,16 @@ public class Regex3 {
         return matcher.find();
     }
 
+    public boolean hasDigit3 (String s) {
+        return s.replaceAll("\\D", "").length() > 0;
+    }
+
     public static void main(String[] args) {
 
         Regex3 regex3 = new Regex3();
-        System.out.println(regex3.hasDigit("hello123"));
-        System.out.println(regex3.hasDigit("world"));
-        System.out.println(regex3.hasDigit("abc5xyz"));
-        System.out.println(regex3.hasDigit("!@#$%^"));
+        System.out.println(regex3.hasDigit3("hello123"));
+        System.out.println(regex3.hasDigit3("world"));
+        System.out.println(regex3.hasDigit3("abc5xyz"));
+        System.out.println(regex3.hasDigit3("!@#$%^"));
     }
 }
