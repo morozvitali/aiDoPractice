@@ -13,7 +13,7 @@ public class PredicateExample {
 
 
     public static List<String> filteringString(List<String> list, Predicate<String> condition) {
-        return list.stream().filter(condition).collect(Collectors.toList());
+        return list.stream().filter(condition.or(condition).or(condition)).collect(Collectors.toList());
     }
 
     /*
@@ -22,5 +22,6 @@ public class PredicateExample {
 
     public static void main(String[] args) {
         filteringString(List.of("apple", "pie", "dog"), s->s.length() > 3 );
+
     }
 }
