@@ -8,7 +8,24 @@ import java.util.function.Supplier;
 
 public class SupplierExampler2 {
 
+            /*
+        аналог Stream.generate(() -> (int)(Math.random() * 100)).limit(5).forEach(System.out::println);
+        🔧 Якщо хочеш трохи прокачати:
+            2 зроби Supplier<String> який генерує псевдо-ID: "ID_ + random number`
+            3 Supplier<LocalDateTime> для часових міток
+            4 Supplier<User> який створює нових користувачів з випадковими іменами
+            5 Зроби Supplier, який генерує паролі з 6 символів, використовуючи випадкові літери (a–z, A–Z, 0–9).
+         */
 
+    public static void main(String[] args) {
+        Supplier <Integer> s1 = () -> (int) (Math.random()*100);
+        SupplierExampler2 supplierExampler2 = new SupplierExampler2();
+        System.out.println(supplierExampler2.mySupplier(11, s1));
+        System.out.println(supplierExampler2.mySupplier2());
+        System.out.println(supplierExampler2.mySupplier3());
+        System.out.println(supplierExampler2.mySupplier4());
+        System.out.println(supplierExampler2.mySupplier5());
+    }
 
     public List <Integer> mySupplier (int count, Supplier <Integer> supplier) {
         List<Integer> list = new ArrayList<>();
@@ -45,40 +62,7 @@ public class SupplierExampler2 {
         Random r = new Random();
         for (int i = 0; i<length; i++) {
             password.append(CHARS.charAt(r.nextInt(CHARS.length())));
-
-            //password.append(CHARS.charAt(number.nextInt(CHARS.length())));
-
-
         }
         return password.toString();
     }
-
-
-
-
-    public static void main(String[] args) {
-        Supplier <Integer> s1 = () -> (int) (Math.random()*100);
-        SupplierExampler2 supplierExampler2 = new SupplierExampler2();
-        System.out.println(supplierExampler2.mySupplier(11, s1));
-        System.out.println(supplierExampler2.mySupplier2());
-        System.out.println(supplierExampler2.mySupplier3());
-        System.out.println(supplierExampler2.mySupplier4());
-        System.out.println(supplierExampler2.mySupplier5());
-
-
-
-        /*
-        аналог Stream.generate(() -> (int)(Math.random() * 100)).limit(5).forEach(System.out::println);
-        🔧 Якщо хочеш трохи прокачати:
-            2 зроби Supplier<String> який генерує псевдо-ID: "ID_ + random number`
-            3 Supplier<LocalDateTime> для часових міток
-            4 Supplier<User> який створює нових користувачів з випадковими іменами
-            5 Зроби Supplier, який генерує паролі з 6 символів, використовуючи випадкові літери (a–z, A–Z, 0–9).
-         */
-    }
-
-
-
-
-
 }
