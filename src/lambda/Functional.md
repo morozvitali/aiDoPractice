@@ -9,6 +9,7 @@ R apply(T t);
 🔸 Його використовують, коли треба перетворити, мапити, трансформувати одне значення в інше.
 
 🛠 Найчастіше використовується в:
+
 ✅ 1. stream().map(Function)
 List<String> names = List.of("Tom", "Anna", "Bob");
 
@@ -16,11 +17,15 @@ List<Integer> lengths = names.stream()
 .map(s -> s.length())
 .collect(Collectors.toList());
 // [3, 4, 3]
+
+
 ✅ 2. Optional.map(Function)
 Optional<String> name = Optional.of("Vitalii");
 
 Optional<Integer> length = name.map(String::length);
 // Optional[7]
+
+
 ✅ 3. Map.computeIfAbsent(key, Function)
 Map<String, Integer> map = new HashMap<>();
 map.computeIfAbsent("apple", key -> key.length());
@@ -49,9 +54,7 @@ compose: спочатку trim, потім length — однаково, але �
 Напиши метод mapWordsToLengths, який:
 
 приймає List<String>
-
 приймає Function<String, Integer>
-
 повертає List<Integer> — довжини слів
 
 📥 Приклад:
