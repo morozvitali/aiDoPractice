@@ -11,6 +11,33 @@
 🔹 Показати студентів у незмінному списку	collectingAndThen(...)0
 
 
+--------------------------------------------------------------------------
+List<Student> students = List.of(
+new Student("Alice", 20, "female", "A", List.of(80, 75, 90)),
+new Student("Bob", 21, "male", "A", List.of(60, 55, 70)),
+new Student("Charlie", 22, "male", "B", List.of(95, 85, 100)),
+new Student("Diana", 19, "female", "B", List.of(50, 40, 45)),
+new Student("Eve", 20, "female", "C", List.of(78, 82, 88)),
+new Student("Frank", 23, "male", "C", List.of(30, 50, 40)),
+new Student("Grace", 21, "female", "A", List.of(92, 88, 95)),
+new Student("Henry", 20, "male", "B", List.of(67, 72, 75))
+);
+
+--------------------------------------------------------------------------
+
+Дані студентів (без коду, тільки сировина):
+Ім’я	    Вік	Стать	Група	Оцінки
+Alice	    20	female	A	80, 75, 90
+Bob	        21	male	A	60, 55, 70
+Charlie	    22	male	B	95, 85, 100
+Diana	    19	female	B	50, 40, 45
+Eve	        20	female	C	78, 82, 88
+Frank	    23	male	C	30, 50, 40
+Grace	    21	female	A	92, 88, 95
+Henry	    20	male	B	67, 72, 75
+
+-------------------------------------------------------------------------
+
 
 Цей проєкт для того щоб:
 
