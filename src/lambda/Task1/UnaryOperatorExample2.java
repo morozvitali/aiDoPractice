@@ -36,19 +36,25 @@ public class UnaryOperatorExample2 {
      */
 
     public List<Integer> squareInListCalculator(List<Integer> list, UnaryOperator<Integer> unaryOperator) {
-
-
         // або! list.replaceAll(unaryOperator);
-
-        for (int i = 0; i<list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             list.set(i, unaryOperator.apply(list.get(i)));
         }
         return list;
     }
 
-
     public List<String> emptySpaceReplacer(List<String> list, UnaryOperator<String> unaryOperator) {
         list.replaceAll(unaryOperator);
+        return list;
+    }
+
+    public List<Integer> oddIntegerRemover(List<Integer> list, UnaryOperator<Integer> unaryOperator) {
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) % 2 != 0) {
+                list.set(i, unaryOperator.apply(list.get(i)));
+            }
+        }
         return list;
     }
 
@@ -64,9 +70,9 @@ public class UnaryOperatorExample2 {
 
         List<Integer> list2 = new ArrayList<>();
         list2.add(1);
-        list2.add(11);
-        list2.add(111);
         list2.add(2);
+        list2.add(3);
+        list2.add(4);
         list2.add(1);
 
 
@@ -76,6 +82,10 @@ public class UnaryOperatorExample2 {
 
         UnaryOperator<Integer> integerUnaryOperator = a -> a * a;
         System.out.println(unaryOperatorExample2.squareInListCalculator(list2, integerUnaryOperator));
+
+        UnaryOperator<Integer> integerUnaryOperator2 = a -> 0;
+        System.out.println(unaryOperatorExample2.oddIntegerRemover(list2, integerUnaryOperator2));
+
     }
 }
 

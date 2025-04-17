@@ -5,11 +5,11 @@ import java.util.stream.Collectors;
 
 public class Student {
 
-        private String name;
-        private int age;
-        private String gender;
-        private String group;
-        private List<Integer> grades;
+    private String name;
+    private int age;
+    private String gender;
+    private String group;
+    private List<Integer> grades;
 
     public Student(String name, int age, String gender, String group, List<Integer> grades) {
         this.name = name;
@@ -19,14 +19,23 @@ public class Student {
         this.grades = grades;
     }
 
-    public double getAverageGrade() {
+    /*   -C-O-N-T-I-N-U-E-1-      */
+        public double getAverageGrade() {
         return grades.stream()
-                .mapToInt(i->i)
+                .mapToInt(Integer::intValue)
                 .average()
-                .orElse(0);
+                .orElse(0.0);
     }
 
-    public String getTopGroup(List<Student> students) {
+    /*     -C-O-N-T-I-N-U-E-2-      */
+    public Optional<Student> getMaxGradeStudent(List<Student> students) {
+        return students.stream()
+                .max(Comparator.comparingDouble(Student::getAverageGrade)
+                        .thenComparing(Student::getName));
+    }
+
+    /*  -C-O-N-T-I-N-U-E-3- */
+    public String getTopGroup (List<Student> students) {
         return students.stream()
                 .collect(Collectors.groupingBy(
                         Student::getGroup,
@@ -38,15 +47,10 @@ public class Student {
                 .orElse(null);
     }
 
-    public List <Student> getOutsiders (List <Student> list) {
-        return list.stream().filter(a->a.getAverageGrade() < 60)
-        .collect(Collectors.toList());
-    }
-
-
-    public Optional<Student> getMaxGradeStudent(List<Student> students) {
-        return students.stream()
-                .max(Comparator.comparingDouble(Student::getAverageGrade));
+    /*  -C-O-N-T-I-N-U-E-4- */
+    public List<Student> getOutsiders(List<Student> list) {
+        return list.stream().filter(a -> a.getAverageGrade() < 60)
+                .collect(Collectors.toList());
     }
 
 
@@ -91,6 +95,9 @@ public class Student {
         this.grades = grades;
     }
 
-
+    @Override
+    public String toString() {
+        return name + " (" + group + ", avg: " + String.format("%.1f", getAverageGrade()) + ")";
+    }
 
 }
