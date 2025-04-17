@@ -19,7 +19,7 @@ public class Student {
         this.grades = grades;
     }
 
-    /*   -C-O-N-T-I-N-U-E-1-      */
+    /*  -C-O-N-T-I-N-U-E-1-    */
         public double getAverageGrade() {
         return grades.stream()
                 .mapToInt(Integer::intValue)
@@ -27,7 +27,7 @@ public class Student {
                 .orElse(0.0);
     }
 
-    /*     -C-O-N-T-I-N-U-E-2-      */
+    /*  -C-O-N-T-I-N-U-E-2-  */
     public Optional<Student> getMaxGradeStudent(List<Student> students) {
         return students.stream()
                 .max(Comparator.comparingDouble(Student::getAverageGrade)
@@ -52,6 +52,8 @@ public class Student {
         return list.stream().filter(a -> a.getAverageGrade() < 60)
                 .collect(Collectors.toList());
     }
+
+
 
 
 
