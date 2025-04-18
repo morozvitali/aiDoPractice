@@ -1,4 +1,4 @@
-package stream.task16;
+package stream.task16_grouping2;
 
 import java.util.Arrays;
 import java.util.List;
