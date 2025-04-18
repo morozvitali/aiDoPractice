@@ -16,7 +16,6 @@ String[] words = {"apple", "dog", "banana", "cat", "kiwi", "plum", "watermelon"}
 Підказка: .groupingBy(word -> word.length())
 
 
-
 ✅ Завдання 2: Групування за першою літерою, але всі слова в нижньому регістрі
 List<String> words = List.of("Apple", "apricot", "Banana", "blue", "Cherry", "cranberry");
 

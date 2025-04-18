@@ -7,20 +7,21 @@ boolean test(T t);
 Якщо потрібно перевірити щось (наприклад, "рядок не порожній", "число > 0", "user активний") — це до Predicate.
 
 🔧 Використовується:
+
 ✅ 1. Stream API:
-
 list.stream().filter(s -> s.length() > 3).toList();
+
 ✅ 2. List.removeIf(Predicate<T>):
-
 list.removeIf(s -> s.isEmpty());
-✅ 3. Optional.filter(Predicate):
 
+✅ 3. Optional.filter(Predicate):
 Optional<String> name = Optional.of("Vitalii");
 name.filter(n -> n.length() > 5);
-✅ 4. Method references:
 
+✅ 4. Method references:
 list.stream().filter(String::isEmpty);
-🛠 Додаткові (дефолтні) методи Predicate<T>:
+
+🛠 Додаткові (дефолтні) методи Predicate<T>:`
 
 Метод	            Опис
 and(Predicate)	    логічне І між двома Predicate'ами
@@ -29,7 +30,7 @@ negate()	        логічне НЕ — заперечення
 isEqual(Object)	    static метод: перевірка на рівність (equals)
 
 🔧 Приклад:
-Predicate<String> startsWithA = s -> s.startsWith("A");
+Predicate<String> startsWithA = s -> s.startsWith("A");`
 Predicate<String> longerThan3 = s -> s.length() > 3;
 
 Predicate<String> finalCheck = startsWithA.and(longerThan3);
