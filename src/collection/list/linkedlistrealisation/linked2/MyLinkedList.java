@@ -30,14 +30,39 @@ public class MyLinkedList <E> implements Iterable <E> {
                 return current.value;
             }
 
-
-
                 private void checkIndex (int index) {
                     if (index < 0 || index >= size) {  // перевіряємо індекс, більше нуля і менше розміру
                         throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
                     }
 
                 }
+
+                //------------M-E-T-H-O-D----A-D-D---B-Y----I-N-D-E-X-----------//
+
+                public void add (int index, E value) {
+                    checkIndex (index);
+
+                    Node <E> newNode = new Node<>(value);
+
+                    if (index == 0) {  // вставимо в початок
+                        newNode.next = head;    // head == null взагалі то, тому newNode.next = null
+                                head = newNode; // це наш новий нод
+                    }
+
+                    else {
+                        // Знаходимо вузол перед index
+                        Node<E> current = head;
+                        for (int i = 0; i < index - 1; i++) {
+                            current = current.next;
+                        }
+                        // Вставляємо новий вузол після current
+                        newNode.next = current.next;
+                        current.next = newNode;
+                    }
+                    size++;
+                }
+
+
 
                 @Override
                 public E next() {
