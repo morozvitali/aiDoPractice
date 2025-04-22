@@ -15,8 +15,8 @@ public class MyLinkedList <E> implements Iterable <E> {
             private class MyIterator implements Iterator <E> { //  реалізуємо інтерфейс ітератор з логікою
             /// для hasNext, next, remove
 
-                private Node <E> current = head; // вузол який саме зараз обробляється
-                private Node <E> previous = null; // попередній вузол який був у next
+                private Node <E> current = head; // вузол що ще не пройдено
+                private Node <E> previous = null; // попередній вузол який був повернутий у next
                 private Node <E> beforePrevious = null; // для реалізації remove (щоб після видалення додати всі посилання на попередній і до нього)
                 private boolean canRemove = false; // прапорець яеий дозволяє чи забороняє remove (щоб не виклкикати remove двічі без next)
 
@@ -41,9 +41,29 @@ public class MyLinkedList <E> implements Iterable <E> {
                     return current != null; // якщо поточний елемент отримав порожнє посилання, тобто current повернув null
                 }
 
+                /* --------------R-E-M-O-V-E------------- */
+
                 @Override
                 public void remove() {
-                    Iterator.super.remove();
+
+                    if (!canRemove) {
+                        throw  new IllegalStateException (" next must be called before remove()"); // захист щоб не
+                        // викликати метод remove() на тому самому елементі кілька разів
+                    }
+
+                    if (previous == head) {// Видаляємо перший елемент
+                    head = current; // оновлюємо head
+                    } else {
+                        // Перестрибуємо вузол, який треба видалити
+                        beforePrevious.next = current;
+                    }
+
+                    // післ видалення previous уже не існує в списку
+                    previous = null;
+                    canRemove = false; // не можна викликати remove двічі підряд
+                    size--; // --
+
+
                 }
             }
 
