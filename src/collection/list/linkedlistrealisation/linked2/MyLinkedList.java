@@ -7,8 +7,49 @@ public class MyLinkedList <E> implements Iterable <E> {
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new MyIterator();  /// реалізували ітератор, для обходу колекції по for (E e : list)
     }
+
+    /* -----------------M-Y-----I-T-E-R-A-T-O-R----------------- */
+
+            private class MyIterator implements Iterator <E> { //  реалізуємо інтерфейс ітератор з логікою
+            /// для hasNext, next, remove
+
+                private Node <E> current = head; // вузол який саме зараз обробляється
+                private Node <E> previous = null; // попередній вузол який був у next
+                private Node <E> beforePrevious = null; // для реалізації remove (щоб після видалення додати всі посилання на попередній і до нього)
+                private boolean canRemove = false; // прапорець яеий дозволяє чи забороняє remove (щоб не виклкикати remove двічі без next)
+
+                @Override
+                public E next() {
+                    if (!hasNext()) throw new NoSuchElementException(); // кидаємо помилку в тому разі якщо є спроба
+                    // звернутися до наступного елементу без перевірки, наприклад while (it.hasNext()) {it.next} //
+                    // лист може мати легальні null тому кожного разу перевіряємо hasNext() перед next():
+
+                    E value = current.value; // отримуємо посилання на наступне значення - ми його повернемо пізніше у return
+
+                    beforePrevious = previous; // зсуваємо значення
+                    previous = current;
+                    current = current.next;
+                    canRemove = true;
+
+                    return value;   // повертає посилання на значення наступного ноду який отримали
+                }
+
+                @Override
+                public boolean hasNext() {
+                    return current != null; // якщо поточний елемент отримав порожнє посилання, тобто current повернув null
+                }
+
+                @Override
+                public void remove() {
+                    Iterator.super.remove();
+                }
+            }
+
+
+
+
 
     /* ----------------M-Y--------N-O-D-E----------------- */
 
@@ -58,6 +99,10 @@ public class MyLinkedList <E> implements Iterable <E> {
         newNode.next = head;    // додаємо до нашого ноду посилання на перший нод який зараз називається head
         head = newNode;     // посилання на head перекидаємо з першого елемента який був на наш створений нод
         size++; // ++
+    }
+
+    public int size () {
+        return size;
     }
 
 
