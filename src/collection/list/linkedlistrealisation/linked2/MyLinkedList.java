@@ -20,6 +20,25 @@ public class MyLinkedList <E> implements Iterable <E> {
                 private Node <E> beforePrevious = null; // для реалізації remove (щоб після видалення додати всі посилання на попередній і до нього)
                 private boolean canRemove = false; // прапорець яеий дозволяє чи забороняє remove (щоб не виклкикати remove двічі без next)
 
+            public E get (int index) {
+                checkIndex(index);
+                Node <E> current = head;  // знов, створюмо місце де зберігаються посилання які оброблятимо
+                for (int i = 0; i<index; i++) {
+                    current = current.next; // перебираємо значення і отримуємо посилання і значення на наступний нод, поки
+                    // і < index і повернемо посилання на нод
+                }
+                return current.value;
+            }
+
+
+
+                private void checkIndex (int index) {
+                    if (index < 0 || index >= size) {  // перевіряємо індекс, більше нуля і менше розміру
+                        throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+                    }
+
+                }
+
                 @Override
                 public E next() {
                     if (!hasNext()) throw new NoSuchElementException(); // кидаємо помилку в тому разі якщо є спроба
@@ -66,10 +85,6 @@ public class MyLinkedList <E> implements Iterable <E> {
 
                 }
             }
-
-
-
-
 
     /* ----------------M-Y--------N-O-D-E----------------- */
 
