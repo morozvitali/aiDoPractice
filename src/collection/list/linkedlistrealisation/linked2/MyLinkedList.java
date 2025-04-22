@@ -53,6 +53,12 @@ public class MyLinkedList <E> implements Iterable <E> {
         return value; // повертаємо те що видалили (посилання на елемент який тепер не в листі)
     }
 
+    public void addFirst (E value) {
+        Node <E> newNode = new Node <> (value); // створили нод зі значенням value
+        newNode.next = head;    // додаємо до нашого ноду посилання на перший нод який зараз називається head
+        head = newNode;     // посилання на head перекидаємо з першого елемента який був на наш створений нод
+        size++; // ++
+    }
 
 
 
