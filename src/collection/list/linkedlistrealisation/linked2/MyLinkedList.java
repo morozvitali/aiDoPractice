@@ -6,14 +6,16 @@ import java.util.NoSuchElementException;
 public class MyLinkedList <E> implements Iterable <E> {
 
 
+    // TODO: // проблема в тому що переплуталися методи ітератора і ліст, наступного разу переформатуємо
+
     @Override
     public Iterator<E> iterator() {
-        return new MyIterator();  /// реалізували ітератор, для обходу колекції по for (E e : list)
+        return new MyIterator();  // реалізували ітератор, для обходу колекції по for (E e : list)
     }
 
 
 
-    ///* -----------------CLASS----I-T-E-R-A-T-O-R----------------- */
+    //* -----------------CLASS----I-T-E-R-A-T-O-R----------------- */
                 private class MyIterator implements Iterator <E> { //  реалізуємо інтерфейс ітератор з логікою
             //для hasNext, next, remove
 
@@ -23,7 +25,7 @@ public class MyLinkedList <E> implements Iterable <E> {
                 private boolean canRemove = false; // прапорець яеий дозволяє чи забороняє remove (щоб не виклкикати remove двічі без next)
 
 
-                ///* ---------------I-T-E-R-A-T-O-R-> GET---------------- */
+                //* ---------------I-T-E-R-A-T-O-R-> GET---------------- */
             public E get (int index) {
                 checkIndex(index);
                 Node <E> current = head;  // знов, створюмо місце де зберігаються посилання які оброблятимо
@@ -34,7 +36,7 @@ public class MyLinkedList <E> implements Iterable <E> {
                 return current.value;
             }
 
-                ///* ---------------I-T-E-R-A-T-O-R-> Check-Index--------------- */
+                //* ---------------I-T-E-R-A-T-O-R-> Check-Index--------------- */
                 private void checkIndex (int index) {
                     if (index < 0 || index >= size) {  // перевіряємо індекс, більше нуля і менше розміру
                         throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
