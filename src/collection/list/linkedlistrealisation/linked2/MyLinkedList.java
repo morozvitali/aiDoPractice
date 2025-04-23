@@ -5,21 +5,25 @@ import java.util.NoSuchElementException;
 
 public class MyLinkedList <E> implements Iterable <E> {
 
+
     @Override
     public Iterator<E> iterator() {
         return new MyIterator();  /// реалізували ітератор, для обходу колекції по for (E e : list)
     }
 
-    /* -----------------M-Y-----I-T-E-R-A-T-O-R----------------- */
 
-            private class MyIterator implements Iterator <E> { //  реалізуємо інтерфейс ітератор з логікою
-            /// для hasNext, next, remove
+
+    ///* -----------------CLASS----I-T-E-R-A-T-O-R----------------- */
+                private class MyIterator implements Iterator <E> { //  реалізуємо інтерфейс ітератор з логікою
+            //для hasNext, next, remove
 
                 private Node <E> current = head; // вузол що ще не пройдено
                 private Node <E> previous = null; // попередній вузол який був повернутий у next
                 private Node <E> beforePrevious = null; // для реалізації remove (щоб після видалення додати всі посилання на попередній і до нього)
                 private boolean canRemove = false; // прапорець яеий дозволяє чи забороняє remove (щоб не виклкикати remove двічі без next)
 
+
+                ///* ---------------I-T-E-R-A-T-O-R-> GET---------------- */
             public E get (int index) {
                 checkIndex(index);
                 Node <E> current = head;  // знов, створюмо місце де зберігаються посилання які оброблятимо
@@ -30,14 +34,39 @@ public class MyLinkedList <E> implements Iterable <E> {
                 return current.value;
             }
 
+                ///* ---------------I-T-E-R-A-T-O-R-> Check-Index--------------- */
                 private void checkIndex (int index) {
                     if (index < 0 || index >= size) {  // перевіряємо індекс, більше нуля і менше розміру
                         throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
                     }
-
                 }
 
-                //------------M-E-T-H-O-D----A-D-D---B-Y----I-N-D-E-X-----------//
+
+                ///  ------------------------REMOVE----------------------- ///
+                    public E remove(int index) {
+                        checkIndex (index); // перевіряємо чи не вилітає наш індекс з інтервалів до нулі і більше розміпу size
+
+                        E removedValue;  // оголошуємо змінну яка матиме посилання на обєкт що відчепиться від нашого листа
+
+                        if (index == 0) {   //якщо
+                            removedValue = head.value;
+                            head = head.next;
+                        } else {
+                            Node<E> current = head;
+                            for (int i = 0; i < index - 1; i++) {
+                                current = current.next;
+                            }
+
+                            removedValue = current.next.value;
+                            current.next = current.next.next;
+                        }
+
+                        size--;
+                        return removedValue;
+                    }
+
+
+                ///------------M-E-T-H-O-D----A-D-D---B-Y----I-N-D-E-X-----------///
 
                 public void add (int index, E value) {
                     checkIndex (index);
@@ -61,8 +90,6 @@ public class MyLinkedList <E> implements Iterable <E> {
                     }
                     size++;
                 }
-
-
 
                 @Override
                 public E next() {
@@ -166,5 +193,35 @@ public class MyLinkedList <E> implements Iterable <E> {
     }
 
 
+
+
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+    }
+
+
+    public E remove(int index) {
+        checkIndex(index); // перевіряємо чи не виходить за межі значення
+
+        E removedValue; //тимчасове значення
+
+        if (index == 0) { // якщо видяємо head то head = наступний нод
+            removedValue = head.value;
+            head = head.next;
+        } else {
+            Node<E> current = head; // робимо тимчасове значення ноду current і ставимо його у перше значення (head) щоб потім перебирати
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;  //перебираємо і знаходимо індекс і нод по якому існує цей індекс
+            }
+
+            removedValue = current.next.value; // перекидаємо посилання з попереднього на наступний
+            current.next = current.next.next;  // і таким чином прибираємо з листа
+        }
+
+        size--;
+        return removedValue;
+    }
 
 }
