@@ -53,7 +53,7 @@ Best practices
 ✅ 9. Generics
 Навіщо потрібні
 Параметризація класів і методів
-<?>, <? extends T>, <? super T>
+//<?>, <? extends T>, <? super T>
 Обмеження (bounded types)
 
 ✅ 10. Java Memory Model
