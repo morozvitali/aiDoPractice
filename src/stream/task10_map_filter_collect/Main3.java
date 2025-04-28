@@ -1,4 +1,4 @@
-package stream.task10;
+package stream.task10_map_filter_collect;
 
 import java.util.Arrays;
 import java.util.List;
