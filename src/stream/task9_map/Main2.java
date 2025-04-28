@@ -1,4 +1,4 @@
-package stream.task9;
+package stream.task9_map;
 
 import java.util.Arrays;
 
