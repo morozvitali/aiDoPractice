@@ -24,6 +24,9 @@ Strategy
 Observer
 Adapter
 Decorator
+
+Proxy
+Chain Of resposibility
 Це основа грамотної архітектури.
 
 ✅ 5. Exception handling
