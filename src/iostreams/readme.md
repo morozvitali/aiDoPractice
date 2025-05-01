@@ -1,3 +1,8 @@
+Посилання на класи io
+https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html
+https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html
+https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html
+
 Привіт, Віталію! Чудове бажання — потоки введення/виведення (I/O streams) — це дуже важлива тема в Java, особливо коли працюєш із файлами, мережею чи великими обсягами тексту. Давай поетапно: теорія → приклади → практика → завдання. Почнемо!
 
 📚 Теорія: Потоки в Java
@@ -21,9 +26,6 @@ BufferedReader:
 
 має метод readLine() — читає рядок до символу нового рядка.
 
-java
-Копіювати
-Редагувати
 BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
 String line = reader.readLine();
 reader.close();
@@ -32,9 +34,6 @@ BufferedWriter:
 
 має метод write(String) + newLine().
 
-java
-Копіювати
-Редагувати
 BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
 writer.write("Привіт, Віталію!");
 writer.newLine();
@@ -42,9 +41,7 @@ writer.close();
 🔁 Читання та запис буферизовані = зменшення системних викликів → швидше.
 
 🛠 Приклад: Читання з одного файлу, запис в інший
-java
-Копіювати
-Редагувати
+
 import java.io.*;
 
 public class FileCopy {
