@@ -4,7 +4,12 @@ public class Decorator implements Component {
     protected Component component;
 
     public Decorator (Component component) {
-        public void 
+
+
+    }
+
+    @Override
+    public void operation() {
 
     }
 }
