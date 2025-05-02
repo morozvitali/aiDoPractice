@@ -1,17 +1,20 @@
 package iostreams.task03;
 
+import iostreams.task02.CharacterCounter;
+
 import java.io.*;
+import java.util.function.Predicate;
 
 public class StringToUpperCase {
 
-    public void myToUpperCase(String path1, String path2, LineFilter filter) throws FileProcessingException {
+    public void myToUpperCase(String path1, String path2, Predicate<String> condition) throws FileProcessingException {
 
         try (BufferedReader br = new BufferedReader(new FileReader(path1));
              BufferedWriter bw = new BufferedWriter(new FileWriter(path2, true))) {
 
             String line;
             while ((line = br.readLine()) != null) {
-                if (!filter.allow(line)) {
+                if (!condition.test(line)) {
                     System.out.println("line is too short: " + line);
                     continue;
                 }
@@ -31,7 +34,8 @@ public class StringToUpperCase {
 
     public static void main(String[] args) {
         StringToUpperCase su = new StringToUpperCase();
-        LineFilter filter = new LenghtFilter(10);
+
+        Predicate <String> filter = line -> line.length() >= 10 && Character.isUpperCase(line.charAt(0));
 
 
         try {

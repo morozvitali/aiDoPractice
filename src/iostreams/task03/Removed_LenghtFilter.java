@@ -1,9 +1,9 @@
 package iostreams.task03;
 
-public class LenghtFilter implements LineFilter {
+public class Removed_LenghtFilter implements Removed_LineFilter {
     private int minLenght;
 
-    public LenghtFilter (int minLenght) {
+    public Removed_LenghtFilter(int minLenght) {
         this.minLenght = minLenght;
     }
 
