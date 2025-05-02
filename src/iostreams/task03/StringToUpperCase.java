@@ -4,27 +4,33 @@ import java.io.*;
 
 public class StringToUpperCase {
 
-    public void myToUpperCase(String path1, String path2) {
+    public void myToUpperCase(String path1, String path2) throws FileProcessingException {
 
         try (BufferedReader br = new BufferedReader(new FileReader(path1));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(path2, true)))
-        {
+             BufferedWriter bw = new BufferedWriter(new FileWriter(path2, true))) {
             String line;
             while ((line = br.readLine()) != null) {
                 bw.write(line.toUpperCase());
                 bw.newLine();
                 System.out.println("перетворено і записано у файл");
             }
+        } catch (FileNotFoundException e) {
+            throw new FileProcessingException("Файл не знайдено");
         } catch (IOException e) {
-            e.printStackTrace();
-
+            throw new FileProcessingException("Помилка обробки файлу");
         }
+
     }
 
     public static void main(String[] args) {
-        String path1 = "iotask03.txt";
-        String path2 = "iotask03-03.txt";
         StringToUpperCase su = new StringToUpperCase();
-        su.myToUpperCase(path1, path2);
+
+
+        try {
+            su.myToUpperCase("iotask03.txt", "iotask03-03.txt");
+            System.out.println("Успішно виконано");
+        } catch (FileProcessingException e) {
+            System.out.println("⚠ Помилка: " + e.getMessage());
+        }
     }
 }
