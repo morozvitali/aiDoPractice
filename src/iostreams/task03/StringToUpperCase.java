@@ -4,16 +4,18 @@ import java.io.*;
 
 public class StringToUpperCase {
 
-    public void myToUpperCase(String path1, String path2) throws FileProcessingException {
+    public void myToUpperCase(String path1, String path2, LineFilter filter) throws FileProcessingException {
 
         try (BufferedReader br = new BufferedReader(new FileReader(path1));
              BufferedWriter bw = new BufferedWriter(new FileWriter(path2, true))) {
+
             String line;
             while ((line = br.readLine()) != null) {
-                if (line.length() < 10) {
+                if (!filter.allow(line)) {
                     System.out.println("line is too short: " + line);
                     continue;
-                } else {
+                }
+                else {
                     System.out.println("Line to upper case is: " + line);
                 }
                 bw.write(line.toUpperCase());
@@ -29,10 +31,14 @@ public class StringToUpperCase {
 
     public static void main(String[] args) {
         StringToUpperCase su = new StringToUpperCase();
+        LineFilter filter = new LenghtFilter(10);
+
+
         try {
-            su.myToUpperCase("iotask03.txt", "iotask03-03.txt");
+            su.myToUpperCase("iotask03.txt", "iotask03-03.txt", filter);
             System.out.println("Успішно виконано");
-        } catch (FileProcessingException e) {
+        }
+        catch (FileProcessingException e) {
             System.out.println("⚠ Помилка: " + e.getMessage());
         }
     }
