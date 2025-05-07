@@ -13,10 +13,10 @@
 Hello world
 This is Java
 BufferedReader test
+
 👉 Вихід: 3
 
 🔧 Код для реалізації:
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

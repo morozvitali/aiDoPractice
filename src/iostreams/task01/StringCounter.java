@@ -17,7 +17,6 @@ public class StringCounter {
         {
             e.printStackTrace();
         }
-
         return lineCount;
     }
 
