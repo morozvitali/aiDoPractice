@@ -1,4 +1,4 @@
-package stream.task1;
+package stream.task1_filter;
 
 import java.util.Comparator;
 import java.util.List;
