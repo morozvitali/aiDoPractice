@@ -1,0 +1,310 @@
+Класно! ✨ Писати SQL-запити руками в Java — це означає використовувати JDBC (Java Database Connectivity), тобто напряму керувати підключенням до бази, створювати Statement або PreparedStatement, і писати SELECT, INSERT, UPDATE тощо вручну.
+
+🔧 Приклад: JDBC + SQL-запити вручну
+Уявімо, що в тебе є таблиця users:
+
+sql
+Copy
+Edit
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    email VARCHAR(100)
+);
+✅ 1. Підключення до БД
+java
+Copy
+Edit
+String url = "jdbc:mysql://localhost:3306/testdb";
+String username = "root";
+String password = "password";
+
+Connection conn = DriverManager.getConnection(url, username, password);
+✅ 2. Вставити нового користувача
+java
+Copy
+Edit
+String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
+PreparedStatement stmt = conn.prepareStatement(sql);
+stmt.setString(1, "Vitalii");
+stmt.setString(2, "vitalii@example.com");
+int rowsInserted = stmt.executeUpdate();
+System.out.println("Rows inserted: " + rowsInserted);
+✅ 3. Прочитати всіх користувачів
+java
+Copy
+Edit
+String sql = "SELECT * FROM users";
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery(sql);
+
+while (rs.next()) {
+    int id = rs.getInt("id");
+    String name = rs.getString("name");
+    String email = rs.getString("email");
+    System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email);
+}
+✅ 4. Оновити e-mail користувача
+java
+Copy
+Edit
+String sql = "UPDATE users SET email = ? WHERE name = ?";
+PreparedStatement stmt = conn.prepareStatement(sql);
+stmt.setString(1, "newemail@example.com");
+stmt.setString(2, "Vitalii");
+int rowsUpdated = stmt.executeUpdate();
+System.out.println("Rows updated: " + rowsUpdated);
+✅ 5. Видалити користувача
+java
+Copy
+Edit
+String sql = "DELETE FROM users WHERE name = ?";
+PreparedStatement stmt = conn.prepareStatement(sql);
+stmt.setString(1, "Vitalii");
+int rowsDeleted = stmt.executeUpdate();
+System.out.println("Rows deleted: " + rowsDeleted);
+🧹 Закриття ресурсів (важливо!)
+java
+Copy
+Edit
+stmt.close();
+conn.close();
+🧠 Що ти отримуєш від такої роботи:
+Повний контроль над SQL-запитами
+
+Добре розуміння як працює зв’язок Java + SQL
+
+Але треба все робити вручну: підключення, закриття, обробка помилок
+
+Хочеш, я допоможу зробити простий консольний застосунок на JDBC, або напишу приклад із класами User, UserDAO, Main?
+
+
+
+
+
+
+
+You said:
+Хочеш, я допоможу зробити простий консольний застосунок на JDBC, або напишу приклад із класами `User`, `UserDAO`, `Main`?
+
+так
+
+
+ChatGPT said:
+Супер! Тоді зараз зробимо простий консольний Java-застосунок, який:
+
+Підключається до бази MySQL
+
+Додає нового користувача
+
+Виводить усіх користувачів
+
+Має просту структуру з User, UserDAO, Main
+
+📁 Структура проєкту:
+css
+Copy
+Edit
+/src
+├── model/User.java
+├── dao/UserDAO.java
+└── Main.java
+✅ 1. Клас User.java
+java
+Copy
+Edit
+package model;
+
+public class User {
+    private int id;
+    private String name;
+    private String email;
+
+    public User() {}
+
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public User(int id, String name, String email) {
+        this(name, email);
+        this.id = id;
+    }
+
+    // Getters and Setters
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public String getEmail() { return email; }
+
+    public void setId(int id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
+    public void setEmail(String email) { this.email = email; }
+
+    @Override
+    public String toString() {
+        return "User { id=" + id + ", name='" + name + "', email='" + email + "' }";
+    }
+}
+✅ 2. Клас UserDAO.java
+java
+Copy
+Edit
+package dao;
+
+import model.User;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class UserDAO {
+    private final String URL = "jdbc:mysql://localhost:3306/testdb";
+    private final String USER = "root";
+    private final String PASSWORD = "password";
+
+    private Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+
+    public void addUser(User user) {
+        String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, user.getName());
+            stmt.setString(2, user.getEmail());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
+        String sql = "SELECT * FROM users";
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                users.add(new User(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("email")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+}
+✅ 3. Main.java
+java
+Copy
+Edit
+import dao.UserDAO;
+import model.User;
+
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        UserDAO userDAO = new UserDAO();
+
+        // Додати користувача
+        User newUser = new User("Vitalii", "vitalii@example.com");
+        userDAO.addUser(newUser);
+
+        // Отримати всіх користувачів
+        List<User> users = userDAO.getAllUsers();
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+}
+🧱 Створення таблиці SQL (MySQL):
+sql
+Copy
+Edit
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    email VARCHAR(100)
+);
+🧩 Що треба:
+MySQL з базою testdb
+
+Драйвер JDBC (mysql-connector-java у pom.xml, якщо ти на Maven)
+
+Твій пароль, ім'я бази і порт (можеш змінити в UserDAO)
+
+Хочеш, я оформлю це як повний Maven-проєкт із pom.xml, або допоможу підключити JDBC у IntelliJ?
+
+
+
+
+
+
+
+You said:
+Через JDBC, тобто ми працюватимо через sql вбудовану в JAVA?
+
+
+ChatGPT said:
+Так, абсолютно вірно, Віталію! 🌟
+Коли ми працюємо через JDBC, то пишемо SQL-запити вручну прямо у Java-коді, і виконуємо їх на базі даних через спеціальні Java-класи.
+
+🧠 Що таке JDBC (Java Database Connectivity)?
+Це вбудований API у Java, який дозволяє:
+
+підключатися до БД (MySQL, PostgreSQL, Oracle, SQLite…)
+
+виконувати SQL-запити з Java-коду
+
+отримувати результати у вигляді ResultSet
+
+обробляти помилки (SQLException)
+
+не використовувати ніякі додаткові фреймворки типу Hibernate або Spring
+
+📌 Як це виглядає?
+Java-код:
+
+java
+Copy
+Edit
+Connection conn = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/mydb", "root", "password"
+);
+PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users");
+ResultSet rs = stmt.executeQuery();
+
+while (rs.next()) {
+    System.out.println(rs.getString("name"));
+}
+SQL-запит "SELECT * FROM users" — це повноцінний SQL, який передається з Java в БД, виконується, а результат — повертається назад у Java.
+
+📦 JDBC дає тобі:
+Компонент	Опис
+Connection	З'єднання з базою
+Statement / PreparedStatement	Об'єкт для SQL-запиту
+ResultSet	Результати SELECT-запиту
+SQLException	Обробка помилок
+
+🎯 Переваги JDBC:
+Повний контроль над SQL
+
+Добре вчить розуміти, що реально відбувається між Java і БД
+
+Швидше за ORM у простих випадках
+
+Не треба додаткових бібліотек (окрім драйвера)
+
+⚠️ Недоліки:
+Треба писати багато шаблонного коду вручну
+
+Всі ресурси треба закривати (conn.close(), stmt.close())
+
+Не зручно для великих проєктів (там краще Hibernate / Spring Data JPA)
+
+🔸 Отже, JDBC — це міст між Java і SQL, де ти керуєш всім сам: з'єднанням, запитами, результатами.
+
+Хочеш зробити разом перший приклад JDBC на твоєму комп’ютері? Я можу допомогти налаштувати все в IntelliJ IDEA.
