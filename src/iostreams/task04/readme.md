@@ -7,9 +7,7 @@
 Записати їх у новий файл startsWithS.txt.
 
 🧾 Приклад input.txt:
-pgsql
-Копіювати
-Редагувати
+
 Start here
 Somewhere over the rainbow
 Nothing special
@@ -18,17 +16,13 @@ Rain is good
 Sleep more
 👉 Якщо шукаємо S:
 
-sql
-Копіювати
-Редагувати
+
 Start here
 Somewhere over the rainbow
 stop now
 Sleep more
 🔧 Код:
-java
-Копіювати
-Редагувати
+
 import java.io.*;
 
 public class FilterLinesByLetter {
