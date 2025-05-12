@@ -1,0 +1,21 @@
+# Системні файли IDE
+.idea/
+*.iml
+
+# Компільовані файли
+*.class
+/out/
+target/
+bin/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
