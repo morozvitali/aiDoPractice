@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class MyLogger {
+public class MyLogger1 {
 
     public void log(String message, String level) {
 
@@ -20,10 +20,12 @@ public class MyLogger {
         } catch (IOException e) {
             System.out.println("Помилка запису у файл " + e.getMessage());
         }
+
+
     }
 
     public static void main(String[] args) {
-        MyLogger myLogger = new MyLogger();
+        MyLogger1 myLogger = new MyLogger1();
         myLogger.log("Testing Of tje Method", "All system error");
     }
 }
