@@ -11,6 +11,9 @@ public void log(String message, String level)
 
 [2025-05-13 14:22:05] [INFO] Операція успішна
 Тренується: FileWriter, BufferedWriter, LocalDateTime, String.format, Enum/прапори.
+
+⚠️ Task 1.2: Logger Class 2 -> loger convert to singleton pattern
+⚠️ Task 1.3: Enum flags -> Enum class for levels
 ---------------------------------------------
 ✅ Task 2: Scanner Input Basics
 Мета: Зчитування з клавіатури, перетворення типів, вивід у консоль.
@@ -28,7 +31,7 @@ public void log(String message, String level)
 
 Повернути результат або помилку ділення на нуль
 
-Тренується: if/else, switch, робота з double
+💡 Тренується: if/else, switch, робота з double
 ---------------------------------------------
 ✅ Task 4: Save User to File
 Мета: Робота з текстовими файлами, форматування, склейка рядків.

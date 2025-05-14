@@ -8,6 +8,20 @@ import java.time.format.DateTimeFormatter;
 
 public class MyLogger2 {
 
+    private static MyLogger2 instance;
+
+    private MyLogger2 () {
+        System.out.println("Loger created");
+    }
+
+    public static MyLogger2 getInstance() {
+
+        if (instance == null) {
+            instance = new MyLogger2();
+        }
+        return instance;
+    }
+
     public void log (String message, String level) {
         LocalDateTime localDateTime = LocalDateTime.now();
         String formatedDateTime = localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
@@ -23,7 +37,11 @@ public class MyLogger2 {
 
 
     public static void main(String[] args) {
-        MyLogger2 myLogger2 = new MyLogger2();
-        myLogger2.log("message", "all systems red");
+        MyLogger2 myLogger2 = MyLogger2.getInstance();
+        myLogger2.log("message1", "all systems red");
+
+
+        MyLogger2 myLogger22 = MyLogger2.getInstance();
+        myLogger2.log("message2", "all systems green");
     }
 }
