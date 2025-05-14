@@ -1,4 +1,4 @@
-package common;
+package common.loger2;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
