@@ -13,7 +13,8 @@ public void log(String message, String level)
 Тренується: FileWriter, BufferedWriter, LocalDateTime, String.format, Enum/прапори.
 
 ⚠️ Task 1.2: Logger Class 2 -> loger convert to singleton pattern
-⚠️ Task 1.3: Enum flags -> Enum class for levels
+⚠️ Task 1.3: Enum + Singleton realisation
+⚠️ Task 1.4: Enum + Loglevels realisation
 ---------------------------------------------
 ✅ Task 2: Scanner Input Basics
 Мета: Зчитування з клавіатури, перетворення типів, вивід у консоль.
