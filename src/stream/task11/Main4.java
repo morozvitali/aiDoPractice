@@ -19,10 +19,11 @@ public class Main4 {
     public Map<Character, List<String>> filtering () {
         List<String> words = List.of("apple", "banana",
                 "apricot", "blueberry", "cherry");
-        return words.stream().collect(Collectors.groupingBy(a->a.charAt(0));
-
-
+        return words.stream().collect(Collectors.groupingBy(a->a.charAt(0)));
     }
 
-
+    public Map <String, Integer> filtering4 () {
+        List<String> words = List.of("hi", "apple", "banana");
+        return words.stream().collect(Collectors.toMap(a->a, a->a.length()));
+    }
 }
