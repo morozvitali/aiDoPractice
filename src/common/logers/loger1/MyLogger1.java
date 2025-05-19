@@ -20,8 +20,6 @@ public class MyLogger1 {
         } catch (IOException e) {
             System.out.println("Помилка запису у файл " + e.getMessage());
         }
-
-
     }
 
     public static void main(String[] args) {
