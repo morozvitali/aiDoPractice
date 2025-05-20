@@ -38,6 +38,6 @@ public class Main5 {
 
     public Map <Character, List<String>> grouping4 () {
         List<String> words = List.of("apple", "ant", "banana", "bat", "car");
-            words.stream().map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.charAt(0)));
+            return words.stream().map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.charAt(0)));
     }
  }
