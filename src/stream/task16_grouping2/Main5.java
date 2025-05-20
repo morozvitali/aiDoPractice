@@ -18,5 +18,15 @@ public class Main5 {
                 .collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
     }
 
+    public Map <Boolean, List <String>> mapping3 () {
+        String[] words = {"apple", "sky", "banana", "dry", "orange"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(s->s.chars().anyMatch(a->"aeiou".indexOf(a)>=0)));
+    }
 
+    public Map <Integer, Long> mapping4 () {
+        String[] words = {"apple", "banana", "orange", "umbrella",
+                "ant", "dog", "egg"};
+        return Arrays.stream(words).filter(a->"aeiou".indexOf(a.charAt(0)) >=0)
+                .collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
+    }
 }
