@@ -1,6 +1,6 @@
-package quickrealisation.solid.realisation.model;
+package common.quickrealisation.solid.realisation.model;
 
-import quickrealisation.solid.realisation.interfaces.Printable;
+import common.quickrealisation.solid.realisation.interfaces.Printable;
 
 public class ReportPrinter implements Printable {
     @Override

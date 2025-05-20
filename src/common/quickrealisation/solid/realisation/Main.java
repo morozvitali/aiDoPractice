@@ -1,7 +1,7 @@
-package quickrealisation.solid.realisation;
+package common.quickrealisation.solid.realisation;
 
-import quickrealisation.solid.realisation.interfaces.*;
-import quickrealisation.solid.realisation.model.*;
+import common.quickrealisation.solid.realisation.interfaces.*;
+import common.quickrealisation.solid.realisation.model.*;
 
 public class Main {
     public static void main(String[] args) {

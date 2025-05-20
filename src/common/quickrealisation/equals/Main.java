@@ -1,4 +1,4 @@
-package quickrealisation.equals;
+package common.quickrealisation.equals;
 
 import java.util.Objects;
 

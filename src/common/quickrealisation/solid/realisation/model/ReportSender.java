@@ -1,6 +1,6 @@
-package quickrealisation.solid.realisation.model;
+package common.quickrealisation.solid.realisation.model;
 
-import quickrealisation.solid.realisation.interfaces.Sendable;
+import common.quickrealisation.solid.realisation.interfaces.Sendable;
 
 public class ReportSender implements Sendable {
     @Override

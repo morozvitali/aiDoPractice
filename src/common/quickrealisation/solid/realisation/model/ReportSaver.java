@@ -1,6 +1,6 @@
-package quickrealisation.solid.realisation.model;
+package common.quickrealisation.solid.realisation.model;
 
-import quickrealisation.solid.realisation.interfaces.Savable;
+import common.quickrealisation.solid.realisation.interfaces.Savable;
 
 public class ReportSaver implements Savable {
     @Override
