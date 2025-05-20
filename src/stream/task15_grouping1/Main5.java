@@ -16,5 +16,19 @@ public class Main5 {
         return words.stream().map(a->a.toLowerCase()).collect(Collectors.groupingBy(a->a.charAt(0)));
     }
 
+    public Map<Character, Long> mappibg () {
+        String[] words = {"apple", "banana", "apricot", "blue", "berry", "cherry"};
+        return Arrays.stream(words).map(a->a.toLowerCase())
+                .collect(Collectors.groupingBy (a->a.charAt(0), Collectors.counting()));
+    }
 
+    public Map <String, Boolean> mapping () {
+        String[] words = {"sky", "apple", "dry", "orange", "sun"};
+        return Arrays.stream(words).collect(Collectors.toMap(a->a, a->isContain(a)));
+
+    }
+
+    public boolean isContain (String s) {
+        return s.chars().boxed().filter(a->"aeiou".indexOf(a) >= 0).count() > 0 ? true : false;
+    }
 }
