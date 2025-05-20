@@ -6,7 +6,7 @@ List<String> names = List.of("Alice", "Bob", "Charlie");
 Очікувано: "Alice, Bob, Charlie"
 
 
-✅ Задача 2: Su
+✅ Задача 2: Summarizing
 📌 Є список чисел. Отримай статистику: кількість, суму, мінімум, максимум, середнє.
 
 List<Integer> numbers = List.of(4, 8, 15, 16, 23, 42);
@@ -71,19 +71,3 @@ a=[APPLE, ANT],
 b=[BANANA, BAT],
 c=[CAR]
 }
-
-         public Map <Integer, Long> myGroupCounting() {
-            List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
-            return words.stream().collect(Collectors.groupingBy(a->a.length(), 
-                    Collectors.counting()));
-         }
-         
-         public Map <Boolean, List <Integer>> myGrouping5 () {
-             List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
-             return numbers.stream().collect(Collectors.partitioningBy((a-> a%2 == 0)));
-         }
-
-        public Map <Boolean, List <Integer>> myGrouping6 () {
-            List<String> words = List.of("apple", "ant", "banana", "bat", "car");
-            return words.stream().map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.charAt(0));
-        }
