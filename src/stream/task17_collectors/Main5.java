@@ -2,6 +2,7 @@ package stream.task17_collectors;
 
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main5 {
@@ -19,4 +20,16 @@ public class Main5 {
         System.out.println("average " + stats.getAverage());
         System.out.println("minimum " + stats.getMin());
     }
+
+    public Map<Integer, List <String>> grouping () {
+        List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(a->a.length()));
+    }
+
+    public Map <Integer, Long> grouping2 () {
+        List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
+    }
+
+
 }
