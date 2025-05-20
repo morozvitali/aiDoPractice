@@ -31,5 +31,13 @@ public class Main5 {
         return words.stream().collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
     }
 
+    public Map <Boolean, List<Integer>> grouping3 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.groupingBy(a->a%2==0));
+    }
 
-}
+    public Map <Character, List<String>> grouping4 () {
+        List<String> words = List.of("apple", "ant", "banana", "bat", "car");
+            words.stream().map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.charAt(0)));
+    }
+ }
