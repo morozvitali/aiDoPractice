@@ -1,5 +1,4 @@
 package patterns.singleton.realisation;
-
 /*
 syncronized access to getInstance
  */
