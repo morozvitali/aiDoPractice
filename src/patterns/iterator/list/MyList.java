@@ -23,6 +23,14 @@ public class MyList<T> implements Iterable<T> {
     }
 
 
+
+
+
+
+
+
+
+
     ///             реалізація ітератору                ///
     private class MyIterator implements Iterator<T> {
         private int index = 0;
