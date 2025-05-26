@@ -12,7 +12,7 @@
 🔸 Інтерфейс:
 public interface Prototype extends Cloneable {
 Prototype clone(); // типова сигнатура
-}
+} 
 
 🔸 Клас-прототип:
 public class Document implements Prototype {

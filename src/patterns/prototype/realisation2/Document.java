@@ -30,6 +30,7 @@ public class Document implements Prototype {
         return "Text: " + text + ", Tags: " + tags;
     }
 
+
     public static void main(String[] args) {
         Document original = new Document("Hello");
         original.addTag("welcome");
@@ -39,8 +40,5 @@ public class Document implements Prototype {
         copy.addTag("copy");
         System.out.println(original);
         System.out.println(copy);
-
     }
-
-
 }
