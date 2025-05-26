@@ -1,26 +1,27 @@
-package patterns.iterator.list;
+package patterns.iterator.list2;
 
 import java.util.Iterator;
 
 public class MyList<T> implements Iterable<T> {
-    private T[] items; // масив з елементами
-    private int size = 0; // розмір масиву
+    private T[] items;
+    private int size = 0;
 
     public MyList(int capacity) {
-        items = (T[]) new Object[capacity];  // конструктор який змінній ітемс присвоює масив з кількістью
+        items = (T[]) new Object[capacity];
     }
 
     public void add(T item) {
         if (size == items.length) {
             throw new RuntimeException("List is full");
         }
-        items[size++] = item; //
+        items[size++] = item;
     }
 
     @Override
     public Iterator<T> iterator() {
         return new MyIterator();
     }
+
 
     ///             реалізація ітератору                ///
     private class MyIterator implements Iterator<T> {
@@ -41,7 +42,7 @@ public class MyList<T> implements Iterable<T> {
         @Override
         public void remove() {
             if (!canRemove) {
-                throw new IllegalStateException("Remove called without next()");
+                throw new IllegalStateException("Remove callrd without next(");
             }
             for (int i = index - 1; i < size - 1; i++) {
                 items[i] = items[i + 1];
@@ -51,7 +52,11 @@ public class MyList<T> implements Iterable<T> {
             canRemove = false;
         }
     }
+
 }
+
+
+
 
 
 
