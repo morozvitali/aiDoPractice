@@ -1,4 +1,4 @@
-package patterns.singleton;
+package patterns.singleton.realisation;
 
 public class Singleton4 {
         /*

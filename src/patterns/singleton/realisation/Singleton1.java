@@ -1,4 +1,4 @@
-package patterns.singleton;
+package patterns.singleton.realisation;
 
 /*
 ледача ініціалізація, непотокобезпечна
