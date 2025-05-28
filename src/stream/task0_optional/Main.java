@@ -14,6 +14,14 @@ public class Main {
         return value.map(a->a*2).orElse(-1);
     }
 
+    public String myOptional2 (Optional<String> value) {
+        return value.filter(s->s.length() > 5).orElse("short");
+    }
+
+    public String myOptional3 (Optional <String> value) {
+        return value.map(a->"Hello, " + a + "!").orElse("Hello, guest!");
+    }
+
 
 
 }
