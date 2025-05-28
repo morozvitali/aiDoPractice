@@ -25,6 +25,10 @@ public class Main5 {
         return names.stream().filter(a->a.length() > 4).map(a->a.toUpperCase()).sorted(Comparator.naturalOrder()).collect(Collectors.toList());
     }
 
+    public static List <Integer> myFiltering4 () {
+        List<Integer> numbers = List.of(4, 6, 2, 6, 4, 8, 10, 2);
+        return numbers.stream().distinct().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+    }
 
     public static void main(String[] args) {
         System.out.println(Main5.myFiltering());
