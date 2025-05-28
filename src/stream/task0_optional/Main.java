@@ -36,6 +36,6 @@ public class Main {
 
     public String myOptional5() {
         Optional<String> email = Optional.of("ADMIN@SITE.COM");
-        return email.map(a -> a.toLowerCase()).filter(a -> a.contains(".com")).orElseThrow(() -> new IllegalArgumentException("Invalid email"));
+        return email.map(String::toLowerCase).filter(a -> a.contains(".com")).orElseThrow(() -> new IllegalArgumentException("Invalid email"));
     }
 }
