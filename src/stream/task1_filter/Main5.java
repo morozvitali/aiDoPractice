@@ -20,7 +20,15 @@ public class Main5 {
     }
 
 
+    public static List <String> myFiltering3 () {
+        List<String> names = List.of("Ola", "Vitalii", "Sasha", "Alina", "Max");
+        return names.stream().filter(a->a.length() > 4).map(a->a.toUpperCase()).sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+    }
+
+
     public static void main(String[] args) {
         System.out.println(Main5.myFiltering());
+
+
     }
 }
