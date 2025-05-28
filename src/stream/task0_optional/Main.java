@@ -2,6 +2,7 @@ package stream.task0_optional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -22,6 +23,15 @@ public class Main {
         return value.map(a->"Hello, " + a + "!").orElse("Hello, guest!");
     }
 
+    public void myOptional4 () {
 
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        nums.stream()
+                .max(Integer::compareTo)
+                .ifPresentOrElse(
+                        System.out::println,
+                        () -> System.out.println("Немає значень")
+                );
+    }
 
 }
