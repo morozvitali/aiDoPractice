@@ -9,4 +9,5 @@ public class Main5 {
         return list.stream().reduce((a,b)-> a.length() <= b.length() ? a : b).orElse("");
     }
 
+
 }
