@@ -12,5 +12,9 @@ public class Main5 {
                 .reduce(0, (a,b) -> a*b);
     }
 
-
+    public String practice () {
+        return Arrays.stream(new String[]{"Java", "Python", "C++"})
+                .reduce((a,b)->a + " " + b)
+                .orElse("");
+    }
 }
