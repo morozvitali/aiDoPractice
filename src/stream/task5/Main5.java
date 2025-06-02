@@ -1,6 +1,7 @@
 package stream.task5;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main5 {
@@ -40,6 +41,19 @@ public class Main5 {
         list.stream().skip(3).forEach(System.out::println);
     }
 
+    public void practice6 () {
+        List<Integer> list = List.of(3, 2, 4, 6, 1, 8, 10, 12);
+        list.stream().skip(list.size()-2).forEach(System.out::println);
+    }
 
+    public void practice7 () {
+        List<Integer> list = List.of(3, 2, 4, 6, 1, 8, 10, 12);
+        list.stream().filter(a-> a%2 == 0).limit(5)
+                .reduce(0, (a,b) -> a + b);
+    }
 
+    public void practice8 () {
+        List<Integer> list = List.of(10, 50, 20, 40, 30);
+        list.stream().sorted(Comparator.reverseOrder()).skip(2).findFirst().orElse(-1);
+    }
 }
