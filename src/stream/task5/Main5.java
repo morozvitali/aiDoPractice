@@ -1,6 +1,7 @@
 package stream.task5;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main5 {
     public int practice1() {
@@ -27,6 +28,16 @@ public class Main5 {
             sum = sum + value % 10;
             value = value / 10;
         }
+    }
+
+    public void practice4 () {
+        List<Integer> list = List.of(10, 20, 30, 40, 50);
+        list.stream().limit(3).forEach(System.out::println);
+    }
+
+    public void practice5 () {
+        List<Integer> list = List.of(5, 6, 7, 8, 9);
+        list.stream().skip(3).forEach(System.out::println);
     }
 
 
