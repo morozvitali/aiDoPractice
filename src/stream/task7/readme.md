@@ -58,25 +58,18 @@ List<Integer> list = List.of(3, 5, 6); → `false`
 .anyMatch(n -> n % 7 == 0)
 
 🔹 Задача 4: Перевірити, чи всі рядки починаються з великої літери
-java
-Copy
-Edit
+
 List<String> names = List.of("Alice", "Bob", "Charlie"); → `true`  
 List<String> names = List.of("Alice", "bob", "Charlie"); → `false`
 Підказка:
 .allMatch(s -> Character.isUpperCase(s.charAt(0)))
 
 ⭐ Задача 5 (з зірочкою): Перевірити, чи хоча б одне слово з колекції є паліндромом (читається однаково в обидва боки)
-java
-Copy
-Edit
+
 List<String> words = List.of("racecar", "apple", "madam"); → `true`  
 List<String> words = List.of("java", "stream", "code"); → `false`
 Підказка:
 
-java
-Copy
-Edit
 String reversed = new StringBuilder(s).reverse().toString();
 s.equals(reversed)
 Потім .anyMatch(...)

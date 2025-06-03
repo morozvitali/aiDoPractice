@@ -38,4 +38,17 @@ public class Main5 {
         return list.stream().anyMatch(a->a%7==0);
     }
 
+    public boolean practice10 () {
+        List<String> names = List.of("Alice", "Bob", "Charlie");
+        return names.stream().allMatch(a-> Character.isUpperCase(a.charAt(0)));
+    }
+
+    public boolean practice11 () {
+        List<String> words = List.of("racecar", "apple", "madam");
+        return words.stream().anyMatch(a->a==isPolindrom(a));
+    }
+
+    public String isPolindrom (String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
 }
