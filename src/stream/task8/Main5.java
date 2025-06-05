@@ -1,7 +1,6 @@
 package stream.task8;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -15,12 +14,12 @@ public class Main5 {
 
     public int practice1 () {
         int[] numbers = {-5, 3, 0, -2, 10, 1};
-        return Arrays.stream(numbers).filter(a->a%3==0).reduce((a,b) -> a <=b ? a : b ).orElse(-1)
+        return Arrays.stream(numbers).filter(a->a%3==0).reduce((a,b) -> a <=b ? a : b ).orElse(-1);
     }
 
     public int practice2 () {
         int[] numbers = {-5, 3, 0, -2, 10, 1};
-        return Arrays.stream(numbers).filter(a->a>=0).reduce((a,b) -> a >=b ? a : b ).orElse(-1)
+        return Arrays.stream(numbers).filter(a->a>=0).reduce((a,b) -> a >=b ? a : b ).orElse(-1);
     }
 
     public int practice3 () {
@@ -51,4 +50,11 @@ public class Main5 {
         return IntStream.rangeClosed(10,50).filter(a->a%7==0).boxed().collect(Collectors.toList());
     }
 
+    public long practice9 () {
+        return IntStream.rangeClosed(1,100).filter(a->a%3==0 || a%5==0).count();
+    }
+
+    public void practice10 () {
+        IntStream.iterate(10, i -> i-1).limit(10).forEach(System.out::println);
+    }
 }
