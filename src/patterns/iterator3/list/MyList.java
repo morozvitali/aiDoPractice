@@ -7,7 +7,8 @@ public class MyList<T> implements Iterable<T> {
     private int size = 0; // розмір масиву
 
     public MyList(int capacity) {
-        items = (T[]) new Object[capacity];  // конструктор який змінній ітемс присвоює масив з кількістью
+        items = (T[]) new Object[capacity];  // конструктор який змінній ітемс
+        // присвоює масив з кількістью
     }
 
     public void add(T item) {
