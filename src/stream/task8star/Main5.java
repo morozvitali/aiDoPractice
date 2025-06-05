@@ -1,4 +1,4 @@
-package stream.task8;
+package stream.task8star;
 
 import java.util.Arrays;
 import java.util.List;
