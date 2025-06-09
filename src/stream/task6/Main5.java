@@ -15,7 +15,7 @@ public class Main5 {
     }
 
     public long practice2 () {
-        return IntStream.rangeClosed(21,40).filter(a->a%2!=0).reduce((a,b)-> a<b ? a:b).orElse(-1)
+        return IntStream.rangeClosed(21,40).filter(a->a%2!=0).reduce((a,b)-> a<b ? a:b).orElse(-1);
     }
 
     public long practice3 () {
