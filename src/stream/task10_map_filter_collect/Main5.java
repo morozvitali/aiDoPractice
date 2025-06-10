@@ -27,4 +27,11 @@ public class Main5 {
         String[] words = {"java", "code", "home", "sun", "snow"};
         Arrays.stream(words).filter(a->a.length() == 4).map(w ->w.substring (0,1).toUpperCase() + w.substring(1).toLowerCase()).forEach(System.out::println);
     }
+
+    public void practice6 () {
+        int[] numbers = {2, 2, 4, 6, 3, 4};
+        Arrays.stream(numbers).filter(a->a%2==0).map(a->a*a).distinct().forEach(System.out::println);
+    }
+
+
 }
