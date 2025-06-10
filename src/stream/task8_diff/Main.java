@@ -1,6 +1,7 @@
 package stream.task8_diff;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -42,6 +43,14 @@ public class Main {
     public static void main(String[] args) {
         Main m = new Main();
         m.practice3();
+    }
+
+
+    public List <Integer> practice4 () {
+        int [] a = new int [] {6, 9, 3, 4, 3, 2};
+        int [] b = new int [] {3, 4, 5, 6};
+        //  → [5, 4]
+        return Arrays.stream(a).boxed().filter(x->Arrays.stream(b).noneMatch(y->y%x == 0)).toList();
     }
 }
 
