@@ -1,8 +1,6 @@
 package stream.task8_diff;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -57,5 +55,20 @@ public class Main {
         String [] a = new String [] {"hi", "hello", "world"};
         int [] b = new int [] {2};
         return Arrays.stream(a).filter(x->Arrays.stream(b).noneMatch(y-> x.length() == y)).toList();
+    }
+
+
+    public void practice6 () {
+        int [] a = new int [] {6, 9, 3, 4, 3, 2, 2};
+        int [] b = new int [] {3, 4, 5, 6};
+        Set <Integer> set = new HashSet<>(Arrays.stream(b).boxed().toList());
+
+        Map <Integer, Long> map = Arrays.stream(a)
+                .boxed()
+                .collect(Collectors
+                        .groupingBy(value -> value, Collectors
+                                .counting()));
+        List <Integer> result = Arrays.stream(a).boxed().filter(value-> map.get(value) > 1 && !set.contains(value)).toList();
+        System.out.println(result);
     }
 }
