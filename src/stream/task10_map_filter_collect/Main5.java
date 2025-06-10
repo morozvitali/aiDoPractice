@@ -18,5 +18,9 @@ public class Main5 {
         Arrays.stream(words).filter(a->a.charAt(0) == 'a').map(a->a.toUpperCase()).forEach(System.out::println);
     }
 
+    public void practice4 () {
+        int[] numbers = {3, 5, 10, 14, 15};
+        Arrays.stream(numbers).filter(a->a%5==0).map(a->a*2).forEach(System.out::println);
+    }
 
 }
