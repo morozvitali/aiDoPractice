@@ -43,8 +43,8 @@ public class Main {
     public static void main(String[] args) {
         Main m = new Main();
         m.practice3();
+        m.practice5().stream().forEach(System.out::println);
     }
-
 
     public List <Integer> practice4 () {
         int [] a = new int [] {6, 9, 3, 4, 3, 2};
@@ -52,5 +52,10 @@ public class Main {
         //  → [5, 4]
         return Arrays.stream(a).boxed().filter(x->Arrays.stream(b).noneMatch(y->y%x == 0)).toList();
     }
-}
 
+    public  List <String> practice5 () {
+        String [] a = new String [] {"hi", "hello", "world"};
+        int [] b = new int [] {2};
+        return Arrays.stream(a).filter(x->Arrays.stream(b).noneMatch(y-> x.length() == y)).toList();
+    }
+}
