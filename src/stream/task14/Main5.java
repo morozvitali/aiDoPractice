@@ -33,5 +33,4 @@ public class Main5 {
     public long counting (String sentence) {
         return sentence.chars().filter(a->"aeiou".indexOf(a) >=0).count();
     }
-
 }
