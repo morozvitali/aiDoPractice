@@ -25,5 +25,13 @@ public class Main5 {
         return Arrays.stream(words).collect(Collectors.groupingBy(a->a.charAt(0)));
     }
 
+    public Map<String, Integer> practice5 () {
+        String[] words = {"sky", "apple", "moon", "dry", "banana"};
+        return Arrays.stream(words).filter(a->counting(a)>1).collect(Collectors.toMap(a->a, a->(int)counting(a)));
+    }
+
+    public long counting (String sentence) {
+        return sentence.chars().filter(a->"aeiou".indexOf(a) >=0).count();
+    }
 
 }
