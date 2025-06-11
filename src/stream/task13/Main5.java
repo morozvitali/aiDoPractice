@@ -2,6 +2,7 @@ package stream.task13;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main5 {
@@ -24,6 +25,10 @@ public class Main5 {
     public List<String> practice4 () {
         String[] words = {"java", "code", "fun", "javafx", "loop"};
         return Arrays.stream(words).filter(a->a.length() == 4).map(a->a.toUpperCase()).collect(Collectors.toList());
-    }\
+    }
 
+    public Map<String, Long> practice5 () {
+        String[] words = {"apple", "banana", "cherry"};
+        return Arrays.stream(words).collect(Collectors.toMap(a->a, a->a.chars().filter(c->"aeiou".indexOf(c) >= 0).count()));
+    }
 }
