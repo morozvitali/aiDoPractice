@@ -25,7 +25,6 @@ public class Main5 {
     public Map <String, Boolean> mapping () {
         String[] words = {"sky", "apple", "dry", "orange", "sun"};
         return Arrays.stream(words).collect(Collectors.toMap(a->a, a->isContain(a)));
-
     }
 
     public boolean isContain (String s) {
