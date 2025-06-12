@@ -11,6 +11,14 @@ public class Main6 {
         return Arrays.stream(words).map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.length()));
     }
 
+    public Map <Integer, Long> practice2 () {
+        String[] words = {"apple", "banana", "dog", "kiwi", "plum"};
+        return Arrays.stream(words)
+                .filter(a->a.chars()
+                        .anyMatch(c->"aeiou".indexOf(c) >=0))
+                .collect(Collectors
+                    .groupingBy(a->a.length(), Collectors.counting()));
+    }
 
 
 }
