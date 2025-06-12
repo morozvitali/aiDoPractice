@@ -59,3 +59,4 @@ sun=true
 
 Тип: Map<String, Boolean>
 Підказка: використовуй .toMap(...) і chars().anyMatch(...)
+Підказка: використовуй .toMap(...) і chars().filter(...).count > 0 ? true : false;

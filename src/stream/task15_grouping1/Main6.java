@@ -20,4 +20,18 @@ public class Main6 {
         String[] words = {"apple", "banana", "apricot", "blue", "berry", "cherry"};
         return Arrays.stream(words).map(a->a.toLowerCase()).collect(Collectors.groupingBy(a->a.charAt(0), Collectors.counting()));
     }
+
+    public Map<String, Boolean> practice4 () {
+        String[] words = {"sky", "apple", "dry", "orange", "sun"};
+        return Arrays.stream(words).collect(Collectors.toMap(a->a, a->isContain(a)));
+    }
+
+    public Map<String, Boolean> practice5 () {
+        String[] words = {"sky", "apple", "dry", "orange", "sun"};
+        return Arrays.stream(words).collect(Collectors.toMap(a->a, a-> a.chars().anyMatch(c->"aeiou".indexOf(c) >= 0)));
+    }
+
+    public boolean isContain(String s) {
+        return s.chars().filter(a->"aeiou".indexOf(a) >= 0).count() > 0 ? true : false;
+    }
 }
