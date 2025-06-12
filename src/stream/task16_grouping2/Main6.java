@@ -20,5 +20,13 @@ public class Main6 {
                     .groupingBy(a->a.length(), Collectors.counting()));
     }
 
+    public Map <Boolean, List <String>> practice3 () {
+        String[] words = {"apple", "sky", "banana", "dry", "orange"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(a->isHasVowel(a)));
+    }
+
+    public boolean isHasVowel (String s) {
+        return s.chars().anyMatch(a->"aeiou".indexOf(a) >= 0 ? true : false);
+    }
 
 }
