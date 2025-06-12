@@ -29,4 +29,11 @@ public class Main6 {
         return s.chars().anyMatch(a->"aeiou".indexOf(a) >= 0 ? true : false);
     }
 
+    public Map <Integer, Long> practice4 () {
+        String[] words = {"apple", "banana", "orange", "umbrella",
+                "ant", "dog", "egg"};
+        return Arrays.stream(words)
+                .filter(a->"aeiou".indexOf(a.charAt(0)) >=0)
+                .collect(Collectors.groupingBy(b->b.length(), Collectors.counting()));
+    }
 }
