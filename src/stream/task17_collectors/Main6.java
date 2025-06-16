@@ -36,4 +36,8 @@ public class Main6 {
         return numbers.stream().collect(Collectors.groupingBy(a->a%2==0));
     }
 
+    public Map <Character, List<String>> practice6 () {
+        List<String> words = List.of("apple", "ant", "banana", "bat", "car");
+        return words.stream().map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.charAt(0)));
+    }
 }
