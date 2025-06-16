@@ -40,4 +40,10 @@ public class Main6 {
         List<String> words = List.of("apple", "ant", "banana", "bat", "car");
         return words.stream().map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.charAt(0)));
     }
+
+    public Map <Character, List<Integer>> practice7 () {
+        List<String> words = List.of("apple", "ant", "banana", "bat", "car");
+        return words.stream().collect(Collectors
+                .groupingBy(word->word.charAt(0), Collectors.mapping(a->a.length(), Collectors.toList())))
+    }
 }
