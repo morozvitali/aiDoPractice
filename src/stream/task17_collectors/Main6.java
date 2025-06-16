@@ -71,7 +71,12 @@ public class Main6 {
                         Collectors.joining(", ")));
     }
 
-
+    public Map <Integer, Integer> practice12 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+     return numbers.stream()
+             .collect(Collectors.groupingBy(a->a%3,
+                     Collectors.reducing(0, Integer::sum)));
+    }
 }
 
 
