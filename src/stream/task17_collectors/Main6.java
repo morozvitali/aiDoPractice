@@ -31,5 +31,9 @@ public class Main6 {
         return words.stream().collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
     }
 
+    public Map <Boolean, List<Integer>> practice5 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.groupingBy(a->a%2==0));
+    }
 
 }
