@@ -64,5 +64,33 @@ public class Main6 {
         return numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Count " + count));
     }
 
+    public Map <Character, String> practice11 () {
+        List<String> words = List.of("apple", "ant", "banana", "bat", "car");
+        return words.stream()
+                .collect(Collectors.groupingBy(a->a.charAt(0),
+                        Collectors.joining(", ")));
+    }
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
