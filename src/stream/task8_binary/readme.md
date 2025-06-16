@@ -232,9 +232,7 @@ isPowerOfTwo(10) → false
 🧩 Умова:
 Замість конкретної задачі countBits(int n), створи утиліту:
 
-java
-Copy
-Edit
+
 public class BitUtils {
 public static int countSetBits(int n);
 public static int countUnsetBits(int n);
