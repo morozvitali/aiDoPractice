@@ -44,6 +44,14 @@ public class Main6 {
     public Map <Character, List<Integer>> practice7 () {
         List<String> words = List.of("apple", "ant", "banana", "bat", "car");
         return words.stream().collect(Collectors
-                .groupingBy(word->word.charAt(0), Collectors.mapping(a->a.length(), Collectors.toList())))
+                .groupingBy(word->word.charAt(0), Collectors
+                        .mapping(a->a.length(), Collectors.toList())));
     }
+
+    public Map <Boolean, Long> practice8 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy((n-> n%2 == 0), Collectors.counting());
+    }
+
+
 }
