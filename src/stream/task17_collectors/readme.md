@@ -323,7 +323,7 @@ Collectors.toList()
 
 🔍 Підказка: .entrySet().stream().sorted(...).collect(...)
 
-Map<Integer, List<String>> input = Map.of(
+Map <Integer, List<String>> input = Map.of(
 2, List.of("hi"),
 3, List.of("sun", "day", "sky"),
 4, List.of("book", "Java")
@@ -345,6 +345,9 @@ Map.Entry::getValue,
 LinkedHashMap::new
 ));
 }
+
+--------------------------------------------------------------
+
 ✅ Задача 15: reducing зі String
 📌 Є список слів. Виведи найдовше слово за допомогою reducing.
 
@@ -352,7 +355,6 @@ LinkedHashMap::new
 
 List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
 🧪 Очікувано: "book" або "Java"
-
 📦 Початковий код:
 
 public String findLongestWord() {
@@ -363,6 +365,9 @@ return words.stream()
 (a, b) -> a.length() >= b.length() ? a : b
 ));
 }
+
+--------------------------------------------------------------
+
 ✅ Задача 16: groupingBy з сортуванням значень у групі
 📌 Є список слів. Згрупуй за першою літерою, і відсортуй слова в кожній групі за довжиною.
 
