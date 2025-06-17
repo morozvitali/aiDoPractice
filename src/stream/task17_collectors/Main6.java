@@ -102,6 +102,10 @@ public class Main6 {
     }
 
 
+    public Map <Character, List<String>> practice16 () {
+        List<String> words = List.of("apple", "ant", "alphabet", "axe", "banana", "bat");
+        return words.stream().collect(Collectors.groupingBy(a->a.charAt(0),Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().sorted(Comparator.comparingInt(String::length)).toList())));
+    }
 }
 
 
