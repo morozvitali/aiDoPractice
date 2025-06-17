@@ -37,5 +37,4 @@ public class MyLogger2_2 {
         MyLogger2_2 logger2 = MyLogger2_2.getInstance();
         logger2.log("message 22", "testing");
     }
-
 }
