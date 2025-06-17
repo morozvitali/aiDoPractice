@@ -1,9 +1,6 @@
 package stream.task17_collectors;
 
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main6 {
@@ -77,6 +74,14 @@ public class Main6 {
              .collect(Collectors.groupingBy(a->a%3,
                      Collectors.reducing(0, Integer::sum)));
     }
+
+    public Map <Integer, List <String>> practice13 () {
+        List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(a->a.length(), TreeMap::new, Collectors.toList()));
+    }
+
+
+
 }
 
 
