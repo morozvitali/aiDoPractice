@@ -47,5 +47,15 @@ public class Main18 {
         return Arrays.stream(data).flatMapToInt(a-> Arrays.stream(a)).reduce((a,b)->a<b?a:b).orElse(-1);
     }
 
+    public int practice3 () {
+        int[][] data = {
+                {-3, 5},
+                {2},
+                {-1, 4}
+        };
+        return Arrays.stream(data).flatMapToInt(a->Arrays.stream(a)).filter(a->a>=0).reduce((a,b)->a+b).orElse(-1);
+    }
+
+
 
 }
