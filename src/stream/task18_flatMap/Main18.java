@@ -99,4 +99,9 @@ public class Main18 {
         return b==0 ? a : gcd(b, a%b);
     }
 
+    public List <Integer> practice8 () {
+        return List.of(10, "hello", true, 42, false, "42").stream().filter(x->x instanceof Integer).collect(Collectors.toList());
+    }
+
+
 }
