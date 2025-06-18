@@ -92,7 +92,6 @@ public class Main18 {
                 {24, 36}
         };
         return Arrays.stream(data).flatMapToInt(ar->Arrays.stream(ar)).reduce((a,b) -> gcd(a,b)).orElse(-1);
-
     }
 
     public int gcd (int a, int b) {
@@ -121,6 +120,10 @@ public class Main18 {
 
     public List <Boolean> practice11 () {
         return List.of("yes", true, false, true, 1).stream().filter(a->a instanceof Boolean).map(a->(Boolean)a).filter(a->a==true).toList();
+    }
+
+    public List <String> practice12 () {
+        return List.of("hi", 123, "bye", false).stream().filter(a->a instanceof String).map(a->(String)((String) a).toUpperCase()).toList();
     }
 
 }
