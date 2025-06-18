@@ -100,8 +100,21 @@ public class Main18 {
     }
 
     public List <Integer> practice8 () {
-        return List.of(10, "hello", true, 42, false, "42").stream().filter(x->x instanceof Integer).collect(Collectors.toList());
+        return List.of(10, "hello", true, 42, false, "42")
+                .stream()
+                .filter(x->x instanceof Integer)
+                .map(a->(Integer)a)
+                .collect(Collectors.toList());
     }
+
+    public List <String> practice9 () {
+        return List.of("hello", 1, 2.5, true, "world")
+                .stream()
+                .filter(a->a instanceof String)
+                .map(a->(String)a)
+                .collect(Collectors.toList());
+    }
+
 
 
 }
