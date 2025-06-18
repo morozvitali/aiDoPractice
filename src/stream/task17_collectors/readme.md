@@ -395,17 +395,15 @@ list -> list.stream()
 }
 
 --------------------------------------------------------------
-
 🎓 Наступний блок — STREAM API – Частина 4: поглиблені колектори. Тут підключаємо flatMapping, 
 partitioningBy + mapping, роботу з Set, LinkedHashMap, та міксування кількох колекторів. Звісно, 
 кожна задача має свою назву, коротку підказку, очікуваний результат і початковий код 💪
 
 ✅ Задача 17: groupingBy + flatMapping (Java 16+)
 📌 Є список людей. У кожного є список захоплень. Згрупуй усі захоплення за першою літерою.
-
 🔍 Підказка: використай Collectors.flatMapping(...) (лише з Java 16+).
 
-record Person(String name, List<String> hobbies) {}
+ Person(String name, List<String> hobbies) {}
 
 List<Person> people = List.of(
 new Person("Alice", List.of("Reading", "Running")),
@@ -414,13 +412,11 @@ new Person("Charlie", List.of("Cooking", "Reading"))
 );
 🧪 Очікувано:
 
-{
-R=[Reading, Running, Running, Reading],
+{R=[Reading, Running, Running, Reading],
 B=[Boxing],
-C=[Cooking]
-}
-📦 Початковий код:
+C=[Cooking]}
 
+📦 Початковий код:
 public Map<Character, Set<String>> groupHobbiesByFirstLetter() {
 record Person(String name, List<String> hobbies) {}
 
@@ -439,6 +435,7 @@ return people.stream().collect(Collectors.groupingBy(
     ));
 }
 🪄 Мініпідказка: flatMapping всередині groupingBy дозволяє одразу розпаковувати підсписки.
+-----------------------------------------------------------
 
 ✅ Задача 18: partitioningBy + mapping
 📌 Є список людей. Поділи їх на повнолітніх та неповнолітніх, але збережи тільки імена.

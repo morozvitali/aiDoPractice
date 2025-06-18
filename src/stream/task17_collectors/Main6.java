@@ -106,6 +106,33 @@ public class Main6 {
         List<String> words = List.of("apple", "ant", "alphabet", "axe", "banana", "bat");
         return words.stream().collect(Collectors.groupingBy(a->a.charAt(0),Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().sorted(Comparator.comparingInt(String::length)).toList())));
     }
+
+    public Map <Character,Set<String>> practice17() {
+        List<Person> people = List.of(
+                new Person("Alice", List.of("Reading", "Running")),
+                new Person("Bob", List.of("Boxing", "Running")),
+                new Person("Charlie", List.of("Cooking", "Reading"))
+        );
+
+        // групуємо всі хобі по першій літері
+        // головне — зібрати потік усіх хобі з усіх людей
+
+        return people.stream()
+                .flatMap(person -> person.hobbies.stream())
+                .collect(Collectors.groupingBy(
+                hobby -> hobby.charAt(0),
+                        Collectors.toSet()
+        ));
+    }
+}
+
+class Person {
+    String name;
+    List<String> hobbies;
+    Person(String name, List<String> hobbies) {
+        this.name = name;
+        this.hobbies = new ArrayList<>();
+    }
 }
 
 
