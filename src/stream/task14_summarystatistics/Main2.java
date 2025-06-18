@@ -1,4 +1,4 @@
-package stream.task14;
+package stream.task14_summarystatistics;
 
 import java.util.Arrays;
 import java.util.List;
