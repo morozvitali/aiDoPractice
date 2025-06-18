@@ -65,4 +65,13 @@ public class Main18 {
         return Arrays.stream(data).flatMapToInt(a->Arrays.stream(a)).filter(a->a%3==0).reduce((a,b)-> Math.max(a, b)).orElse(-1);
     }
 
+    public int practice5 () {
+        int[][] data = {
+                {2, 3},
+                {4}
+        };
+        return Arrays.stream(data).flatMapToInt(ar->Arrays.stream(ar)).filter(a->a%2==0).map(n->n*n).reduce((a,b)-> a+b).orElse(-1);
+    }
+
+
 }
