@@ -86,7 +86,17 @@ public class Main18 {
         return stat.getCount() == 0 ? -1 : (int) stat.getAverage();
     }
 
+    public int practice7 () {
+        int[][] data = {
+                {12},
+                {24, 36}
+        };
+        return Arrays.stream(data).flatMapToInt(ar->Arrays.stream(ar)).reduce((a,b) -> gcd(a,b)).orElse(-1);
 
+    }
 
+    public int gcd (int a, int b) {
+        return b==0 ? a : gcd(b, a%b);
+    }
 
 }
