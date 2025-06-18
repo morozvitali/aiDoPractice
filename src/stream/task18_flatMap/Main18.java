@@ -1,10 +1,11 @@
 package stream.task18_flatMap;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main18 {
-    public List<Integer> practice1 () {
+    public List<Integer> practice1_0 () {
         List<List<Integer>> weeklyData = List.of(
                 List.of(40, 55, 60),
                 List.of(30, 70),
@@ -15,4 +16,16 @@ public class Main18 {
                 .flatMap(list->list.stream())
                 .collect(Collectors.toList()).stream().filter(a->a<50).toList();
     }
+
+    public int practice1_1 () {
+        int[] numbers = {3, 11, 6, 7, 10};
+        return Arrays.stream(numbers).filter(n->n%2==0).reduce((a,b)-> a<b ? a : b).orElse(-1);
+    }
+
+    public int practice1_2 () {
+        int[] numbers = {-3, 5, 2, -1, 4};
+        return Arrays.stream(numbers).filter(a->a<0).reduce((a,b)->a*b).orElse(1);
+    }
+
+
 }
