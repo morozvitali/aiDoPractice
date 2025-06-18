@@ -1,6 +1,7 @@
 package stream.task18_flatMap;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -72,6 +73,20 @@ public class Main18 {
         };
         return Arrays.stream(data).flatMapToInt(ar->Arrays.stream(ar)).filter(a->a%2==0).map(n->n*n).reduce((a,b)-> a+b).orElse(-1);
     }
+
+    public int practice6 () {
+        int[][] data = {
+                {3, 5},
+                {7}
+        };
+
+        int [] flat =  Arrays.stream(data).flatMapToInt(ar->Arrays.stream(ar)).filter(a->a%2 != 0).toArray();
+
+        IntSummaryStatistics stat = Arrays.stream(flat).summaryStatistics();
+        return stat.getCount() == 0 ? -1 : (int) stat.getAverage();
+    }
+
+
 
 
 }
