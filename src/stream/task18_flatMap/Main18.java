@@ -115,6 +115,9 @@ public class Main18 {
                 .collect(Collectors.toList());
     }
 
+    public List <Integer> practice10 () {
+        return List.of("a", 3, 15, 11, 9, "99").stream().filter(a-> a instanceof Integer).map(a->(Integer)a).filter(n->n>10).collect(Collectors.toList())
+    }
 
 
 }
