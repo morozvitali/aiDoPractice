@@ -135,6 +135,11 @@ public class Main6 {
         );
         return people.stream().collect(Collectors.partitioningBy((p -> ((People) p).getAge() > 18) , Collectors.mapping(p->((People)p).getName(), Collectors.toList())));
     }
+
+    public Map <Character, TreeSet <String>> practice19 () {
+        List<String> words = List.of("apple", "ant", "alpha", "banana", "bat", "car", "cat");
+        return words.stream().collect(Collectors.groupingBy(word -> word.charAt(0), Collectors.toCollection(TreeSet::new)));
+    }
 }
 
 class Person {

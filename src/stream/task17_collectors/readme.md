@@ -476,9 +476,9 @@ return people.stream().collect(Collectors.partitioningBy(
 
 -------------------------------------------------------------------------------
 
-
 ✅ Задача 19: groupingBy + SortedSet
-📌 Згрупуй слова за першою літерою, без повторень, у відсортованому вигляді.
+📌 Згрупуй слова за першою літерою, без повторень, 
+у відсортованому вигляді.
 
 🔍 Підказка: Collectors.toCollection(TreeSet::new)
 
@@ -493,13 +493,16 @@ c=[car, cat]
 📦 Початковий код:
 
 public Map<Character, Set<String>> groupToSortedSets() {
-List<String> words = List.of("apple", "ant", "alpha", "banana", "bat", "car", "cat");
+List<String> words = List.of("apple", "ant", "alpha", 
+"banana", "bat", "car", "cat");
 return words.stream().collect(Collectors.groupingBy(
 word -> word.charAt(0),
 Collectors.toCollection(TreeSet::new)
 ));
 }
 🪄 Мініпідказка: TreeSet автоматично сортує вміст.
+
+-------------------------------------------------------------------------------
 
 ✅ Задача 20: groupingBy + mapping + collectingAndThen
 📌 Є список чисел. Згрупуй за остачею від ділення на 2. 
