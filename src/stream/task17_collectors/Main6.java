@@ -125,7 +125,6 @@ public class Main6 {
         ));
     }
 
-
     public Map <Boolean, List<String>> practice18 () {
         List<People> people = List.of(
                 new People("Alice", 17),
@@ -149,6 +148,16 @@ public class Main6 {
                 n -> n % 2 == 0,
                 Collectors.collectingAndThen(
                         Collectors.mapping(n -> n, Collectors.toSet()), Set::size)));
+    }
+
+    public Map <Integer, Long> practice21 () {
+        List<Integer> nums = List.of(5, 3, 5, 2, 3, 3, 2);
+        Map <Integer, Long> map = nums.stream().collect(Collectors.groupingBy(n->n, Collectors.counting()));
+        return map.entrySet().stream().sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (a,b) ->b, LinkedHashMap::new));
     }
 }
 
