@@ -138,7 +138,17 @@ public class Main6 {
 
     public Map <Character, TreeSet <String>> practice19 () {
         List<String> words = List.of("apple", "ant", "alpha", "banana", "bat", "car", "cat");
-        return words.stream().collect(Collectors.groupingBy(word -> word.charAt(0), Collectors.toCollection(TreeSet::new)));
+        return words.stream().collect(Collectors
+                .groupingBy(word -> word.charAt(0),
+                        Collectors.toCollection(TreeSet::new)));
+    }
+
+    public Map <Boolean, Integer> practice20 () {
+        List<Integer> numbers = List.of(1, 2, 2, 3, 4, 5, 6, 6, 6);
+        return numbers.stream().collect(Collectors.groupingBy(
+                n -> n % 2 == 0,
+                Collectors.collectingAndThen(
+                        Collectors.mapping(n -> n, Collectors.toSet()), Set::size)));
     }
 }
 
