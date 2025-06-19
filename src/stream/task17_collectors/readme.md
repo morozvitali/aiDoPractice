@@ -450,13 +450,12 @@ new Person("Charlie", 15),
 new Person("Diana", 30)
 );
 🧪 Очікувано:
-
 {
 true=[Bob, Diana],
 false=[Alice, Charlie]
 }
-📦 Початковий код:
 
+📦 Початковий код:
 public Map<Boolean, List<String>> partitionByAgeAndMapToNames() {
 record Person(String name, int age) {}
 
@@ -474,6 +473,9 @@ return people.stream().collect(Collectors.partitioningBy(
 }
 🪄 Мініпідказка: partitioningBy(...) повертає Map<Boolean, ...>, 
 а mapping(...) може вкластися всередину.
+
+-------------------------------------------------------------------------------
+
 
 ✅ Задача 19: groupingBy + SortedSet
 📌 Згрупуй слова за першою літерою, без повторень, у відсортованому вигляді.

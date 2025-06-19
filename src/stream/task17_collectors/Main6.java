@@ -124,6 +124,17 @@ public class Main6 {
                         Collectors.toSet()
         ));
     }
+
+
+    public Map <Boolean, List<String>> practice18 () {
+        List<People> people = List.of(
+                new People("Alice", 17),
+                new People("Bob", 22),
+                new People("Charlie", 15),
+                new People("Diana", 30)
+        );
+        return people.stream().collect(Collectors.partitioningBy((p -> ((People) p).getAge() > 18) , Collectors.mapping(p->((People)p).getName(), Collectors.toList())));
+    }
 }
 
 class Person {
@@ -136,7 +147,31 @@ class Person {
 }
 
 
+    class People {
+        private String name;
+        private int age;
 
+        People(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+    }
 
 
 
