@@ -49,7 +49,10 @@ public class Main6 {
 
     }
 
-
+    public void practice7 () {
+        String[] words = {"apple", "orange", "banana", "ice", "umbrella", "echo"};
+        Arrays.stream(words).filter(w-> w.matches("^[aeiou].*"));
+    }
 
 
 
