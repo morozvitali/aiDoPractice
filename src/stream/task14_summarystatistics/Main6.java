@@ -54,7 +54,10 @@ public class Main6 {
         Arrays.stream(words).filter(w-> w.matches("^[aeiou].*"));
     }
 
-
+    public Map <Character, Double> practice8 () {
+        String[] words = {"apple", "ant", "banana", "blue", "berry", "dolphin"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(a->a.length())));
+    }
 
 
 
