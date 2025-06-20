@@ -68,9 +68,28 @@ public class Main6 {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public void practice10 () {
+        String[] words = {"apple", "moon", "sky", "banana", "loop"};
+        IntSummaryStatistics stats = Arrays.stream(words).filter(a-> hasRepeatingLetters(a))
+                .mapToInt(a->a.length())
+                .summaryStatistics();
 
+        System.out.println(stats.getCount());
+        System.out.println(stats.getAverage());
+        System.out.println(stats.getMax());
+        System.out.println(stats.getMin());
+        System.out.println(stats.getSum());
+    }
 
-
+    public boolean hasRepeatingLetters (String s) {
+        Set <Character> set = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            if (!set.add(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 

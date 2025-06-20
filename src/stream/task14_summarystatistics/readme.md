@@ -220,7 +220,6 @@ String[] words = {"apple", "moon", "sky", "banana", "loop"};
 .mapToInt(String::length)
 .summaryStatistics()
 
-
 ------------------------------------------------------------
 
 🚀 Несамовиті завдання по Stream API — Частина III (№11–15)
