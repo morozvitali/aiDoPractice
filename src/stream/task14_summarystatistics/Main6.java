@@ -24,6 +24,25 @@ public class Main6 {
                 .filter(a->a.length()%2==0)
                 .map(a->a.toLowerCase())
                 .mapToInt(a->a.length()).sum();
-
     }
+
+    public Map<Character, IntSummaryStatistics> practice4() {
+        String[] words = {"apple", "ant", "banana", "blue", "berry", "dog", "dolphin"};
+        return Arrays.stream(words)
+                .filter(w->w.length() > 4)
+                .collect(Collectors.groupingBy(w-> (char) w.length(), Collectors.summarizingInt(a->a.length())));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
