@@ -33,7 +33,14 @@ public class Main6 {
                 .collect(Collectors.groupingBy(w-> (char) w.length(), Collectors.summarizingInt(a->a.length())));
     }
 
-
+    public void practice5 () {
+        String[] words = {"sky", "apple", "moon", "dry", "banana"};
+        Arrays.stream(words).filter(a->a.length() > 3)
+                .filter(a->a.chars()
+                        .filter(c->"aeiou".indexOf(c) >= 0).count() > 1)
+                .collect(Collectors.toMap(a->a, a-> a.chars()
+                        .filter(c->"aeiou".indexOf(c)>=0).count()));
+    }
 
 
 
