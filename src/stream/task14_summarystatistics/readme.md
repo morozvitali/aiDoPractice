@@ -52,7 +52,6 @@ int[] numbers = {2, 4, 2, 6, 8, 4, 10, 10, 12};
 📦 Підказка:
 
 Arrays.stream(numbers)
-.filter(n -> n % 2 == 0)
 .distinct()
 .summaryStatistics()
 
@@ -69,7 +68,6 @@ List<String> words = List.of("APPLE", "Banana", "CHERRY", "kiwi", "PLUM");
 
 📦 Підказка:
 
-.collect(Collectors.toList())
 .stream().mapToInt(String::length).sum()
 
 ---------------------------------------------------------------
