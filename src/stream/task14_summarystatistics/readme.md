@@ -154,7 +154,10 @@ averagingInt(String::length)
 )
 
 
-🔍 Що реально відбувається тут:
+🔍 Що реально відбувається тут: 
+використання методу Collectors.getAverageInt() 
+дані для якого збираються за допомогою groupingBy 
+
 Map<Character, Double> map = Arrays.stream(words)
 .collect(Collectors.groupingBy(
 w -> w.charAt(0),
@@ -186,6 +189,23 @@ a=4, e=2, o=1, u=1
 .filter(ch -> "aeiou".indexOf(ch) >= 0)
 .collect(groupingBy(Function.identity(), counting()))
 
+Function.identity() Означає: "використай сам елемент як ключ"
+
+💡 Пояснення по кроках:
+1 words.stream() — потік слівMap
+2 flatMap(...) — перетворюємо кожне слово на символи,
+3 і розплющуємо їх в один загальний потік символів
+4 .mapToObj(c -> (char)c) — перетворює int на char
+5 .filter(...) — залишаємо тільки голосні
+6 .collect(...) — групуємо по самій букві та рахуємо
+
+Arrays.stream(words)
+.flatMap(w -> w.toLowerCase().chars().mapToObj(c -> (char) c))
+.filter(ch -> "aeiou".indexOf(ch) >= 0)
+.collect(Collectors.groupingBy(
+Function.identity(),
+Collectors.counting()
+));
 ---------------------------------------------------------------
 
 ✅ Завдання 10: Знайди IntSummaryStatistics 
