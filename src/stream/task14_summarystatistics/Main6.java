@@ -33,16 +33,21 @@ public class Main6 {
                 .collect(Collectors.groupingBy(w-> (char) w.length(), Collectors.summarizingInt(a->a.length())));
     }
 
-    public void practice5 () {
+    public Map <String, Integer> practice5 () {
         String[] words = {"sky", "apple", "moon", "dry", "banana"};
-        Arrays.stream(words).filter(a->a.length() > 3)
+        return Arrays.stream(words).filter(a->a.length() > 3)
                 .filter(a->a.chars()
                         .filter(c->"aeiou".indexOf(c) >= 0).count() > 1)
-                .collect(Collectors.toMap(a->a, a-> a.chars()
-                        .filter(c->"aeiou".indexOf(c)>=0).count()));
+                .collect(Collectors.toMap(a->a, a-> Math.toIntExact(a.chars()
+                        .filter(c -> "aeiou".indexOf(c) >= 0).count())));
     }
 
+    public int practice6 () {
+        String[] words = {"sky", "apple", "moon", "dry", "sun"};
+        return (int) Arrays.stream(words).filter(w-> w.matches(".*[aeiou].*"))
+                .mapToInt(a->a.length()).summaryStatistics().getAverage();
 
+    }
 
 
 
