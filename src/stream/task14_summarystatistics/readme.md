@@ -206,6 +206,7 @@ Arrays.stream(words)
 Function.identity(),
 Collectors.counting()
 ));
+
 ---------------------------------------------------------------
 
 ✅ Завдання 10: Знайди IntSummaryStatistics 
