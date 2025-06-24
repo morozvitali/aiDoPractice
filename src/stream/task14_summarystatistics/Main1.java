@@ -28,7 +28,8 @@ public class Main1 {
     public void practice4 () {
         String[] words = {"apple", "ant", "banana",
                 "blue", "berry", "dog", "dolphin"};
-        Arrays.stream(words).filter(a->a.length()>4).collect(Collectors.groupingBy(w-))
+        Arrays.stream(words).filter(a->a.length()>4).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summarizingInt(w->w.length())));
+
     }
 
     public Map <String, Integer> practice5 () {
@@ -41,4 +42,6 @@ public class Main1 {
     public long countVovels (String s) {
         return s.chars().filter(c->"aeiou".indexOf(c) >=0).count();
     }
+
+
 }
