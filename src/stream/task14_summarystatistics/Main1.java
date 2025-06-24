@@ -1,9 +1,6 @@
 package stream.task14_summarystatistics;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class Main1 {
     public Optional<Map.Entry<String, Integer>> practice1 () {
@@ -20,4 +17,11 @@ public class Main1 {
                 .summaryStatistics();
         return stats.getCount();
     }
+
+    public int practice3 () {
+        List<String> words = List.of("APPLE",
+                "Banana", "CHERRY", "kiwi", "PLUM");
+        return words.stream().mapToInt(a->a.length()).sum();
+    }
+
 }
