@@ -52,5 +52,11 @@ public class Main1 {
                 .mapToInt(w-> w.length()).count();
     }
 
+    public void practice7 () {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+        Arrays.stream(words).map(a->a.toLowerCase()).filter(a-> a.matches("^[aeiou].*"))
+                .min(Comparator.comparingInt(a->a.length()));
 
+    }
 }

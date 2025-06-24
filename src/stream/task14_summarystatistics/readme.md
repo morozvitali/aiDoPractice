@@ -132,7 +132,8 @@ String[] words = {"sky", "apple", "moon",
 ✅ Завдання 7: Знайди найкоротше слово,
 яке починається з голосної
 
-String[] words = {"apple", "orange", "banana", "ice", "umbrella", "echo"};
+String[] words = {"apple", "orange", "banana",
+"ice", "umbrella", "echo"};
 🧪 Очікувано: "ice"
 
 📦 Підказка:
