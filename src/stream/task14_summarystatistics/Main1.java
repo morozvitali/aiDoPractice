@@ -59,4 +59,12 @@ public class Main1 {
                 .min(Comparator.comparingInt(a->a.length()));
 
     }
+
+    public Map <Character, Double> practice8 () {
+        String[] words = {"apple", "ant", "banana", "blue", "berry", "dolphin"};
+        return Arrays.stream(words)
+                .collect(Collectors.groupingBy(w->w.charAt(0),
+                        Collectors.averagingDouble(String::length)));
+    }
+
 }
