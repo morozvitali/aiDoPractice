@@ -43,5 +43,14 @@ public class Main1 {
         return s.chars().filter(c->"aeiou".indexOf(c) >=0).count();
     }
 
+    public Long practice6 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words)
+                .filter(a->a.matches(".*[aeiou].*"))
+                .filter(w -> countVovels(w) > 0)
+                .mapToInt(w-> w.length()).count();
+    }
+
 
 }
