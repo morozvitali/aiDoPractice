@@ -73,4 +73,15 @@ public class Main1 {
                 .filter(ch -> "aeiou".indexOf(ch)>=0)
                 .collect(Collectors.groupingBy(a->a, Collectors.counting()));
     }
+
+    public IntSummaryStatistics practice10 () {
+        String[] words = {"apple", "moon", "sky", "banana", "loop"};
+        return Arrays.stream(words).filter(w->hasRepeatingLetters(w)).mapToInt(w->w.length()).summaryStatistics()
+    }
+
+    public boolean hasRepeatingLetters(String s) {
+        return s.chars().distinct().count() == s.length();
+    }
+
+
 }
