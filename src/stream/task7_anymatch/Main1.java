@@ -8,5 +8,9 @@ public class Main1 {
         return list.stream().anyMatch(a-> a < 0);
     }
 
+    public boolean practice2 () {
+        List<Integer> list = List.of(2, 5, 10, 20);
+        return list.stream().allMatch(a-> a>0);
+    }
 
 }
