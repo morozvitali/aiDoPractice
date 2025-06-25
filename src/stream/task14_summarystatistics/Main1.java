@@ -99,6 +99,11 @@ public class Main1 {
         return Arrays.stream(words).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public IntSummaryStatistics practice14 () {
+        String[] words = {"cat", "apple", "grape", "banana", "fig", "cherry"};
+        return Arrays.stream(words).filter(a->a.length() >=4 && a.length() <=6)
+                .mapToInt(a->a.length()).summaryStatistics();
+    }
 
 
 }
