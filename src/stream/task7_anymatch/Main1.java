@@ -25,6 +25,11 @@ public class Main1 {
 
     public boolean practice5 () {
         List<String> names = List.of("Alice", "Bob", "Charlie");
-        names.stream().allMatch(w -> Character.isUpperCase(w.charAt(0)));
+        return names.stream().allMatch(w -> Character.isUpperCase(w.charAt(0)));
+    }
+
+    public boolean practice6 () {
+        List<String> words = List.of("racecar", "apple", "madam");
+        return words.stream().anyMatch(a-> a.equals(new StringBuilder(a).reverse().toString()));
     }
 }
