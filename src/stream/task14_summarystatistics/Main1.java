@@ -76,12 +76,15 @@ public class Main1 {
 
     public IntSummaryStatistics practice10 () {
         String[] words = {"apple", "moon", "sky", "banana", "loop"};
-        return Arrays.stream(words).filter(w->hasRepeatingLetters(w)).mapToInt(w->w.length()).summaryStatistics()
+        return Arrays.stream(words).filter(w->hasRepeatingLetters(w)).mapToInt(w->w.length()).summaryStatistics();
     }
 
     public boolean hasRepeatingLetters(String s) {
         return s.chars().distinct().count() == s.length();
     }
 
-
+    public List <String> practice11 () {
+        String[] words = {"education", "questionnaire", "house", "audio", "universe"};
+        return Arrays.stream(words).filter(w-> "aeiou".chars().allMatch(c->w.indexOf(c) >=0)).collect(Collectors.toList());
+    }
 }
