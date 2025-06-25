@@ -8,6 +8,10 @@ public class Main1 {
         return list.stream().limit(3).toList();
     }
 
+    public void practice2 () {
+        List<Integer> list = List.of(5, 6, 7, 8, 9);
+        list.stream().skip(2).forEach(System.out::println);
+    }
 
 
 }
