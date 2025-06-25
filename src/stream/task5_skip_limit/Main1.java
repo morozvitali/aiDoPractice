@@ -18,4 +18,10 @@ public class Main1 {
         list.stream().skip(1).limit(3).forEach(System.out::println);
     }
 
+    public void practice4 () {
+        List<Integer> list = List.of(1, 2, 3, 4, 5);
+        list.stream().skip(list.size()-2).forEach(System.out::println);
+    }
+
+
 }
