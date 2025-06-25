@@ -213,7 +213,7 @@ Collectors.counting()
 
 ---------------------------------------------------------------
 
-✅ Завдання 10: Знайди IntSummaryStatistics 
+✅ Завдання 10: Знайди IntSummaryStatistics
 по довжині всіх слів, які мають щонайменше 2 однакові літери
 
 String[] words = {"apple", "moon", "sky", "banana", "loop"};

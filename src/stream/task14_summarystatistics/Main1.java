@@ -67,4 +67,10 @@ public class Main1 {
                         Collectors.averagingDouble(String::length)));
     }
 
+    public Map <Character, Long> practice9 () {
+        String[] words = {"apple", "orange", "banana", "umbrella"};
+        return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c))
+                .filter(ch -> "aeiou".indexOf(ch)>=0)
+                .collect(Collectors.groupingBy(a->a, Collectors.counting()));
+    }
 }
