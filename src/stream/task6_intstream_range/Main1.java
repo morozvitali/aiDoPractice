@@ -30,6 +30,9 @@ public class Main1 {
         IntStream.rangeClosed (1,30).filter(a->a%4==0).forEach(System.out::println);
     }
 
-
+    public int practice6 () {
+        return IntStream.range(1,31).filter(a->a%2 != 0)
+                .sum();
+    }
 
 }
