@@ -13,4 +13,10 @@ public class Main1 {
                 .count();
     }
 
+    public int practice3 () {
+        return IntStream.rangeClosed(21,40)
+                .filter(a->a%2 !=0)
+                .min()
+                .orElse(-1);
+    }
 }
