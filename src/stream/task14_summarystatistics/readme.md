@@ -294,6 +294,8 @@ String[] words = {"apple", "tree", "orange", "banana", "loop"};
 .filter(ch -> ch == c).count() >= 2))
 .findFirst()
 .orElse("not found")
+
+
 🧠 Хочеш бонусний виклик?
 🔹 Згенеруй List<List<Integer>> — і зроби задачу з flatMap
 🔹 Створи утиліту normalize(String) → яка чистить 
