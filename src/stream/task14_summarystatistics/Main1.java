@@ -112,4 +112,13 @@ public class Main1 {
                 .findFirst()
                 .orElse("not found");
     }
+
+    public Map <Character, Long> practice16 () {
+        String[] words = {"apple", "tree", "orange", "banana", "loop"};
+        return Arrays.stream(words).flatMap(word -> normalize(word).stream()).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public List <Character> normalize (String s) {
+        return s.toLowerCase().chars().mapToObj(c-> (char)c).collect(Collectors.toList());
+    }
 }
