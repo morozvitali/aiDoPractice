@@ -2,6 +2,8 @@ package stream.task1__sorting;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main1 {
     public List<Integer> practice1 () {
@@ -30,4 +32,11 @@ public class Main1 {
                 .toList();
     }
 
+    public List <Integer> practice6 () {
+        List<Integer> numbers = List.of(3, 5, 9, 12, 8, 15);
+        long counting = numbers.stream()
+                .filter(a->a%3==0)
+                .map(a->a*a).count();
+        return IntStream.range (0, (int) counting).mapToObj(a->(int)a).toList();
+    }
 }
