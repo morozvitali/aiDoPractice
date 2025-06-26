@@ -10,5 +10,19 @@ public class Main1 {
         return Integer.toBinaryString(number).chars().filter(c->c == '1').count();
     }
 
+    public int practice3 (int number) {
+        int count = 0;
+        while (number != 0) {
+            if ((number & 1) ==1 ) {
+                count++;
+            }
+            number = number >> 1; //
+        }
+        return count;
+    }
+
+    public long practice4 () {
+        return Integer.toBinaryString(Integer.MAX_VALUE).chars().filter(c->c=='1').count();
+    }
 
 }
