@@ -6,5 +6,9 @@ public class Main1 {
         return (int) binary.chars().filter(c->c == '1').count();
     }
 
+    public long practice2 (int number) {
+        return Integer.toBinaryString(number).chars().filter(c->c == '1').count();
+    }
+
 
 }
