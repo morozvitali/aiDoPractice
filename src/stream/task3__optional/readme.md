@@ -59,12 +59,15 @@ List<Integer> nums = List.of(1, 2, 3, 4, 5); → друкує 5
 List<Integer> nums = List.of(); → друкує "Немає значень"
 Підказка:
 
-nums.stream()
-.max(Integer::compareTo)
-.ifPresentOrElse(
-System.out::println,
-() -> System.out.println("Немає значень")
-);
+    public void practice5 () {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        Optional<Integer> max = nums.stream().max(( a,b) -> a.compareTo(b));
+
+        max.ifPresentOrElse(
+                value -> System.out.println("Максимум: " + value),
+                () -> System.out.println("Немає значень")
+        );
+    }
 
 ------------------------------------------------------------------
 

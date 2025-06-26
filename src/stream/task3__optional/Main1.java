@@ -23,4 +23,14 @@ public class Main1 {
         Optional<String> name = Optional.of("Vitali");
         return name.map(n-> "Hello " + n + "!").orElse("Hello, Guest");
     }
+
+    public void practice5 () {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        Optional<Integer> max = nums.stream().max(( a,b) -> a.compareTo(b));
+
+        max.ifPresentOrElse(
+                value -> System.out.println("Максимум: " + value),
+                () -> System.out.println("Немає значень")
+        );
+    }
 }
