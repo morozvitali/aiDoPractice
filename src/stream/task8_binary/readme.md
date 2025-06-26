@@ -124,22 +124,22 @@ isFirstMoreOnes(8, 3) → false   // 1000 vs 11
 // 1 = 1 (1), 2 = 10 (1), 3 = 11 (2), 4 = 100 (1) → сумарно 5
 → 5
 
-public long practice6 () {
-int[] arr = {1, 2, 3, 4};
-return Arrays.stream(arr)
-.mapToLong(a->Integer.toBinaryString(a).chars().filter(c->c=='0').count()).sum();
-}
+    public long practice6 () {
+    int[] arr = {1, 2, 3, 4};
+    return Arrays.stream(arr)
+    .mapToLong(a->Integer.toBinaryString(a).chars().filter(c->c=='0').count()).sum();
+    }
 
 або можна порахувати по зсувам кількість одиниць
 
-private int countBits(int n) {
-int count = 0;
-while (n != 0) {
-count += (n & 1);
-n >>>= 1; // беззнаковий зсув
-}
-return count;
-}
+    private int countBits(int n) {
+    int count = 0;
+    while (n != 0) {
+    count += (n & 1);
+    n >>>= 1; // беззнаковий зсув
+    }
+    return count;
+    }
 
 
 --------------------------------------------------------------
@@ -157,16 +157,19 @@ findFirstWithNOnes(1) → 1    // 1
 Йди в циклі від 1 вгору, поки не знайдеш потрібну кількість 1.
 
     public int practice7 (int n) {
-        int i = 0;
-        long counter = 0;
-        while (n != i) {
-            counter = Integer
+        int i = 1;
+        while (true) {
+            long counter = Integer
                     .toBinaryString(i)
                     .chars()
-                    .filter(a->a=='0')
+                    .filter(a->a=='1')
                     .count();
+
+            if ( counter == n) {
+                return i;
+            }
+            i++;
         }
-        return i;
     }
 
 
