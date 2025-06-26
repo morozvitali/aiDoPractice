@@ -1,5 +1,7 @@
 package stream.task8_binary;
 
+import java.util.Arrays;
+
 public class Main1 {
     public int practice1 (int number) {
         String binary = Integer.toBinaryString(number);
@@ -29,5 +31,11 @@ public class Main1 {
         long countFirst = Integer.toBinaryString(a).chars().filter(c->c == '1').count();
         long countSecond = Integer.toBinaryString(b).chars().filter(c->c == '1').count();
         return countFirst == countSecond;
+    }
+
+    public long practice6 () {
+        int[] arr = {1, 2, 3, 4};
+        return Arrays.stream(arr)
+                .mapToLong(a->Integer.toBinaryString(a).chars().filter(c->c=='1').count()).sum();
     }
 }
