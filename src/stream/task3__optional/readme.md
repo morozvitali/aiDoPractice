@@ -86,12 +86,13 @@ Optional<String> email = Optional.of("ADMIN@SITE.COM");
 
 Підказка:
 
-email
+
+public static String processEmail(Optional<String> email) {
+return email
 .map(String::toLowerCase)
 .filter(e -> e.contains(".com"))
 .orElseThrow(() -> new IllegalArgumentException("Invalid email"));
-
-
+}
 
 ------------------------------THEORY-------------------------------------
 

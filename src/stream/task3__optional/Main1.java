@@ -33,4 +33,10 @@ public class Main1 {
                 () -> System.out.println("Немає значень")
         );
     }
+
+    public String practice6 () {
+        Optional<String> email = Optional.of("ADMIN@SITE.COM");
+        return email.map(a -> a.toLowerCase()).filter(e -> e.contains(".com"))
+                .orElseThrow(() -> new IllegalArgumentException("Invalid email"));
+    }
 }
