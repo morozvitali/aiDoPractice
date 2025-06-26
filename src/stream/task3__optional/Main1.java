@@ -9,15 +9,18 @@ public class Main1 {
         return numbers.stream().filter(a->a%5 == 0).findFirst().orElse(-1);
     }
 
-    public void practice2 () {
+    public int practice2 () {
         Optional<Integer> value = Optional.of(7);
-        value.map(x->2*x).orElse(-1);
+        return value.map(x->2*x).orElse(-1);
     }
 
-    public void practice3 () {
+    public String practice3 () {
         Optional<String> word = Optional.of("HelloWorld");
-        word.stream().filter(a->a.length() > 5).findFirst().orElse("short");
+        return word.stream().filter(a->a.length() > 5).findFirst().orElse("short");
     }
 
-
+    public String practice4 () {
+        Optional<String> name = Optional.of("Vitali");
+        return name.map(n-> "Hello " + n + "!").orElse("Hello, Guest");
+    }
 }
