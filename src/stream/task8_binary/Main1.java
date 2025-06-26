@@ -25,4 +25,9 @@ public class Main1 {
         return Integer.toBinaryString(Integer.MAX_VALUE).chars().filter(c->c=='1').count();
     }
 
+    public boolean practice5 (int a, int b) {
+        long countFirst = Integer.toBinaryString(a).chars().filter(c->c == '1').count();
+        long countSecond = Integer.toBinaryString(b).chars().filter(c->c == '1').count();
+        return countFirst == countSecond;
+    }
 }
