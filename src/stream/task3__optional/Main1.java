@@ -13,4 +13,11 @@ public class Main1 {
         Optional<Integer> value = Optional.of(7);
         value.map(x->2*x).orElse(-1);
     }
+
+    public void practice3 () {
+        Optional<String> word = Optional.of("HelloWorld");
+        word.stream().filter(a->a.length() > 5).findFirst().orElse("short");
+    }
+
+
 }
