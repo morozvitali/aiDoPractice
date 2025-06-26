@@ -38,4 +38,20 @@ public class Main1 {
         return Arrays.stream(arr)
                 .mapToLong(a->Integer.toBinaryString(a).chars().filter(c->c=='1').count()).sum();
     }
+
+    public int practice7 (int n) {
+        int i = 1;
+        while (true) {
+            long counter = Integer
+                    .toBinaryString(i)
+                    .chars()
+                    .filter(a->a=='1')
+                    .count();
+
+            if ( counter == n) {
+                return i;
+            }
+            i++;
+        }
+    }
 }
