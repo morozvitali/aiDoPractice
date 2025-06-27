@@ -50,6 +50,28 @@ public class Main6 {
                 .forEach(System.out::println);
     }
 
+    public void practice10 () {
+        IntStream.iterate(1, i->i+1).skip(5).filter(a->a%5==0).limit(10)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
