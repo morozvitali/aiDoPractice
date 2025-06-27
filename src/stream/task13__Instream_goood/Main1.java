@@ -1,4 +1,4 @@
-package stream.task13__Instream_range_limit;
+package stream.task13__Instream_goood;
 
 import java.util.List;
 import java.util.stream.IntStream;

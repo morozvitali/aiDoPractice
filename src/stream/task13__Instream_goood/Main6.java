@@ -1,5 +1,7 @@
-package stream.task13__Instream_range_limit;
+package stream.task13__Instream_goood;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
@@ -93,8 +95,15 @@ public class Main6 {
                 .peek(i->System.out.println("LOG " + i))
                 .filter(i->i%4==0)
                 .forEach(System.out::println);
+    }
 
+    public static String practice16 () {
+        List<String> words = List.of("sky", "apple", "banana", "cat", "loop");
 
+        return words.stream()
+                .filter(w->w.chars().distinct().count() < w.length())
+                .min(Comparator.comparing(a->String.valueOf(a.length())))
+                        .orElse("Немає");
     }
 
 
