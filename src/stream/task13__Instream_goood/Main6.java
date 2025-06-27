@@ -106,6 +106,12 @@ public class Main6 {
                         .orElse("Немає");
     }
 
+    public static int practice17 () {
+        List<Integer> nums = List.of(23, 70, 172, 88, 45, 27, 97, 21);
+            return nums.stream().filter(a->String.valueOf(a).contains("7"))
+                    .max((a,b) -> Integer.compare(a,b))
+                    .orElse(-1);
+    }
 
 
 
