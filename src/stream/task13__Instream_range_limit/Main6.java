@@ -41,4 +41,15 @@ public class Main6 {
         IntStream.iterate(1, i ->i+3).filter(a -> a%2 == 0)
                 .limit(10).forEach(System.out::println);
     }
+
+    public void practice9 () {
+        IntStream.iterate(1, i->i+1).
+                map(a->a*a)
+                .filter(a->a%5 != 0)
+                .limit(10)
+                .forEach(System.out::println);
+    }
+
+
+
 }
