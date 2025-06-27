@@ -87,6 +87,16 @@ public class Main6 {
 
     }
 
+    public static void practice15 () {
+        IntStream.rangeClosed(1,20)
+                .map(i->i*i)
+                .peek(i->System.out.println("LOG " + i))
+                .filter(i->i%4==0)
+                .forEach(System.out::println);
+
+
+    }
+
 
 
 
