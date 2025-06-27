@@ -7,5 +7,7 @@ public class Main1 {
         return IntStream.rangeClosed(2,8).filter(a->a%2!=0).reduce((a,b) -> a*b).orElse(-1);
     }
 
-
+    public int practice2 () {
+        return IntStream.rangeClosed(1,5).map(a->a*a).sum();
+    }
 }
