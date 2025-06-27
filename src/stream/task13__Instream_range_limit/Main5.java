@@ -1,4 +1,4 @@
-package stream.task13__star;
+package stream.task13__Instream_range_limit;
 
 import java.util.Arrays;
 import java.util.List;
