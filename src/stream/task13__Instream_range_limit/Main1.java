@@ -20,5 +20,7 @@ public class Main1 {
         return IntStream.rangeClosed(1,100).filter(a->(a%3 ==0 || a%5==0)).count();
     }
 
-
+    public void practice5 () {
+        IntStream.iterate(10, i -> i-1).limit(10).forEach(System.out::println);
+    }
 }
