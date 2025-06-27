@@ -1,4 +1,4 @@
-package stream.task13__Instream_goood;
+package stream.task13__Instream_iterator;
 
 import java.util.Comparator;
 import java.util.List;
@@ -113,18 +113,15 @@ public class Main6 {
                     .orElse(-1);
     }
 
+    public static void practice18 () {
+        List<String> words = List.of("sky", "banana",
+                "apple", "grape", "orange", "plum");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        words.stream()
+                .sorted(Comparator
+                        .comparing((String w) -> w.chars()
+                                .filter(ch->"aoeou".indexOf(ch)>=0).count())
+                .thenComparing(Comparator
+                        .naturalOrder())).forEach(System.out::println);
+    }
 }

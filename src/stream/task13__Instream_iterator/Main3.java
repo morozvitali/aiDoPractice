@@ -1,4 +1,4 @@
-package stream.task13__Instream_goood;
+package stream.task13__Instream_iterator;
 
 import java.util.Arrays;
 
