@@ -1,5 +1,6 @@
 package stream.task13__Instream_range_limit;
 
+import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 public class Main6 {
@@ -54,7 +55,16 @@ public class Main6 {
         IntStream.iterate(1, i->i+1).skip(5).filter(a->a%5==0).limit(10)
     }
 
-
+    public void practice11 () {
+        IntStream.iterate(1, i-> i+1).takeWhile(new IntPredicate() {
+            int sum = 0;
+            @Override
+            public boolean test(int i) {
+                sum = sum + i;
+                return sum < 50;
+            }
+        });
+    }
 
 
 
