@@ -63,9 +63,16 @@ public class Main6 {
                 sum = sum + i;
                 return sum < 50;
             }
-        });
+        }).forEach(System.out::println);
     }
 
+     public void practice12 () {
+        IntStream.iterate(1, i-> i+1)
+                .map(a->a*a)
+                .distinct()
+                .limit(5)
+                .forEach(System.out::println);
+     }
 
 
 
