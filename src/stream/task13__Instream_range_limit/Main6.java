@@ -13,22 +13,32 @@ public class Main6 {
     }
 
     public void practice3() {
-        IntStream.iterate(1, i -> i+2).limit(10).forEach(System.out::println);
+        IntStream.iterate(1, i -> i+2).limit(10)
+                .forEach(System.out::println);
     }
 
     public void practice4 () {
-        IntStream.iterate(50, i->i-5).limit(10).forEach(System.out::println);
+        IntStream.iterate(50, i->i-5).limit(10)
+                .forEach(System.out::println);
     }
 
     public void practice5 () {
-        IntStream.iterate(1,i-> i+1).limit(10).forEach(System.out::println);
+        IntStream.iterate(1,i-> i+1).limit(10)
+                .forEach(System.out::println);
     }
 
     public void practice6 () {
-        IntStream.iterate(17, i->i+10).limit(9).forEach(System.out::println);
+        IntStream.iterate(17, i->i+10).limit(9)
+                .forEach(System.out::println);
     }
 
     public void practice7 () {
-        IntStream.iterate(1, i->i * 2).limit(10).forEach(System.out::println);
+        IntStream.iterate(1, i->i * 2).limit(10)
+                .forEach(System.out::println);
+    }
+
+    public void practice8 () {
+        IntStream.iterate(1, i ->i+3).filter(a -> a%2 == 0)
+                .limit(10).forEach(System.out::println);
     }
 }
