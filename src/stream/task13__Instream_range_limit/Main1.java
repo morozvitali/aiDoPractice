@@ -1,5 +1,6 @@
 package stream.task13__Instream_range_limit;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class Main1 {
@@ -9,5 +10,9 @@ public class Main1 {
 
     public int practice2 () {
         return IntStream.rangeClosed(1,5).map(a->a*a).sum();
+    }
+
+    public List<Integer> practice3 () {
+        return IntStream.rangeClosed(10,50).filter(a->a%7==0).boxed().toList();
     }
 }
