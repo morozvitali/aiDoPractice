@@ -15,4 +15,10 @@ public class Main1 {
     public List<Integer> practice3 () {
         return IntStream.rangeClosed(10,50).filter(a->a%7==0).boxed().toList();
     }
+
+    public long practice4 () {
+        return IntStream.rangeClosed(1,100).filter(a->(a%3 ==0 || a%5==0)).count();
+    }
+
+
 }
