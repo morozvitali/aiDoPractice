@@ -10,7 +10,8 @@ public class Main6 {
     }
 
     public static void main(String[] args) {
-        Main6.practice2();
+        Main6.practice14("programmingisfun");
+
     }
 
     public void practice3() {
@@ -52,7 +53,7 @@ public class Main6 {
     }
 
     public void practice10 () {
-        IntStream.iterate(1, i->i+1).skip(5).filter(a->a%5==0).limit(10)
+        IntStream.iterate(1, i->i+1).skip(5).filter(a->a%5==0).limit(10);
     }
 
     public void practice11 () {
@@ -74,7 +75,17 @@ public class Main6 {
                 .forEach(System.out::println);
      }
 
+    public static void practice13(String s) {
+        s.chars().distinct().limit(10)
+                .forEach(c->System.out.println((char)c));
+    }
 
+    public static void practice14 (String s) {
+        s.chars().mapToObj(ch->(char)ch)
+                .filter(ch -> "aeiou".indexOf(ch) >= 0)
+                .forEach(System.out::println);
+
+    }
 
 
 
