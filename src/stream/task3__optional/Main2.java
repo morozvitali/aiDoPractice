@@ -2,6 +2,7 @@ package stream.task3__optional;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class Main2 {
@@ -58,4 +59,13 @@ public class Main2 {
                 () -> System.out.println("Список слів порожній")
         );
     }
+
+    public void practice9 () {
+        Optional <String> name = Optional.of("Nmae");
+        name.map(a->a.toUpperCase())
+                .orElseThrow(() -> new NoSuchElementException(" no such element exception"));
+
+    }
+
+
 }
