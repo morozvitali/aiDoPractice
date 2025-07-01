@@ -3,6 +3,7 @@ package stream.task1__sorting;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main6 {
     public List<Integer> practice1() {
@@ -31,6 +32,10 @@ public class Main6 {
         return words.stream().map(a->a.toLowerCase()).filter(a->a.chars().filter(c->"aeiou".indexOf(c) >= 0).count() > 0).map(a->a.length()).toList();
     }
 
-
+    public List <Integer> practice6 () {
+        List<Integer> numbers = List.of(3, 5, 9, 12, 8, 15);
+        List list = numbers.stream().filter(a->a%3==0).map(a->a*a).toList();
+        return (List<Integer>) IntStream.rangeClosed(0,list.size());
+    }
 
 }
