@@ -50,4 +50,12 @@ public class Main2 {
                 () -> System.out.println("Порожній список")
         );
     }
+
+    public void practice8 () {
+        List<String> words = List.of("Java", "Spring");
+        words.stream().findFirst().map(a->a.length()).ifPresentOrElse(
+                value -> System.out.println("Довжина " + value),
+                () -> System.out.println("Список слів порожній")
+        );
+    }
 }
