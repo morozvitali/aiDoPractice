@@ -15,7 +15,10 @@ public class Main6 {
         return numbers.stream().filter(a->a%2!=0).map(a->a*a).mapToInt(a->(int)a).sum();
     }
 
-
+    public List <String> practice3 () {
+        List<String> names = List.of("Ola", "Vitalii", "Sasha", "Alina", "Max");
+        return names.stream().filter(a->a.length() > 4).map(a->a.toUpperCase()).sorted(Comparator.reverseOrder()).toList();
+    }
 
 
 }
