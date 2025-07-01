@@ -25,5 +25,15 @@ public class Main2 {
         name.map(n->"Hello " + n + "!").orElse("Hello, guest");
     }
 
+    public void practice5 () {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        Optional <Integer> max = nums.stream().max((a,b)-> a.compareTo(b));
+        max.ifPresentOrElse(
+                value -> System.out.println("Maximum " + value), () -> System.out.println("Empty no values")
+        );
+    }
+
+
+
 
 }
