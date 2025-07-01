@@ -64,7 +64,11 @@ public class Main2 {
         Optional <String> name = Optional.of("Nmae");
         name.map(a->a.toUpperCase())
                 .orElseThrow(() -> new NoSuchElementException(" no such element exception"));
+    }
 
+    public void practice10 () {
+        Optional <String> login = Optional.of("adminlaskf");
+        login.map(a->a.startsWith("admin") ? "Admin access" : "User access").orElse("No login");
     }
 
 
