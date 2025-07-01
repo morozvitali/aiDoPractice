@@ -20,5 +20,10 @@ public class Main6 {
         return names.stream().filter(a->a.length() > 4).map(a->a.toUpperCase()).sorted(Comparator.reverseOrder()).toList();
     }
 
+    public List <Integer> practice4 () {
+        List<Integer> numbers = List.of(4, 6, 2, 6, 4, 8, 10, 2);
+        return numbers.stream().filter(a->a%2==0).distinct().sorted(Comparator.naturalOrder()).toList();
+    }
+
 
 }
