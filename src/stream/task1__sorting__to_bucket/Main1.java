@@ -1,8 +1,7 @@
-package stream.task1__sorting;
+package stream.task1__sorting__to_bucket;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main1 {

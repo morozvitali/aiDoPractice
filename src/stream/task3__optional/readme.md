@@ -1,9 +1,8 @@
 Optional — важлива частина сучасного Java API,
 яка допомагає боротися з null'ами без NullPointerException.
 Тема і проста, і складна водночас — особливо, 
-коли ми говоримо про map, flatMap, filter, ifPresent, orElse, orElseGet, orElseThrow.
-
-
+коли ми говоримо про map, flatMap, filter, ifPresent, 
+orElse, orElseGet, orElseThrow.
 
 Ось 5 задач + одна зі зірочкою ⭐ — для глибшого розуміння Optional.
 

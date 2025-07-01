@@ -1,4 +1,4 @@
-package stream.task1__sorting;
+package stream.task1__sorting__to_bucket;
 
 import java.util.Arrays;
 
