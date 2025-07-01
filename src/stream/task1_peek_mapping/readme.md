@@ -22,7 +22,8 @@ List<String> words = List.of("sun", "apple", "bee", "banana");
 ✅ Задача 2: Collectors.mapping() для отримання всіх доменів
 📋 Є список email. Виведи список доменів групованих за довжиною логіна.
 
-List<String> emails = List.of("ivan@ukr.net", "olga@gmail.com", "petro@ukr.net");
+List<String> emails = List.of("ivan@ukr.net",
+"olga@gmail.com", "petro@ukr.net");
 
 Map<Integer, List<String>> byLoginLength = emails.stream()
 .collect(Collectors.groupingBy(
