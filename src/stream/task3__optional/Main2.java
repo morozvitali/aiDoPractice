@@ -1,5 +1,6 @@
 package stream.task3__optional;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +34,20 @@ public class Main2 {
         );
     }
 
+    public String practice6 () {
+        Optional<String> email = Optional.of("ADMIN@SITE.COM");
+        return email.map(a->a.toLowerCase()).filter(a->a.contains(".com"))
+                .orElseThrow(() -> new IllegalArgumentException("Invalid email"));
+    }
 
-
-
+    public void practice7 () {
+        List<Integer> nums = List.of(5, 2, 9);
+        nums.stream().min(
+                Comparator.naturalOrder()
+                //(a,b) -> Integer.compare(a,b)
+        ).ifPresentOrElse(
+                value -> System.out.println("Мінімум " + value),
+                () -> System.out.println("Порожній список")
+        );
+    }
 }
