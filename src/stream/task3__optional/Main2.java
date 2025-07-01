@@ -18,6 +18,12 @@ public class Main2 {
     public String practice3 () {
         Optional<String> word = Optional.of("HelloWorld");
         return word.filter(a->a.length()>5).orElse("short");
-
     }
+
+    public void practice4 () {
+        Optional<String> name = Optional.of("Vitali");
+        name.map(n->"Hello " + n + "!").orElse("Hello, guest");
+    }
+
+
 }
