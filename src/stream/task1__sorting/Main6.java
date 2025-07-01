@@ -25,5 +25,12 @@ public class Main6 {
         return numbers.stream().filter(a->a%2==0).distinct().sorted(Comparator.naturalOrder()).toList();
     }
 
+    public List <Integer> practice5 () {
+        List<String> words = List.of("Apple", "orange",
+                "Banana", "Umbrella", "Elephant", "Cat");
+        return words.stream().map(a->a.toLowerCase()).filter(a->a.chars().filter(c->"aeiou".indexOf(c) >= 0).count() > 0).map(a->a.length()).toList();
+    }
+
+
 
 }
