@@ -32,4 +32,9 @@ public class Main0 {
         return text.chars().boxed().collect(Collectors.toList());
     }
 
+    public List <String> practice5 () {
+        String input = "hEllO WoRLd";
+        return input.chars().filter(ch->Character.isUpperCase(ch)).mapToObj(c-> String.valueOf((char) c)).collect(Collectors.toList());
+    }
+
 }

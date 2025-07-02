@@ -90,7 +90,7 @@ text.chars()
 String input = "hEllO WoRLd";
 🔧 Очікуваний результат:
 
-[E, O, W, R, L]
+["E", "O", "W", "R", "L"]
 🧠 Підказка:
 
 input.chars()
