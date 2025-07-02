@@ -112,7 +112,7 @@ this.city = city;
 public String getName() { return name; }
 public String getCity() { return city; }
 }
-❓Задача:
+Задача:
 🔸 З групи юзерів зробити Map<місто, список імен>
 
 List<User> users = List.of(
