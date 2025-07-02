@@ -77,7 +77,14 @@ public class Main0 {
         s.chars().filter(c->Character.isDigit(c)).map(c->Character.getNumericValue(c)).sum();
     }
 
-
+    public String practice11 () {
+        String input = "ABCdefGHIjkl123";
+        return input.chars()
+                .filter(ch -> !Character.isDigit(ch))
+                .filter(ch->Character.isLowerCase(ch))
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.joining());
+    }
 
 
 
