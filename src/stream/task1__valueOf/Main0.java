@@ -25,8 +25,11 @@ public class Main0 {
                 .distinct()
                 .mapToObj(ch->String.valueOf((char) ch))
                 .collect(Collectors.toList());
+    }
 
-
+    public List <Integer> practice4 () {
+        String text = "Code";
+        return text.chars().boxed().collect(Collectors.toList());
     }
 
 }

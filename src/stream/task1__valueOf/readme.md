@@ -62,7 +62,7 @@ String s = "abracadabra";
 s.chars()
 .distinct()
 .mapToObj(c -> String.valueOf((char) c))
-.collect(Collectors.toList());
+.collect(Collectors.toList()); 
 
 -----------------------------------------------------
 
