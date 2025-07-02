@@ -37,4 +37,9 @@ public class Main0 {
         return input.chars().filter(ch->Character.isUpperCase(ch)).mapToObj(c-> String.valueOf((char) c)).collect(Collectors.toList());
     }
 
+    public List <Integer> practice6 () {
+        String s = "abcxyz";
+        return s.chars().map(ch-> ch - 'a' + 1).boxed().collect(Collectors.toList());
+    }
+
 }
