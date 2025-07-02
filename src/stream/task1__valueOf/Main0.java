@@ -29,17 +29,31 @@ public class Main0 {
 
     public List <Integer> practice4 () {
         String text = "Code";
-        return text.chars().boxed().collect(Collectors.toList());
+        return text.chars()
+                .boxed()
+                .collect(Collectors.toList());
     }
 
     public List <String> practice5 () {
         String input = "hEllO WoRLd";
-        return input.chars().filter(ch->Character.isUpperCase(ch)).mapToObj(c-> String.valueOf((char) c)).collect(Collectors.toList());
+        return input.chars()
+                .filter(ch->Character.isUpperCase(ch))
+                .mapToObj(c-> String.valueOf((char) c))
+                .collect(Collectors.toList());
     }
 
     public List <Integer> practice6 () {
         String s = "abcxyz";
-        return s.chars().map(ch-> ch - 'a' + 1).boxed().collect(Collectors.toList());
+        return s.chars()
+                .map(ch-> ch - 'a' + 1)
+                .boxed()
+                .collect(Collectors.toList());
     }
 
+    public List <String> practice7 () {
+        String s = "java";
+        return s.chars().map(c->Character.toUpperCase(c))
+                .mapToObj(c-> String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
 }
