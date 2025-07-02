@@ -10,4 +10,15 @@ public class Main0 {
     }
 
 
+    public List <Integer> practice2 () {
+        String mixed = "a1b2c3x9z7";
+        return mixed.chars()
+                .filter(c->Character.isDigit(c))
+                .mapToObj(c->Character.getNumericValue(c))
+                .sorted()
+                .collect(Collectors.toList());
+    }
+
+
+
 }
