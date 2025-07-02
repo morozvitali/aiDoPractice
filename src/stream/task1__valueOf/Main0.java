@@ -104,7 +104,10 @@ public class Main0 {
         System.out.println(main0.practice12());
     }
 
-
+    public boolean practice15 () {
+        String input = "a1C!bZ2";
+        return input.chars().allMatch(ch->Character.isDigit(ch));
+    }
 
 
 
