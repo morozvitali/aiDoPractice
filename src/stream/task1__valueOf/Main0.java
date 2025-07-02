@@ -86,8 +86,23 @@ public class Main0 {
                 .collect(Collectors.joining());
     }
 
+    public List <Integer> practice12 () {
+        String input = "abc";
+        return input.chars().map(c-> c +1).boxed().collect(Collectors.toList());
+
+    }
+
+    public List <Character> practice13 () {
+        List<Integer> digits = List.of(1, 2, 3, 9);
+        return digits.stream().map(d-> (char) ('0' + d))
+                .collect(Collectors.toList());
+    }
 
 
+    public static void main(String[] args) {
+        Main0 main0 = new Main0();
+        System.out.println(main0.practice12());
+    }
 
 
 
