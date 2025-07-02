@@ -65,6 +65,25 @@ public class Main0 {
                 .collect(Collectors.groupingBy(c->c, Collectors.counting()));
     }
 
+    public String practice9 () {
+        String s = "a1b2c3d4";
+        return s.chars().filter(c-> !Character.isDigit(c))
+                .mapToObj(c-> String.valueOf((char) c))
+                .collect(Collectors.joining());
+    }
+
+    public void practice10 () {
+        String s = "abc1d2e3f9";
+        s.chars().filter(c->Character.isDigit(c)).map(c->Character.getNumericValue(c)).sum();
+    }
+
+
+
+
+
+
+
+
 
 
 
