@@ -1,5 +1,6 @@
 package stream.task1__valueOf;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -103,6 +104,16 @@ public class Main0 {
         Main0 main0 = new Main0();
         System.out.println(main0.practice12());
     }
+
+    public void practice14 () {
+        String input = "a1C!bZ2";
+        input.chars()
+                .filter(ch->Character.isAlphabetic(ch))
+                .mapToObj(c->(char)c)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+    }
+
 
     public boolean practice15 () {
         String input = "a1C!bZ2";
