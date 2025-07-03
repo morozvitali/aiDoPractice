@@ -24,4 +24,10 @@ public class Main6 {
         list.stream().skip(list.size()-2).forEach(System.out::println);
     }
 
+    public int practice5 () {
+        List<Integer> list = List.of(3, 2, 4, 6,
+                1, 8, 10, 12);
+        return list.stream().limit(5).mapToInt(a->a).sum();
+    }
+
 }
