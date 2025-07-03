@@ -23,5 +23,8 @@ public class Main6 {
         return list.stream().anyMatch(a->a%7==0);
     }
 
-
+    public boolean practice5 () {
+        List<String> names = List.of("Alice", "Bob", "Charlie");
+        return names.stream().allMatch(a->Character.isUpperCase(a.charAt(0)));
+    }
  }
