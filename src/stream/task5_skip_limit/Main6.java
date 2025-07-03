@@ -30,4 +30,9 @@ public class Main6 {
         return list.stream().limit(5).mapToInt(a->a).sum();
     }
 
+    public void practice6 () {
+        List<Integer> list = List.of(10, 50, 20, 40, 30);
+        list.stream().sorted().skip(2).findFirst().orElse(-1);
+    }
+
 }
