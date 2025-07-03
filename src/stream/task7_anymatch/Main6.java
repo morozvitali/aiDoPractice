@@ -27,4 +27,12 @@ public class Main6 {
         List<String> names = List.of("Alice", "Bob", "Charlie");
         return names.stream().allMatch(a->Character.isUpperCase(a.charAt(0)));
     }
+
+    public boolean practice6 () {
+        List<String> words = List.of("racecar", "apple", "madam");
+    return words.stream().anyMatch(s->isPalindrom(s));
+    }
+    public boolean isPalindrom (String s) {
+        return new StringBuilder(s).reverse().toString().equals(s);
+    }
  }
