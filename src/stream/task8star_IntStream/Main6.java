@@ -1,6 +1,8 @@
 package stream.task8star_IntStream;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
 
 public class Main6 {
     public int practice0() {
@@ -49,6 +51,18 @@ public class Main6 {
         return Arrays.stream(numbers)
                 .filter(a->a%2==1)
                 .reduce((a,b)->a*b).orElse(-1);
+    }
+
+    public int practice7 () {
+        return IntStream.rangeClosed(1,5).map(a-> a*a).sum();
+    }
+
+    public List<Integer> practice8 () {
+        return IntStream
+                .rangeClosed(10,50)
+                .filter(a->a%7==0)
+                .boxed()
+                .toList();
     }
 
 
