@@ -2,6 +2,8 @@ package stream.task6_intstream_range;
 
 import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main6 {
@@ -56,5 +58,11 @@ public int practice8 () {
 
 public int practice9 () {
         return IntStream.rangeClosed(1,5).map(a->a*a).sum();
+}
+
+public List<Integer> practice10 () {
+        return IntStream.rangeClosed(10, 50).filter(a->a%7==0)
+                .boxed()
+                .collect(Collectors.toList());
 }
 }
