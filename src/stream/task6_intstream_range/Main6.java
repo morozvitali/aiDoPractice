@@ -9,6 +9,10 @@ public class Main6 {
                 .sum();
     }
 
-
+public long practice2 () {
+        return IntStream.rangeClosed(10,20)
+                .filter(a->a%2==0)
+                .count();
+}
 
 }
