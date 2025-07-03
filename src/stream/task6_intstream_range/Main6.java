@@ -1,5 +1,6 @@
 package stream.task6_intstream_range;
 
+import java.math.BigInteger;
 import java.util.stream.IntStream;
 
 public class Main6 {
@@ -28,5 +29,12 @@ public int practice4 () {
 
 public void practice5 () {
         IntStream.rangeClosed(1, 30).filter(a->a%4==0).forEach(System.out::println);
+}
+
+public void practice6 () {
+        IntStream.rangeClosed(1,31)
+                .filter(a->a%2==1)  // непарні
+                .mapToObj(a-> BigInteger.valueOf(a)) // перетворюємо на BigInteger
+                .reduce(BigInteger.ONE, (a,b) -> a.multiply(b)); // тут форма reduce (0, (a,b)->do)) - бо є початкове значення і orElse не треба
 }
 }
