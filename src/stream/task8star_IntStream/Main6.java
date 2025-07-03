@@ -44,5 +44,12 @@ public class Main6 {
                 .orElse(-1);
     }
 
+    public int practice6 () {
+        int[] numbers = {2, 3, 4, 5, 6, 7};
+        return Arrays.stream(numbers)
+                .filter(a->a%2==1)
+                .reduce((a,b)->a*b).orElse(-1);
+    }
+
 
 }
