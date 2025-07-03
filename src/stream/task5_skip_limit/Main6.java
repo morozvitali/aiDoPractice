@@ -14,5 +14,8 @@ public class Main6 {
         list.stream().skip(2).forEach(System.out::println);
     }
 
-
+    public void practice3 () {
+        List<Integer> list = List.of(100, 200, 300, 400, 500);
+    list.stream().skip(2).limit(3).forEach(System.out::println);
+    }
 }
