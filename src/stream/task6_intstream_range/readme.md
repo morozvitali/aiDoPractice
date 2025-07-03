@@ -85,3 +85,5 @@ IntStream.rangeClosed(1, 5)
 📦 Очікуваний результат: 47
 🧠 Підказка:
 .filter(i -> i % 3 == 0 || i % 5 == 0).count()
+
+long count = s.peek(System.out::println).count()
