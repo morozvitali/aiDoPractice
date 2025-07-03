@@ -1,4 +1,4 @@
-package stream.task1__sorting__to_bucket;
+package stream.task99skip.task1__sorting__to_bucket;
 
 import java.util.Comparator;
 import java.util.List;
