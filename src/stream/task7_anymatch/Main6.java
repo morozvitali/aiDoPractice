@@ -17,4 +17,11 @@ public class Main6 {
         List<Integer> list = List.of(1, 2, 3, 0);
         return list.stream().anyMatch(a-> a==0);
     }
-}
+
+    public boolean practice4 () {
+        List<Integer> list = List.of(1, 2, 3, 0);
+        return list.stream().anyMatch(a->a%7==0);
+    }
+
+
+ }
