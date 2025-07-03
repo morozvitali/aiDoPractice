@@ -46,4 +46,11 @@ public void practice7 () {
             .reduce((a,b) -> a + "|" + b)
             .orElse("");
 }
+
+public int practice8 () {
+        return IntStream.rangeClosed(2,8)
+                .filter(a->a%2==1)
+                .reduce((a,b)-> a*b)
+                .orElse(-1);
+}
 }
