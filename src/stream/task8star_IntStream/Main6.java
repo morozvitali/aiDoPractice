@@ -35,6 +35,14 @@ public class Main6 {
                 .reduce((a,b)-> a>b?a:b).orElse(-1);
     }
 
+    public int practice5 () {
+        int[] numbers = {3, 5, 2, 6};
+        return Arrays.stream(numbers)
+                .filter(a->a%2==1)
+                .map(a->a*a)
+                .reduce((a,b)->a>b?a:b)
+                .orElse(-1);
+    }
 
 
 }
