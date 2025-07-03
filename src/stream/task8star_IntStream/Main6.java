@@ -28,4 +28,13 @@ public class Main6 {
                 .filter(a->a%2==0)
                 .reduce ((a,b)-> a>b? a:b).orElse(-100);
     }
+
+    public int practice4 () {
+        int[] numbers = {10, 40, 55, 49, 60, 30};
+        return Arrays.stream(numbers).filter(a->a<50)
+                .reduce((a,b)-> a>b?a:b).orElse(-1);
+    }
+
+
+
 }
