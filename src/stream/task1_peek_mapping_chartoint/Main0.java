@@ -1,4 +1,4 @@
-package stream.task1_peek_mapping;
+package stream.task1_peek_mapping_chartoint;
 
 import java.util.List;
 import java.util.Map;
