@@ -1,6 +1,7 @@
 package stream.task6_intstream_range;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Main6 {
@@ -36,5 +37,13 @@ public void practice6 () {
                 .filter(a->a%2==1)  // непарні
                 .mapToObj(a-> BigInteger.valueOf(a)) // перетворюємо на BigInteger
                 .reduce(BigInteger.ONE, (a,b) -> a.multiply(b)); // тут форма reduce (0, (a,b)->do)) - бо є початкове значення і orElse не треба
+}
+
+public void practice7 () {
+    int[] numbers = {10, 20, 30};
+    Arrays.stream(numbers)
+            .mapToObj(a->String.valueOf(a))
+            .reduce((a,b) -> a + "|" + b)
+            .orElse("");
 }
 }
