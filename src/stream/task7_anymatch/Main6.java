@@ -13,4 +13,8 @@ public class Main6 {
         return list.stream().allMatch(a->a>0);
     }
 
+    public boolean practice3 () {
+        List<Integer> list = List.of(1, 2, 3, 0);
+        return list.stream().anyMatch(a-> a==0);
+    }
 }
