@@ -17,6 +17,9 @@ public class Main6 {
                 .orElse(-1);
     }
 
-
+    public void practice2 () {
+        int[] numbers = {4, 9, 6, 14, 21, 5};
+        Arrays.stream(numbers).filter(a->a%3==0).reduce((a,b)->a>b?a:b).orElse(-1);
+    }
 
 }
