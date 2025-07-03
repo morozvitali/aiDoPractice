@@ -22,6 +22,8 @@ public int practice3 () {
                 .orElse(-1);
 }
 
-
+public int practice4 () {
+        return IntStream.rangeClosed(1,5).reduce((a,b)-> a*b).orElse(-1);
+}
 
 }
