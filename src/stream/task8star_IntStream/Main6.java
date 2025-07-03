@@ -65,5 +65,11 @@ public class Main6 {
                 .toList();
     }
 
+    public long practice9 () {
+        return IntStream.rangeClosed(1,100)
+                .filter(a->a%3 ==0 && a%5==0)
+                .count();
+    }
+
 
 }
