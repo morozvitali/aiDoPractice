@@ -78,7 +78,21 @@ public class Main0 {
     public void practice16 () {
         List<String> words = List.of("sky",
                 "apple", "banana", "cat", "loop");
-        words.stream().filter(w->w.chars().distinct().count()<w.length()).min(Comparator.comparing(String::length)).orElse("немає");
+        words.stream()
+                .filter(w->w.chars().distinct().count()<w.length())
+                .min(Comparator.comparing(String::length))
+                .orElse("немає");
+    }
+
+    public void practice17 () {
+        List<Integer> nums = List.of(23, 70, 172, 88, 45, 27, 972, 21);
+        nums.stream().filter(a->String.valueOf(a).contains("7"))
+                .max(Integer::compareTo)
+                .orElse(-1);
+    }
+
+    public void practice18 () {
 
     }
+
 }
