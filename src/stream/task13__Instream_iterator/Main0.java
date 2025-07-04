@@ -8,55 +8,56 @@ public class Main0 {
         IntStream.iterate(10, i -> i - 1).limit(10).forEach(System.out::println);
     }
 
-    public void practice2 () {
-        IntStream.iterate(2, i->i+2).limit(10).forEach(System.out::println);
+    public void practice2() {
+        IntStream.iterate(2, i -> i + 2).limit(10).forEach(System.out::println);
     }
 
-    public void practice3 () {
-        IntStream.iterate(1, i->i+2).limit(10).forEach(System.out::println);
+    public void practice3() {
+        IntStream.iterate(1, i -> i + 2).limit(10).forEach(System.out::println);
     }
 
-    public void practice4 () {
-        IntStream.iterate(50, i-> i-5).forEach(System.out::println);
+    public void practice4() {
+        IntStream.iterate(50, i -> i - 5).forEach(System.out::println);
     }
 
-    public void practice5 () {
-        IntStream.rangeClosed(1,10).map(i->i*i).forEach(System.out::println);
+    public void practice5() {
+        IntStream.rangeClosed(1, 10).map(i -> i * i).forEach(System.out::println);
     }
 
-    public void practice6 () {
-        IntStream.iterate(17, i->i+10).limit(9).forEach(System.out::println);
+    public void practice6() {
+        IntStream.iterate(17, i -> i + 10).limit(9).forEach(System.out::println);
     }
 
-    public void practice7 () {
-        IntStream.iterate(1, i->i*2).limit(10).forEach(System.out::println);
+    public void practice7() {
+        IntStream.iterate(1, i -> i * 2).limit(10).forEach(System.out::println);
     }
 
-    public void practice8 () {
-        IntStream.iterate(1,i->i+3).filter(i->i%3==0).limit(10).forEach(System.out::println);
+    public void practice8() {
+        IntStream.iterate(1, i -> i + 3).filter(i -> i % 3 == 0).limit(10).forEach(System.out::println);
     }
 
-    public void practice9 () {
-        IntStream.iterate(1, i->i+1).map(i->i*i).filter(i->i%10 !=5).limit(10).forEach(System.out::println);
+    public void practice9() {
+        IntStream.iterate(1, i -> i + 1).map(i -> i * i).filter(i -> i % 10 != 5).limit(10).forEach(System.out::println);
     }
 
-    public void practice10 () {
-        IntStream.iterate(10, i->i+1).filter(i->i%3==0).skip(5).limit(10).forEach(System.out::println);
+    public void practice10() {
+        IntStream.iterate(10, i -> i + 1).filter(i -> i % 3 == 0).skip(5).limit(10).forEach(System.out::println);
     }
 
-    public void practice11 () {
-        IntStream.iterate(1, i->i+1).takeWhile(new IntPredicate() {
-                                                    int sum = 0;
+    public void practice11() {
+        IntStream.iterate(1, i -> i + 1).takeWhile(new IntPredicate() {
+                                                       int sum = 0;
 
-                                                   @Override
-                                                   public boolean test(int i) {
-                                                       sum += i;
-                                                       return sum < 50;
+                                                       @Override
+                                                       public boolean test(int i) {
+                                                           sum += i;
+                                                           return sum < 50;
+                                                       }
                                                    }
-                                               }
-        );
+        ).forEach(System.out::println);
     }
 
-
-
+    public void practice12 () {
+        IntStream.iterate(1, i-> i+1).map(i->i*i).distinct().limit(5).forEach(System.out::println);
+    }
 }
