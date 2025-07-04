@@ -65,4 +65,7 @@ public class Main0 {
         "programmingisfun".chars().distinct().limit(10).forEach(c-> System.out.println((char)c));
     }
 
+    public void practice14 () {
+        "streamprocessing".chars().mapToObj(ch->(char)ch).filter(ch-> "aeiou".indexOf(ch) >= 0).forEach(System.out::println);
+    }
 }
