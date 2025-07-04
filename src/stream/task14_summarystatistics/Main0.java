@@ -41,5 +41,16 @@ public class Main0 {
                 .collect(Collectors.toMap(a->a, a->a.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
     }
 
+    public void practice5 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        IntSummaryStatistics stats = Arrays.stream(words)
+                .filter(w->w.chars()
+                        .filter(ch->"aeiou".indexOf(ch) >= 0)
+                        .count() > 0).mapToInt(String::length)
+                .summaryStatistics();
+        System.out.println(stats.getAverage());
+    }
+
 
 }
