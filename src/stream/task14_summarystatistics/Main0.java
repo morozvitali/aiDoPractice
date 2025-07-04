@@ -61,4 +61,9 @@ return Arrays.stream(words)
         .min(Comparator.comparingInt(String::length))
         .orElse("empty");
     }
+
+    public void practice7 () {
+        String[] words = {"apple", "ant", "banana", "blue", "berry", "dolphin"};
+        Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
 }
