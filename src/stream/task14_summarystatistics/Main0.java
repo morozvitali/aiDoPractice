@@ -52,5 +52,13 @@ public class Main0 {
         System.out.println(stats.getAverage());
     }
 
+    public String practice6 () {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
 
+return Arrays.stream(words)
+        .filter(w->"aeiou".indexOf(w.charAt(0))>=0)
+        .min(Comparator.comparingInt(String::length))
+        .orElse("empty");
+    }
 }

@@ -121,9 +121,9 @@ String[] words = {"apple", "orange", "banana",
 🧪 Очікувано: "ice"
 
 📦 Підказка:
-
 .filter(w -> w.matches("(?i)^[aeiou].*"))
 .min(Comparator.comparingInt(String::length))
+.orElse("empty");
 
 (?i)	🔧 Ігнорування регістру (A = a, E = e, і т.д.)
 ^	📍 Початок рядка
