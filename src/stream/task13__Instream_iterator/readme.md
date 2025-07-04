@@ -339,10 +339,10 @@ List<String> words = List.of("sky", "banana",
 📤 Очікувано:
 
 sky
-plum  
-grape  
-apple  
-banana  
+plum
+grape
+apple
+banana
 orange
 
 🧠 Підказка:

@@ -92,7 +92,10 @@ public class Main0 {
     }
 
     public void practice18 () {
-
+        List<String> words = List.of("sky", "banana",
+                "apple", "grape", "orange", "plum");
+        words.stream().sorted(Comparator.comparing((String w)->w.chars().filter(ch ->"aeiou".indexOf(ch) >=0)
+                .count()).thenComparing(Comparator.naturalOrder()))
+                .forEach(System.out::println);
     }
-
 }
