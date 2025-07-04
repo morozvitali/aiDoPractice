@@ -68,4 +68,8 @@ public class Main0 {
     public void practice14 () {
         "streamprocessing".chars().mapToObj(ch->(char)ch).filter(ch-> "aeiou".indexOf(ch) >= 0).forEach(System.out::println);
     }
+
+    public void practice15 () {
+        IntStream.rangeClosed(1,20).map(a->a*a).peek(a-> System.out.println("LOG: " + a)).filter(a->a%4==0).forEach(System.out::println);
+    }
 }
