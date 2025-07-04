@@ -18,4 +18,12 @@ public class Main0 {
     public void practice4 () {
         IntStream.iterate(50, i-> i-5).forEach(System.out::println);
     }
+
+    public void practice5 () {
+        IntStream.rangeClosed(1,10).map(i->i*i).forEach(System.out::println);
+    }
+
+    public void practice6 () {
+        IntStream.iterate(17, i->i+10).limit(9).forEach(System.out::println);
+    }
 }
