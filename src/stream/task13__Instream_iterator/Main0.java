@@ -60,4 +60,9 @@ public class Main0 {
     public void practice12 () {
         IntStream.iterate(1, i-> i+1).map(i->i*i).distinct().limit(5).forEach(System.out::println);
     }
+
+    public void practice13 () {
+        "programmingisfun".chars().distinct().limit(10).forEach(c-> System.out.println((char)c));
+    }
+
 }
