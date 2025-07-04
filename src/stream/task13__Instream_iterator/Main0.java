@@ -31,4 +31,10 @@ public class Main0 {
         IntStream.iterate(1, i->i*2).limit(10).forEach(System.out::println);
     }
 
+    public void practice8 () {
+        IntStream.iterate(1,i->i+3).filter(i->i%3==0).limit(10).forEach(System.out::println);
+    }
+
+
+
 }
