@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main0 {
     public void pracrice1 () {
@@ -31,6 +32,13 @@ public class Main0 {
                 .filter(a-> a.length() % 2 == 0)
                 .map(a->a.toLowerCase())
                 .mapToInt(String::length).sum();
+    }
+
+    public Map<String, Long> practice4 () {
+        String[] words = {"sky", "apple", "moon", "dry", "banana"};
+        return Arrays.stream(words).filter(a->a.length()>3)
+                .filter(a->a.chars().filter(c->"aeiou".indexOf(c)>=0).count()>0)
+                .collect(Collectors.toMap(a->a, a->a.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
     }
 
 
