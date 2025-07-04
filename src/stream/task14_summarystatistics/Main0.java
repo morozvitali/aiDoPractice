@@ -1,9 +1,6 @@
 package stream.task14_summarystatistics;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.Map;
+import java.util.*;
 
 public class Main0 {
     public void pracrice1 () {
@@ -25,6 +22,15 @@ public class Main0 {
         System.out.println(stats.getMax());
         System.out.println(stats.getAverage());
         System.out.println(stats.getCount());
+    }
+
+    public int practice3 () {
+        List<String> words = List.of("APPLE",
+                "Banana", "CHERRY", "kiwi", "PLUM");
+        return words.stream()
+                .filter(a-> a.length() % 2 == 0)
+                .map(a->a.toLowerCase())
+                .mapToInt(String::length).sum();
     }
 
 
