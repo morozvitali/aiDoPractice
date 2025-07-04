@@ -119,31 +119,4 @@ public class Main0 {
         String input = "a1C!bZ2";
         return input.chars().allMatch(ch->Character.isDigit(ch));
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
