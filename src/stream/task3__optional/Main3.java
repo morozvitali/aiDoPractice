@@ -1,6 +1,7 @@
 package stream.task3__optional;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class Main3 {
@@ -53,7 +54,11 @@ public class Main3 {
         words.stream().findFirst().map(a->a.length()).ifPresentOrElse(len-> System.out.println("length" + len), ()-> System.out.println("empty"));
     }
 
-
+    public String practice9 (String user) {
+        Optional <String> name = Optional.of(user);
+        return name.map(String::toUpperCase)
+                .orElseThrow(()-> new NoSuchElementException("Nmae not found")));
+    }
 
 
 }
