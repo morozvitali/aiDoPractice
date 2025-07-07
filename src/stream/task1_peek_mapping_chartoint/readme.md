@@ -12,7 +12,7 @@ return String.valueOf(n).chars()
 .sum();
 }
 
----------------------------------------------------------------
+------------------------------------------
 
 💡 Завдання 2: Чи всі цифри парні?
 📋 Умова:
@@ -26,6 +26,9 @@ return String.valueOf(n).chars()
 .map(c -> c - '0')
 .allMatch(d -> d % 2 == 0);
 }
+
+-----------------------------------------
+
 🌟 Завдання 3: Знайти найбільшу цифру
 📋 Умова:
 Поверни найбільшу цифру в числі.
@@ -39,7 +42,7 @@ return String.valueOf(n).chars()
 .orElse(-1); // якщо n == 0
 }
 
----------------------------------------------------------------
+-----------------------------------------------
 
 🧪 Завдання 4: Порахуй, скільки цифр більше за 5
 📋 Умова:
@@ -54,11 +57,12 @@ return String.valueOf(n).chars()
 .count();
 }
 
----------------------------------------------------------------
+------------------------------------------------
 
 🔮 Завдання 5: Добуток цифр з непарними індексами
 📋 Умова:
-Порахуй добуток цифр на непарних позиціях (0-індексація зліва)
+Порахуй добуток цифр на непарних 
+позиціях (0-індексація зліва)
 
 📥 Вхід: n = 123456
 Цифри з індексами 1, 3, 5 → 2 * 4 * 6 = 48
@@ -75,7 +79,7 @@ int[] digits = String.valueOf(n).chars()
     return product;
 }
 
----------------------------------------------------------------
+-----------------------------------------------
 
 ✅ Задача 6: peek для відлагодження
 📋 Є список слів. Виведи кожне слово, 
@@ -83,46 +87,57 @@ int[] digits = String.valueOf(n).chars()
 що мають довжину > 3.
 
 public void debugWords() {
-List<String> words = List.of("sun", "apple", "bee", "banana");
+List<String> words = List.of("sun", "apple",
+"bee", "banana");
 
     List<String> result = words.stream()
-        .peek(w -> System.out.println("Початкове слово: " + w))
+        .peek(w -> System.out.println(
+"Початкове слово: " + w))
         .map(String::toUpperCase)
-        .peek(w -> System.out.println("У верхньому регістрі: " + w))
+        .peek(w -> System.out.println(
+"У верхньому регістрі: " + w))
         .filter(w -> w.length() > 3)
-        .peek(w -> System.out.println("Залишилось після фільтрації: " + w))
+        .peek(w -> System.out.println(
+"Залишилось після фільтрації: " + w))
         .collect(Collectors.toList());
 
-    System.out.println("Фінальний список: " + result);
+    System.out.println("Фінальний список: "
++ result);
 }
 
-------------------------------------------------------------------
+--------------------------------------------
 
-✅ Задача 7: Collectors.mapping() для отримання всіх доменів
-📋 Є список email. Виведи список доменів групованих за довжиною логіна.
+✅ Задача 7: Collectors.mapping() для 
+отримання всіх доменів
+📋 Є список email. Виведи список доменів 
+групованих за довжиною логіна.
 
 List<String> emails = List.of("ivan@ukr.net",
 "olga@gmail.com", "petro@ukr.net");
 
-Map<Integer, List<String>> byLoginLength = emails.stream()
+Map<Integer, List<String>> byLoginLength = 
+emails.stream()
 .collect(Collectors.groupingBy(
-email -> email.substring(0, email.indexOf("@")).length(),
+email -> email.substring(0, 
+email.indexOf("@")).length(),
 Collectors.mapping(
 email -> email.substring(email.indexOf("@") + 1),
 Collectors.toList()
 )
 ));
 
--------------------------------------------------------------------
+-----------------------------------------------
 
 ✅ Задача 8: peek + filter
-📋 У тебе є список чисел. Виведи ті, що парні, але попередньо покажи всі:
+📋 У тебе є список чисел. Виведи ті, що парні, 
+але попередньо покажи всі:
 
 public void peekNumbers() {
 List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
 
     List<Integer> evens = nums.stream()
-        .peek(n -> System.out.println("Початкове: " + n))
+        .peek(n -> System.out.println("Початкове: "
++ n))
         .filter(n -> n % 2 == 0)
         .peek(n -> System.out.println("Парне: " + n))
         .collect(Collectors.toList());
@@ -130,10 +145,12 @@ List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
     System.out.println("Парні числа: " + evens);
 }
 
--------------------------------------------------------------------
+--------------------------------------------------
 
-✅ Задача 9: Collectors.mapping() для витягу прізвищ по групах
-📋 Є список людей із групами. Отримай Map<група, List<прізвища>>:
+✅ Задача 9: Collectors.mapping()
+для витягу прізвищ по групах
+📋 Є список людей із групами. Отримай Map<група,
+List<прізвища>>:
 
 class Person {
 String lastName;
@@ -152,10 +169,12 @@ new Person("Franko", "B"),
 new Person("Skovoroda", "A")
 );
 
-Map<String, List<String>> groupToLastNames = people.stream()
+Map<String, List<String>> groupToLastNames = 
+people.stream()
 .collect(Collectors.groupingBy(
 Person::getGroup,
-Collectors.mapping(Person::getLastName, Collectors.toList())
+Collectors.mapping(Person::getLastName,
+Collectors.toList())
 ));
 
 -------------theory-----------------
@@ -200,10 +219,12 @@ new User("Olya", "Lviv"),
 new User("Petro", "Kyiv")
 );
 
-Map<String, List<String>> cityToNames = users.stream()
+Map<String, List<String>> cityToNames = 
+users.stream()
 .collect(Collectors.groupingBy(
 User::getCity,
-Collectors.mapping(User::getName, Collectors.toList())
+Collectors.mapping(User::getName, 
+Collectors.toList())
 ));
 🎯 Результат:
 
@@ -211,4 +232,5 @@ Collectors.mapping(User::getName, Collectors.toList())
 Kyiv = [Ivan, Petro],
 Lviv = [Olya]
 }
-🧪 Тренувальні задачі на peek(...) і Collectors.mapping(...)
+🧪 Тренувальні задачі на peek(...) і 
+Collectors.mapping(...)
