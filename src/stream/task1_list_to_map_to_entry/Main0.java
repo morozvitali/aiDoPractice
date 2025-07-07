@@ -38,7 +38,13 @@ public class Main0 {
                 .map(Map.Entry::getKey).orElse("empty");
     }
 
-
+    public String practice5 () {
+        List<String> list = List.of("cat", "tiger", "elephant", "dog");
+        return list.stream()
+                .filter (w->w.length() > 5)
+                .map(w->Map.entry(w,w.length()))
+                .findFirst().map(Map.Entry::getKey).orElse("немає");
+    }
 
 
 
