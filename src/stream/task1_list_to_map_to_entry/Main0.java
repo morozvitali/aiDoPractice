@@ -76,11 +76,11 @@ public class Main0 {
                 .orElse("empty");
     }
 
-
-
-
-
-
-
-
+    public String practice9 () {
+        return List.of("apple", "Tree", "Java", "stream", "Engineer")
+                .stream().filter(w->Character.isUpperCase(w.charAt(0)))
+                .map(w->Map.entry(w,w.length()))
+                .reduce((a,b)-> a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("empty");
+    }
 }
