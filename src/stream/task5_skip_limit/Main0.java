@@ -18,4 +18,12 @@ public class Main0 {
                 300, 400, 500);
         list.stream().skip(2).limit(3).forEach(System.out::println);
     }
+
+    public int practice4 () {
+        List<Integer> list = List.of(3, 2, 4, 6,
+                1, 8, 10, 12);
+        return list.stream().limit(5).mapToInt(a->(int)a).sum();
+    }
+
+
 }
