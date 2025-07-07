@@ -24,5 +24,13 @@ public class Main3 {
         name.map(n-> "hello " + n + "!").orElse("hello, guest");
     }
 
+    public void practice5 () {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        Optional<Integer> max = nums.stream().max((a,b)-> a >b ? a :b);
+        max.ifPresentOrElse(value -> System.out.println("Max = " + value),
+                () -> System.out.println("empty"));
+    }
+
+
 
 }
