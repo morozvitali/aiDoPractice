@@ -7,8 +7,8 @@
 
 public int sumOfDigitSquares(int n) {
 return String.valueOf(n).chars()
-.map(c -> c - '0')
-.map(d -> d * d)
+.map(c -> c - '0') toChar
+.map(d -> d * d) toSquare
 .sum();
 }
 
