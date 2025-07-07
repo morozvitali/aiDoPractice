@@ -45,4 +45,24 @@ public class Main1 {
                 .boxed()
                 .collect(Collectors.toList());
     }
+
+    public List <String> practice7 () {
+        String s = "java";
+        return s.chars()
+                .map(ch->Character.toUpperCase(ch))
+                .mapToObj(a->String.valueOf(((char) a)))
+                .collect(Collectors.toList());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
