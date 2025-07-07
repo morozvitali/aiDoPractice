@@ -84,7 +84,12 @@ public class Main1 {
                 .collect(Collectors.joining());
     }
 
-
+    public List <Integer> practice12 () {
+        String input = "abc";
+        return input.chars().map(c->c+1)
+                .boxed()
+                .collect(Collectors.toList());
+    }
 
 
 
