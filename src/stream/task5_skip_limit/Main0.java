@@ -1,5 +1,6 @@
 package stream.task5_skip_limit;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Main0 {
@@ -31,4 +32,8 @@ public class Main0 {
         return list.stream().filter(a->a%2==0).limit(5).mapToInt(a->a).sum();
     }
 
+    public void practice6 () {
+        List<Integer> list = List.of(10, 50, 20, 40, 30);
+        list.stream().sorted(Comparator.reverseOrder()).skip(2).findFirst().ifPresent(System.out::println);
+    }
 }
