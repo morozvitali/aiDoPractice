@@ -39,7 +39,7 @@ public class Main1 {
                 .map(w -> w.toUpperCase())
                 .peek(w -> System.out.println("modified " + w))
                 .filter(w -> w.length() > 3)
-                .peek(w -> System.out.println("final " + w))
+                .peek(w -> System.out.println("final " + w));
     }
 
     public Map<Integer, List<String>> practice7() {
