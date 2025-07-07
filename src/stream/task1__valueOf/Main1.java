@@ -62,7 +62,12 @@ public class Main1 {
                 .collect(Collectors.groupingBy(c->c, Collectors.counting()));
     }
 
-
+    public String practice9 () {
+        String s = "a1b2c3d4";
+        return s.chars().filter(ch->!Character.isDigit(ch))
+                .mapToObj(a->String.valueOf((char)a))
+                .collect(Collectors.joining());
+    }
 
 
 
