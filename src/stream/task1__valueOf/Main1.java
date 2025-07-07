@@ -69,7 +69,13 @@ public class Main1 {
                 .collect(Collectors.joining());
     }
 
-
+    public String practice11 () {
+        String input = "ABCdefGHIjkl123";
+        return input.chars().filter(a-> Character.isLetter(a))
+                .filter(ch->Character.isLowerCase(ch))
+                .mapToObj(a->String.valueOf((char)a))
+                .collect(Collectors.joining());
+    }
 
 
 
