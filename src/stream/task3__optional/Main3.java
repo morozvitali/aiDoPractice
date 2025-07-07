@@ -31,6 +31,14 @@ public class Main3 {
                 () -> System.out.println("empty"));
     }
 
+    public static String practice6 () {
+        Optional <String> email = Optional .of("ADMIN@SITE.COM");
+        return email
+                .map(String::toLowerCase)
+                .filter(e->e.contains(".com"))
+                .orElseThrow(()-> new IllegalArgumentException("Invalid email"));
+    }
+
 
 
 }
