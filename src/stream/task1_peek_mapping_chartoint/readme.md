@@ -115,16 +115,11 @@ List<String> words = List.of("sun", "apple",
 List<String> emails = List.of("ivan@ukr.net",
 "olga@gmail.com", "petro@ukr.net");
 
-Map<Integer, List<String>> byLoginLength = 
-emails.stream()
-.collect(Collectors.groupingBy(
-email -> email.substring(0, 
-email.indexOf("@")).length(),
-Collectors.mapping(
-email -> email.substring(email.indexOf("@") + 1),
-Collectors.toList()
-)
-));
+Map<Integer, List<String>> map = emails
+.stream()
+.collect(Collectors.groupingBy(email -> email.substring(0, email.indexOf("@")).length(),
+Collectors.toList()));
+return map;
 
 -----------------------------------------------
 
