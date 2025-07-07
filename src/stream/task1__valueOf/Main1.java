@@ -26,6 +26,11 @@ public class Main1 {
                 .collect(Collectors.toList());
     }
 
+    public List <Integer> practice4 () {
+        String text = "Code";
+        return text.chars().mapToObj(a->(Integer)a) // заміна boxed
+                .collect(Collectors.toList());
+    }
 
 
 }
