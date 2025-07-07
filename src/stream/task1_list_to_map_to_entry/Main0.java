@@ -60,7 +60,13 @@ public class Main0 {
                 .map(Map.Entry::getKey);
     }
 
+    public String practice7 () {
+        List <String> list = List.of("abc", "aaa", "zzz");
+                return list.stream()
+                        .map(w->Map.entry(w,w.chars().sum()))
+                        .reduce((a,b)-> a.getValue() > b.getValue() ? a : b).map(Map.Entry::getKey).orElse("empty");
 
+    }
 
 
 
