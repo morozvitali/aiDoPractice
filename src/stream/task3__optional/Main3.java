@@ -14,4 +14,8 @@ public class Main3 {
         value.map(a->a*2).orElse(-1);
     }
 
+    public void practice3 () {
+        Optional<String> word = Optional.of("HelloWorld");
+        word.filter(w->w.length()>5).orElse("short");
+    }
 }
