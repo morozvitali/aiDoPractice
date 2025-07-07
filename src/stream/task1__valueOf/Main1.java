@@ -69,6 +69,13 @@ public class Main1 {
                 .collect(Collectors.joining());
     }
 
+    public void practice10 () {
+        String s = "abc1d2e3f9";
+        s.chars().filter(c->Character.isDigit(c))
+                .map(c->Character.getNumericValue(c))
+                .sum();
+    }
+
     public String practice11 () {
         String input = "ABCdefGHIjkl123";
         return input.chars().filter(a-> Character.isLetter(a))
