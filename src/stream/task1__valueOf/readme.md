@@ -293,8 +293,10 @@ true
 false
 
 
-better) return input.chars().allMatch(Character::isDigit);
-longer) return input.length() == input.chars().filter(c->Character.isDigit(c)).count();
+better-->>) return input.chars().allMatch(Character::isDigit);
+longer-->>) return input.length() == input
+.chars()
+.filter(c->Character.isDigit(c)).count();
 
 
 
