@@ -57,12 +57,19 @@ public class Main3 {
     public String practice9(String user) {
         Optional<String> name = Optional.of(user);
         return name.map(String::toUpperCase)
-                .orElseThrow(() -> new NoSuchElementException("Nmae not found")));
+                .orElseThrow(() -> new NoSuchElementException("Nmae not found"));
     }
 
-    public String practice10 (String login) {
+    public String practice10(String login) {
         Optional<String> user = Optional.of(login);
-        return user.map(a->a.startsWith("admin")?"Admin access" : "User access")
+        return user.map(a -> a.startsWith("admin") ? "Admin access" : "User access")
                 .orElse("no login");
+    }
+
+    public void practice11(Optional<Integer> number) {
+         number.filter(n -> n % 2 == 0)
+                .map(n -> n * 2)
+                .ifPresentOrElse(val -> System.out.println("double " + val),
+                () -> System.out.println("val is empty"));
     }
 }
