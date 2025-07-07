@@ -19,4 +19,13 @@ public class Main1 {
                 .collect(Collectors.toList());
     }
 
+    public List <String> practice3 () {
+        String s = "abracadabra";
+        return s.chars().distinct()
+                .mapToObj(a->String.valueOf((char)a))
+                .collect(Collectors.toList());
+    }
+
+
+
 }
