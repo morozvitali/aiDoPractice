@@ -2,6 +2,7 @@ package stream.task1_list_to_map_to_entry;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main0 {
     public String practice1() {
@@ -46,7 +47,18 @@ public class Main0 {
                 .findFirst().map(Map.Entry::getKey).orElse("немає");
     }
 
-
+    public void practice6 () {
+        List<String> list = List.of("apple", "committee",
+                "banana", "success");
+        list.stream()
+                .map(w->Map
+                        .entry(w, w
+                                .chars()
+                                .distinct()
+                                .count()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey);
+    }
 
 
 
