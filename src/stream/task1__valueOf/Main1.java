@@ -106,4 +106,9 @@ public class Main1 {
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
     }
+
+    public void practice15 () {
+        String input = "12a3";
+        input.chars().allMatch(a->Character.isDigit(a));
+    }
 }
