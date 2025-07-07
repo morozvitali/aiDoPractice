@@ -65,10 +65,16 @@ public class Main0 {
                 return list.stream()
                         .map(w->Map.entry(w,w.chars().sum()))
                         .reduce((a,b)-> a.getValue() > b.getValue() ? a : b).map(Map.Entry::getKey).orElse("empty");
-
     }
 
-
+    public String practice8 () {
+        List<String> list = List.of("zebra",
+                "apple", "mango", "banana");
+        return list.stream().map(w->Map.entry(w, w.chars().filter(c->c=='a').count()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("empty");
+    }
 
 
 
