@@ -36,5 +36,30 @@ public class Main0 {
         return IntStream.concat(Arrays.stream(arrayA), Arrays.stream(arrayB)).toArray();
     }
 
+    public int [] practice4 () {
+        int [] a = new int [] {10, 15, 20, 11};
+        int [] b = new int [] {5, 7};
+        return Arrays.stream(a).filter(value->Arrays.stream(b).filter(d->value%d==0).count()>0).toArray();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
