@@ -47,23 +47,4 @@ public class Main0 {
         int [] b = new int [] {5, 7};
         return (String[]) Arrays.stream(a).filter(value -> Arrays.stream(b).filter(number -> value.length() == number).count()>0).toArray();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
