@@ -36,7 +36,9 @@ public class Main0 {
         return Arrays.stream(numbers).mapToObj(a->String.valueOf(a)).reduce("", (a,b)->a + "|" + b);
     }
 
-
+    public int practice8 () {
+        return IntStream.rangeClosed(2,9).filter(a->a%2==1).reduce((a,b)-> a*b).orElse(-1);
+    }
 
 
 }
