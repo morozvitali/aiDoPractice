@@ -42,7 +42,11 @@ public class Main0 {
         return Arrays.stream(a).filter(value->Arrays.stream(b).filter(d->value%d==0).count()>0).toArray();
     }
 
-
+    public String [] practice5 () {
+        String [] a = new String [] {"hi", "hello", "world"};
+        int [] b = new int [] {5, 7};
+        return (String[]) Arrays.stream(a).filter(value -> Arrays.stream(b).filter(number -> value.length() == number).count()>0).toArray();
+    }
 
 
 
