@@ -1,4 +1,4 @@
-package stream.task7_anymatch;
+package stream.task99skip.task7_anymatch;
 
 import java.util.List;
 
@@ -13,5 +13,4 @@ public class Main0 {
         List<Integer> list = List.of(1, 2, 3, 0);
         return list.stream().allMatch(a->a!=0);
     }
-
 }

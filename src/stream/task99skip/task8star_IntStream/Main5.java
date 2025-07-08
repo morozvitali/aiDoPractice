@@ -1,4 +1,4 @@
-package stream.task8star_IntStream;
+package stream.task99skip.task8star_IntStream;
 
 import java.util.Arrays;
 import java.util.List;

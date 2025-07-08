@@ -1,4 +1,4 @@
-package stream.task7_anymatch;
+package stream.task99skip.task7_anymatch;
 
 import java.util.Arrays;
 import java.util.List;
