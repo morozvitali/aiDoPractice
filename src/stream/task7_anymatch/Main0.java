@@ -9,6 +9,9 @@ public class Main0 {
         return list.stream().allMatch(a->a>=0);
     }
 
-
+    public boolean practice2 () {
+        List<Integer> list = List.of(1, 2, 3, 0);
+        return list.stream().allMatch(a->a!=0);
+    }
 
 }
