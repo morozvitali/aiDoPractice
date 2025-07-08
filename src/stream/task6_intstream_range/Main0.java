@@ -15,4 +15,9 @@ public class Main0 {
         return IntStream.rangeClosed(21,40).filter(a->a%2==1).min().orElse(-1);
     }
 
+    public int practice4 () {
+        return IntStream.range(1,6).reduce((a,b)->a*b).orElse(-1);
+    }
+
+
 }
