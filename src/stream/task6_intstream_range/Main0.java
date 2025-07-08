@@ -40,5 +40,7 @@ public class Main0 {
         return IntStream.rangeClosed(2,9).filter(a->a%2==1).reduce((a,b)-> a*b).orElse(-1);
     }
 
-
+    public int practice9 () {
+        return IntStream.rangeClosed(1,5).map(a->a*a).sum();
+    }
 }
