@@ -1,4 +1,4 @@
-package stream.task9_diff;
+package stream.task9_diff_haaaard;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -9,7 +9,10 @@ public class Main {
         int [] a = new int [] {1, 2, 3, 4};
         int [] b = new int [] {2, 4, 6};
         // -> [2, 4]
-        Set <Integer> set = Arrays.stream(b).boxed().collect(Collectors.toSet());
+        Set <Integer> set = Arrays.stream(b)
+                .boxed()
+                .collect(Collectors
+                        .toSet());
         return Arrays.stream(a).filter(x->set.contains(x))
                 .toArray();
     }
