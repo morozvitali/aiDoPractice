@@ -3,6 +3,7 @@ package stream.task9_diff_haaaard;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main0 {
     public int [] practice1 () {
@@ -23,7 +24,17 @@ public class Main0 {
         return Arrays.stream(b).filter(x->!set.contains(x)).toArray();
     }
 
+    public int [] practice3 () {
+        int [] a = new int [] {1, 2, 3, 4};
+        int [] b = new int [] {2, 4, 6};
+        Set <Integer> setA = Arrays.stream(a).boxed().collect(Collectors.toSet());
+        Set <Integer> setB = Arrays.stream(b).boxed().collect(Collectors.toSet());
 
+        int [] arrayA = Arrays.stream(b).filter(value -> !setA.contains(value)).toArray();
+        int [] arrayB = Arrays.stream(a).filter(value -> !setB.contains(value)).toArray();
+
+        return IntStream.concat(Arrays.stream(arrayA), Arrays.stream(arrayB)).toArray();
+    }
 
 
 }
