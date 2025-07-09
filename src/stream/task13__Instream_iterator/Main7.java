@@ -1,5 +1,6 @@
 package stream.task13__Instream_iterator;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
@@ -94,4 +95,13 @@ public class Main7 {
                 .orElse(-1);
     }
 
+    public void practice17 () {
+        List<String> words = List.of("sky", "banana",
+                "apple", "grape", "orange", "plum");
+        words.stream()
+                .sorted(Comparator.comparing((String w) -> w.chars()
+                        .filter(ch-> "aeiou".indexOf(ch) >= 0)
+                        .count()).thenComparing(Comparator.naturalOrder()))
+                .forEach(System.out::println);
+    }
 }
