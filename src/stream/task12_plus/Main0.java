@@ -94,4 +94,12 @@ public class Main0 {
         );
     }
 
+    public int practice11 (int number) {
+        return Integer.parseInt(
+                String.valueOf(number).chars().map(ch->Character.getNumericValue(ch))
+                        .mapToObj(a-> a>5 ? "X" : "O")
+                        .collect(Collectors.joining())
+        );
+    }
+
 }
