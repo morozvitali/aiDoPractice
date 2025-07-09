@@ -24,4 +24,10 @@ public class Main0 {
         return String.join(" ", words);
     }
 
+    public String practice4 (String sentence) {
+        return Arrays
+                .stream(sentence.split(" "))
+                .map(s-> "(" + s + ")")
+                .collect(Collectors.joining());
+    }
 }
