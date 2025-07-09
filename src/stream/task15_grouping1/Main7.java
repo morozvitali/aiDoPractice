@@ -1,9 +1,7 @@
 package stream.task15_grouping1;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main7 {
     public long practice1 () {
@@ -51,7 +49,14 @@ public int practice2 () {
                 .orElse("empty");
     }
 
+    public void practice6 () {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
 
+        Map<Character, Double> map = Arrays
+                .stream(words)
+                .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
 
 
 
