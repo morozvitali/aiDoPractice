@@ -69,4 +69,9 @@ public class Main7 {
                 .filter(ch-> "aeiou".indexOf(ch)>=0)
                 .forEach(System.out::println);
     }
+
+    public void practice14 () {
+        IntStream.rangeClosed(1,20).map(a->a*a).peek(a-> System.out.println("Log " + a)).filter(a-> a%4 == 0).forEach(System.out::println);
+    }
+
 }
