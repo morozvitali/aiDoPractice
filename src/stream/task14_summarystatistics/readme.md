@@ -125,7 +125,8 @@ Collectors.averagingInt(String::length)
 ✅ Завдання 7: Порахуй, скільки разів кожна голосна 
 зустрічається у всіх словах
 
-String[] words = {"apple", "orange", "banana", "umbrella"};
+String[] words = {"apple", "orange",
+"banana", "umbrella"};
 🧪 Очікувано:
 
 a=4, e=2, o=1, u=1

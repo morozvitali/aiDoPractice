@@ -1,6 +1,7 @@
 package stream.task15_grouping1;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main7 {
@@ -58,7 +59,14 @@ public int practice2 () {
                 .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 
+    public Map <Character, Long> practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
 
+        return Arrays.stream(words).flatMap(a->a.chars().mapToObj(c->(char)c))
+                .filter(ch->"aeiou".indexOf(ch)>=0)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
 
 
 
