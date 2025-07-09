@@ -96,7 +96,17 @@ public int practice2 () {
                                 .isUpperCase(w.charAt(0))));
     }
 
+    public Map <String, Long> practice11 () {
 
+        String[] words = {"Java", "java",
+                "Kotlin", "kotlin", "kotlin", "Scala"};
+        return Arrays
+                .stream(words)
+                .map(a->a.toLowerCase())
+                .collect(Collectors
+                        .groupingBy(w->w, Collectors
+                                .counting()));
+    }
 
 
 
