@@ -85,6 +85,13 @@ public class Main0 {
                 }).collect(Collectors.joining()));
         }
 
-
+    public int practice10 (int number) {
+        return Integer.parseInt(
+                String.valueOf(number).chars().map(ch->Character.getNumericValue(ch))
+                        .map(d-> Math.abs(d-5))
+                        .mapToObj(a->String.valueOf(a))
+                        .collect(Collectors.joining())
+        );
+    }
 
 }
