@@ -194,10 +194,12 @@ String[] words = {"education", "questionnaire",
           
 ---------------------------------------------------------------
 
-✅ Завдання 10: Побудуй Map<Boolean, List<String>> — поділи слова, 
+✅ Завдання 10: Побудуй Map<Boolean, 
+List<String>> — поділи слова, 
 які починаються з великої літери
 
-String[] words = {"Apple", "banana", "Cherry", "date", "Eggplant"};
+String[] words = {"Apple", "banana",
+"Cherry", "date", "Eggplant"};
 🧪 Очікувано:
 
 true  = [Apple, Cherry, Eggplant]  
