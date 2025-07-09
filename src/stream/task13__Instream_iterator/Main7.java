@@ -1,5 +1,6 @@
 package stream.task13__Instream_iterator;
 
+import java.util.List;
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
@@ -71,7 +72,20 @@ public class Main7 {
     }
 
     public void practice14 () {
-        IntStream.rangeClosed(1,20).map(a->a*a).peek(a-> System.out.println("Log " + a)).filter(a-> a%4 == 0).forEach(System.out::println);
+        IntStream.rangeClosed(1,20)
+                .map(a->a*a)
+                .peek(a-> System.out.println("Log " + a))
+                .filter(a-> a%4 == 0)
+                .forEach(System.out::println);
     }
+
+    public String practice15 () {
+        List<String> words = List.of("sky",
+                "apple", "banana", "cat", "loop");
+        return words.stream()
+                .filter(w->w.chars().distinct().count() < w.length())
+                .reduce((a,b)-> a.length() < b.length() ? a : b).orElse("empty");
+    }
+
 
 }
