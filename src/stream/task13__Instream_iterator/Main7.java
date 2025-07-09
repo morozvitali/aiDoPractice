@@ -1,5 +1,6 @@
 package stream.task13__Instream_iterator;
 
+import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 public class Main7 {
@@ -44,7 +45,14 @@ public class Main7 {
     }
 
     public void practice11 () {
-        IntStream.
+        IntStream.iterate(1, i->i+1).takeWhile(new IntPredicate() {
+            int sum = 0;
+            @Override
+            public boolean test(int i) {
+                sum = sum + i;
+                return sum < 50;
+            }
+        }).forEach(System.out::println);
     }
 
 }
