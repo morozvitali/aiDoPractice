@@ -22,4 +22,10 @@ public class Main7 {
     public void practice5 () {
         IntStream.iterate(1,i->i+1).limit(10).map(a->a*a).forEach(System.out::println);
     }
+
+    public void practice6 () {
+        IntStream.iterate(17, i->i+1).limit(9).forEach(System.out::println);
+    }
+
+
 }
