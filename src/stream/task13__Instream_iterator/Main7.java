@@ -55,4 +55,12 @@ public class Main7 {
         }).forEach(System.out::println);
     }
 
+    public void practice12 () {
+        "programmingisfun"
+                .chars()
+                .distinct()
+                .limit(10)
+                .forEach(ch -> System.out.println((char)ch));
+    }
+
 }
