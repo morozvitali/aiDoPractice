@@ -175,15 +175,22 @@ apple, moon, banana, loop
 
 ------------------------------------------------------------
 
-🚀 Несамовиті завдання по Stream API — Частина III (№11–15)
-✅ Завдання 9: Знайди всі слова, які мають усі голосні (a, e, i, o, u)
+🚀 Несамовиті завдання по Stream API
+Частина III (№11–15)
 
-String[] words = {"education", "questionnaire", "house", "audio", "universe"};
-🧪 Очікувано: ["education", "questionnaire", "universe"]
+✅ Завдання 9: Знайди всі слова,
+які мають усі голосні (a, e, i, o, u)
+
+String[] words = {"education", "questionnaire", 
+"house", "audio", "universe"};
+
+🧪 Очікувано: ["education", 
+"questionnaire", "universe"]
 
 📦 Підказка:
 
-.filter(w -> "aeiou".chars().allMatch(c -> w.indexOf(c) >= 0))
+.filter(w -> "aeiou".chars()
+.allMatch(c -> w.indexOf(c) >= 0))
           
 ---------------------------------------------------------------
 

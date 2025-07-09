@@ -72,11 +72,19 @@ public int practice2 () {
         String[] words = {"apple", "moon",
                 "sky", "banana", "loop"};
 
-        return  Arrays.stream(words).filter(a->a.chars().distinct().count() == a.length()).mapToInt(a->a.length()).summaryStatistics();
-
+        return  Arrays.stream(words)
+                .filter(a->a.chars()
+                        .distinct()
+                        .count() == a.length())
+                .mapToInt(a->a.length())
+                .summaryStatistics();
     }
 
-
+    public List <String> practice9 () {
+        String[] words = {"education", "questionnaire",
+                "house", "audio", "universe"};
+        return Arrays.stream(words).filter(w-> "aeiou".chars().allMatch(c->w.indexOf(c) >= 0)).collect(Collectors.toList());
+    }
 
 
 
