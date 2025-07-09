@@ -2,6 +2,7 @@ package stream.task15_grouping1;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
+import java.util.List;
 
 public class Main7 {
     public long practice1 () {
@@ -9,6 +10,17 @@ public class Main7 {
         IntSummaryStatistics stats = Arrays.stream(numbers).filter(a->a%2==0).distinct().summaryStatistics();
         return stats.getCount();
     }
+
+public int practice2 () {
+    List<String> words = List.of("APPLE",
+            "Banana", "CHERRY", "kiwi", "PLUM");
+
+    return words.stream()
+            .map(a->a.toLowerCase())
+            .filter(a->a.length()%2==0)
+            .mapToInt(a->a.length())
+            .sum();
+}
 
 
 
