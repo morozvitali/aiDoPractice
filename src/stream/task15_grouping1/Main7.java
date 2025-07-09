@@ -1,6 +1,7 @@
 package stream.task15_grouping1;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 
@@ -40,6 +41,33 @@ public int practice2 () {
                 .summaryStatistics();
         return stats.getAverage();
     }
+
+    public void practice5 () {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+        Arrays.stream(words)
+                .filter(a->"aeiou".indexOf(a.charAt(0)) >=0)
+                .min(Comparator.comparingInt(String::length))
+                .orElse("empty");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
