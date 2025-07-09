@@ -63,4 +63,10 @@ public class Main7 {
                 .forEach(ch -> System.out.println((char)ch));
     }
 
+    public void practice13 () {
+        "streamprocessing".chars()
+                .mapToObj(c->(char)c)
+                .filter(ch-> "aeiou".indexOf(ch)>=0)
+                .forEach(System.out::println);
+    }
 }
