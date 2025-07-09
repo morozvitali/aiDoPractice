@@ -59,7 +59,15 @@ public class Main0 {
         );
     }
 
-
+    public int practice7 (int number) {
+        return Integer
+                .parseInt(String.valueOf(number)
+                .chars()
+                .map(ch->Character.getNumericValue(ch))
+                .map(a->a%2==0? a : a*a)
+                .mapToObj(a->String.valueOf(a))
+                .collect(Collectors.joining()));
+    }
 
 
 }
