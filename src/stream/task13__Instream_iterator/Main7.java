@@ -27,5 +27,24 @@ public class Main7 {
         IntStream.iterate(17, i->i+1).limit(9).forEach(System.out::println);
     }
 
+    public void practice7 () {
+        IntStream.iterate(1, i->i*2).limit(10).forEach(System.out::println);
+    }
+
+    public void practice8 () {
+        IntStream.iterate(1, i-> i+1).filter(a->a%2==0).map(a->a+3).limit(10).forEach(System.out::println);
+    }
+
+    public void practice9 () {
+        IntStream.iterate(1, i->i+1).filter(a->a%10 != 5).limit(10).forEach(System.out::println);
+    }
+
+    public void practice10 () {
+        IntStream.iterate(1, i-> i+1).filter(a->a%5==0).skip(5).limit(10).forEach(System.out::println);
+    }
+
+    public void practice11 () {
+        IntStream.
+    }
 
 }
