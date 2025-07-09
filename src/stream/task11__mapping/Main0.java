@@ -30,4 +30,11 @@ public class Main0 {
                 .map(s-> "(" + s + ")")
                 .collect(Collectors.joining());
     }
+
+    public String practice5 (String sentence) {
+        return Arrays
+                .stream(sentence.split(" "))
+                .filter(s-> (new StringBuilder(s).reverse().toString().equals(s)))
+                .collect(Collectors.joining(" "));
+    }
 }
