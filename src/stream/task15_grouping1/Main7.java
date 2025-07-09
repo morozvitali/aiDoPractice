@@ -30,7 +30,16 @@ public int practice2 () {
                 .filter(ch->"aeiou".indexOf(ch)>=0).count() > 0);
     }
 
+    public double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
 
+        IntSummaryStatistics stats = Arrays.stream(words)
+                .filter(w->w.matches(".*[aeiou].*"))
+                .mapToInt(a->a.length())
+                .summaryStatistics();
+        return stats.getAverage();
+    }
 
 
 
