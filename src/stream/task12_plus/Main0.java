@@ -69,5 +69,10 @@ public class Main0 {
                 .collect(Collectors.joining()));
     }
 
+    public long practice8 (int number) {
+        return String.valueOf(number).length();
+    }
+
+
 
 }
