@@ -53,6 +53,13 @@ public class Main0 {
         );
     }
 
+    public int practice6 (int number) {
+        return Integer.parseInt(
+                new StringBuilder (String.valueOf(number)).reverse().toString()
+        );
+    }
+
+
 
 
 }
