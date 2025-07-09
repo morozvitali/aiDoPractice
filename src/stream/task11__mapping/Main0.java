@@ -16,4 +16,12 @@ public class Main0 {
         return Arrays.stream(input.split(" ")).map(s-> s.length() < 5 ? s : "[...]").collect(Collectors.joining(" "));
     }
 
+    public String practice3 (String input) {
+        String [] words = input.split(" ");
+        String temp = words[0];
+        words[0] = words[words.length -1];
+        words[words.length -1] = temp;
+        return String.join(" ", words);
+    }
+
 }
