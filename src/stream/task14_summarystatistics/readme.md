@@ -38,7 +38,9 @@ List<String> words = List.of("APPLE",
 ✅ Завдання 3 : Створи Map<String, Integer> для слів,
 у яких більше 1 голосної та довжина > 3
 
-String[] words = {"sky", "apple", "moon", "dry", "banana"};
+String[] words = {"sky", "apple", 
+"moon", "dry", "banana"};
+
 🧪 Очікувано:
 
 {
@@ -46,6 +48,7 @@ apple=2,
 moon=2,
 banana=3
 }
+
 📦 Підказка:
 
 .filter(w -> countVowels(w) > 1 && w.length() > 3)
@@ -58,6 +61,7 @@ banana=3
 
 String[] words = {"sky", "apple", "moon", 
 "dry", "sun"};
+
 📦 Підказка:
 
 .filter(w -> w.matches(".*[aeiou].*"))

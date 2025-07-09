@@ -22,6 +22,16 @@ public int practice2 () {
             .sum();
 }
 
+    public void practice3 () {
+        String[] words = {"sky", "apple",
+                "moon", "dry", "banana"};
+        Arrays.stream(words).filter(a->a.length()>3)
+                .filter(a->a.chars().map(c->(char)c)
+                .filter(ch->"aeiou".indexOf(ch)>=0).count() > 0);
+    }
+
+
+
 
 
 }
