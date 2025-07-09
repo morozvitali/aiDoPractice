@@ -108,12 +108,21 @@ public int practice2 () {
                                 .counting()));
     }
 
+    public void practice12 () {
+        String[] words = {"cat", "apple",
+                "grape", "banana", "fig", "cherry"};
+        Arrays.stream(words).filter(a->a.length()>=4 && a.length()<6)
+                .mapToInt(a->a.length()).sum();
+    }
 
+    public String practice13 () {
+        String[] words = {"apple", "tree",
+                "orange", "banana", "loop"};
 
-
-
-
-
-
-
+        return Arrays.stream(words).filter(w -> "aeiou".chars()
+                        .anyMatch(c -> w.chars()
+                                .filter(ch -> ch == c).count() >= 2))
+                .findFirst()
+                .orElse("not found");
+    }
 }
