@@ -87,5 +87,11 @@ public class Main7 {
                 .reduce((a,b)-> a.length() < b.length() ? a : b).orElse("empty");
     }
 
+    public void practice16 () {
+        List<Integer> nums = List.of(23, 70, 172,
+                88, 45, 27, 97, 21);
+        nums.stream().filter(a->String.valueOf(a).contains("7")).max(Integer::compareTo)
+                .orElse(-1);
+    }
 
 }
