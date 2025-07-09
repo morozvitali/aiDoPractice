@@ -15,7 +15,9 @@ public class Main7 {
         IntStream.iterate(1, i-> i+1).limit(10).forEach(System.out::println);
     }
 
-
+    public void practice4 () {
+        IntStream.iterate(5, i->i+5).limit(10).forEach(System.out::println);
+    }
 
 
 }
