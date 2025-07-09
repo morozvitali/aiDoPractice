@@ -1,6 +1,7 @@
 package stream.task12_plus;
 
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main0 {
     public int practice1(int n) {
@@ -72,6 +73,17 @@ public class Main0 {
     public long practice8 (int number) {
         return String.valueOf(number).length();
     }
+
+    public int practice9 (int number) {
+        String snumb = String.valueOf(number);
+        return Integer.parseInt(
+        IntStream.iterate(1, i->i+1)
+                .limit(snumb.length())
+                .mapToObj(i-> {
+                    int digit = Character.getNumericValue(snumb.charAt(i - 1));
+                    return String.valueOf(digit * i);
+                }).collect(Collectors.joining()));
+        }
 
 
 
