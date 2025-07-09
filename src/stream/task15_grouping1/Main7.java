@@ -68,7 +68,13 @@ public int practice2 () {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public IntSummaryStatistics practice8 () {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
 
+        return  Arrays.stream(words).filter(a->a.chars().distinct().count() == a.length()).mapToInt(a->a.length()).summaryStatistics();
+
+    }
 
 
 
