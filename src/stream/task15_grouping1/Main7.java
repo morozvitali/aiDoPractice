@@ -125,4 +125,23 @@ public int practice2 () {
                 .findFirst()
                 .orElse("not found");
     }
+
+    public Map <Character, Long>  practice14 () {
+        String[] words = {"apple", "tree",
+                "orange", "banana", "loop"};
+        return Arrays.stream(words)
+                .map(w->normalize(w))
+                .flatMap(a -> a
+                        .chars()
+                        .mapToObj(ch->(char)ch))
+                .collect(Collectors.groupingBy(m->m, Collectors.counting()));
+    }
+
+    public String normalize (String s) {
+        return s.chars()
+                .map(c->(char)c)
+                .filter(Character::isLetter)
+                .map(Character::toLowerCase)
+                .toString();
+    }
 }

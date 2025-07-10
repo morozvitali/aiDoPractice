@@ -269,10 +269,34 @@ String[] words = {"apple", "tree",
 ---------------------------------------------------------------
 
 ✅ Завдання 14: 🧠 Бонусний виклик
-String[] words = {"apple", "tree", "orange", "banana", "loop"};
-🔹 Згенеруй List<List<Integer>> — і зроби задачу з flatMap
-🔹 Створи утиліту normalize(String) → яка чистить 
-слова і приводить до нижнього регістру
-🔹 Зроби Map<Char, Double> — кількість кожного символу
+String[] words = {"apple", "tree", 
+"orange", "banana", "loop"};
+🔹 Згенеруй List<List<Integer>> 
+— і зроби задачу з flatMap
+🔹 Створи утиліту normalize(String) →
+яка чистить слова і приводить до
+нижнього регістру
+🔹 Зроби Map<Char, Long> — 
+кількість кожного символу
+
+    public Map <Character, Long>  practice () {
+        String[] words = {"apple", "tree",
+                "orange", "banana", "loop"};
+        return Arrays.stream(words)
+                .map(w->normalize(w))
+                .flatMap(a -> a
+                        .chars()
+                        .mapToObj(ch->(char)ch))
+                .collect(Collectors.groupingBy(m->m, Collectors.counting()));
+    }
+    
+    public String normalize (String s) {
+        return s.chars()
+                .map(c->(char)c)
+                .filter(Character::isLetter)
+                .map(Character::toLowerCase)
+                .toString();
+    }
+
 
 ---------------------------------------------------------------
