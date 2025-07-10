@@ -26,4 +26,27 @@ public class Main1 {
                         .groupingBy(a->a.length(), Collectors.counting()));
     }
 
+    public Map <Boolean, List <String>> practice3 () {
+        String[] words = {"apple", "sky", "banana", "dry", "orange"};
+        return Arrays.stream(words).collect(Collectors.partitioningBy(w -> w.chars().filter(ch->"aoeiu".indexOf(ch)>=0).count() > 0));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
