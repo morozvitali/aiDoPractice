@@ -31,7 +31,14 @@ public class Main1 {
         return Arrays.stream(words).collect(Collectors.partitioningBy(w -> w.chars().filter(ch->"aoeiu".indexOf(ch)>=0).count() > 0));
     }
 
-
+    public Map <Integer, Long> practice4 () {
+        String[] words = {"apple", "banana",
+                "orange", "umbrella",
+                "ant", "dog", "egg"};
+        return Arrays.stream(words)
+                .filter(w->"aeiou".indexOf(w.charAt(0))>=0)
+                .collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
+    }
 
 
 
