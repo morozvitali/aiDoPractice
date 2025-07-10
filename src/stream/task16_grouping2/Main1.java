@@ -14,6 +14,16 @@ public class Main1 {
                 .collect(Collectors.groupingBy(String::length));
     }
 
-
+    public Map <Integer, Long> practice2 () {
+        String[] words = {"apple", "banana", "dog", "kiwi", "plum"};
+        return Arrays.stream(words)
+                .filter(b-> b
+                        .chars()
+                        .map(c -> (char) c)
+                        .filter(ch -> "aeiou"
+                                .indexOf(ch) >= 0).findAny().isPresent())
+                .collect(Collectors
+                        .groupingBy(a->a.length(), Collectors.counting()));
+    }
 
 }
