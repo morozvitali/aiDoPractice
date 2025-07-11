@@ -43,8 +43,19 @@ public class Main0 {
 
     public Map<Boolean, List<Integer>> practice5 () {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
-        return numbers.stream().collect(Collectors.partitioningBy(a->a%2==0));
+        return numbers.stream()
+                .collect(Collectors
+                        .partitioningBy(a->a%2==0));
     }
+
+    public Map <Character, List<String>> practice6 () {
+        List<String> words = List.of("apple",
+                "ant", "banana", "bat", "car");
+        return words.stream().map(a->a.toUpperCase())
+                .collect(Collectors.groupingBy(a->a.charAt(0)));
+    }
+
+
 
 
 
