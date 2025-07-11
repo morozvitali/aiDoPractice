@@ -69,6 +69,17 @@ public class Main0 {
                                 Collectors.counting()));
     }
 
+    public void practice9 () {
+        List<String> words = List.of("hi", "hi",
+                "book", "sun", "day", "Java", "sky");
+        words.stream()
+                .collect(Collectors
+                        .groupingBy(a->a.length(),
+                Collectors.toSet()));
+    }
+
+
+
 
 
 }

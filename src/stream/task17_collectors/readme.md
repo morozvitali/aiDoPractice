@@ -156,11 +156,13 @@ Collectors.counting()
 
 
 ✅ Задача 9: groupingBy + toSet
-📌 Є список рядків. Згрупуй слова за довжиною, але зберігай кожну групу без повторень.
+📌 Є список рядків. Згрупуй слова за довжиною,
+але зберігай кожну групу без повторень.
 
 🔍 Підказка: Collectors.toSet()
 
-List<String> words = List.of("hi", "hi", "book", "sun", "day", "Java", "sky");
+List<String> words = List.of("hi", "hi",
+"book", "sun", "day", "Java", "sky");
 🧪 Очікувано:
 
 {
@@ -171,7 +173,8 @@ List<String> words = List.of("hi", "hi", "book", "sun", "day", "Java", "sky");
 📦 Початковий код:
 
 public Map<Integer, Set<String>> groupUniqueByLength() {
-List<String> words = List.of("hi", "hi", "book", "sun", "day", "Java", "sky");
+List<String> words = List.of("hi",
+"hi", "book", "sun", "day", "Java", "sky");
 return words.stream()
 .collect(Collectors.groupingBy(
 String::length,
