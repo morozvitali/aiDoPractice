@@ -385,14 +385,11 @@ List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
 🧪 Очікувано: "book" або "Java"
 📦 Початковий код:
 
-public String findLongestWord() {
-List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
 return words.stream()
 .collect(Collectors.reducing(
 "",
 (a, b) -> a.length() >= b.length() ? a : b
 ));
-}
 
 --------------------------------------------------------------
 

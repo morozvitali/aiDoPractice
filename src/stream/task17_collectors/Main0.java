@@ -128,4 +128,19 @@ public class Main0 {
                                 LinkedHashMap::new
                         ));
     }
+
+    public void practice15 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+
+        words.stream()
+                .collect(Collectors
+                        .reducing("", (a, b) -> a
+                                .length() > b.length()
+                                ? a : b));
+
+
+    }
+
+
 }
