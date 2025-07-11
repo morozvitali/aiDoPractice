@@ -41,6 +41,11 @@ public class Main0 {
                                 Collectors.counting()));
     }
 
+    public Map<Boolean, List<Integer>> practice5 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy(a->a%2==0));
+    }
+
 
 
 }
