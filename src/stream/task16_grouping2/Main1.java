@@ -45,19 +45,4 @@ public class Main1 {
         Map <Boolean, List <Integer>> map = Arrays.stream(ints).boxed().collect(Collectors.partitioningBy(value -> value % 2 == 0));
         return map.get(true).size() == 1 ? map.get(true).getFirst() : map.get(false).getFirst();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

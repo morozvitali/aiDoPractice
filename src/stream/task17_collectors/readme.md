@@ -7,14 +7,17 @@ flatMapping, mapping + partitioningBy — все,
 
 📘 ЗАДАЧІ STREAM API – Частина 1: Колектори
 ✅ Задача 1: joining
-📌 У тебе є список імен. Об’єднай їх в один рядок, розділений комами.
+📌 У тебе є список імен. 
+Об’єднай їх в один рядок, розділений комами.
 
 List<String> names = List.of("Alice", "Bob", "Charlie");
 Очікувано: "Alice, Bob, Charlie"
 
+names.stream().collect(Collectors.joining(", "));
 
 ✅ Задача 2: Summarizing
-📌 Є список чисел. Отримай статистику: кількість, суму, мінімум, максимум, середнє.
+📌 Є список чисел. Отримай статистику: 
+кількість, суму, мінімум, максимум, середнє.
 
 List<Integer> numbers = List.of(4, 8, 15, 16, 23, 42);
 Очікувано:
@@ -26,13 +29,15 @@ max = 42
 average = 18.0
 public void mySummarizing () {
 List<Integer> numbers = List.of(4, 8, 15, 16, 23, 42);
-numbers.stream().collect(Collectors.summarizingInt(value -> Integer::sum));
+numbers.stream().collect(Collectors
+.summarizingInt(value -> Integer::sum));
 }
 
 ✅ Задача 3: groupingBy
 📌 Є список слів. Згрупуй їх за довжиною.
 
-List<String> words = List.of("hi", "book", "sun", "day", "Java", "sky");
+List<String> words = List.of("hi", "book",
+"sun", "day", "Java", "sky");
 Очікувано:
 
 {
