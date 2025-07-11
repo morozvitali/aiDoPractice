@@ -1,5 +1,6 @@
 package stream.task17_collectors;
 
+import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
@@ -81,6 +82,12 @@ public class Main0 {
     public String practice10 () {
         List<Integer> numbers = List.of(4, 8, 15, 16, 23, 42);
         return numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(),count -> "Count " + count));
+    }
+
+    public void practice11 () {
+        List<String> words = List.of("apple",
+                "ant", "banana", "bat", "car");
+        words.stream().collect(Collectors.groupingBy(a->a.charAt(0), Collectors.joining(", ")));
     }
 
 
