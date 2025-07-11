@@ -61,6 +61,14 @@ public class Main0 {
         return words.stream().collect(Collectors.toMap(a->a.charAt(0), a->a.length()));
     }
 
+    public void practice8 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        numbers.stream()
+                .collect(Collectors
+                        .groupingBy(a->a%2==0,
+                                Collectors.counting()));
+    }
+
 
 
 }
