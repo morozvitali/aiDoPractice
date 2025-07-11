@@ -107,5 +107,25 @@ public class Main0 {
                                         .toList()));
     }
 
+    public void practice14 () {
+        Map <Integer, List<String>> input = Map.of(
+                2, List.of("hi"),
+                3, List.of("sun", "day", "sky"),
+                4, List.of("book", "Java")
+        );
 
+        input.entrySet()
+                .stream()
+                .sorted(Comparator
+                        .comparingInt(e->e
+                                .getValue()
+                                .size()))
+                .collect(Collectors
+                        .toMap(
+                                Map.Entry::getKey,
+                                Map.Entry::getValue,
+                                (a,b)->b,
+                                LinkedHashMap::new
+                        ));
+    }
 }

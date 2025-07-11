@@ -343,20 +343,24 @@ Collectors.toList()
 }
 
 ✅ Задача 14: sorting by value (List)
-📌 Є Map<Integer, List<String>>. Відсортуй її за розміром списків.
+📌 Є Map<Integer, List<String>>. Відсортуй її за
+розміром списків.
 
-🔍 Підказка: .entrySet().stream().sorted(...).collect(...)
+🔍 Підказка: .entrySet().stream()
+.sorted(...).collect(...)
 
 Map <Integer, List<String>> input = Map.of(
 2, List.of("hi"),
 3, List.of("sun", "day", "sky"),
 4, List.of("book", "Java")
 );
+
 🧪 Очікувано (за зростанням розміру списку):
 
 2=[hi],
 4=[book, Java],
 3=[sun, day, sky]
+
 📦 Початковий код:
 
 public LinkedHashMap<Integer, List<String>> sortByListSize(Map<Integer, List<String>> input) {
