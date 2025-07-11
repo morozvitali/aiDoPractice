@@ -101,7 +101,8 @@ partitioningBy(...) з підрахунком.
 
 🔍 Підказка: groupingBy(..., mapping(...))
 
-List<String> words = List.of("apple", "ant", "banana", "bat", "car");
+List<String> words = List.of("apple", "ant",
+"banana", "bat", "car");
 🧪 Очікувано:
 
 {
@@ -114,12 +115,11 @@ c=[3]
 
 public Map<Character, List<Integer>> groupByFirstLetterLength() {
 List<String> words = List.of("apple", "ant", "banana", "bat", "car");
+
 return words.stream()
-.collect(Collectors.groupingBy(
-word -> word.charAt(0),
-Collectors.mapping(String::length, Collectors.toList())
-));
-}
+.collect(Collectors
+.toMap(a->a.charAt(0), 
+a->a.length()));
 
 
 ✅ Задача 8: partitioningBy з підрахунком

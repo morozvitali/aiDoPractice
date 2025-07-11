@@ -55,7 +55,11 @@ public class Main0 {
                 .collect(Collectors.groupingBy(a->a.charAt(0)));
     }
 
-
+    public Map <Character, Integer> practice7 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.toMap(a->a.charAt(0), a->a.length()));
+    }
 
 
 
