@@ -138,9 +138,22 @@ public class Main0 {
                         .reducing("", (a, b) -> a
                                 .length() > b.length()
                                 ? a : b));
-
-
     }
+
+    public void practice16 () {
+        List<String> words = List.of("apple", "ant",
+                "alphabet", "axe", "banana", "bat");
+        words.stream()
+                .collect(Collectors
+                        .groupingBy(a->a.charAt(0),
+                                Collectors
+                                        .collectingAndThen(Collectors
+                                        .toList(), list -> list
+                                                .stream().sorted(Comparator
+                                                        .comparingInt(String::length))
+                                                .toList())));
+    }
+
 
 
 }
