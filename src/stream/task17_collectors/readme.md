@@ -297,7 +297,8 @@ Collectors.reducing(...) Це спеціальний колектор, який 
 (counting, summarizingInt)	Але гнучкіший і універсальніший
 
 
-List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+List<Integer> numbers = List.of(1, 2, 3, 4, 
+5, 6, 7, 8, 9);
 🧪 Очікувано:
 
 {
@@ -312,8 +313,7 @@ List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
 return numbers.stream()
 .collect(Collectors.groupingBy(
 n -> n % 3,
-Collectors.reducing(0, Integer::sum)
-));
+Collectors.reducing(0, Integer::sum)));
 }
 
 ✅ Задача 13: groupingBy з TreeMap
