@@ -40,7 +40,11 @@ public class Main1 {
                 .collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
     }
 
-
+    public int practice5 () {
+        int[] ints = {2, 4, 6, 8, 10, 3};
+        Map <Boolean, List <Integer>> map = Arrays.stream(ints).boxed().collect(Collectors.partitioningBy(value -> value % 2 == 0));
+        return map.get(true).size() == 1 ? map.get(true).getFirst() : map.get(false).getFirst();
+    }
 
 
 
