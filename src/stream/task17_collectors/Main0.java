@@ -1,9 +1,6 @@
 package stream.task17_collectors;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main0 {
@@ -100,7 +97,15 @@ public class Main0 {
                                         Integer:: sum)));
     }
 
-
+    public void practice13 () {
+        List<String> words = List.of("hi", "book", "sun",
+                "day", "Java", "sky");
+        words.stream()
+                .collect(Collectors
+                        .groupingBy(String::length,
+                                TreeMap::new, Collectors
+                                        .toList()));
+    }
 
 
 }
