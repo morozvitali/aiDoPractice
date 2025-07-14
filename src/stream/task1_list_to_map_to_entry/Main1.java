@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Main1 {
-    private final String  = "aeiou";
 
     public void practice1 () {
         List<String> words = List.of("stream", "code",
@@ -32,7 +31,17 @@ public class Main1 {
                 .reduce((a,b)->a.getValue() >= b.getValue() ? a : b));
     }
 
-
+    public void practice4 () {
+        List<String> list = List.of("apple", "pear",
+                "banana", "kiwi");
+        String output = String.valueOf(list.stream()
+                .map(a-> Map.entry(a, a
+                        .chars()
+                        .distinct()
+                        .count()))
+                .reduce((a,b)-> a
+                        .getValue() > b.getValue() ? a :b));
+    }
 
 
 
