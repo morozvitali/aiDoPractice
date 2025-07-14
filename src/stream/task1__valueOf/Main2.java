@@ -7,8 +7,6 @@ import java.util.stream.Collectors;
 
 public class Main2 {
 
-    .c;
-
     public void practice1 () {
     List<Integer> codes = List.of(97, 98, 99, 100, 101);
     List <String> list = codes.stream().map(c->String.valueOf((char)(int)c))
@@ -90,11 +88,17 @@ public void practice2 () {
 
     public void practice12 () {
         String input = "abc";
-        input.chars().map(c->c +1)
+        List <Integer> list = input.chars().map(c->c +1)
                 .boxed()
                 .collect(Collectors.toList());
+    }
 
+    public void practice13 () {
+        List<Integer> digits = List.of(1, 2, 3, 9);
+        List <Character> list = digits.stream().map(a->(char)('0' + a)).collect(Collectors.toList());
 
     }
+
+
 
 }
