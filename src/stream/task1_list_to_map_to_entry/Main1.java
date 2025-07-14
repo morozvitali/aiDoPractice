@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Main1 {
+    private final String  = "aeiou";
+
     public void practice1 () {
         List<String> words = List.of("stream", "code",
                 "developer", "Engineer");
@@ -24,8 +26,10 @@ public class Main1 {
     }
 
     public void practice3 () {
-
-
+        List<String> list = List.of("apple", "banana",
+                "orange", "blueberry");
+        String s = String.valueOf(list.stream().map(a-> Map.entry(a, a.chars().filter(ch->"aeiou".indexOf(ch) >=0).count()))
+                .reduce((a,b)->a.getValue() >= b.getValue() ? a : b));
     }
 
 
