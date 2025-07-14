@@ -1,5 +1,9 @@
 package stream.task1_peek_mapping_chartoint;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.List;
+
 public class Main2 {
 
     public int practice1 (int n) {
@@ -34,6 +38,14 @@ public class Main2 {
             result = result * array[i];
         }
         return result;
+    }
+
+
+    public void practice6 () {
+        List<String> words = List.of("sun", "apple",
+                "bee", "banana");
+
+    words.stream().peek(System.out::println).peek(a-> System.out.println(a.toUpperCase())).filter(a->a.length() > 3).peek(System.out::println);
     }
 
 
