@@ -19,6 +19,11 @@ public void practice2 () {
             .collect(Collectors.toList());
 }
 
+    public void practice3 () {
+        String s = "abracadabra";
+        s.chars().distinct().mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
 
 
 }
