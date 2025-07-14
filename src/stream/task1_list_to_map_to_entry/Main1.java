@@ -4,8 +4,11 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main1 {
+
+    private IntStream ;
 
     public void practice1 () {
         List<String> words = List.of("stream", "code",
@@ -73,9 +76,20 @@ public class Main1 {
                 .orElse("");
     }
 
-    public void practice8 () {
+    public String practice8 () {
+        List <String> list = List.of ("alpha", "arena",
+                "java", "banana", "lava");
+        return list.stream()
+                .map(word -> Map.entry(word, word
+                        .chars()
+                        .filter(c-> c == 'a')
+                        .count()))
+                .reduce((a,b)->a.getValue() >= b.getValue() ? a : b)
+                .map(a->a.getKey()).orElse("");
 
     }
+
+
 
 }
 
