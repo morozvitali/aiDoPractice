@@ -6,4 +6,10 @@ public class Main2 {
                 .map(d-> d*d)
                 .sum();
     }
+
+    public Boolean practice2 (int n) {
+        return String.valueOf(n).chars().allMatch(a-> a%2 == 0);
+    }
+
+
 }
