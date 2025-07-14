@@ -1,6 +1,7 @@
 package stream.task1_peek_mapping_chartoint;
 
 public class Main2 {
+
     public int practice1 (int n) {
         return String.valueOf(n).chars().map(c-> c - '0')
                 .map(d-> d*d)
@@ -15,6 +16,10 @@ public class Main2 {
         return String.valueOf(n).chars().max().orElse(-1);
     }
 
-
+    public long practice4 (int n) {
+        return String.valueOf(n).chars().map(c->c-'0')
+                .filter (a->a>5)
+                .count();
+    }
 
 }
