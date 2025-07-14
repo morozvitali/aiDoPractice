@@ -53,8 +53,19 @@ public class Main2 {
     public Map<Integer, List<String>> practice7 () {
         List<String> emails = List.of("ivan@ukr.net",
                 "olga@gmail.com", "petro@ukr.net");
-        Map<Integer, List<String>> map = emails.stream().collect(Collectors.groupingBy(email ->email.substring(0, email.indexOf("@")).length(),Collectors.toList()));
+        Map<Integer, List<String>> map = emails
+                .stream()
+                .collect(Collectors
+                        .groupingBy(email ->email
+                                .substring(0, email.indexOf("@"))
+                                .length(),Collectors
+                                .toList()));
         return map;
+    }
+
+    public void practice8 () {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
+        nums.stream().peek(System.out::println).filter(a->a%2==0).peek(System.out::println);
     }
 
 
