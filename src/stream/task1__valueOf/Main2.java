@@ -39,4 +39,11 @@ public void practice2 () {
                 .collect(Collectors.toList());
     }
 
+    public void practice6 () {
+        String s = "abcxyz";
+        List <Integer> list = s.chars().map(ch->ch-'a' + 1)
+                .boxed().collect(Collectors.toList());
+    }
+
+
 }
