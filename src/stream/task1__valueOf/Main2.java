@@ -1,6 +1,7 @@
 package stream.task1__valueOf;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main2 {
@@ -51,6 +52,17 @@ public void practice2 () {
                 .mapToObj(c->String.valueOf((char)c))
                 .collect(Collectors.toList());
     }
+
+    public void practice8 () {
+        String s = "banana";
+        Map<Character, Long> map = s.chars()
+                .filter(ch->Character.isLetter(ch))
+                .mapToObj(c->(char)c)
+                .collect(Collectors
+                        .groupingBy(c->c, Collectors
+                                .counting()));
+    }
+
 
 
 
