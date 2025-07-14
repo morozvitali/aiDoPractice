@@ -106,9 +106,11 @@ public void practice2 () {
                 .mapToObj(ch->(char)ch)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
-
-
     }
 
-
+    public void practice15 () {
+        String input1 = "123456";
+        Boolean output = input1.chars().filter(a->Character.isDigit(a))
+                .count() == input1.length();
+    }
 }
