@@ -8,8 +8,6 @@ import java.util.stream.IntStream;
 
 public class Main1 {
 
-    private IntStream ;
-
     public void practice1 () {
         List<String> words = List.of("stream", "code",
                 "developer", "Engineer");
@@ -86,10 +84,12 @@ public class Main1 {
                         .count()))
                 .reduce((a,b)->a.getValue() >= b.getValue() ? a : b)
                 .map(a->a.getKey()).orElse("");
-
     }
 
-
-
+    public String practice9 () {
+        List <String> list = List.of ("alpha", "arena",
+                "java", "banana", "lava");
+        return list.stream().filter(a->Character.isUpperCase(a.charAt(0))).map(word -> Map.entry(word, word.length())).reduce((a,b)-> a.getValue() >= b.getValue() ? a : b).map(entry->entry.getKey()).orElse("");
+    }
 }
 

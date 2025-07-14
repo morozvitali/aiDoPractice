@@ -113,8 +113,7 @@ List<String> list = List.of("apple",
     return list.stream()
         .map(word -> Map.entry(word, countOf(word, 'a'))) // створюємо пару слово → кількість 'a'
         .reduce((a, b) -> a.getValue() >= b.getValue() ? a : b) // залишаємо пару з найбільшою кількістю
-        .map(Map.Entry::getKey) // витягуємо слово
-        .orElse("нема");
+        .map(a->a.getKey()).orElse(""); // витягуємо слово
     }
 
     public int countOf(String word, char target) {
@@ -124,12 +123,16 @@ List<String> list = List.of("apple",
     }
 ------------------------------------------------
 
-✅ Задача 9: Найдовше слово, що починається з великої літери
-📋 Знайди найдовше слово, яке починається з великої.
-📥 List.of("apple", "Tree", "Java", "stream", "Engineer")
+✅ Задача 9: Найдовше слово, 
+що починається з великої літери
+📋 Знайди найдовше слово, 
+яке починається з великої.
+📥 List.of("apple", "Tree", 
+"Java", "stream", "Engineer")
 📤 Очікуване: "Engineer"
 
-💡 .filter(w -> Character.isUpperCase(w.charAt(0)))
+💡 .filter(w -> Character
+.isUpperCase(w.charAt(0)))
 Далі — .map(w -> Map.entry(w, w.length()))
 
 https://chatgpt.com/c/68679839-b104-8009-abdc-19e134bff306
