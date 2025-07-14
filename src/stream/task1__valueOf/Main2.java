@@ -1,9 +1,11 @@
 package stream.task1__valueOf;
 
 import java.util.Calendar;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main2 {
 
@@ -96,9 +98,17 @@ public void practice2 () {
     public void practice13 () {
         List<Integer> digits = List.of(1, 2, 3, 9);
         List <Character> list = digits.stream().map(a->(char)('0' + a)).collect(Collectors.toList());
-
     }
 
+    public void practice14 () {
+        String input = "a1C!bZ2";
+        List <Character> output = input.chars().filter(c->Character.isLetter(c))
+                .mapToObj(ch->(char)ch)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+
+    }
 
 
 }

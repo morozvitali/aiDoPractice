@@ -273,7 +273,7 @@ List<Integer> digits = List.of(1, 2, 3, 9);
 String input = "a1C!bZ2";
 🧪 Очікуване:
 
-[Z, C, b, a]
+['Z', 'C', 'b', 'a']
 
 return input.chars()
 .filter(Character::isAlphabetic) // залишаємо лише букви
