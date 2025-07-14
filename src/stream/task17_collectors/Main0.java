@@ -153,7 +153,4 @@ public class Main0 {
                                                         .comparingInt(String::length))
                                                 .toList())));
     }
-
-
-
 }

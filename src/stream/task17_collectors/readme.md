@@ -430,7 +430,7 @@ partitioningBy + mapping, роботу з Set, LinkedHashMap, та міксув�
 📌 Є список людей. У кожного є список захоплень. Згрупуй усі захоплення за першою літерою.
 🔍 Підказка: використай Collectors.flatMapping(...) (лише з Java 16+).
 
- Person(String name, List<String> hobbies) {}
+Person(String name, List<String> hobbies) {}
 
 List<Person> people = List.of(
 new Person("Alice", List.of("Reading", "Running")),
