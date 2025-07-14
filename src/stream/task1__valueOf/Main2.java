@@ -1,10 +1,13 @@
 package stream.task1__valueOf;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main2 {
+
+    .c;
 
     public void practice1 () {
     List<Integer> codes = List.of(97, 98, 99, 100, 101);
@@ -77,5 +80,21 @@ public void practice2 () {
                 .sum();
     }
 
+    public void practice11 () {
+        String input = "ABCdefGHIjkl123";
+        String output = input.chars().filter(c->Character.isLetter(c))
+                .filter(ch-> Character.isLowerCase(ch))
+                .mapToObj(a->String.valueOf((char)a))
+                .collect(Collectors.joining());
+    }
+
+    public void practice12 () {
+        String input = "abc";
+        input.chars().map(c->c +1)
+                .boxed()
+                .collect(Collectors.toList());
+
+
+    }
 
 }
