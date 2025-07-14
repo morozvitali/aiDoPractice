@@ -43,9 +43,15 @@ public class Main1 {
                         .getValue() > b.getValue() ? a :b));
     }
 
+    public void practice5 () {
+        List<String> list = List.of("cat", "tiger",
+                "elephant", "dog");
+        String s = String.valueOf(list.stream().filter(a->a.length() > 5).findFirst());
+    }
 
+    public void practice6 () {
 
-
+    }
 
 
 
