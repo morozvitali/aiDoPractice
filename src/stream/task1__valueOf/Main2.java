@@ -68,7 +68,13 @@ public void practice2 () {
         String sentence = s.chars().filter(ch->!Character.isDigit(ch))
                 .mapToObj(c->String.valueOf((char)c))
                 .collect(Collectors.joining());
+    }
 
+    public void practice10 () {
+        String s = "abc1d2e3f9";
+        int summed = s.chars().filter(c->Character.isDigit(c))
+                .map(Character::getNumericValue)
+                .sum();
     }
 
 
