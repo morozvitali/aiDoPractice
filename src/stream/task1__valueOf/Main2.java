@@ -63,7 +63,13 @@ public void practice2 () {
                                 .counting()));
     }
 
+    public void practice9 () {
+        String s = "a1b2c3d4";
+        String sentence = s.chars().filter(ch->!Character.isDigit(ch))
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.joining());
 
+    }
 
 
 }
