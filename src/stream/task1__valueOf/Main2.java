@@ -45,5 +45,13 @@ public void practice2 () {
                 .boxed().collect(Collectors.toList());
     }
 
+    public void practice7 () {
+        String s = "java";
+        List <String> list = s.chars().map(c->Character.toUpperCase(c))
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
+
+
 
 }
