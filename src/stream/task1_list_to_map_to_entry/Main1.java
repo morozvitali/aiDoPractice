@@ -54,8 +54,6 @@ public class Main1 {
     public void practice6 () {
         List<String> list = List.of("apple",
                 "committee", "banana", "success");
-
-
                 list.stream().map(word-> Map.entry(word, word.chars().mapToObj(c->(char)c)
                 .collect(Collectors.groupingBy(c->c, Collectors.counting()))
                 .values().stream()
@@ -66,10 +64,18 @@ public class Main1 {
                         .orElse("empty");
     }
 
+    public String practice7 () {
+        List<String> list = List.of("abc", "aaa", "zzz");
 
+        return list.stream().map(word -> Map.entry(word, word.chars().sum()))
+                .max(Comparator.comparingInt(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
 
+    public void practice8 () {
 
-
-
+    }
 
 }
+
