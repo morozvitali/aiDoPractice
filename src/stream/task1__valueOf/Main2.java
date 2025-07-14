@@ -31,6 +31,12 @@ public void practice2 () {
         List <Integer> ascii = text.chars().boxed().collect(Collectors.toList());
     }
 
+    public void practice5 () {
+        String input = "hEllO WoRLd";
 
+        List <String> list = input.chars().filter(ch-> Character.isUpperCase(ch))
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
 
 }
