@@ -20,7 +20,7 @@ List<String> words = List.of("stream", "code",
 
 ✅ Задача 2: Найкоротше слово у списку
 📋 Знайди слово з найменшою довжиною.
-📥 List<String> = List.of("Java", "C",
+📥 List<String> list = List.of("Java", "C",
 "Python", "Go", "Kotlin");
 📤 Очікуване: "C"
 
