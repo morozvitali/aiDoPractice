@@ -10,5 +10,15 @@ public class Main2 {
             .collect(Collectors.toList());
 }
 
+public void practice2 () {
+    String mixed = "a1b2c3x9z7";
+
+    List <Integer> list = mixed.chars().filter(Character::isDigit)
+            .mapToObj(ch->Character.getNumericValue(ch))
+            .sorted()
+            .collect(Collectors.toList());
+}
+
+
 
 }
