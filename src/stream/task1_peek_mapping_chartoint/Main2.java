@@ -22,4 +22,19 @@ public class Main2 {
                 .count();
     }
 
+    public int practice5 (int n) {
+        int [] array = String
+                .valueOf(n)
+                .chars()
+                .map(a->a-'0')
+                .toArray();
+
+        int result = 1;
+        for (int i =0; i < array.length; i+=2) {
+            result = result * array[i];
+        }
+        return result;
+    }
+
+
 }
