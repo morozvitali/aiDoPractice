@@ -40,4 +40,8 @@ public int practice2 (int number) {
             .collect(Collectors.joining(""));
     }
 
+    public int practice6 (int number) {
+    return Integer.valueOf(new StringBuilder(String.valueOf(number)).reverse().toString());
+    }
+
 }
