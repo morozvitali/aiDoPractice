@@ -10,4 +10,17 @@ public int practice1 (int n) {
 }
 
 
+public int practice2 (int number) {
+    return Integer.valueOf(String
+            .valueOf(number)
+            .chars()
+            .map(ch->Character.getNumericValue(ch))
+            .map(a->a*a*a)
+            .mapToObj(a-> String.valueOf(a))
+            .collect(Collectors
+                    .joining("")));
+}
+
+
+
 }
