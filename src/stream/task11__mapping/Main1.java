@@ -27,5 +27,13 @@ public class Main1 {
         return String.join(" ", str);
     }
 
+    public String ractice4 () {
+        return Arrays.stream("Hello world".split(" ")).map(a->"(" + a + ")").collect(Collectors.joining(" "));
+    }
+
+
+
+
+
 
 }
