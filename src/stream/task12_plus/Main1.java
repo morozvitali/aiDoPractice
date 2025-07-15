@@ -21,6 +21,17 @@ public int practice2 (int number) {
                     .joining("")));
 }
 
+    public int practice3 (int number) {
+    return Integer.valueOf(String
+            .valueOf(number)
+            .chars()
+            .map(ch->Character.getNumericValue(ch))
+            .filter(n->n%2==0)
+            .mapToObj(a->String.valueOf(a))
+            .collect(Collectors
+                    .joining("")));
+    }
+
 
 
 }
