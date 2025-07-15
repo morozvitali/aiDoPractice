@@ -105,7 +105,8 @@ return email
 Якщо список порожній — виведи "Порожній список".
 
     public void printMin() {
-    List<Integer> nums = List.of(); // або List.of(5, 2, 9);
+    List<Integer> nums = List.of(); 
+// або List.of(5, 2, 9);
 
     nums.stream()
         .min(Integer::compareTo)

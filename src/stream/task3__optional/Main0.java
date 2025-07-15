@@ -40,5 +40,12 @@ public class Main0 {
         return email.map(a->a.toLowerCase()).filter(e->e.endsWith(".com")).orElseThrow(()->new IllegalArgumentException("Invalid email"));
     }
 
-
+    public void practice7 () {
+        List<Integer> nums = List.of(5, 2, 9);
+        nums.stream().min(Integer::compareTo)
+                .ifPresentOrElse(
+                        val -> System.out.println("mimimum " + val),
+                        () -> System.out.println("empty")
+                );
+    }
 }
