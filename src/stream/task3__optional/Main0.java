@@ -15,4 +15,9 @@ public int practice2 () {
     return value.map(x->x*2).orElse(-1);
 }
 
+public String practice3 () {
+    Optional <String> value = Optional.of("HelloWorld");
+    return value.filter(a->a.length() > 5).orElse("short");
+ }
+
 }
