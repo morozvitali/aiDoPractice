@@ -1,4 +1,4 @@
-package stream.task5_skip_limit;
+package stream.task5_skip_limit_to_garbage;
 
 import java.util.Arrays;
 
