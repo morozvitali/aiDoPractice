@@ -48,4 +48,20 @@ public class Main0 {
                         () -> System.out.println("empty")
                 );
     }
+
+    public void practice8 () {
+        List<String> words = List.of("Java", "Spring");
+        words.stream().findFirst().map(m->m.length()).ifPresentOrElse(
+                len -> System.out.println("length " + len),
+                () -> System.out.println("empty")
+        );
+    }
+
+
+
+
+
+
+
+
 }
