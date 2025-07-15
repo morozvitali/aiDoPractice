@@ -12,5 +12,10 @@ public class Main7 {
         return IntStream.rangeClosed(10,20).filter(i->i%2==0).count();
     }
 
-    public
+    public int practice3 () {
+        return IntStream.rangeClosed(21,40)
+                .filter(a->a%2==0)
+                .findFirst()
+                .orElse(-1);
+    }
 }
