@@ -44,4 +44,13 @@ public int practice2 (int number) {
     return Integer.valueOf(new StringBuilder(String.valueOf(number)).reverse().toString());
     }
 
+    public int practice (int number) {
+
+    return Integer.valueOf(String.valueOf(number)
+            .chars()
+            .map(ch->Character.getNumericValue(ch))
+            .map(a->a%2==1 ? a : a*a)
+            .mapToObj(a->String.valueOf(a))
+            .collect(Collectors.joining("")));
+    }
 }
