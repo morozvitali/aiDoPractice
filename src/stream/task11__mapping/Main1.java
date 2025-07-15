@@ -19,4 +19,13 @@ public class Main1 {
                         .joining(" "));
     }
 
+    public String practice3 () {
+        String [] str = "I love my keyboard very much".split(" ");
+        String temp = str[0];
+        str[0] = str[str.length-1];
+        str[str.length-1]=temp;
+        return String.join(" ", str);
+    }
+
+
 }
