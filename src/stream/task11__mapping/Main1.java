@@ -31,9 +31,13 @@ public class Main1 {
         return Arrays.stream("Hello world".split(" ")).map(a->"(" + a + ")").collect(Collectors.joining(" "));
     }
 
-
-
-
-
-
+    public String practice5 () {
+        return Arrays
+                .stream("madam speaks civic racecar now"
+                        .split(" "))
+                .filter(a-> a.equals(new StringBuilder(a)
+                        .reverse().toString()))
+                .collect(Collectors
+                        .joining(" "));
+    }
 }
