@@ -25,4 +25,17 @@ public class Main7 {
                 .reduce((a,b)->a*b)
                 .orElse(-1);
     }
+
+    public void practice5 () {
+        IntStream.rangeClosed(1,30).filter(a->a%4==0)
+                .forEach(System.out::println);
+    }
+
+
+
+
+
+
+
+
 }
