@@ -1,6 +1,7 @@
 package stream.task3__optional;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class Main0 {
@@ -57,7 +58,10 @@ public class Main0 {
         );
     }
 
-
+    public String practice9 (String name ) {
+        Optional <String> value = Optional.of(name);
+        return value.map(n->n.toUpperCase()).orElseThrow(()-> new NoSuchElementException("Name not found"));
+    }
 
 
 
