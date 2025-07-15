@@ -32,6 +32,12 @@ public int practice2 (int number) {
                     .joining("")));
     }
 
-
+    public String practice5 (int number) {
+    return String
+            .valueOf(number)
+            .chars()
+            .mapToObj(a-> "*".repeat(a))
+            .collect(Collectors.joining(""));
+    }
 
 }
