@@ -67,7 +67,10 @@ public class Main0 {
         return login.map(a-> a.startsWith("admin") ? "Admin access" : "User access").orElse("no login");
     }
 
-
-
-
+    public void practice11 (Optional <Integer> number) {
+        number.filter(a->a%2==0).map(a->a*2).ifPresentOrElse(
+                val -> System.out.println("value " + val),
+                () -> System.out.println("empty or not odd")
+        );
+    }
 }
