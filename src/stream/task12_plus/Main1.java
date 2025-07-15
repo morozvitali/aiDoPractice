@@ -53,4 +53,10 @@ public int practice2 (int number) {
             .mapToObj(a->String.valueOf(a))
             .collect(Collectors.joining("")));
     }
+
+    public long practice8 (int number) {
+    return String.valueOf(number).length();
+    }
+
+
 }
