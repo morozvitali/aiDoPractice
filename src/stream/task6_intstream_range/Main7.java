@@ -1,6 +1,7 @@
 package stream.task6_intstream_range;
 
 import java.beans.Introspector;
+import java.math.BigInteger;
 import java.util.stream.IntStream;
 
 public class Main7 {
@@ -31,7 +32,11 @@ public class Main7 {
                 .forEach(System.out::println);
     }
 
-
+    public BigInteger practice6 () {
+        return IntStream.rangeClosed(1,31).filter(a->a%2==1)
+                .mapToObj(a->BigInteger.valueOf(a))
+                .reduce(BigInteger.ONE, (a,b)-> a.multiply(b));
+    }
 
 
 
