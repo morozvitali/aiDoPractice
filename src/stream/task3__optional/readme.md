@@ -164,7 +164,8 @@ return name
 
 public String checkLogin(Optional<String> login) {
 return login
-.map(l -> l.startsWith("admin") ? "Admin access" : "User access")
+.map(l -> l.startsWith("admin") ? 
+"Admin access" : "User access")
 .orElse("No login");
 }
 

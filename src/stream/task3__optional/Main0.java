@@ -63,7 +63,9 @@ public class Main0 {
         return value.map(n->n.toUpperCase()).orElseThrow(()-> new NoSuchElementException("Name not found"));
     }
 
-
+    public String practice10 (Optional <String> login){
+        return login.map(a-> a.startsWith("admin") ? "Admin access" : "User access").orElse("no login");
+    }
 
 
 
