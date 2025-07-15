@@ -20,11 +20,25 @@ public class Main0 {
         return value.filter(a -> a.length() > 5).orElse("short");
     }
 
-    public String practice4 () {
-        Optional <String> name = Optional.of("Vitali");
-        return name.map(n-> "Hello, " + n + "!").orElse("Hello, guest");
+    public String practice4() {
+        Optional<String> name = Optional.of("Vitali");
+        return name.map(n -> "Hello, " + n + "!").orElse("Hello, guest");
     }
 
+    public void practice5() {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        Optional<Integer> max = nums.stream().max((a, b) -> a.compareTo(b));
+
+        max.ifPresentOrElse(
+                value -> System.out.println("Max " + value),
+                () -> System.out.println("empty")
+        );
+    }
+
+    public String practice6() {
+        Optional<String> email = Optional.of("ADMIN@SITE.com");
+        return email.map(a->a.toLowerCase()).filter(e->e.endsWith(".com")).orElseThrow(()->new IllegalArgumentException("Invalid email"));
+    }
 
 
 }

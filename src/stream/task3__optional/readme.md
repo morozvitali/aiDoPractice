@@ -61,7 +61,8 @@ List<Integer> nums = List.of(); → друкує "Немає значень"
 
     public void practice5 () {
         List<Integer> nums = List.of(1, 2, 3, 4, 5);
-        Optional<Integer> max = nums.stream().max(( a,b) -> a.compareTo(b));
+        Optional<Integer> max = nums.stream()
+    .max(( a,b) -> a.compareTo(b));
 
         max.ifPresentOrElse(
                 value -> System.out.println("Максимум: " + value),
@@ -71,7 +72,8 @@ List<Integer> nums = List.of(); → друкує "Немає значень"
 
 ------------------------------------------------------------------
 ⭐ Задача 6 (з зірочкою):
-Є метод, що повертає Optional з email за ім’ям користувача.
+Є метод, що повертає Optional 
+з email за ім’ям користувача.
 Потрібно: Знайти email
 
 Якщо є, перетворити в lowercase
@@ -84,11 +86,13 @@ Optional<String> email = Optional.of("ADMIN@SITE.COM");
 
 Підказка:
 
-public static String processEmail(Optional<String> email) {
+public static String processEmail
+(Optional<String> email) {
 return email
 .map(String::toLowerCase)
 .filter(e -> e.contains(".com"))
-.orElseThrow(() -> new IllegalArgumentException("Invalid email"));
+.orElseThrow(() -> new IllegalArgumentException
+("Invalid email"));
 }
 
 --------------------------------------------------------------------
