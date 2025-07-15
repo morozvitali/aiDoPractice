@@ -52,5 +52,13 @@ public class Main7 {
                 .reduce((a,b)->a*b).orElse(-1);
     }
 
+    public int practice9 () {
+        return IntStream.rangeClosed(1,5).map(a->a*a).sum();
+    }
+
+    public void practice () {
+
+    }
+
 
 }
