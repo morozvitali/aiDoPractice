@@ -1,5 +1,6 @@
 package stream.task6_intstream_range;
 
+import java.beans.Introspector;
 import java.util.stream.IntStream;
 
 public class Main7 {
@@ -16,6 +17,12 @@ public class Main7 {
         return IntStream.rangeClosed(21,40)
                 .filter(a->a%2==0)
                 .findFirst()
+                .orElse(-1);
+    }
+
+    public int practice4 () {
+        return IntStream.rangeClosed(1,5)
+                .reduce((a,b)->a*b)
                 .orElse(-1);
     }
 }
