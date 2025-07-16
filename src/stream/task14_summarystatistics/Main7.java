@@ -66,6 +66,14 @@ public class Main7 {
         .filter(a-> a.length() > 4 && a.length() <6).mapToInt(String::length).summaryStatistics();
     }
 
-
-
+    public void practice13 () {
+        String[] words = {"apple", "tree",
+                "orange", "banana", "loop"};
+        Arrays.stream(words)
+                .filter(w->"aeiou".chars()
+                        .anyMatch(c-> w.chars()
+                                .filter(ch->ch == c).count() >=2))
+                .findFirst()
+                .orElse("empty");
+    }
 }
