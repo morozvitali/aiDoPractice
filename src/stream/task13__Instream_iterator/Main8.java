@@ -9,8 +9,9 @@ public class Main8 {
 
     public void practice2 () {
         IntStream.iterate(2, i->i+2).limit(10).forEach(System.out::println);
-
-
     }
 
+    public void practice3 () {
+        IntStream.iterate(1, i->i+2).limit(10).forEach(System.out::println);
+    }
 }
