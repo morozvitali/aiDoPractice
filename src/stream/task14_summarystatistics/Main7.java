@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main7 {
@@ -54,15 +55,25 @@ public class Main7 {
                 .sorted(Comparator.naturalOrder())
                 .findFirst()
                 .orElse("empty");
-
     }
 
     public Map <Character, Double> practice6 () {
         String[] words = {"apple", "ant",
                 "banana", "blue", "berry", "dolphin"};
-        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(w->w.length())));
+        return Arrays.stream(words)
+                .collect(Collectors
+                        .groupingBy(w->w.charAt(0), Collectors
+                                .averagingInt(w->w
+                                        .length())));
     }
 
-
+    public void practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        Arrays.stream(words)
+                .flatMap(w->w.chars()
+                .mapToObj(c->(char)c))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
 
 }

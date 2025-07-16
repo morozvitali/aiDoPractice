@@ -132,7 +132,6 @@ a=4, e=2, o=1, u=1
 📦 Підказка:
 
 .flatMap(w -> w.chars().mapToObj(c -> (char)c))
-.filter(ch -> "aeiou".indexOf(ch) >= 0)
 .collect(groupingBy(Function.identity(), counting()))
 
 Function.identity() Означає: 
