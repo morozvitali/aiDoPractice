@@ -58,5 +58,14 @@ public class Main7 {
         Arrays.stream(words).map(a->a.toLowerCase()).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public void practice12 () {
+        String[] words = {"cat", "apple",
+                "grape", "banana", "fig", "cherry"};
+
+        Arrays.stream(words)
+        .filter(a-> a.length() > 4 && a.length() <6).mapToInt(String::length).summaryStatistics();
+    }
+
+
 
 }
