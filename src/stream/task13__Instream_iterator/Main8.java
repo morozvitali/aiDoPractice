@@ -57,5 +57,8 @@ public class Main8 {
         }, i->i+1);
     }
 
+    public void practice12 () {
+        "programmingisfun".chars().distinct().limit(10).forEach(System.out::println);
 
+    }
 }
