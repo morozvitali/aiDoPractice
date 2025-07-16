@@ -1,4 +1,4 @@
-package stream.task4__anonimous_class;
+package stream.task4__takewhile_anonimous_class;
 
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
