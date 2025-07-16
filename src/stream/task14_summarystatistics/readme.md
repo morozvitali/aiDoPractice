@@ -25,14 +25,9 @@ List<String> words = List.of("APPLE",
 "Banana", "CHERRY", "kiwi", "PLUM");
 
 🧪 Очікувано:
-
-Список: [banana, cherry, plum]
-
 Сума всіх символів: 6 + 6 + 4 = 16
-
 📦 Підказка:
-
-.stream().mapToInt(String::length).sum()
+.stream().filter().filter().mapToInt(String::length).sum()
 
 ---------------------------------------------------
 

@@ -2,6 +2,9 @@ package stream.task14_summarystatistics;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main7 {
     public void practice1 () {
@@ -11,6 +14,12 @@ public class Main7 {
         System.out.println(stats.getMax());
     }
 
-
-
+    public int practice2 () {
+        List<String> words = List.of("APPLE",
+                "Banana", "CHERRY", "kiwi", "PLUM");
+        return words.stream().filter(a-> a.length()%2==0)
+                .filter(a->a.chars().allMatch(c->Character.isLowerCase(c)))
+                .mapToInt(a->a.length())
+                .sum();
+    }
 }
