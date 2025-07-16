@@ -26,22 +26,43 @@ public class Main7 {
         return Arrays
                 .stream(words)
                 .filter(a->a.length()>3)
-                .filter(a-> a.chars().filter(c->"aeiou".indexOf(c) >=0).count() == a.length())
-                .collect(Collectors.groupingBy(a->a,(Collectors.counting())));
+                .filter(a-> a.chars()
+                        .filter(c->"aeiou"
+                                .indexOf(c) >=0)
+                        .count() == a.length())
+                .collect(Collectors
+                        .groupingBy(a->a,(Collectors
+                                .counting())));
     }
 
     public int practice4 () {
         String[] words = {"sky", "apple", "moon",
                 "dry", "sun"};
-        return Arrays.stream(words).filter(a->a.chars().filter(c->"aeiou".indexOf(c) >=0).count()!=a.length()).mapToInt(a->a.length()).sum();
+        return Arrays.stream(words)
+                .filter(a->a.chars()
+                        .filter(c->"aeiou".indexOf(c) >=0)
+                        .count()!=a.length())
+                .mapToInt(a->a.length()).sum();
     }
 
     public String practice5 () {
         String[] words = {"apple", "orange", "banana",
                 "ice", "umbrella", "echo"};
-        return Arrays.stream(words).filter(a->"aeiou".indexOf(a.charAt(0)) >=0).sorted(Comparator.naturalOrder()).findFirst().orElse("empty");
+        return Arrays.stream(words)
+                .filter(a->"aeiou"
+                        .indexOf(a.charAt(0)) >=0)
+                .sorted(Comparator.naturalOrder())
+                .findFirst()
+                .orElse("empty");
 
     }
+
+    public Map <Character, Double> practice6 () {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(w->w.length())));
+    }
+
 
 
 }

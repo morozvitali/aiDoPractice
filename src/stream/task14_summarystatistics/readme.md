@@ -89,8 +89,9 @@ String[] words = {"apple", "orange", "banana",
 ✅ Завдання 6: Побудуй Map<Перша_літера, 
 середня довжина слів з цією літерою>
 
-String[] words = {"apple", "ant", 
+String[] words = {"apple", "ant",
 "banana", "blue", "berry", "dolphin"};
+
 📦 Підказка:
 
 .groupingBy(w -> w.charAt(0),
