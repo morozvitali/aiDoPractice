@@ -86,6 +86,11 @@ public class Main8 {
         nums.stream().filter(a->String.valueOf(a).contains("7")).max(Integer::compareTo);
     }
 
+    public void practice17 () {
+        List<String> words = List.of("sky", "banana",
+                "apple", "grape", "orange", "plum");
+        words.stream().sorted(Comparator.comparing((String w) -> w.chars().filter(ch-> "aeiou".indexOf(ch) >=0).count()).thenComparing(Comparator.naturalOrder())).forEach(System.out::println);
+    }
 
 
 }
