@@ -81,7 +81,11 @@ public int practice2 (int number) {
                     }).collect(Collectors.joining()));
     }
 
-
-
-
+    public int practice11 (int number) {
+    return Integer.valueOf(String.valueOf(number)
+            .chars()
+            .map(ch -> Character.getNumericValue(ch))
+            .mapToObj(a->a>5?"X":"0")
+            .collect(Collectors.joining()));
+    }
 }
