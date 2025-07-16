@@ -52,4 +52,11 @@ public class Main7 {
         return Arrays.stream(words).collect(Collectors.partitioningBy(a -> Character.isUpperCase(a.charAt(0))));
     }
 
+    public void practice11 () {
+        String[] words = {"Java", "java",
+                "Kotlin", "kotlin", "kotlin", "Scala"};
+        Arrays.stream(words).map(a->a.toLowerCase()).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+
 }
