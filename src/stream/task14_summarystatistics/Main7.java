@@ -33,4 +33,10 @@ public class Main7 {
                 .collect(Collectors.groupingBy(a->a,(Collectors.counting())));
     }
 
+    public int practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).filter(a->a.chars().filter(c->"aeiou".indexOf(c)).count()!=a.length()).mapToInt(a->a.length()).sum();
+    }
+
 }
