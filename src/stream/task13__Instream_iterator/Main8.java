@@ -59,11 +59,15 @@ public class Main8 {
 
     public void practice12 () {
         "programmingisfun".chars().distinct().limit(10).forEach(System.out::println);
-
     }
 
     public void practice13 () {
         "streamprocessing".chars().mapToObj(a->(char)a).filter(a->"aeiou".indexOf(a)>=0).forEach(System.out::println);
     }
+
+    public void practice14 () {
+        IntStream.rangeClosed(1,20).map(a->a*a).filter(value -> value%4 == 0).peek(a-> System.out.println("LOG " + a)).forEach(System.out::println);
+    }
+
 
 }
