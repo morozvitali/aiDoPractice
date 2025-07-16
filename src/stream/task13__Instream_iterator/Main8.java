@@ -24,5 +24,8 @@ public class Main8 {
 
     }
 
+    public void practice6 () {
+        IntStream.iterate(17, i->i+10).limit(9).forEach(System.out::println);
+    }
 
 }
