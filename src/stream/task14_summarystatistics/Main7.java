@@ -22,4 +22,15 @@ public class Main7 {
                 .mapToInt(a->a.length())
                 .sum();
     }
+
+    public Map <String, Long> practice3 () {
+        String[] words = {"sky", "apple",
+                "moon", "dry", "banana"};
+        return Arrays
+                .stream(words)
+                .filter(a->a.length()>3)
+                .filter(a-> a.chars().filter(c->"aeiou".indexOf(c) >=0).count() == a.length())
+                .collect(Collectors.groupingBy(a->a,(Collectors.counting())));
+    }
+
 }
