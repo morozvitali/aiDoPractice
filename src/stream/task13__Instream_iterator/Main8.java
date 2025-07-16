@@ -91,6 +91,4 @@ public class Main8 {
                 "apple", "grape", "orange", "plum");
         words.stream().sorted(Comparator.comparing((String w) -> w.chars().filter(ch-> "aeiou".indexOf(ch) >=0).count()).thenComparing(Comparator.naturalOrder())).forEach(System.out::println);
     }
-
-
 }
