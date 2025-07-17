@@ -2,6 +2,7 @@ package stream.task15_grouping1;
 
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Main0 {
@@ -96,22 +97,22 @@ public class Main0 {
 
     public void practice14() {
         int[] numbers = {3, 6, 7, 8, 9, 10, 12};
-        Map <Integer, Double> map = Arrays.stream(numbers)
+        Map<Integer, Double> map = Arrays.stream(numbers)
                 .boxed()
                 .collect(Collectors
-                        .groupingBy(a->a%3,Collectors
-                                .averagingInt(n->n)));
+                        .groupingBy(a -> a % 3, Collectors
+                                .averagingInt(n -> n)));
 
         for (var e : map.entrySet()) {
             System.out.println(e.getKey() + "->" + e.getValue());
         }
     }
 
-    public void practice15 () {
+    public void practice15() {
         String[] words = {"apple", "banana", "avocado",
                 "blueberry", "bleuberry", "apricot"};
 
-        Map <Character, Long> map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()));
+        Map<Character, Long> map = Arrays.stream(words).collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()));
 
         map.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
 
@@ -119,6 +120,13 @@ public class Main0 {
             System.out.println(e.getKey() + " -> " + e.getValue());
         }
     }
+
+    public void practice16 () {
+        String[] words = {"a10", "a20", "b5",
+                "b7"};
+        Arrays.stream(words).collect(Collectors.groupingBy(a->a.charAt(0), Collectors.summingInt(entry -> Integer.parseInt(entry.substring(1)))));
+    }
+
 
 
 
