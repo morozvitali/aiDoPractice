@@ -1,6 +1,8 @@
 package stream.task16_grouping2;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main0 {
@@ -11,7 +13,22 @@ public class Main0 {
                 .collect(Collectors.groupingBy(w->w.length()));
     }
 
+    public void practice2 () {
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
 
+        Map<Integer, List<String>> map =  Arrays.stream(words)
+                .filter(w->w.chars()
+                        .map(c->(char)c)
+                        .filter(c-> "aeiou".indexOf(c)>=0).count()>0).collect(Collectors.groupingBy(a->a.length()));
+
+        for (var e : map.entrySet()) {
+            System.out.println(e.getKey() + "->" + e.getValue());
+        }
+
+
+
+    }
 
 
 }
