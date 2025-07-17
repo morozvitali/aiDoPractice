@@ -18,6 +18,12 @@ public class Main0 {
         return words.stream().map(a->a.toLowerCase()).collect(Collectors.groupingBy(w->w.charAt(0)));
     }
 
+    public Map <Character, Long> practice3 () {
+        String[] words = {"apple", "banana", "apricot",
+                "blue", "berry", "cherry"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(a->a.charAt(0), Collectors.counting()));
+    }
+
 
 
 }

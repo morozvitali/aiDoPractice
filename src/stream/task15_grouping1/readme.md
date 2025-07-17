@@ -34,8 +34,10 @@ c=[cherry, cranberry]
 
 
 
-✅ Завдання 3: Порахуй, скільки слів починається на кожну літеру
-String[] words = {"apple", "banana", "apricot", "blue", "berry", "cherry"};
+✅ Завдання 3: Порахуй, скільки слів 
+починається на кожну літеру
+String[] words = {"apple", "banana", "apricot",
+"blue", "berry", "cherry"};
 
 Очікуваний результат:
 {
