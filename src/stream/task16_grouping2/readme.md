@@ -88,6 +88,22 @@ String[] words = {"apple", "banana",
 🧠 Підказка: перевірка startsWith(...),
 groupingBy(length, counting())
 
+        String[] words = {"apple", "banana",
+                "orange", "umbrella",
+                "ant", "dog", "egg"};
+        Arrays.stream(words)
+.filter(word->"aeiou"
+.indexOf(word.charAt(0)>=0)
+.count()>0)
+.collect(Collectors
+.groupingBy(a->a.length(), 
+Collectors.counting()));
+
+або, лаконічніше
+Set<Character> vowels = Set .of('a', 'e', 'i', 'o', 'u');
+.filter(word -> vowels.contains(Character.
+toLowerCase(word.charAt(0))))
+
 ------------------------------------------
 
 ✅ Задача 5 : Знайди виняткове число (Outlier)

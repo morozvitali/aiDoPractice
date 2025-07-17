@@ -45,6 +45,17 @@ public class Main0 {
                                 .count() > 0));
     }
 
-
+    public void practice4 () {
+        String[] words = {"apple", "banana",
+                "orange", "umbrella",
+                "ant", "dog", "egg"};
+        Map <Integer, Long> map = Arrays
+                .stream(words)
+                .filter(word->"aeiou"
+                        .indexOf(Character
+                                .toLowerCase(word.charAt(0)))>=0)
+                .collect(Collectors.groupingBy(a->a.length(),
+                        Collectors.counting()));
+    }
 
 }
