@@ -50,8 +50,10 @@ c=1
 
 
 
-✅ Завдання 4: Побудуй Map<String, Boolean> — слово ➜ чи містить воно голосні
-String[] words = {"sky", "apple", "dry", "orange", "sun"};
+✅ Завдання 4: Побудуй Map<String, Boolean>
+— слово ➜ чи містить воно голосні
+String[] words = {"sky", "apple",
+"dry", "orange", "sun"};
 
 Очікуваний результат:
 {

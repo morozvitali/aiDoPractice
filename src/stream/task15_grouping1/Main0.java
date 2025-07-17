@@ -3,6 +3,7 @@ package stream.task15_grouping1;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main0 {
@@ -24,6 +25,10 @@ public class Main0 {
         return Arrays.stream(words).collect(Collectors.groupingBy(a->a.charAt(0), Collectors.counting()));
     }
 
-
+    public Map <String, Boolean> practice4 () {
+        String[] words = {"sky", "apple",
+                "dry", "orange", "sun"};
+        return Arrays.stream(words).collect(Collectors.toMap(a->a, a-> a.chars().filter(c->"aeiou".indexOf(c)>= 0).count() > 0 ? true : false));
+    }
 
 }
