@@ -44,4 +44,24 @@ public class Main0 {
         Integer [] array = new Integer [] {12, 23, 34, 45, 16, 7};
         return Arrays.stream(array).collect(Collectors.groupingBy(a->a%10, Collectors.summingInt(b->b)));
     }
+
+    public Map <Integer, Long> practice8 () {
+        String[] words = {"one", "two", "three", "six", "seven"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(s->s.length(), Collectors.counting()));
+    }
+
+    public void practice9 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        Arrays.stream(words).collect(Collectors.groupingBy(a->a.charAt(0)));
+    }
+
+    public int practice10 () {
+        int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
+        Map <Integer, Long> map = Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(a -> a, Collectors.counting()));
+        return map.entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey).orElse(-1);
+    }
+
 }
