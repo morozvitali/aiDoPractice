@@ -112,6 +112,9 @@ public class Main0 {
                 "blueberry", "bleuberry", "apricot"};
 
         Map <Character, Long> map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()));
+
+        map.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+
         for (var e : map.entrySet()) {
             System.out.println(e.getKey() + " -> " + e.getValue());
         }
