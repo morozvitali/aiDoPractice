@@ -40,5 +40,8 @@ public class Main0 {
                         Comparator.comparingLong(entry -> entry.getValue())).getKey();
     }
 
-
+    public Map <Integer, Integer> practice7 () {
+        Integer [] array = new Integer [] {12, 23, 34, 45, 16, 7};
+        return Arrays.stream(array).collect(Collectors.groupingBy(a->a%10, Collectors.summingInt(b->b)));
+    }
 }
