@@ -81,5 +81,9 @@ public class Main0 {
                                 .counting()));
     }
 
-
+    public void practice12 () {
+        int [] numbers = {1,2,3,4,3};
+        Map <Integer, Long> map = Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(a->a, Collectors.counting()));
+        map.entrySet().stream().anyMatch(entry -> entry.getValue() > 1);
+    }
 }
