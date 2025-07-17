@@ -94,5 +94,18 @@ public class Main0 {
                         .groupingBy(a -> a % 2 == 0 ? "even" : "odd"));
     }
 
+    public void practice14() {
+        int[] numbers = {3, 6, 7, 8, 9, 10, 12};
+        Map <Integer, Double> map = Arrays.stream(numbers)
+                .boxed()
+                .collect(Collectors
+                        .groupingBy(a->a%3,Collectors
+                                .averagingInt(n->n)));
+
+        for (var e : map.entrySet()) {
+            System.out.println(e.getKey() + "->" + e.getValue());
+        }
+
+    }
 
 }

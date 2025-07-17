@@ -221,13 +221,28 @@ entrySet().stream().anyMatch(entry -> entry.getValue() > 1)
 🧠 Підказка:
 groupingBy(n -> n % 3, averagingInt(n -> n))
 
-🎯 Для кожної задачі тренуй:
+        int[] numbers = {3, 6, 7, 8, 9, 10, 12};
+        Map <Integer, Double> map = Arrays.stream(numbers)
+                .boxed()
+                .collect(Collectors
+                        .groupingBy(a->a%3,Collectors
+                                .averagingInt(n->n)));
+    }
 
+🧠 Що тут відбувається:
+a -> a % 3 — визначає групу: залишок від ділення на 3.
+Collectors.averagingDouble(n -> n) — обчислює 
+середнє значення всіх чисел у кожній групі.
+.boxed() — перетворює int на Integer, щоб можна 
+було використовувати Stream API для об'єктів.
+
+
+**🎯 Для кожної задачі тренуй:
 System.out.println(map.keySet());
 System.out.println(map.values());
 for (var e : map.entrySet()) {
-System.out.println(e.getKey() + " → " + e.getValue());
-}
+System.out.println(e.getKey() + " → " + e.getValue());}**
+
 
 -----------------------------------------------------------
 
