@@ -105,7 +105,18 @@ public class Main0 {
         for (var e : map.entrySet()) {
             System.out.println(e.getKey() + "->" + e.getValue());
         }
-
     }
+
+    public void practice15 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+
+        Map <Character, Long> map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()));
+        for (var e : map.entrySet()) {
+            System.out.println(e.getKey() + " -> " + e.getValue());
+        }
+    }
+
+
 
 }
