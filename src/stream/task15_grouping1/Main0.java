@@ -59,9 +59,27 @@ public class Main0 {
     public int practice10 () {
         int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
         Map <Integer, Long> map = Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(a -> a, Collectors.counting()));
+        for (var e : map.entrySet())
+        {
+            System.out.println(e.getKey());
+            System.out.println(e.getValue());
+        }
+
         return map.entrySet().stream()
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey).orElse(-1);
     }
+
+    public Map <Integer, Long> practice11 () {
+        return "ab123cc44a77"
+                .chars()
+                .map(a->(char)a)
+                .filter(a->Character.isDigit(a))
+                .boxed()
+                .collect(Collectors
+                        .groupingBy(a->a, Collectors
+                                .counting()));
+    }
+
 
 }
