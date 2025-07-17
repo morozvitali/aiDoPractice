@@ -127,6 +127,15 @@ public class Main0 {
         Arrays.stream(words).collect(Collectors.groupingBy(a->a.charAt(0), Collectors.summingInt(entry -> Integer.parseInt(entry.substring(1)))));
     }
 
+    public void practice17 () {
+        String[] words = {"java", "engineer", "platform", "stream"};
+        Map<String, Long> map = Arrays
+                .stream(words)
+                .collect(Collectors
+                        .toMap(w->w, w->w.chars().map(a->(char)a).filter(ch->"aeiou".indexOf(ch)>=0).count()));
+        map.entrySet().stream().max(Map.Entry.comparingByValue()).get().getValue();
+    }
+
 
 
 
