@@ -136,7 +136,11 @@ public class Main0 {
         map.entrySet().stream().max(Map.Entry.comparingByValue()).get().getValue();
     }
 
-
-
-
+    public void practice18 () {
+        Map <String, Integer> map = null;
+        map.values().stream().allMatch(value -> value %2 == 0);
+        for (var e : map.entrySet()) {
+            System.out.println(e.getKey() + "->" + e.getValue());
+        }
+    }
 }
