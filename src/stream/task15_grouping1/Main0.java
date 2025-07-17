@@ -31,4 +31,8 @@ public class Main0 {
         return Arrays.stream(words).collect(Collectors.toMap(a->a, a-> a.chars().filter(c->"aeiou".indexOf(c)>= 0).count() > 0 ? true : false));
     }
 
+    public Map <Character, Long> practice5 () {
+        return "pentagramma".toLowerCase().chars().mapToObj(ch->(char)ch).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
 }
