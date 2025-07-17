@@ -1,8 +1,6 @@
 package stream.task15_grouping1;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -34,5 +32,13 @@ public class Main0 {
     public Map <Character, Long> practice5 () {
         return "pentagramma".toLowerCase().chars().mapToObj(ch->(char)ch).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+    public String practice6 () {
+        String s = "java is fun and java is powerful";
+        Map <String, Long> map = Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(a->a, Collectors.counting()));
+                return Collections.max(map.entrySet(),
+                        Comparator.comparingLong(entry -> entry.getValue())).getKey();
+    }
+
 
 }
