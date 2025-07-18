@@ -68,6 +68,11 @@ public class Main1 {
         return words.stream().collect(Collectors.groupingBy(a->a.length(), Collectors.toSet()));
     }
 
+    public String practice10 () {
+        List<Integer> numbers = List.of(4, 8,
+                15, 16, 23, 42);
 
+        return numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Count " + count));
+    }
 
 }
