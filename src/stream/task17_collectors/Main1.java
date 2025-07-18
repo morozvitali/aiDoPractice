@@ -49,6 +49,12 @@ public class Main1 {
                                 .charAt(0)));
     }
 
+    public Map<Character, List<Integer>> practice7 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.groupingBy(word->word.charAt(0),
+                Collectors.mapping(word->word.length(), Collectors.toList())));
+    }
 
 
 
