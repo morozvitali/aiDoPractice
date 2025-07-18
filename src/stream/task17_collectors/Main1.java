@@ -29,7 +29,11 @@ public class Main1 {
         return words.stream().collect(Collectors.groupingBy(a->a.length()));
     }
 
-
+    public Map <Integer, Long> practice4 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
+    }
 
 
 }
