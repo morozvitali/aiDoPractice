@@ -1,9 +1,6 @@
 package stream.task17_collectors;
 
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main1 {
@@ -96,6 +93,10 @@ public class Main1 {
                 .collect(Collectors.reducing("", (a,b) -> a.length() >=b.length() ? a : b));
     }
 
-
+    public Map <Character, List<String>> practice14 () {
+        List<String> words = List.of("apple", "ant",
+                "alphabet", "axe", "banana", "bat");
+        return words.stream().collect(Collectors.groupingBy(a->a.charAt(0), Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().sorted(Comparator.comparingInt(String::length)).toList())));
+    }
 
 }
