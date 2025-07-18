@@ -89,6 +89,13 @@ public class Main1 {
         return numbers.stream().collect(Collectors.groupingBy(n -> n % 3, Collectors.reducing(0, Integer::sum)));
     }
 
+    public String practice13 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream()
+                .collect(Collectors.reducing("", (a,b) -> a.length() >=b.length() ? a : b));
+    }
+
 
 
 }
