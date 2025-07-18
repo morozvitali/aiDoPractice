@@ -71,7 +71,6 @@ public class Main1 {
     public String practice10 () {
         List<Integer> numbers = List.of(4, 8,
                 15, 16, 23, 42);
-
         return numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Count " + count));
     }
 
@@ -83,6 +82,13 @@ public class Main1 {
                         .groupingBy(a->a.charAt(0),
                                 Collectors.joining(", ")));
     }
+
+    public Map <Integer, Integer> practice12 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4,
+                5, 6, 7, 8, 9);
+        return numbers.stream().collect(Collectors.groupingBy(n -> n % 3, Collectors.reducing(0, Integer::sum)));
+    }
+
 
 
 }
