@@ -3,7 +3,7 @@ package stream.task17_collectors;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.stream.Collectors
 
 public class Main1 {
     public String practice1 () {
@@ -34,6 +34,12 @@ public class Main1 {
                 "sun", "day", "Java", "sky");
         return words.stream().collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
     }
+
+    public Map<Boolean, List<Integer>> practice5 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy(a->a%2 == 0));
+    }
+
 
 
 }
