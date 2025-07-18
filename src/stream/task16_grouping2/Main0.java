@@ -58,4 +58,9 @@ public class Main0 {
                         Collectors.counting()));
     }
 
+    public int practice5 () {
+        int[] arr = {2, 4, 6, 8, 10, 3};
+        Map <Boolean, List<Integer>> map =Arrays.stream(arr).boxed().collect(Collectors.partitioningBy(n->n%2 == 0));
+        return map.get(true).size() == 1 ? map.get(true).get(0) : map.get(false).get(0);
+    }
 }
