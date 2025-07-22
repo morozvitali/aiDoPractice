@@ -22,7 +22,12 @@ public class Main3 {
     public void practice3 () {
         String s = "abracadabra";
         s.chars().distinct().mapToObj(ch->String.valueOf((char)ch)).toList();
-
-
     }
+
+    public void practice4 () {
+        String text = "Code";
+        text.chars().boxed().collect(Collectors.toList());
+    }
+
+
 }
