@@ -19,5 +19,10 @@ public class Main3 {
                 .toList();
     }
 
+    public void practice3 () {
+        String s = "abracadabra";
+        s.chars().distinct().mapToObj(ch->String.valueOf((char)ch)).toList();
 
+
+    }
 }
