@@ -29,5 +29,13 @@ public class Main3 {
         text.chars().boxed().collect(Collectors.toList());
     }
 
+    public void practice5 () {
+        String input = "hEllO WoRLd";
+        input.chars().filter(ch -> Character.isUpperCase(ch))
+                .mapToObj(val -> String.valueOf(val))
+                .collect(Collectors.toList());
+    }
+
+
 
 }
