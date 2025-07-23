@@ -58,12 +58,24 @@ public class Main3 {
 public void practice9 () {
     String s = "a1b2c3d4";
     s.chars().filter(value -> !Character.isDigit(value)).mapToObj(c->String.valueOf((char)c))
-            .collect(Collectors.toList());
+            .collect(Collectors.joining());
 }
 
 public void practice10 () {
     String s = "abc1d2e3f9";
     s.chars().filter(ch->Character.isDigit(ch)).map(value -> Character.getNumericValue(value)).sum();
+}
+
+public void practice11 () {
+    String input = "ABCdefGHIjkl123";
+    input.chars().filter(c->Character.isLetter(c))
+            .filter(c->Character.isLowerCase(c))
+            .mapToObj(value->String.valueOf((char)value))
+            .collect(Collectors.joining());
+}
+
+public void practice12 () {
+
 }
 
 }
