@@ -48,4 +48,13 @@ public class Main3 {
         s.toUpperCase().chars().mapToObj(value-> String.valueOf((char)value)).toList();
     }
 
+    public void practice8 () {
+        String s = "banana";
+        s.chars().filter(value->Character.isLetter(value))
+                .mapToObj(a->(char)a)
+                .collect(Collectors.groupingBy(v->v, Collectors.counting()));
+    }
+
+
+
 }
