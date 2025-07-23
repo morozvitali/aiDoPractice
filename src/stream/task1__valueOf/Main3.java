@@ -55,6 +55,10 @@ public class Main3 {
                 .collect(Collectors.groupingBy(v->v, Collectors.counting()));
     }
 
-
+public void practice9 () {
+    String s = "a1b2c3d4";
+    s.chars().filter(value -> !Character.isDigit(value)).mapToObj(c->String.valueOf((char)c))
+            .collect(Collectors.toList());
+}
 
 }
