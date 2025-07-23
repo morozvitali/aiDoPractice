@@ -75,7 +75,8 @@ public void practice11 () {
 }
 
 public void practice12 () {
-
+    String input = "abc";
+    input.chars().map(ch->ch+1).boxed().collect(Collectors.toList());
 }
 
 }
