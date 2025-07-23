@@ -43,4 +43,9 @@ public class Main3 {
                 .toList();
     }
 
+    public void practice7 () {
+        String s = "java";
+        s.toUpperCase().chars().mapToObj(value-> String.valueOf((char)value)).toList();
+    }
+
 }
