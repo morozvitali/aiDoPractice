@@ -88,13 +88,17 @@ public class Main3 {
                 .collect(Collectors.toList());
     }
 
-    public void practice14 () {
+    public void practice14() {
         String input = "a1C!bZ2";
-        input.chars().filter(ch-> Character.isDigit(ch))
-                .mapToObj(c->(char)c)
+        input.chars().filter(ch -> Character.isDigit(ch))
+                .mapToObj(c -> (char) c)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
 
-}
+    }
 
+    public void practice15 () {
+        String input1 = "123456";
+        input1.chars().allMatch(ch->Character.isDigit(ch));
+    }
 }

@@ -304,9 +304,11 @@ return input.chars()
 // збираємо в список
 -----------------------------------------------------
 
-🎸 Завдання 15: Перевір, чи всі символи — цифри
+🎸 Завдання 15: Перевір, 
+чи всі символи — цифри
 📋 Умова:
-Дано рядок. Перевір, чи всі символи — це цифри.
+Дано рядок. Перевір, 
+чи всі символи — це цифри.
 
 String input1 = "123456";
 String input2 = "12a3";
@@ -316,10 +318,14 @@ true
 false
 
 
-better-->>) return input.chars().allMatch(Character::isDigit);
-longer-->>) return input.length() == input
+better-->>) return input.chars()
+.allMatch(Character::isDigit);
+
+longer-->>) return input
+.length() == input
 .chars()
-.filter(c->Character.isDigit(c)).count();
+.filter(c->Character
+.isDigit(c)).count();
 
 
 
