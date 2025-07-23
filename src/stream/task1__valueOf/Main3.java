@@ -36,6 +36,11 @@ public class Main3 {
                 .collect(Collectors.toList());
     }
 
-
+    public void practice6 () {
+        String s = "abcxyz";
+        s.chars().map(ch->ch-'a'+1)
+                .boxed()
+                .toList();
+    }
 
 }
