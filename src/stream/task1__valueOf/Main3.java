@@ -1,5 +1,6 @@
 package stream.task1__valueOf;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -86,4 +87,14 @@ public class Main3 {
         digits.stream().map(number -> (char) ('0' + number))
                 .collect(Collectors.toList());
     }
+
+    public void practice14 () {
+        String input = "a1C!bZ2";
+        input.chars().filter(ch-> Character.isDigit(ch))
+                .mapToObj(c->(char)c)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+}
+
 }
