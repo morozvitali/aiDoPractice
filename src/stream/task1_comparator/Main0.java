@@ -40,4 +40,14 @@ public class Main0 {
                 .min(Comparator.comparingInt(pair -> Math.abs(pair[0] - pair[1])))
                 .orElse(null);
     }
+
+    public String practice44 () {
+        return List.of("abc", "aaa", "zzz").stream()
+                .map(w-> Map.entry(w, w.chars().sum()))
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse("empty");
+    }
+
+
 }
