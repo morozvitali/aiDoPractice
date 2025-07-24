@@ -4,6 +4,8 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main0 {
 
@@ -31,6 +33,11 @@ public class Main0 {
                 .get().getKey();
     }
 
-
-
+    public int [] practice4 (List<Integer> numbers) {
+        List<Integer> sorted = numbers.stream().sorted().collect(Collectors.toList());
+        return IntStream.range(0, sorted.size() - 1)
+                .mapToObj(i -> new int[]{sorted.get(i), sorted.get(i + 1)})
+                .min(Comparator.comparingInt(pair -> Math.abs(pair[0] - pair[1])))
+                .orElse(null);
+    }
 }

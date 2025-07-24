@@ -67,18 +67,6 @@ Map.entry(123, 3).getKey() → 123
 
 --------------------------------------------------------
 
-🔹 Задача 4: Сортувати слова за кількістю голосних у зростанні
--
-📥 List.of("apple", "zebra", "sky", "education")
-📤 ["sky", "zebra", "apple", "education"]
-
-💡 Comparator.comparing(w -> countVowels(w))
-
-🔹 Задача 5: Знайти пару чисел із найменшою різницею
-📥 List.of(3, 8, 15, 9)
-📤 Пара: (8, 9) → різниця 1
-
-💡 .sorted().reduce((a,b) -> ...) або вручну пройти .pairwise
 
 --------------------------------------------------------
 
@@ -131,3 +119,28 @@ List<String> sorted = list.stream()
 
 💡 Comparator.comparing(n -> countOf(n, '0'))
 
+
+
+---------------HARD LEVEL-------------------
+
+🔹 Задача 4: Сортувати слова за кількістю голосних у зростанні
+-
+📥 List.of("apple", "zebra", "sky", "education")
+📤 ["sky", "zebra", "apple", "education"]
+
+💡 Comparator.comparing(w -> countVowels(w))
+
+🔹 Задача 5: Знайти пару чисел із найменшою різницею
+📥 List.of(3, 8, 15, 9)
+📤 Пара: (8, 9) → різниця 1
+
+💡 .sorted().reduce((a,b) -> ...)
+
+    public int [] practice4 (List<Integer> numbers) {
+        List<Integer> sorted = numbers.stream().sorted().collect(Collectors.toList());
+        return IntStream.range(0, sorted.size() - 1)
+                .mapToObj(i -> new int[]{sorted.get(i), sorted.get(i + 1)})
+                .min(Comparator.comparingInt(pair -> Math.abs(pair[0] - pair[1])))
+                .orElse(null);
+    }
+    }
