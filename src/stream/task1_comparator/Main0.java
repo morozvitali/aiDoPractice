@@ -2,6 +2,7 @@ package stream.task1_comparator;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 public class Main0 {
 
@@ -15,6 +16,14 @@ public class Main0 {
                         .thenComparing(Comparator.naturalOrder()))
                 .forEach(System.out::println);
     }
+
+    public void practice2 () {
+        List.of("alpha", "arena", "java", "banana", "lava").stream().map(w-> Map.entry(w, w.chars().filter(c-> c=='a').count()))
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse("Empty");
+    }
+
 
 
 }
