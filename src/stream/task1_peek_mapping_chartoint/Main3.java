@@ -1,6 +1,7 @@
 package stream.task1_peek_mapping_chartoint;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main3 {
@@ -58,6 +59,18 @@ public class Main3 {
                 .filter(w->w.length()>3)
                 .forEach(System.out::println);
     }
+
+    public void practice7 () {
+        List<String> emails = List.of("ivan@ukr.net",
+                "olga@gmail.com", "petro@ukr.net");
+        emails
+                .stream()
+                .collect(Collectors
+                        .groupingBy(w->w.substring(0, emails.indexOf("@"))
+                                .length(), Collectors
+                                .toList()));
+    }
+
 
 
 
