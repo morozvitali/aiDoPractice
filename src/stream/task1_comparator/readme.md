@@ -82,10 +82,14 @@ String result = list.stream()
 
 🔹 Задача 5: Знайти найдовше слово, що починається на 's'
 -
-📥 List.of("sun", "star", "supernova", "apple")
+List<String> words = 
+List.of("sun", "star", "supernova", "apple");
 📤 "supernova"
 
-💡 filter -> startsWith("s"), потім max(Comparator.comparing(String::length))
+        String result = words.stream()
+                .filter(word -> word.startsWith("s"))
+                .max(Comparator.comparing(word -> word.length()))
+                .orElse("Немає слів на 's'");
 
 --------------------------------------------------------
 

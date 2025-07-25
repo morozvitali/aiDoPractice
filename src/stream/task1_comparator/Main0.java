@@ -1,7 +1,6 @@
 package stream.task1_comparator;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -48,6 +47,12 @@ public class Main0 {
                 .map(Map.Entry::getKey)
                 .orElse("empty");
     }
+
+    public void practice5 () {
+        List.of("sun", "star", "supernova", "apple").stream().filter(s->s.startsWith("s"))
+                .max(Comparator.comparing(s-> s.length())).orElse("Empty value");
+    }
+
 
 
 }
