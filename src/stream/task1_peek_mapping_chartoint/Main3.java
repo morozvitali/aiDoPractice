@@ -22,9 +22,13 @@ public class Main3 {
         String.valueOf(n).chars().map(c->c-'0')
                 .max()
                 .orElse(-1);
+    }
 
-
-
+    public void practice4 () {
+        int n = 987654321;
+        String.valueOf(n).chars().map(ch->ch-'0')
+                .filter(value -> value > 5)
+                .count();
     }
 
 }
