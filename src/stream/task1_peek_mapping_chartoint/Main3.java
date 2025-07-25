@@ -17,6 +17,14 @@ public class Main3 {
                 .allMatch(value -> value %2 == 0);
     }
 
+    public void practice3 () {
+        int n = 8354;
+        String.valueOf(n).chars().map(c->c-'0')
+                .max()
+                .orElse(-1);
 
+
+
+    }
 
 }
