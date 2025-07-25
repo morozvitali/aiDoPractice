@@ -112,6 +112,11 @@ List.of("sun", "star", "supernova", "apple");
 
 💡 filter.contains("e") + min(Comparator.comparing(String::length))
 
+        List.of("java", "hello", "me", "zebra")
+                .stream().filter(w->w.contains("e"))
+                .min(Comparator.comparing(word -> word.length()))
+                .orElse("empty value");
+
 --------------------------------------------------------
 
 🔹 Задача 8: Сортувати числа за кількістю нулів у записі
@@ -120,8 +125,6 @@ List.of("sun", "star", "supernova", "apple");
 📤 List.of(5, 10, 100, 1010, 2000)
 
 💡 Comparator.comparing(n -> countOf(n, '0'))
-
-
 
 ---------------HARD LEVEL-------------------
 

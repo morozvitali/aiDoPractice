@@ -65,5 +65,14 @@ public class Main0 {
                 .min(Comparator.comparing(word -> word.length())).orElse("empty value");
     }
 
-
+    public void practice8 () {
+        List.of(100, 1010, 5, 2000, 10)
+                .stream()
+                .sorted(Comparator
+                        .comparing(value -> String
+                                .valueOf(value)
+                                .chars()
+                                .filter(ch-> ch == '0')
+                                .count()));
+    }
 }
