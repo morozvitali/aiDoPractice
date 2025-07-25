@@ -14,7 +14,8 @@ return String.valueOf(n).chars()
 *********************
 Що робить c - '0'?
 Це віднімає ASCII-код символу '0' (тобто 48)
-від коду іншого символу c, який теж є цифрою у вигляді символу.
+від коду іншого символу c, який теж є цифрою
+у вигляді символу.
 🔧 Наприклад:
 char c = '5';         // ASCII 53
 int digit = c - '0';  // 53 - 48 = 5
@@ -126,7 +127,8 @@ List<String> emails = List.of("ivan@ukr.net",
 
 Map<Integer, List<String>> map = emails
 .stream()
-.collect(Collectors.groupingBy(email -> email.substring(0, email.indexOf("@")).length(),
+.collect(Collectors.groupingBy(email ->
+email.substring(0, email.indexOf("@")).length(),
 Collectors.toList()));
 return map;
 
