@@ -88,6 +88,25 @@ int[] digits = String.valueOf(n).chars()
     return product;
 }
 
+    public void practice5 () {
+        int number = 123456;
+        int [] array = String.valueOf(number).chars().map(n-> n-'0').toArray();
+        IntStream.iterate(1, i -> i+2).reduce(1, (a,b) -> array[value] * )
+    }
+
+
+        public int productOfDigitsAtOddIndexes(int n) {
+        int[] digits = String.valueOf(n)
+        .chars()
+        .map(c -> c - '0')
+        .toArray();
+
+        return IntStream.range(0, digits.length)
+            .filter(i -> i % 2 == 1)       // тільки непарні індекси
+            .map(i -> digits[i])          // беремо цифру за індексом
+            .reduce(1, (a, b) -> a * b);  // обчислюємо добуток
+}
+
 -----------------------------------------------
 
 ✅ Задача 6: peek для відлагодження
