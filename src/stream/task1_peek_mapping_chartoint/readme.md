@@ -7,8 +7,8 @@
 
 public int sumOfDigitSquares(int n) {
 return String.valueOf(n).chars()
-.map(c -> c - '0') toChar // .map(c->(char)c) ??
-.map(d -> d * d) toSquare
+.map(c -> c - '0')
+.map(d -> d * d)
 .sum();
 }
 *********************
@@ -31,12 +31,11 @@ int digit = c - '0';  // 53 - 48 = 5
 📥 Вхід: n = 2486 → true
 📥 Вхід: n = 1234 → false
 
-public boolean areAllDigitsEven(int n) {
-return String.valueOf(n).chars()
-.map(c -> c - '0')
-.allMatch(d -> d % 2 == 0);
+    return String.valueOf(n).chars()
+    .map(c -> c - '0')  // символ → цифра
+    .map(d -> d * d)    // квадрат цифри
+    .sum();             // сума всіх квадратів
 }
-
 -----------------------------------------
 
 🌟 Завдання 3: Знайти найбільшу цифру
