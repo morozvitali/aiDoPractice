@@ -60,6 +60,10 @@ public class Main0 {
                 .collect(Collectors.toList());
     }
 
+    public void practice7 () {
+        List.of("java", "hello", "me", "zebra").stream().filter(w->w.contains("e"))
+                .min(Comparator.comparing(word -> word.length())).orElse("empty value");
+    }
 
 
 }
