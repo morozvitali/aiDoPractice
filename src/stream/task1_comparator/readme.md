@@ -72,11 +72,11 @@ Map.entry(123, 3).getKey() → 123
 📥 List.of("abc", "aaa", "zzz")
 📤 "zzz" → 3×122 = 366
 
-String result = list.stream()
-.map(w -> Map.entry(w, w.chars().sum()))
-.max(Comparator.comparing(Map.Entry::getValue))
-.map(Map.Entry::getKey)
-.orElse("нема");
+        String result = list.stream()
+            .map(w -> Map.entry(w, w.chars().sum()))
+            .max(Comparator.comparing(Map.Entry::getValue))
+            .map(Map.Entry::getKey)
+            .orElse("нема");
 
 --------------------------------------------------------
 
@@ -98,9 +98,10 @@ List.of("sun", "star", "supernova", "apple");
 📥 ["abc", "def", "gka", "lol"]
 📤 ["gka", "lol", "abc", "def"]
 
-List<String> sorted = list.stream()
-.sorted(Comparator.comparing(s -> s.charAt(s.length() - 1)))
-.collect(Collectors.toList());
+        List<String> sorted = list.stream()
+                .sorted(Comparator
+                .comparing(s -> s.charAt(s.length() - 1)))
+                .collect(Collectors.toList());
 
 --------------------------------------------------------
 

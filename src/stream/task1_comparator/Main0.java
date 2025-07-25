@@ -53,6 +53,13 @@ public class Main0 {
                 .max(Comparator.comparing(s-> s.length())).orElse("Empty value");
     }
 
+    public void practice6 () {
+        List <String> list = List.of("abc", "def", "gka", "lol")
+                .stream().sorted(Comparator
+                        .comparing(s->s.charAt(s.length()-1)))
+                .collect(Collectors.toList());
+    }
+
 
 
 }
