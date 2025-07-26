@@ -2,6 +2,7 @@ package stream.task3__optional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 
 public class Main4 {
     public void practice1 () {
@@ -18,6 +19,13 @@ public class Main4 {
         Optional <String> name = Optional.of("Vitali");
         name.map(w->"hello, " + name)
                 .orElse("hello, guest");
+    }
+
+    public void practice4 () {
+        Optional <String> str = Optional.of("shrt")
+                String response = str
+                .filter(s -> s.length() > 5)
+                .orElse("short");
     }
 
 
