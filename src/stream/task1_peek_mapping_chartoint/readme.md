@@ -90,8 +90,10 @@ int[] digits = String.valueOf(n).chars()
 
     public void practice5 () {
         int number = 123456;
-        int [] array = String.valueOf(number).chars().map(n-> n-'0').toArray();
-        IntStream.iterate(1, i -> i+2).reduce(1, (a,b) -> array[value] * )
+        int [] array = String.valueOf(number)
+        .chars().map(n-> n-'0').toArray();
+        IntStream.iterate(1, i -> i+2)
+        .reduce(1, (a,b) -> array[value] * )
     }
 
 
@@ -102,10 +104,13 @@ int[] digits = String.valueOf(n).chars()
         .toArray();
 
         return IntStream.range(0, digits.length)
-            .filter(i -> i % 2 == 1)       // тільки непарні індекси
-            .map(i -> digits[i])          // беремо цифру за індексом
-            .reduce(1, (a, b) -> a * b);  // обчислюємо добуток
-}
+            .filter(i -> i % 2 == 1)       
+        // тільки непарні індекси
+            .map(i -> digits[i])          
+        // беремо цифру за індексом
+            .reduce(1, (a, b) -> a * b);  
+        // обчислюємо добуток
+        }
 
 -----------------------------------------------
 
@@ -168,6 +173,9 @@ List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
 
     System.out.println("Парні числа: " + evens);
 }
+
+що таке forEachOrdered();
+-
 
 --------------------------------------------------
 
