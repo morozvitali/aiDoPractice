@@ -33,6 +33,12 @@ public class Main4 {
         nums.stream().max((a,b)->a.compareTo(b)).ifPresent(System.out::println);
     }
 
+    public void practice6 () {
+        Optional<String> email = Optional.of("ADMIN@SITE.COM");
+        email.map(s->s.toLowerCase()).filter(e->e.contains(".com"))
+                .orElseThrow(()->new IllegalArgumentException("Invalid email"));
+    }
+
 
 
 }
