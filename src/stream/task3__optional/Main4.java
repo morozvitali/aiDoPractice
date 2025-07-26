@@ -22,7 +22,7 @@ public class Main4 {
     }
 
     public void practice4 () {
-        Optional <String> str = Optional.of("shrt")
+        Optional <String> str = Optional.of("shrt");
                 String response = str
                 .filter(s -> s.length() > 5)
                 .orElse("short");
