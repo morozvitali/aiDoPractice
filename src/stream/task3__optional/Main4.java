@@ -28,5 +28,11 @@ public class Main4 {
                 .orElse("short");
     }
 
+    public void practice5 () {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        nums.stream().max((a,b)->a.compareTo(b)).ifPresent(System.out::println);
+    }
+
+
 
 }
