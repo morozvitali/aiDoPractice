@@ -78,6 +78,4 @@ public class Main3 {
                 .filter(value-> value %2 ==0)
                 .forEach(System.out::println);
     }
-
-
 }
