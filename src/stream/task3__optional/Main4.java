@@ -9,9 +9,16 @@ public class Main4 {
         int response = numbers.stream().filter(value-> value %5 == 0).findFirst().orElse(-1);
     }
 
-    public void practice () {
+    public void practice2 () {
      Optional<Integer> value = Optional.of(7);
      int response = value.map(i -> i*i).orElse(-1);
     }
+
+    public void practice3 () {
+        Optional <String> name = Optional.of("Vitali");
+        name.map(w->"hello, " + name)
+                .orElse("hello, guest");
+    }
+
 
 }
