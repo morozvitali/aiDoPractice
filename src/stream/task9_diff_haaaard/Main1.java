@@ -35,6 +35,15 @@ public class Main1 {
         Set<Integer> sum2 = setb.stream().filter(value -> !seta.contains(value)).collect(Collectors.toSet());
         sum1.addAll(sum2);
         return sum1;
-
     }
+
+    public List<Integer> practice4 () {
+        int[] a = new int[]{1, 2, 3, 4};
+        int[] b = new int[]{2, 4, 6};
+
+        Set <Integer> set = Arrays.stream(b).boxed().collect(Collectors.toSet());
+        return Arrays.stream(a).filter(value -> set.stream().noneMatch(s->value%s == 0)).boxed().collect(Collectors.toList());
+    }
+
+
 }
