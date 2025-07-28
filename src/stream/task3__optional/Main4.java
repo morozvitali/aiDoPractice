@@ -59,5 +59,9 @@ public class Main4 {
         name.ifPresentOrElse(value-> System.out.println(value.toUpperCase()), () -> new NoSuchElementException("Name not found"));
     }
 
-
+    public void practice10 () {
+        Optional <String> login = Optional.of("administrator");
+        login.map(l->l.startsWith("admin") ? "Admin access" : "User access")
+                .orElse("No login");
+    }
 }
