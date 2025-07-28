@@ -51,6 +51,4 @@ public class Main0 {
                         .count())
                 .sum();
     }
-
-
 }
