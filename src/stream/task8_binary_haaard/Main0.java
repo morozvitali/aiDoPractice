@@ -1,5 +1,7 @@
 package stream.task8_binary_haaard;
 
+import java.util.Arrays;
+
 public class Main0 {
     public int practice1 (int number) {
         String binary = Integer.toBinaryString(number);
@@ -36,4 +38,19 @@ public class Main0 {
     public long countOnes (int n) {
         return Integer.toBinaryString(n).chars().filter(a-> a=='1').count();
     }
+
+    public long practice6 () {
+        int[] arr = {1, 2, 3, 4};
+
+
+        return Arrays.stream(arr)
+                .mapToLong(a -> Integer
+                        .toBinaryString(a)
+                        .chars()
+                        .filter(c -> c == '0')
+                        .count())
+                .sum();
+    }
+
+
 }
