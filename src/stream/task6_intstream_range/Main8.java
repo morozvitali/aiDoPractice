@@ -8,7 +8,9 @@ public class Main8 {
         return IntStream.range(1, n).sum();
     }
 
-
+    public long practice2 (int n, int m) {
+        return IntStream.rangeClosed(n,m).filter(i->i%2==0).count();
+    }
 
 
 }
