@@ -21,5 +21,13 @@ public class Main0 {
         }
     }
 
+    public long practice4 () {
+        return Integer
+                .toBinaryString(Integer.MAX_VALUE)
+                .chars()
+                .filter(c->c=='1')
+                .count();
+    }
+
 
 }
