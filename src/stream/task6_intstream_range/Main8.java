@@ -1,6 +1,8 @@
 package stream.task6_intstream_range;
 
 import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main8 {
@@ -31,5 +33,12 @@ public class Main8 {
     public void practice6 () {
         IntStream.range(1,30).mapToObj(a-> BigInteger.valueOf(a)).reduce(BigInteger.ONE, (a,b) -> a.multiply(b));
     }
+
+    public void practice7 () {
+        int[] numbers = {10, 20, 30};
+        Arrays.stream(numbers).mapToObj(a->String.valueOf(a)).collect(Collectors.joining("|"));
+    }
+
+
 }
 
