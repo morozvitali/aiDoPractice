@@ -39,6 +39,11 @@ public class Main8 {
         Arrays.stream(numbers).mapToObj(a->String.valueOf(a)).collect(Collectors.joining("|"));
     }
 
+    public void practice8 () {
+        IntStream.rangeClosed(2,8)
+                .filter(a->a%2==1)
+                .reduce((a,b)-> a*b).orElse(-1);
+    }
 
 }
 
