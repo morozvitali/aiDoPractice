@@ -35,9 +35,7 @@ sum() -> використовує reduce()
 
 ✅ Задача 6: знайти добуток всіх 
 непарних чисел (1, 31)
-
 // Підказка: range(1, 31)
-
 .mapToObj(a-> BigInteger.valueOf(a))
 // перетворюємо на BigInteger
 .reduce(BigInteger.ONE, (a,b) -> a.multiply(b));
