@@ -64,4 +64,10 @@ public class Main4 {
         login.map(l->l.startsWith("admin") ? "Admin access" : "User access")
                 .orElse("No login");
     }
+
+    public void practice11 () {
+        Optional <Integer> number = Optional.of(11);
+        number.filter(value->value%2 == 0).map(n->n*2)
+                .ifPresentOrElse(value-> System.out.println("double value " + value), () -> System.out.println("empty or not odd"));
+    }
 }
