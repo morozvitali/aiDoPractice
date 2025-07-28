@@ -1,11 +1,9 @@
-package stream.task1__valueOf;
+package stream.task0__valueOf;
 
-import java.util.Calendar;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main2 {
 

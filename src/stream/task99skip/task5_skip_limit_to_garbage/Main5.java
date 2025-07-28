@@ -1,4 +1,4 @@
-package stream.task5_skip_limit_to_garbage;
+package stream.task99skip.task5_skip_limit_to_garbage;
 
 import java.util.Arrays;
 import java.util.Comparator;

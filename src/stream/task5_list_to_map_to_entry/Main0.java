@@ -1,8 +1,7 @@
-package stream.task1_list_to_map_to_entry;
+package stream.task5_list_to_map_to_entry;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Main0 {
     public String practice1() {

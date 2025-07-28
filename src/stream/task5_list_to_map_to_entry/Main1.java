@@ -1,10 +1,9 @@
-package stream.task1_list_to_map_to_entry;
+package stream.task5_list_to_map_to_entry;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main1 {
 
