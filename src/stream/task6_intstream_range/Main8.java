@@ -55,7 +55,5 @@ public class Main8 {
 
     public void practice11 () {
         IntStream.rangeClosed(1,100).filter(a-> a%3==0&& a%5 ==0).count();
-
     }
 }
-
