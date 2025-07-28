@@ -29,5 +29,11 @@ public class Main0 {
                 .count();
     }
 
+    public boolean practice5 (int a, int b) {
+        return countOnes(a) > countOnes(b);
+    }
 
+    public long countOnes (int n) {
+        return Integer.toBinaryString(n).chars().filter(a-> a=='1').count();
+    }
 }
