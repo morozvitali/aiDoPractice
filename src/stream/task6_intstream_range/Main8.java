@@ -52,5 +52,10 @@ public class Main8 {
     public void practice10 () {
         IntStream.rangeClosed(10,51).filter(i->i%7==0).boxed().toList();
     }
+
+    public void practice11 () {
+        IntStream.rangeClosed(1,100).filter(a-> a%3==0&& a%5 ==0).count();
+
+    }
 }
 
