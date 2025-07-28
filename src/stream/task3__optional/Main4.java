@@ -43,7 +43,7 @@ public class Main4 {
 
     public void practice7 () {
         List<Integer> nums = List.of(5, 2, 9);
-        nums.stream().min((a,b) -> a < b ? a : b)
+        nums.stream().min((a,b) -> a.compareTo(b))
                 .ifPresentOrElse(value -> System.out.println("min " + value), () -> System.out.println("empty list"));
     }
 

@@ -115,6 +115,13 @@ return email
     }
 
 .min((a, b) -> a.compareTo(b))
+
+✅ Варіант 1: .min((a, b) -> a.compareTo(b))
+✅ Варіант 2: .min(Integer::compareTo)
+✅ Варіант 3: .min(Comparator.comparing(...))
+✅ Варіант 4: .collect(Collectors.minBy(...))
+
+
 ------------------------------------------------------------------
 
 ✅ Задача 8: Отримай довжину першого слова, 
