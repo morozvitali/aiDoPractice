@@ -13,7 +13,7 @@ public class Main1 {
         int[] b = new int[]{2, 4, 6};
 
         Set<Integer> set = Arrays.stream(b).boxed().collect(Collectors.toSet());
-        return Arrays.stream(a).filter(value -> set.contains(value)).boxed().collect(Collectors.toList());
+        return Arrays.stream(a).filter(set::contains).boxed().collect(Collectors.toList());
     }
 
     public List <Integer> practice2 () {
