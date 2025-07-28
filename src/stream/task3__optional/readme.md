@@ -145,14 +145,14 @@ List<String> words = List.of(); // або List.of("Java", "Spring");
 Є Optional<String> із іменем користувача. 
 Потрібно перетворити його на UPPERCASE. 
 Якщо Optional порожній — викинути NoSuchElementException.
-`
+
 public String getUpperCaseName(Optional<String> name) {
 return name
 .map(String::toUpperCase)
 .orElseThrow(() -> new NoSuchElementException("Name not found"));
 }
 
-`------------------------------------------------------------------
+------------------------------------------------------------------
 
 ✅ Задача 10: Перевірка логіна
 📋 Умова:

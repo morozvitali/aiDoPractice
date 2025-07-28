@@ -2,6 +2,7 @@ package stream.task3__optional;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.function.Function;
 
@@ -52,5 +53,11 @@ public class Main4 {
         .map(value -> value.length())
         .ifPresentOrElse(len -> System.out.println("Length is " + len), () -> System.out.println("list values is empty"));
     }
+
+    public void practice9 () {
+        Optional <String> name = Optional.of("Ivan");
+        name.ifPresentOrElse(value-> System.out.println(value.toUpperCase()), () -> new NoSuchElementException("Name not found"));
+    }
+
 
 }
