@@ -12,5 +12,9 @@ public class Main8 {
         return IntStream.rangeClosed(n,m).filter(i->i%2==0).count();
     }
 
+    public int practice3 (int n, int m) {
+        return IntStream.rangeClosed(n,m).filter(a->a%2==0).min().orElse(-1);
+    }
+
 
 }
