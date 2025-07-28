@@ -48,5 +48,9 @@ public class Main8 {
     public void practice9 () {
         IntStream.rangeClosed(1,5).map(i->i*i).sum();
     }
+
+    public void practice10 () {
+        IntStream.rangeClosed(10,51).filter(i->i%7==0).boxed().toList();
+    }
 }
 
