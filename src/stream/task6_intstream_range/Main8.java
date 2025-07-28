@@ -22,4 +22,10 @@ public class Main8 {
                 .reduce((a,b)-> a*b)
                 .orElse(-1);
     }
+
+    public void practice5 () {
+        IntStream.range(1,31).filter(a->a%4==0).forEach(System.out::println);
+    }
+
 }
+
