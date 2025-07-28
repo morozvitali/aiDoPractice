@@ -16,5 +16,10 @@ public class Main8 {
         return IntStream.rangeClosed(n,m).filter(a->a%2==0).min().orElse(-1);
     }
 
-
+    public void practice4 () {
+        IntStream
+                .rangeClosed(1,5)
+                .reduce((a,b)-> a*b)
+                .orElse(-1);
+    }
 }
