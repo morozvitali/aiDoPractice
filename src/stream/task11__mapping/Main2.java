@@ -8,4 +8,7 @@ public class Main2 {
         Arrays.stream("Hey fellow warriors".split(" ")).map(w-> w.length() < 5 ? w : new StringBuilder (w).reverse().toString()).collect(Collectors.joining(" "));
     }
 
+    public void practice2 () {
+        Arrays.stream("Java is amazing language for backend".split(" ")).map(a->a.length() < 5 ? a : "[...]").collect(Collectors.joining());
+    }
 }
