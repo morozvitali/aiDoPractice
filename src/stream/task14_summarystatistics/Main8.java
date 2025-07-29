@@ -29,7 +29,11 @@ public class Main8 {
         return Arrays.stream(words).filter(a->a.length() > 3 && a.chars().anyMatch(c->"AEIOU".indexOf(c) >= 0)).collect(Collectors.toMap(Function.identity(), w->w.chars().filter(ch-> "aeiou".indexOf(ch) >=0).count()));
     }
 
-
-
+    public void practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        IntSummaryStatistics stats = Arrays.stream(words).filter(w->w.chars().anyMatch(ch->"aeiou".indexOf(ch) >= 0)).mapToInt(w->w.length()).summaryStatistics();
+        System.out.println(stats.getAverage());
+    }
 
 }
