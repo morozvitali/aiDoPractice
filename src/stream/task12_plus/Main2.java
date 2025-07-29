@@ -27,6 +27,9 @@ public class Main2 {
         return Integer.parseInt(String.valueOf(number).chars().mapToObj(ch->Character.getNumericValue(ch)).map(value -> value % 2 == 0 ? value : value * value).map(value->String.valueOf(value)).collect(Collectors.joining()));
     }
 
-
+    public void practice7 (int number) {
+        String.valueOf(number).chars().count();
+        String.valueOf(number).length();
+    }
 
 }
