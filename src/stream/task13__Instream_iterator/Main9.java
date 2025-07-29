@@ -66,7 +66,9 @@ public class Main9 {
         "streamprocessing".chars().filter(ch -> "aeiou".indexOf(ch) >= 0).forEach(System.out::println);
     }
 
-
+    public void practice14 () {
+        IntStream.rangeClosed(1,20).map(a->a*a).peek(System.out::println).filter(a->a%4==0).forEach(System.out::println);
+    }
 
 
 }
