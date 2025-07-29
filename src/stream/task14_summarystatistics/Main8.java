@@ -33,12 +33,17 @@ public class Main8 {
         System.out.println(stats.getAverage());
     }
 
-    public static void practice5 () {
+    public void practice5 () {
         String[] words = {"apple", "orange", "banana",
                 "ice", "umbrella", "echo"};
         Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).min(Comparator.comparingInt(String::length)).orElse("empty");
     }
 
-
+    public void practice6 () {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
+        Arrays.stream(words)
+                .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
 
 }
