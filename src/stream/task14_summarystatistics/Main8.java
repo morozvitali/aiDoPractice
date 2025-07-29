@@ -1,9 +1,6 @@
 package stream.task14_summarystatistics;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -35,5 +32,13 @@ public class Main8 {
         IntSummaryStatistics stats = Arrays.stream(words).filter(w->w.chars().anyMatch(ch->"aeiou".indexOf(ch) >= 0)).mapToInt(w->w.length()).summaryStatistics();
         System.out.println(stats.getAverage());
     }
+
+    public static void practice5 () {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+        Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).min(Comparator.comparingInt(String::length)).orElse("empty");
+    }
+
+
 
 }
