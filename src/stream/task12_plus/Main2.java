@@ -7,5 +7,9 @@ public class Main2 {
         return Integer.parseInt(String.valueOf(number).chars().map(Character::getNumericValue).map(a->a*a).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
+    public int practice2 (int number) {
+        return Integer.parseInt(String.valueOf(number).chars().map(Character::getNumericValue).map(value-> value * value * value).mapToObj(String::valueOf).collect(Collectors.joining()));
+    }
+
 
 }
