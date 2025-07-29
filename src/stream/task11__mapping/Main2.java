@@ -21,6 +21,13 @@ public class Main2 {
         String.join(" ", str);
     }
 
+    public void practice4 () {
+        Arrays.stream("Hello world".split(" ")).map(w-> "(" + w + ")").collect(Collectors.joining(" "));
+    }
+
+    public void practice5 () {
+        String response = Arrays.stream("madam speaks civic racecar now".split(" ")).filter(value -> new StringBuilder(value).reverse().toString().equals(value)).collect(Collectors.joining(" "));
+    }
 
 
 
