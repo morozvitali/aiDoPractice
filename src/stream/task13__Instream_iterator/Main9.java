@@ -57,4 +57,13 @@ public class Main9 {
         });
     }
 
+    public void practice12 () {
+        "programmingisfun".chars().distinct().limit(10).forEach(c-> System.out.println((char)c));
+    }
+
+    public void practice13 () {
+
+    }
+
+
 }
