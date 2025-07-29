@@ -42,7 +42,9 @@ public class Main2 {
                 }).collect(Collectors.joining()));
     }
 
-
+    public int practice9 (int number) {
+        return Integer.parseInt(String.valueOf(number).chars().map(c->Character.getNumericValue(c)).map(a->Math.abs(a-5)).mapToObj(a->String.valueOf(a)).collect(Collectors.joining()));
+    }
 
 
 }
