@@ -19,6 +19,8 @@ public class Main2 {
         return String.valueOf(number).chars().map(ch->Character.getNumericValue(ch)).mapToObj(value-> "*".repeat(value)).collect(Collectors.joining());
     }
 
-
+    public int practice5 (int number) {
+        return Integer.parseInt(new StringBuilder(String.valueOf(number)).reverse().toString());
+    }
 
 }
