@@ -14,4 +14,11 @@ public class Main2 {
     public int practice3 (int number) {
         return Integer.parseInt(String.valueOf(number).chars().filter(a->a%2==0).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
+
+    public String practice4 (int number) {
+        return String.valueOf(number).chars().map(ch->Character.getNumericValue(ch)).mapToObj(value-> "*".repeat(value)).collect(Collectors.joining());
+    }
+
+
+
 }
