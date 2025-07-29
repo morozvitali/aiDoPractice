@@ -25,4 +25,8 @@ public class Main9 {
         IntStream.iterate(1, i -> i + 1).limit(10).map(i -> i * i).forEach(System.out::println);
     }
 
+    public void practice6() {
+        IntStream.iterate(17, i->i+10).limit(9).forEach(System.out::println);
+    }
+
 }
