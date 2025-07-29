@@ -46,5 +46,7 @@ public class Main2 {
         return Integer.parseInt(String.valueOf(number).chars().map(c->Character.getNumericValue(c)).map(a->Math.abs(a-5)).mapToObj(a->String.valueOf(a)).collect(Collectors.joining()));
     }
 
-
+    public String practice10 (int number) {
+        return String.valueOf(number).chars().map(c->Character.getNumericValue(c)).mapToObj(d -> d > 5 ? "X" : "0").collect(Collectors.joining());
+    }
 }
