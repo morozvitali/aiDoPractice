@@ -78,5 +78,12 @@ public class Main9 {
         words.stream().filter(w->w.chars().distinct().count() < w.length()).min(Comparator.comparing(String::length)).orElse("empty");
     }
 
+    public void practice16 () {
+        List<Integer> nums = List.of(23, 70, 172,
+                88, 45, 27, 97, 21);
+        nums.stream().filter(n->String.valueOf(n).contains("7")).max(Integer::compareTo).orElse(-1);
+    }
+
+
 
 }
