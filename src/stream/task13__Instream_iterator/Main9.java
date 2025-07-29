@@ -27,43 +27,46 @@ public class Main9 {
     }
 
     public void practice6() {
-        IntStream.iterate(17, i->i+10).limit(9).forEach(System.out::println);
+        IntStream.iterate(17, i -> i + 10).limit(9).forEach(System.out::println);
     }
 
-    public void practice7 () {
-        IntStream.iterate(1, i->i*2).limit(10).forEach(System.out::println);
+    public void practice7() {
+        IntStream.iterate(1, i -> i * 2).limit(10).forEach(System.out::println);
     }
 
-    public void practice8 () {
-        IntStream.iterate(1, i-> i+3).filter(a->a%2==0).limit(10).forEach(System.out::println);
+    public void practice8() {
+        IntStream.iterate(1, i -> i + 3).filter(a -> a % 2 == 0).limit(10).forEach(System.out::println);
     }
 
-    public void practice9 () {
-        IntStream.iterate(1, i->i+1).map(a->a*a).filter(a->a%5 !=5).limit(10).forEach(System.out::println);
+    public void practice9() {
+        IntStream.iterate(1, i -> i + 1).map(a -> a * a).filter(a -> a % 5 != 5).limit(10).forEach(System.out::println);
     }
 
-    public void practice10 () {
-        IntStream.iterate(1, i->i+1).filter(a->a%3==0).skip(5).limit(10).forEach(System.out::println);
+    public void practice10() {
+        IntStream.iterate(1, i -> i + 1).filter(a -> a % 3 == 0).skip(5).limit(10).forEach(System.out::println);
     }
 
-    public void practice11 () {
-        IntStream.iterate(1,i->i+1).takeWhile(new IntPredicate() {
+    public void practice11() {
+        IntStream.iterate(1, i -> i + 1).takeWhile(new IntPredicate() {
             int sum = 0;
+
             @Override
             public boolean test(int i) {
-                sum+= i;
-                return sum<50;
+                sum += i;
+                return sum < 50;
             }
         });
     }
 
-    public void practice12 () {
-        "programmingisfun".chars().distinct().limit(10).forEach(c-> System.out.println((char)c));
+    public void practice12() {
+        "programmingisfun".chars().distinct().limit(10).forEach(c -> System.out.println((char) c));
     }
 
-    public void practice13 () {
-
+    public void practice13() {
+        "streamprocessing".chars().filter(ch -> "aeiou".indexOf(ch) >= 0).forEach(System.out::println);
     }
+
+
 
 
 }
