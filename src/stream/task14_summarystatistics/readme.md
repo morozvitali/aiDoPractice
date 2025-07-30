@@ -207,6 +207,7 @@ List<String>> — поділи слова,
 
 String[] words = {"Apple", "banana",
 "Cherry", "date", "Eggplant"};
+
 🧪 Очікувано:
 
 true  = [Apple, Cherry, Eggplant]
