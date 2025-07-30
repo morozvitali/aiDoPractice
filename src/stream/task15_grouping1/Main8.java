@@ -87,4 +87,14 @@ public class Main8 {
         return map.entrySet().stream().max(Comparator.comparingLong(e -> e.getValue())).get().getKey();
     }
 
+    public void practice12 () {
+        Map <Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
+        map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).forEach(entry -> System.out.println(entry.getValue() + "->" + entry.getKey()));
+    }
+
+
+
 }

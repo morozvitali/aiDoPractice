@@ -286,12 +286,26 @@ groupingBy(word -> word.charAt(0), counting())
 вивести всі пари, відсортовані за значенням 
 у зворотному порядку.
 
+    Map <Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
+
 Вхід: {a=2, b=5, c=1}
 Вихід: b=5, a=2, c=1
 
 🧠 Підказка:
 entrySet().stream().sorted(Map.Entry
 .comparingByValue(Comparator.reverseOrder()))
+
+    public void practice12 () {
+        Map <Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
+
+        map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+    }
 
 ---------------------------------------------------------
 
