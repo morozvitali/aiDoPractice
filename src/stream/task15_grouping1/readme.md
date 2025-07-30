@@ -268,8 +268,9 @@ System.out.println(e.getKey() + " → " + e.getValue());}**
 Є список слів. Знайди символ, який найчастіше 
 стоїть на початку слів.
 
-Вхід: [“apple”, “apricot”, 
-“banana”, “blueberry”, “avocado”]
+Вхід: String[] words = {"apple", "banana", "avocado",
+"blueberry", "bleuberry", "apricot"};
+
 Вихід: 'a'
 
 🧠 Підказка:

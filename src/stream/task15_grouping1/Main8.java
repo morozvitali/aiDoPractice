@@ -62,6 +62,10 @@ public class Main8 {
     public boolean practice8 () {
         int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
         Map <Integer, Long> map = Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        for (var e : map.entrySet()) {
+            System.out.println(e.getKey() + " -> " + e.getValue());
+        }
+
         return map.entrySet().stream().anyMatch(entry->entry.getValue() >1);
     }
 
@@ -75,5 +79,12 @@ public class Main8 {
         Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(d->d%3, Collectors.averagingInt(n->n)));
     }
 
+    public Character practice11 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+
+        Map <Character, Long> map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()));
+        return map.entrySet().stream().max(Comparator.comparingLong(e -> e.getValue())).get().getKey();
+    }
 
 }
