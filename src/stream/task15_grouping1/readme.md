@@ -154,11 +154,17 @@ groupingBy(..., counting())
 
 map.entrySet() → max(Map.Entry::getValue) → .getKey()
 
-    public int practice10 () {
-        int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
-        Map <Integer, Long> map = Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(a -> a, Collectors.counting()));
-        return map.entrySet().stream().max(Map.Entry::getValue).getKey();
-    }
+    public Integer practice6 () {
+    int[] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
+    Map<Integer, Long> map = Arrays.stream(numbers)
+    .boxed()
+    .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+    return map.entrySet().stream()
+            .max(Comparator.comparingLong(Map.Entry::getValue)) // просто й лаконічно
+            .get()
+            .getKey();
+}
 
 
 -----------------------------------------------------------

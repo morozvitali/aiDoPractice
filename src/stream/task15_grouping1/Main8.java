@@ -41,6 +41,12 @@ public class Main8 {
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0)));
     }
 
+    public Integer practice6 () {
+        int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
+        Map <Integer, Long> map = Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return map.entrySet().stream()
+                .max(Comparator.comparingLong(entry ->entry.getValue())).get().getKey();
+    }
 
 
 }
