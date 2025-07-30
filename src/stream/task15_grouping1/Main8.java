@@ -44,8 +44,19 @@ public class Main8 {
     public Integer practice6 () {
         int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
         Map <Integer, Long> map = Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        for (var e : map.entrySet())
+        {
+            System.out.println(e.getValue());
+            System.out.println(e.getKey());
+        }
+
         return map.entrySet().stream()
                 .max(Comparator.comparingLong(entry ->entry.getValue())).get().getKey();
+    }
+
+    public Map <Integer, Long> practice7 () {
+        return "ab123cc44a77".chars().filter(c->Character.isDigit(c)).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
 
