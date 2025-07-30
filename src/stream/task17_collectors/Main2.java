@@ -37,6 +37,12 @@ public class Main2 {
         numbers.stream().collect(Collectors.groupingBy(a->a%2==0));
     }
 
+    public void practice6 () {
+        List<String> words = List.of("apple",
+                "ant", "banana", "bat", "car");
+        words.stream().map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.charAt(0)));
+    }
+
 
 
 }
