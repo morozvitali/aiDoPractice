@@ -59,5 +59,11 @@ public class Main8 {
         return "ab123cc44a77".chars().filter(c->Character.isDigit(c)).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public boolean practice8 () {
+        int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
+        Map <Integer, Long> map = Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return map.entrySet().stream().anyMatch(entry->entry.getValue() >1);
+    }
+
 
 }
