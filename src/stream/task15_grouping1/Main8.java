@@ -70,4 +70,10 @@ public class Main8 {
         Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(value-> value % 2 ==0 ? "even" : "odd"));
     }
 
+    public void practice10 () {
+        int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
+        Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(d->d%3, Collectors.averagingInt(n->n)));
+    }
+
+
 }
