@@ -96,4 +96,12 @@ public class Main8 {
         System.out.println(stats.getAverage());
     }
 
+    public String practice13 () {
+        String[] words = {"apple", "tree",
+                "orange", "banana", "loop"};
+        return Arrays.stream(words).filter(w-> "aeiou".chars().anyMatch(c->w.chars().filter(ch->ch == c).count() >=2)).findFirst().orElse("not found");
+    }
+
+
+
 }
