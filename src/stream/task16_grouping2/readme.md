@@ -25,7 +25,8 @@ mapping(..., toList()))
 слів для кожної довжини, але тільки
 якщо слово містить голосну
 
-String[] words = {};
+    String[] words = {"apple", "banana",
+        "dog", "kiwi", "plum"};
 Очікуваний результат:
 
 {
@@ -38,6 +39,13 @@ String[] words = {};
 🧠 Підказка: фільтр на countVowels > 0, 
 потім groupingBy(..., 
 counting())
+
+    public Map <Integer, Long> practice2 () {
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
+        return Arrays.stream(words).filter(w->w.chars().anyMatch(c->"aeiou".indexOf(c) >=0)).collect(Collectors.groupingBy(w->w.length(), Collectors.counting()));
+    }
+
 
 return Arrays.stream(words)
 .filter(b-> b
