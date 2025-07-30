@@ -36,16 +36,4 @@ public class Main7 {
                 "ant", "dog", "egg"};
         return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
     }
-
-    public void practice5 () {
-
-    }
-
-
-
-
-
-
-
-
 }
