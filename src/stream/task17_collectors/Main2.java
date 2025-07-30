@@ -53,4 +53,11 @@ public class Main2 {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
         numbers.stream().collect(Collectors.groupingBy(a->a%2==0, Collectors.counting()));
     }
+
+    public void practice9 () {
+        List<String> words = List.of("hi", "hi",
+                "book", "sun", "day", "Java", "sky");
+        words.stream().collect(Collectors.groupingBy(a->a.length(), Collectors.toSet()));
+
+    }
 }
