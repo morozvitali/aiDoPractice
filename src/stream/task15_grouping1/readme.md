@@ -18,6 +18,12 @@ sun=true
 Підказка: використовуй .toMap(...) і chars()
 .filter(...).count > 0 ? true : false;
 
+    public Map<String, Boolean> practice1 () {
+        String[] words = {"sky", "apple",
+                "dry", "orange", "sun"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(Function.identity(), Collectors.filtering(w -> w.chars().anyMatch(ch->"aeiou".indexOf(ch)>=0)).count() >0 ? true : false));
+    }
+
 ----------------------------------------------------------
 
 ✅ Задача 1: Кількість повторів символів (літери та цифри)

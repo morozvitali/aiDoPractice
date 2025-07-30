@@ -1,4 +1,4 @@
-package stream.task14_summarystatistics;
+package stream.task14_summarystatistics_norm;
 
 import java.util.*;
 import java.util.function.Function;
