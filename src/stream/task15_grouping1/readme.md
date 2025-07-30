@@ -356,6 +356,8 @@ Map<String, Long> — ключ: слово, значення:
 
 entrySet().stream().max(...)
 
+----------------------------------------------
+
 ✅ Задача 15: Чи всі значення в Map парні?
 -
 📋 Умова:
@@ -367,5 +369,13 @@ entrySet().stream().max(...)
 
 🧠 Підказка:
 map.values().stream().allMatch(v -> v % 2 == 0)
+
+    public boolean practice15() {
+    Map<String, Integer> map = new HashMap<>();
+        map.put("a", 2);
+        map.put("b", 4);
+        map.put("c", 6);
+        return map.entrySet().stream().allMatch(entry -> entry.getValue() % 2 == 0);
+    }
 
 https://chatgpt.com/c/68529e9e-80a4-8009-a646-0591c2e6f37b

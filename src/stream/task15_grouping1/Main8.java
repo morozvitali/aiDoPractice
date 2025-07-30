@@ -94,19 +94,25 @@ public class Main8 {
         map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).forEach(entry -> System.out.println(entry.getValue() + "->" + entry.getKey()));
     }
 
-    public Map <Character, Integer> practice13() {
+    public Map<Character, Integer> practice13() {
         String[] words = {"a10", "b20", "a5",
                 "b7", "b12", "a6"};
-        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
+        return Arrays.stream(words).collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.summingInt(w -> Integer.parseInt(w.substring(1)))));
     }
 
 
-    public String practice14 () {
+    public String practice14() {
         String[] words = {"apple", "banana", "avocado",
                 "blueberry", "bleuberry", "apricot"};
-        Map <String, Long> map = Arrays.stream(words).collect(Collectors.toMap(Function.identity(), w->w.chars().filter(ch->"aeiou".indexOf(ch) >=0).count()));
-        return map.entrySet().stream().max(Comparator.comparingLong(entry->entry.getValue())).get().getKey();
+        Map<String, Long> map = Arrays.stream(words).collect(Collectors.toMap(Function.identity(), w -> w.chars().filter(ch -> "aeiou".indexOf(ch) >= 0).count()));
+        return map.entrySet().stream().max(Comparator.comparingLong(entry -> entry.getValue())).get().getKey();
     }
 
-
+    public boolean practice15() {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a", 2);
+        map.put("b", 4);
+        map.put("c", 6);
+        return map.values().stream().allMatch(v -> v % 2 == 0);
+    }
 }
