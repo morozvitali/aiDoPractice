@@ -1,9 +1,6 @@
 package stream.task15_grouping1;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -36,6 +33,12 @@ public class Main8 {
     public Map<Integer, Integer> practice3 () {
         Integer[] array = new Integer[] {12, 23, 34, 45, 16, 7};
         return Arrays.stream(array).collect(Collectors.groupingBy(n->n%10, Collectors.summingInt(n->n)));
+    }
+
+    public Map <Character, List<String>> practice5 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0)));
     }
 
 
