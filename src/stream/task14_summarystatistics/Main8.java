@@ -85,5 +85,15 @@ public class Main8 {
         return Arrays.stream(words).map(w->w.toLowerCase()).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public void practice12 () {
+        String[] words = {"cat", "apple",
+                "grape", "banana", "fig", "cherry"};
+
+        IntSummaryStatistics stats = Arrays.stream(words)
+                .filter(w->w.length() > 4 && w.length() <6)
+                .mapToInt(w->w.length())
+                .summaryStatistics();
+        System.out.println(stats.getAverage());
+    }
 
 }
