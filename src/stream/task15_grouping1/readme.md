@@ -310,6 +310,7 @@ entrySet().stream().sorted(Map.Entry
 ---------------------------------------------------------
 
 ✅ Задача 13: Сума чисел, отриманих з рядків
+-
 📋 Умова:
 Дано список рядків, які містять числа. 
 Побудуй Map, де ключ — перша літера рядка, 
@@ -319,9 +320,22 @@ entrySet().stream().sorted(Map.Entry
 Вихід: {a=30, b=12}
 
 🧠 Підказка:
-Розділи: s.charAt(0) і Integer.parseInt(s.substring(1))
+Розділи: s.charAt(0) і 
+Integer.parseInt(s.substring(1))
 
 groupingBy(..., summingInt(...))
+
+    public Map<Character, Integer> practice13() {
+    String[] words = {"a10", "b20", 
+    "a5", "b7", "b12", "a6"};
+    return Arrays.stream(words)
+        .collect(Collectors.groupingBy(
+            w -> w.charAt(0),
+            Collectors
+    .summingInt(w -> Integer
+    .parseInt(w.substring(1)))
+        ));
+    }
 
 ---------------------------------------------------------
 
