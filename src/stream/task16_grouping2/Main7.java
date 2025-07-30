@@ -30,9 +30,16 @@ public class Main7 {
         Arrays.stream(words).collect(Collectors.groupingBy(a->a.chars().anyMatch(ch-> "aeiou".indexOf(ch) >= 0)));
     }
 
+    public Map <Integer, Long> practice4 () {
+        String[] words = {"apple", "banana",
+                "orange", "umbrella",
+                "ant", "dog", "egg"};
+        return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
+    }
 
+    public void practice5 () {
 
-
+    }
 
 
 
