@@ -63,4 +63,16 @@ public class Main8 {
         IntSummaryStatistics stats = Arrays.stream(words).filter(a->a.chars().distinct().count() < a.length()).mapToInt(value->value.length()).summaryStatistics();
         System.out.println(stats.getAverage());
     }
+
+    public List <String> practice9 () {
+        String[] words = {"education", "questionnaire",
+                "house", "audio", "universe"};
+        return Arrays.stream(words).filter(w->"aeiou"
+                .chars()
+                .allMatch(c->w.indexOf(c) >= 0))
+                .collect(Collectors.toList());
+    }
+
+
+
 }

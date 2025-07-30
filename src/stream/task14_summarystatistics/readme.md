@@ -191,7 +191,14 @@ String[] words = {"education", "questionnaire",
 
 .filter(w -> "aeiou".chars()
 .allMatch(c -> w.indexOf(c) >= 0))
-          
+
+    public void practice9 () {
+        String[] words = {"education", "questionnaire",
+                "house", "audio", "universe"};
+        Arrays.stream(words).filter(w->"aeiou".chars()
+        .allMatch(c->w.indexOf(c) >= 0));
+    }
+
 ----------------------------------------------------
 
 ✅ Завдання 10: Побудуй Map<Boolean,
