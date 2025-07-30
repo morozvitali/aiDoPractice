@@ -26,4 +26,14 @@ public class Main2 {
         words.stream().collect(Collectors.groupingBy(a->a.length()));
     }
 
+    public void practice4 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        words.stream().collect(Collectors.groupingBy(a->a.length(), Collectors.counting()));
+    }
+
+    public void practice5 () {
+
+    }
+
 }
