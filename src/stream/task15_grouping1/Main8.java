@@ -33,4 +33,11 @@ public class Main8 {
     }
 
 
+    public Map<Integer, Integer> practice3 () {
+        Integer[] array = new Integer[] {12, 23, 34, 45, 16, 7};
+        return Arrays.stream(array).collect(Collectors.groupingBy(n->n%10, Collectors.summingInt(n->n)));
+    }
+
+
+
 }
