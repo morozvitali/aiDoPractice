@@ -21,7 +21,9 @@ public class Main2 {
     }
 
     public void practice3 () {
-
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        words.stream().collect(Collectors.groupingBy(a->a.length()));
     }
 
 }
