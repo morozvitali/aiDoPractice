@@ -58,6 +58,9 @@ public class Main8 {
     }
 
     public void practice8 () {
-
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        IntSummaryStatistics stats = Arrays.stream(words).filter(a->a.chars().distinct().count() < a.length()).mapToInt(value->value.length()).summaryStatistics();
+        System.out.println(stats.getAverage());
     }
 }
