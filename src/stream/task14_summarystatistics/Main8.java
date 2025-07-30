@@ -102,6 +102,22 @@ public class Main8 {
         return Arrays.stream(words).filter(w-> "aeiou".chars().anyMatch(c->w.chars().filter(ch->ch == c).count() >=2)).findFirst().orElse("not found");
     }
 
+    public Map <Character, Long> practice14 () {
+        String[] words = {"apple", "tree",
+                "orange", "banana", "loop"};
+        return Arrays.stream(words)
+                .map(w->normalize(w))
+                .flatMap(w->w.chars()
+                        .mapToObj(ch->(char)ch))
+                .collect(Collectors.groupingBy(Function.identity(),
+                        Collectors.counting()));
+    }
 
-
+    public String normalize (String s) {
+        return s.toLowerCase()
+                .chars()
+                .map(c->(char)c)
+                .filter(ch->Character.isLetter(ch))
+                .toString();
+    }
 }

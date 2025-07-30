@@ -280,7 +280,7 @@ String[] words = {"apple", "tree",
 ✅ Завдання 14: 🧠 Бонусний виклик
 String[] words = {"apple", "tree", 
 "orange", "banana", "loop"};
-🔹 Згенеруй List<List<Integer>> 
+🔹 Згенеруй Map<Char, Long>
 — і зроби задачу з flatMap
 🔹 Створи утиліту normalize(String) →
 яка чистить слова і приводить до
@@ -291,7 +291,8 @@ String[] words = {"apple", "tree",
     public Map <Character, Long>  practice () {
         String[] words = {"apple", "tree",
                 "orange", "banana", "loop"};
-        return Arrays.stream(words)
+        
+    return Arrays.stream(words)
                 .map(w->normalize(w))
                 .flatMap(a -> a
                         .chars()
