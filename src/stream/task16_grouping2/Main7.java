@@ -24,6 +24,21 @@ public class Main7 {
                         Collectors.counting()));
     }
 
+    public void practice3 () {
+        String[] words = {"apple", "sky",
+                "banana", "dry", "orange"};
+        Arrays.stream(words).collect(Collectors.groupingBy(a->a.chars().anyMatch(ch-> "aeiou".indexOf(ch) >= 0)));
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 }
