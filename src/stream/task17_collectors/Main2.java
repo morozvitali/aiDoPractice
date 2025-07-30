@@ -43,6 +43,11 @@ public class Main2 {
         words.stream().map(a->a.toUpperCase()).collect(Collectors.groupingBy(a->a.charAt(0)));
     }
 
+    public void practice7 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        words.stream().collect(Collectors.toMap(a->a.charAt(0), a->a.length()));
+    }
 
 
 }
