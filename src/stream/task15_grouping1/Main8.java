@@ -65,5 +65,9 @@ public class Main8 {
         return map.entrySet().stream().anyMatch(entry->entry.getValue() >1);
     }
 
+    public void practice9 () {
+        int [] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
+        Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(value-> value % 2 ==0 ? "even" : "odd"));
+    }
 
 }
