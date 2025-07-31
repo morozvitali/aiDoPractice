@@ -449,25 +449,23 @@ list -> list.stream()
 List<String> words = List.of("hi", "book",
 "sun", "day", "Java", "sky");
 🧪 Очікувано (тип – TreeMap):
-
 {
+
 2=[hi],
 3=[sun, day, sky],
 4=[book, Java]
 }
+
 📦 Початковий код:
 
-public Map<Integer, List<String>>
-groupWordsSortedByLength() {
-List<String> words = List.of("hi", "book",
-"sun", "day", "Java", "sky");
-return words.stream()
-.collect(Collectors.groupingBy(
-String::length,
-TreeMap::new,
-Collectors.toList()
-));
-}
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        words.stream().collect(Collectors.groupingBy(
+                String::length,
+                TreeMap::new,
+                Collectors.toList()
+        ));
+    }
 
 
 
