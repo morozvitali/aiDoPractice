@@ -51,6 +51,17 @@ public class Main0 {
         Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a%3 ==0).max().orElse(-1);
     }
 
+    public void practice5 () {
+        int[][] data = {
+                {2, 3},
+                {4}
+        };
 
+        Arrays.stream(data).flatMapToInt(arr-> Arrays.stream(arr)).filter(a->a%2 == 0).map(n->n*n).sum();
+    }
+
+    public void practice6 () {
+
+    }
 
 }
