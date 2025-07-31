@@ -27,6 +27,9 @@ public class Main0 {
                 "banana", "hi", "cherry");
         data.stream()
                 .sorted(Comparator.reverseOrder())
-                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.get(0)));
+                .collect(Collectors
+                        .collectingAndThen(Collectors
+                                .toList(),
+                                list-> list.get(0)));
     }
 }
