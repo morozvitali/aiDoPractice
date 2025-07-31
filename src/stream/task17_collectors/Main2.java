@@ -1,9 +1,6 @@
 package stream.task17_collectors;
 
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main2 {
@@ -101,8 +98,23 @@ public class Main2 {
                 Collectors.toList()));
     }
 
-    public void practice16 () {
+    public LinkedHashMap <Integer, List <String>> practice16 () {
+        Map <Integer, List<String>> input = Map.of(
+                2, List.of("hi"),
+                3, List.of("sun", "day", "sky"),
+                4, List.of("book", "Java")
+        );
 
+        return input.entrySet()
+                .stream()
+                .sorted(Comparator.comparingInt(e->e
+                        .getValue()
+                        .size()))
+                .collect(Collectors.toMap(Map.Entry::getKey,
+                        Map.Entry::getValue, (a,b)->b,
+                        LinkedHashMap::new));
     }
+
+
 
 }
