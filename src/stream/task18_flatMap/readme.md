@@ -276,7 +276,6 @@ List.of("hi", 123, "bye", false) → ["HI", "BYE"]
 
 x instanceof String → ((String)x).toUpperCase()
 
-
 --------------------------------------------------------
 
 🔐 Задача: Duplicate Encoder
