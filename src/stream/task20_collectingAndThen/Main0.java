@@ -15,8 +15,12 @@ public class Main0 {
         List<String> data = List.of("apple", "car",
                 "banana", "hi", "cherry");
         data.stream().filter(a->a.length() >4).collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
+    }
+
+    public void practice2 () {
+        List<Integer> numbers = List.of(10, 70, 20, 90, 55, 30);
+        numbers.stream().collect(Collectors.collectingAndThen(Collectors.toList(), List::size));
 
 
     }
-
 }
