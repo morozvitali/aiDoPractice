@@ -2,6 +2,7 @@ package stream.task18_flatMap;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -61,7 +62,15 @@ public class Main0 {
     }
 
     public void practice6 () {
+        int[][] data = {
+                {3, 5},
+                {7}
+        };
 
+        IntSummaryStatistics stats = Arrays.stream(data).flatMapToInt(arr -> Arrays.stream(arr)).filter(a->a%2 !=0).summaryStatistics();
+        int result = stats.getCount() == 0 ? -1 : (int) stats.getAverage();
+        System.out.println(result);
     }
+
 
 }
