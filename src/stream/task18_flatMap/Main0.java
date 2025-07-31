@@ -96,4 +96,9 @@ public class Main0 {
         List.of("a", 3, 15, 11, 9, "99").stream().filter(value -> value instanceof Integer && (Integer) value > 10).collect(Collectors.toList());
     }
 
+    public void practice11 () {
+        List.of("yes", true, false, true, 1).stream().filter(value -> value instanceof Boolean && (Boolean) value == true).collect(Collectors.toList());
+    }
+
+
 }
