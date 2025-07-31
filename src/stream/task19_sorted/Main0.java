@@ -50,5 +50,10 @@ public class Main0 {
         return s.chars().filter(ch->"aeiuo".indexOf(ch)>=0).count();
     }
 
+    public void practice8 () {
+        List<String> words = List.of("tea",
+                "watermelon", "apple", "pear", "banana");
+        words.stream().sorted(Comparator.comparing(String::length).reversed()).collect(Collectors.toList());
+    }
 
 }
