@@ -42,6 +42,13 @@ public class Main0 {
     }
 
     public void practice7 () {
-
+        List<String> words = List.of("apple", "banana", "cherry", "kiwi", "grape");
+        words.stream().sorted(Comparator.comparing((String w) -> countVowels(w)).thenComparing(Comparator.naturalOrder())).toList();
     }
+
+    public long countVowels (String s) {
+        return s.chars().filter(ch->"aeiuo".indexOf(ch)>=0).count();
+    }
+
+
 }
