@@ -73,4 +73,11 @@ public class Main2 {
     }
 
 
+    public void practice12 () {
+        List<Integer> numbers = List.of(4, 8,
+                15, 16, 23, 42);
+        numbers.stream().collect(Collectors.groupingBy(a->a%3, Collectors.reducing(0, Integer::sum)));
+    }
+
+
 }
