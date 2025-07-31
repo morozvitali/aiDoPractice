@@ -20,7 +20,7 @@ public class Main0 {
                 .collect(Collectors.toList());
     }
 
-    public void practice2 () {
+    public void practice2() {
         int[][] data = {
                 {3, 11},
                 {6, 7},
@@ -28,49 +28,62 @@ public class Main0 {
         };
 
         Arrays.stream(data).flatMapToInt(arr -> Arrays.stream(arr))
-                .filter(a->a%2==0)
+                .filter(a -> a % 2 == 0)
                 .min()
                 .orElse(-1);
     }
 
-    public void practice3 () {
+    public void practice3() {
         int[][] data = {
                 {-3, 5},
                 {2},
                 {-1, 4}
         };
 
-        Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a>0).reduce((a,b)-> a*b).orElse(-1);
+        Arrays.stream(data).flatMapToInt(arr -> Arrays.stream(arr)).filter(a -> a > 0).reduce((a, b) -> a * b).orElse(-1);
     }
 
-    public void practice4 () {
+    public void practice4() {
         int[][] data = {
                 {3, 9},
                 {8, 12},
                 {7}
         };
-        Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a%3 ==0).max().orElse(-1);
+        Arrays.stream(data).flatMapToInt(arr -> Arrays.stream(arr)).filter(a -> a % 3 == 0).max().orElse(-1);
     }
 
-    public void practice5 () {
+    public void practice5() {
         int[][] data = {
                 {2, 3},
                 {4}
         };
 
-        Arrays.stream(data).flatMapToInt(arr-> Arrays.stream(arr)).filter(a->a%2 == 0).map(n->n*n).sum();
+        Arrays.stream(data).flatMapToInt(arr -> Arrays.stream(arr)).filter(a -> a % 2 == 0).map(n -> n * n).sum();
     }
 
-    public void practice6 () {
+    public void practice6() {
         int[][] data = {
                 {3, 5},
                 {7}
         };
 
-        IntSummaryStatistics stats = Arrays.stream(data).flatMapToInt(arr -> Arrays.stream(arr)).filter(a->a%2 !=0).summaryStatistics();
+        IntSummaryStatistics stats = Arrays.stream(data).flatMapToInt(arr -> Arrays.stream(arr)).filter(a -> a % 2 != 0).summaryStatistics();
         int result = stats.getCount() == 0 ? -1 : (int) stats.getAverage();
         System.out.println(result);
     }
+
+    public void practice7() {
+        int[][] data = {
+                {12},
+                {24, 36}
+        };
+        Arrays.stream(data).flatMapToInt(arr -> Arrays.stream(arr)).reduce(Main0::gcd).orElse(-1);
+    }
+
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+
 
 
 }
