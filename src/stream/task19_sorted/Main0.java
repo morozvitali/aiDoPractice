@@ -56,4 +56,11 @@ public class Main0 {
         words.stream().sorted(Comparator.comparing(String::length).reversed()).collect(Collectors.toList());
     }
 
+    public void practice9 () {
+        List<Integer> numbers = List.of(3, 2, 5, 6, 4, 1);
+        numbers.stream().sorted(Comparator.comparingInt((Integer a)->a%2).thenComparing(Comparator.reverseOrder()))
+            .collect(Collectors.toList());
+    }
+
+
 }
