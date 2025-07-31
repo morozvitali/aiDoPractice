@@ -29,4 +29,19 @@ public class Main0 {
         List<Integer> numbers = List.of(3, 7, 1, 9, 2);
         List <Integer> list = numbers.stream().sorted(Comparator.reverseOrder()).toList();
     }
+
+    public void practice5 () {
+
+        List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
+        nums.stream().sorted(Comparator.comparingInt(n->(int)n%2).thenComparingInt(n-> (int)n)).collect(Collectors.toList());
+    }
+
+    public void practice6 () {
+        List<String> words = List.of("kiwi", "apple", "banana", "grape", "plum");
+        words.stream().filter(w->w.length() > 4).sorted(Comparator.comparing(w->w.charAt(w.length()-1)));
+    }
+
+    public void practice7 () {
+
+    }
 }
