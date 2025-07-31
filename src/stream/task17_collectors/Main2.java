@@ -1,5 +1,6 @@
 package stream.task17_collectors;
 
+import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.Function;
@@ -85,6 +86,10 @@ public class Main2 {
         words.stream().collect(Collectors.reducing("", (a,b) -> a.length() >= b.length() ? a : b));
     }
 
-
+    public void practice14 () {
+        List<String> words = List.of("apple", "ant",
+                "alphabet", "axe", "banana", "bat");
+        words.stream().collect(Collectors.groupingBy(a->a.charAt(0), Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().sorted(Comparator.comparingInt(String::length)).toList())));
+    }
 
 }
