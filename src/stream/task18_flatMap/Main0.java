@@ -100,5 +100,8 @@ public class Main0 {
         List.of("yes", true, false, true, 1).stream().filter(value -> value instanceof Boolean && (Boolean) value == true).collect(Collectors.toList());
     }
 
+    public void practice12 () {
+        List.of("hi", 123, "bye", false).stream().filter(value-> value instanceof String).map(s->((String) s).toUpperCase()).collect(Collectors.toList());
+    }
 
 }
