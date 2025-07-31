@@ -88,6 +88,8 @@ public class Main0 {
         List.of(10, "hello", true, 42, false, "42").stream().filter (value -> value instanceof Integer).collect(Collectors.toList());
     }
 
-
+    public void practice9 () {
+        List.of("hello", 1, 2.5, true, "world").stream().filter(value -> value instanceof String).collect(Collectors.toList());
+    }
 
 }
