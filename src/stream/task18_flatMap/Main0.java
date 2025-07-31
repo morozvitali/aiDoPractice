@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main0 {
-    public void practice0() {
+    public void practice1() {
         List<List<Integer>> weeklyData = List.of(
                 List.of(40, 55, 60),
                 List.of(30, 70),
@@ -19,7 +19,7 @@ public class Main0 {
                 .collect(Collectors.toList());
     }
 
-    public void practice1 () {
+    public void practice2 () {
         int[][] data = {
                 {3, 11},
                 {6, 7},
@@ -31,6 +31,17 @@ public class Main0 {
                 .min()
                 .orElse(-1);
     }
+
+    public void practice3 () {
+        int[][] data = {
+                {-3, 5},
+                {2},
+                {-1, 4}
+        };
+
+        Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a>0).reduce((a,b)-> a*b).orElse(-1);
+    }
+
 
 
 }
