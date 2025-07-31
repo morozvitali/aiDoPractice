@@ -20,7 +20,13 @@ public class Main0 {
     public void practice2 () {
         List<Integer> numbers = List.of(10, 70, 20, 90, 55, 30);
         numbers.stream().collect(Collectors.collectingAndThen(Collectors.toList(), List::size));
+    }
 
-
+    public void practice3 () {
+        List<String> data = List.of("apple", "car",
+                "banana", "hi", "cherry");
+        data.stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.get(0)));
     }
 }
