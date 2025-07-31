@@ -84,12 +84,16 @@ public class Main0 {
         return b == 0 ? a : gcd(b, a % b);
     }
 
-    public void practice8 () {
-        List.of(10, "hello", true, 42, false, "42").stream().filter (value -> value instanceof Integer).collect(Collectors.toList());
+    public void practice8() {
+        List.of(10, "hello", true, 42, false, "42").stream().filter(value -> value instanceof Integer).collect(Collectors.toList());
     }
 
-    public void practice9 () {
+    public void practice9() {
         List.of("hello", 1, 2.5, true, "world").stream().filter(value -> value instanceof String).collect(Collectors.toList());
+    }
+
+    public void practice10() {
+        List.of("a", 3, 15, 11, 9, "99").stream().filter(value -> value instanceof Integer && (Integer) value > 10).collect(Collectors.toList());
     }
 
 }
