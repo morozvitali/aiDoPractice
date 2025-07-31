@@ -66,6 +66,11 @@ public class Main2 {
         numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Count " + count));
     }
 
+    public void practice11 () {
+        List<String> words = List.of("hi", "hi",
+                "book", "sun", "day", "Java", "sky");
+        words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.joining(" ")));
+    }
 
 
 }
