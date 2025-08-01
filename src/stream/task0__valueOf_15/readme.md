@@ -64,7 +64,7 @@ String s = "abracadabra";
 s.chars()
 .distinct()
 .mapToObj(c -> String.valueOf((char) c))
-.collect(Collectors.toList()); 
+.collect(Collectors.toList());
 
 🔹 Пояснення. Тут головне:
 c — це все ще int, не char і не String!
