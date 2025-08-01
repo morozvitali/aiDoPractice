@@ -179,6 +179,12 @@ s.chars()
 .mapToObj(c -> (char) c)
 .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
 
+    public void practice8 () {
+        String s = "banana";
+        s.chars().filter(c->Character.isLetter(c)).mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(c->c, Collectors.counting()));
+    }
+
 -----------------------------------------------------
 
 🧊 Завдання 9: Залишити тільки символи, 

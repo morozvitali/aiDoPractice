@@ -2,6 +2,7 @@ package stream.task0__valueOf_15;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main4 {
@@ -53,6 +54,11 @@ public void practice2 () {
                 .collect(Collectors.toList());
     }
 
+    public void practice8 () {
+        String s = "banana";
+        Map<Character, Long> result = s.chars().filter(c->Character.isLetter(c)).mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(c->c, Collectors.counting()));
+    }
 
 
 }
