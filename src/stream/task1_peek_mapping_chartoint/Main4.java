@@ -6,7 +6,11 @@ public class Main4 {
         String.valueOf(n).chars().map(c-> c-'0').map(d->d*d).sum();
     }
 
-    public void practice2 () {
-
+    public boolean practice2 () {
+        int n = 2486;
+        return String.valueOf(n).chars().map(a->a-'0')
+                .allMatch(a->a%2==0);
     }
+
+
 }
