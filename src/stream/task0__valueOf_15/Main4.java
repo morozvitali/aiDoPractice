@@ -35,5 +35,12 @@ public void practice2 () {
         text.chars().boxed().collect(Collectors.toList());
     }
 
+    public void practice5 () {
+        String input = "hEllO WoRLd";
+        input.chars().filter(c->Character.isUpperCase(c)).mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.toList());
 
+
+
+    }
 }
