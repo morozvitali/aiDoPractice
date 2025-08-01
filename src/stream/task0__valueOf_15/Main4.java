@@ -82,5 +82,11 @@ public void practice2 () {
                 .collect(Collectors.joining());
     }
 
+    public void practice12 () {
+        String input = "abc";
+        input.chars().map(c->c+1)
+                .boxed().toList();
+    }
+
 
 }
