@@ -114,13 +114,28 @@ Collections::unmodifiableMap => map -> Collections.unmodifiableMap(map)
 ✅ Завдання 8: Знайти єдине слово з 'z'
 📋 Умова:
 Знайди єдине слово зі списку, 
-яке містить літеру 'z', і поверни його. Якщо таких більше — виняток.
+яке містить літеру 'z', і поверни його. 
+Якщо таких більше — виняток.
 
 📥 Вхід: ["java", "zip", "jazz"] → виняток
 📥 Вхід: ["java", "zip"] → "zip"
 📌 Підказка: .collect(Collectors
 .collectingAndThen(Collectors.toList(), 
 list -> list.get(0))) — тільки якщо list.size() == 1
+List<String> data = List.of("java", "zip", "jazz");
+
+    String result = data.stream()
+            .filter(w -> w.contains("z"))
+            .collect(Collectors.collectingAndThen(
+                    Collectors.toList(),
+                    list -> {
+                        if (list.size() != 1) {
+                            throw new IllegalStateException("Очікувалося 
+                            рівно одне слово з 'z'");
+                        }
+                        return list.get(0);
+                    }
+            ));
 
 ✅ Завдання 9: Список непарних чисел → 
 перетвори у строку
