@@ -32,4 +32,17 @@ public class Main0 {
                                 .toList(),
                                 list-> list.get(0)));
     }
+
+    public Integer practice4 () {
+        List<Integer> numbers = List.of(5, 3, 4, 4, 3, 6);
+        return numbers.stream().distinct().collect(Collectors.toList()).get(0);
+    }
+
+    public void practice5 () {
+
+    }
+
+
+
+
 }
