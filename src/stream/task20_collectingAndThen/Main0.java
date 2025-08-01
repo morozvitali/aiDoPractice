@@ -43,7 +43,16 @@ public class Main0 {
         numbers.stream().filter(value -> value > 10).collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
 
-
+    public void practice6 () {
+        List<String> data = List.of("apple", "car",
+                "banana", "hi", "cherry");
+        data.stream().map(a->a.length())
+                .collect(Collectors.collectingAndThen(Collectors.toList(),
+                        list -> list.stream()
+                        .mapToInt(Integer::intValue)
+                        .average()
+                        .orElse(0.0)));
+    }
 
 
 }

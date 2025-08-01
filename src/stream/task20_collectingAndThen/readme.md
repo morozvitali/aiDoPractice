@@ -61,7 +61,7 @@
 
 ✅ Завдання 6: Знайти середнє довжини слів
 📋 Умова:
-Порахуй середню довжину слів зі списку.
+Порахуй середню довжину слів зі списку
 
 📥 Вхід: ["code", "stream", "java"]
 📤 Вихід: 4.67
@@ -69,10 +69,21 @@
 📌 Підказка:
 
 map(String::length)
-
 collect(toList())
-
 потім collectingAndThen(list → avg)
+
+    List<String> data = List.of("apple", "car",
+    "banana", "hi", "cherry");
+    double average = data.stream()
+            .map(String::length)
+            .collect(Collectors.collectingAndThen(
+                    Collectors.toList(),
+                    list -> list.stream()
+                            .mapToInt(Integer::intValue)
+                            .average()
+                            .orElse(0.0)));
+    System.out.printf("Середня довжина: 
+                            %.2f%n", average);
 
 ✅ Завдання 7: Незмінна 
 Map<перша літера, список слів>
