@@ -54,5 +54,9 @@ public class Main4 {
         return emails.stream().collect(Collectors.groupingBy(email -> email.substring(0, email.indexOf("@")).length(),Collectors.toList()));
     }
 
+    public void practice8 () {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
+        nums.stream().peek(value -> System.out.println("start value " + value)).filter(a->a%2==0).peek(System.out::println).toList();
+    }
 
 }
