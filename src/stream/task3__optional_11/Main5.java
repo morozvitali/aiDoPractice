@@ -30,5 +30,10 @@ public class Main5 {
         nums.stream().max(Comparator.naturalOrder()).ifPresentOrElse(value -> System.out.println("max " + value), () -> System.out.println("empty"));
     }
 
-
+    public void practice6 () {
+        Optional<String> email = Optional.of("Admin@site.com");
+        email.map(a->a.toLowerCase())
+                .filter(e->e.contains(".com"))
+                .orElseThrow(()-> new IllegalArgumentException("invalid email"));
+    }
 }
