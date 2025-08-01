@@ -19,5 +19,10 @@ public class Main5 {
         String s = word.filter(a->a.length() > 5).orElse("short");
     }
 
+    public void practice4 () {
+        Optional <String> name = Optional.of("Vitali");
+        String s = name.map(n->"Hello" + n + "!").orElse("Hello guest!");
+    }
+
 
 }
