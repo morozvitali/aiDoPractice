@@ -135,13 +135,12 @@ return email
 public void printFirstWordLength() {
 List<String> words = List.of(); // або List.of("Java", "Spring");
 
-    words.stream()
-        .findFirst()
-        .map(String::length)
-        .ifPresentOrElse(
-            len -> System.out.println("Довжина: " + len),
-            () -> System.out.println("Список слів порожній")
-        );
+        List<String> words =  List.of("Java", "Spring");
+        words.stream().findFirst()
+        .map(value -> value.length())
+        .ifPresentOrElse(len -> 
+        System.out.println("Length is " + len), 
+        () -> System.out.println("list values is empty"));
     }
 
 ------------------------------------------------------------------

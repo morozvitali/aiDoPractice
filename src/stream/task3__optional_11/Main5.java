@@ -42,7 +42,17 @@ public class Main5 {
         nums.stream().min(Comparator.naturalOrder())
                 .ifPresentOrElse(val-> System.out.println("min " + val),
                         ()-> System.out.println("empty list"));
-
-
     }
+
+    public void practice8 () {
+        List<String> words = List.of("Java", "Spring");
+        words.stream().findFirst()
+                .map(String::length)
+                .ifPresentOrElse(
+                        len -> System.out.println("Довжина: " + len),
+                        () -> System.out.println("Список слів порожній")
+                );
+    }
+
+
 }
