@@ -36,4 +36,13 @@ public class Main5 {
                 .filter(e->e.contains(".com"))
                 .orElseThrow(()-> new IllegalArgumentException("invalid email"));
     }
+
+    public void practice7 () {
+        List<Integer> nums = List.of(5, 2, 9);
+        nums.stream().min(Comparator.naturalOrder())
+                .ifPresentOrElse(val-> System.out.println("min " + val),
+                        ()-> System.out.println("empty list"));
+
+
+    }
 }
