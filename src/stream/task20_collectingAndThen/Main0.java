@@ -74,6 +74,16 @@ public class Main0 {
                 ));
     }
 
+    public void practice9 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+        String result = numbers.stream().filter(a->a%2 !=0)
+                .map(String::valueOf)
+                .collect(Collectors.collectingAndThen(Collectors
+                                    .toList(), list -> String
+                                    .join(", ", list)));
+    }
+
+
 
 
 }

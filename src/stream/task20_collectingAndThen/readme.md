@@ -148,6 +148,21 @@ List<String> data = List.of("java", "zip", "jazz");
 📌 Підказка: collectingAndThen → 
 list -> String.join(", ", ...)
 
+public void practice9() {
+List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+
+    String result = numbers.stream()
+            .filter(n -> n % 2 != 0)
+            .map(String::valueOf) // ⬅️ Перетворюємо Integer → String
+            .collect(Collectors.collectingAndThen(
+                    Collectors.toList(),
+                    list -> String.join(", ", list)
+            ));
+
+    System.out.println(result); // Виведе: "1, 3, 5"
+}
+
+
 ✅ Завдання 10: Кількість груп 
 по довжині слів
 📋 Умова:
