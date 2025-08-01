@@ -175,6 +175,13 @@ List<Integer> numbers = List.of(1, 2, 3, 4, 5);
 groupingBy(String::length) → 
 collectingAndThen(Map::size)
 
+    public void practice10 () {
+        List<String> data = List.of("hi", "hello", 
+"world", "no", "yes");
+        data.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
+    }
+
+
 🔁 Бонус 11: Колекція у Optional → 
 витягти або "empty"
 📋 Умова:
@@ -188,10 +195,10 @@ list.isEmpty() ? "empty" : list.get(0)
 
 
 
------------------------------
--------------далі------------
---------------теорія---------
------------------------------
+----------------------------------
+-------------далі-----------------
+--------------теорія--------------
+----------------------------------
 
 
 📦 Хочеш — зроблю для тебе і тести @Test, і варіанти зі Set, Map, або обгортання у Optional, OptionalInt, або навіть custom collector.
