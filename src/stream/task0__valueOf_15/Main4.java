@@ -95,4 +95,12 @@ public void practice2 () {
                 .collect(Collectors.toList());
     }
 
+    public void practice14 () {
+        String input = "a1C!bZ2";
+        input.chars().filter(Character::isAlphabetic)
+                .mapToObj(c->(char)c)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+    }
+
 }
