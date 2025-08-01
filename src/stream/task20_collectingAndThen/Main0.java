@@ -3,6 +3,7 @@ package stream.task20_collectingAndThen;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main0 {
@@ -54,5 +55,9 @@ public class Main0 {
                         .orElse(0.0)));
     }
 
-
+    public void practice7 () {
+        List<String> data = List.of("apple", "ant",
+                "banana", "bat", "car");
+        Map<Character, List<String>> map = data.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(value->value.charAt(0)), Collections::unmodifiableMap));
+    }
 }

@@ -96,15 +96,20 @@ Map<перша літера, список слів>
 "banana", "bat", "car"]
 📤 Вихід:
 
-r
-Copy
-Edit
 {
 a=[apple, ant],
 b=[banana, bat],
 c=[car]
 }
 📌 Map має бути unmodifiable.
+
+    Map<Character, List<String>> result = data.stream()
+            .collect(Collectors.collectingAndThen(
+                    Collectors.groupingBy(word -> word.charAt(0)),
+                    Collections::unmodifiableMap
+            ));
+
+Collections::unmodifiableMap => map -> Collections.unmodifiableMap(map)
 
 ✅ Завдання 8: Знайти єдине слово з 'z'
 📋 Умова:
