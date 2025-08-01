@@ -74,4 +74,13 @@ public void practice2 () {
                 .sum();
     }
 
+    public void practice11 () {
+        String input = "ABCdefGHIjkl123";
+        input.chars().filter(c->Character.isLetter(c))
+                .filter(c->Character.isLowerCase(c))
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.joining());
+    }
+
+
 }
