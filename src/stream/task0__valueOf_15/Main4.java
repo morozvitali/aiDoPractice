@@ -39,8 +39,10 @@ public void practice2 () {
         String input = "hEllO WoRLd";
         input.chars().filter(c->Character.isUpperCase(c)).mapToObj(c->String.valueOf((char)c))
                 .collect(Collectors.toList());
+    }
 
-
-
+    public void practice6 () {
+        String s = "abcxyz";
+        s.chars().map(c->c - 'a' + 1).boxed().collect(Collectors.toList());
     }
 }
