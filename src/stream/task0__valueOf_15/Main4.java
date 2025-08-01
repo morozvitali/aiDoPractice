@@ -60,5 +60,13 @@ public void practice2 () {
                 .collect(Collectors.groupingBy(c->c, Collectors.counting()));
     }
 
+    public void practice9 () {
+        String s = "a1b2c3d4";
+        s.chars().filter(c->!Character.isDigit(c))
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.joining());
+    }
+
+
 
 }
