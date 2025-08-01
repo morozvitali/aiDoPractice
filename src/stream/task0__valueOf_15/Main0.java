@@ -1,11 +1,9 @@
-package stream.task0__valueOf;
+package stream.task0__valueOf_15;
 
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main0 {
     public List<String> practice1() {

@@ -1,4 +1,4 @@
-package stream.task0__valueOf;
+package stream.task0__valueOf_15;
 
 import java.util.Comparator;
 import java.util.List;
