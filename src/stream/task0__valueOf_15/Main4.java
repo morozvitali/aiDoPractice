@@ -67,6 +67,11 @@ public void practice2 () {
                 .collect(Collectors.joining());
     }
 
-
+    public void practice10 () {
+        String s = "abc1d2e3f9";
+        s.chars().filter(c->Character.isDigit(c))
+                .map(Character::getNumericValue)
+                .sum();
+    }
 
 }
