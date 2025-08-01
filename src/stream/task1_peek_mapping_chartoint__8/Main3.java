@@ -1,4 +1,4 @@
-package stream.task1_peek_mapping_chartoint;
+package stream.task1_peek_mapping_chartoint__8;
 
 import java.util.List;
 import java.util.stream.Collectors;
