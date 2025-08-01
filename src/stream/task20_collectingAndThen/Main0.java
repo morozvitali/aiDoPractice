@@ -39,7 +39,8 @@ public class Main0 {
     }
 
     public void practice5 () {
-
+        List<Integer> numbers = List.of(2, 4, 10, 12, 14, 12, 4);
+        numbers.stream().filter(value -> value > 10).collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
 
 
