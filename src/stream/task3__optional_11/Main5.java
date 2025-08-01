@@ -15,6 +15,9 @@ public class Main5 {
     }
 
     public void practice3 () {
-
+        Optional <String> word = Optional.of("hello");
+        String s = word.filter(a->a.length() > 5).orElse("short");
     }
+
+
 }
