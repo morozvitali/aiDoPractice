@@ -45,4 +45,14 @@ public void practice2 () {
         String s = "abcxyz";
         s.chars().map(c->c - 'a' + 1).boxed().collect(Collectors.toList());
     }
+
+    public void practice7 () {
+        String s = "java";
+        s.chars().map(Character::toUpperCase)
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
+
+
+
 }
