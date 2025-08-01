@@ -331,8 +331,7 @@ better-->>) return input.chars()
 longer-->>) return input
 .length() == input
 .chars()
-.filter(c->Character
-.isDigit(c)).count();
+.filter(c->Character.isDigit(c)).count();
 
 
 

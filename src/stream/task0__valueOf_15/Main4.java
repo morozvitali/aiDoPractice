@@ -103,4 +103,9 @@ public void practice2 () {
                 .collect(Collectors.toList());
     }
 
+    public boolean practice15 () {
+        String input = "123456";
+        input.chars().allMatch(Character::isDigit);
+        return input.chars().filter(c->Character.isDigit(c)).count() == input.length();
+    }
 }
