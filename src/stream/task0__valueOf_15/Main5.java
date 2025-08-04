@@ -27,7 +27,11 @@ public class Main5 {
                 .collect(Collectors.toList());
     }
 
+    public void practice4 () {
+        String text = "Code";
+        text.chars().boxed().collect(Collectors.toList());
 
+    }
 
 
 
