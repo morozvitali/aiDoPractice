@@ -40,4 +40,10 @@ public class Main6 {
         nums.stream().min(Comparator.naturalOrder()).ifPresentOrElse(val -> System.out.println("min " + val), () -> System.out.println("empty"));
     }
 
+    public void practice8 () {
+        List<String> words = List.of("Java", "Spring");
+        words.stream().findFirst().map(a-> a.length()).ifPresentOrElse(len-> System.out.println("len "+len), ()-> System.out.println("empty"));
+    }
+
+
 }
