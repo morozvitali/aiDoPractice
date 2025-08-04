@@ -52,4 +52,7 @@ public class Main0 {
         sentence.replaceAll("[^a-zA-Z0-9 ]", "");
     }
 
+    public void practice14 (String sentence) {
+        sentence.matches("^\\+\\d{1,3}$");
+    }
 }
