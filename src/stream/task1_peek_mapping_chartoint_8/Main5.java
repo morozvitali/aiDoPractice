@@ -3,6 +3,7 @@ package stream.task1_peek_mapping_chartoint_8;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main5 {
@@ -45,4 +46,12 @@ public class Main5 {
                 .filter(a-> a.length() > 3)
                 .forEach(System.out::println);
     }
+
+    public void practice7 () {
+        List<String> emails = List.of("ivan@ukr.net",
+                "olga@gmail.com", "petro@ukr.net");
+        emails.stream().collect(Collectors.groupingBy(email->email.substring(0, email.indexOf("@")).length(), Collectors.toList()));
+    }
+
+
 }
