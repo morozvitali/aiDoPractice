@@ -237,8 +237,8 @@ ab
 
 <[^>]+>
 <h1>Hello</h1>
-<div class="box">
-Hello <World>
+<div class="box"></div>
+Hello World
 
 ✅ Завдання 20: Перевірка дійсного числа
 🔹 RegExp:
