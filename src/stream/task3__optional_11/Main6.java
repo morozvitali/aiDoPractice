@@ -58,5 +58,9 @@ public class Main6 {
                 : "User access").orElse("no login");
     }
 
-
+    public void practice11 () {
+        Optional <Integer> value = Optional.of(7);
+        value.filter(a-> a%2==0).map(a->a*2).ifPresentOrElse(val-> System.out.println(val), ()-> System.out.println("emty odd")
+        );
+    }
 }
