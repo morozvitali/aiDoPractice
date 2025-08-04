@@ -50,4 +50,13 @@ public class Main6 {
         Optional <String> n = Optional.of(name);
         n.map(s->s.toUpperCase()).orElseThrow(()->new NoSuchElementException("name empty"));
     }
+
+    public void practice10 () {
+        Optional <String> login = Optional.of("login");
+        login.map(l->l.startsWith("admin")
+                ? "AAdmin access"
+                : "User access").orElse("no login");
+    }
+
+
 }
