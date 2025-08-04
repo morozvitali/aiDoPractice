@@ -40,7 +40,16 @@ public class Main0 {
         sentence.replaceAll("\\s+", "");
     }
 
-    public void practice (String sentence) {
+    public void practice11 (String sentence) {
         sentence.matches("^[а-яА-ЯіїєґІЇЄҐ]+$");
     }
+
+    public void practice12 (String sentence) {
+        sentence.matches("^([^0-9]*)$");
+    }
+
+    public void practice13 (String sentence) {
+
+    }
+
 }
