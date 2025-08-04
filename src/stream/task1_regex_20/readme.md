@@ -112,9 +112,7 @@ ftp://example.com
 
 ^[a-zA-Z]+$
 Hello
-
 Hello123
-
 Hello!
 
 ✅ Завдання 08: Рядок містить лише цифри

@@ -24,7 +24,7 @@ public class Main0 {
         url.matches("^(https?:\\/\\/)?([a-zA-Z0-9.-]+)\\.([a-zA-Z]{2,6})(\\/.*)?$");
     }
 
-    public void practice7 () {
-
+    public void practice7 (String sentence) {
+        sentence.matches("^[a-zA-Z]+$");
     }
 }
