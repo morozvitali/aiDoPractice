@@ -12,6 +12,17 @@ public class Main5 {
                 .allMatch(a->a%2 == 0);
     }
 
+    public void practice3 () {
+        int n = 8354;
+        String.valueOf(n).chars().map(c->c-'0').max().orElse(-1);
+    }
+
+    public void practice4 () {
+        int n = 987654321;
+        String.valueOf(n).chars().map(a->a - '0')
+                .filter(d->d>5)
+                .count();
+    }
 
 
 }
