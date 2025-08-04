@@ -46,7 +46,14 @@ public class Main5 {
                 .collect(Collectors.toList());
     }
 
+    public void practice7 () {
+        String s = "java";
+        s.chars().map(ch->Character.toUpperCase(ch))
+                .mapToObj(c -> String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
 
+    public void practice8 () {
 
-
+    }
 }
