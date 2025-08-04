@@ -99,4 +99,10 @@ public class Main5 {
                 .collect(Collectors.toList());
 
     }
+
+    public void practice15 () {
+        String input = "123456";
+        input.chars().allMatch(c->Character.isDigit(c));
+
+    }
 }
