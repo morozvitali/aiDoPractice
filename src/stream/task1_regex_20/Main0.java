@@ -27,4 +27,8 @@ public class Main0 {
     public void practice7 (String sentence) {
         sentence.matches("^[a-zA-Z]+$");
     }
+
+    public void practice8 (String sentence) {
+        sentence.matches("^\\d$");
+    }
 }
