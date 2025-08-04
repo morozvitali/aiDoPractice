@@ -29,6 +29,10 @@ public class Main0 {
     }
 
     public void practice8 (String sentence) {
-        sentence.matches("^\\d$");
+        sentence.matches("^\\d+$");
+    }
+
+    public void practice9 (String s) {
+        s.matches("^[a-zA-Z0-9]+$");
     }
 }
