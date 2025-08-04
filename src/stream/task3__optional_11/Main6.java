@@ -1,5 +1,6 @@
 package stream.task3__optional_11;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +24,12 @@ public class Main6 {
         Optional <String> opt = Optional.of(name);
         opt.map(a->"hello, " + a).orElse("hello, guest");
     }
+
+    public void practice5 (String name) {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        nums.stream().max(Comparator.naturalOrder()).ifPresentOrElse(value -> System.out.println(value), ()-> System.out.println("empty"));
+    }
+
 
 
 }
