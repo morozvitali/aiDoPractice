@@ -30,10 +30,14 @@ public class Main5 {
     public void practice4 () {
         String text = "Code";
         text.chars().boxed().collect(Collectors.toList());
-
     }
 
-
+    public void practice5 () {
+        String input = "hEllO WoRLd";
+        input.chars().filter(c->Character.isUpperCase(c))
+                .mapToObj(ch->String.valueOf((char)ch))
+                .collect(Collectors.toList());
+    }
 
 
 
