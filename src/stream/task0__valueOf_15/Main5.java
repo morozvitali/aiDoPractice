@@ -12,10 +12,28 @@ public class Main5 {
 
     public void practice2 () {
         String mixed = "a1b2c3x9z7";
-        mixed.chars().filter(c->Character.isDigit(c))
+        mixed.chars()
+                .filter(c->Character.isDigit(c))
                 .mapToObj(c->Character.getNumericValue(c))
                 .sorted()
                 .collect(Collectors.toList());
     }
+
+    public void practice3 () {
+        String s = "abracadabra";
+        s.chars()
+                .distinct()
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
+
+
+
+
+
+
+
+
+
 
 }
