@@ -73,6 +73,9 @@ public class Main5 {
     }
 
     public void practice11 (){
-
+        String input = "ABCdefGHIjkl123";
+        input.chars().filter(c->Character.isLetter(c) && Character.isLowerCase(c))
+                .mapToObj(ch -> String.valueOf((char)ch))
+                .collect(Collectors.joining());
     }
 }
