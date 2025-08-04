@@ -54,6 +54,9 @@ public class Main5 {
     }
 
     public void practice8 () {
-
+        String s = "banana";
+        s.chars().filter(ch->Character.isLetter(ch))
+                .mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(val -> val, Collectors.counting()));
     }
 }
