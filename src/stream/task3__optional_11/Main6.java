@@ -19,4 +19,10 @@ public class Main6 {
         sentence.filter(len -> len.length() > 5).orElse("short");
     }
 
+    public void practice4 (String name) {
+        Optional <String> opt = Optional.of(name);
+        opt.map(a->"hello, " + a).orElse("hello, guest");
+    }
+
+
 }
