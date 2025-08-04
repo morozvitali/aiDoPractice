@@ -55,4 +55,12 @@ public class Main0 {
     public void practice14 (String sentence) {
         sentence.matches("^\\+\\d{1,3}$");
     }
+
+    public void practice15 (String sentence) {
+        sentence.matches("^\\S+$");
+    }
+
+    public void practice16 (String sentence) {
+
+    }
 }
