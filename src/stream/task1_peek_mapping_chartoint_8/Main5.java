@@ -1,5 +1,10 @@
 package stream.task1_peek_mapping_chartoint_8;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.List;
+import java.util.stream.IntStream;
+
 public class Main5 {
     public void practice1 () {
         int n = 234;
@@ -24,5 +29,20 @@ public class Main5 {
                 .count();
     }
 
+    public void practice5 () {
+        int n = 123456;
+        int [] array = String.valueOf(n).chars().map(c->c-'0').toArray();
+        IntStream.range(0, array.length).filter(i->i%2 == 1)
+                .map(i->array[i]).reduce(1, (a,b) -> a*b);
+    }
 
+    public void practice6 () {
+        List<String> words = List.of("sun", "apple",
+                "bee", "banana");
+        words.stream().peek(System.out::println)
+                .map(String::toUpperCase)
+                .peek(System.out::println)
+                .filter(a-> a.length() > 3)
+                .forEach(System.out::println);
+    }
 }

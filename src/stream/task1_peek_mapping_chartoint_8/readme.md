@@ -76,10 +76,10 @@ return String.valueOf(n).chars()
 📥 Вхід: n = 123456
 Цифри з індексами 1, 3, 5 → 2 * 4 * 6 = 48
 
-public int productOfDigitsAtOddIndexes(int n) {
-int[] digits = String.valueOf(n).chars()
-.map(c -> c - '0')
-.toArray();
+        public int productOfDigitsAtOddIndexes(int n) {
+        int[] digits = String.valueOf(n).chars()
+        .map(c -> c - '0')
+        .toArray();
 
     int product = 1;
     for (int i = 1; i < digits.length; i += 2) {
@@ -95,7 +95,6 @@ int[] digits = String.valueOf(n).chars()
         IntStream.iterate(1, i -> i+2)
         .reduce(1, (a,b) -> array[value] * )
     }
-
 
         public int productOfDigitsAtOddIndexes(int n) {
         int[] digits = String.valueOf(n)
@@ -115,8 +114,8 @@ int[] digits = String.valueOf(n).chars()
 -----------------------------------------------
 
 ✅ Задача 6: peek для відлагодження
-📋 Є список слів. Виведи кожне слово, 
-потім у верхньому регістрі, потім — лише ті, 
+📋 Є список слів. Виведи кожне слово,
+потім у верхньому регістрі, потім — лише ті,
 що мають довжину > 3.
 
 public void debugWords() {
@@ -125,13 +124,13 @@ List<String> words = List.of("sun", "apple",
 
     List<String> result = words.stream()
         .peek(w -> System.out.println(
-"Початкове слово: " + w))
+        "Початкове слово: " + w))
         .map(String::toUpperCase)
         .peek(w -> System.out.println(
-"У верхньому регістрі: " + w))
+        "У верхньому регістрі: " + w))
         .filter(w -> w.length() > 3)
         .peek(w -> System.out.println(
-"Залишилось після фільтрації: " + w))
+        "Залишилось після фільтрації: " + w))
         .collect(Collectors.toList());
 
     System.out.println("Фінальний список: "
