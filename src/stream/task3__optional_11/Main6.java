@@ -2,6 +2,7 @@ package stream.task3__optional_11;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class Main6 {
@@ -45,5 +46,8 @@ public class Main6 {
         words.stream().findFirst().map(a-> a.length()).ifPresentOrElse(len-> System.out.println("len "+len), ()-> System.out.println("empty"));
     }
 
-
+    public void practice9 (String name) {
+        Optional <String> n = Optional.of(name);
+        n.map(s->s.toUpperCase()).orElseThrow(()->new NoSuchElementException("name empty"));
+    }
 }
