@@ -9,4 +9,13 @@ public class Main5 {
         codes.stream().map(c->String.valueOf((char)(int)c))
                 .collect(Collectors.toList());
     }
+
+    public void practice2 () {
+        String mixed = "a1b2c3x9z7";
+        mixed.chars().filter(c->Character.isDigit(c))
+                .mapToObj(c->Character.getNumericValue(c))
+                .sorted()
+                .collect(Collectors.toList());
+    }
+
 }
