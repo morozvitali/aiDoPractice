@@ -35,4 +35,12 @@ public class Main0 {
     public void practice9 (String s) {
         s.matches("^[a-zA-Z0-9]+$");
     }
+
+    public void practice10 (String sentence) {
+        sentence.replaceAll("\\s+", "");
+    }
+
+    public void practice (String sentence) {
+        sentence.matches("^[а-яА-ЯіїєґІЇЄҐ]+$");
+    }
 }
