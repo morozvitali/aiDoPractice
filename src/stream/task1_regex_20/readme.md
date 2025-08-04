@@ -47,9 +47,6 @@ user@.com
 +380 XX XXX XXXX
 🔹 RegExp:
 
-ruby
-Copy
-Edit
 ^\+380 \d{2} \d{3} \d{4}$
 🔍 Приклади:
 

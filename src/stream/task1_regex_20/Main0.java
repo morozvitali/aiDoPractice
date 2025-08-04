@@ -9,5 +9,7 @@ public class Main0 {
         email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
     }
 
-
+    public void practice3 (String number) {
+        number.matches("^\\+380\\d{2}\\d{3}\\d{4}$");
+    }
 }
