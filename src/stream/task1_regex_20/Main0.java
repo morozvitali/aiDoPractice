@@ -20,6 +20,11 @@ public class Main0 {
         date.matches("^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$");
     }
 
+    public void practice6 (String url) {
+        url.matches("^(https?:\\/\\/)?([a-zA-Z0-9.-]+)\\.([a-zA-Z]{2,6})(\\/.*)?$");
+    }
 
+    public void practice7 () {
 
+    }
 }
