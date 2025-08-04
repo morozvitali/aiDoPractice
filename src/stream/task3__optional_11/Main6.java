@@ -30,6 +30,11 @@ public class Main6 {
         nums.stream().max(Comparator.naturalOrder()).ifPresentOrElse(value -> System.out.println(value), ()-> System.out.println("empty"));
     }
 
+    public void practice6 () {
+        Optional <String> optional = Optional.of("Admin@Site.Com");
+    optional.map(v-> v.toLowerCase()).filter(v->v.contains(".com")).orElseThrow(()->new IllegalArgumentException("Invalid email"));
+    }
+
 
 
 }
