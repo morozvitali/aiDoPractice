@@ -39,7 +39,12 @@ public class Main5 {
                 .collect(Collectors.toList());
     }
 
-
+    public void practice6 () {
+        String s = "abcxyz";
+        s.chars().map(ch -> ch - 'a' + 1)
+                .boxed()
+                .collect(Collectors.toList());
+    }
 
 
 
