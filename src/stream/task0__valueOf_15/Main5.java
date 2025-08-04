@@ -78,4 +78,13 @@ public class Main5 {
                 .mapToObj(ch -> String.valueOf((char)ch))
                 .collect(Collectors.joining());
     }
+
+    public void practice12 () {
+        String input = "abc";
+        input.chars().map(a->a+1).boxed().collect(Collectors.toList());
+    }
+
+    public void practice13 () {
+
+    }
 }
