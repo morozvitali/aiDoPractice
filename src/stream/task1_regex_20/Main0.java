@@ -49,7 +49,7 @@ public class Main0 {
     }
 
     public void practice13 (String sentence) {
-
+        sentence.replaceAll("[^a-zA-Z0-9 ]", "");
     }
 
 }
