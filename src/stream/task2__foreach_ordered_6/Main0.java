@@ -25,6 +25,10 @@ public class Main0 {
     }
 
     public void practice5 () {
+
+        //У parallelStream() з forEach() —
+        //результат буде неправильний.
+
         IntStream.rangeClosed(1, 5).parallel().forEachOrdered(i -> {
             try {
                 Thread.sleep(100);
@@ -34,7 +38,11 @@ public class Main0 {
         });
     }
 
+    public void practice6 () {
+        StringBuilder sb = new StringBuilder();
+        List<String> list = List.of("A", "B", "C", "D");
+        list.parallelStream().forEachOrdered(sb::append);
 
-
-
+        System.out.println(sb);
+    }
 }
