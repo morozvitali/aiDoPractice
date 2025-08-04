@@ -59,4 +59,11 @@ public class Main5 {
                 .mapToObj(c->(char)c)
                 .collect(Collectors.groupingBy(val -> val, Collectors.counting()));
     }
+
+    public void practice9 () {
+        String s = "a1b2c3d4";
+        s.chars().filter(ch-> !Character.isDigit(ch)).mapToObj(c->String.valueOf((char)c)).collect(Collectors.joining());
+    }
+
+
 }
