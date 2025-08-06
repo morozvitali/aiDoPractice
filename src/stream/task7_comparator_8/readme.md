@@ -135,6 +135,14 @@ List.of("sun", "star", "supernova", "apple");
 
 💡 Comparator.comparing(w -> countVowels(w))
 
+    public void practice9 () {
+        List.of("apple", "zebra", "sky", "education").stream()
+                .sorted(Comparator.comparing(w->countVowels(w))).collect(Collectors.toList());
+    }
+
+---------------HARD LEVEL-------------------
+
+
 🔹 Задача 5: Знайти пару чисел із найменшою різницею
 📥 List.of(3, 8, 15, 9)
 📤 Пара: (8, 9) → різниця 1

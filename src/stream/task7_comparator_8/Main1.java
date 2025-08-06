@@ -63,4 +63,14 @@ public class Main1 {
         return String.valueOf(n).chars().filter(c->c == ch).count();
     }
 
+    public void practice9 () {
+        List.of("apple", "zebra", "sky", "education").stream()
+                .sorted(Comparator
+                        .comparing(a->countVowels(a)))
+                .collect(Collectors.toList());
+    }
+
+    public long countVowels(String word) {
+        return word.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
 }
