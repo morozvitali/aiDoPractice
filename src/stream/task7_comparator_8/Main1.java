@@ -3,6 +3,7 @@ package stream.task7_comparator_8;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main1 {
     public void practice1() {
@@ -42,7 +43,13 @@ public class Main1 {
     public void practice5 () {
         List<String> words = List.of("sun", "star", "supernova", "apple");
         words.stream().filter(word -> word.startsWith("s")).max(Comparator.comparing(w->w.length())).orElse("немає слів на 's");
-
     }
+    public void practice6 () {
+        List.of("abc", "def", "gka", "lol").stream().sorted(
+                Comparator.comparing(s->s.charAt(s.length() - 1)))
+                        .collect(Collectors.toList());
+    }
+
+
 
 }
