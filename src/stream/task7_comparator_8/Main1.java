@@ -50,6 +50,17 @@ public class Main1 {
                         .collect(Collectors.toList());
     }
 
+    public void practice7 () {
+        List.of("java", "hello", "me", "zebra").stream().filter(w->w.contains("e"))
+                .min(Comparator.comparing(word->word.length()))
+                .orElse("empty value");
+    }
 
+    public void practice8 () {
+        List.of(100, 1010, 5, 2000, 10).stream().sorted(Comparator.comparing(n->countOf(n, '0')));
+    }
+    public long countOf (int n, char ch){
+        return String.valueOf(n).chars().filter(c->c == ch).count();
+    }
 
 }
