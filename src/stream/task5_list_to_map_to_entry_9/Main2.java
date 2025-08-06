@@ -19,6 +19,16 @@ public class Main2 {
                 .reduce((a,b) -> a.getValue() <= b.getValue() ? a:b).map(Map.Entry::getKey).orElse("");
     }
 
+    public void practice3 () {
+        List<String> list = List.of("apple", "banana",
+                "orange", "blueberry");
+        list.stream().map(w->Map.entry(w, countVovels(w)))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a :b )
+                .map(Map.Entry::getKey).orElse("Empty");
+    }
+    public long countVovels (String str) {
+        return str.chars().filter(w->"aeiou".indexOf(w) >= 0).count();
+    }
 
 
 
