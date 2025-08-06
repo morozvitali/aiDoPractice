@@ -57,4 +57,24 @@ public class Main2 {
         return s.chars().sum();
     }
 
+    public void practice7 () {
+        List.of("alpha", "arena",
+                "java", "banana", "lava").stream()
+                .map(w->Map.entry(w, w.chars()
+                        .filter(c->c=='a')
+                        .count()))
+                .reduce((a,b)-> a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("empty");
+    }
+
+    public void practice8 () {
+        List.of("apple", "Tree",
+                "Java", "stream", "Engineer")
+                .stream()
+                .filter(a->Character.isUpperCase(a.charAt(0)))
+                .map(a->Map.entry(a, a.length()))
+                .reduce((a,b)-> a.getValue() > b.getValue() ? a : b)
+                .map(a->a.getKey()).orElse("empty");
+    }
+
 }

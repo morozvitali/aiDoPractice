@@ -20,6 +20,8 @@ List<String> words = List.of("stream", "code",
 .map(Map.Entry::getKey)
 .orElse("");
 
+map(a->a.getKey()) ---> map(Map.Entry::getKey)
+
 ------------------------------------------------
 
 ✅ Задача 2: Найкоротше слово у списку
@@ -59,6 +61,8 @@ List<String> words = List.of("stream", "code",
         return str.chars().filter(w->"aeiou".indexOf(w) >= 0).count();
     }
 
+map(a->a.getKey()) ---> map(Map.Entry::getKey)
+
 ------------------------------------------------
 
 ✅ Задача 4: Слово з найбільшою 
@@ -87,7 +91,7 @@ List<String> words = List.of("stream", "code",
                 .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
                 .map(Map.Entry::getKey).orElse("empty");
     }
-
+map(a->a.getKey()) ---> map(Map.Entry::getKey)
 
     [шукаємо одну літеру що повторяється]
 
@@ -128,14 +132,27 @@ List<String> words = List.of("stream", "code",
 
 -----------------------------------------------
 
-✅ Задача 7: Слово, що містить найбільше літер 'a'
-📋 Знайди слово з найбільшою кількістю літер 'a'.
+✅ Задача 7: Слово, що містить 
+найбільше літер 'a'
+📋 Знайди слово з найбільшою 
+кількістю літер 'a'.
 📥 List.of("alpha", "arena", 
 "java", "banana", "lava")
 📤 Очікуване: "banana"
 
 💡 Створити .map(w -> Map.entry(w, countOf(w, 'a')))
 Далі — .reduce(...)
+
+    public void practice7 () {
+        List.of("alpha", "arena",
+                "java", "banana", "lava").stream()
+                .map(w->Map.entry(w, w.chars()
+                        .filter(c->c=='a')
+                        .count()))
+                .reduce((a,b)-> a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("empty");
+
+------
 
     return list.stream()
         .map(word -> Map.entry(word, countOf(word, 'a'))) // створюємо пару слово → кількість 'a'
