@@ -45,5 +45,7 @@ public class Main9 {
         IntStream.rangeClosed(10, 50).filter(i->i%7==0).boxed().collect(Collectors.toList());
     }
 
-
+    public void practice10 () {
+        IntStream.rangeClosed(1,100).filter(i->i%3 ==0 && i%5 ==0).count();
+    }
 }
