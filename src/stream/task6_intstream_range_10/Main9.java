@@ -15,4 +15,9 @@ public class Main9 {
         IntStream.range(1,5).reduce((a,b) -> a*b).orElse(-1);
     }
 
+    public void practice4 () {
+        IntStream.rangeClosed(1,30).filter(a->a%4==0).forEach(System.out::println);
+    }
+
+
 }
