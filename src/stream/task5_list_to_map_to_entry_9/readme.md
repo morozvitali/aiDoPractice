@@ -79,8 +79,20 @@ List<String> words = List.of("stream", "code",
 повторів однієї літери в кожному слові.
 📤 Очікуване: "committee" (3 't' чи 'm')
 
-💡 Map<Character, Long> → потім max значення
-List<String> list = List.of("apple",
+    [шукаємо всі повтори]
+
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        list.stream().map(w->Map.entry(w, (w.length() - w.chars().distinct().count())))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("empty");
+    }
+
+
+    [шукаємо одну літеру що повторяється]
+
+    Map<Character, Long> → потім max значення
+    List<String> list = List.of("apple",
         "committee", "banana", "success");
         list.stream().map(word-> Map.entry(word, word.chars().mapToObj(c->(char)c)
         .collect(Collectors.groupingBy(c->c, Collectors.counting()))

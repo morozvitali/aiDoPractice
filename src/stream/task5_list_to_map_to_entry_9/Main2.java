@@ -41,6 +41,14 @@ public class Main2 {
                 .map(Map.Entry::getKey).orElse("empty");
     }
 
+    public void practice5 () {
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        list.stream().map(w->Map.entry(w, (w.length() - w.chars().distinct().count())))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("empty");
+    }
+
 
 
 }
