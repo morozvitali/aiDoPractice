@@ -45,4 +45,18 @@ public class Main2 {
         List<Integer> b = List.of(5, 7);
         return a.stream().filter(value -> !b.contains(value.length())).toList();
     }
+
+
+    public List <Integer> practice6 () {
+        List<Integer> a = List.of(1, 2, 2, 3, 3, 4);
+        List<Integer> b = List.of(3);
+        Map<Integer, Long> map = a.stream().collect(Collectors
+                .groupingBy(value -> value,
+                        Collectors.counting()));
+        return a.stream().filter(x->map.get(x) >1 && !b.contains(x)).toList();
+    }
+
+
+
+
 }
