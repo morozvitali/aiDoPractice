@@ -126,34 +126,25 @@ List.of("sun", "star", "supernova", "apple");
 
 💡 Comparator.comparing(n -> countOf(n, '0'))
 
----------------HARD LEVEL-------------------
+        List.of(100, 1010, 5, 2000, 10).stream().sorted(Comparator.comparing(n->countOf(n, '0')));
+    public long countOf (int n, char ch){
+        return String.valueOf(n).chars().filter(c->c == ch).count();
+    }
+----------------------------------
 
-🔹 Задача 4: Сортувати слова за кількістю голосних у зростанні
+🔹 Задача 9: Сортувати слова за кількістю голосних у зростанні
 -
 📥 List.of("apple", "zebra", "sky", "education")
 📤 ["sky", "zebra", "apple", "education"]
 
 💡 Comparator.comparing(w -> countVowels(w))
 
-    public void practice9 () {
         List.of("apple", "zebra", "sky", "education").stream()
-                .sorted(Comparator.comparing(w->countVowels(w))).collect(Collectors.toList());
+                .sorted(Comparator
+                        .comparing(a->countVowels(a)))
+                .collect(Collectors.toList());
     }
 
----------------HARD LEVEL-------------------
-
-
-🔹 Задача 5: Знайти пару чисел із найменшою різницею
-📥 List.of(3, 8, 15, 9)
-📤 Пара: (8, 9) → різниця 1
-
-💡 .sorted().reduce((a,b) -> ...)
-
-    public int [] practice4 (List<Integer> numbers) {
-        List<Integer> sorted = numbers.stream().sorted().collect(Collectors.toList());
-        return IntStream.range(0, sorted.size() - 1)
-                .mapToObj(i -> new int[]{sorted.get(i), sorted.get(i + 1)})
-                .min(Comparator.comparingInt(pair -> Math.abs(pair[0] - pair[1])))
-                .orElse(null);
-    }
+    public long countVowels(String word) {
+        return word.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
