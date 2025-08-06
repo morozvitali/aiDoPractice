@@ -1,4 +1,4 @@
-package stream.task7_comparator;
+package stream.task7_comparator_8;
 
 import java.util.Comparator;
 import java.util.List;
