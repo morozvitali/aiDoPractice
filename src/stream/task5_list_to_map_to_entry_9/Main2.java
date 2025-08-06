@@ -30,6 +30,17 @@ public class Main2 {
         return str.chars().filter(w->"aeiou".indexOf(w) >= 0).count();
     }
 
+    public void practice4 () {
+        List<String> list = List.of("apple", "pear",
+                "banana", "kiwi");
+        list.stream()
+                .map(w->Map.entry(w, w.chars()
+                        .distinct()
+                        .count()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("empty");
+    }
+
 
 
 }
