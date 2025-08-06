@@ -7,6 +7,10 @@ public class Main9 {
         IntStream.range(1, 100).sum();
     }
 
+    public void practice2 () {
+        IntStream.rangeClosed(10,20).filter(i->i%2==0).count();
+    }
+
 
 
 }
