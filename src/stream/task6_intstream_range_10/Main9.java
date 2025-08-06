@@ -11,6 +11,8 @@ public class Main9 {
         IntStream.rangeClosed(10,20).filter(i->i%2==0).count();
     }
 
-
+    public void practice3 () {
+        IntStream.range(1,5).reduce((a,b) -> a*b).orElse(-1);
+    }
 
 }
