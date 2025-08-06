@@ -35,4 +35,8 @@ public class Main9 {
     public void practice7 () {
         IntStream.rangeClosed(2,8).filter(a->a%2==1).reduce((a,b)-> a*b).orElse(-1);
     }
+
+    public void practice8 () {
+        IntStream.rangeClosed(1,5).map(a->a*a).sum();
+    }
 }
