@@ -39,5 +39,10 @@ public class Main1 {
                 .orElse("нема");
     }
 
+    public void practice5 () {
+        List<String> words = List.of("sun", "star", "supernova", "apple");
+        words.stream().filter(word -> word.startsWith("s")).max(Comparator.comparing(w->w.length())).orElse("немає слів на 's");
+
+    }
 
 }
