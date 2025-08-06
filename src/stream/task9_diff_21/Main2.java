@@ -56,7 +56,12 @@ public class Main2 {
         return a.stream().filter(x->map.get(x) >1 && !b.contains(x)).toList();
     }
 
+    public List <Integer> practice7 () {
+        List<Integer> a = List.of(0, 1, 0, 2);
+        List<String> b = List.of("zero");
 
+        return b.contains("zero") ? a : a.stream().filter(value -> value != 0).toList();
+    }
 
 
 }
