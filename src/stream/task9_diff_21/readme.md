@@ -37,13 +37,21 @@ a = [1, 2, 2, 3], b = [2] → [1, 3]
 в один із масивів a або b, але не в обидва.
 
 📌 Приклад:
-a = [1, 2, 3], b = [3, 4] → [1, 2, 4]
+int[] a = new int[]{1, 2, 3, 4};
+int[] b = new int[]{2, 4, 6};
+
 🧠 Підказка:
 
 Створи Set з a, Set з b.
 Пройди по кожному і додай лише ті, 
 яких немає в іншому сеті.
 Об'єднай результати.
+
+        Set <Integer> sa = Arrays.stream(a).boxed().collect(Collectors.toSet());
+        Set <Integer> sb = Arrays.stream(b).boxed().collect(Collectors.toSet());
+        Set <Integer> one = sa.stream().filter(value -> !sb.contains(value)).collect(Collectors.toSet());
+        Set <Integer> two = sb.stream().filter(value-> !sa.contains(value)).collect(Collectors.toSet());
+        Set<Integer> result = Stream.concat(one.stream(), two.stream()).collect(Collectors.toSet());
 
 --------------------------------------------------
 
