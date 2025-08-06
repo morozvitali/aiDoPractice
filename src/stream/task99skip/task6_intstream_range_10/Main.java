@@ -1,4 +1,4 @@
-package stream.task6_intstream_range_10;
+package stream.task99skip.task6_intstream_range_10;
 import java.util.Arrays;
 public class Main {
 

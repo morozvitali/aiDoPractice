@@ -1,4 +1,4 @@
-package stream.task1_regex_20;
+package stream.task6_regex_20;
 
 public class Main0 {
     public void practice1 (String password) {
