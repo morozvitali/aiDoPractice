@@ -94,6 +94,10 @@ a = ["hi", "hello", "world"], b = [2, 5] → ["hello"]
 Фільтруй a, залишаючи str.length() не в Set b:
 !setB.contains(str.length())
 
+        List<String> a = List.of("hi", "hello", "world");
+        List<Integer> b = List.of(5, 7);
+        return a.stream().filter(value -> !b.contains(value.length())).toList();
+
 ----------------------------------------------------
 
 🔸 Задача 6: Залишити лише ті, які повторюються в a,
