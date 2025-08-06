@@ -31,4 +31,8 @@ public class Main9 {
         int[] numbers = {10, 20, 30};
         Arrays.stream(numbers).mapToObj(a->String.valueOf(a)).reduce((a,b)->a + "|" + b).orElse("");
     }
+
+    public void practice7 () {
+        IntStream.rangeClosed(2,8).filter(a->a%2==1).reduce((a,b)-> a*b).orElse(-1);
+    }
 }
