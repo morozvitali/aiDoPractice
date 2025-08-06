@@ -22,5 +22,14 @@ public long countOf (String s, char ch) {
         return s.chars().filter(a->"aeiou".indexOf(ch) >= 0).count();
 }
 
+public void practice3 () {
+    List.of(111, 123, 444, 1212).stream().map(n->Map.entry(n, (int) String.valueOf(n)
+            .chars()
+            .distinct()
+            .count()))
+            .max(Map.Entry.comparingByValue()).get().getKey();
+
+
+}
 
 }
