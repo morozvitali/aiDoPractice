@@ -1,5 +1,6 @@
 package stream.task6_intstream_range_10;
 
+import java.math.BigInteger;
 import java.util.stream.IntStream;
 
 public class Main9 {
@@ -19,5 +20,9 @@ public class Main9 {
         IntStream.rangeClosed(1,30).filter(a->a%4==0).forEach(System.out::println);
     }
 
-
+    public void practice5 () {
+        IntStream.rangeClosed(1,31).filter(a->a%2==1)
+                .mapToObj(a-> BigInteger.valueOf(a))
+                .reduce(BigInteger.ONE, (a,b) -> a.multiply(b));
+    }
 }
