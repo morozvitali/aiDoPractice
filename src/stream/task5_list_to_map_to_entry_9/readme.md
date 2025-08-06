@@ -115,7 +115,9 @@ List<String> words = List.of("stream", "code",
 
     public void practice7 () {
         List<String> list = List.of("abc", "aaa", "zzz");
-        list.stream().mapToInt(word -> countAscii(word)).max();
+        list.stream()
+        .mapToInt(word -> countAscii(word))
+        .max();
     }
     public int countAscii (String s) {
         return s.chars().sum();

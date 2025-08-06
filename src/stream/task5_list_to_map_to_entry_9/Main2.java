@@ -49,6 +49,12 @@ public class Main2 {
                 .map(Map.Entry::getKey).orElse("empty");
     }
 
+    public void practice6 () {
+        List.of("abc", "aaa", "zzz").stream().mapToInt(word -> countAscii(word)).sum();
+    }
 
+    public int countAscii (String s) {
+        return s.chars().sum();
+    }
 
 }
