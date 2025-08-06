@@ -76,5 +76,4 @@ public class Main2 {
                 .reduce((a,b)-> a.getValue() > b.getValue() ? a : b)
                 .map(a->a.getKey()).orElse("empty");
     }
-
 }

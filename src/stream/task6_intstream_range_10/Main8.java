@@ -1,4 +1,4 @@
-package stream.task6_intstream_range;
+package stream.task6_intstream_range_10;
 
 import java.math.BigInteger;
 import java.util.Arrays;

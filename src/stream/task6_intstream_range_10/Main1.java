@@ -1,7 +1,6 @@
-package stream.task6_intstream_range;
+package stream.task6_intstream_range_10;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main1 {

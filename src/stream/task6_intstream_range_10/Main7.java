@@ -1,6 +1,5 @@
-package stream.task6_intstream_range;
+package stream.task6_intstream_range_10;
 
-import java.beans.Introspector;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
