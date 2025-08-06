@@ -1,4 +1,4 @@
-package stream.task8_binary;
+package stream.task8_binary_11;
 
 import java.util.Arrays;
 

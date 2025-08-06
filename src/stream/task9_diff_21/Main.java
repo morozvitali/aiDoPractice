@@ -1,4 +1,4 @@
-package stream.task9_diff;
+package stream.task9_diff_21;
 
 import java.util.*;
 import java.util.stream.Collectors;
