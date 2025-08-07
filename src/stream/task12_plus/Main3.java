@@ -12,6 +12,16 @@ public class Main3 {
                 .collect(Collectors.joining()));
     }
 
+    public int practice2 (int number) {
+        return Integer.valueOf(
+                String.valueOf(number)
+                .chars()
+                .map(a->a*a*a)
+                        .mapToObj(n->String.valueOf(n))
+                        .collect(Collectors.joining()));
+    }
+
+
 
 
 }
