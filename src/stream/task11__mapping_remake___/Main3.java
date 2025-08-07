@@ -1,4 +1,4 @@
-package stream.task11__mapping;
+package stream.task11__mapping_remake___;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -10,7 +10,4 @@ public class Main3 {
                 .map(word->word.length() >= 5 ? new StringBuilder().append(IntStream.range(0, word.length()).mapToObj(i->String.valueOf(word.charAt(word.length()-1 -i)))
                         .collect(Collectors.joining())):word).collect(Collectors.joining(" "));
     }
-
-
-
 }

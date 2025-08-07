@@ -20,6 +20,16 @@
 
 Перетвори назад у число (Integer.parseInt(...)).
 
+    public int practice1 (int number) {
+        return Integer.valueOf(String.valueOf(number)
+                .chars()
+                .map(ch-> Character.getNumericValue(ch))
+                .map(a->a*a)
+                .mapToObj(n->String.valueOf(n))
+                .collect(Collectors.joining()));
+    }
+
+
 ✅ **Готове рішення (Java):
 
 public class SquareDigit {
