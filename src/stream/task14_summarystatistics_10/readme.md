@@ -71,6 +71,18 @@ banana=3
 .filter(w -> countVowels(w) > 1 && w.length() > 3)
 .collect(Collectors.toMap(...))
 
+    public Map <String, Long> practice3 () {
+        String[] words = {"sky", "apple",
+                "moon", "dry", "banana"};
+
+        return Arrays.stream(words)
+                .filter(w->w.length()>3 && w.chars()
+                        .filter(c->"aeiou".indexOf(c)>=0)
+                        .count()>1)
+                .collect(Collectors
+                        .toMap(w->w, w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
+    }
+
 ---------------------------------------------------
 
 ✅ Завдання 4: Обчисли середню довжину всіх слів, 

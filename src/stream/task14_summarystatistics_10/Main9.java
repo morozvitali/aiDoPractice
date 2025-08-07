@@ -3,12 +3,15 @@ package stream.task14_summarystatistics_10;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main9 {
-    public void practice1 () {
+    public void practice1() {
         int[] numbers = {2, 4, 2, 6, 8, 4, 10, 10, 12};
         IntSummaryStatistics stats = Arrays.stream(numbers)
-                .filter(a->a%2==0)
+                .filter(a -> a % 2 == 0)
                 .distinct()
                 .summaryStatistics();
 
@@ -18,13 +21,31 @@ public class Main9 {
         System.out.println(stats.getSum());
     }
 
-    public int practice2 () {
+    public int practice2() {
         List<String> words = List.of("APPLE",
                 "Banana", "CHERRY", "kiwi", "PLUM");
-        return words.stream().map(w->w.toLowerCase()).filter(a->a.length()%2==0)
-                .mapToInt(a->a.length()).sum();
+        return words.stream().map(w -> w.toLowerCase()).filter(a -> a.length() % 2 == 0)
+                .mapToInt(a -> a.length()).sum();
     }
 
+    public Map<String, Long> practice3() {
+        String[] words = {"sky", "apple",
+                "moon", "dry", "banana"};
+
+        return Arrays.stream(words)
+                .filter(w -> w.length() > 3 &&
+                        w.chars()
+                                .mapToObj(c -> (char) c)
+                                .filter(c -> "aeiou".indexOf(Character.toLowerCase(c)) >= 0)
+                                .count() > 1)
+                .collect(Collectors
+                        .toMap(w -> w,
+                                w -> w.chars()
+                                        .mapToObj(c -> (char) c)
+                                        .filter(c -> "aeiou"
+                                                .indexOf(Character.toLowerCase(c)) >= 0)
+                                        .count()));
+    }
 
 
 }
