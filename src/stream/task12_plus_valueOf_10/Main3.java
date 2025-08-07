@@ -76,4 +76,13 @@ public class Main3 {
 
         return number > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
     }
+
+    public int practice9 (int number) {
+        String result = Integer.toString(Math.abs(number)).chars().map(c->Character.getNumericValue(c))
+                .map(value-> Math.abs(value - 5)).mapToObj(a->String.valueOf(a))
+                .collect(Collectors.joining());
+        return number > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
+    }
+
+
 }

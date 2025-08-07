@@ -203,7 +203,17 @@ return String.valueOf(digit * (i + 1));
 .collect(Collectors.joining());
 }
 
+    public int practice8 (int number) {
+        String s = Integer.toString(Math.abs(number));
 
+        String result = IntStream.range(0, s.length())
+                .mapToObj(i->{
+                    int digit = Character.getNumericValue(s.charAt(i));
+                    return String.valueOf(digit * (i+1));
+                }).collect(Collectors.joining());
+
+        return number > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
+    }
 
 ✅ Задача 9: Заміни кожну цифру на
 її абсолютну різницю з 5
@@ -215,6 +225,15 @@ return String.valueOf(digit * (i + 1));
 
 Порада:
 .map(d -> Math.abs(d - 5))
+
+    public int practice9 (int number) {
+        String result = Integer.toString(Math.abs(number)).chars().map(c->Character.getNumericValue(c))
+                .map(value-> Math.abs(value - 5)).mapToObj(a->String.valueOf(a))
+                .collect(Collectors.joining());
+        return number > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
+    }
+
+
 
 ✅ Задача 10: Заміни кожну цифру на "X", 
 якщо вона > 5, і "O" інакше
