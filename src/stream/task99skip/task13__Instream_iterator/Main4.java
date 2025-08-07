@@ -1,4 +1,4 @@
-package stream.task13__Instream_iterator;
+package stream.task99skip.task13__Instream_iterator;
 
 import java.util.Arrays;
 

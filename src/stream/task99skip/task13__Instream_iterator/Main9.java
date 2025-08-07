@@ -1,9 +1,8 @@
-package stream.task13__Instream_iterator;
+package stream.task99skip.task13__Instream_iterator;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.IntPredicate;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main9 {

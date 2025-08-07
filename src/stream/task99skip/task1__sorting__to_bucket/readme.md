@@ -127,3 +127,98 @@ c=1
 Тип: Map<Character, Long>
 Підказка: groupingBy(..., counting())
 
+
+
+----------------------------------
+
+
+✅ Завдання 11: Побудуй Map<String, Long>
+— підрахуй, скільки разів зустрічається
+кожне слово (регістр не враховуємо)
+
+String[] words = {"Java", "java",
+"Kotlin", "kotlin", "kotlin", "Scala"};
+🧪 Очікувано:
+
+{
+java=2,
+kotlin=3,
+scala=1
+}
+📦 Підказка:
+
+.map(String::toLowerCase)
+.collect(Collectors.groupingBy(Function
+.identity(), Collectors.counting()))
+
+----------------------------------------------
+
+✅ Завдання 12: Порахуй кількість усіх
+символів у словах довжиною від 4 до 6,
+та виведи summaryStatistics
+
+String[] words = {"cat", "apple",
+"grape", "banana", "fig", "cherry"};
+🧪 Враховуються:
+apple, grape, banana, cherry
+→ Статистика довжин: min=5, max=6,
+sum=23, average=5.75
+
+📦 Підказка:
+
+.filter(w -> w.length() >= 4 &&
+w.length() <= 6)
+.mapToInt(String::length)
+.summaryStatistics()
+
+--------------------------------------------------
+
+✅ Завдання 13: Знайди перше слово,
+у якому є принаймні дві однакові голосні
+
+String[] words = {"apple", "tree",
+"orange", "banana", "loop"};
+🧪 Очікувано: "tree" (дві "e")
+
+📦 Підказка:
+
+.filter(w -> "aeiou".chars()
+.anyMatch(c -> w.chars()
+.filter(ch -> ch == c).count() >= 2))
+.findFirst()
+.orElse("not found")
+
+-----------------------------------------------
+
+✅ Завдання 14: 🧠 Бонусний виклик
+String[] words = {"apple", "tree",
+"orange", "banana", "loop"};
+🔹 Згенеруй Map<Char, Long>
+— і зроби задачу з flatMap
+🔹 Створи утиліту normalize(String) →
+яка чистить слова і приводить до
+нижнього регістру
+🔹 Зроби Map<Char, Long> —
+кількість кожного символу
+
+    public Map <Character, Long>  practice () {
+        String[] words = {"apple", "tree",
+                "orange", "banana", "loop"};
+        
+    return Arrays.stream(words)
+                .map(w->normalize(w))
+                .flatMap(a -> a
+                        .chars()
+                        .mapToObj(ch->(char)ch))
+                .collect(Collectors
+    .groupingBy(m->m, Collectors.counting()));
+    }
+    
+    public String normalize (String s) {
+        return s.chars()
+                .map(c->(char)c)
+                .filter(Character::isLetter)
+                .map(Character::toLowerCase)
+                .toString();
+    }
+
