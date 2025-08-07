@@ -203,14 +203,13 @@ Function.identity() Означає:
 5 .filter(...) — залишаємо тільки голосні
 6 .collect(...) — групуємо по самій букві та рахуємо
 
-Arrays.stream(words)
-.flatMap(w -> w.toLowerCase().chars()
-.mapToObj(c -> (char) c))
-.filter(ch -> "aeiou".indexOf(ch) >= 0)
-.collect(Collectors.groupingBy(
-Function.identity(),
-Collectors.counting()
-));
+    public Map <Character, Long> practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
 
 ----------------------------------------------------
 
