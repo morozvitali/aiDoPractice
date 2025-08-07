@@ -258,11 +258,10 @@ String[] words = {"education", "questionnaire",
 .filter(w -> "aeiou".chars()
 .allMatch(c -> w.indexOf(c) >= 0))
 
-    public void practice9 () {
+    public List <String> practice9 () {
         String[] words = {"education", "questionnaire",
                 "house", "audio", "universe"};
-        Arrays.stream(words).filter(w->"aeiou".chars()
-        .allMatch(c->w.indexOf(c) >= 0));
+        return Arrays.stream(words).filter(w->"aeiou".chars().allMatch(c->w.indexOf(c) >=0)).collect(Collectors.toList());
     }
 
 ----------------------------------------------------
