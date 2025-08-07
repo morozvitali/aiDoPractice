@@ -43,8 +43,12 @@ List<String> words = List.of("APPLE",
 📦 Підказка:
 .stream().filter().filter().mapToInt(String::length).sum()
 
-
-
+    public int practice2 () {
+        List<String> words = List.of("APPLE",
+                "Banana", "CHERRY", "kiwi", "PLUM");
+        return words.stream().map(w->w.toLowerCase()).filter(a->a.length()%2==0)
+                .mapToInt(a->a.length()).sum();
+    }
 
 ---------------------------------------------------
 

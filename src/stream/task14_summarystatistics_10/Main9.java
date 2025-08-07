@@ -2,6 +2,7 @@ package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
+import java.util.List;
 
 public class Main9 {
     public void practice1 () {
@@ -17,7 +18,12 @@ public class Main9 {
         System.out.println(stats.getSum());
     }
 
-
+    public int practice2 () {
+        List<String> words = List.of("APPLE",
+                "Banana", "CHERRY", "kiwi", "PLUM");
+        return words.stream().map(w->w.toLowerCase()).filter(a->a.length()%2==0)
+                .mapToInt(a->a.length()).sum();
+    }
 
 
 
