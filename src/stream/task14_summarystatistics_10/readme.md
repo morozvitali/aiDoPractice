@@ -170,6 +170,13 @@ Collectors.averagingInt(String::length)
 бере довжини слів
 обчислює середнє (sum / count)
 
+    public void practice6 () {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
+        Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
+
+
 --------------------------------------------------
 
 ✅ Завдання 7: Порахуй, скільки разів кожна голосна 
