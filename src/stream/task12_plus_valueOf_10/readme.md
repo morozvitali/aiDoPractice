@@ -246,3 +246,11 @@ return String.valueOf(digit * (i + 1));
 Очікуваний результат:
 3456789 → OOOXXXO
 
+    public String practice10 (int number) {
+        String result = Integer
+        .toString(Math.abs(number))
+        .chars().map(c->Character.getNumericValue(c))
+        .mapToObj(d->d>5 ? "X" : "O")
+        .collect(Collectors.joining());
+        return result.isEmpty() ? "" : result;
+    }

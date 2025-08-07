@@ -84,5 +84,9 @@ public class Main3 {
         return number > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
     }
 
+    public String practice10 (int number) {
+        String result = Integer.toString(Math.abs(number)).chars().map(c->Character.getNumericValue(c)).mapToObj(d->d>5 ? "X" : "0").collect(Collectors.joining());
+        return result.isEmpty() ? "" : result;
+    }
 
 }
