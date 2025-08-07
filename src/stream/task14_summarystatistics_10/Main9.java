@@ -78,6 +78,16 @@ public class Main9 {
                                 Collectors.counting()));
     }
 
+    public IntSummaryStatistics practice8 () {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        return Arrays.stream(words).filter(w->w.chars().distinct().count() < w.length()).mapToInt(word->word.length()).summaryStatistics();
+    }
+
+    public void practice9 () {
+
+
+    }
 
 
 }

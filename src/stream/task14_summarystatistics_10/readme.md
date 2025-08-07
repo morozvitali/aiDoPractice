@@ -214,7 +214,7 @@ Function.identity() Означає:
 ----------------------------------------------------
 
 ✅ Завдання 8: Знайди IntSummaryStatistics
-по довжині всіх слів, які мають щонайменше 
+по довжині всіх слів, які мають щонайменше
 2 однакові літери
 
 String[] words = {"apple", "moon", 
@@ -229,6 +229,15 @@ apple, moon, banana, loop
 .filter(w -> hasRepeatingLetters(w))
 .mapToInt(String::length)
 .summaryStatistics()
+
+    public IntSummaryStatistics practice8 () {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        return Arrays.stream(words).filter(w->w.chars().filter(c->"aieou".indexOf(c)>=0).count() < w.length()).mapToInt(word->word.length()).summaryStatistics();
+    }
+
+
+
 
 ----------------------------------------------------
 
