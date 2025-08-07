@@ -66,6 +66,19 @@ String.valueOf(n)
 Підказка:
 Замість d * d, використовуй d * d * d.
 
+    public static int cubeDigits(int number) {
+    return Integer.parseInt(
+    String.valueOf(number)
+    .chars()
+    .map(Character::getNumericValue)   // '2' → 2
+    .map(d -> d * d * d)               // 2³ = 8
+    .mapToObj(String::valueOf)         // 8 → "8"
+    .collect(Collectors.joining())     // "8" + "27" = "827"
+    );
+    }
+
+
+
 ✅ Задача 3: Залишити тільки парні цифри
 Умова:
 Залиш тільки парні цифри числа й з’єднай їх.
@@ -76,6 +89,20 @@ String.valueOf(n)
 
 Порада:
 Використовуй .filter(d -> d % 2 == 0).
+
+    public int practice3(int number) {
+        String result = String.valueOf(number)
+                .chars()
+                .map(c -> Character.getNumericValue(c))
+                .filter(a -> a % 2 == 0)
+                .mapToObj(s -> String.valueOf(s))
+                .collect(Collectors.joining());
+
+        return result.isEmpty() ? -1 : Integer.parseInt(result);
+    }
+
+
+
 
 ✅ Задача 4: Перетвори кожну цифру в зірочки
 Умова:
