@@ -47,5 +47,13 @@ public class Main9 {
                                         .count()));
     }
 
-
+    public double practice4() {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return  Arrays.stream(words)
+                .map(w -> w.toLowerCase())
+                .filter(w -> w.matches(".*[aeiou].*"))
+                .mapToInt(w -> w.length())
+                .summaryStatistics().getAverage();
+    }
 }

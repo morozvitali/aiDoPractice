@@ -97,6 +97,17 @@ String[] words = {"sky", "apple", "moon",
 .mapToInt(String::length)
 .summaryStatistics().getAverage()
 
+    public double practice4() {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return  Arrays.stream(words)
+                .map(w -> w.toLowerCase())
+                .filter(w -> w.matches(".*[aeiou].*"))
+                .mapToInt(w -> w.length())
+                .summaryStatistics().getAverage();
+    }
+
+
 --------------------------------------------------
 
 ✅ Завдання 5: Знайди найкоротше слово,
