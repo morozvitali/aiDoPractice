@@ -49,5 +49,11 @@ public class Main3 {
         return number < 0 ? -result : result;
     }
 
-
+    public int practice6 (int number) {
+        Integer result = Integer.parseInt(Integer.toString(Math.abs(number)).chars().map(c->Character.getNumericValue(c))
+                .map(value->value%2 ==0 ? value : value * value)
+                .mapToObj(s->String.valueOf(s))
+                .collect(Collectors.joining()));
+        return number < 0  ? -result : result;
+    }
 }
