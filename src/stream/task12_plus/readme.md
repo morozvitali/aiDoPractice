@@ -102,8 +102,6 @@ String.valueOf(n)
     }
 
 
-
-
 ✅ Задача 4: Перетвори кожну цифру в зірочки
 Умова:
 Перетвори кожну цифру в відповідну кількість зірочок.
@@ -114,6 +112,16 @@ String.valueOf(n)
 
 Порада:
 Можеш використати "*".repeat(d).
+
+    public String practice4 (int number) {
+        return String.valueOf(number)
+                .chars()
+                .map(a->Character.getNumericValue(a))
+                .mapToObj(value->"*".repeat(value))
+                .collect(Collectors.joining());
+    }
+
+
 
 ✅ Задача 5: Переверни цифри в числі
 Умова:

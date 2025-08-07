@@ -33,5 +33,12 @@ public class Main3 {
         return result.isEmpty() ? -1 : Integer.parseInt(result);
     }
 
+    public String practice4 (int number) {
+        return String.valueOf(number)
+                .chars()
+                .map(a->Character.getNumericValue(a))
+                .mapToObj(value->"*".repeat(value))
+                .collect(Collectors.joining());
+    }
 
 }
