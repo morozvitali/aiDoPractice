@@ -134,6 +134,16 @@ String.valueOf(n)
 Підказка:
 new StringBuilder(str).reverse().toString()
 
+👉 Якщо число буде від'ємним (-123), 
+то програма викине NumberFormatException:
+
+        int result = Integer
+                .parseInt(new StringBuilder(String.valueOf(Math.abs(number)))
+                .reverse()
+                .toString());
+        return number < 0 ? -result : result;
+
+
 ✅ Задача 6: Заміни кожну цифру на її квадрат, 
 якщо вона непарна
 Умова:

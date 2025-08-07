@@ -1,4 +1,4 @@
-package stream.task12_plus;
+package stream.task12_plus_valueOf_10;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 

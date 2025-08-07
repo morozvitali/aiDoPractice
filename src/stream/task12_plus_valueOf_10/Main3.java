@@ -1,4 +1,4 @@
-package stream.task12_plus;
+package stream.task12_plus_valueOf_10;
 
 import java.util.stream.Collectors;
 
@@ -40,5 +40,14 @@ public class Main3 {
                 .mapToObj(value->"*".repeat(value))
                 .collect(Collectors.joining());
     }
+
+    public int practice5 (int number) {
+        int result = Integer
+                .parseInt(new StringBuilder(String.valueOf(Math.abs(number)))
+                .reverse()
+                .toString());
+        return number < 0 ? -result : result;
+    }
+
 
 }
