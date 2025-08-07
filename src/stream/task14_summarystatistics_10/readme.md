@@ -128,6 +128,13 @@ String[] words = {"apple", "orange", "banana",
 [aeiou]	🔤 Одна літера з множини: a, e, i, o, u
 .*	✨ Будь-яка кількість будь-яких символів 
 (включаючи жодного)
+
+    public String practice5 () {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+        return Arrays.stream(words).filter(w -> w.matches("(?i)^[aeiou].*")).min(Comparator.comparing(w->w.length())).orElse("empty");
+    }
+
 -------------------------------------------------
 
 ✅ Завдання 6: Побудуй Map<Перша_літера, 
