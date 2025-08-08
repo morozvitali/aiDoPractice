@@ -476,6 +476,12 @@ mapping() — спочатку трансформує елементи,
 потім groupingBy(...,
 counting())
 
+    public Map <Integer, Long> practice17 () {
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
+        return Arrays.stream(words).filter(w->w.chars().anyMatch(c->"aeiou".indexOf(c) >=0)).collect(Collectors.groupingBy(String::length, Collectors.counting()));
+    }
+
     public Map <Integer, Long> practice2 () {
         String[] words = {"apple", "banana",
                 "dog", "kiwi", "plum"};
