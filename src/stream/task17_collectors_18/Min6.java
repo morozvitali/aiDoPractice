@@ -71,6 +71,11 @@ public class Min6 {
         return list.stream().collect(Collectors.groupingBy(value -> value%3, Collectors.reducing(0, Integer::sum)));
     }
 
+    public String practice13 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.reducing("", (a,b)-> a.length() >= b.length() ? a:b));
+    }
 
 
 }
