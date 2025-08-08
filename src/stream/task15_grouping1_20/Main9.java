@@ -98,5 +98,9 @@ public class Main9 {
         return map.entrySet().stream().max(Comparator.comparingLong(a->a.getValue())).map(a->a.getKey()).orElse("");
     }
 
+    public boolean practice15 (Map <String, Integer> map) {
+        return map.values().stream().allMatch(value -> value % 2 ==0);
+    }
+
 
 }
