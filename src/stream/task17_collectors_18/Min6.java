@@ -35,4 +35,22 @@ public class Min6 {
         return numbers.stream().collect(Collectors.partitioningBy(value->value%2==0));
     }
 
+    public Map <Character, List<String>> practice6 () {
+        List<String> words = List.of("apple",
+                "ant", "banana", "bat", "car");
+        return words.stream().collect(Collectors.groupingBy(word->word.charAt(0), Collectors.mapping(word->word.toUpperCase(), Collectors.toList())));
+    }
+
+    public void practice7 () {
+
+    }
+
+
+
+
+
+
+
+
+
 }
