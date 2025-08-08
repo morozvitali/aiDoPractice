@@ -41,16 +41,17 @@ map.entrySet() → filter(value > 1) → count()
 
 ✅ Очікуване рішення:
 
-public static int countDuplicates(String text) {
-Map<Character, Long> map = text.toLowerCase()
-.chars().mapToObj(c -> (char) c)
-.collect(Collectors.groupingBy(Function.identity(), 
-Collectors.counting()));
-
-    return (int) map.entrySet().stream()
-        .filter(e -> e.getValue() > 1)
-        .count();
+    public Long practice1 (String s) {
+        Map <Character, Long> map = s.toLowerCase().chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return map.entrySet().stream().filter(e->e.getValue()>1).count();
     }
+
+🔍 Що тут відбувається:
+toLowerCase() — щоб 'A' і 'a' вважалися однаковими.
+chars().mapToObj(...) — отримуємо потік символів як Character.
+groupingBy(..., counting()) — групуємо символи та рахуємо кількість кожного.
+filter(e -> e.getValue() > 1) — залишаємо тільки ті, що повторюються.
+count() — рахуємо скільки таких різних символів.
 
 ----------------------------------------------------------
 

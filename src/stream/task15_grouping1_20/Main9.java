@@ -11,4 +11,10 @@ public class Main9 {
                 "dry", "orange", "sun"};
         return Arrays.stream(words).collect(Collectors.toMap(Function.identity(), word->word.chars().anyMatch(ch->"aeiou".indexOf(ch)>=0)));
     }
+
+    public Long practice1 (String s) {
+        Map <Character, Long> map = s.toLowerCase().chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return map.entrySet().stream().filter(e->e.getValue()>1).count();
+    }
+
 }
