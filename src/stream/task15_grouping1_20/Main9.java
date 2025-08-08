@@ -102,5 +102,11 @@ public class Main9 {
         return map.values().stream().allMatch(value -> value % 2 ==0);
     }
 
+    public Map <Integer, List <String>> practice16 () {
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(word-> word.length(), Collectors.mapping(word -> word.toUpperCase(), Collectors.toList())));
+    }
+
 
 }
