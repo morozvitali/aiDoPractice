@@ -280,13 +280,15 @@ Collectors.averagingDouble(n -> n) — обчислює
 .boxed() — перетворює int на Integer, щоб можна 
 було використовувати Stream API для об'єктів.
 
+    public Map <Integer, Double> practice10 () {
+        return List.of(3, 6, 7, 8, 9, 10, 12).stream().collect(Collectors.groupingBy(value-> value %3, Collectors.averagingDouble(n->n)));
+    }
 
 **🎯 Для кожної задачі тренуй:
 System.out.println(map.keySet());
 System.out.println(map.values());
 for (var e : map.entrySet()) {
 System.out.println(e.getKey() + " → " + e.getValue());}**
-
 
 ---------------------------------------------------------
 

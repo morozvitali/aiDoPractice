@@ -60,6 +60,15 @@ public class Main9 {
          return List.of(1, 2, 3, 4, 5).stream().collect(Collectors.groupingBy(value -> value %2 == 0 ? "even" : "odd"));
     }
 
+    public Map <Integer, Double> practice10 () {
+        return List.of(3, 6, 7, 8, 9, 10, 12)
+                .stream()
+                .collect(Collectors
+                        .groupingBy(value-> value %3,
+                                Collectors
+                                        .averagingDouble(n->n)));
+    }
+
 
 
 }
