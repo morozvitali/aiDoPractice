@@ -1,4 +1,4 @@
-package stream.task15_grouping1_20;
+package stream.task15_grouping_20;
 
 import java.util.*;
 import java.util.function.Function;
