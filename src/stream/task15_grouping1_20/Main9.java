@@ -29,13 +29,16 @@ public class Main9 {
         Arrays.stream(words).collect(Collectors.groupingBy(value -> value.length(), Collectors.counting()));
     }
 
-    public void practice () {
+    public void practice5 () {
         String[] words = {"apple", "banana", "avocado",
                 "blueberry", "bleuberry", "apricot"};
-        Map<Character, List<String>> map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0)))
+        Map<Character, List<String>> map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0)));
     }
 
-
+    public int practice6 () {
+        Map <Integer, Long> map = List.of(1,2,2,3,3,3,4,4).stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return map.entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
+    }
 
 
 
