@@ -23,4 +23,13 @@ public class Min6 {
     }
 
 
+    public Map <Integer, Long> practice4 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream()
+                .collect(Collectors.groupingBy(String::length, Collectors.counting()));
+    }
+
+
+
 }
