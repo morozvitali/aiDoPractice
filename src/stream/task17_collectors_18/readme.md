@@ -121,7 +121,7 @@ return words.stream().collect(Collectors.groupingBy(word->word.charAt(0), Collec
 toSet(), collectingAndThen, groupingBy(..., mapping(...)), 
 partitioningBy(...) з підрахунком.
 
-✅ Задача ---те саме---: groupingBy + mapping до довжини
+✅ Задача 7: groupingBy + mapping до довжини
 -
 📌 Є список слів. Згрупуй слова за першою літерою, 
 але замість самих слів збережи лише їхню довжину.

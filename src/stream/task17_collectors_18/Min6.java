@@ -47,7 +47,10 @@ public class Min6 {
         return words.stream().collect(Collectors.groupingBy(word->word.charAt(0), Collectors.mapping(value->value.length(), Collectors.toList())));
     }
 
-
+    public Map <Boolean, Long> practice8 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy(value->value %2 ==0, Collectors.counting()));
+    }
 
 
 
