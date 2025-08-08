@@ -41,8 +41,10 @@ public class Min6 {
         return words.stream().collect(Collectors.groupingBy(word->word.charAt(0), Collectors.mapping(word->word.toUpperCase(), Collectors.toList())));
     }
 
-    public void practice7 () {
-
+    public Map<Character, List<Integer>> practice7 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.groupingBy(word->word.charAt(0), Collectors.mapping(value->value.length(), Collectors.toList())));
     }
 
 
