@@ -120,6 +120,10 @@ public class Main9 {
         return Arrays.stream(words).collect(Collectors.partitioningBy(word -> word.chars().anyMatch(c->"aeiou".indexOf(c) >=0)));
     }
 
-    public void
-
+    public Map <Integer, Long> practice19 () {
+        String[] words = {"apple", "banana",
+                "orange", "umbrella",
+                "ant", "dog", "egg"};
+        return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).collect(Collectors.groupingBy(String::length, Collectors.counting()));
+    }
 }
