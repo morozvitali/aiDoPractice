@@ -80,14 +80,23 @@ public class Min6 {
         return words.stream().collect(Collectors.groupingBy(a->a.charAt(0), Collectors.collectingAndThen(Collectors.toList(), list->list.stream().sorted(Comparator.comparingInt(String::length)).toList())));
     }
 
-    public void practice15 () {
+    public Map <Integer, List <String>> practice15 () {
         List<String> words = List.of("hi", "book",
                 "sun", "day", "Java", "sky");
-        words.stream().collect(Collectors.groupingBy(
+        return words.stream().collect(Collectors.groupingBy(
                 String::length,
                 TreeMap::new,
                 Collectors.toList()
         ));
+    }
+
+    public void practice16 (Map <Integer, List <String>> map) {
+        map.entrySet().stream().sorted(Comparator.comparingInt(e->e.getValue().size()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (a,b) -> b, LinkedHashMap::new
+                ));
     }
 
 
