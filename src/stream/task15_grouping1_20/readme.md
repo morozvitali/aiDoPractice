@@ -327,14 +327,23 @@ groupingBy(word -> word.charAt(0), counting())
 entrySet().stream().sorted(Map.Entry
 .comparingByValue(Comparator.reverseOrder()))
 
-    public void practice12 () {
-        Map <Character, Long> map = new HashMap<>();
-        map.put('a', 2L);
-        map.put('b', 5L);
-        map.put('c', 1L);
-
-        map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+    public Map <Character, Long> practice12 (Map <Character, Long> map) {
+        return map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
     }
+
+.collect(Collectors.toMap(
+Map.Entry::getKey,
+Map.Entry::getValue,
+(e1, e2) -> e1,
+LinkedHashMap::new  // зберігаємо порядок вставки
+));
+}
+
+Пояснення:
+.entrySet().stream() — створюємо потік пар ключ-значення.
+.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())) — сортуємо за значенням у зворотньому порядку.
+.collect(Collectors.toMap(...)) — збираємо назад у Map.
+LinkedHashMap::new — потрібен, щоб зберегти порядок елементів згідно сортування (у звичайному HashMap порядок не гарантовано).
 
 ---------------------------------------------------------
 
