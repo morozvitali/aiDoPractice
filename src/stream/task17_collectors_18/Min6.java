@@ -59,7 +59,9 @@ public class Min6 {
         return  words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
     }
 
-
+    public String practice10 (List <Integer> list) {
+        return list.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Count " + count));
+    }
 
 
 

@@ -228,6 +228,7 @@ Collectors.toSet()
 Це обгортка для колектора, 
 яка дозволяє виконати післяобробку 
 результату колекції.
+
 collectingAndThen(baseCollector, 
 finisherFunction)
 baseCollector — будь-який колектор 
