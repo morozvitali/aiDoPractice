@@ -74,4 +74,14 @@ public class Main9 {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     }
 
+    public Character practice11 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        Map<Character, Long> map = Arrays.stream(words)
+                .collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()));
+        return map.entrySet().stream()
+                .max(Comparator.comparingLong(n->n.getValue()))
+                .map(Map.Entry::getKey)
+                .orElse(null);
+    }
 }

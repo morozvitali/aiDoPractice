@@ -305,7 +305,16 @@ System.out.println(e.getKey() + " → " + e.getValue());}**
 🧠 Підказка:
 groupingBy(word -> word.charAt(0), counting())
 
-.entrySet().stream().max(comparingByValue())
+    public Character practice11 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        Map<Character, Long> map = Arrays.stream(words)
+                .collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()));
+        return map.entrySet().stream()
+                .max(Comparator.comparingLong(n->n.getValue()))
+                .map(Map.Entry::getKey)
+                .orElse(null);
+    }
 
 ---------------------------------------------------------
 
