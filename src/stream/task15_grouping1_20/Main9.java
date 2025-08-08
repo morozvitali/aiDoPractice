@@ -84,4 +84,11 @@ public class Main9 {
                 .map(Map.Entry::getKey)
                 .orElse(null);
     }
+
+
+    public Map <Character, Integer> practice13 () {
+        String[] words = {"a10", "b20",
+                "a5", "b7", "b12", "a6"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
+    }
 }

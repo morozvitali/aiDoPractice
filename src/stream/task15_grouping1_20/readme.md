@@ -319,6 +319,7 @@ groupingBy(word -> word.charAt(0), counting())
 ---------------------------------------------------------
 
 ✅ Задача 12: Сортування Map за значенням
+-
 📋 Умова:
 Є Map з літерами та кількістю входжень. Потрібно 
 вивести всі пари, відсортовані за значенням 
@@ -371,6 +372,15 @@ LinkedHashMap::new — потрібен, щоб зберегти порядок 
 Integer.parseInt(s.substring(1))
 
 groupingBy(..., summingInt(...))
+
+    public Map <Character, Integer> practice13 () {
+        String[] words = {"a10", "b20",
+                "a5", "b7", "b12", "a6"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
+    }
+}
+
+
 
     public Map<Character, Integer> practice13() {
     String[] words = {"a10", "b20", 
