@@ -67,15 +67,17 @@ count() — рахуємо скільки таких різних символі
 .collect(groupingBy(..., counting()))
 Collections.max(map.entrySet(), comparingByValue()).getKey()
 
-    public String practice6 () {
-        String s = "java is fun and java is powerful";
-        Map <String, Long> map = Arrays.stream(s.split(" "))
-            .collect(Collectors
-                .groupingBy(a->a, Collectors.counting()))
-        return Collections.max(map.entrySet(), 
-            Comparator.comparingLong(entry -> entry
-                .getValue())).getKey();
+    public String practice2 (String s) {
+        Map <String, Long> map = Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return Collections.max(map.entrySet(), Comparator.comparingLong(entry -> entry.getValue())).getKey();
     }
+
+🔍 Що відбувається:
+split(" ") — розділяє текст на слова.
+groupingBy(Function.identity(), counting()) — групує слова і рахує кількість кожного.
+Collections.max(..., comparingLong(...)) — знаходить запис з найбільшою кількістю.
+getKey() — повертає саме слово, а не кількість.
+
 
 -----------------------------------------------------------
 
