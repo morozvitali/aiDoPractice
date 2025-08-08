@@ -67,7 +67,9 @@ public class Min6 {
         return list.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.joining(", ")));
     }
 
-
+    public Map <Integer, Integer> practice12 (List <Integer> list) {
+        return list.stream().collect(Collectors.groupingBy(value -> value%3, Collectors.reducing(0, Integer::sum)));
+    }
 
 
 
