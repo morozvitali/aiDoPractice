@@ -24,4 +24,8 @@ public class Main9 {
     public Map <Integer, Integer> practice3 () {
         return List.of(12, 23, 34, 45, 16, 7).stream().collect(Collectors.groupingBy(value -> value%10, Collectors.summingInt(n->n)));
     }
+    public void practice4 () {
+        String[] words = {"one", "two", "three", "six", "seven"};
+        Arrays.stream(words).collect(Collectors.groupingBy(value -> value.length(), Collectors.counting()));
+    }
 }
