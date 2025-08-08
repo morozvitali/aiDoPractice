@@ -246,6 +246,10 @@ entrySet().stream().anyMatch(entry -> entry.getValue() > 1)
 .collect(Collectors
 .groupingBy(n -> n % 2 == 0 ? "even" : "odd"))
 
+    public Map <String, List <Integer>> practice9 () {
+         return List.of(1, 2, 3, 4, 5).stream().collect(Collectors.groupingBy(value -> value %2 == 0 ? "even" : "odd"));
+    }
+
 -----------------------------------------------------------
 
 ✅ Задача 10: Порахувати середнє значення по групах
