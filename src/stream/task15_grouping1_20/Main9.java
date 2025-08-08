@@ -40,7 +40,16 @@ public class Main9 {
         return map.entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
     }
 
-
+    public Map <Character, Long> practice7 () {
+        return "ab123cc44a77"
+                .chars()
+                .filter(c->Character.isDigit(c))
+                .mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ));
+    }
 
 
 

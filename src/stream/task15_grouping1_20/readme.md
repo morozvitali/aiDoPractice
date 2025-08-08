@@ -191,6 +191,18 @@ map.entrySet() → max(Map.Entry::getValue) → .getKey()
 
 groupingBy(c -> c, counting())
 
+    public Map <Character, Long> practice7 () {
+        return "ab123cc44a77"
+                .chars()
+                .filter(c->Character.isDigit(c))
+                .mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(
+                        Function.identity(),
+                        Collectors.counting()
+                ));
+    }
+
+
 -----------------------------------------------------------
 
 ✅ Задача 8: Чи є дублікат у масиві?
