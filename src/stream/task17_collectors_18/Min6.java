@@ -30,6 +30,9 @@ public class Min6 {
                 .collect(Collectors.groupingBy(String::length, Collectors.counting()));
     }
 
-
+    public Map <Boolean, List <Integer>> practice5 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy(value->value%2==0));
+    }
 
 }
