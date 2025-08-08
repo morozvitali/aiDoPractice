@@ -63,7 +63,9 @@ public class Min6 {
         return list.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Count " + count));
     }
 
-
+    public Map <Character, String> practice11 (List <String> list) {
+        return list.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.joining(", ")));
+    }
 
 
 
