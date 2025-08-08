@@ -51,7 +51,10 @@ public class Main9 {
                 ));
     }
 
-
+    public boolean practice8 () {
+        Map <Integer, Long> map = List.of(1, 2, 3, 2).stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return map.entrySet().stream().anyMatch(entry -> entry.getValue() > 1);
+    }
 
 
 
