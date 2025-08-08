@@ -114,5 +114,12 @@ public class Main9 {
         return Arrays.stream(words).filter(w->w.chars().anyMatch(c->"aeiou".indexOf(c) >=0)).collect(Collectors.groupingBy(String::length, Collectors.counting()));
     }
 
+    public Map <Boolean, List <String>> practice18 () {
+        String[] words = {"apple", "sky",
+                "banana", "dry", "orange"};
+        return Arrays.stream(words).collect(Collectors.partitioningBy(word -> word.chars().anyMatch(c->"aeiou".indexOf(c) >=0)));
+    }
+
+    public void
 
 }

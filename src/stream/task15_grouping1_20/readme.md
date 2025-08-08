@@ -488,16 +488,6 @@ counting())
         return Arrays.stream(words).filter(w->w.chars().anyMatch(c->"aeiou".indexOf(c) >=0)).collect(Collectors.groupingBy(w->w.length(), Collectors.counting()));
     }
 
-
-return Arrays.stream(words)
-.filter(b-> b
-.chars()
-.map(c -> (char) c)
-.filter(ch -> "aeiou"
-.indexOf(ch) >= 0).findAny().isPresent())
-.collect(Collectors
-.groupingBy(a->a.length(), Collectors.counting()));
-
 -------------------------------------------------------
 
 ✅ Завдання 18: Розділи слова на 2 групи —
@@ -514,6 +504,13 @@ false=[sky, dry]
 
 📌 Тип: Map<Boolean, List<String>>
 🧠 Підказка: Collectors.partitioningBy(...)
+
+    public Map <Boolean, List <String>> practice18 () {
+        String[] words = {"apple", "sky",
+                "banana", "dry", "orange"};
+        return Arrays.stream(words).collect(Collectors.partitioningBy(word -> word.chars().anyMatch(c->"aeiou".indexOf(c) >=0)));
+    }
+
 
 -----------------------------------------------------
 
