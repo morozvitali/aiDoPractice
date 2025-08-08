@@ -28,4 +28,21 @@ public class Main9 {
         String[] words = {"one", "two", "three", "six", "seven"};
         Arrays.stream(words).collect(Collectors.groupingBy(value -> value.length(), Collectors.counting()));
     }
+
+    public void practice () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        Map<Character, List<String>> map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0)))
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
