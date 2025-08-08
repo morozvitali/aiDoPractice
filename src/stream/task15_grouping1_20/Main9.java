@@ -91,4 +91,12 @@ public class Main9 {
                 "a5", "b7", "b12", "a6"};
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
     }
+
+    public String practice14() {
+        String[] words = {"java", "engineer", "platform", "stream"};
+        Map <String,Long> map = Arrays.stream(words).collect(Collectors.toMap(w->w, w->w.chars().filter(c->"aeiou".indexOf(c) >=0).count()));
+        return map.entrySet().stream().max(Comparator.comparingLong(a->a.getValue())).map(a->a.getKey()).orElse("");
+    }
+
+
 }
