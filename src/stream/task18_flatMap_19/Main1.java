@@ -107,7 +107,10 @@ public class Main1 {
         return list.stream().filter(value-> value instanceof String).map(value-> (String) value).toList();
     }
 
-
+    public List <Integer> practice10 () {
+        List <Object> list = List.of("a", 3, 15, 11, 9, "99");
+        return list.stream().filter(value -> value instanceof Integer && (Integer)value > 10).map(value->(Integer)value).toList();
+    }
 
 
 }

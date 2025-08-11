@@ -367,6 +367,11 @@ List.of("a", 3, 15, 11, 9, "99") → [15, 11]
 🧠 Підказка:
 x instanceof Integer && (Integer)x > 10
 
+    public List <Integer> practice10 () {
+        List <Object> list = List.of("a", 3, 15, 11, 9, "99");
+        return list.stream().filter(value -> value instanceof Integer && (Integer)value > 10).map(value->(Integer)value).toList();
+    }
+
 
 ✅ Задача 11: Фільтр істини
 📋 Умова:
