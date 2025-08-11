@@ -1,9 +1,7 @@
 package stream.task18_flatMap_19;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main1 {
@@ -121,5 +119,12 @@ public class Main1 {
         List <Object> list = List.of("hi", 123, "bye", false);
         return list.stream().filter(val->val instanceof String).map(val-> ((String) val).toUpperCase()).toList();
     }
+
+    public String practice13 (String sentence) {
+        Map<Character, Long> map = sentence.toLowerCase().chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(c->c, Collectors.counting()));
+        return sentence.chars().mapToObj(c->(char)c).map(ch->map.get(ch) >1 ? ")" : "(")
+                .collect(Collectors.joining());
+    }
+
 
  }
