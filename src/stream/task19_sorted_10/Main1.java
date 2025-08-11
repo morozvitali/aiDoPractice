@@ -22,6 +22,9 @@ public class Main1 {
         return words.stream().map(a->a.toLowerCase()).sorted(Comparator.naturalOrder()).collect(Collectors.toList());
     }
 
-
+    public List <Integer> practice3 () {
+        List<Integer> numbers = List.of(3, 7, 1, 9, 2);
+        return numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+    }
 
 }
