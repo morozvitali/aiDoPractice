@@ -102,6 +102,12 @@ public class Main1 {
         return list.stream().filter(value -> value instanceof Integer).map(value -> (Integer) value).collect(Collectors.toList());
     }
 
+    public List <String> practice9 () {
+        List <Object> list = List.of("hello", 1, 2.5, true, "world");
+        return list.stream().filter(value-> value instanceof String).map(value-> (String) value).toList();
+    }
+
+
 
 
 }

@@ -348,6 +348,15 @@ List.of("hello", 1, 2.5, true, "world") → ["hello", "world"]
 🧠 Підказка:
 x instanceof String
 
+    public List <String> practice9 () {
+        List <Object> list = List.of("hello", 1, 2.5, true, "world");
+        return list.stream().filter(value-> value instanceof String).map(value-> (String) value).toList();
+    }
+📌 Пояснення:
+.filter(value -> value instanceof String) — залишаємо лише рядки
+.map(value -> (String) value) — приводимо тип елемента зі Object до String
+.toList() — збираємо результат у List<String>
+
 ✅ Задача 10: Розумний фільтр
 📋 Умова:
 Залиш лише ті елементи, які є числами (Integer) і більші за 10.
