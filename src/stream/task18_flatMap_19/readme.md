@@ -329,6 +329,15 @@ return input.stream()
 .filter(x -> x instanceof Integer)
 .collect(Collectors.toList());
 }
+
+    public List <Integer> practice8 () {
+        List list = List.of(10, "hello", true, 42, false, "42");
+
+        return list.stream().filter(value -> value instanceof Integer).toList();
+    }
+
+
+
 ✅ Задача 9: Залишити рядки
 📋 Умова:
 Залиш у списку лише ті елементи, які є рядками (String).

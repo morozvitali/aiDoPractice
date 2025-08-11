@@ -96,6 +96,12 @@ public class Main1 {
         return b==0 ? a :gcd (b, a%b);
     }
 
+    public List <Integer> practice8 () {
+        List <Object> list = List.of(10, "hello", true, 42, false, "42");
+
+        return list.stream().filter(value -> value instanceof Integer).map(value -> (Integer) value).collect(Collectors.toList());
+    }
+
 
 
 }
