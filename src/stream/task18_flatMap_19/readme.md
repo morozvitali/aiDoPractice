@@ -169,6 +169,23 @@ int[][] data = {
 {-1, 4}
 };
 🧪 Очікувано: 5 * 2 * 4 = 40
+
+
+    public void practice3 () {
+        int[][] data = {
+                {-3, 5},
+                {2},
+                {-1, 4}
+        };
+        
+        Arrays.stream(data)
+                .flatMap(arr->Arrays.stream(arr)
+                        .boxed())
+                .filter(value -> value > 0)
+                .reduce((a,b)->a*b)
+                .orElse(-1);
+    }
+
 📦 Рішення:
 Arrays.stream(data)
 .flatMapToInt(Arrays::stream)

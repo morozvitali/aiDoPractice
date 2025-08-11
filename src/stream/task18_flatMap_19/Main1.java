@@ -18,23 +18,36 @@ public class Main1 {
                 .collect(Collectors.toList());
     }
 
-    public void practice2 () {
+    public int practice2 () {
         int[][] data = {
                 {3, 11},
                 {6, 7},
                 {10}
         };
 
-        Arrays.stream(data)
+        return Arrays.stream(data)
                 .flatMap(arr -> Arrays.stream(arr)
                         .boxed())
                 .filter(a->a%2==0)
                 .min(Comparator.naturalOrder())
                 .orElse(-1);
-
-
-
-                .collect(Collectors.toList());
     }
+
+    public int practice3 () {
+        int[][] data = {
+                {-3, 5},
+                {2},
+                {-1, 4}
+        };
+
+        return Arrays.stream(data)
+                .flatMap(arr->Arrays.stream(arr)
+                        .boxed())
+                .filter(value -> value > 0)
+                .reduce((a,b)->a*b)
+                .orElse(-1);
+    }
+
+
 
 }
