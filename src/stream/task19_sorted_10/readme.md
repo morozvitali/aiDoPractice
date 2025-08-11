@@ -271,9 +271,12 @@ Comparator.comparingInt((String w) -> countVowels(w))
 
     public List <String> practice7 () {
         List<String> words = List.of("apple", "banana", "cherry", "kiwi", "grape");
-        return words.stream().sorted(Comparator.comparing(s->(String)s.chars().filter(c->"aeiou".indexOf(c)>=0).count()).thenComparing(Comparator.naturalOrder()));
+        return words.stream().sorted(Comparator.comparingInt((String s)->countVowels(s)).thenComparing(Comparator.naturalOrder())).toList();
     }
 
+    public int countVowels (String s) {
+        return (int) s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
 
 
 📦 Початковий код:
