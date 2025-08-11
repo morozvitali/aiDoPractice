@@ -79,4 +79,14 @@ public class Main1 {
                 "world", "no", "yes");
         data.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
     }
+
+    public void practice11 () {
+        List<String> data = List.of("hi", "hello",
+                "world", "no", "yes");
+
+        data.stream().filter(w->w.length()>6)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list ->
+            list.isEmpty() ? "empty" : list.get(0)
+        ));
+    }
 }
