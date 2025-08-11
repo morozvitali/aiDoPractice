@@ -1,6 +1,7 @@
 package stream.task18_flatMap_19;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,6 +18,23 @@ public class Main1 {
                 .collect(Collectors.toList());
     }
 
+    public void practice2 () {
+        int[][] data = {
+                {3, 11},
+                {6, 7},
+                {10}
+        };
 
+        Arrays.stream(data)
+                .flatMap(arr -> Arrays.stream(arr)
+                        .boxed())
+                .filter(a->a%2==0)
+                .min(Comparator.naturalOrder())
+                .orElse(-1);
+
+
+
+                .collect(Collectors.toList());
+    }
 
 }
