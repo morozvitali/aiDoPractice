@@ -1,4 +1,4 @@
-package stream.task18_flatMap_19;
+package stream.task18_flatMap_13;
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;

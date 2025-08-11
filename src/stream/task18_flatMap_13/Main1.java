@@ -1,7 +1,6 @@
-package stream.task18_flatMap_19;
+package stream.task18_flatMap_13;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main1 {
