@@ -251,7 +251,8 @@ return words.stream()
 }
 ✅ Задача 7: Сортувати за кількістю голосних
 📋 Умова:
-Порахуй у словах голосні (a, e, i, o, u), і відсортуй за їх кількістю. Якщо кількість однакова — по алфавіту.
+Порахуй у словах голосні (a, e, i, o, u), і відсортуй за їх кількістю. 
+Якщо кількість однакова — по алфавіту.
 
 📥 Вхід:
 
@@ -267,6 +268,14 @@ List<String> words = List.of("apple", "banana", "cherry", "kiwi", "grape");
 Comparator.comparingInt((String w) -> countVowels(w))
 .thenComparing(Comparator.naturalOrder())
 )
+
+    public List <String> practice7 () {
+        List<String> words = List.of("apple", "banana", "cherry", "kiwi", "grape");
+        return words.stream().sorted(Comparator.comparing(s->(String)s.chars().filter(c->"aeiou".indexOf(c)>=0).count()).thenComparing(Comparator.naturalOrder()));
+    }
+
+
+
 📦 Початковий код:
 
 public List<String> sortByVowelCount(List<String> words) {
