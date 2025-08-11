@@ -32,7 +32,10 @@ public class Main1 {
         return nums.stream().sorted(Comparator.comparingInt(n->(int)n%2).thenComparing(n->(int)n)).collect(Collectors.toList());
     }
 
-
+    public List <String> practice6 () {
+        List<String> words = List.of("kiwi", "apple", "banana", "grape", "plum");
+        return words.stream().filter(s->s.length() >4).sorted(Comparator.comparing(value -> value.charAt(value.length()-1))).toList();
+    }
 
 
 }
