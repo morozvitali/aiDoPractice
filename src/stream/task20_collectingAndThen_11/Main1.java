@@ -74,4 +74,9 @@ public class Main1 {
         System.out.println(result);
     }
 
+    public void practice10 () {
+        List<String> data = List.of("hi", "hello",
+                "world", "no", "yes");
+        data.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
+    }
 }
