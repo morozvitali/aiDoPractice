@@ -49,8 +49,8 @@ data.stream()
 [java, python, c++, go, kotlin]
 🧪 Завдання: flatMap
 
-
 ✅ Задача 1: Зібрати всі унікальні слова з колекції речень
+-
 
 List<String> sentences = List.of(
 "Java is powerful",
@@ -75,6 +75,15 @@ return sentences.stream()
 .distinct()
 .collect(Collectors.toList());
 }
+
+    public void practice1 () {
+        List<String> sentences = List.of(
+                "Java is powerful",
+                "Streams are cool",
+                "Java makes sense"
+        );
+        sentences.stream().flatMap(sentence -> Arrays.stream(sentence.split(""))).distinct().collect(Collectors.toList());
+    }
 
 
 Так, Віталію! 😄 Ти ідеально підловив суть:
