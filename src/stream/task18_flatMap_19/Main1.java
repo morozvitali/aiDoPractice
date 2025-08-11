@@ -84,4 +84,18 @@ public class Main1 {
         IntSummaryStatistics stats = Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2!=0).summaryStatistics();
         int result = stats.getCount() == 0 ? -1 : (int) stats.getAverage();
     }
+
+    public void practce7 () {
+        int[][] data = {
+                {12},
+                {24, 36}
+        };
+        Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main1::gcd).orElse(-1);
+    }
+    public static int gcd (int a, int b) {
+        return b==0 ? a :gcd (b, a%b);
+    }
+
+
+
 }

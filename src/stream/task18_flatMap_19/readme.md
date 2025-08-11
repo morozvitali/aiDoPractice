@@ -273,6 +273,18 @@ int[][] data = {
 {24, 36}
 };
 🧪 Очікувано: 12
+
+    public void practce7 () {
+        int[][] data = {
+                {12},
+                {24, 36}
+        };
+        Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main1::gcd).orElse(-1);
+    }
+    public static int gcd (int a, int b) {
+        return b==0 ? a :gcd (b, a%b);
+    }
+
 📦 Рішення:
 Arrays.stream(data)
 .flatMapToInt(Arrays::stream)
@@ -283,6 +295,8 @@ Arrays.stream(data)
 static int gcd(int a, int b) {
 return b == 0 ? a : gcd(b, a % b);
 }
+
+
 🎁 Бонус: чому flatMapToInt?
 🔧 Бо flatMap(...) повертає Stream<Stream<T>>, а нам потрібен IntStream.
 Варіанти:
