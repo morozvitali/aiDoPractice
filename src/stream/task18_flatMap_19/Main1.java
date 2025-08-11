@@ -117,5 +117,9 @@ public class Main1 {
         return list.stream().filter(val -> val instanceof Boolean && (Boolean) val == true).map(val->(Boolean)val).toList();
     }
 
+    public List <String> practice12 () {
+        List <Object> list = List.of("hi", 123, "bye", false);
+        return list.stream().filter(val->val instanceof String).map(val-> ((String) val).toUpperCase()).toList();
+    }
 
  }
