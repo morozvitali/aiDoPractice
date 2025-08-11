@@ -3,6 +3,7 @@ package stream.task20_collectingAndThen_11;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Main1 {
@@ -28,4 +29,19 @@ public class Main1 {
         data.stream().distinct().toList().get(0);
     }
 
+    public Set <Integer> practice5 () {
+        List<Integer> data = List.of(33, 9, 2, 14, 6, 27, 12);
+        return data.stream().filter(a->a>10).collect(Collectors.collectingAndThen(
+                Collectors.toSet(),
+                (Set<Integer> set) -> Collections.unmodifiableSet(set)
+        ));
+    }
+
+    public void practice6 () {
+        List<String> data = List.of("apple", "car",
+                "banana", "hi", "cherry");
+        double average = data.stream().map(a->a.length()).collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
+        System.out.printf("average %.2f%n", average);
+
+    }
 }
