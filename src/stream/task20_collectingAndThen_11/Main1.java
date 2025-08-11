@@ -15,33 +15,33 @@ public class Main1 {
         return data.stream().collect(Collectors.collectingAndThen(Collectors.toList(), List::size));
     }
 
-    public String practice3 () {
+    public String practice3() {
         List<String> data = List.of("apple", "car",
                 "banana", "hi", "cherry");
-        return data.stream().sorted(Comparator.reverseOrder()).collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.get(0)));
+        return data.stream().sorted(Comparator.reverseOrder()).collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.get(0)));
     }
 
-    public void practice4 () {
+    public void practice4() {
         List<Integer> data = List.of(3, 9, 2, 4, 6, 7, 12);
         data.stream().distinct().toList().get(0);
     }
 
-    public Set <Integer> practice5 () {
+    public Set<Integer> practice5() {
         List<Integer> data = List.of(33, 9, 2, 14, 6, 27, 12);
-        return data.stream().filter(a->a>10).collect(Collectors.collectingAndThen(
+        return data.stream().filter(a -> a > 10).collect(Collectors.collectingAndThen(
                 Collectors.toSet(),
                 (Set<Integer> set) -> Collections.unmodifiableSet(set)
         ));
     }
 
-    public void practice6 () {
+    public void practice6() {
         List<String> data = List.of("apple", "car",
                 "banana", "hi", "cherry");
-        double average = data.stream().map(a->a.length()).collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
+        double average = data.stream().map(a -> a.length()).collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
         System.out.printf("average %.2f%n", average);
     }
 
-    public void practice7 () {
+    public void practice7() {
         List<String> data = List.of("apple", "car",
                 "banana", "hi", "cherry");
         Map<Character, List<String>> result = data.stream()
@@ -51,5 +51,16 @@ public class Main1 {
                 ));
     }
 
-
+    public void practice8() {
+        List<String> data = List.of("java", "zip", "jazz");
+        data.stream().filter(w -> w.contains("z"))
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toList(), list -> {
+                            if (list.size() != 1) {
+                                throw new IllegalStateException(("zz"));
+                            }
+                            return list.get(0);
+                        }
+                ));
+    }
 }
