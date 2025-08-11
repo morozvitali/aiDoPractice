@@ -199,7 +199,25 @@ int[][] data = {
 {8, 12},
 {7}
 };
+
 🧪 Очікувано: 12
+
+    public int practice4 () {
+        int[][] data = {
+                {3, 9},
+                {8, 12},
+                {7}
+        };
+        
+        return Arrays.stream(data)
+        .flatMapToInt(arr->Arrays.stream(arr))
+                .filter(value->value%3==0)
+                .max()
+                .orElse(-1);
+    }
+
+
+
 📦 Рішення:
 Arrays.stream(data)
 .flatMapToInt(Arrays::stream)
