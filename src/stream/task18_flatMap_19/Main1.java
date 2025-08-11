@@ -112,5 +112,10 @@ public class Main1 {
         return list.stream().filter(value -> value instanceof Integer && (Integer)value > 10).map(value->(Integer)value).toList();
     }
 
+    public List <Boolean> practice11 () {
+        List <Object> list = List.of("yes", true, false, true, 1);
+        return list.stream().filter(val -> val instanceof Boolean && (Boolean) val == true).map(val->(Boolean)val).toList();
+    }
 
-}
+
+ }
