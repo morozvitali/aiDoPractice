@@ -223,6 +223,11 @@ return nums.stream()
 .collect(Collectors.toList());
 }
 
+    public void practice5 () {
+        List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
+        nums.stream().sorted(Comparator.comparingInt(n->(int)n%2).thenComparing(n->(int)n)).collect(Collectors.toList());
+    }
+
 ✅ Задача 6: Сортувати за останньою літерою слова
 📋 Умова:
 Залиш тільки слова з 4+ символів і відсортуй за останньою літерою.
