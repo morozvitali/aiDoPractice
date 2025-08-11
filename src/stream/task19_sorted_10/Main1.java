@@ -55,6 +55,4 @@ public class Main1 {
         List<Integer> numbers = List.of(3, 2, 5, 6, 4, 1);
         return numbers.stream().sorted(Comparator.comparing((Integer val) -> val%2).thenComparing(Comparator.reverseOrder())).collect(Collectors.toList());
     }
-
-
 }
