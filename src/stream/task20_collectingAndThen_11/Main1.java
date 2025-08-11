@@ -1,9 +1,6 @@
 package stream.task20_collectingAndThen_11;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main1 {
@@ -42,6 +39,17 @@ public class Main1 {
                 "banana", "hi", "cherry");
         double average = data.stream().map(a->a.length()).collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
         System.out.printf("average %.2f%n", average);
-
     }
+
+    public void practice7 () {
+        List<String> data = List.of("apple", "car",
+                "banana", "hi", "cherry");
+        Map<Character, List<String>> result = data.stream()
+                .collect(Collectors.collectingAndThen(
+                        Collectors.groupingBy(word -> word.charAt(0)),
+                        (Map<Character, List<String>> map) -> Collections.unmodifiableMap(map)
+                ));
+    }
+
+
 }
