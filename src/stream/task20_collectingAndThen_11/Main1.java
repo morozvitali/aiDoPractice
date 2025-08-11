@@ -23,6 +23,9 @@ public class Main1 {
         return data.stream().sorted(Comparator.reverseOrder()).collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.get(0)));
     }
 
-
+    public void practice4 () {
+        List<Integer> data = List.of(3, 9, 2, 4, 6, 7, 12);
+        data.stream().distinct().toList().get(0);
+    }
 
 }
