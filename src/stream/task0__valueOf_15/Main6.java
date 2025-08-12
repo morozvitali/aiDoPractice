@@ -41,5 +41,11 @@ public class Main6 {
         return s.chars().map(c->c-'a'+1).boxed().collect(Collectors.toList());
     }
 
+    public List <String> practice7 () {
+        String s = "java";
+        return s.chars().map(Character::toUpperCase)
+                .mapToObj(c->String.valueOf((char)c)).toList();
+    }
+
 
 }
