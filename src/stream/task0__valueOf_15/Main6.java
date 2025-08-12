@@ -63,4 +63,15 @@ public class Main6 {
                 .mapToObj(c->String.valueOf((char)c))
                 .collect(Collectors.joining());
     }
+
+    public int practice10 () {
+        String s = "abc1d2e3f9";
+        return s.chars().filter(Character::isDigit).map(c->Character.getNumericValue(c))
+                .sum();
+    }
+
+    public void practice11 () {
+
+    }
+
 }
