@@ -24,5 +24,9 @@ public class Main6 {
                 .collect(Collectors.toList());
     }
 
+    public List <Integer> practice4 () {
+        String text = "Code";
+        return text.chars().boxed().toList();
+    }
 
 }
