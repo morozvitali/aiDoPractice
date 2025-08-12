@@ -35,4 +35,11 @@ public class Main6 {
                 .mapToObj(c->String.valueOf((char)c))
                 .collect(Collectors.toList());
     }
+
+    public List <Integer> practice6 () {
+        String s = "abcxyz";
+        return s.chars().map(c->c-'a'+1).boxed().collect(Collectors.toList());
+    }
+
+
 }
