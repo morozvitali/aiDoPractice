@@ -70,8 +70,13 @@ public class Main6 {
                 .sum();
     }
 
-    public void practice11 () {
-
+    public String practice11 () {
+        String input = "ABCdefGHIjkl123";
+        return input.chars().filter(c->Character.isAlphabetic(c) && Character.isLowerCase(c))
+                .mapToObj(a->String.valueOf((char)a))
+                .collect(Collectors.joining());
     }
+
+
 
 }
