@@ -29,4 +29,10 @@ public class Main6 {
         return text.chars().boxed().toList();
     }
 
+    public List <String> practice5 () {
+        String input = "hEllO WoRLd";
+        return input.chars().filter(c->Character.isAlphabetic(c) && Character.isUpperCase(c))
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
 }
