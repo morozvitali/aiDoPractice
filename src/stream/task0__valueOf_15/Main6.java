@@ -17,5 +17,12 @@ public class Main6 {
                 .collect(Collectors.toList());
     }
 
+    public List <String> practice3 (String s) {
+        return s.chars()
+                .distinct()
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.toList());
+    }
+
 
 }
