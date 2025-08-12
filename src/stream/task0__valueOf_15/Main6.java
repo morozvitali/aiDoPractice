@@ -51,9 +51,16 @@ public class Main6 {
 
     public Map<Character, Long> practice8 () {
         String s = "banana";
-        return s.chars().filter(Character::isLetter).mapToObj(c->(char)c)
-                .collect(Collectors.groupingBy(c->c, Collectors.counting()));
+        return s.chars().filter(Character::isLetter)
+                .mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(c->c,
+                        Collectors.counting()));
     }
 
-
+    public void practice9 () {
+        String s = "a1b2c3d4";
+        s.chars().filter(c->!Character.isDigit(c))
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.joining());
+    }
 }
