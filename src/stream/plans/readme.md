@@ -1,3 +1,5 @@
+task db h2 project
+
 task0_add_intstream_range_and_intstream_iterator_as_part
 
 
