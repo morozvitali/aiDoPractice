@@ -84,6 +84,12 @@ public class Main6 {
                 .collect(Collectors.toList());
     }
 
+    public void practice13 () {
+        List<Integer> digits = List.of(1, 2, 3, 9);
+        digits.stream().map(c->'0' + c)
+                .collect(Collectors.toList());
+    }
+
 
 
 }
