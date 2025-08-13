@@ -94,20 +94,6 @@ map(a->a.getKey()) ---> map(Map.Entry::getKey)
     }
 map(a->a.getKey()) ---> map(Map.Entry::getKey)
 
-    [шукаємо одну літеру що повторяється]
-
-    Map<Character, Long> → потім max значення
-    List<String> list = List.of("apple",
-        "committee", "banana", "success");
-        list.stream().map(word-> Map.entry(word, word.chars().mapToObj(c->(char)c)
-        .collect(Collectors.groupingBy(c->c, Collectors.counting()))
-        .values().stream()
-        .max(Long::compareTo)
-        .orElse(0L)))
-               .max(Comparator.comparing(Map.Entry::getValue))
-               .map(Map.Entry::getKey)
-               .orElse("empty");
-
 -----------------------------------------------
 
 ✅ Задача 6: Слово з найбільшою сумою ASCII-кодів
