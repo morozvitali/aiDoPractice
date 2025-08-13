@@ -169,7 +169,9 @@ return new StringBuilder(input).reverse().toString();
 
 Завдання 10
 -
-Умова: Є StringBuilder зі словом "abracadabra". Замініть усі 'a' на '*', використовуючи .setCharAt() у циклі.
+Умова: Є StringBuilder зі словом "abracadabra".
+Замініть усі 'a' на '*',
+використовуючи .setCharAt() у циклі.
 
 public class Task10 {
 public static void main(String[] args) {
@@ -182,6 +184,7 @@ sb.setCharAt(i, '*');
 System.out.println(sb); // *br*c*d*br*
 }
 }
+
 Пояснення:
 .setCharAt(index, char) змінює конкретний символ.
 

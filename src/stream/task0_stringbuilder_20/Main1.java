@@ -53,5 +53,20 @@ public String practice9 (String s) {
     return  new StringBuilder(s).toString();
 }
 
+public void practice10 () {
+    StringBuilder sb = new StringBuilder("abracadabra");
+
+    for (int i =0; i <sb.length(); i++) {
+        if (sb.charAt(i) == 'a') {
+            sb.setCharAt(i, '*');
+        }
+    }
+    System.out.println(sb);
+}
+
+
+
+
+
 
 }
