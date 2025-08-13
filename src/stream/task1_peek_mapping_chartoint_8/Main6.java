@@ -1,5 +1,6 @@
 package stream.task1_peek_mapping_chartoint_8;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 public class Main6 {
@@ -29,6 +30,16 @@ public class Main6 {
                 .map(i->array[i])
                 .reduce((a,b)->a*b)
                 .orElse(-1);
+    }
+
+    public void practice6 () {
+        List<String> words = List.of("sun", "apple",
+                "bee", "banana");
+        words.stream().peek(System.out::println)
+                .map(w->w.toUpperCase())
+                .peek(System.out::println)
+                .filter(w->w.length()>3)
+                .forEach(System.out::println);
     }
 
 
