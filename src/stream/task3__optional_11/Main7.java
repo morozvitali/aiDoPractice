@@ -18,4 +18,10 @@ public class Main7 {
         Optional <String> sentence = Optional.of("strr");
         return sentence.filter(s->s.length() >5).orElse("");
     }
+
+    public String practice4 () {
+        Optional <String> name = Optional.of("Vitalii");
+        return name.map(n->"Hello" + n + "!").orElse("");
+    }
+
 }
