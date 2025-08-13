@@ -43,4 +43,6 @@ public class Main1 {
         list.parallelStream().forEachOrdered(sb::append);
         System.out.println(sb);
     }
+
+
 }
