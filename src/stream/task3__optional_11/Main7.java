@@ -13,4 +13,9 @@ public class Main7 {
         Optional<Integer> value = Optional.of(7);
         return value.map(n->n*n).orElse(-1);
     }
+
+    public String practice3 () {
+        Optional <String> sentence = Optional.of("strr");
+        return sentence.filter(s->s.length() >5).orElse("");
+    }
 }
