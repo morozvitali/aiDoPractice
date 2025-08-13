@@ -55,7 +55,12 @@ public class Main6 {
         return map;
     }
 
-
+public void practice8 () {
+    List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
+nums.stream().peek(System.out::println)
+        .filter(value->value%2==0)
+        .forEach(System.out::println);
+}
 
 
 }
