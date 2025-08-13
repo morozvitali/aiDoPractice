@@ -4,6 +4,7 @@
 додайте в кінець " World", а потім виведіть результат.
 -
 public class Task1 {
+
 public static void main(String[] args) {
 StringBuilder sb = new StringBuilder("Hello");
 sb.append(" World");
