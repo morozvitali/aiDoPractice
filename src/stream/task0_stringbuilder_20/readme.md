@@ -67,10 +67,9 @@ System.out.println(sb); // level
 
 Завдання 5
 -
-Умова: Є StringBuilder зі словом "orange". Замініть літери з індексу 2 по 5 на "X".
--
-public class Task5 {
-public static void main(String[] args) {
+Умова: Є StringBuilder зі словом "orange". 
+Замініть літери з індексу 2 по 5 на "X".
+
 StringBuilder sb = new StringBuilder("orange");
 sb.replace(2, 5, "X");
 System.out.println(sb); // orXe

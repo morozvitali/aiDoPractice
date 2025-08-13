@@ -19,5 +19,12 @@ public void practice3 () {
     System.out.println(sb);
 }
 
+public void practice4 () {
+        StringBuilder sb = new StringBuilder("orange");
+        sb.replace(2,5, "X");
+    System.out.println(sb);
+}
+
+
 
 }
