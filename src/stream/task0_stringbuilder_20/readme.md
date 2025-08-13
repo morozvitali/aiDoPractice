@@ -100,7 +100,8 @@ System.out.println(sb); // 123456
 
 Завдання 7
 -
-Умова: Є StringBuilder зі словом "sunshine". Вставте "___" після третьої літери.
+Умова: Є StringBuilder зі словом "sunshine". 
+Вставте "___" після третьої літери.
 -
 public class Task7 {
 public static void main(String[] args) {

@@ -36,6 +36,10 @@ public void practice6 () {
     System.out.println(sb);
 }
 
-
+public void practice7 () {
+        StringBuilder sb = new StringBuilder("sunshine");
+        sb.insert(3, "___");
+    System.out.println(sb);
+}
 
 }
