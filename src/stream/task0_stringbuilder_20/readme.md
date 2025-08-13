@@ -150,7 +150,9 @@ System.out.println(sb); // ACEG
 
 Завдання 9
 -
-Умова: Створіть метод, який приймає String і повертає цей рядок у зворотному порядку, використовуючи StringBuilder.
+Умова: Створіть метод, який приймає String 
+і повертає цей рядок у зворотному порядку, 
+використовуючи StringBuilder.
 
 public class Task9 {
 public static String reverseString(String input) {

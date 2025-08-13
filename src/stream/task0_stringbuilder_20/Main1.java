@@ -49,7 +49,9 @@ public void practice8 () {
     IntStream.iterate(1, i-> i+2).mapToObj(a-> sb.deleteCharAt(a)).limit(sb.length());
 }
 
-public void practice9 () {
-
+public String practice9 (String s) {
+    return  new StringBuilder(s).toString();
 }
+
+
 }
