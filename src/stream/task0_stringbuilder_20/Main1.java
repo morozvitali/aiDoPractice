@@ -119,5 +119,18 @@ public class Main1 {
         System.out.println(sb);
     }
 
+    public void practice17 () {
+        String[] colors = {"red", "green", "blue"};
+        StringBuilder sb = new StringBuilder();
+
+        for (int i =0; i<colors.length; i++) {
+            sb.append(colors[i]);
+            if (i < colors.length -1) {
+                sb.append("-");
+            }
+
+        }
+
+    }
 
 }

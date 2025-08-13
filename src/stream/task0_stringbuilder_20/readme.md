@@ -312,8 +312,7 @@ Character.isDigit() перевіряє, чи символ — цифра.
 
 Завдання 17 Побудувати рядок із масиву
 -
-       public class Task7 {
-       public static void main(String[] args) {
+
        String[] colors = {"red", "green", "blue"};
        StringBuilder sb = new StringBuilder();
 
