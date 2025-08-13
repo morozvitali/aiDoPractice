@@ -40,4 +40,15 @@ public class Main3 {
                 .reduce((a,b)-> a.getValue() > b.getValue() ? a : b)
                 .map(Map.Entry::getKey).orElse("empty");
     }
+
+    public String practice5 () {
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        return list.stream().map(w->Map.entry(w, w.length() - w.chars().distinct().count()))
+                .reduce((a,b) -> a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("");
+    }
+
+
+
 }
