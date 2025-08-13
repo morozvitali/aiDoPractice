@@ -50,7 +50,8 @@ System.out.println(sb); // Ja cool va
 
 Завдання 4
 -
-Умова: Є StringBuilder зі словом "level". Переверніть його (reverse) і виведіть результат.
+Умова: Є StringBuilder зі словом "level". 
+Переверніть його (reverse) і виведіть результат.
 -
 public class Task4 {
 public static void main(String[] args) {

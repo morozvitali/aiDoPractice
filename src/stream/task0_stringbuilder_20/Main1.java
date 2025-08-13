@@ -20,6 +20,12 @@ public void practice3 () {
 }
 
 public void practice4 () {
+        StringBuilder sb = new StringBuilder("level");
+        sb.reverse();
+    System.out.println(sb);
+}
+
+public void practice5 () {
         StringBuilder sb = new StringBuilder("orange");
         sb.replace(2,5, "X");
     System.out.println(sb);
