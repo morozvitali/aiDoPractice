@@ -7,5 +7,10 @@ public class Main1 {
         System.out.println(sb);
     }
 
+public void practice2 () {
+        StringBuilder sb = new StringBuilder("JAVA");
+        sb.insert(2, " cool ");
+    System.out.println(sb);
+}
 
 }
