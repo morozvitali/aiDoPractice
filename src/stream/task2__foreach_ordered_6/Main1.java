@@ -13,4 +13,8 @@ public class Main1 {
         list.parallelStream().forEach(System.out::println);
     }
 
+    public void practice3 () {
+        List<String> list = List.of("A", "B", "C", "D");
+        list.parallelStream().forEachOrdered(System.out::println);
+    }
 }
