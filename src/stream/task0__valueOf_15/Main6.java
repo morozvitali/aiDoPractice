@@ -99,4 +99,9 @@ public class Main6 {
                 .collect(Collectors.toList());
     }
 
+    public Boolean practice15 () {
+        String input = "123456";
+        return input.chars().filter(c->Character.isDigit(c)).count() > 0;
+    }
+
 }
