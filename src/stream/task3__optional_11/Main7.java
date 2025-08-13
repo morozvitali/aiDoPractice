@@ -45,6 +45,9 @@ public class Main7 {
                 .ifPresentOrElse(value -> System.out.println("min " + value), ()-> System.out.println("empty list"));
     }
 
-
+    public void practice8 () {
+        List <String> words = List.of("Java", "Spring");
+        words.stream().findFirst().map(value->value.length()).ifPresentOrElse(len -> System.out.println(" " + len), () -> System.out.println("list is empty"));
+    }
 
 }
