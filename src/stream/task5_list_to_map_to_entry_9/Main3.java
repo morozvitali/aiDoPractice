@@ -56,5 +56,10 @@ public class Main3 {
                 .map(Map.Entry::getKey).orElse("");
     }
 
-
+    public String practice7 () {
+        return Stream.of("alpha", "arena",
+                "java", "banana", "lava").map(w->Map.entry(w, w.chars().filter(c->c=='a').count()))
+                .reduce((a,b) -> a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("");
+    }
 }
