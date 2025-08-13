@@ -17,5 +17,10 @@ public class Main6 {
                 .reduce(-1, (a, b) -> a > b ? a : b);
     }
 
+    public long practice4 (int n) {
+        return String.valueOf(n).chars().map(c->c-'0').filter(d->d>5).count();
+    }
+
+
 
 }
