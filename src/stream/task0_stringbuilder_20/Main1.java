@@ -1,5 +1,7 @@
 package stream.task0_stringbuilder_20;
 
+import java.util.stream.IntStream;
+
 public class Main1 {
     public void practice1 () {
         StringBuilder sb = new StringBuilder("Hello");
@@ -42,4 +44,12 @@ public void practice7 () {
     System.out.println(sb);
 }
 
+public void practice8 () {
+        StringBuilder sb = new StringBuilder("ABCDEFG");
+    IntStream.iterate(1, i-> i+2).mapToObj(a-> sb.deleteCharAt(a)).limit(sb.length());
+}
+
+public void practice9 () {
+
+}
 }

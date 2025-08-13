@@ -118,7 +118,9 @@ System.out.println(sb); // sun___shine
 
 Завдання 8
 -
-Умова: Є StringBuilder зі словом "ABCDEFG". Видаліть усі непарні індекси, щоб залишилися лише букви на парних позиціях.
+Умова: Є StringBuilder зі словом "ABCDEFG". 
+Видаліть усі непарні індекси, щоб залишилися 
+лише букви на парних позиціях.
 -
 public class Task8 {
 public static void main(String[] args) {
