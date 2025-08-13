@@ -84,10 +84,9 @@ System.out.println(sb); // orXe
 
 Завдання 6
 -
-Умова: Створіть StringBuilder зі словом "123". Використайте .append() кілька разів, щоб отримати "123456".
--
-public class Task6 {
-public static void main(String[] args) {
+Умова: Створіть StringBuilder зі словом "123". 
+Використайте .append() кілька разів, щоб отримати "123456".
+
 StringBuilder sb = new StringBuilder("123");
 sb.append("4").append("5").append("6");
 System.out.println(sb); // 123456
