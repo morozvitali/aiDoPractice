@@ -1,5 +1,6 @@
 package stream.task0__valueOf_15;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -90,6 +91,12 @@ public class Main6 {
                 .collect(Collectors.toList());
     }
 
-
+    public List <Character> practice14 () {
+        String input = "a1C!bZ2";
+        return input.chars().filter(c->Character.isAlphabetic(c))
+                .mapToObj(c->(char)c)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+    }
 
 }
