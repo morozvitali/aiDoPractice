@@ -22,45 +22,43 @@ public class Main6 {
                 .reduce(-1, (a, b) -> a > b ? a : b);
     }
 
-    public long practice4 (int n) {
-        return String.valueOf(n).chars().map(c->c-'0').filter(d->d>5).count();
+    public long practice4(int n) {
+        return String.valueOf(n).chars().map(c -> c - '0').filter(d -> d > 5).count();
     }
 
-    public int practice5 (int n) {
-        int [] array = String.valueOf(n).chars().map(c->c-'0').toArray();
-        return IntStream.range(0,array.length).filter(i->i%2==1)
-                .map(i->array[i])
-                .reduce((a,b)->a*b)
+    public int practice5(int n) {
+        int[] array = String.valueOf(n).chars().map(c -> c - '0').toArray();
+        return IntStream.range(0, array.length).filter(i -> i % 2 == 1)
+                .map(i -> array[i])
+                .reduce((a, b) -> a * b)
                 .orElse(-1);
     }
 
-    public void practice6 () {
+    public void practice6() {
         List<String> words = List.of("sun", "apple",
                 "bee", "banana");
         words.stream().peek(System.out::println)
-                .map(w->w.toUpperCase())
+                .map(w -> w.toUpperCase())
                 .peek(System.out::println)
-                .filter(w->w.length()>3)
+                .filter(w -> w.length() > 3)
                 .forEach(System.out::println);
     }
 
-    public Map<Integer, List<String>> practice7 () {
+    public Map<Integer, List<String>> practice7() {
         List<String> emails = List.of("ivan@ukr.net",
                 "olga@gmail.com", "petro@ukr.net");
-        Map<Integer, List <String>> map = emails.stream()
+        Map<Integer, List<String>> map = emails.stream()
                 .collect(Collectors
                         .groupingBy(w -> w.substring(0,
-                                w.indexOf("@")).length(),
+                                        w.indexOf("@")).length(),
                                 Collectors.toList()));
         return map;
     }
 
-public void practice8 () {
-    List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
-nums.stream().peek(System.out::println)
-        .filter(value->value%2==0)
-        .forEach(System.out::println);
-}
-
-
+    public void practice8() {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5, 6);
+        nums.stream().peek(System.out::println)
+                .filter(value -> value % 2 == 0)
+                .forEach(System.out::println);
+    }
 }
