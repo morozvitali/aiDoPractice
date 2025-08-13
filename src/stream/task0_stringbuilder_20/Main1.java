@@ -89,5 +89,14 @@ public class Main1 {
         System.out.println(sb);
     }
 
+    public void practice14 () {
+        StringBuilder sb = new StringBuilder("Java is cool");
+        String firstWord = sb.substring(0,4);
+        sb.delete(0,5);
+        sb.append(firstWord);
+        System.out.println(sb);
+    }
+
+
 
 }

@@ -244,8 +244,7 @@ Character.isDigit() перевіряє, чи символ — цифра.
 
 Завдання 14 Переставити слова місцями
 -
-   public class Task4 {
-   public static void main(String[] args) {
+
    StringBuilder sb = new StringBuilder("Java is cool");
    String firstWord = sb.substring(0, 4);  // Java
    sb.delete(0, 4);                        // видаляємо "Java"
