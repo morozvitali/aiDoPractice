@@ -34,7 +34,8 @@ public class Main7 {
     }
 
     public void practice6 () {
-
+        Optional <String> sentence = Optional.of("admin@site.com");
+        sentence.map(s->s.toLowerCase()).filter(s->s.contains(".com"))
+                .orElseThrow(()-> new IllegalArgumentException("invalid email"));
     }
-
 }
