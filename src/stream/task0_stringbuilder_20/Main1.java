@@ -73,7 +73,10 @@ public void practice11 () {
 }
 
 public void practice12 () {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("abcdefg");
+        String partReverse = new StringBuilder(sb.substring(2,6)).reverse().toString();
+        sb.replace(2,6, partReverse);
+    System.out.println(sb);
 }
 
 
