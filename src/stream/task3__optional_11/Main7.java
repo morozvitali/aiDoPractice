@@ -38,4 +38,13 @@ public class Main7 {
         sentence.map(s->s.toLowerCase()).filter(s->s.contains(".com"))
                 .orElseThrow(()-> new IllegalArgumentException("invalid email"));
     }
+
+    public void practice7 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+        numbers.stream().min(Integer::compareTo)
+                .ifPresentOrElse(value -> System.out.println("min " + value), ()-> System.out.println("empty list"));
+    }
+
+
+
 }

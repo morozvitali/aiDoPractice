@@ -121,6 +121,8 @@ return email
 ✅ Варіант 3: .min(Comparator.comparing(...))
 ✅ Варіант 4: .collect(Collectors.minBy(...))
 
+✅ ?Варіант 5: .min(Comparator.naturalOrder)
+
 
 ------------------------------------------------------------------
 
