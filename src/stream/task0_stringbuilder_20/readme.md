@@ -294,10 +294,13 @@ Character.isDigit() перевіряє, чи символ — цифра.
        public class Task6 {
        public static void main(String[] args) {
        StringBuilder sb = new StringBuilder("Winter");
-       sb.insert(sb.length(), " cold");       // додаємо " cold"
+       sb.insert(sb.length(), " cold");       
+    // додаємо " cold"
        int start = sb.indexOf("cold");
-       sb.replace(start, start + 4, "warm");  // замінюємо "cold" на "warm"
-       sb.insert(0, "Hot ");                  // додаємо "Hot " на початок
+       sb.replace(start, start + 4, "warm");  
+    // замінюємо "cold" на "warm"
+       sb.insert(0, "Hot ");                  
+    // додаємо "Hot " на початок
        System.out.println(sb); // Hot Winter warm
        }
        }

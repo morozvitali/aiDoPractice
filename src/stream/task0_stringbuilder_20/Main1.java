@@ -110,6 +110,14 @@ public class Main1 {
 
     }
 
+    public void practice16 () {
+        StringBuilder sb = new StringBuilder("Winter");
+        sb.insert(sb.length(), "cold");
+        int start = sb.indexOf("cold");
+        sb.replace(start, start + 4, "warm");
+        sb.insert(0, "Hot ");
+        System.out.println(sb);
+    }
 
 
 }
