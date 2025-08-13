@@ -227,8 +227,6 @@ System.out.println(sb); // *br*c*d*br*
 
 Завдання 13 Замінити всі цифри на #
 -
-   public class Task3 {
-   public static void main(String[] args) {
    StringBuilder sb = new StringBuilder("Tel: 123-456-789");
    for (int i = 0; i < sb.length(); i++) {
    if (Character.isDigit(sb.charAt(i))) {
