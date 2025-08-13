@@ -64,6 +64,17 @@ public void practice10 () {
     System.out.println(sb);
 }
 
+public void practice11 () {
+        StringBuilder sb = new StringBuilder("hello_world");
+        int index = sb.indexOf("_");
+        sb.deleteCharAt(index);
+        sb.insert(index, " ");
+        sb.append("!!!");
+}
+
+public void practice12 () {
+        StringBuilder sb = new StringBuilder();
+}
 
 
 

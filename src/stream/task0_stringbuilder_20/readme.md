@@ -193,8 +193,6 @@ System.out.println(sb); // *br*c*d*br*
 
 Завдання 11 Комбінація insert + delete + append
 -
-   public class Task1 {
-   public static void main(String[] args) {
    StringBuilder sb = new StringBuilder("hello_world");
    int underscoreIndex = sb.indexOf("_");
    sb.deleteCharAt(underscoreIndex);      // прибираємо _
