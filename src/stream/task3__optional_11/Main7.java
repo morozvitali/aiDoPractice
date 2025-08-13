@@ -2,6 +2,7 @@ package stream.task3__optional_11;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class Main7 {
@@ -48,6 +49,15 @@ public class Main7 {
     public void practice8 () {
         List <String> words = List.of("Java", "Spring");
         words.stream().findFirst().map(value->value.length()).ifPresentOrElse(len -> System.out.println(" " + len), () -> System.out.println("list is empty"));
+    }
+
+    public String practice9 () {
+        Optional <String> name = Optional.of("Vitalii");
+        return name.map(String::toUpperCase).orElseThrow(()-> new NoSuchElementException("Name not found"));
+    }
+
+    public void practice10 () {
+
     }
 
 }
