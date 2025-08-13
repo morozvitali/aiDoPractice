@@ -1,5 +1,7 @@
 package stream.task1_peek_mapping_chartoint_8;
 
+import java.util.stream.IntStream;
+
 public class Main6 {
     public int practice1(int n) {
         return String.valueOf(n).chars().map(c -> c - '0')
@@ -19,6 +21,14 @@ public class Main6 {
 
     public long practice4 (int n) {
         return String.valueOf(n).chars().map(c->c-'0').filter(d->d>5).count();
+    }
+
+    public int practice5 (int n) {
+        int [] array = String.valueOf(n).chars().map(c->c-'0').toArray();
+        return IntStream.range(0,array.length).filter(i->i%2==1)
+                .map(i->array[i])
+                .reduce((a,b)->a*b)
+                .orElse(-1);
     }
 
 

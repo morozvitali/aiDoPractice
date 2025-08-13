@@ -76,25 +76,6 @@ return String.valueOf(n).chars()
 📥 Вхід: n = 123456
 Цифри з індексами 1, 3, 5 → 2 * 4 * 6 = 48
 
-        public int productOfDigitsAtOddIndexes(int n) {
-        int[] digits = String.valueOf(n).chars()
-        .map(c -> c - '0')
-        .toArray();
-
-    int product = 1;
-    for (int i = 1; i < digits.length; i += 2) {
-        product *= digits[i];
-    }
-    return product;
-}
-
-    public void practice5 () {
-        int number = 123456;
-        int [] array = String.valueOf(number)
-        .chars().map(n-> n-'0').toArray();
-        IntStream.iterate(1, i -> i+2)
-        .reduce(1, (a,b) -> array[value] * )
-    }
 
         public int productOfDigitsAtOddIndexes(int n) {
         int[] digits = String.valueOf(n)
