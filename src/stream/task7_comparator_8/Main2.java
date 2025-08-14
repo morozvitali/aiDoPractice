@@ -29,4 +29,13 @@ public class Main2 {
     public int practice3 () {
         return Stream.of(111, 123, 444, 1212).map(n->Map.entry(n, String.valueOf(n).chars().distinct().count())).max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(-1);
     }
+
+    public String practice4 () {
+        return Stream.of("abc", "aaa", "zzz").map(w->Map.entry(w, w.chars().sum()))
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse("empty");
+    }
+
+
 }
