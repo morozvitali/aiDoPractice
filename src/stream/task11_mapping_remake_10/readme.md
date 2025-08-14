@@ -188,15 +188,15 @@ c
 co
 cod
 code
-java
-Copy
-Edit
-public static String buildLetterLadder(String word) {
+
 return IntStream.range(1, word.length() + 1)
-.mapToObj(i -> new StringBuilder().append(word, 0, i).toString())
+.mapToObj(i -> new StringBuilder()
+.append(word, 0, i).toString())
 .collect(Collectors.joining("\n"));
 }
 🔍 Тут можна потренувати StringBuilder.append(...) із діапазоном символів.
+
+
 
 ✅ Задача 8: Шахове злиття речень
 📦 Вхід:
