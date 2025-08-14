@@ -42,7 +42,7 @@ public class Main2 {
         return Arrays.stream(arr).boxed().mapToLong(value -> Integer.toBinaryString(value).chars().filter(c -> c == '1').count()).sum();
     }
 
-    public int practice7 (int n) {
+    public int practice7(int n) {
         int i = 1;
         while (true) {
             long counter = Integer
@@ -51,27 +51,33 @@ public class Main2 {
                     .filter(a -> a == '1')
                     .count();
 
-        if (counter == n) {
-            return i;
+            if (counter == n) {
+                return i;
+            }
+            i++;
         }
-        i++;
-    }
     }
 
-    public void practice8 (int n) {
+    public void practice8(int n) {
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i<=n; i++) {
+        for (int i = 0; i <= n; i++) {
             list.add(i);
         }
         list.stream()
                 .filter(value -> Integer.toBinaryString(value)
-                        .chars().filter(c->c=='1')
-                        .count() %2 == 0)
+                        .chars().filter(c -> c == '1')
+                        .count() % 2 == 0)
                 .collect(Collectors.toList());
     }
 
-
-
+    public boolean practice9 (int number) {
+        return Integer
+                .toBinaryString(number)
+                .equals(new StringBuffer(Integer
+                        .toBinaryString(number))
+                        .reverse()
+                        .toString());
+    }
 
 
 }
