@@ -100,7 +100,7 @@ public class Main1 {
     public void practice15 () {
         StringBuilder sb = new StringBuilder("apple\nbanana\ncherry");
         int counter = 1;
-        sb.insert(0, counter++ + ". ")
+        sb.insert(0, counter++ + ". ");
 
         for (int i = 0; i<sb.length(); i++) {
             if (sb.charAt(i) == '\n') {
@@ -130,10 +130,4 @@ public class Main1 {
             }
         }
     }
-
-
-
-
-
-
 }
