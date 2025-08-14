@@ -45,6 +45,4 @@ public class Main4 {
                 .append(sentence, 0, i).toString())
                 .collect(Collectors.joining("\n"));
     }
-
-
 }
