@@ -31,5 +31,14 @@ public class Main4 {
                         .collect(Collectors.joining()));
     }
 
+    public String practice4 (int number) {
+        return String
+                .valueOf(number)
+                .chars()
+                .map(Character::getNumericValue)
+                .mapToObj("*"::repeat)
+                .collect(Collectors.joining());
+    }
+
 
 }

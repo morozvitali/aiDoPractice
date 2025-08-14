@@ -111,7 +111,7 @@ String.valueOf(n)
 504 → "***** ****"
 
 Порада:
-Можеш використати "*".repeat(d).
+Можеш використати "*".repeat(d).  --!--  ("*"::repeat)
 
     public String practice4 (int number) {
         return String.valueOf(number)
