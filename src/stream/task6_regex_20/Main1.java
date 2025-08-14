@@ -51,5 +51,9 @@ public class Main1 {
         return sentence.replaceAll("[^a-zA-Z0-9 ]", "");
     }
 
+    public boolean practice14 (String sentence) {
+        return sentence.matches("^\\+\\d{1,3}$");
+    }
 
+    
 }
