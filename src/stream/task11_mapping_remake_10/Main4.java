@@ -12,6 +12,7 @@ public class Main4 {
                 .collect(Collectors.joining(" "));
     }
 
-    public void practice2 (String sentence) {
+    public String practice2 (String sentence) {
+        return Arrays.stream(sentence.split(" ")).map(w->w.length() <5 ? w : "[...]").collect(Collectors.joining(" "));
     }
 }
