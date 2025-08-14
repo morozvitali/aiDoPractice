@@ -67,5 +67,11 @@ public class Main1 {
         return sentence.matches("^[a-zA-Z0-9_-]{3,20}$");
     }
 
+    public boolean practice18 (String sentence) {
+        return sentence.matches("^(4\\d{15}|5[1-5]\\d{14}|3[47]\\d{13})$");
+    }
 
+    public boolean practice19 (String sentence) {
+        return sentence.matches("<[^>]+>");
+    }
 }
