@@ -37,5 +37,13 @@ public class Main2 {
                 .orElse("empty");
     }
 
+    public String practice5 () {
+        return Stream.of("sun", "star",
+                "supernova", "apple").filter(w->w.charAt(0)=='s')
+                .max(Comparator.comparing(String::length))
+                .orElse("empty");
+    }
+
+
 
 }
