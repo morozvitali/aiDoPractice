@@ -45,6 +45,12 @@ public class Main4 {
                 Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(number))).reverse().toString()) : -1;
     }
 
-
+    public int practice6 (int number) {
+        Integer result = Integer.parseInt(Integer.toString(Math.abs(number)).chars().map(Character::getNumericValue)
+                .map(value -> value %2 == 0 ? value : value * value)
+                .mapToObj(s->String.valueOf(s))
+                        .collect(Collectors.joining()));
+        return number < 0 ? - result : result;
+    }
 
 }
