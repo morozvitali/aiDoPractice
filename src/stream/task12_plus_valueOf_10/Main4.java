@@ -40,5 +40,11 @@ public class Main4 {
                 .collect(Collectors.joining());
     }
 
+    public int practice5 (int number) {
+        return number > 0 ?
+                Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(number))).reverse().toString()) : -1;
+    }
+
+
 
 }
