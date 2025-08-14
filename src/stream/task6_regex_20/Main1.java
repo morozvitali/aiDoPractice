@@ -46,5 +46,10 @@ public class Main1 {
     public boolean practice12 (String sentence) {
         return sentence.matches("^([^0-9]*)$");
     }
-    
+
+    public String practice13 (String sentence) {
+        return sentence.replaceAll("[^a-zA-Z0-9 ]", "");
+    }
+
+
 }
