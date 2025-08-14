@@ -32,7 +32,7 @@ public class Main1 {
         return sentence.matches("^[a-zA-Z]+$");
     }
     public boolean practice9 (String sentence) {
-        return sentence.matches("^[a-zA-Z0-9]+$")
+        return sentence.matches("^[a-zA-Z0-9]+$");
     }
 
     public String practice10 (String sentence) {
@@ -43,5 +43,8 @@ public class Main1 {
         return sentence.matches("^[a-яА-ЯіїєґІЇЄҐ]+$");
     }
 
-
+    public boolean practice12 (String sentence) {
+        return sentence.matches("^([^0-9]*)$");
+    }
+    
 }
