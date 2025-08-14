@@ -50,4 +50,15 @@ public class Main2 {
                 .collect(Collectors.toList());
     }
 
+    public String practice7 () {
+        return Stream.of("java", "hello", "me", "zebra")
+                .filter(w->w.contains("e"))
+                .min(Comparator.comparing(String::length))
+                .orElse("empty list");
+    }
+
+    public void practice8 () {
+
+    }
+
 }
