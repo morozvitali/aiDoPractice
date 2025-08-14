@@ -58,4 +58,10 @@ public class Main1 {
     public boolean practice15 (String sentence) {
         return sentence.matches("^\\S+$");
     }
+
+    public boolean practice16 (String sentence) {
+        return sentence.matches("^([0-9A-Fa-f]{2}){5}[0-9A-Fa-f]{2}$");
+    }
+
+
 }
