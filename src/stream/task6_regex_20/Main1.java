@@ -55,5 +55,7 @@ public class Main1 {
         return sentence.matches("^\\+\\d{1,3}$");
     }
 
-    
+    public boolean practice15 (String sentence) {
+        return sentence.matches("^\\S+$");
+    }
 }
