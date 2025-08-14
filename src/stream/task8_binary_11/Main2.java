@@ -1,6 +1,9 @@
 package stream.task8_binary_11;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main2 {
     public long practice1(int number) {
@@ -55,8 +58,20 @@ public class Main2 {
     }
     }
 
-    public void practice8 () {
-
+    public void practice8 (int n) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i<=n; i++) {
+            list.add(i);
+        }
+        list.stream()
+                .filter(value -> Integer.toBinaryString(value)
+                        .chars().filter(c->c=='1')
+                        .count() %2 == 0)
+                .collect(Collectors.toList());
     }
+
+
+
+
 
 }
