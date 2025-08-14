@@ -74,4 +74,8 @@ public class Main1 {
     public boolean practice19 (String sentence) {
         return sentence.matches("<[^>]+>");
     }
+
+    public boolean practice20 (String sentence) {
+        return sentence.matches("^-?\\d+(\\.\\d)?$");
+    }
 }
