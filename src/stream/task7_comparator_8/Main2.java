@@ -57,8 +57,10 @@ public class Main2 {
                 .orElse("empty list");
     }
 
-    public void practice8 () {
-
+    public List <Integer> practice8 () {
+        return Stream.of(100, 1010, 5, 2000, 10)
+                .sorted(Comparator.comparing(n->String.valueOf(n)
+                        .chars().filter(c->c=='0').count()))
+                        .collect(Collectors.toList());
     }
-
 }
