@@ -9,5 +9,7 @@ public class Main1 {
         return email.matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$]");
     }
 
-
+    public boolean practice3 (String number) {
+        return number.matches("^\\+380\\d{2}\\d{3}\\d{4}$");
+    }
 }
