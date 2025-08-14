@@ -63,5 +63,9 @@ public class Main1 {
         return sentence.matches("^([0-9A-Fa-f]{2}){5}[0-9A-Fa-f]{2}$");
     }
 
+    public boolean practice17 (String sentence) {
+        return sentence.matches("^[a-zA-Z0-9_-]{3,20}$");
+    }
+
 
 }
