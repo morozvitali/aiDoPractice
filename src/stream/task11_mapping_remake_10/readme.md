@@ -1,6 +1,6 @@
 ✅ Задача 1: Реверс слів із 5+ літер
 ✏️ Умова:
-Напиши метод, який повертає рядок, 
+Напиши метод, який повертає рядок,
 де кожне слово з 5+ літер розвертається,
 інші залишаються без змін.
 
@@ -15,8 +15,8 @@ collect(Collectors.joining(" "))
 public static String reverseLongWords(String sentence) {
 
 return Arrays.stream(sentence.split(" "))
-.map(word -> word.length() >= 5
-? new StringBuilder().append(
+.map(word -> word.length() >= 5`
+? new StringBuilder().append(`
 IntStream.range(0, word.length())
 .mapToObj(i -> String.valueOf(word
 .charAt(word.length() - 1 - i)))

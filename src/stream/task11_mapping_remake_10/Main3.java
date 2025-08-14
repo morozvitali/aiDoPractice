@@ -1,4 +1,4 @@
-package stream.task11__mapping_remake___;
+package stream.task11_mapping_remake_10;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

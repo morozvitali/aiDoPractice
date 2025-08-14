@@ -16,7 +16,6 @@ public class Main3 {
                 .filter(value -> setb.contains(value))
                 .boxed()
                 .collect(Collectors.toList());
-
     }
 
 
