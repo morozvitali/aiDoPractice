@@ -13,5 +13,23 @@ public class Main4 {
                         .collect(Collectors.joining()));
     }
 
+    public int practice2 (int number) {
+        return Integer.valueOf(String.valueOf(number).chars().map(Character::getNumericValue)
+                .map(a->a*a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+    public int practice3 (int number) {
+        return Integer
+                .valueOf(String
+                        .valueOf(number)
+                        .chars()
+                        .map(Character::getNumericValue)
+                        .filter(value->value%2==0)
+                        .mapToObj(String::valueOf)
+                        .collect(Collectors.joining()));
+    }
+
 
 }
