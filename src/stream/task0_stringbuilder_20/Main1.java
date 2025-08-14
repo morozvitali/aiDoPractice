@@ -128,9 +128,12 @@ public class Main1 {
             if (i < colors.length -1) {
                 sb.append("-");
             }
-
         }
-
     }
+
+
+
+
+
 
 }
