@@ -24,8 +24,11 @@ public class Main1 {
         return url.matches("^(https?:\\/\\/)?([a-zA-Z0-9.-]+)\\.([a-zA-Z]{2,6})(\\/.*)?$");
     }
 
-    public boolean practice7 (String sentence) {
+    public boolean practice8 (String sentence) {
         return sentence.matches("^\\d+$");
     }
 
+    public boolean practice7 (String sentence) {
+        return sentence.matches("^[a-zA-Z]+$");
+    }
 }
