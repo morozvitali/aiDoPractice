@@ -29,5 +29,9 @@ public class Main4 {
                 .collect(Collectors.joining(" "));
     }
 
+    public boolean practice5 (String sentence) {
+        return sentence.equals(new StringBuilder(sentence).reverse().toString());
+    }
+
 
 }
