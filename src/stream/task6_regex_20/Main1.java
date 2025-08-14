@@ -35,5 +35,13 @@ public class Main1 {
         return sentence.matches("^[a-zA-Z0-9]+$")
     }
 
+    public String practice10 (String sentence) {
+        return sentence.replaceAll("\\s+", "");
+    }
+
+    public boolean practice11 (String sentence) {
+        return sentence.matches("^[a-яА-ЯіїєґІЇЄҐ]+$");
+    }
+
 
 }
