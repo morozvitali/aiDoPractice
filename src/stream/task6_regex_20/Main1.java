@@ -12,4 +12,16 @@ public class Main1 {
     public boolean practice3 (String number) {
         return number.matches("^\\+380\\d{2}\\d{3}\\d{4}$");
     }
+
+    public void practice4 (String ip) {
+    }
+
+    public boolean practice5 (String date) {
+        return date.matches("^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$");
+    }
+
+    public void practice6 () {
+
+    }
+
 }
