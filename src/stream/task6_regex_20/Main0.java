@@ -1,66 +1,164 @@
 package stream.task6_regex_20;
 
 public class Main0 {
-    public void practice1 (String password) {
+    // Перевірка пароля:
+    // ^                   — початок рядка
+    // (?=.*[a-z])         — обов'язково хоча б одна мала літера
+    // (?=.*[A-Z])         — обов'язково хоча б одна велика літера
+    // (?=.*\\d)           — обов'язково хоча б одна цифра
+    // (?=.*[!@#$%^&*()\\-+=]) — обов'язково хоча б один спеціальний символ із цього набору
+    // \\S{8,20}           — від 8 до 20 непробільних символів
+    // $                   — кінець рядка
+    public void practice1(String password) {
         password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()\\-+=])\\S{8,20}$");
     }
 
-    public void practice2 (String email) {
+    // Перевірка email:
+    // ^[a-zA-Z0-9._%+-]+ — ім'я користувача (букви, цифри, деякі символи)
+    // @                  — символ "собачка"
+    // [a-zA-Z0-9.-]+     — домен
+    // \\.                — крапка (екранована)
+    // [a-zA-Z]{2,6}      — розширення домену (від 2 до 6 літер)
+    // $                  — кінець рядка
+    public void practice2(String email) {
         email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
     }
 
-    public void practice3 (String number) {
+    // Перевірка українського номера телефону у форматі +380XXXXXXXXX:
+    // ^\\+380            — початок, код країни
+    // \\d{2}\\d{3}\\d{4} — 2+3+4 цифри (разом 9)
+    // $                  — кінець
+    public void practice3(String number) {
         number.matches("^\\+380\\d{2}\\d{3}\\d{4}$");
     }
 
-    public void practice4 (String ip) {
-    }
+    // Поки порожнє — тут можна зробити перевірку IP
+    public void practice4(String ip) {
+        // practice1 ... practice3 залишаються без змін
 
-    public void practice5 (String date) {
+        // Перевірка IPv4:
+        // ^                          — початок рядка
+        // (25[0-5]|2[0-4]\\d|[01]?\\d\\d?) — число 0-255 (перша частина)
+        // (\\.(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)){3} — ще три частини, розділені крапками
+        // $                          — кінець рядка
+            ip.matches("^(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)(\\.(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)){3}$");
+        }
+
+    // Перевірка дати у форматі YYYY-MM-DD:
+    // ^\\d{4}               — рік (4 цифри)
+    // -(0[1-9]|1[0-2])      — місяць від 01 до 12
+    // -(0[1-9]|[12]\\d|3[01]) — день від 01 до 31
+    // $                     — кінець
+    public void practice5(String date) {
         date.matches("^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$");
     }
 
-    public void practice6 (String url) {
+    // Перевірка URL:
+    // ^(https?:\\/\\/)?      — необов'язковий http:// або https://
+    // ([a-zA-Z0-9.-]+)       — доменне ім'я
+    // \\.([a-zA-Z]{2,6})     — крапка + домен верхнього рівня
+    // (\\/.*)?               — необов'язковий шлях після домену
+    // $
+    public void practice6(String url) {
         url.matches("^(https?:\\/\\/)?([a-zA-Z0-9.-]+)\\.([a-zA-Z]{2,6})(\\/.*)?$");
     }
 
-    public void practice7 (String sentence) {
+    // Перевірка: тільки латинські букви (без пробілів, цифр і символів)
+    public void practice7(String sentence) {
         sentence.matches("^[a-zA-Z]+$");
     }
 
-    public void practice8 (String sentence) {
+    // Перевірка: лише цифри
+    public void practice8(String sentence) {
         sentence.matches("^\\d+$");
     }
 
-    public void practice9 (String s) {
+    // Перевірка: лише латинські букви або цифри
+    public void practice9(String s) {
         s.matches("^[a-zA-Z0-9]+$");
     }
 
-    public void practice10 (String sentence) {
+    // Видалення всіх пробілів (один або більше)
+    public void practice10(String sentence) {
         sentence.replaceAll("\\s+", "");
     }
 
-    public void practice11 (String sentence) {
+    // Перевірка: лише українські літери (великі/малі, з урахуванням ї, є, ґ)
+    public void practice11(String sentence) {
         sentence.matches("^[а-яА-ЯіїєґІЇЄҐ]+$");
     }
 
-    public void practice12 (String sentence) {
+    // Перевірка: рядок не містить цифр
+    public void practice12(String sentence) {
         sentence.matches("^([^0-9]*)$");
     }
 
-    public void practice13 (String sentence) {
+    // Видалення всього, що не є латинською буквою, цифрою або пробілом
+    public void practice13(String sentence) {
         sentence.replaceAll("[^a-zA-Z0-9 ]", "");
     }
 
-    public void practice14 (String sentence) {
+    // Перевірка: телефон у форматі +<від 1 до 3 цифр>
+    public void practice14(String sentence) {
         sentence.matches("^\\+\\d{1,3}$");
     }
 
-    public void practice15 (String sentence) {
+    // Перевірка: рядок не містить пробілів
+    public void practice15(String sentence) {
         sentence.matches("^\\S+$");
     }
 
-    public void practice16 (String sentence) {
 
+    // ✅ Завдання 16: Перевірка MAC-адреси
+    // ^                               — початок рядка
+    // ([0-9A-Fa-f]{2}:){5}            — 5 груп: 2 шістнадцяткові символи (0–9, A–F, a–f) і двокрапка
+    // [0-9A-Fa-f]{2}                   — остання група: 2 шістнадцяткові символи (без двокрапки)
+    // $                               — кінець рядка
+    // Приклад правильного:  A1:B2:C3:D4:E5:F6
+    // Приклад неправильного: G1:H2:Z3:D4:E5:F6 (G і Z неприпустимі в hex)
+    public void practice16(String mac) {
+        mac.matches("^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$");
+    }
+
+    // ✅ Завдання 17: Username (3–20 символів)
+    // ^[a-zA-Z0-9_-]{3,20}$ — лише букви, цифри, підкреслення та дефіс, довжина від 3 до 20
+    // user_name-123 → ✅
+    // user@name!    → ❌ (заборонені @ та !)
+    // ab            → ❌ (занадто короткий)
+    public void practice17(String username) {
+        username.matches("^[a-zA-Z0-9_-]{3,20}$");
+    }
+
+    // ✅ Завдання 18: Номер кредитної картки (Visa, MasterCard, AmEx)
+    // ^(4\\d{15}             — Visa: починається з 4, 16 цифр загалом
+    //  |5[1-5]\\d{14}        — MasterCard: починається з 51–55, 16 цифр
+    //  |3[47]\\d{13})$       — American Express: починається з 34 або 37, 15 цифр
+    // 4111111111111111 → ✅ Visa
+    // 5500000000000004 → ✅ MasterCard
+    // 1234567890123456 → ❌ Не підходить під жодний шаблон
+    public void practice18(String card) {
+        card.matches("^(4\\d{15}|5[1-5]\\d{14}|3[47]\\d{13})$");
+    }
+
+    // ✅ Завдання 19: Перевірка HTML-тегу
+    // <[^>]+> — відкрита <, потім один або більше будь-яких символів, крім >, і закрита >
+    // <h1>Hello</h1>     → ✅
+    // <div class="box">  → ✅
+    // Hello World        → ❌
+    public void practice19(String html) {
+        html.matches("<[^>]+>");
+    }
+
+    // ✅ Завдання 20: Перевірка дійсного числа (ціле або з плаваючою точкою)
+    // ^-?           — необов'язковий мінус
+    // \\d+          — одна або більше цифр
+    // (\\.\\d+)?    — необов'язкова частина з крапкою та цифрами
+    // $             — кінець рядка
+    // 123     → ✅
+    // -123.45 → ✅
+    // 0.5     → ✅
+    // 123.    → ❌ (немає цифр після крапки)
+    public void practice20(String number) {
+        number.matches("^-?\\d+(\\.\\d+)?$");
     }
 }

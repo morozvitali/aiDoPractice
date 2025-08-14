@@ -20,8 +20,12 @@ public class Main1 {
         return date.matches("^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$");
     }
 
-    public void practice6 () {
+    public boolean practice6 (String url) {
+        return url.matches("^(https?:\\/\\/)?([a-zA-Z0-9.-]+)\\.([a-zA-Z]{2,6})(\\/.*)?$");
+    }
 
+    public boolean practice7 (String sentence) {
+        return sentence.matches("^\\d+$");
     }
 
 }
