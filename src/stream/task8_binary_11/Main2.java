@@ -78,6 +78,4 @@ public class Main2 {
                         .reverse()
                         .toString());
     }
-
-
 }
