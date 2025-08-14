@@ -33,5 +33,9 @@ public class Main4 {
         return sentence.equals(new StringBuilder(sentence).reverse().toString());
     }
 
+    public String practice6 (String sentence) {
+        return Arrays.stream(sentence.split(" ")).map(w->w.matches(".*[aeiou].*") ? new StringBuilder(w).reverse().toString() : w).collect(Collectors.joining(" "));
+    }
+
 
 }
