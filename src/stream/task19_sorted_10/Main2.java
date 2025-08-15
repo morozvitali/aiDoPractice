@@ -23,5 +23,14 @@ public class Main2 {
         return numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
 
+    public List <Integer> practice4 () {
+        List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
+        return nums.stream()
+                .sorted(Comparator
+                        .comparing(value->(int)value%2)
+                        .thenComparingInt(n->(int)n))
+                .collect(Collectors.toList());
+    }
+
 
  }
