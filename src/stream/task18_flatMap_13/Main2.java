@@ -75,6 +75,13 @@ public List <Integer> practice8 () {
             .toList();
     }
 
+    public List <String> practice9 () {
+        return Stream.of("hello", 1, 2.5, true, "world")
+                .filter(value->value instanceof String).map(a->(String)a)
+                .toList();
+    }
+
+
 
 
 }
