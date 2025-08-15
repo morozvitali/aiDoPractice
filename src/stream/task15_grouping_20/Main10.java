@@ -1,5 +1,8 @@
 package stream.task15_grouping_20;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -15,5 +18,8 @@ public class Main10 {
         Map <Character, Long> map = s.toLowerCase().chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(c->c, Collectors.counting()));
     }
 
-
+    public String practice2 (String sentence) {
+        Map <String, Long> map = Arrays.stream(sentence.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return Collections.max(map.entrySet(), Comparator.comparingLong(entry ->entry.getValue())).getKey();
+    }
 }
