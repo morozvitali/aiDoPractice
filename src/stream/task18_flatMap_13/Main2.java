@@ -87,5 +87,8 @@ public List <Integer> practice10 () {
                 .map(value -> (Integer) value).toList();
 }
 
+public List<Boolean> practice11 () {
+    return Stream.of("yes", true, false, true, 1).filter(value -> value instanceof Boolean && (Boolean) value == true).map(value->(Boolean)value).toList();
+}
 
 }
