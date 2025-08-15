@@ -237,6 +237,7 @@ entrySet().stream().anyMatch(entry -> entry.getValue() > 1)
     Set<Integer> seen = new HashSet<>();
     return List.of(1, 2, 3, 2).stream().anyMatch(n -> !seen.add(n));
     }
+
 -----------------------------------------------------------
 
 ✅ Задача 9: Групування чисел по парності

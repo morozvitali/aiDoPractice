@@ -32,6 +32,17 @@ public class Main10 {
         return map.entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
     }
 
+    public void practice7 () {
+        "ab123cc44a77".chars().filter(Character::isDigit).mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public Boolean practice8 () {
+        Map <Integer, Long> map = Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(v->v, Collectors.counting()));
+        return map.entrySet().stream().anyMatch(v->v.getValue() >1);
+    }
+
+
+
 
 
 }
