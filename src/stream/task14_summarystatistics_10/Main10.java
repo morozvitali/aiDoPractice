@@ -34,6 +34,12 @@ public class Main10 {
         String[] words = {"apple", "orange", "banana",
                 "ice", "umbrella", "echo"};
         Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0)) >=0).min(Comparator.comparing(String::length)).orElse("");
+    }
+
+    public void practice6() {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
+        Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
 
 
     }

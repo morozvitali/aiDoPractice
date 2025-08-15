@@ -166,6 +166,7 @@ Collectors.averagingInt(String::length)
 'a' → ["apple", "ant"]
 'b' → ["banana", "blue", "berry"]
 'd' → ["dolphin"]
+
 Потім для кожної групи:
 бере довжини слів
 обчислює середнє (sum / count)
@@ -173,7 +174,10 @@ Collectors.averagingInt(String::length)
     public void practice6 () {
         String[] words = {"apple", "ant",
                 "banana", "blue", "berry", "dolphin"};
-        Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+        Arrays.stream(words)
+
+.collect(Collectors.groupingBy(w->w.charAt(0), 
+Collectors.averagingInt(String::length)));
     }
 
 
