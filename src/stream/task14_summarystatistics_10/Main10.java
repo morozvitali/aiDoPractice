@@ -1,9 +1,6 @@
 package stream.task14_summarystatistics_10;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main10 {
@@ -19,17 +16,25 @@ public class Main10 {
         return words.stream().filter(s -> s.length() % 2 == 0).map(String::toLowerCase).mapToInt(String::length).sum();
     }
 
-    public Map <String, Long> practice3 () {
+    public Map<String, Long> practice3() {
         String[] words = {"sky", "apple",
                 "moon", "dry", "banana"};
-        return Arrays.stream(words).filter(s->s.length() > 3).filter(s->s.chars().anyMatch(a->"aeiou".indexOf(a)>=0)).collect(Collectors.toMap(w->w, w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
+        return Arrays.stream(words).filter(s -> s.length() > 3).filter(s -> s.chars().anyMatch(a -> "aeiou".indexOf(a) >= 0)).collect(Collectors.toMap(w -> w, w -> w.chars().filter(c -> "aeiou".indexOf(c) >= 0).count()));
     }
 
-    public Double practice4 () {
+    public Double practice4() {
         String[] words = {"sky", "apple", "moon",
                 "dry", "sun"};
-        return Arrays.stream(words).map(String::toLowerCase).filter(a->a.matches(".*[aeiou].*"))
-                .mapToInt(w->w.length())
+        return Arrays.stream(words).map(String::toLowerCase).filter(a -> a.matches(".*[aeiou].*"))
+                .mapToInt(w -> w.length())
                 .summaryStatistics().getAverage();
+    }
+
+    public void practice5() {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+        Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0)) >=0).min(Comparator.comparing(String::length)).orElse("");
+
+
     }
 }
