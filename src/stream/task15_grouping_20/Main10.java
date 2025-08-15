@@ -27,5 +27,11 @@ public class Main10 {
         return Stream.of(12, 23, 34, 45, 16, 7).collect(Collectors.groupingBy(w-> w%10, Collectors.summingInt(w->w)));
     }
 
+    public int practice6 () {
+        Map <Integer, Long> map = Stream.of(1,2,2,3,3,3,4,4).collect(Collectors.groupingBy(w->w, Collectors.counting()));
+        return map.entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
+    }
+
+
 
 }
