@@ -46,6 +46,13 @@ public class Main10 {
         return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(w->w%3, Collectors.averagingInt(n->n)));
     }
 
+    public Character practice11 () {
+        Map <Character, Long> map = Stream.of("apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot").map(w->w.charAt(0)).collect(Collectors.groupingBy(w->w, Collectors.counting()));
+        return map.entrySet().stream().max(Comparator.comparingLong(n->n.getValue()))
+                .map(Map.Entry::getKey)
+                .orElse(null);
 
+    }
 
 }
