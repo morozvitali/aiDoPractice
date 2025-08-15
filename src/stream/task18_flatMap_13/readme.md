@@ -327,14 +327,9 @@ List.of(10, "hello", true, 42, false, "42") → [10, 42]
 public static List<Object> filterIntegers(List<Object> input) {
 return input.stream()
 .filter(x -> x instanceof Integer)
-.collect(Collectors.toList());
+.map(i->(Integer)i)
+.toList();
 }
-
-    public List <Integer> practice8 () {
-        List list = List.of(10, "hello", true, 42, false, "42");
-
-        return list.stream().filter(value -> value instanceof Integer).toList();
-    }
 
 
 

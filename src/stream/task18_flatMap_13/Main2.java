@@ -68,4 +68,13 @@ public double practice6 () {
     return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(n->n%2 == 1).summaryStatistics().getAverage();
 }
 
+public List <Integer> practice8 () {
+    return Stream.of(10, "hello", true, 42, false, "42")
+            .filter(x -> x instanceof Integer)
+            .map(i->(Integer)i)
+            .toList();
+    }
+
+
+
 }
