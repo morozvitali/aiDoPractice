@@ -32,5 +32,31 @@ public int practice2 () {
     return Arrays.stream(data).flatMapToInt(ar->Arrays.stream(ar)).filter(a->a%2==0).min().orElse(-1);
 }
 
+public int practice3 () {
+    int[][] data = {
+            {-3, 5},
+            {2},
+            {-1, 4}
+    };
+    return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a>0).reduce((a,b)-> a*b).orElse(-1);
+}
+
+public int practice4 () {
+    int[][] data = {
+            {3, 9},
+            {8, 12},
+            {7}
+    };
+    return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a%3==0).max().orElse(-1);
+}
+
+public int practice5 () {
+    int[][] data = {
+            {2, 3},
+            {4}
+    };
+
+    return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a%2==0).map(a->a*a).sum();
+}
 
 }
