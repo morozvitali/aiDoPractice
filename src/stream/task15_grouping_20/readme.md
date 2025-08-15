@@ -45,8 +45,12 @@ map.entrySet() → filter(value > 1) → count()
 ✅ Очікуване рішення:
 
     public Long practice1 (String s) {
-        Map <Character, Long> map = s.toLowerCase().chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        return map.entrySet().stream().filter(e->e.getValue()>1).count();
+        Map <Character, Long> map = s.toLowerCase()
+    .chars().mapToObj(c->(char)c)
+    .collect(Collectors.groupingBy(Function.identity(), 
+    Collectors.counting()));
+            return map.entrySet().stream()
+    .filter(e->e.getValue()>1).count();
     }
 
 🔍 Що тут відбувається:
