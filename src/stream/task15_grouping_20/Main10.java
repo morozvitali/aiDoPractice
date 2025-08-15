@@ -1,9 +1,6 @@
 package stream.task15_grouping_20;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -41,6 +38,9 @@ public class Main10 {
         return map.entrySet().stream().anyMatch(v->v.getValue() >1);
     }
 
+    public Map <Boolean, List<Integer>> practice9 () {
+        return Stream.of(1, 2, 3, 4, 5).collect(Collectors.partitioningBy(v->v%2==0));
+    }
 
 
 
