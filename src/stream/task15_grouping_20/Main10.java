@@ -22,4 +22,10 @@ public class Main10 {
         Map <String, Long> map = Arrays.stream(sentence.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         return Collections.max(map.entrySet(), Comparator.comparingLong(entry ->entry.getValue())).getKey();
     }
+
+    public Map <Integer, Integer> practice3 () {
+        return Stream.of(12, 23, 34, 45, 16, 7).collect(Collectors.groupingBy(w-> w%10, Collectors.summingInt(w->w)));
+    }
+
+
 }
