@@ -18,5 +18,10 @@ public class Main2 {
                 .collect(Collectors.toList());
     }
 
-    public void practice3
-}
+    public List <String> practice3 () {
+        List<Integer> numbers = List.of(3, 7, 1, 9, 2);
+        return numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+    }
+
+
+ }
