@@ -70,7 +70,9 @@ public class Main4 {
         return number >0 ? Integer.parseInt(result) : -Integer.parseInt(result);
     }
 
-
+    public int practice9 (int number) {
+        return Integer.valueOf(String.valueOf(Math.abs(number)).chars().map(c->Character.getNumericValue(c)).map(value -> Math.abs(value - 5)).mapToObj(c->String.valueOf(c)).collect(Collectors.joining()));
+    }
 
 
 
