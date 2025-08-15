@@ -53,4 +53,8 @@ public class Main4 {
         return number < 0 ? - result : result;
     }
 
+    public long practice7 (int number) {
+        return String.valueOf(Math.abs(number)).length();
+    }
+
 }
