@@ -37,7 +37,12 @@ public class Main2 {
         return words.stream().sorted(Comparator.comparing(value-> value.charAt(value.length()-1))).collect(Collectors.toList());
     }
 
-    public void practice7 () {
+    public List <String> practice7 () {
+        List<String> words = List.of("apple", "banana", "cherry", "kiwi", "grape");
+        return words.stream().sorted(Comparator.comparing(value-> count(value))).collect(Collectors.toList());
+    }
 
+    public long count(String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
  }
