@@ -42,6 +42,10 @@ public class Main7 {
         return words.stream().collect(Collectors.toMap(w->w.charAt(0), String::length));
     }
 
+    public Map <Boolean, Long> practice8 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy(value -> value %2 ==0, Collectors.counting()));
+    }
 
 
 }
