@@ -52,7 +52,5 @@ public class Main10 {
         return map.entrySet().stream().max(Comparator.comparingLong(n->n.getValue()))
                 .map(Map.Entry::getKey)
                 .orElse(null);
-
     }
-
 }
