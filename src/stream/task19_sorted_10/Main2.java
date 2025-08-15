@@ -18,7 +18,7 @@ public class Main2 {
                 .collect(Collectors.toList());
     }
 
-    public List <String> practice3 () {
+    public List <Integer> practice3 () {
         List<Integer> numbers = List.of(3, 7, 1, 9, 2);
         return numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
@@ -51,7 +51,8 @@ public class Main2 {
         return words.stream().sorted(Comparator.comparing(String::length).reversed()).collect(Collectors.toList());
     }
 
-    public void practicve9 () {
-
+    public List <String> practicve9 () {
+        List<String> words = List.of("tea", "watermelon", "apple", "pear", "banana");
+        return words.stream().sorted(Comparator.comparing(v->((int)v)%2).reversed()).collect(Collectors.toList());
     }
  }
