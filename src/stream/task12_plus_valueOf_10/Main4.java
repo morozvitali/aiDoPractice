@@ -74,18 +74,7 @@ public class Main4 {
         return Integer.valueOf(String.valueOf(Math.abs(number)).chars().map(c->Character.getNumericValue(c)).map(value -> Math.abs(value - 5)).mapToObj(c->String.valueOf(c)).collect(Collectors.joining()));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public String practice10 (int number) {
+        return String.valueOf(Math.abs(number)).chars().map(Character::getNumericValue).mapToObj(v->v > 5 ? "X" : "O").collect(Collectors.joining());
+    }
 }
