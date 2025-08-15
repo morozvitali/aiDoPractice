@@ -59,4 +59,13 @@ public int practice5 () {
     return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a%2==0).map(a->a*a).sum();
 }
 
+public double practice6 () {
+    int[][] data = {
+            {3, 9},
+            {8, 12},
+            {7}
+    };
+    return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(n->n%2 == 1).summaryStatistics().getAverage();
+}
+
 }
