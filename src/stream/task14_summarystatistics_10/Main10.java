@@ -25,5 +25,11 @@ public class Main10 {
         return Arrays.stream(words).filter(s->s.length() > 3).filter(s->s.chars().anyMatch(a->"aeiou".indexOf(a)>=0)).collect(Collectors.toMap(w->w, w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
     }
 
-
+    public Double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).map(String::toLowerCase).filter(a->a.matches(".*[aeiou].*"))
+                .mapToInt(w->w.length())
+                .summaryStatistics().getAverage();
+    }
 }
