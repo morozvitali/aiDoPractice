@@ -107,10 +107,11 @@ a=[APPLE, ANT],
 b=[BANANA, BAT],
 c=[CAR]
 }
-public Map <Character, List<String>> practice6 () {
-List<String> words = List.of("apple",
-"ant", "banana", "bat", "car");
-return words.stream().collect(Collectors.groupingBy(word->word.charAt(0), Collectors.mapping(word->word.toUpperCase(), Collectors.toList())));
+
+
+.groupingBy(word->word.charAt(0), 
+Collectors.mapping(word->word.toUpperCase(), 
+Collectors.toList())));
 }
 ---------------------------------------------------------
 
