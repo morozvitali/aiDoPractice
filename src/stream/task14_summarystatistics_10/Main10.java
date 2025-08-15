@@ -50,5 +50,17 @@ public class Main10 {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public IntSummaryStatistics practice8() {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        return Arrays.stream(words).filter(w->w.chars().distinct().count() < w.length()).mapToInt(String::length).summaryStatistics();
+    }
+
+    public List <String> practice9 () {
+        String[] words = {"education", "questionnaire",
+                "house", "audio", "universe"};
+        return Arrays.stream(words).filter(w->"aeiou".chars().allMatch(c->w.indexOf(c) >=0)).collect(Collectors.toList());
+    }
+
 
 }
