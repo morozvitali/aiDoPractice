@@ -21,7 +21,10 @@ sun=true
     public Map<String, Boolean> practice0 () {
         String[] words = {"sky", "apple",
                 "dry", "orange", "sun"};
-        return Arrays.stream(words).collect(Collectors.toMap(Function.identity(), word->word.chars().anyMatch(ch->"aeiou".indexOf(ch)>=0)));
+        return Arrays.stream(words)
+    .collect(Collectors.toMap(Function.identity(), 
+    word->word.chars()
+    .anyMatch(ch->"aeiou".indexOf(ch)>=0)));
     }
 
 ----------------------------------------------------------
