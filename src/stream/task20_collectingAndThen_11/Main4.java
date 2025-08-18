@@ -1,9 +1,6 @@
 package stream.task20_collectingAndThen_11;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main4 {
@@ -32,6 +29,13 @@ public class Main4 {
         return Arrays.stream(new int [] {5, 3, 4, 4, 3, 6}).distinct().boxed()
                 .collect(Collectors.collectingAndThen(Collectors.toList(), list->list.get(0)));
     }
+
+    public Set <Integer> practice5 () {
+        return Arrays.stream(new int [] {2, 4, 10, 12, 14, 12, 4}).filter(a->a>10).boxed()
+                .collect(Collectors.collectingAndThen(Collectors.toSet(), (set)->Collections.unmodifiableSet(set)));
+    }
+
+
 
 }
 
