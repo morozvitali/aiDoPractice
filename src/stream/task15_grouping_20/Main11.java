@@ -41,4 +41,12 @@ public class Main11 {
     public Map <Integer, Long> practice7 (String s) {
         return s.chars().filter(Character::isDigit).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+    public boolean practice8 (int [] array) {
+        Map <Integer, Long> map = Arrays.stream(array).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return map.entrySet().stream().anyMatch(value->value.getValue() > 1);
+    }
+
+
+
 }
