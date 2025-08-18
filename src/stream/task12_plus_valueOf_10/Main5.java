@@ -15,4 +15,9 @@ public class Main5 {
                 .collect(Collectors.joining()));
     }
 
+    public Integer practice3 (int n) {
+        return Integer.valueOf(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).filter(a->a%2==0).mapToObj(String::valueOf.collect(Collectors.joining()));
+    }
+
+
 }
