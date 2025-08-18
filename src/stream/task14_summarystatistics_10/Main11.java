@@ -48,5 +48,12 @@ public class Main11 {
         return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).min(Comparator.comparingInt(String::length)).orElse("");
     }
 
+    public Map<Character, Double> practice6 () {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(a->a.charAt(0), Collectors.averagingInt(String::length)));
+    }
+
+
 
 }
