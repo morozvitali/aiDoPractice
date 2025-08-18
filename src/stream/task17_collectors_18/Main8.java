@@ -34,5 +34,13 @@ public class Main8 {
         return numbers.stream().collect(Collectors.partitioningBy(v->v%2==0));
     }
 
+    public Map <Character, List<String>> practice6 () {
+        List<String> words = List.of("apple",
+                "ant", "banana", "bat", "car");
+        return words.stream().collect(Collectors.groupingBy(value-> value.charAt(0), Collectors.mapping(w->w.toUpperCase(), Collectors.toList())));
+    }
+
+
+
 
 }
