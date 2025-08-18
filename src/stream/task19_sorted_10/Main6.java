@@ -26,7 +26,9 @@ public class Main6 {
         return numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
 
-    public void practice4 () {
-
+    public List <Integer> practice5 () {
+        List<Integer> numbers = List.of(3, 2, 5, 6, 4, 1);
+        return numbers.stream().sorted(Comparator.comparingInt((Integer n) -> n%2).thenComparing(Comparator.reverseOrder())).collect(Collectors.toList());
     }
+
 }
