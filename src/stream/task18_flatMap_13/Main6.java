@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main6 {
     public List <Integer> practice0 () {
@@ -49,5 +50,19 @@ public class Main6 {
             };
             return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a%2==0).sum();
     }
+    public int practice6 () {
+        int[][] data = {
+                {3, 5},
+                {7}
+        };
+        return  (int) Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a%2==1).summaryStatistics().getAverage();
+    }
+
+    public void practice7 () {
+        Stream.of(10, "hello", true, 42, false, "42").filter(value-> value instanceof Integer)
+                .map(i->(Integer)i)
+                .toList();
+    }
+
 
 }
