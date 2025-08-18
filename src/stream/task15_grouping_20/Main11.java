@@ -1,9 +1,6 @@
 package stream.task15_grouping_20;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -47,6 +44,8 @@ public class Main11 {
         return map.entrySet().stream().anyMatch(value->value.getValue() > 1);
     }
 
-
+public Map<String, List<Integer>> practice9 (int [] array) {
+        return Arrays.stream(array).boxed().collect(Collectors.groupingBy(value -> value % 2 == 0 ? "even" : "odd"));
+}
 
 }
