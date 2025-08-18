@@ -66,4 +66,11 @@ public class Main11 {
         return Arrays.stream(words).filter(w->w.chars().distinct().count() == w.length()).mapToInt(Integer::valueOf).summaryStatistics().getAverage();
     }
 
+    public List <String> practice9 () {
+        String[] words = {"education", "questionnaire",
+                "house", "audio", "universe"};
+        return Arrays.stream(words).filter(word->"aeiou".chars().allMatch(c-> word.indexOf(c) >=0)).collect(Collectors.toList());
+    }
+
+
 }
