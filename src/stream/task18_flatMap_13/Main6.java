@@ -69,12 +69,12 @@ public class Main6 {
     }
 
     public List <Integer> practice10 () {
-        return Stream.of("a", 3, 15, 11, 9, "99").filter(value-> value instanceof Integer && (Integer) value > 10).toList();
+        return Stream.of("a", 3, 15, 11, 9, "99").filter(value-> value instanceof Integer && (Integer) value > 10).map(a->(Integer)a).toList();
     }
 
     public List <Boolean> practice11 () {
         return Stream.of("yes", true, false, true, 1)
-                .filter(value -> value instanceof Boolean && (Boolean) value == true).toList();
+                .filter(value -> value instanceof Boolean && (Boolean) value == true).map(value->(Boolean)value).toList();
     }
 
 
