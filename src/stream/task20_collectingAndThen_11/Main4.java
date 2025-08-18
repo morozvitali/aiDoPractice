@@ -2,6 +2,7 @@ package stream.task20_collectingAndThen_11;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main4 {
 
@@ -33,6 +34,12 @@ public class Main4 {
     public Set <Integer> practice5 () {
         return Arrays.stream(new int [] {2, 4, 10, 12, 14, 12, 4}).filter(a->a>10).boxed()
                 .collect(Collectors.collectingAndThen(Collectors.toSet(), (set)->Collections.unmodifiableSet(set)));
+    }
+
+    public Double practice6 () {
+        return  Stream.of("code", "stream", "java")
+                .map(String::length).collect(Collectors.collectingAndThen(Collectors.toList(),
+                        (List <Integer> list)->list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
     }
 
 
