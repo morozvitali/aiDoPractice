@@ -23,5 +23,9 @@ public class Main5 {
         return String.valueOf(n).chars().map(Character::getNumericValue).mapToObj("*"::repeat).collect(Collectors.joining());
     }
 
+    public Integer practice5 (int n) {
+        int result = Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
+        return n > 0 ? result : -result;
+    }
 
 }
