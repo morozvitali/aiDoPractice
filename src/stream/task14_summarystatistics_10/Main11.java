@@ -60,8 +60,10 @@ public class Main11 {
         return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-    public void practice8 () {
-
+    public Double practice8 () {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        return Arrays.stream(words).filter(w->w.chars().distinct().count() == w.length()).mapToInt(Integer::valueOf).summaryStatistics().getAverage();
     }
 
 }
