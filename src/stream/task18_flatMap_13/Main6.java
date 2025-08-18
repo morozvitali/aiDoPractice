@@ -72,6 +72,10 @@ public class Main6 {
         return Stream.of("a", 3, 15, 11, 9, "99").filter(value-> value instanceof Integer && (Integer) value > 10).toList();
     }
 
+    public List <Boolean> practice11 () {
+        return Stream.of("yes", true, false, true, 1)
+                .filter(value -> value instanceof Boolean && (Boolean) value == true).toList();
+    }
 
 
 }
