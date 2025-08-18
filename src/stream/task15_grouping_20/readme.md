@@ -202,7 +202,7 @@ groupingBy(c -> c, counting())
         return "ab123cc44a77"
                 .chars()
                 .filter(c->Character.isDigit(c))
-                .mapToObj(c->(char)c)
+                .boxed()
                 .collect(Collectors.groupingBy(
                         Function.identity(),
                         Collectors.counting()

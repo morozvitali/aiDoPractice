@@ -38,7 +38,7 @@ public class Main11 {
         return map.entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
     }
 
-    public void practice7 () {
-
+    public Map <Integer, Long> practice7 (String s) {
+        return s.chars().filter(Character::isDigit).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 }
