@@ -51,9 +51,7 @@ public class Main5 {
         return n > 0 ? result : -result;
     }
 
-
-
-
-
-
+    public String practice10 (int n) {
+        return Integer.toString(Math.abs(n)).chars().map(Character::getNumericValue).mapToObj(a->a>5 ? "X" : "O").collect(Collectors.joining());
+    }
 }
