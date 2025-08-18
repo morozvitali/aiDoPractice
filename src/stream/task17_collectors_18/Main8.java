@@ -2,6 +2,7 @@ package stream.task17_collectors_18;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main8 {
@@ -20,6 +21,12 @@ public class Main8 {
         List<String> words = List.of("hi", "book",
                 "sun", "day", "Java", "sky");
         return words.stream().collect(Collectors.groupingBy(String::length));
+    }
+
+    public Map <Integer, Long> practice4 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(String::length, Collectors.counting()));
     }
 
 
