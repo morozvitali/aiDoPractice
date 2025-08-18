@@ -68,6 +68,10 @@ public class Main6 {
         return Stream.of("hello", 1, 2.5, true, "world").filter(value-> value instanceof String).map(value->(String)value).toList();
     }
 
+    public List <Integer> practice10 () {
+        return Stream.of("a", 3, 15, 11, 9, "99").filter(value-> value instanceof Integer && (Integer) value > 10).toList();
+    }
+
 
 
 }
