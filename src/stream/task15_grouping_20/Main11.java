@@ -16,5 +16,9 @@ public class Main11 {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count() > 0;
     }
 
+    public Long practice1 (String s) {
+        return s.toLowerCase().chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(e->e.getValue() >1).count();
+    }
+
 
 }
