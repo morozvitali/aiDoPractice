@@ -43,4 +43,17 @@ public class Main5 {
             return String.valueOf(digit * (i));
                 }).collect(Collectors.joining());
     }
+
+    public Integer practice9 (int n) {
+        Integer result = Integer.valueOf(Integer.toString(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(value -> Math.abs(value - 5)).mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+        return n > 0 ? result : -result;
+    }
+
+
+
+
+
+
 }
