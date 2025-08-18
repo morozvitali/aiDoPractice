@@ -16,7 +16,7 @@ public class Main5 {
     }
 
     public Integer practice3 (int n) {
-        return Integer.valueOf(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).filter(a->a%2==0).mapToObj(String::valueOf.collect(Collectors.joining()));
+        return Integer.valueOf(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).filter(a->a%2==0).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
     public String practice4 (int n) {
@@ -30,5 +30,9 @@ public class Main5 {
 
     public Integer practice6 (int n) {
         return Integer.valueOf(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).map(a->a%2==1 ? a* a : a).mapToObj(String::valueOf).collect(Collectors.joining()));
+    }
+
+    public Integer practice7 (int n) {
+        return Integer.toString(Math.abs(n)).length();
     }
 }
