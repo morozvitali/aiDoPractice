@@ -20,6 +20,15 @@ public class Main4 {
                 .filter(a->a.length()>4)
                 .collect(Collectors.collectingAndThen(Collectors.toList(), a->Collections.unmodifiableList(a)));
     }
+
+    public String practice3 () {
+        return List.of("apple", "car", "banana", "hi", "cherry").stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.get(0)));
+        }
+
+
+
 }
 
 

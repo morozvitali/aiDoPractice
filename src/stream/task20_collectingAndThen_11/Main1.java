@@ -18,7 +18,9 @@ public class Main1 {
     public String practice3() {
         List<String> data = List.of("apple", "car",
                 "banana", "hi", "cherry");
-        return data.stream().sorted(Comparator.reverseOrder()).collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.get(0)));
+        return data.stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.get(0)));
     }
 
     public void practice4() {
