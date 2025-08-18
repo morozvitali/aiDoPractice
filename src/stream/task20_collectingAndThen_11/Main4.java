@@ -42,7 +42,10 @@ public class Main4 {
                         (List <Integer> list)->list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
     }
 
-
+    public Map <Character, List <String>> practice7 () {
+        return Stream.of("apple", "ant", "banana", "bat", "car")
+                .collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), (Map <Character, List<String>>map) -> Collections.unmodifiableMap(map)));
+    }
 
 }
 
