@@ -67,7 +67,10 @@ public class Main4 {
         return Stream.of ("hi", "hello", "world", "no", "yes").collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
     }
 
-
+    public String practice11 () {
+        return Stream.of ("hi", "hello", "world", "no", "yes").filter(w->w.length()>6)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.isEmpty() ? "empty" : list.get(0)));
+    }
 }
 
 
