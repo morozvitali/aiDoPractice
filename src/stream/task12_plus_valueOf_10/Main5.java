@@ -28,4 +28,7 @@ public class Main5 {
         return n > 0 ? result : -result;
     }
 
+    public Integer practice6 (int n) {
+        return Integer.valueOf(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).map(a->a%2==1 ? a* a : a).mapToObj(String::valueOf).collect(Collectors.joining()));
+    }
 }
