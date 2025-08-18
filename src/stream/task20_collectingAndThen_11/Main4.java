@@ -47,6 +47,18 @@ public class Main4 {
                 .collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), (Map <Character, List<String>>map) -> Collections.unmodifiableMap(map)));
     }
 
+    public String practice8 () {
+        return Stream.of("java", "zip", "jazz").filter(w->w.contains("z"))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
+                    if (list.size() != 1) {
+                        throw new IllegalStateException("except one letter z");
+                    }
+                    return list.get(0);
+                }
+                ));
+    }
+
+
 }
 
 
