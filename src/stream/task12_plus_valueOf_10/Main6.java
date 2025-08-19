@@ -7,11 +7,17 @@ public class Main6 {
         return Integer.valueOf(String.valueOf(n)
                 .chars()
                 .map(Character::getNumericValue)
-                .map(a->a*a)
+                .map(a -> a * a)
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
 
+    public Integer practice2(int n) {
+        return Integer.valueOf(String.valueOf(n).chars().map(Character::getNumericValue)
+                .map(a -> a * a * a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
 
 
 }
