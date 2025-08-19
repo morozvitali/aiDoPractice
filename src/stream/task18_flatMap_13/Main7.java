@@ -83,7 +83,11 @@ public class Main7 {
 
     public List <String> practice9 () {
         return Stream.of("hello", 1, 2.5, true, "world")
-                .filter(value-> value -> instanceof String).map(a->(String)a).collect(Collectors.toList());
+                .filter(value-> value instanceof String).map(a->(String)a).collect(Collectors.toList());
     }
 
+    public List <Integer> practice10 () {
+        List <Object> list = List.of("a", 3, 15, 11, 9, "99");
+        return list.stream().filter(value -> value instanceof Integer && (Integer)value > 10).map(value->(Integer)value).collect(Collectors.toList());
+    }
 }
