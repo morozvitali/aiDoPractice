@@ -31,7 +31,13 @@ public class Main12 {
         return s.chars().filter(c->"aeiou".indexOf(c) >= 0).count();
     }
 
-    public void practice4 () {
+    public Double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).map(String::toLowerCase).filter(w->countVowels(w)>1).mapToInt(Integer::parseInt).summaryStatistics().getAverage();
+    }
+
+    public void practice5 () {
 
     }
 
