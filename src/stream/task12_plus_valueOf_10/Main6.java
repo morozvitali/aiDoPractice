@@ -39,6 +39,16 @@ public class Main6 {
                 .reverse().toString());
     }
 
+    public Integer practice6 (int n) {
+        return Integer.valueOf(String.valueOf(n).chars().map(Character::getNumericValue)
+                .map(a->a%2 ==1 ? a*a : a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+    public int practice7 (int n) {
+        return String.valueOf(Math.abs(n)).length();
+    }
 
 }
 
