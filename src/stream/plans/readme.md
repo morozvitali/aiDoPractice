@@ -3,15 +3,15 @@ task db h2 project
 task0_add_intstream_range_and_intstream_iterator_as_part
 
 
-something new (Stream.concat())
+44 something new (Stream.concat())
 Stream.concat(one.stream(), two.stream()).collect(Collectors.toSet());
 
 
-transform Map to LinkedHashMap -->
+22 transform Map to LinkedHashMap -->
 LinkedHashMap::new
 
 
-
+!00 StringBuffer -> FileReader -> record, writing wrapping!
 
 
 
