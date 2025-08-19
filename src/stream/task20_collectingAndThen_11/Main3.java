@@ -35,7 +35,14 @@ public class Main3 {
                 .filter(a->a>10)
                 .collect(Collectors.collectingAndThen(
                         Collectors.toSet(),
-                        (Set<Integer> set) -> Collections.unmodifiableSet(set)));
+                        Collections::unmodifiableSet));
+    }
+
+    public double practice6 () {
+        return Stream.of("code", "stream", "java")
+                .map(String::length)
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toList(), (List <Integer>list) ->list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
     }
 
 
