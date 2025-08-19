@@ -1,9 +1,6 @@
 package stream.task17_collectors_18;
 
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main9 {
@@ -44,6 +41,12 @@ public class Main9 {
     public Map<Boolean, Long> practice8 () {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
         return numbers.stream().collect(Collectors.groupingBy(a->a%2==0, Collectors.counting()));
+    }
+
+    public Map <Integer, Set<String>> practice9 () {
+        List<String> words = List.of("hi", "hi",
+                "book", "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
     }
 
 
