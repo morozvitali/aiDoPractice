@@ -44,5 +44,13 @@ public class Main12 {
         return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(n->n%3, Collectors.averagingInt(n->n)));
     }
 
+    public void practice11 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        Map <Character, Long>  map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()));
+        return map.entrySet().stream().max(value->value.getValue())
+                .map(Map.Entry::getKey).orElse(null);
+    }
+
 
 }
