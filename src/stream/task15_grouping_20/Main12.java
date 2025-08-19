@@ -44,13 +44,20 @@ public class Main12 {
         return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(n->n%3, Collectors.averagingInt(n->n)));
     }
 
-    public void practice11 () {
+    public Character practice11 () {
         String[] words = {"apple", "banana", "avocado",
                 "blueberry", "bleuberry", "apricot"};
         Map <Character, Long>  map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()));
-        return map.entrySet().stream().max(value->value.getValue())
+        return map.entrySet().stream().max(Comparator.comparingLong(val->val.getValue()))
                 .map(Map.Entry::getKey).orElse(null);
     }
 
+    public void practice12 () {
+        Map <Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
 
+        map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+    }
 }
