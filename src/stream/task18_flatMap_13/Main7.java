@@ -17,8 +17,13 @@ public class Main7 {
             .collect(Collectors.toList());
     }
 
-    public void practice2 () {
-
+    public int practice2 () {
+        int[][] data = {
+                {3, 11},
+                {6, 7},
+                {10}
+        };
+        return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).min().orElse(-1);
     }
 
 
