@@ -52,12 +52,19 @@ public class Main6 {
     }
 
     public Integer practice8 (int n) {
-        String s = String.valueOf(n);
+        String s = String.valueOf(Math.abs(n));
         return Integer.valueOf(IntStream.range(0, s.length()).mapToObj(i->{
             int digit = Character.getNumericValue(s.charAt(i));
             return String.valueOf(digit * (i+1));
                 }
                 ).collect(Collectors.joining()));
+    }
+
+    public int practice9 (int n) {
+        return Integer.valueOf(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(value-> Math.abs(value - 5))
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
     }
 
 
