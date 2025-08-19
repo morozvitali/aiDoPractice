@@ -53,7 +53,12 @@ public class Main12 {
         Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-    public void practice8 () {
+    public IntSummaryStatistics practice8 () {
 
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        return Arrays.stream(words).filter(w->w.length() - w.chars().distinct().count() > 1  ).mapToInt(String::length).summaryStatistics();
     }
+
+
 }
