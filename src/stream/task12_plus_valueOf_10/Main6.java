@@ -34,5 +34,11 @@ public class Main6 {
                 .collect(Collectors.joining());
     }
 
+    public Integer practice5 (int n) {
+        return Integer.valueOf(new StringBuilder(String.valueOf(n))
+                .reverse().toString());
+    }
+
+
 }
 
