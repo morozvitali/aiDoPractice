@@ -51,4 +51,17 @@ public class Main7 {
         };
         return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).map(value->value*value).reduce((a,b) -> a+b).orElse(-1);
     }
+
+    public Double practicr6 () {
+        int[][] data = {
+                {3, 5},
+                {7}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream)
+                .filter(value->value%2==1)
+                .summaryStatistics().getAverage();
+
+    }
+
+
 }
