@@ -234,14 +234,6 @@ apple, moon, banana, loop
 .mapToInt(String::length)
 .summaryStatistics()
 
-    public IntSummaryStatistics practice8 () {
-        String[] words = {"apple", "moon",
-                "sky", "banana", "loop"};
-        return Arrays.stream(words).filter(w->w.chars().filter(c->"aieou".indexOf(c)>=0).count() < w.length()).mapToInt(word->word.length()).summaryStatistics();
-    }
-
-
-
 
 ----------------------------------------------------
 
