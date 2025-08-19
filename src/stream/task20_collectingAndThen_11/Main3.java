@@ -65,6 +65,8 @@ public class Main3 {
                         list -> String.join(", ", list)));
     }
 
-
+    public Integer practice10 () {
+        return Stream.of("hi", "hello", "world", "no", "yes").collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), (Map<Integer, List<String>> map)-> map.size()));
+    }
 
 }
