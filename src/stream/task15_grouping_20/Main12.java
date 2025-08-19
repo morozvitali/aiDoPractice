@@ -30,7 +30,7 @@ public class Main12 {
         return map.entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
     }
 
-    public void practice7 () {
-
+    public Map <Integer, Long> practice7 () {
+    return "ab123cc44a77".chars().filter(Character::isDigit).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 }
