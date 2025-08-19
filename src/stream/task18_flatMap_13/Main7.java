@@ -34,4 +34,15 @@ public class Main7 {
         };
         return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(value -> value >0).reduce((a,b)-> a*b).orElse(-1);
     }
+
+    public int practice4 () {
+        int[][] data = {
+                {3, 9},
+                {8, 12},
+                {7}
+        };
+        return Arrays.stream(data).flatMapToInt(arr->Arrays.stream(arr)).filter(a->a%3==0).max().orElse(-1);
+    }
+
+
 }
