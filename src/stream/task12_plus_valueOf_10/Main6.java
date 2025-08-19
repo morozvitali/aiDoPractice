@@ -1,6 +1,7 @@
 package stream.task12_plus_valueOf_10;
 
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main6 {
     public Integer practice1(int n) {
@@ -49,6 +50,16 @@ public class Main6 {
     public int practice7 (int n) {
         return String.valueOf(Math.abs(n)).length();
     }
+
+    public Integer practice8 (int n) {
+        String s = String.valueOf(n);
+        return Integer.valueOf(IntStream.range(0, s.length()).mapToObj(i->{
+            int digit = Character.getNumericValue(s.charAt(i));
+            return String.valueOf(digit * (i+1));
+                }
+                ).collect(Collectors.joining()));
+    }
+
 
 }
 
