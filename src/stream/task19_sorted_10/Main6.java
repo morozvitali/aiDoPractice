@@ -46,5 +46,12 @@ public class Main6 {
         return words.stream().sorted(Comparator.comparing(String::length).thenComparing(Comparator.reverseOrder())).toList();
     }
 
+    public List <Integer> practice9 () {
+        List<Integer> numbers = List.of(3, 2, 5, 6, 4, 1);
+        return numbers.stream().sorted(Comparator.comparing(Integer::intValue).thenComparing(Comparator.reverseOrder())).toList();
+    }
+
+
+
 
 }
