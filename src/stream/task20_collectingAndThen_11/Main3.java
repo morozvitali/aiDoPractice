@@ -14,11 +14,15 @@ public class Main3 {
                         list -> Collections.unmodifiableList(list)));
     }
 
-    public int practice () {
+    public int practice2 () {
         return Stream.of(3, 9, 2, 4, 6, 7, 12).filter(n->n%3==0)
                 .collect(Collectors.collectingAndThen(Collectors.toList(), List::size));
-
     }
 
+    public String practice3 () {
+        return Stream.of("sun", "supernova", "star")
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.get(0)));
+    }
 
 }
