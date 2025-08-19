@@ -29,10 +29,16 @@ public class Main9 {
         return numbers.stream().collect(Collectors.partitioningBy(a->a%2==0));
     }
 
-    public Map <Character, List <String>> ppractice6 () {
+    public Map <Character, List <String>> practice6 () {
         List<String> words = List.of("apple",
                 "ant", "banana", "bat", "car");
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(word->word.toUpperCase(), Collectors.toList())));
+    }
+
+    public Map <Character, Integer> practice7 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.toMap(w->w.charAt(0), a->a.length()));
     }
 
 
