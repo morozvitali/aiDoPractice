@@ -63,5 +63,17 @@ public class Main7 {
 
     }
 
+    public int practice7 () {
+        int[][] data = {
+                {12},
+                {24, 36}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main7::gcd).orElse(-1);
+    }
+
+    public static int gcd (int a, int b) {
+        return b==0 ? a : gcd (b, a%b);
+    }
+
 
 }
