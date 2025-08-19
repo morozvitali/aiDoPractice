@@ -50,8 +50,4 @@ public class Main6 {
         List<Integer> numbers = List.of(3, 2, 5, 6, 4, 1);
         return numbers.stream().sorted(Comparator.comparing(Integer::intValue).thenComparing(Comparator.reverseOrder())).toList();
     }
-
-
-
-
 }
