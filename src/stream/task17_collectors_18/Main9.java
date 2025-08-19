@@ -18,7 +18,10 @@ public class Main9 {
         return words.stream().collect(Collectors.groupingBy(String::length));
     }
 
-    public void practice4 () {
+    public Map <Integer, Long> practice4 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+       return words.stream().collect(Collectors.groupingBy(w->w.length(), Collectors.counting()));
 
     }
 }
