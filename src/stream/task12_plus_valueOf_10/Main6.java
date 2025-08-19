@@ -19,6 +19,14 @@ public class Main6 {
                 .collect(Collectors.joining()));
     }
 
+    public Integer practice3 (int n) {
+        return Integer.valueOf(String.valueOf(n).chars()
+                .map(Character::getNumericValue)
+                .filter(a->a%2==0)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
 
 }
 
