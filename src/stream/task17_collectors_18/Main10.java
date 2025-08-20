@@ -24,7 +24,13 @@ public Map <Boolean, List<Integer>> practice5 () {
         return numbers.stream().collect(Collectors.partitioningBy(a->a%2==0));
 }
 
-public void practice6 () {
-
+public Map <Character, List<String>> practice6 () {
+    List<String> words = List.of("apple",
+            "ant", "banana", "bat", "car");
+    return words.stream().collect(Collectors.groupingBy(word->word.charAt(0),
+            Collectors.mapping(String::toUpperCase,
+                    Collectors.toList())));
 }
+
+
 }
