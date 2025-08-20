@@ -34,6 +34,11 @@ public class Main1 {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparingLong(value-> value.getValue())).get().getKey();
     }
 
+    public Map <Integer, Long> practice7 () {
+        return "ab123cc44a77".chars().filter(Character::isDigit)
+                .boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
 
 
 }
