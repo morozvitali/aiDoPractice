@@ -28,5 +28,10 @@ public class Main5 {
         return Stream.of(5, 3, 4, 4, 3, 6).distinct().collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
     }
 
+    public List <Integer> practice5 () {
+        return Stream.of(2, 4, 10, 12, 14, 12, 4)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> Collections.unmodifiableList(list)));
+    }
+
 
 }
