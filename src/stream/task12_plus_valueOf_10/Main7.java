@@ -27,5 +27,10 @@ public class Main7 {
                 .collect(Collectors.joining()));
     }
 
+    public int practice4 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .mapToObj("*"::repeat).collect(Collectors.joining()));
+    }
+
 
 }
