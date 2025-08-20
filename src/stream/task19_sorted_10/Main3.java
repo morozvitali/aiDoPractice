@@ -10,15 +10,26 @@ public class Main3 {
         return words.stream().filter(w -> w.length() > 3).sorted(Comparator.comparing(String::length)).collect(Collectors.toList());
     }
 
-    public List <String> practice2 () {
+    public List<String> practice2() {
         List<String> words = List.of("Zebra", "apple", "Lemon", "banana");
-        return words.stream().map(w->w.toLowerCase()).sorted().collect(Collectors.toList());
+        return words.stream().map(String::toLowerCase).sorted().collect(Collectors.toList());
     }
 
-    public List <Integer> practice3 () {
+    public List<Integer> practice3() {
         List<Integer> numbers = List.of(3, 7, 1, 9, 2);
         return numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
 
+    public void practice4() {
+    }
+
+    public List<Integer> practice5() {
+        List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
+        return nums.stream().sorted(Comparator.comparingInt(value -> (int) value % 2).thenComparingInt(value -> (int) value)).collect(Collectors.toList());
+    }
+
+    public void practice6 () {
+
+    }
 
 }
