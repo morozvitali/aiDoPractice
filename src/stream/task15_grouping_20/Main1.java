@@ -2,6 +2,7 @@ package stream.task15_grouping_20;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -44,4 +45,11 @@ public class Main1 {
         int [] array = new int [] {1, 2, 3, 2};
         return Arrays.stream(array).distinct().count() == array.length;
      }
+
+     public Map <String, List<Integer>> practice9 () {
+        return Stream.of(1, 2, 3, 4, 5).collect(Collectors.groupingBy(a->a%2 == 0 ? "even" : "odd"));
+     }
+
+
+
 }
