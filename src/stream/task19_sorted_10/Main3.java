@@ -5,10 +5,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main3 {
-    public List <String> practice1 () {
+    public List<String> practice1() {
         List<String> words = List.of("tea", "lemon", "fig", "grape", "banana");
-        return words.stream().filter(w->w.length()>3).sorted(Comparator.comparing(String::length)).collect(Collectors.toList());
+        return words.stream().filter(w -> w.length() > 3).sorted(Comparator.comparing(String::length)).collect(Collectors.toList());
     }
+
+    public List <String> practice2 () {
+        List<String> words = List.of("Zebra", "apple", "Lemon", "banana");
+        return words.stream().map(w->w.toLowerCase()).sorted().collect(Collectors.toList());
+    }
+
+
 
 
 }
