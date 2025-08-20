@@ -3,6 +3,7 @@ package stream.task20_collectingAndThen_11;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,7 +31,7 @@ public class Main5 {
 
     public List <Integer> practice5 () {
         return Stream.of(2, 4, 10, 12, 14, 12, 4)
-                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> Collections.unmodifiableList(list)));
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
     }
 
     public Double practice6 () {
@@ -39,6 +40,11 @@ public class Main5 {
                 .map(String::length)
                 .collect(Collectors.collectingAndThen(Collectors.toList(),
                         (List <Integer> list) -> list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
+    }
+
+    public Map<Character, List <String>> practice7 () {
+        return Stream.of("apple", "ant", "banana", "bat", "car")
+                .collect(Collectors.collectingAndThen(Collectors.groupingBy(word->word.charAt(0)), Collections::unmodifiableMap));
     }
 
 
