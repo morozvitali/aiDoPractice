@@ -13,24 +13,28 @@ public class Main10 {
                 .summaryStatistics();
     }
 
-public Map<Integer, Long> practice3 () {
+    public Map<Integer, Long> practice3() {
         return Stream.of("hi", "book",
-                "sun", "day", "Java", "sky")
+                        "sun", "day", "Java", "sky")
                 .collect(Collectors.groupingBy(String::length, Collectors.counting()));
-}
+    }
 
-public Map <Boolean, List<Integer>> practice5 () {
-    List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
-        return numbers.stream().collect(Collectors.partitioningBy(a->a%2==0));
-}
+    public Map<Boolean, List<Integer>> practice5() {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy(a -> a % 2 == 0));
+    }
 
-public Map <Character, List<String>> practice6 () {
-    List<String> words = List.of("apple",
-            "ant", "banana", "bat", "car");
-    return words.stream().collect(Collectors.groupingBy(word->word.charAt(0),
-            Collectors.mapping(String::toUpperCase,
-                    Collectors.toList())));
-}
+    public Map<Character, List<String>> practice6() {
+        List<String> words = List.of("apple",
+                "ant", "banana", "bat", "car");
+        return words.stream().collect(Collectors.groupingBy(word -> word.charAt(0),
+                Collectors.mapping(String::toUpperCase,
+                        Collectors.toList())));
+    }
 
-
+    public void practice7 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        words.stream().collect(Collectors.toMap(w->w.charAt(0), a->a.length()));
+    }
 }
