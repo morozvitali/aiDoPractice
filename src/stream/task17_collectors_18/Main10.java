@@ -49,4 +49,11 @@ public class Main10 {
                 "book", "sun", "day", "Java", "sky");
         return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
     }
+
+    public void practice10 () {
+        List<Integer> numbers = List.of(4, 8, 15, 16, 23, 42);
+        numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Count " + count));
+    }
+
+
 }
