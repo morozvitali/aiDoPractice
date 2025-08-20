@@ -1,9 +1,6 @@
 package stream.task14_summarystatistics_10;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -54,7 +51,26 @@ public class Main13 {
     public Map <Character, Double> practice6 () {
         return Stream.of("apple", "ant",
                 "banana", "blue", "berry", "dolphin")
-                .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)))
+                .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
+
+    public Map <Character, Long> practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public IntSummaryStatistics practice8 () {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        return Arrays.stream(words)
+                .filter(Main13::has2repeatingLetters)
+                .mapToInt(String::length).summaryStatistics();
+    }
+
+    public static boolean has2repeatingLetters(String s) {
+        return s.length() - s.chars().distinct().count() > 1 ;
     }
 
 
