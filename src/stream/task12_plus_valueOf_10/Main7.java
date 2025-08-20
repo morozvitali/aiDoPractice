@@ -11,6 +11,14 @@ public class Main7 {
                 .collect(Collectors.joining()));
     }
 
+    public int practice2 (int n) {
+        return Integer.parseInt(String.valueOf(n).chars()
+                .map(Character::getNumericValue)
+                .map(a->a*a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
 
 
 }
