@@ -44,5 +44,7 @@ public class Main7 {
                 .collect(Collectors.joining()));
     }
 
-
+    public int practice7 (int n) {
+        return String.valueOf(n).length();
+    }
 }
