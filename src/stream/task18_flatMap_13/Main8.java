@@ -24,7 +24,6 @@ public int practice2 () {
     return Arrays.stream(data).flatMapToInt(Arrays::stream)
             .min().orElse(-1);
 }
-3
 
 public int practice3 () {
     int[][] data = {
@@ -39,5 +38,16 @@ public int practice3 () {
             .orElse(-1);
 }
 
+public int practice4 () {
 
+    int[][] data = {
+            {3, 9},
+            {8, 12},
+            {7}
+    };
+    return Arrays.stream(data).flatMapToInt(Arrays::stream)
+            .filter(a->a%3==0)
+            .max()
+            .orElse(-1);
+}
 }
