@@ -24,7 +24,9 @@ public class Main5 {
                 .sorted(Comparator.comparing(String::length).reversed()).collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
     }
 
-    public void practice4() {
-
+    public Integer practice4() {
+        return Stream.of(5, 3, 4, 4, 3, 6).distinct().collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
     }
+
+
 }
