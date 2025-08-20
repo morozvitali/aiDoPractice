@@ -28,8 +28,12 @@ public class Main3 {
         return nums.stream().sorted(Comparator.comparingInt(value -> (int) value % 2).thenComparingInt(value -> (int) value)).collect(Collectors.toList());
     }
 
-    public void practice6 () {
-
+    public List <String> practice6 () {
+        List<String> words = List.of("kiwi", "apple", "banana", "grape", "plum");
+        return words.stream().filter(w->w.length() > 4).sorted(Comparator.comparing(String::length)).collect(Collectors.toList());
     }
 
+    public void practice7 () {
+
+    }
 }
