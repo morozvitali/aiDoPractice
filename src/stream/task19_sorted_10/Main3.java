@@ -33,7 +33,17 @@ public class Main3 {
         return words.stream().filter(w->w.length() > 4).sorted(Comparator.comparing(String::length)).collect(Collectors.toList());
     }
 
-    public void practice7 () {
-
+    public List <String> practice7 () {
+        List<String> words = List.of("apple",
+                "banana", "cherry", "kiwi", "grape");
+        return words.stream().sorted(Comparator
+                .comparingLong(this::countVowels)
+                .thenComparing(Comparator.naturalOrder())).toList();
     }
+
+    public long countVowels (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
+
+
 }
