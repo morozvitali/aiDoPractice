@@ -55,7 +55,11 @@ public class Main1 {
                 .collect(Collectors.groupingBy(a->a%3, Collectors.averagingInt(v->v)));
     }
 
-    public void practice11 () {
-
+    public Character practice11 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        return Arrays.stream(words).map(w->w.charAt(0)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
     }
+
+
 }
