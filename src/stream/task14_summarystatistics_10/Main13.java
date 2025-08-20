@@ -19,7 +19,7 @@ public class Main13 {
                 "Banana", "CHERRY", "kiwi", "PLUM");
         return words.stream()
                 .filter(w -> w.length() % 2 == 0)
-                .map(w -> w.toLowerCase())
+                .map(String::toLowerCase)
                 .mapToInt(String::length)
                 .summaryStatistics().getSum();
     }
@@ -44,13 +44,18 @@ public class Main13 {
                 .summaryStatistics().getAverage();
     }
 
-    public void practice5 () {
+    public String practice5 () {
         String[] words = {"apple", "orange", "banana",
                 "ice", "umbrella", "echo"};
-        Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0)
+        return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0)
                 .min(Comparator.comparing(String::length)).orElse("");
     }
 
+    public Map <Character, Double> practice6 () {
+        return Stream.of("apple", "ant",
+                "banana", "blue", "berry", "dolphin")
+                .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)))
+    }
 
 
 }
