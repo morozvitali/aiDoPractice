@@ -40,5 +40,8 @@ public class Main1 {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-
+    public boolean practice8 () {
+        int [] array = new int [] {1, 2, 3, 2};
+        return Arrays.stream(array).distinct().count() == array.length;
+     }
 }
