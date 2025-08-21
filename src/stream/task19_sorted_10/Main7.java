@@ -52,11 +52,15 @@ public class Main7 {
     }
 
 
-    public void practice8 () {
+    public List <String> practice8 () {
         List<String> words = List.of("tea", "watermelon",
                 "apple", "pear", "banana");
-        words.stream().sorted(Comparator.comparing(String::length).thenComparing(Comparator.reverseOrder()));
+        return words.stream().sorted(Comparator.comparing(String::length).thenComparing(Comparator.reverseOrder())).toList();
     }
 
+    public List <Integer> practice9 () {
+        List<Integer> numbers = List.of(3, 2, 5, 6, 4, 1);
+        return numbers.stream().sorted(Comparator.comparingInt((Integer value) -> value%2).thenComparing(Comparator.reverseOrder())).toList();
 
+    }
 }
