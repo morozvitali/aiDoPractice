@@ -124,4 +124,13 @@ public class Main8 {
                 .map(value-> (Boolean)value)
                 .toList();
     }
+
+    public List <String> practice12 () {
+        return Stream.of("hi", 123, "bye", false)
+                .filter(value -> value instanceof String)
+                .map(value->((String)value).toUpperCase())
+                .toList();
+    }
+
+    
 }
