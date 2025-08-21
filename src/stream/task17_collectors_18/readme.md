@@ -88,10 +88,11 @@ true=[2, 4, 6],
 false=[1, 3, 5]
 }
 
-    public void practice5 () {
-        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
-        numbers.stream().collect(Collectors.partitioningBy(value->value%2==0));
-    }
+    public Map <Boolean, List <Integer>> practice5 () {
+    List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+    return numbers.stream().collect(Collectors.partitioningBy(value->(int)value%2==0));
+}
+
 
 **✅ Задача 6: groupingBy + mapping**
 -
