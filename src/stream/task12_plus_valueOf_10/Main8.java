@@ -54,5 +54,8 @@ public class Main8 {
 
     }
 
-
+    public Integer practice9 (int n) {
+        return Integer.valueOf(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(i->Math.abs(i-5)).mapToObj(String::valueOf).collect(Collectors.joining()));
+    }
 }
