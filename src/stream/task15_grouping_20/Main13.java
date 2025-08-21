@@ -61,7 +61,11 @@ public class Main13 {
     public Character practice11() {
         String[] words = {"apple", "banana", "avocado",
                 "blueberry", "bleuberry", "apricot"};
-        return Arrays.stream(words).collect(Collectors.groupingBy(w -> w.charAt(0))).entrySet().stream().max(Comparator.comparing(value -> value.getValue())).map(Map.Entry::getKey).orElse(null);
+        return Arrays.stream(words)
+                .collect(Collectors.groupingBy(w -> w.charAt(0)))
+                .entrySet().stream()
+                .max(Comparator.comparingLong(n -> n.getValue().size()))                .map(Map.Entry::getKey)
+                .orElse(null);
     }
 
     public Map<Character, Long> practice12() {
@@ -72,5 +76,4 @@ public class Main13 {
         return map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors.toMap(w -> w.getKey(), w -> w.getValue()
         ));
     }
-
 }

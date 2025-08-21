@@ -335,7 +335,7 @@ groupingBy(word -> word.charAt(0), counting())
         Map<Character, Long> map = Arrays.stream(words)
                 .collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()));
         return map.entrySet().stream()
-                .max(Comparator.comparingLong(n->n.getValue()))
+                .max(Comparator.comparingLong(n->n.getValue().size()))
                 .map(Map.Entry::getKey)
                 .orElse(null);
     }
