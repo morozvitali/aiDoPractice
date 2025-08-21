@@ -110,4 +110,11 @@ public class Main8 {
                 .toList();
     }
 
+    public List <Integer> practice10 () {
+        return Stream.of("a", 3, 15, 11, 9, "99")
+                .filter(value->value instanceof Integer && (Integer) value > 10)
+                .map(value -> (Integer)value)
+                .toList();
+
+    }
 }
