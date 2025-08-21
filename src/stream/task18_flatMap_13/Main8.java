@@ -117,4 +117,11 @@ public class Main8 {
                 .toList();
 
     }
+
+    public List <Boolean> practice11 () {
+        return Stream.of("yes", true, false, true, 1)
+                .filter(value->value instanceof Boolean && (Boolean) value)
+                .map(value-> (Boolean)value)
+                .toList();
+    }
 }
