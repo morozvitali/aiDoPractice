@@ -52,4 +52,11 @@ public class Main7 {
     }
 
 
+    public void practice8 () {
+        List<String> words = List.of("tea", "watermelon",
+                "apple", "pear", "banana");
+        words.stream().sorted(Comparator.comparing(String::length).thenComparing(Comparator.reverseOrder()));
+    }
+
+
 }

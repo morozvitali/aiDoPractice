@@ -306,7 +306,8 @@ return (int) word.toLowerCase().chars()
 
 📥 Вхід:
 
-List<String> words = List.of("tea", "watermelon", "apple", "pear", "banana");
+List<String> words = List.of("tea", "watermelon",
+"apple", "pear", "banana");
 📤 Очікувано:
 
 [watermelon, banana, apple, pear, tea]
