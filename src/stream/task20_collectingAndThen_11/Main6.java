@@ -40,7 +40,7 @@ public class Main6 {
                 .collect(Collectors.collectingAndThen(
                         Collectors.toList(),
                         (List <Integer> list) -> list.stream()
-                        .mapToInt(value->(int)value)
+                        .mapToInt(value->value)
                         .average()
                         .orElse(0.0)));
     }
@@ -59,9 +59,20 @@ public class Main6 {
                     if (list.size() != 1) {
                         throw new IllegalStateException("except one z");
                     }
-                    return list.get(0);
+                    return list.getFirst();
                 }));
     }
 
+    public String practice9 () {
+        return Stream.of(1, 2, 3, 4, 5)
+                .filter(value->value %2 == 1)
+                .map(String::valueOf)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> String.join(", ", list)));
+    }
 
+    public Integer practice10 () {
+        List<String> data = List.of("hi", "hello",
+                "world", "no", "yes");
+        return data.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
+    }
 }
