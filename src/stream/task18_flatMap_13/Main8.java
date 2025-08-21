@@ -131,6 +131,4 @@ public class Main8 {
                 .map(value->((String)value).toUpperCase())
                 .toList();
     }
-
-    
 }
