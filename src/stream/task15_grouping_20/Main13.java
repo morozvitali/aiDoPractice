@@ -56,5 +56,10 @@ public class Main13 {
         return Stream.of(1, 2, 3, 4, 5).collect(Collectors.groupingBy(a->a%2==0 ? "even" : "odd"));
     }
 
-    
+    public Map <Integer, Double> practice10 () {
+        int[] numbers = {3, 6, 7, 8, 9, 10, 12};
+        return Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(a->a%3, Collectors.averagingInt(n->n)));
+    }
+
+
 }
