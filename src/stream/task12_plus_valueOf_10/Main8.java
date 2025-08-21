@@ -39,6 +39,9 @@ public class Main8 {
                 .map(a->a%2==1 ? a : a*a).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
+    public int practice7 (int n) {
+        return String.valueOf(Math.abs(n)).length();
+    }
 
 
 }
