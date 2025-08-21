@@ -53,4 +53,15 @@ public class Main6 {
                         Collections::unmodifiableMap));
     }
 
+    public String practice8 () {
+        return Stream.of("java", "zip", "jazz").filter(w->w.contains("z"))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> {
+                    if (list.size() != 1) {
+                        throw new IllegalStateException("except one z");
+                    }
+                    return list.get(0);
+                }));
+    }
+
+
 }
