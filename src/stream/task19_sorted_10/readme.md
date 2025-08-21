@@ -240,7 +240,8 @@ return nums.stream()
 📋 Умова:
 Залиш тільки слова з 4+ символів і відсортуй за останньою літерою.
 📥 Вхід:
-List<String> words = List.of("kiwi", "apple", "banana", "grape", "plum");
+List<String> words = List.of("kiwi", "apple", 
+"banana", "grape", "plum");
 📤 Очікувано:
 [banana, grape, kiwi, apple]
 💡 Підказка:

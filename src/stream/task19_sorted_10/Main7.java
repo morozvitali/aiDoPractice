@@ -35,5 +35,12 @@ public class Main7 {
         return nums.stream().sorted(Comparator.comparing(value->value % 2 == 1)).toList();
     }
 
+    public List <String> practice6 () {
+        List<String> words = List.of("kiwi", "apple",
+                "banana", "grape", "plum");
+        return words.stream().sorted(Comparator.comparing(w -> w.charAt(w.length() - 1))).toList();
+    }
+
+
 
 }
