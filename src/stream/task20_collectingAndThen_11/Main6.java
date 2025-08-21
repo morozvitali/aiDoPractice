@@ -36,4 +36,15 @@ public class Main6 {
                 .collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
 
+    public Double practice6 () {
+        return Stream.of("apple", "car",
+                "banana", "hi", "cherry")
+                .map(String::length)
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toList(),
+                        (List <Integer> list) -> list.stream()
+                        .mapToInt(value->(int)value)
+                        .average()
+                        .orElse(0.0)));
+    }
 }

@@ -60,7 +60,8 @@ collect(toList())
 
     List<String> data = List.of("apple", "car",
     "banana", "hi", "cherry");
-    .map(String::length).collect(Collectors.collectingAndThen(Collectors.toList(),
+    .map(String::length)
+    .collect(Collectors.collectingAndThen(Collectors.toList(),
     (List <Integer> list)->list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
 
 
