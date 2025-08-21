@@ -29,4 +29,11 @@ public class Main7 {
         List<Integer> numbers = List.of(3, 7, 1, 9, 2);
         return numbers.stream().sorted(Comparator.reverseOrder()).toList();
     }
+
+    public List <Integer> practice5 () {
+        List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
+        return nums.stream().sorted(Comparator.comparing(value->value % 2 == 1)).toList();
+    }
+
+
 }
