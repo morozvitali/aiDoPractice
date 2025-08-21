@@ -1,4 +1,4 @@
-package stream.task17_collectors_18;
+package stream.task17_collectors_15;
 
 import java.util.IntSummaryStatistics;
 import java.util.List;
