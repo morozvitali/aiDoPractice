@@ -89,9 +89,9 @@ count() — рахуємо скільки таких різних символі
 .collect(groupingBy(..., counting()))
 Collections.max(map.entrySet(), comparingByValue()).getKey()
 
-    public String practice2 (String s) {
-        Map <String, Long> map = Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        return Collections.max(map.entrySet(), Comparator.comparingLong(entry -> entry.getValue())).getKey();
+        Map<String, Long> map = Arrays.stream("java is fun and java is powerful".split(" "))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return map.entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).get().getKey();
     }
 
 🔍 Що відбувається:
