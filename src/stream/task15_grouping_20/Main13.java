@@ -43,11 +43,14 @@ public class Main13 {
     public Map <Integer, Long> practice7 () {
         return "ab123cc44a77".chars()
                 .filter(Character::isDigit)
-                .mapToObj(i->(Integer)i)
+                .mapToObj(i->i)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-    public void practice8 () {
-
+    public Boolean practice8 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().anyMatch(entry ->entry.getValue() >1);
     }
+
+
+
 }
