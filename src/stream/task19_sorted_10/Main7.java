@@ -10,14 +10,20 @@ public class Main7 {
         m.practice1();
     }
 
-    public List <String> practice1 () {
+    public List<String> practice1() {
         List<String> words = List.of("sun", "banana", "kiwi",
                 "cherry", "apple", "tea", "pear");
 
-        return words.stream().filter(w->w.length()>3)
+        return words.stream().filter(w -> w.length() > 3)
                 .sorted(Comparator.comparing(String::length).thenComparing(Comparator.naturalOrder())).toList();
     }
 
+    public List<String> practice2 () {
+        List<String> words = List.of("Zebra", "apple",
+                "Lemon", "banana");
+        return words.stream().map(String::toLowerCase)
+                .sorted(Comparator.naturalOrder()).toList();
+    }
 
 
 }
