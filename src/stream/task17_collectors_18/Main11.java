@@ -17,6 +17,12 @@ public Map<Integer, List <String>> practice3 () {
     return words.stream().collect(Collectors.groupingBy(String::length));
 }
 
+public Map <Integer, List <String>> practice4 () {
+    List<String> words = List.of("hi", "book",
+            "sun", "day", "Java", "sky");
+    return words.stream().collect(Collectors.groupingBy(String::length));
+}
+
 
 
 }
