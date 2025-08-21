@@ -2,6 +2,9 @@ package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main14 {
 
@@ -17,6 +20,15 @@ public class Main14 {
                 .map(String::toLowerCase)
                 .mapToInt(String::length)
                 .sum();
+    }
+
+    public Map<String, Long> practice3 () {
+        String[] words = {"sky", "apple",
+                "moon", "dry", "banana"};
+        return Arrays.stream(words).filter(w->w.length()>3 && countvowels(w) >1).collect(Collectors.toMap(Function.identity(), Main14::countvowels));
+    }
+    public static long countvowels (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
 
 
