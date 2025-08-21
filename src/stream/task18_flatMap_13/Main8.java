@@ -103,5 +103,11 @@ public class Main8 {
                 .toList();
             }
 
-    public List <String>
+    public List <String> practice9 () {
+        return Stream.of("hello", 1, 2.5, true, "world")
+                .filter(value -> value instanceof String)
+                .map(value->(String)value)
+                .toList();
+    }
+
 }
