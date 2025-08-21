@@ -61,6 +61,5 @@ public class Main7 {
     public List <Integer> practice9 () {
         List<Integer> numbers = List.of(3, 2, 5, 6, 4, 1);
         return numbers.stream().sorted(Comparator.comparingInt((Integer value) -> value%2).thenComparing(Comparator.reverseOrder())).toList();
-
     }
 }
