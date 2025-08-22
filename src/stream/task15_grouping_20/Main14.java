@@ -58,11 +58,11 @@ public class Main14 {
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting())).entrySet().stream().max(Comparator.comparing(entry -> entry.getValue())).get().getKey();
     }
 
-    public void practice12 () {
+    public Map<Character, Long> practice12 () {
         Map <Character, Long> map = new HashMap<>();
         map.put('a', 2L);
         map.put('b', 5L);
         map.put('c', 1L);
-        map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+        return map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors.toMap(w->w.getKey(), w->w.getValue()));
     }
 }
