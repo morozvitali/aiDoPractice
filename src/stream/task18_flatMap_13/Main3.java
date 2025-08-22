@@ -61,4 +61,6 @@ public class Main3 {
                 .map(a->a*a)
                 .sum();
     }
+
+
 }
