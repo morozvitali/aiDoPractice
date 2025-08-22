@@ -56,6 +56,9 @@ return words.stream()
 .toMap(a->a.charAt(0), 
 a->a.length()));
 
+        return words.stream().collect(Collectors
+                .toMap(a->a.charAt(0),
+                        a-> Collections.singletonList(a.length())));
 
 ✅ Задача 3: partitioningBy з підрахунком
 -
