@@ -1,9 +1,6 @@
 package stream.task17_collectors_15;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main12 {
@@ -27,5 +24,9 @@ public class Main12 {
         return numbers.stream().collect(Collectors.groupingBy(n->n%2==0, Collectors.counting()));
     }
 
-
+    public Map <Integer, Set<String>> practice4 () {
+        List<String> words = List.of("hi", "hi",
+                "book", "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
+    }
 }
