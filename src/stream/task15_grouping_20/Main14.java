@@ -37,4 +37,10 @@ public class Main14 {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().max(Comparator.comparing(v->v.getValue())).get().getKey();
     }
+
+    public Long practice7 () {
+        return "ab123cc44a77".chars().filter(Character::isDigit).count();
+    }
+
+
 }
