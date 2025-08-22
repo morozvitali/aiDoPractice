@@ -39,39 +39,53 @@ public class Main3 {
                 .orElse(-1);
     }
 
-    public int practice4 () {
+    public int practice4() {
         int[][] data = {
                 {3, 9},
                 {8, 12},
                 {7}
         };
         return Arrays.stream(data).flatMapToInt(Arrays::stream)
-                .filter(a->a%3==0)
+                .filter(a -> a % 3 == 0)
                 .max()
                 .orElse(-1);
     }
 
-    public int practice5 () {
+    public int practice5() {
         int[][] data = {
                 {2, 3},
                 {4}
         };
 
         return Arrays.stream(data).flatMapToInt(Arrays::stream)
-                .map(a->a*a)
+                .map(a -> a * a)
                 .sum();
     }
 
-    public int practice6 () {
+    public int practice6() {
         int[][] data = {
                 {3, 5},
                 {7}
         };
 
         return (int) Arrays.stream(data).flatMapToInt(Arrays::stream)
-                .filter(a->a%2 ==1)
+                .filter(a -> a % 2 == 1)
                 .summaryStatistics().getAverage();
     }
+
+    public int practice7() {
+        int[][] data = {
+                {12},
+                {24, 36}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main3::gcd).orElse(-1);
+    }
+
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+
+
 
 
 }
