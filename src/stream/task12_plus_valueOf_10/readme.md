@@ -233,12 +233,10 @@ return String.valueOf(digit * (i + 1));
         return number > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
     }
 
-
-
 ✅ Задача 10: Заміни кожну цифру на "X", 
-якщо вона > 5, і "O" інакше
-Умова:
-67894 → XXOXO
+якщо вона > 5, і "O" інакше 
+Умова: 
+67894 → XXOXO 
 
 Підказка:
 (d > 5) ? "X" : "O"
