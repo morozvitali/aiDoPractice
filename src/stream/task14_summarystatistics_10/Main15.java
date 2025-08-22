@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main15 {
     public long practice1 () {
@@ -12,6 +13,16 @@ public class Main15 {
                 .getCount();
     }
 
+    public int practice2 () {
+        List<String> words = List.of("APPLE",
+                "Banana", "CHERRY", "kiwi", "PLUM");
+        return words.stream().filter(a->a.length() %2==0)
+                .map(String::toLowerCase)
+                .mapToInt(String::length)
+                .sum();
+    }
 
+    public void practice3 () {
 
+    }
 }
