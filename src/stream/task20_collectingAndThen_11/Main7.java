@@ -34,4 +34,14 @@ public class Main7 {
         return Stream.of(2, 4, 10, 12, 14, 12, 4).collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
 
+    public Object practice6 () {
+        return Stream.of("code", "stream", "java")
+                .map(String::length)
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toList(),
+                        (List <Integer> list) -> list.stream()
+                                .mapToInt(value->value)
+                                .average()
+                                .orElse(0.0)));
+    }
 }

@@ -59,6 +59,7 @@ return Stream.of(5, 3, 4, 4, 3, 6).distinct()
 📤 Вихід: [12, 14] (як Set) — 
 і Set має бути unmodifiable
 
+
 ✅ Завдання 6: Знайти середнє довжини слів 
 📋 Умова:
 Порахуй середню довжину слів зі списку
@@ -69,12 +70,13 @@ map(String::length)
 collect(toList())
 потім collectingAndThen(list → avg)
 
-    List<String> data = List.of("apple", "car",
-    "banana", "hi", "cherry");
-    .map(String::length)
-    .collect(Collectors.collectingAndThen(Collectors.toList(),
-    (List <Integer> list)->list.stream().mapToInt(Integer::intValue).average().orElse(0.0)));
-
+                .map(String::length)
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toList(),
+                        (List <Integer> list) -> list.stream()
+                        .mapToInt(value->value)
+                        .average()
+                        .orElse(0.0)));
 
 ✅ Завдання 7: Незмінна 
 Map<перша літера, список слів>
