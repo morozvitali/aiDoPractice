@@ -77,5 +77,9 @@ public class Main15 {
                 .summaryStatistics();
     }
 
-
+    public void practice10 () {
+        String[] words = {"Apple", "banana",
+                "Cherry", "date", "Eggplant"};
+        Arrays.stream(words).collect(Collectors.groupingBy(w->"aeiou".indexOf(w.charAt(0)) >=0));
+    }
 }
