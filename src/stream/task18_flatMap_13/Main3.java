@@ -101,7 +101,14 @@ public class Main3 {
                 .toList();
     }
 
+    public List <Integer> practice10 () {
+        return Stream.of("a", 3, 15, 11, 9, "99")
+                .filter(value -> value instanceof Integer && (Integer)value > 10).map(value->(Integer)value).toList();
+    }
 
-
+    public List <Boolean> practice11 () {
+        return Stream.of("yes", true, false, true, 1)
+                .filter(x-> x instanceof Boolean && (Boolean)x == true).map(x->(Boolean)x).toList();
+    }
 
 }
