@@ -31,20 +31,32 @@ public class Main7 {
         return Stream.of(2, 4, 10, 12, 14, 12, 4).collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
 
-    public Object practice6 () {
+    public Object practice6() {
         return Stream.of("code", "stream", "java")
                 .map(String::length)
                 .collect(Collectors.collectingAndThen(
                         Collectors.toList(),
-                        (List <Integer> list) -> list.stream()
-                                .mapToInt(value->value)
+                        (List<Integer> list) -> list.stream()
+                                .mapToInt(value -> value)
                                 .average()
                                 .orElse(0.0)));
     }
 
-    public Map<Character, List <String>> practice7 () {
+    public Map<Character, List<String>> practice7() {
         return Stream.of("apple", "ant", "banana",
-                "bat", "car").collect(Collectors.collectingAndThen(Collectors.groupingBy(value-> value.charAt(0)), Collections::unmodifiableMap));
+                "bat", "car").collect(Collectors.collectingAndThen(Collectors.groupingBy(value -> value.charAt(0)), Collections::unmodifiableMap));
+    }
+
+    public String practice8() {
+        return Stream.of("java", "zip", "jazz")
+                .filter(w -> w.contains("z"))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
+                    if (list.size() != 1) {
+
+                        throw new IllegalStateException("only one z");
+                    }
+                    return list.get(0);
+                }));
     }
 
 
