@@ -24,5 +24,11 @@ public class Main7 {
                 .collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
     }
 
+    public Integer practice4 () {
+        return Stream.of(5, 3, 4, 4, 3, 6).distinct()
+                .collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
+    }
+
+
 
 }
