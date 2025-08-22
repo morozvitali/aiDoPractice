@@ -68,6 +68,8 @@ public class Main7 {
                 ));
     }
 
-
-
+    public Integer practice10 () {
+        return Stream.of("hi", "hello", "world", "no", "yes")
+                .collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.length()), Map::size));
+    }
 }
