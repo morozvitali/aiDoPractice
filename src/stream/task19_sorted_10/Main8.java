@@ -38,5 +38,18 @@ public class Main8 {
                 .sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
     }
 
+    public List <String> practic7 () {
+        List<String> words = List.of("apple",
+                "banana", "cherry", "kiwi", "grape");
+        return words.stream().sorted(Comparator.comparing(Main8::countVowels)).toList();
+    }
+    public static long countVowels(String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c) >= 0).count();
+    }
 
+    public List <String> practice8 () {
+        List<String> words = List.of("tea", "watermelon",
+                "apple", "pear", "banana");
+        return words.stream().sorted(Comparator.comparing(String::length).reversed()).toList();
+    }
 }
