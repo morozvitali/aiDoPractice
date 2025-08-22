@@ -1,9 +1,6 @@
 package stream.task14_summarystatistics_10;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -68,6 +65,16 @@ public class Main15 {
         return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c))
                 .filter(c->"aeiou".indexOf(c) >=0)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public IntSummaryStatistics practice8 () {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+
+        return Arrays.stream(words)
+        .filter(w->w.length() - w.chars().distinct().count() >=2)
+                .mapToInt(String::length)
+                .summaryStatistics();
     }
 
 
