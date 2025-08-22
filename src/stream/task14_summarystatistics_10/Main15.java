@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -45,5 +46,16 @@ public class Main15 {
                 .orElse(-1);
     }
 
+    public String practice5 () {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+        return Arrays.stream(words).filter(word->"aeiou".indexOf(word.charAt(0))>=0)
+                .min(Comparator.comparing(String::length))
+                .orElse("empty");
+    }
+
+    public void practice6 () {
+
+    }
 
 }
