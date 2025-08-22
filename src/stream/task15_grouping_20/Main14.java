@@ -25,7 +25,7 @@ public class Main14 {
     public String practice2 () {
         return Arrays.stream("java is fun and java is powerful".split(" "))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream().max(Comparator.comparing( entry->entry.getValue())).get().getKey();
+                .entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).get().getKey();
     }
 
     public Map <Integer, Integer> practice3 () {
@@ -35,12 +35,15 @@ public class Main14 {
     public int practice6 () {
         return Stream.of(1,2,2,3,3,3,4,4)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream().max(Comparator.comparing(v->v.getValue())).get().getKey();
+                .entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).get().getKey();
     }
 
     public Long practice7 () {
         return "ab123cc44a77".chars().filter(Character::isDigit).count();
     }
 
+    public Boolean practice8 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().anyMatch(entry->entry.getValue()>1);
+    }
 
 }
