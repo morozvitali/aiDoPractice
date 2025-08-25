@@ -28,7 +28,13 @@ public static long countVovels (String s) {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
 }
 
-
+public Double practice4 () {
+        return Stream.of("sky", "apple", "moon",
+                "dry", "sun").filter(w->countVovels(w) > 0)
+                .mapToInt(String::length)
+                .average()
+                .orElse(-1);
+}
 
 
 }
