@@ -57,17 +57,13 @@ List<String> words = List.of("APPLE",
 
 String[] words = {"sky", "apple", 
 "moon", "dry", "banana"};
-
 🧪 Очікувано:
-
 {
 apple=2,
 moon=2,
 banana=3
 }
-
 📦 Підказка:
-
 .filter(w -> countVowels(w) > 1 && w.length() > 3)
 .collect(Collectors.toMap(...))
 
