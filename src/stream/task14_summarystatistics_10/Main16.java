@@ -51,5 +51,14 @@ public Map <Character, Double> practice () {
                 .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
 }
 
+public Map <Character, Long> practice7 () {
+        return Stream.of("apple", "orange",
+                "banana", "umbrella")
+                .flatMap(w->w.chars().mapToObj(c->(char)c))
+                .filter(c->"aeiou".indexOf(c) >=0)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+}
+
+
 
 }
