@@ -36,6 +36,8 @@ public class Main13 {
     }
 
     public void practice6 () {
-
+        List<String> words = List.of("apple",
+                "ant", "banana", "bat", "car");
+        words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.joining(", ")));
     }
 }
