@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics_10;
 
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -59,6 +60,12 @@ public Map <Character, Long> practice7 () {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 }
 
-
+public IntSummaryStatistics practice8 () {
+        return Stream.of("apple", "moon",
+                "sky", "banana", "loop")
+                .filter(w->w.length() >w.chars().distinct().count())
+                .mapToInt(String::length)
+                .summaryStatistics();
+}
 
 }
