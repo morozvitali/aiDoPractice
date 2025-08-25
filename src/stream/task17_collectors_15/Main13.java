@@ -6,14 +6,19 @@ import java.util.stream.Collectors;
 
 public class Main13 {
     public Map <Character, List<String>> practice1 () {
-
         List<String> words = List.of("apple",
                 "ant", "banana", "bat", "car");
         return words.stream().collect(Collectors.groupingBy(word->word.charAt(0),
                 Collectors.mapping(String::toUpperCase, Collectors.toList())));
     }
 
-    public void practice () {
+    public Map <Character, Integer> practice2 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.toMap(w->w.charAt(0), String::length));
+    }
+
+    public void practice3 () {
 
     }
 
