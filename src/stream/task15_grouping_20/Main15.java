@@ -24,6 +24,11 @@ public class Main15 {
                 .collect(Collectors.groupingBy(w->w, Collectors.counting())).entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).get().getKey();
     }
 
+    public Map<Integer, Integer> practice3 () {
+        return Stream.of(12, 23, 34, 45, 16, 7)
+                .collect(Collectors.groupingBy(v->v%3, Collectors.summingInt(n->n)));
+    }
+
 
 
 }
