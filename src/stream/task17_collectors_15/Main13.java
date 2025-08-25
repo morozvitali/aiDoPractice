@@ -18,8 +18,9 @@ public class Main13 {
         return words.stream().collect(Collectors.toMap(w->w.charAt(0), String::length));
     }
 
-    public void practice3 () {
-
+    public Map<Boolean, Long> practice3 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy(a->a%2==0, Collectors.counting()));
     }
 
 }
