@@ -76,5 +76,9 @@ public class Main16 {
                 .filter(w -> "aeiou".chars().allMatch(c -> w.indexOf(c) >= 0)).collect(Collectors.toList());
     }
 
-
+    public Map<Boolean, List<String>> practice10() {
+        return Stream.of("Apple", "banana",
+                        "Cherry", "date", "Eggplant")
+                .collect(Collectors.partitioningBy(w -> Character.isUpperCase(w.charAt(0))));
+    }
 }
