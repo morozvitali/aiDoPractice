@@ -1,6 +1,7 @@
 package stream.task15_grouping_20;
 
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,4 +11,11 @@ public class Main15 {
                         "dry", "orange", "sun")
                 .collect(Collectors.toMap(w -> w, w -> w.chars().filter(c -> "aeiou".indexOf(c) >= 0).findAny().isPresent()));
     }
+
+    public long practice1 (String s) {
+        return s.toLowerCase().chars().mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(e->e.getValue() >1).count();
+    }
+
+
 }
