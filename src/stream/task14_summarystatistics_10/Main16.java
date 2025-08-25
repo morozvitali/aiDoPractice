@@ -43,6 +43,13 @@ public String practice5 () {
                 .filter(w->"aeiou".indexOf(w.charAt(0))>=0)
                 .min(Comparator.comparing(String::length))
                 .orElse("empty");
-
 }
+
+public Map <Character, Double> practice () {
+        return Stream.of("apple", "ant",
+                "banana", "blue", "berry", "dolphin")
+                .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+}
+
+
 }
