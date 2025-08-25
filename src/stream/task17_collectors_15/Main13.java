@@ -40,4 +40,11 @@ public class Main13 {
                 "ant", "banana", "bat", "car");
         words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.joining(", ")));
     }
+
+    public void practice7 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4,
+                5, 6, 7, 8, 9);
+        numbers.stream().collect(Collectors.groupingBy(a->a%3, Collectors.reducing(0, Integer::sum)));
+
+    }
 }
