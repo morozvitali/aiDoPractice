@@ -17,5 +17,12 @@ public class Main7 {
                 .toList();
     }
 
+    public List <String> practice3 () {
+        String s = "abracadabra";
+        return s.chars().distinct().filter(Character::isAlphabetic)
+                .mapToObj(c->String.valueOf((char)c))
+                .toList();
+    }
+
 
 }
