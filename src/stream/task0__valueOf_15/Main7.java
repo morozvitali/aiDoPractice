@@ -36,4 +36,19 @@ public class Main7 {
                 .toList();
     }
 
+    public List <Integer> practice6 () {
+        String s = "abcxyz";
+        return s.chars().map(c->c-'a' +1)
+                .boxed()
+                .toList();
+    }
+
+    public List <String> practice7 () {
+        String s = "java";
+        return s.chars().map(Character::toUpperCase)
+                .mapToObj(c->String.valueOf((char)c))
+                .toList();
+    }
+
+
 }
