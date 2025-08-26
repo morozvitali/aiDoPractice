@@ -100,6 +100,9 @@ public class Main7 {
                 .toList();
     }
 
-
+    public Boolean practice15 () {
+        String input1 = "123456";
+        return input1.chars().allMatch(Character::isDigit);
+    }
 
 }
