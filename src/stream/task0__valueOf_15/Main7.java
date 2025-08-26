@@ -24,5 +24,11 @@ public class Main7 {
                 .toList();
     }
 
+    public List <Integer> practice4 () {
+        String text = "Code";
+        return text.chars().boxed().toList();
+    }
+
+
 
 }
