@@ -28,5 +28,9 @@ public class Main2 {
         sb.replace(2,5, "X");
     }
 
+    public void practice6 () {
+        StringBuilder sb = new StringBuilder("123");
+        System.out.println(sb.append("4").append("5").append("6"));
+    }
 
 }
