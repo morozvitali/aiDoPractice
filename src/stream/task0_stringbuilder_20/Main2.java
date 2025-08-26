@@ -82,5 +82,26 @@ public class Main2 {
         System.out.println(sb);
     }
 
+    public void practice13 () {
+        StringBuilder sb = new StringBuilder("Tel: 123-456-789");
+        for (int i =0; i<sb.length(); i++) {
+            if (Character.isDigit(sb.charAt(i))) {
+                sb.setCharAt(i, '#');
+            }
+        }
+        System.out.println(sb);
+    }
 
+    public void practice15 () {
+        StringBuilder sb = new StringBuilder("apple\nbanana\ncherry");
+        int counter = 1;
+        sb.insert(0, counter++ + ". ");
+
+        for (int i = 0; i<sb.length(); i++) {
+            if (sb.charAt(i) == '\n') {
+                sb.insert(i + 1, counter++ + ". ");
+            }
+        }
+        System.out.println(sb);
+    }
 }
