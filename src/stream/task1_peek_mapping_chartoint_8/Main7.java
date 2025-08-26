@@ -21,5 +21,12 @@ public class Main7 {
                 .orElse(-1);
     }
 
+    public long practice4 (int n) {
+        return String.valueOf(n).chars()
+                .map(c->c-'0')
+                .filter(a->a<=5)
+                .count();
+    }
+
 
 }
