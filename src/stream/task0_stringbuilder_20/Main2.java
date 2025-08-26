@@ -64,4 +64,13 @@ public class Main2 {
         }
         System.out.println(sb);
     }
+
+    public void practice11 () {
+        StringBuilder sb = new StringBuilder("hello_world");
+        int undercoreIndex = sb.indexOf("_");
+        sb.deleteCharAt(undercoreIndex);
+        sb.insert(undercoreIndex, " ");
+        sb.append("!!!");
+        System.out.println(sb);
+    }
 }
