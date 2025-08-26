@@ -9,6 +9,13 @@ public class Main7 {
                 .toList();
     }
 
+    public List <Integer> practice2 () {
+        String mixed = "a1b2c3x9z7";
+        return mixed.chars().filter(Character::isDigit)
+                .mapToObj(Character::getNumericValue)
+                .sorted()
+                .toList();
+    }
 
 
 }
