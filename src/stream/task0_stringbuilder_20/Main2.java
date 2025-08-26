@@ -23,5 +23,10 @@ public class Main2 {
         System.out.println(sb.reverse());
     }
 
+    public void practice5 () {
+        StringBuilder sb = new StringBuilder("orange");
+        sb.replace(2,5, "X");
+    }
+
 
 }
