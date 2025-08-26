@@ -13,5 +13,10 @@ public class Main2 {
         System.out.println(sb);
     }
 
+    public void practice3 () {
+        StringBuilder sb = new StringBuilder("abcdef");
+        sb.delete(2,5);
+    }
+
 
 }
