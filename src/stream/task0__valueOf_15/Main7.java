@@ -65,5 +65,12 @@ public class Main7 {
         return s.chars().filter(Character::isAlphabetic).mapToObj(c->String.valueOf((char)c)).collect(Collectors.joining());
     }
 
+    public Integer practice10 () {
+        String s = "abc1d2e3f9";
+        return s.chars().filter(Character::isDigit)
+                .map(Character::getNumericValue)
+                .sum();
+    }
+
 
 }
