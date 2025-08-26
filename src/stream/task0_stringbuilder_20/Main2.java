@@ -18,5 +18,10 @@ public class Main2 {
         sb.delete(2,5);
     }
 
+    public void practice4 () {
+        StringBuilder sb = new StringBuilder("level");
+        System.out.println(sb.reverse());
+    }
+
 
 }
