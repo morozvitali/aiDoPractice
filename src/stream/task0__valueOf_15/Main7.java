@@ -60,5 +60,10 @@ public class Main7 {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public String practice9 () {
+        String s = "a1b2c3d4";
+        return s.chars().filter(Character::isAlphabetic).mapToObj(c->String.valueOf((char)c)).collect(Collectors.joining());
+    }
+
 
 }
