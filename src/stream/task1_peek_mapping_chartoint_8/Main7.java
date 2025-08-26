@@ -14,5 +14,12 @@ public class Main7 {
                 .allMatch(d->d%2==0);
     }
 
+    public int practice3 (int n) {
+        return String.valueOf(n).chars()
+                .map(c->c-'0')
+                .max()
+                .orElse(-1);
+    }
+
 
 }
