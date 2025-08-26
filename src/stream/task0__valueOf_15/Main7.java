@@ -72,5 +72,13 @@ public class Main7 {
                 .sum();
     }
 
+    public String practice11 () {
+        String s = "ABCdefGHIjkl123";
+        return s.chars().filter(Character::isAlphabetic)
+                .filter(Character::isLowerCase)
+                .mapToObj(c->String.valueOf((char)c))
+                .collect(Collectors.joining());
+    }
+
 
 }
