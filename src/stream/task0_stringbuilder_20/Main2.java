@@ -33,4 +33,11 @@ public class Main2 {
         System.out.println(sb.append("4").append("5").append("6"));
     }
 
+    public void practice7 () {
+        StringBuilder sb = new StringBuilder("sunshine");
+        sb.insert(3, "___");
+        System.out.println(sb);
+    }
+
+
 }
