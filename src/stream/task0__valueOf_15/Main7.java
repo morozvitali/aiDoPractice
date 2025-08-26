@@ -85,6 +85,11 @@ public class Main7 {
         return input.chars().map(c->c+1).boxed().toList();
     }
 
+    public List <Character> practice13 () {
+        List<Integer> digits = List.of(1, 2, 3, 9);
+        return digits.stream().map(c->(char) ('0' + c))
+                .toList();
+    }
 
 
 }
