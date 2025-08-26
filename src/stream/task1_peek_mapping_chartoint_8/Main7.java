@@ -8,7 +8,11 @@ public class Main7 {
                 .sum();
     }
 
-
+    public Boolean practice2 (int n) {
+        return String.valueOf(n).chars()
+                .map(c->c-'0')
+                .allMatch(d->d%2==0);
+    }
 
 
 }
