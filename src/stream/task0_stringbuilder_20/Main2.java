@@ -49,4 +49,9 @@ public class Main2 {
         System.out.println(sb);
     }
 
+    public String practice9 () {
+        return new StringBuilder("Java").reverse().toString();
+    }
+
+
 }
