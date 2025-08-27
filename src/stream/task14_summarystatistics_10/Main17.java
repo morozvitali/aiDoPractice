@@ -3,6 +3,9 @@ package stream.task14_summarystatistics_10;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main17 {
     public IntSummaryStatistics practice1 () {
@@ -18,6 +21,26 @@ public class Main17 {
                 .mapToInt(String::length)
                 .summaryStatistics().getSum();
     }
+
+    public Map<String, Long> practice3 () {
+        String[] words = {"sky", "apple",
+                "moon", "dry", "banana"};
+        return Arrays.stream(words).filter(w->countVowels(w)>1 && w.length() >3).collect(Collectors.toMap(Function.identity(), Main17::countVowels));
+    }
+
+    public static long countVowels(String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
