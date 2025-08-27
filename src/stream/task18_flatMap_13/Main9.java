@@ -103,5 +103,4 @@ public class Main9 {
                 .filter(v->v instanceof Boolean && (Boolean)v == true).map(v->(Boolean)v).toList();
     }
 
-
 }
