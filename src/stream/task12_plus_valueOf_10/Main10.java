@@ -29,5 +29,11 @@ public class Main10 {
                 .collect(Collectors.joining()));
     }
 
+    public String practice4 (int n) {
+        return String.valueOf(n).chars().map(Character::getNumericValue)
+                .mapToObj("*"::repeat)
+                .collect(Collectors.joining());
+    }
+
 
 }
