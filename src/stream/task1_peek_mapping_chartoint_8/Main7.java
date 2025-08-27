@@ -38,5 +38,4 @@ public class Main7 {
                 .reduce((a, b) -> a * b)
                 .orElse(-1);
     }
-
 }
