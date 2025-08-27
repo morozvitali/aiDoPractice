@@ -48,4 +48,13 @@ public class Main14 {
         return numbers.stream().collect(Collectors.groupingBy(w->w%3, Collectors.reducing(0,(a,b)->a+b)));
     }
 
+    public String practice8 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.reducing("",(a,b)->a.length() >= b.length() ? a:b));
+    }
+
+    public void practice9 () {
+
+    }
 }
