@@ -14,7 +14,7 @@ public class Main16 {
     }
 
     public String practice2(String s) {
-        return Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).get().getKey();
+        return Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
     }
 
     public Map<Integer, Integer> practice3() {
@@ -23,7 +23,7 @@ public class Main16 {
 
     public Integer practice6() {
         return Stream.of(1, 2, 2, 3, 3, 3, 4, 4)
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparing(e -> e.getValue())).get().getKey();
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).get().getKey();
     }
 
     public Map<Integer, Long> practice7() {
@@ -41,7 +41,14 @@ public class Main16 {
     public Map<Integer, Double> practice10() {
         return Stream.of(3, 6, 7, 8, 9, 10, 12)
                 .collect(Collectors.groupingBy(v -> v % 3, Collectors.averagingInt(n -> n)));
-
     }
+
+    public Character practice11 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting())).entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
+    }
+
 
 }
