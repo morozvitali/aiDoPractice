@@ -56,7 +56,8 @@ list ->list.get(0)));
 📥 Вхід: [5, 3, 4, 4, 3, 6] 📤 Вихід: 5
 📌 Підказка: distinct() → toList() → get(0)
 return Stream.of(5, 3, 4, 4, 3, 6).distinct()
-.collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
+.collect(Collectors.collectingAndThen(Collectors.toList(),
+List::getFirst));
 
 
 ✅ Завдання 5: Список цілих чисел → незмінний Set
