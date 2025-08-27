@@ -55,7 +55,11 @@ public Map <Character, Long> practice7 () {
             .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 }
 
-
+public IntSummaryStatistics practice8 () {
+    String[] words = {"apple", "moon",
+            "sky", "banana", "loop"};
+    return Arrays.stream(words).filter(w->w.length() - w.chars().distinct().count() > 2).mapToInt(String::length).summaryStatistics();
+}
 
 
 
