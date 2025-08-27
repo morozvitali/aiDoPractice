@@ -95,7 +95,12 @@ public class Main9 {
     }
 
     public List <Integer> practice10 () {
-        return Stream.of("a", 3, 15, 11, 9, "99").filter(v->v instanceof Integer && (Integer) v > 10).toList();
+        return Stream.of("a", 3, 15, 11, 9, "99").filter(v->v instanceof Integer && (Integer) v > 10).map(i->(Integer)i).toList();
+    }
+
+    public List <Boolean> practice11 () {
+        return Stream.of("yes", true, false, true, 1)
+                .filter(v->v instanceof Boolean && (Boolean)v == true).map(v->(Boolean)v).toList();
     }
 
 
