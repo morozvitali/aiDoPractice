@@ -63,4 +63,10 @@ public class Main16 {
                         LinkedHashMap::new // ось тут ми зберігаємо порядок
                 ));
     }
+
+    public Map <Character, Integer> practice13 () {
+        return Stream.of("a10", "a20", "b5", "b7").collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
+    }
+
+
 }
