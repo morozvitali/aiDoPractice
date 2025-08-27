@@ -89,5 +89,10 @@ public class Main9 {
         return Stream.of(10, "hello", true, 42, false, "42").filter(v->v instanceof Integer).map(i->(Integer)i).toList();
     }
 
+    public List <String> practice9 () {
+        return Stream.of("hello", 1, 2.5, true, "world")
+                .filter(a->a instanceof String).map(value -> (String) value).toList();
+    }
+
 
 }
