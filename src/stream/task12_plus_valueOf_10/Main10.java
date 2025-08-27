@@ -59,5 +59,11 @@ public class Main10 {
         }).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
+    public int practice9 (int n) {
+        return Integer.parseInt(String.valueOf(n).chars().map(Character::getNumericValue).map(a->Math.abs(a-5)).mapToObj(String::valueOf).collect(Collectors.joining()));
+    }
+
+
+
 
 }
