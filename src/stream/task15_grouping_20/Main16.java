@@ -19,4 +19,11 @@ public String practice2 (String s) {
 public Map <Integer, Integer> practice3 () {
         return Stream.of(12, 23, 34, 45, 16, 7).collect(Collectors.groupingBy(v->v%10, Collectors.summingInt(n->n)));
 }
+
+public Integer practice6 () {
+        return Stream.of(1,2,2,3,3,3,4,4)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparing(e->e.getValue())).get().getKey();
+}
+
+
 }
