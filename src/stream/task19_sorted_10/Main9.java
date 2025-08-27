@@ -11,7 +11,11 @@ public class Main9 {
                 .sorted(Comparator.comparingInt(String::length).thenComparing(Comparator.naturalOrder())).toList();
     }
 
-    public void practice2 () {
+    public List <String> practice2 () {
+        List<String> words = List.of("Zebra", "apple",
+                "Lemon", "banana");
 
+        words.stream().map(String::toLowerCase)
+                .sorted().toList();
     }
 }
