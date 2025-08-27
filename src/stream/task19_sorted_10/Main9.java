@@ -15,7 +15,15 @@ public class Main9 {
         List<String> words = List.of("Zebra", "apple",
                 "Lemon", "banana");
 
-        words.stream().map(String::toLowerCase)
+        return words.stream().map(String::toLowerCase)
                 .sorted().toList();
     }
+
+    public List<Integer> practice3 () {
+        List<Integer> numbers = List.of(3, 7, 1, 9, 2);
+        return numbers.stream().sorted(Comparator.reverseOrder()).toList();
+    }
+
+
+
 }
