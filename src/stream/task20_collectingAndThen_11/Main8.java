@@ -44,6 +44,16 @@ public class Main8 {
                 ));
     }
 
-    
+    public String practice8 () {
+        return Stream.of("java", "zip", "jazz").filter(w->w.contains("z"))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
+                    if (list.size()!=1) {
+                        throw new IllegalStateException("Except one z letter");
+                    }
+                    return list.getFirst();
+                }));
+    }
+
+
 
 }
