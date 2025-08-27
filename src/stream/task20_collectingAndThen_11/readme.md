@@ -42,8 +42,12 @@ List::size));
 📤 Вихід: "supernova"
 
         List<String> data = List.of("apple", "car", "banana", "hi", "cherry");
-        data.stream().sorted(Comparator.reverseOrder())
-                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.get(0)));
+    public String practice3 () {
+        return Stream.of("sun", "supernova", "star")
+.sorted(Comparator.comparing(String::length).reversed())
+.collect(Collectors.collectingAndThen(Collectors.toList(), 
+list ->list.get(0)));
+    }
 
 ✅ Завдання 4: Отримати перший унікальний елемент
 📋 Умова:
