@@ -2,6 +2,7 @@ package stream.task19_sorted_10;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main9 {
     public List <String> practice1 () {
@@ -27,6 +28,14 @@ public class Main9 {
     public List <Integer> practice5 () {
         List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
         return nums.stream().sorted(Comparator.comparingInt(a->(int)a%2).thenComparingInt(n->(int)n)).toList();
+    }
+
+    public List <String> practice6 () {
+        List<String> words = List.of("kiwi", "apple",
+                "banana", "grape", "plum");
+        return words.stream().filter(w->w.length()>=4)
+                .sorted(Comparator.comparing(w->w.charAt(w.length() - 1)))
+                .collect(Collectors.toList());
     }
 
 
