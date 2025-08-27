@@ -114,6 +114,7 @@ List<String> words = List.of("hi", "hi",
 3=[sun, day, sky],
 4=[book, Java]
 }
+
 📦 Початковий код:
 
 public Map<Integer, Set<String>> groupUniqueByLength() {
