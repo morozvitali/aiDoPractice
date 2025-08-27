@@ -1,9 +1,6 @@
 package stream.task15_grouping_20;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -43,12 +40,27 @@ public class Main16 {
                 .collect(Collectors.groupingBy(v -> v % 3, Collectors.averagingInt(n -> n)));
     }
 
-    public Character practice11 () {
+    public Character practice11() {
         String[] words = {"apple", "banana", "avocado",
                 "blueberry", "bleuberry", "apricot"};
 
-        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting())).entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
+        return Arrays.stream(words).collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting())).entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
     }
 
+    public Map<Character, Long> practice12() {
+        Map<Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
 
+        return map.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, // вирішення колізій (на всяк випадок)
+                        LinkedHashMap::new // ось тут ми зберігаємо порядок
+                ));
+    }
 }

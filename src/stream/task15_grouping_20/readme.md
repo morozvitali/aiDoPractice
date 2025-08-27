@@ -360,14 +360,16 @@ groupingBy(word -> word.charAt(0), counting())
 Вхід: {a=2, b=5, c=1}
 Вихід: b=5, a=2, c=1
 
-🧠 Підказка:
-entrySet().stream().sorted(Map.Entry
-.comparingByValue(Comparator.reverseOrder()))
-
-    public Map <Character, Long> practice12 (Map <Character, Long> map) {
-        return map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
-    }
-
+    return map.entrySet()
+            .stream()
+            .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+            .collect(Collectors.toMap(
+                    Map.Entry::getKey,
+                    Map.Entry::getValue,
+                    (oldValue, newValue) -> oldValue, // вирішення колізій (на всяк випадок)
+                    LinkedHashMap::new // ось тут ми зберігаємо порядок
+            ));
+}
 .collect(Collectors.toMap(
 Map.Entry::getKey,
 Map.Entry::getValue,
