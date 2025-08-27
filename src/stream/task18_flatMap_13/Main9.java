@@ -57,12 +57,17 @@ public class Main9 {
                 .map(a->a*a).sum();
     }
 
-    public void practice6 () {
+    public int practice6 () {
         int[][] data = {
                 {2, 3},
                 {4}
         };
 
-
+        return Arrays.stream(data).flatMapToInt(Arrays::stream)
+                .filter(a->a%2 == 0)
+                .map(a->a*a)
+                .sum();
     }
+
+
 }
