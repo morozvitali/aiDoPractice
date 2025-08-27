@@ -12,7 +12,11 @@ public class Main8 {
                 .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
     }
 
-    public void practice2 () {
+    public Integer practice2 () {
+        return Stream.of(3, 9, 2, 4, 6, 7, 12).collect(Collectors.collectingAndThen(Collectors.toList(), List::size));
+    }
+
+    public void practice3 () {
 
     }
 

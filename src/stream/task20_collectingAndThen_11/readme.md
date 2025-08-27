@@ -24,8 +24,12 @@
 📤 Вихід: 4
 
 📌 Підказка:
-.collect(collectingAndThen(toList(), List::size))
-
+public Integer practice2 () {
+return Stream.of(3, 9, 2, 4, 6, 7, 12)
+.collect(Collectors
+.collectingAndThen(Collectors.toList(),
+List::size));
+}
 
 
 ✅ Завдання 3: Повернути найдовше слово через get(0)
