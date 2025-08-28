@@ -37,8 +37,13 @@ public class Main17 {
         return Stream.of(1,2,2,3,3,3,4,4).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparing(e->e.getValue())).get().getKey();
     }
 
-    public Map <Integer, Long> practice7 () {
+    public Map <Character, Long> practice7 () {
         return "ab123cc44a77".chars().mapToObj(i->(char)i).filter(Character::isDigit).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+    public Boolean practice8 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().anyMatch(e->e.getValue() > 1);
+    }
+
 
 }
