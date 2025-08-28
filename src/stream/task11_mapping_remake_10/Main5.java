@@ -9,6 +9,10 @@ public class Main5 {
                 .map(w->w.length() >5 ? new StringBuilder(w).reverse().toString() : w).collect(Collectors.joining(" "));
     }
 
-
+public String practice2 (String s) {
+        return Arrays.stream(s.split(" "))
+                .map(w->w.length() >5 ? "[...]" : w)
+                .collect(Collectors.joining());
+}
 
 }
