@@ -30,8 +30,12 @@ public class Main5 {
                 .collect(Collectors.joining(" "));
     }
 
-    public void practice5 () {
-
+    public String practice5 (String s) {
+        return Arrays.stream(s.split(" "))
+                .filter(w->w.contentEquals(new StringBuilder(w)
+                        .reverse()))
+                .collect(Collectors.joining(" "));
     }
+
 
 }
