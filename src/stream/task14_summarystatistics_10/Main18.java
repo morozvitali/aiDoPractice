@@ -28,5 +28,13 @@ public class Main18 {
                 .collect(Collectors.toMap(Function.identity(), w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
     }
 
+    public Double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).filter(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count() > 0)
+                .mapToInt(String::length)
+                .summaryStatistics().getAverage();
+    }
+
 
 }
