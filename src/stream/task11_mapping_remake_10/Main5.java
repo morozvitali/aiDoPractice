@@ -2,6 +2,7 @@ package stream.task11_mapping_remake_10;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main5 {
     public String practice1() {
@@ -42,4 +43,13 @@ public class Main5 {
                 .map(w->w.matches(".*[aeiouAEIOU].*") ? new StringBuilder(w).reverse().toString() : w)
                 .collect(Collectors.joining(" "));
     }
+
+    public String practice7 (String s) {
+        StringBuilder sb = new StringBuilder();
+        return IntStream.range(0, s.length() +1)
+                .mapToObj(i -> sb.append(s.substring(0, i+1)).append("\n"))
+                .collect(Collectors.joining());
+    }
+
+
 }
