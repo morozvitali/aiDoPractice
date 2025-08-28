@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -21,19 +22,30 @@ public class Main18 {
                 .getSum();
     }
 
-    public Map<String, Long> practice3 () {
+    public Map<String, Long> practice3() {
         String[] words = {"sky", "apple",
                 "moon", "dry", "banana"};
-        return Arrays.stream(words).filter(w->w.length() > 3 && w.chars().filter(c->"aeiou".indexOf(c) >=0).count() > 1)
-                .collect(Collectors.toMap(Function.identity(), w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
+        return Arrays.stream(words).filter(w -> w.length() > 3 && w.chars().filter(c -> "aeiou".indexOf(c) >= 0).count() > 1)
+                .collect(Collectors.toMap(Function.identity(), w -> w.chars().filter(c -> "aeiou".indexOf(c) >= 0).count()));
     }
 
-    public Double practice4 () {
+    public Double practice4() {
         String[] words = {"sky", "apple", "moon",
                 "dry", "sun"};
-        return Arrays.stream(words).filter(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count() > 0)
+        return Arrays.stream(words).filter(w -> w.chars().filter(c -> "aeiou".indexOf(c) >= 0).count() > 0)
                 .mapToInt(String::length)
                 .summaryStatistics().getAverage();
+    }
+
+    public String practice5() {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+
+        return Arrays.stream(words)
+                .filter(w -> "aeiou"
+                        .indexOf(w.charAt(0)) >= 0)
+                .min(Comparator.comparingInt(String::length))
+                .orElse("empty");
     }
 
 
