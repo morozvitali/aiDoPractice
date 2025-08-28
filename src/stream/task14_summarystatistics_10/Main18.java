@@ -48,5 +48,13 @@ public class Main18 {
                 .orElse("empty");
     }
 
+    public Map <Character, Double> practice6 () {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0),
+                Collectors.averagingInt(String::length)));
+    }
+
+
 
 }
