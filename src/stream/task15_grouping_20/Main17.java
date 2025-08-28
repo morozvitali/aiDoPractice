@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main17 {
     public Map<String, Boolean> practice0() {
@@ -26,6 +27,10 @@ public class Main17 {
 
     public String practice2 (String s) {
         return Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparing(e->e.getValue())).get().getKey();
+    }
+
+    public Map <Integer, Integer> practice3 () {
+        return Stream.of(12, 23, 34, 45, 16, 7).collect(Collectors.groupingBy(a->a%10, Collectors.summingInt(n->n)));
     }
 
 
