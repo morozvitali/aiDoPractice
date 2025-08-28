@@ -34,5 +34,12 @@ public class Main11 {
                 .collect(Collectors.joining());
     }
 
+    public int practice5 (int n) {
+        return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n)))
+                .reverse()
+                .toString());
+    }
+
+
 
 }
