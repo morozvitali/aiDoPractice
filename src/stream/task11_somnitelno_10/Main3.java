@@ -1,4 +1,4 @@
-package stream.task11_mapping_remake_10;
+package stream.task11_somnitelno_10;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
