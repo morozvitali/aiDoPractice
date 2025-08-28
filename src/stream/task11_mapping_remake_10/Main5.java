@@ -37,5 +37,9 @@ public class Main5 {
                 .collect(Collectors.joining(" "));
     }
 
-
+    public String practice6 (String s) {
+        return Arrays.stream(s.split(" "))
+                .map(w->w.matches(".*[aeiouAEIOU].*") ? new StringBuilder(w).reverse().toString() : w)
+                .collect(Collectors.joining(" "));
+    }
 }
