@@ -15,4 +15,18 @@ public String practice2 (String s) {
                 .collect(Collectors.joining());
 }
 
+public String practice3 (String s) {
+        String [] arr = s.split(" ");
+                String temp = arr[0];
+                arr[0] = arr[arr.length-1];
+                arr[arr.length-1] = temp;
+                return String.join(" ", arr);
+                //return Arrays.stream(arr).collect(Collectors.joining(" "));
+}
+
+public void practice() {
+
+    }
+
+
 }
