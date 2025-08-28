@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main17 {
-    public Map<String, Boolean> practice1 () {
+    public Map<String, Boolean> practice0 () {
         String[] words = {"sky", "apple",
                 "dry", "orange", "sun"};
         return Arrays.stream(words)
@@ -18,6 +18,11 @@ public class Main17 {
     public static boolean isHasVovels(String s) {
         return s.chars().anyMatch(c->"aeiou".indexOf(c) >=0);
     }
+
+    public Map <Character, Long> practice1 (String s) {
+        return s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
 
 
 }
