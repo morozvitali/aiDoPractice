@@ -3,6 +3,7 @@ package stream.task17_collectors_15;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main15 {
@@ -47,4 +48,12 @@ public class Main15 {
         return numbers.stream().collect(Collectors.groupingBy(v->v%3, Collectors.summingInt(n->n)));
         //return numbers.stream().collect(Collectors.groupingBy(v->v%3, Collectors.reducing(0, Integer::sum)));
     }
+
+    public void practice8 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        words.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.reducing("", (a,b)-> a.length() > b.length() ? a : b)));
+    }
+
+
 }
