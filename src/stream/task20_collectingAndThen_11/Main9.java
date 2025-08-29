@@ -43,5 +43,17 @@ public class Main9 {
                 "bat", "car").collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), Collections::unmodifiableMap));
     }
 
+    public String practice8 () {
+        return Stream.of("java", "zip", "jazz")
+                .filter(w-> practice1().contains("z"))
+                .collect(Collectors.collectingAndThen(Collectors.toList(),
+                        list-> { if(list.size() !=1) {
+                    throw new IllegalStateException("except only one z");
+                }
+                return list.getFirst();
+        }));
+    }
+
+
 
 }
