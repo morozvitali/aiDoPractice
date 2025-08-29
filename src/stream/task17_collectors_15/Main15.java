@@ -28,4 +28,13 @@ public class Main15 {
                 "book", "sun", "day", "Java", "sky");
         return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
     }
+
+    public String practice5 () {
+        List<Integer> numbers = List.of(4, 8,
+                15, 16, 23, 42);
+        return numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count->"Count = " + count));
+    }
+
+
+
 }
