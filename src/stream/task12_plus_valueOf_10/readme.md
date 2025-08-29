@@ -65,6 +65,11 @@ List<Long> result = numbers.stream()
 map(Long::valueOf) — обгортка.
 .boxed() після mapToLong конвертує примітив у об'єкт Long.
 
+Long::parseLong — це метод, який повертає примітив long.
+-
+Але .map(...) завжди працює з об’єктами, тому long автоматично запаковується (autoboxing) в Long.
+-
+
 ✅ Завдання 4: Перевірка, чи всі строки в списку — валідні Long
 
 Умова:
