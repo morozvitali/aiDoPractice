@@ -40,5 +40,13 @@ public class Main10 {
             return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).map(a->a*a).sum();
     }
 
+    public Double practice6 () {
+            int[][] data = {
+                    {2, 3},
+                    {4}
+            };
+            return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==1).average().orElse(-1);
+    }
+
 
 }
