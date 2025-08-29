@@ -32,5 +32,13 @@ public class Main10 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a>0).reduce(-1,(a,b)->a*b);
     }
 
+    public int practice5 () {
+            int[][] data = {
+                    {2, 3},
+                    {4}
+            };
+            return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).map(a->a*a).sum();
+    }
+
 
 }
