@@ -37,7 +37,9 @@ public class Main9 {
                 .collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
 
-
+    public Double practice6 () {
+        return Stream.of("code", "stream", "java").collect(Collectors.collectingAndThen(Collectors.toList(), list->list.stream().mapToInt(String::length).average().orElse(-1)));
+    }
 
 
 }
