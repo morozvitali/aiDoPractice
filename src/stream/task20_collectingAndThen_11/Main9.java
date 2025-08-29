@@ -61,5 +61,9 @@ public class Main9 {
                 .collect(Collectors.collectingAndThen(Collectors.toList(), list -> String.join(", ", list)));
     }
 
-
+    public Integer practice10 () {
+        List<String> data = List.of("hi", "hello",
+                "world", "no", "yes");
+        return data.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
+    }
 }
