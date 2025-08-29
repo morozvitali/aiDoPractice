@@ -58,6 +58,4 @@ public class Main10 {
         return numbers.stream().sorted(Comparator.comparing(i->(int)i%2).reversed()).toList();
     }
 
-
-
 }
