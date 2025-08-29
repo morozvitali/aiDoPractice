@@ -1,6 +1,7 @@
 package stream.task12_plus_valueOf_10;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main12 {
     public long practice1() {
@@ -44,11 +45,17 @@ public class Main12 {
 
         String s = String.valueOf(number);
         Integer i = Integer.valueOf(s);
-        Long l1 = i.longValue();  // !
+        Long l1 = i.longValue();  // ! для Integer
 
         Long l2 = Long.parseLong(String.valueOf(number));
     }
 
+    public int practice6 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(a->a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
 
 
 }
