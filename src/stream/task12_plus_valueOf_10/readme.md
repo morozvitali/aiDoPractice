@@ -1,3 +1,125 @@
+✅ Завдання 1: Конвертація String → long
+
+Умова:
+Дано:
+String input = "12345";
+Присвой значення input змінній long result.
+
+Підказка:
+Використай Long.parseLong(...).
+
+Рішення:
+long result = Long.parseLong(input);
+
+Альтернативне рішення:
+long result = Long.valueOf(input); // auto-unboxing
+
+Теорія:
+Long.parseLong() повертає примітив long.
+Long.valueOf() повертає об'єкт Long, який автоматично розпаковується (unboxed) до long.
+
+✅ Завдання 2: Конвертація long → String
+Умова:
+Є:
+long number = 98765L;
+
+Перетвори його в String.
+Підказка:
+Використай метод String.valueOf(...) або Long.toString(...).
+
+Рішення:
+String s = String.valueOf(number);
+
+Альтернативне рішення:
+String s = Long.toString(number);
+
+Теорія:
+String.valueOf(...) працює з будь-яким типом. Long.toString(...) — специфічний для типу long.
+
+✅ Завдання 3: Обробка списку строкових чисел → List<Long>
+
+Умова:
+Дано:
+List<String> numbers = List.of("10", "20", "30");
+
+Перетвори цей список у List<Long> через Stream API.
+
+Підказка:
+Stream + .map(...) + Long::valueOf
+
+Рішення:
+List<Long> result = numbers.stream()
+.map(Long::valueOf)
+.collect(Collectors.toList());
+
+
+Альтернативне рішення:
+
+List<Long> result = numbers.stream()
+.map(s -> Long.parseLong(s))
+.boxed()
+.collect(Collectors.toList());
+
+Теорія:
+map(Long::valueOf) — обгортка.
+.boxed() після mapToLong конвертує примітив у об'єкт Long.
+
+✅ Завдання 4: Перевірка, чи всі строки в списку — валідні Long
+
+Умова:
+List<String> values = List.of("100", "abc", "300");
+Перевір, чи всі строки є дійсними long-значеннями.
+
+Підказка:
+Використай try-catch у Stream або метод з перевіркою.
+
+Рішення:
+boolean allValid = values.stream().allMatch(s -> {
+try {
+Long.parseLong(s);
+return true;
+} catch (NumberFormatException e) {
+return false;
+}
+});
+
+
+Альтернативне рішення:
+Створити утилітний метод isValidLong(String s) і викликати його у allMatch.
+
+Теорія:
+Long.parseLong(...) кидає виняток при невалідному числі.
+
+✅ Завдання 5: Різні типи – int → String → Integer → long
+
+Умова:
+Змінна:
+int number = 42;
+Пройди такі перетворення:
+
+int → String
+String → Integer
+Integer → long
+
+Підказка:
+Пам’ятай про автообгортку і авто-розпаковку.
+
+Рішення:
+String str = String.valueOf(number);
+Integer integer = Integer.valueOf(str);
+long result = integer.longValue();
+
+Альтернативне рішення:
+
+long result = Long.parseLong(String.valueOf(number));
+
+Теорія:
+int → String: String.valueOf(...)
+String → Integer: Integer.valueOf(...)
+Integer → long: .longValue()
+
+---------------------------------------------------
+
 🟡 Задача 1: Квадрат кожної цифри (square every digit)
 
 🎓 Умова:
