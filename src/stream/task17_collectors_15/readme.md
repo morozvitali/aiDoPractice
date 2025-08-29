@@ -13,7 +13,6 @@ b=[BANANA, BAT],
 c=[CAR]
 }
 
-
 .groupingBy(word->word.charAt(0), 
 Collectors.mapping(word->word.toUpperCase(), 
 Collectors.toList())));
