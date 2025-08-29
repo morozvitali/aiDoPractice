@@ -1,6 +1,7 @@
 package stream.task20_collectingAndThen_11;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,5 +19,10 @@ public class Main9 {
                 .collect(Collectors.collectingAndThen(Collectors.toList(), List::size));
     }
 
-
+    public String practice3 () {
+        return Stream.of("sun", "supernova", "star")
+                .sorted(Comparator.comparing(String::length).reversed())
+                .collect(Collectors.collectingAndThen(Collectors.toList(),
+                        List::getFirst));
+    }
 }
