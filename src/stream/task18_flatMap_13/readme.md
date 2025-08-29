@@ -267,6 +267,7 @@ IntSummaryStatistics stats = Arrays.stream(data)
 int result = stats.getCount() == 0 ? -1 : (int) stats.getAverage();
 
 ⭐ Задача 7: НСД (найбільший спільний дільник)
+=
 int[][] data = {
 {12},
 {24, 36}
