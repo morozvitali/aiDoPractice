@@ -17,7 +17,10 @@ public class Main15 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(String::length, Collectors.toList())));
     }
 
-
+    public void practice3 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        numbers.stream().collect(Collectors.groupingBy(n->n%2==0, Collectors.counting()));
+    }
 
 
 }
