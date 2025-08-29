@@ -65,5 +65,10 @@ public class Main12 {
                 .collect(Collectors.joining()));
     }
 
-
+    public String practice8 (int n) {
+        return String.valueOf(Math.abs(n)).chars()
+                .map(Character::getNumericValue)
+                .mapToObj("*"::repeat)
+                .collect(Collectors.joining());
+    }
 }
