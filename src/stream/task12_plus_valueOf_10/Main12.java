@@ -72,8 +72,16 @@ public class Main12 {
                 .collect(Collectors.joining());
     }
 
-    public int practice (int n) {
+    public int practice9 (int n) {
         return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
+    }
+
+    public int practice10 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars()
+                .map(Character::getNumericValue)
+                .map(a->a%2==0 ? a : a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
     }
 
 
