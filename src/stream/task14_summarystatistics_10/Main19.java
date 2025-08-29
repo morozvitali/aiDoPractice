@@ -26,7 +26,7 @@ public class Main19 {
                 "moon", "dry", "banana"};
         return Arrays.stream(words)
         .filter(w->w.length()>3 && countVowels(w) > 1)
-                .collect(Collectors.toMap(Function.identity(), Main19::countVowels);
+                .collect(Collectors.toMap(Function.identity(), Main19::countVowels));
     }
 
     public static long countVowels (String w) {
@@ -40,10 +40,19 @@ public class Main19 {
                 .summaryStatistics().getAverage();
     }
 
-    public String pracrtice5 () {
+    public String practice5 () {
         String[] words = {"apple", "orange", "banana",
                 "ice", "umbrella", "echo"};
         return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0)
                 .min(Comparator.comparingInt(String::length)).orElse("empty");
     }
+
+    public Map <Character, Double> practice6 () {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
+
+
+
 }
