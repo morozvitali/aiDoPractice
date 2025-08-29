@@ -231,6 +231,13 @@ return nums.stream()
 .collect(Collectors.toList());
 }
 
+Компілятор вимагає приведення до (int) 
+або використання intValue(), бо comparingInt() п
+отребує примітивного типу int, а не об'єкта Integer.
+
+(a -> (int) a % 2)  або  (a -> a.intValue() % 2)
+-
+
     public void practice5 () {
         List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
         nums.stream().sorted(Comparator.comparingInt(n->(int)n%2).thenComparing(n->(int)n)).collect(Collectors.toList());
