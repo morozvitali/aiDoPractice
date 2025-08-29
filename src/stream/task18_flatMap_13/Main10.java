@@ -22,5 +22,15 @@ public class Main10 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2 == 0).min().orElse(-1);
     }
 
+    public int practice3 () {
+        int[][] data = {
+                {-3, 5},
+                {2},
+                {-1, 4}
+        };
+
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a>0).reduce(-1,(a,b)->a*b);
+    }
+
 
 }
