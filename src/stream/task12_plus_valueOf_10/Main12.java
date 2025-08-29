@@ -71,4 +71,10 @@ public class Main12 {
                 .mapToObj("*"::repeat)
                 .collect(Collectors.joining());
     }
+
+    public int practice (int n) {
+        return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
+    }
+
+
 }
