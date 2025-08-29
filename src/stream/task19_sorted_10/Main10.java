@@ -11,8 +11,14 @@ public class Main10 {
         return words.stream().sorted(Comparator.comparingInt(String::length).thenComparing(Comparator.naturalOrder())).toList();
     }
 
-    public List <String> practice2 () {
-        return Stream.of("pear", "apple", "banana").sorted(Comparator.naturalOrder()).toList();
+    public List <String> practice1 () {
+        return Stream.of("pear", "apple", "banana").filter(w->w.length() >3).sorted(Comparator.comparing(String::length)).toList();
+    }
+
+    public List<String> practice2 () {
+        List<String> words = List.of("Zebra", "apple",
+                "Lemon", "banana");
+        return words.stream().sorted().map(String::toLowerCase).toList();
     }
 
 
