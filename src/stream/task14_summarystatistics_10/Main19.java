@@ -69,5 +69,10 @@ public class Main19 {
         return Arrays.stream(words).filter(w->"aeiou".chars().allMatch(c->w.indexOf(c) >=0)).toList();
     }
 
+    public Map <Boolean, List <String>> practice10 () {
+        String[] words = {"Apple", "banana",
+                "Cherry", "date", "Eggplant"};
+        return Arrays.stream(words).collect(Collectors.partitioningBy(w->Character.isUpperCase(w.charAt(0))));
 
+    }
 }
