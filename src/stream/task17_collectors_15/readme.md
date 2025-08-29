@@ -240,14 +240,24 @@ Collectors.joining(", ")
 
 ✅ Задача 7: groupingBy + reducing
 -
-📌 Є список чисел. Згрупуй їх за остачею 
+📌 Є список чисел. Згрупуй їх за остачею
+-
 від ділення на 3, і порахуй суму в кожній групі.
-
+-
 🔍 Підказка: groupingBy(..., reducing(...))
 Collectors.reducing(...) Це спеціальний колектор, 
 який дозволяє звести (reduce) 
 потік елементів до одного результату, 
 вказуючи свою логіку агрегації.
+
+    public Map <Integer, Integer> practice7 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4,
+                5, 6, 7, 8, 9);
+        return numbers.stream().collect(Collectors.groupingBy(v->v%3, Collectors.summingInt(n->n)));
+        return numbers.stream().collect(Collectors.groupingBy(v->v%3, Collectors.reducing(0, Integer::sum)));
+
+    }
+
 
 Форма	Синтаксис	Що робить
 1	reducing(BinaryOperator<T> accumulator)	->
