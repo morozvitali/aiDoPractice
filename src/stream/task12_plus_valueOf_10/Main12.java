@@ -7,6 +7,11 @@ public class Main12 {
         return Long.valueOf(input); //--> autounboxing from Integer
     }
 
+    public String practice2 () {
+        long number = 98765L;
+        //return String.valueOf(number); any type
+        return Long.toString(number); // specific -> long ??
+    }
 
 
 }
