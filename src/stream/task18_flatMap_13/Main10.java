@@ -67,9 +67,14 @@ public class Main10 {
                 .map(i->(Integer)i).toList();
     }
 
-    public void practice9 () {
-        Stream.of("hello", 1, 2.5, true, "world")
+    public List <String> practice9 () {
+        return Stream.of("hello", 1, 2.5, true, "world")
                 .filter(value->value instanceof String).map(w->(String)w).toList();
+    }
+
+    public List <Integer> practice10 () {
+        return Stream.of("a", 3, 15, 11, 9, "99")
+                .filter(a->a instanceof Integer && (Integer)a > 10).map(a->(Integer)a).toList();
     }
 
 
