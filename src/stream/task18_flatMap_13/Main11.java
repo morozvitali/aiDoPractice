@@ -5,7 +5,7 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Main18 {
+public class Main11 {
     public List<Integer> practice1() {
         List<List<Integer>> weeklyData = List.of(
                 List.of(40, 55, 60),
