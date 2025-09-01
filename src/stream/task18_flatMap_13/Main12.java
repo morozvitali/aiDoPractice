@@ -84,12 +84,21 @@ public class Main12 {
         return b==0? a : gcd(b, a%b);
     }
 
-    public void practice8 () {
-        Stream.of(10, "hello", true, 42, false, "42").filter(v-> v instanceof Integer).map(i->(Integer)i).toList();
+    public List <Integer> practice8 () {
+        return Stream.of(10, "hello", true, 42, false, "42").filter(v-> v instanceof Integer).map(i->(Integer)i).toList();
     }
 
-    public void practice9 () {
-        Stream.of("hello", 1, 2.5, true, "world").filter(val->val instanceof String).map(v->(String)v).toList();
+    public List <String> practice9 () {
+        return Stream.of("hello", 1, 2.5, true, "world").filter(val->val instanceof String).map(v->(String)v).toList();
+    }
+
+    public List <Integer> practice10 () {
+        return Stream.of("a", 3, 15, 11, 9, "99")
+                .filter(val->val instanceof Integer && (Integer) val > 10).map(v->(Integer)v).toList();
+    }
+
+    public List<Boolean> practice11 () {
+        return Stream.of("yes", true, false, true, 1).filter(b->b instanceof Boolean && (Boolean) b == true).map(b->(Boolean)b).toList();
     }
 
 
