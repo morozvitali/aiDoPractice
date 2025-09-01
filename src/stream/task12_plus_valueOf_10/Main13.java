@@ -15,9 +15,9 @@ public class Main13 {
         return numbers.stream().map(Long::valueOf).toList();
     }
 
-    public boolean practice4 () {
+    public boolean practice4() {
         List<String> values = List.of("100", "abc", "300");
-        return values.stream().allMatch(s->{
+        return values.stream().allMatch(s -> {
             try {
                 Long.parseLong(s);
                 return true;
@@ -33,27 +33,32 @@ public class Main13 {
         long result = Long.parseLong(s);
     }
 
-    public int practice6 (int n) {
+    public int practice6(int n) {
         return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
-                .map(a->a*a).mapToObj(String::valueOf).collect(Collectors.joining()));
+                .map(a -> a * a).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
-    public int practice7 (int n) {
+    public int practice7(int n) {
         return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
-                .map(a->a*a*a).mapToObj(String::valueOf).collect(Collectors.joining()));
+                .map(a -> a * a * a).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
-    public int practice8 (int n) {
+    public int practice8(int n) {
         return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
-                .filter(a->a%2==0).mapToObj(String::valueOf).collect(Collectors.joining()));
+                .filter(a -> a % 2 == 0).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
-    public String practice9 (int n) {
+    public String practice9(int n) {
         return String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
                 .mapToObj("*"::repeat).collect(Collectors.joining());
     }
 
-    public int practice10 (int n) {
+    public int practice10(int n) {
         return Integer.parseInt(new StringBuffer(String.valueOf(Math.abs(n))).reverse().toString());
+    }
+
+    public int practice11(int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars()
+                .map(Character::getNumericValue).map(v->v%2==0 ? v : v*v).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 }
