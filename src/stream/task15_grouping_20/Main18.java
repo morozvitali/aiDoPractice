@@ -39,6 +39,11 @@ public Map <Integer, Long> practice7 () {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 }
 
+public Boolean practice8 () {
+        return Stream.of(1, 2, 3, 2)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().anyMatch(entry->entry.getValue()>1);
+}
+
 
 
 }
