@@ -23,5 +23,13 @@ public class Main12 {
         return nums.stream().sorted(Comparator.comparing(n->(int)n%2).thenComparingInt(n->(int)n)).toList();
     }
 
+    public List <String> practice6 () {
+        List<String> words = List.of("kiwi", "apple",
+                "banana", "grape", "plum");
+        return words.stream().sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
+    }
+
+
+
 }
 
