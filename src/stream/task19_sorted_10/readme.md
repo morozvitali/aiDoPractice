@@ -1,37 +1,3 @@
-🎯 Завдання: sorted
-Твоя місія — написати метод, який:
-
-Має список слів
-Вибирає тільки ті, що довші за 3 літери
-Сортує за:
-спочатку довжиною слова
-потім — в алфавітному порядку
-Повертає список
-
-📥 Вхід:
-List<String> words = List.of("sun", "banana", "kiwi",
-"cherry", "apple", "tea", "pear");
-
-📤 Результат:
-[kiwi, pear, apple, banana, cherry]
-
-
-💡 Підказка:
-.sorted(Comparator.comparing(String::length)
-.thenComparing(Comparator.naturalOrder()))
-
-🔧 Початковий шаблон:
-public List<String> sortWordsSmart(List<String> words) {
-return words.stream()
-.filter(w -> w.length() > 3)
-.sorted(
-Comparator.comparing(String::length)
-.thenComparing(Comparator.naturalOrder())
-)
-.collect(Collectors.toList());
-}
-
-
 ?--?--?--?--?--?--?--?--THEORY--?--?--?--?--?--?--?--?
 
 
@@ -57,7 +23,7 @@ Comparator.comparing(Person::getAge)
 
 🧠 Теорія: sorted() — що, коли і навіщо]()
 
-✅ 1. sorted() без параметрів
+✅ sorted() без параметрів
 Сортує елементи в природному порядку
 (для String — алфавітно, для Integer — по зростанню)
 
@@ -65,7 +31,7 @@ Stream.of("pear", "apple", "banana")
 .sorted()
 .toList();  // [apple, banana, pear]
 
-✅ 2. sorted(Comparator) — з компаратором
+✅ sorted(Comparator) — з компаратором
 Дозволяє кастомізувати логіку сортування
 
 🔹 За спаданням:

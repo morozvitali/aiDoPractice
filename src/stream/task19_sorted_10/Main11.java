@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MySorted {
+public class Main11 {
     public List<String> mySort() {
 
         List<String> words = List.of("sun", "banana", "kiwi",
