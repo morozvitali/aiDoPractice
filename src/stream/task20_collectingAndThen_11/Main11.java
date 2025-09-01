@@ -50,4 +50,12 @@ public class Main11 {
                     return list.get(0);
                 })));
     }
+
+    public List <Integer> practice9 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+        return numbers.stream().filter(n->n%2 !=0)
+                .map(String::valueOf)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> String.join(", ", list)));
+    }
+
 }
