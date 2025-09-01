@@ -1,3 +1,18 @@
+✅ Задача 12: А вирішення колізій і збирання у LinkedHashMap::new
+
+    return map.entrySet()
+            .stream()
+            .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+            .collect(Collectors.toMap(
+                    Map.Entry::getKey,
+                    Map.Entry::getValue,
+                    (oldValue, newValue) -> oldValue, // вирішення колізій (на всяк випадок)
+                    LinkedHashMap::new // ось тут ми зберігаємо порядок
+            ));
+
+
+
+
 task db h2 project
 
 task0_add_intstream_range_and_intstream_iterator_as_part

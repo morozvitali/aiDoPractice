@@ -1,9 +1,6 @@
 package stream.task15_grouping_20;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -60,5 +57,13 @@ public Character practice11 () {
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting())).entrySet().stream().max(Comparator.comparing(v->v.getValue())).get().getKey();
 }
 
+public void practice12 () {
+    Map <Character, Long> map = new HashMap<>();
+    map.put('a', 2L);
+    map.put('b', 5L);
+    map.put('c', 1L);
+    map.entrySet().stream().sorted(Comparator.comparing(v->v.getValue()).reversed())
+            .collect(Collectors.toMap(a->a.getKey(), a->a.getValue(), (oldValue, newValue) -> oldValue, LinkedHashMap::new))
+}
 
 }
