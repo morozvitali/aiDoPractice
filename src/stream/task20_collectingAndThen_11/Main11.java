@@ -41,21 +41,22 @@ public class Main11 {
                 "bat", "car").collect(Collectors.collectingAndThen(Collectors.groupingBy(w -> w.charAt(0)), Collections::unmodifiableMap));
     }
 
-    public String practice8() {
-        return Stream.of("java", "zip", "jazz").filter(w -> w.contains("z"))
-                .collect(Collectors.collectingAndThen(Collectors.collectingAndThen(Collectors.toList(), list -> {\
-                    if (list.size() != 1) {
-                        throw new IllegalStateException("exept one z");
-                    }
-                    return list.get(0);
-                })));
+    public String practice8 () {
+        return Stream.of("java", "zip", "jazz")
+                .filter(w-> practice1().contains("z"))
+                .collect(Collectors.collectingAndThen(Collectors.toList(),
+                        list-> { if(list.size() !=1) {
+                            throw new IllegalStateException("except only one z");
+                        }
+                            return list.getFirst();
+                        }));
     }
 
-    public List <Integer> practice9 () {
-        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
-        return numbers.stream().filter(n->n%2 !=0)
+
+    public String practice9 () {
+        return Stream.of(1, 2, 3, 4, 5)
+                .filter(a->a%2==0)
                 .map(String::valueOf)
-                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> String.join(", ", list)));
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> String.join(", ", list)));
     }
-
 }
