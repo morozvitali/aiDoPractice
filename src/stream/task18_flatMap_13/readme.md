@@ -76,6 +76,7 @@ return sentences.stream()
                 "Streams are cool",
                 "Java makes sense"
         );
+
         sentences.stream().flatMap(sentence -> Arrays.stream(sentence.split(""))).distinct().collect(Collectors.toList());
     }
 
