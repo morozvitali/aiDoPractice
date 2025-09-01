@@ -36,4 +36,20 @@ public class Main12 {
                 .orElse(-1);
     }
 
+    public int practice4 () {
+        int[][] data = {
+                {3, 9},
+                {8, 12},
+                {7}
+        };
+
+        return Arrays.stream(data).flatMapToInt(Arrays::stream)
+                .filter(a->a%3==0)
+                .max()
+                .orElse(-1);
+    }
+
+
+
+
 }
