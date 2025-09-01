@@ -16,7 +16,8 @@ long result = Long.valueOf(input); // auto-unboxing
 
 Теорія:
 Long.parseLong() повертає примітив long.
-Long.valueOf() повертає об'єкт Long, який автоматично розпаковується (unboxed) до long.
+Long.valueOf() повертає об'єкт Long, який автоматично 
+розпаковується (unboxed) до long.
 
 ✅ Завдання 2: Конвертація long → String
 Умова:
