@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main12 {
     public List<String> practice1(List<String> sentences) {
@@ -81,6 +82,10 @@ public class Main12 {
 
     public static int gcd (int a, int b) {
         return b==0? a : gcd(b, a%b);
+    }
+
+    public void practice8 () {
+        Stream.of(10, "hello", true, 42, false, "42").filter(v-> v instanceof Integer).map(i->(Integer)i).toList();
     }
 
 
