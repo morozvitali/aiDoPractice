@@ -47,8 +47,5 @@ public class Main12 {
         return numbers.stream().sorted(Comparator.comparingInt((Integer n) -> n%2)
                 .thenComparing(Comparator.reverseOrder())).toList();
     }
-
-
-
 }
 
