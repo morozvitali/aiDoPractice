@@ -101,6 +101,8 @@ public class Main12 {
         return Stream.of("yes", true, false, true, 1).filter(b->b instanceof Boolean && (Boolean) b == true).map(b->(Boolean)b).toList();
     }
 
-
-
+    public List <String> practice12 () {
+        return Stream.of("hi", 123, "bye", false)
+                .filter(v->v instanceof String).map(v->((String) v).toUpperCase()).toList();
+    }
 }
