@@ -79,13 +79,12 @@ map(String::length)
 collect(toList())
 потім collectingAndThen(list → avg)
 
-                .map(String::length)
-                .collect(Collectors.collectingAndThen(
-                        Collectors.toList(),
-                        (List <Integer> list) -> list.stream()
-                        .mapToInt(value->value)
-                        .average()
-                        .orElse(0.0)));
+    return Stream.of("code", "stream", "java")
+    .collect(Collectors
+    .collectingAndThen(Collectors.toList(), 
+    list->list.stream().mapToInt(String::length)
+    .average().orElse(-1)));
+
 
 ✅ Завдання 7: Незмінна 
 Map<перша літера, список слів>
