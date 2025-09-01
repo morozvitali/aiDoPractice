@@ -29,8 +29,14 @@ public Map<Integer, Integer> practice3 () {
                 .collect(Collectors.groupingBy(v->v%10, Collectors.summingInt(n->n)));
 }
 
-public int practice4 () {
+public int practice6 () {
         return Stream.of(1,2,2,3,3,3,4,4).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparing(entry->entry.getValue())).get().getKey();
+}
+
+public Map <Integer, Long> practice7 () {
+        return "ab123cc44a77".chars().filter(Character::isDigit)
+                .mapToObj(a->(int)a)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 }
 
 

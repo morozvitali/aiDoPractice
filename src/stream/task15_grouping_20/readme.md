@@ -219,7 +219,7 @@ map.entrySet() → max(Map.Entry::getValue) → .getKey()
 
 groupingBy(c -> c, counting())
 
-    public Map <Character, Long> practice7 () {
+    public Map <Integer, Long> practice7 () {
         return "ab123cc44a77"
                 .chars()
                 .filter(c->Character.isDigit(c))
