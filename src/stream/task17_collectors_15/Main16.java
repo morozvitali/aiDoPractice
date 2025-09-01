@@ -29,7 +29,9 @@ public class Main16 {
         return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
     }
 
-
+    public String practice5 (String s) {
+        return s.chars().filter(Character::isDigit).mapToObj(a->(int)a).collect(Collectors.collectingAndThen(Collectors.counting(), count->"Count = " + count));
+    }
 
 
 
