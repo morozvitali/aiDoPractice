@@ -26,4 +26,9 @@ public class Main13 {
         });
     }
 
+    public void practice5(int number) {
+        String s = String.valueOf(number);
+        Integer i = Integer.valueOf(s);
+        long result = Long.parseLong(s);
+    }
 }
