@@ -48,5 +48,8 @@ public class Main13 {
                 .filter(a->a%2==0).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
-
+    public String practice9 (int n) {
+        return String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .mapToObj("*"::repeat).collect(Collectors.joining());
+    }
 }
