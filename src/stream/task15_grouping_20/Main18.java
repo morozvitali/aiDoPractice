@@ -65,5 +65,4 @@ public void practice12 () {
     map.entrySet().stream().sorted(Comparator.comparing(v->v.getValue()).reversed())
             .collect(Collectors.toMap(a->a.getKey(), a->a.getValue(), (oldValue, newValue) -> oldValue, LinkedHashMap::new))
 }
-
 }
