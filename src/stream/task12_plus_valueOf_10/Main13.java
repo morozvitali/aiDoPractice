@@ -66,4 +66,9 @@ public class Main13 {
         return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
                 .map(a->Math.abs(a-5)).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
+
+    public String practice13 (int n) {
+        return String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .mapToObj(d->d>5? "X" : "O").collect(Collectors.joining());
+    }
 }
