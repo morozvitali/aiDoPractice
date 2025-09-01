@@ -52,4 +52,8 @@ public class Main13 {
         return String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
                 .mapToObj("*"::repeat).collect(Collectors.joining());
     }
+
+    public int practice10 (int n) {
+        return Integer.parseInt(new StringBuffer(String.valueOf(Math.abs(n))).reverse().toString());
+    }
 }
