@@ -1,6 +1,7 @@
 package stream.task12_plus_valueOf_10;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main13 {
     String input = "12345";
@@ -31,4 +32,10 @@ public class Main13 {
         Integer i = Integer.valueOf(s);
         long result = Long.parseLong(s);
     }
+
+    public int practice6 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(a->a*a).mapToObj(String::valueOf).collect(Collectors.joining()));
+    }
+
 }
