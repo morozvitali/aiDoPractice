@@ -73,5 +73,11 @@ public class Main13 {
                 .filter(a->a instanceof Integer).map(i->(Integer)i).toList();
     }
 
+    public List <String> practice9 () {
+        return Stream.of("hello", 1, 2.5, true, "world")
+                .filter(s->s instanceof String).map(s->(String)s).toList();
+    }
+
+
 
 }
