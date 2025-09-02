@@ -88,5 +88,4 @@ public class Main13 {
                 .filter(a->a instanceof Boolean && (Boolean) a == true).map(a->(Boolean)a).toList();
     }
 
-
 }
