@@ -83,4 +83,10 @@ public class Main13 {
                 .filter(a->a instanceof Integer && (Integer) a > 10).map(a->(Integer)a).toList();
     }
 
+    public List<Boolean> practice11 () {
+        return Stream.of("yes", true, false, true, 1)
+                .filter(a->a instanceof Boolean && (Boolean) a == true).map(a->(Boolean)a).toList();
+    }
+
+
 }
