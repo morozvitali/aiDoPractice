@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main20 {
@@ -52,5 +53,10 @@ public class Main20 {
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 
+    public Map <Character, Integer> practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c)).filter(c->"aeiou".indexOf(c)>=0).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
 
 }
