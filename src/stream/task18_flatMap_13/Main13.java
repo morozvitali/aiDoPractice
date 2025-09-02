@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main13 {
     public List<String> practice1() {
@@ -63,8 +64,14 @@ public class Main13 {
                 {3, 5},
                 {7}
         };
-     IntSummaryStatistics stats = Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).summaryStatistics()
+     IntSummaryStatistics stats = Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).summaryStatistics();
              return stats.getCount() == 0 ? -1 : (int) stats.getAverage();
     }
+
+    public List<Integer> practice8 () {
+        return Stream.of(10, "hello", true, 42, false, "42")
+                .filter(a->a instanceof Integer).map(i->(Integer)i).toList();
+    }
+
 
 }
