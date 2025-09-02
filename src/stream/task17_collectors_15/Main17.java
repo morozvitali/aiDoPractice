@@ -56,4 +56,9 @@ public class Main17 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.collectingAndThen(Collectors.toList(), list->list.stream().sorted(Comparator.comparing(String::length)).toList())));
     }
 
+    public Map <Integer, List<String>> practice10 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.toList()));
+    }
  }
