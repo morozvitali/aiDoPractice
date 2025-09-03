@@ -78,4 +78,7 @@ public class Main14 {
                 .collect(Collectors.joining());
     }
 
+    public int practice10 (int number) {
+        return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(number))).reverse().toString());
+    }
 }
