@@ -6,56 +6,67 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main20 {
-    public long practice1 (String s) {
-        return s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(e->e.getValue() >1).count();
+    public long practice1(String s) {
+        return s.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(e -> e.getValue() > 1).count();
     }
 
-    public String practice2 (String s) {
+    public String practice2(String s) {
         return Arrays.stream(s.split(" "))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
 
-    public Map <Integer, Integer> practice3 () {
+    public Map<Integer, Integer> practice3() {
         return Stream.of(12, 23, 34, 45, 16, 7)
-                .collect(Collectors.groupingBy(a->a%10, Collectors.summingInt(n->n)));
+                .collect(Collectors.groupingBy(a -> a % 10, Collectors.summingInt(n -> n)));
     }
 
-    public int practice4 () {
-        return Stream.of(1,2,2,3,3,3,4,4)
+    public int practice4() {
+        return Stream.of(1, 2, 2, 3, 3, 3, 4, 4)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue))
                 .get()
                 .getKey();
     }
 
-    public Map <Character, Long> practice5 (String s) {
-        return s.chars().filter(c->Character.isDigit(c))
-                .mapToObj(c->(char)c)
+    public Map<Character, Long> practice5(String s) {
+        return s.chars().filter(c -> Character.isDigit(c))
+                .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-    public boolean practice6 () {
+    public boolean practice6() {
         return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream().anyMatch(e-> e.getValue() > 1);
+                .entrySet().stream().anyMatch(e -> e.getValue() > 1);
     }
 
-    public Map <String, List<Integer>> practice7 () {
-        return Stream.of(1, 2, 3, 4, 5).collect(Collectors.groupingBy(i -> i%2 == 0 ? "even" : "odd"));
+    public Map<String, List<Integer>> practice7() {
+        return Stream.of(1, 2, 3, 4, 5).collect(Collectors.groupingBy(i -> i % 2 == 0 ? "even" : "odd"));
     }
 
-    public Map <Integer, Double> practice8 () {
+    public Map<Integer, Double> practice8() {
         return Stream.of(3, 6, 7, 8, 9, 10, 12)
-                .collect(Collectors.groupingBy(n->n%3, Collectors.averagingInt(n->n)));
+                .collect(Collectors.groupingBy(n -> n % 3, Collectors.averagingInt(n -> n)));
     }
 
-    public Character practice9 () {
+    public Character practice9() {
         String[] words = {"apple", "banana", "avocado",
                 "blueberry", "bleuberry", "apricot"};
-        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()))
-                .entrySet().stream().max(Comparator.comparingLong(n->n.getValue()))
+        return Arrays.stream(words).collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()))
+                .entrySet().stream().max(Comparator.comparingLong(n -> n.getValue()))
                 .map(Map.Entry::getKey).orElse(null);
     }
 
+    public Map<Character, Long> practice10() {
+        Map<Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
+        return map.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue,
+                        LinkedHashMap::new));
+    }
 
 }
