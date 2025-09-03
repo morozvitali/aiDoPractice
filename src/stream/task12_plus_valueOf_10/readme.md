@@ -38,8 +38,9 @@ String s = Long.toString(number);
 String.valueOf(...) працює з будь-яким типом. Long.toString(...) — специфічний для типу long.
 
 ✅ Завдання 3: Обробка списку строкових чисел 
+-
 → List<Long>
-
+-
 Умова:
 Дано:
 List<String> numbers = List.of("10", "20", "30");

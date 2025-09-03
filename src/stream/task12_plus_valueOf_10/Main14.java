@@ -1,5 +1,8 @@
 package stream.task12_plus_valueOf_10;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Main14 {
     public void practice1 () {
         //String.valueOf(Math.abs(n)).chars().
@@ -14,5 +17,8 @@ public class Main14 {
         System.out.println(s1 + ", " + s2);
     }
 
-
+    public List <Long> practice3 () {
+        List<String> numbers = List.of("10", "20", "30");
+        return numbers.stream().map(Long::valueOf).toList();
+    }
 }
