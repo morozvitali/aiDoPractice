@@ -94,10 +94,10 @@ count() — рахуємо скільки таких різних символі
 .collect(groupingBy(..., counting()))
 Collections.max(map.entrySet(), comparingByValue()).getKey()
 
-        Map<String, Long> map = Arrays.stream("java is fun and java is powerful".split(" "))
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        return map.entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).get().getKey();
-    }
+        return Arrays.stream(s.split(" "))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+
 
 🔍 Що відбувається:
 split(" ") — розділяє текст на слова.
