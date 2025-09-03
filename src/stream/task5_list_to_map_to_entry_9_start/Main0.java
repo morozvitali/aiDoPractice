@@ -1,4 +1,4 @@
-package stream.task5_list_to_map_to_entry_9;
+package stream.task5_list_to_map_to_entry_9_start;
 
 import java.util.List;
 import java.util.Map;
