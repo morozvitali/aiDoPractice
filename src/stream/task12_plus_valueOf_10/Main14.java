@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 public class Main14 {
     public void practice1() {
-        //String.valueOf(Math.abs(n)).chars().
         String input = "12345";
         long result = Long.parseLong(input);
         System.out.println(result);
@@ -47,4 +46,14 @@ public class Main14 {
         long result = integer.longValue();
         long result2 = Long.parseLong(s);
     }
+
+    public int practice6 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars()
+                .map(a->a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+
+
 }
