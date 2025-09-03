@@ -49,5 +49,13 @@ public class Main20 {
                 .collect(Collectors.groupingBy(n->n%3, Collectors.averagingInt(n->n)));
     }
 
+    public Character practice9 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()))
+                .entrySet().stream().max(Comparator.comparingLong(n->n.getValue()))
+                .map(Map.Entry::getKey).orElse(null);
+    }
+
 
 }
