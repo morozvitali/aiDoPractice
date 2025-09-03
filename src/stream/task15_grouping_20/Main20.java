@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main20 {
     public long practice1 (String s) {
@@ -15,6 +16,11 @@ public class Main20 {
         return Arrays.stream(s.split(" "))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+    public Map <Integer, Integer> practice3 () {
+        return Stream.of(12, 23, 34, 45, 16, 7)
+                .collect(Collectors.groupingBy(a->a%10, Collectors.summingInt(n->n)));
     }
 
 
