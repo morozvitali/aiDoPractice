@@ -38,5 +38,8 @@ public class Main20 {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-
+    public boolean practice6 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().anyMatch(e-> e.getValue() > 1);
+    }
 }
