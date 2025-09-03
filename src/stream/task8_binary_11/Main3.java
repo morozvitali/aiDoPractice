@@ -8,7 +8,12 @@ public class Main3 {
                 .count();
     }
 
-
+    public long practice2 (int number) {
+        return Integer.toBinaryString(number)
+                .chars()
+                .filter(ch -> ch =='1')
+                .count();
+    }
 
 
 }
