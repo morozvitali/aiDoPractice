@@ -9,4 +9,8 @@ public boolean practice2 (String s) {
     return s.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}]");
 }
 
+public boolean practice3 (String s) {
+    return s.matches("^\\+380\\d{2}\\d{3}\\d{4}$");
+}
+
 }
