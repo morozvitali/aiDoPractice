@@ -8,13 +8,22 @@ import java.util.stream.Collectors;
 public class Main4 {
 
     public String practice1() {
-    List<String> words = List.of("stream", "code",
-            "developer", "Engineer");
-    return words.stream().collect(Collectors.toMap(Function.identity(), String::length))
-            .entrySet().stream().reduce((a,b)-> a.getValue() >b.getValue() ? a : b)
-            .map(Map.Entry::getKey)
-            .orElse("");
-}
+        List<String> words = List.of("stream", "code",
+                "developer", "Engineer");
+        return words.stream().collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().reduce((a, b) -> a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
+
+    public String practice2() {
+        List<String> list = List.of("Java", "C",
+                "Python", "Go", "Kotlin");
+        return list.stream().collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().reduce((a,b) -> a.getValue() < b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
 
 
 }
