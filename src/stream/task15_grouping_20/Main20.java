@@ -32,5 +32,11 @@ public class Main20 {
                 .getKey();
     }
 
+    public Map <Character, Long> practice5 (String s) {
+        return s.chars().filter(c->Character.isDigit(c))
+                .mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
 
 }
