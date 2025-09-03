@@ -41,5 +41,10 @@ public class Main14 {
         return true;
     }
 
-
+    public void practice5 (int number) {
+        String s = String.valueOf(number);
+        Integer integer = Integer.valueOf(s);
+        long result = integer.longValue();
+        long result2 = Long.parseLong(s);
+    }
 }
