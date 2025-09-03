@@ -29,5 +29,14 @@ public class Main21 {
                 .collect(Collectors.toMap(Function.identity(), w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
     }
 
+    public Double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).filter(w->coountVowels(w) > 0).mapToInt(String::length).summaryStatistics().getAverage();
+    }
+
+    public long coountVowels (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c) >=0).count();
+    }
 
 }
