@@ -54,6 +54,12 @@ public class Main14 {
                 .collect(Collectors.joining()));
     }
 
+    public int practice7 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars()
+                .map(a->a*a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
 
 
 }
