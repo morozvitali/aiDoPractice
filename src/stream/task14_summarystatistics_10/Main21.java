@@ -55,5 +55,12 @@ public class Main21 {
 
     }
 
+    public Map <Character, Long> practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
 
 }
