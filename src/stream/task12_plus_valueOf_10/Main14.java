@@ -61,5 +61,12 @@ public class Main14 {
                 .collect(Collectors.joining()));
     }
 
+    public int practice8 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars()
+                .filter(a-> a%2==0)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
 
 }
