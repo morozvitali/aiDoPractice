@@ -80,5 +80,9 @@ public class Main18 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.toCollection(TreeSet::new)));
     }
 
+    public Map <Boolean, Integer> practice14 () {
+        List<Integer> numbers = List.of(1, 2, 2, 3, 4, 5, 6, 6, 6);
+        return numbers.stream().collect(Collectors.groupingBy(a->a%2==0, Collectors.collectingAndThen(Collectors.mapping(n->n, Collectors.toSet()), Set::size)));
+    }
 
 }
