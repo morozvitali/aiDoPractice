@@ -40,4 +40,10 @@ public String practice10 (String s) {
 public boolean practice11 (String s) {
     return s.matches("^[a-яА-ЯіїєґІЇЄҐ]+$");
 }
+
+public boolean practice12 (String s) {
+    return s.matches("^([^0-9]*)$");
+}
+
+
 }
