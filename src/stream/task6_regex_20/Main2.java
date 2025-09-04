@@ -45,5 +45,7 @@ public boolean practice12 (String s) {
     return s.matches("^([^0-9]*)$");
 }
 
-
+public String practice13 (String s) {
+    return s.replaceAll("[^a-zA-Z0-9 ]" , "");
+}
 }
