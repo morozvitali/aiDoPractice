@@ -1,5 +1,6 @@
 package stream.task12_plus_valueOf_10;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 public class Main15 {
@@ -21,6 +22,17 @@ public class Main15 {
         return numbers.stream().map(Long::valueOf).toList();
     }
 
+    public boolean practice4 () {
+        List<String> values = List.of("100", "abc", "300");
+        return values.stream().allMatch(s->{
+            try {
+                Long.parseLong(s);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        });
+    }
 
 
 }
