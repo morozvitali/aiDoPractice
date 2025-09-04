@@ -27,9 +27,18 @@ public class Main14 {
                 .orElse(-1);
     }
 
-    public void practice3 () {
-
+    public int practice3 () {
+        int[][] data = {
+                {-3, 5},
+                {2},
+                {-1, 4}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream)
+                .filter(a->a>0)
+                .reduce((a,b)->a*b)
+                .orElse(-1);
     }
+
 
 
 }
