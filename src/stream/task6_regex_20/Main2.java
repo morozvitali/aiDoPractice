@@ -13,4 +13,9 @@ public boolean practice3 (String s) {
     return s.matches("^\\+380\\d{2}\\d{3}\\d{4}$");
 }
 
+public boolean practice5 (String s) {
+    return s.matches("^\\d{4}-([1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$");
+}
+
+
 }
