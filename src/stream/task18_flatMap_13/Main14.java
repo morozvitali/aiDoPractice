@@ -97,5 +97,12 @@ public int practic4 () {
                 .filter(a->a instanceof String).map(a->(String)a).toList();
     }
 
+    public List <Integer> practice10 () {
+        return Stream.of("a", 3, 15, 11, 9, "99")
+                .filter(a->a instanceof Integer && (Integer) a >10).map(a->(Integer)a).toList();
+    }
 
+    public void practice11 () {
+
+    }
 }
