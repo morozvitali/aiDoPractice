@@ -37,10 +37,22 @@ public class Main12 {
                         .average().orElse(-1)));
     }
 
-    public Map<Character, List<String>> practice7 () {
+    public Map<Character, List<String>> practice7() {
         return Stream.of("apple", "ant", "banana",
-                "bat", "car").collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), Collections::unmodifiableMap));
+                "bat", "car").collect(Collectors.collectingAndThen(Collectors.groupingBy(w -> w.charAt(0)), Collections::unmodifiableMap));
     }
 
-
+    public void practice8() {
+        Stream.of("java", "zip", "jazz")
+                .filter(w -> w.contains("z"))
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toList(),
+                        list -> {
+                            if (list.size() != 1) {
+                                throw new IllegalStateException("очікували 1 літеру z");
+                            }
+                            return list.get(0);
+                        }
+                ));
+    }
 }
