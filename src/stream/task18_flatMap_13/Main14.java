@@ -102,7 +102,9 @@ public int practic4 () {
                 .filter(a->a instanceof Integer && (Integer) a >10).map(a->(Integer)a).toList();
     }
 
-    public void practice11 () {
-
+    public List<Boolean> practice11 () {
+        return Stream.of("hi", 123, "bye", false)
+                .filter(a->a instanceof Boolean && (Boolean)a == true).map(a->(Boolean)a).toList();
     }
+
 }
