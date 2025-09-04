@@ -67,4 +67,9 @@ public class Main22 {
             return Arrays.stream(words).filter(w->w.length() - w.chars().distinct().count() >2).mapToInt(String::length).summaryStatistics();
         }
 
+        public List <String> practice9 () {
+            String[] words = {"education", "questionnaire",
+                    "house", "audio", "universe"};
+            return Arrays.stream(words).filter(w->"aeiou".chars().allMatch(c->w.indexOf(c)>=0)).toList();
+        }
 }
