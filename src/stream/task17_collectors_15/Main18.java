@@ -64,7 +64,16 @@ public class Main18 {
         return words.stream().collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.toList()));
     }
 
-    public void practice11 () {
-
+    public Map <Integer, List<String>> practice11 () {
+        Map <Integer, List<String>> input = Map.of(
+                2, List.of("hi"),
+                3, List.of("sun", "day", "sky"),
+                4, List.of("book", "Java")
+        );
+        return input.entrySet().stream().sorted(Comparator.comparing(e->e.getValue().size()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a,b) -> b, LinkedHashMap::new));
     }
+
+
+
 }
