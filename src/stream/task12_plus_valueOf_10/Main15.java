@@ -7,5 +7,11 @@ public class Main15 {
         long l2 = Long.parseLong(input);
     }
 
+    public void practice2 () {
+        long l = 1L;
+
+        String s1 = String.valueOf(l);
+        String s2 = Long.toString(l);
+    }
 
 }
