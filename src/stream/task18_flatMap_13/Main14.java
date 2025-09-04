@@ -92,5 +92,10 @@ public int practic4 () {
                 .filter(a->a instanceof Integer).map(a->(Integer)a).toList();
     }
 
+    public List<String> practice9 () {
+        return Stream.of("hello", 1, 2.5, true, "world")
+                .filter(a->a instanceof String).map(a->(String)a).toList();
+    }
+
 
 }
