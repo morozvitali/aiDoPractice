@@ -53,5 +53,9 @@ public boolean practice14 (String s) {
     return s.matches("^\\+\\d{1,3}$");
 }
 
+public boolean practice15 (String s) {
+    return s.matches("^\\S+$");
+}
+
 
 }
