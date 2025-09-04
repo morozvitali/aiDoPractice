@@ -36,4 +36,8 @@ public boolean practice9 (String s) {
 public String practice10 (String s) {
     return s.replaceAll("\\s+", "");
 }
+
+public boolean practice11 (String s) {
+    return s.matches("^[a-яА-ЯіїєґІЇЄҐ]+$");
+}
 }
