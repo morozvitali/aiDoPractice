@@ -32,4 +32,8 @@ public boolean practice8 (String s) {
 public boolean practice9 (String s) {
     return s.matches("^[a-zA-Z0-9]+$");
 }
+
+public String practice10 (String s) {
+    return s.replaceAll("\\s+", "");
+}
 }
