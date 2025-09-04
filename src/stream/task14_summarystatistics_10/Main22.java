@@ -2,6 +2,8 @@ package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main22 {
     public Double practice1 () {
@@ -16,5 +18,15 @@ public class Main22 {
                 .summaryStatistics().getCount();
     }
 
+    public Map<String, Long> practice3 () {
+        String[] words = {"sky", "apple",
+                "moon", "dry", "banana"};
+        return Arrays.stream(words).filter(w->w.length() > 3)
+                .filter(w->countVowels(w) >1)
+                .collect(Collectors.toMap(w->w, w->countVowels(w)));
+    }
 
+    public long countVowels (String s) {
+        return s.chars().filter(c->"aeiuo".indexOf(c)>-0).count();
+    }
 }
