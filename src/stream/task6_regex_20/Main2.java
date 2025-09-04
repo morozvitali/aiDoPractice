@@ -25,4 +25,8 @@ public boolean practice7 (String s) {
     return s.matches("^[a-zA-Z]+$");
 }
 
+public boolean practice8 (String s) {
+    return s.matches("^\\d+$");
+}
+
 }
