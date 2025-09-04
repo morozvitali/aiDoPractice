@@ -10,8 +10,25 @@ public class Main14 {
                 "Streams are cool",
                 "Java makes sense"
         );
-return sentences.stream().flatMap(s->Arrays.stream(s.split(" ")))
-        .distinct().toList();
+        return sentences.stream().flatMap(s -> Arrays.stream(s.split(" ")))
+                .distinct().toList();
+    }
+
+    public int practice2 () {
+        int[][] data = {
+                {3, 11},
+                {6, 7},
+                {10}
+        };
+
+        return Arrays.stream(data).flatMapToInt(Arrays::stream)
+                .filter(a->a%2 == 0)
+                .min()
+                .orElse(-1);
+    }
+
+    public void practice3 () {
+
     }
 
 
