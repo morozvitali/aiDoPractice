@@ -21,5 +21,8 @@ public boolean practice6 (String s) {
     return s.matches("^(https?:\\/\\/)?([a-zA-Z0-9.-]+)\\.([a-zA-Z]{2,6})(\\/.*)?$");
 }
 
+public boolean practice7 (String s) {
+    return s.matches("^[a-zA-Z]+$");
+}
 
 }
