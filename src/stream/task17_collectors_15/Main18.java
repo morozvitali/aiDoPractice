@@ -74,6 +74,11 @@ public class Main18 {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a,b) -> b, LinkedHashMap::new));
     }
 
+    public Map <Character, TreeSet <String>> practice13 () {
+        List<String> words = List.of("apple",
+                "ant", "alpha", "banana", "bat", "car", "cat");
+        return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.toCollection(TreeSet::new)));
+    }
 
 
 }
