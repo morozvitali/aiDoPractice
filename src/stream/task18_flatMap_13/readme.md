@@ -317,7 +317,7 @@ x instanceof Integer
 
 📌 Приклад:
 
-List.of(10, "hello", true, 42, false, "42") → [10, 42]
+List.of() → [10, 42]
 🧪 Початковий код:
 
 public static List<Object> filterIntegers(List<Object> input) {
