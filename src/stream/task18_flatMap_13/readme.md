@@ -240,8 +240,6 @@ int[][] data = {
                 .sum();
     }
 
-
-
 📦 Рішення:
 Arrays.stream(data)
 .flatMapToInt(Arrays::stream)
