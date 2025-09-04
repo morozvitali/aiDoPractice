@@ -17,5 +17,9 @@ public boolean practice5 (String s) {
     return s.matches("^\\d{4}-([1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$");
 }
 
+public boolean practice6 (String s) {
+    return s.matches("^(https?:\\/\\/)?([a-zA-Z0-9.-]+)\\.([a-zA-Z]{2,6})(\\/.*)?$");
+}
+
 
 }
