@@ -48,4 +48,10 @@ public boolean practice12 (String s) {
 public String practice13 (String s) {
     return s.replaceAll("[^a-zA-Z0-9 ]" , "");
 }
+
+public boolean practice14 (String s) {
+    return s.matches("^\\+\\d{1,3}$");
+}
+
+
 }
