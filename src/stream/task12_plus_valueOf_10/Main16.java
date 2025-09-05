@@ -78,5 +78,19 @@ public class Main16 {
         return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
     }
 
+    public int practice11 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(a->a%2==0 ? a : a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+    public int practice12 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(a->Math.abs(a-5))
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
 
 }
