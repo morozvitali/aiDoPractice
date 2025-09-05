@@ -2,8 +2,10 @@ package stream.task15_grouping_20;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main21 {
     public long practice1(String s) {
@@ -18,6 +20,10 @@ public class Main21 {
                 .entrySet().stream().max(Comparator.comparing(e->e.getValue())).get().getKey();
     }
 
+    public Map<Integer, Integer> practice3 () {
+        return Stream.of(12, 23, 34, 45, 16, 7)
+                .collect(Collectors.groupingBy(a->a%10, Collectors.summingInt(n->n)));
+    }
 
 
 }
