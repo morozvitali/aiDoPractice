@@ -21,6 +21,17 @@ public class Main16 {
         return numbers.stream().map(Long::valueOf).toList();
     }
 
+    public boolean practice4 () {
+        List<String> values = List.of("100", "abc", "300");
+        return values.stream().allMatch(s->{
+            try{
+                Long.parseLong(s);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        });
+    }
 
 
 }
