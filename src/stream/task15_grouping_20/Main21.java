@@ -31,5 +31,11 @@ public class Main21 {
                 .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).get().getKey();
     }
 
+    public Map <Integer, Long> practice7 (String s) {
+        return s.chars().filter(Character::isDigit)
+                .boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
 
 }
