@@ -33,5 +33,14 @@ public static long counter (String s) {
     return s.chars().filter(c->"aeiuo".indexOf(c) >=0).count();
 }
 
+public Double practice4 () {
+    String[] words = {"sky", "apple", "moon",
+            "dry", "sun"};
+    return Arrays.stream(words).filter(w->counter(w)>0)
+            .mapToInt(String::length)
+            .summaryStatistics().getAverage();
+}
+
+
 
 }
