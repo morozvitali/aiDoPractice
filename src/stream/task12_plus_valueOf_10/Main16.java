@@ -33,5 +33,16 @@ public class Main16 {
         });
     }
 
+    public void practice5 () {
+        int i = 1;
+        String s1 = String.valueOf(1);
+        String s2 = Integer.toString (i);
 
+        Integer in1 = Integer.parseInt(s1);
+        Integer in2 = Integer.valueOf(s2);
+
+        Long l1 = in1.longValue();
+        Long l2 = Long.valueOf(in1);
+        Long l3 = Long.parseLong(String.valueOf(in1));
+    }
 }
