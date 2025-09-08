@@ -73,6 +73,13 @@ public class Main17 {
                 .collect(Collectors.joining()));
     }
 
+    public String practice9 (int n) {
+        return String.valueOf(Math.abs(n)).chars()
+                .map(Character::getNumericValue)
+                .mapToObj("*"::repeat)
+                .collect(Collectors.joining());
+    }
+
 
 }
 
