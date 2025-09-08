@@ -35,5 +35,13 @@ public class Main5 {
         return (int) s.chars().filter(c->"aeiuo".indexOf(c) >=0).count();
     }
 
+    public String practice4 () {
+        List<String> list = List.of("apple", "pear",
+                "banana", "kiwi");
+        return list.stream().collect(Collectors.toMap(w->w, w->w.chars().distinct().count()))
+                .entrySet().stream().reduce((a,b)->a.getValue() > b.getValue() ? a : b).map(Map.Entry::getKey).orElse("");
+    }
+
+
 
 }
