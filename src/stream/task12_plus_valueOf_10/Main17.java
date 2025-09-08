@@ -24,6 +24,18 @@ public class Main17 {
         //return numbers.stream().mapToLong(Long::valueOf).boxed().toList();
     }
 
+    public boolean practice4 () {
+        List<String> values = List.of("100", "abc", "300");
 
+        return values.stream().allMatch(value ->
+                {
+                    try {
+                        Long.parseLong(value);
+                        return true;
+                    } catch (NumberFormatException e) {
+                        return false;
+                    }
+                });
+    }
 }
 
