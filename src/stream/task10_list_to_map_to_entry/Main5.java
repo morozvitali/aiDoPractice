@@ -15,5 +15,14 @@ public class Main5 {
                 .orElse("");
     }
 
+    public String practice2 () {
+        List<String> list = List.of("Java", "C",
+                "Python", "Go", "Kotlin");
+        return list.stream().collect(Collectors.toMap(w->w, w->w.length()))
+                .entrySet().stream().reduce((a,b)-> a.getValue() <=b.getValue() ? a:b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
+
 
 }
