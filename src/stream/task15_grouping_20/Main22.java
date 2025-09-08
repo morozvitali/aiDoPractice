@@ -24,7 +24,11 @@ public class Main22 {
                 .max(Map.Entry.comparingByValue()).get().getKey();
     }
 
-    public void practice3 (String s) {
-
+    public Map<Integer, Integer> practice3 (String s) {
+        return Stream.of(12, 23, 34, 45, 16, 7)
+                .collect(Collectors.groupingBy(w->w%10, Collectors.summingInt(n->n)));
     }
+
+
+
 }
