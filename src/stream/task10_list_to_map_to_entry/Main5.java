@@ -15,33 +15,40 @@ public class Main5 {
                 .orElse("");
     }
 
-    public String practice2 () {
+    public String practice2() {
         List<String> list = List.of("Java", "C",
                 "Python", "Go", "Kotlin");
-        return list.stream().collect(Collectors.toMap(w->w, w->w.length()))
-                .entrySet().stream().reduce((a,b)-> a.getValue() <=b.getValue() ? a:b)
+        return list.stream().collect(Collectors.toMap(w -> w, w -> w.length()))
+                .entrySet().stream().reduce((a, b) -> a.getValue() <= b.getValue() ? a : b)
                 .map(Map.Entry::getKey)
                 .orElse("");
     }
 
-    public String practice3 () {
+    public String practice3() {
         List<String> list = List.of("apple", "banana",
                 "orange", "blueberry");
-        return list.stream().collect(Collectors.toMap(w->w, this::countVowels))
-                .entrySet().stream().reduce((a,b) -> a.getValue() > b.getValue() ? a : b).map(Map.Entry::getKey).orElse("");
+        return list.stream().collect(Collectors.toMap(w -> w, this::countVowels))
+                .entrySet().stream().reduce((a, b) -> a.getValue() > b.getValue() ? a : b).map(Map.Entry::getKey).orElse("");
     }
 
-    public Integer countVowels (String s) {
-        return (int) s.chars().filter(c->"aeiuo".indexOf(c) >=0).count();
+    public Integer countVowels(String s) {
+        return (int) s.chars().filter(c -> "aeiuo".indexOf(c) >= 0).count();
     }
 
-    public String practice4 () {
+    public String practice4() {
         List<String> list = List.of("apple", "pear",
                 "banana", "kiwi");
-        return list.stream().collect(Collectors.toMap(w->w, w->w.chars().distinct().count()))
-                .entrySet().stream().reduce((a,b)->a.getValue() > b.getValue() ? a : b).map(Map.Entry::getKey).orElse("");
+        return list.stream().collect(Collectors.toMap(w -> w, w -> w.chars().distinct().count()))
+                .entrySet().stream().reduce((a, b) -> a.getValue() > b.getValue() ? a : b).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice5() {
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        return list.stream().collect(Collectors
+                .toMap(w -> w, w -> w.length() - w.chars().distinct().count()))
+                .entrySet().stream().reduce((a, b) -> a.getValue() < b.getValue() ? a : b).map(Map.Entry::getKey).orElse("");
+    }
 
 
 }
