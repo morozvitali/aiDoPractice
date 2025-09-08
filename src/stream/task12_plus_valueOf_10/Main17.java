@@ -91,5 +91,13 @@ public class Main17 {
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
+
+    public int practice12 (int number) {
+        return Integer.parseInt(String.valueOf(Math.abs(number)).chars()
+                .map(Character::getNumericValue)
+                .map(a->Math.abs(a-5))
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
 }
 
