@@ -18,5 +18,10 @@ public class Main8 {
                 .toList();
     }
 
+    public List<String> practice3 () {
+        String s = "abracadabra";
+        return s.chars().distinct().mapToObj(c->String.valueOf((char)c))
+                .toList();
+    }
 
 }
