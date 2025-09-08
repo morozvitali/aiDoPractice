@@ -80,6 +80,10 @@ public class Main17 {
                 .collect(Collectors.joining());
     }
 
+    public int practice10 (int n) {
+        return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
+    }
+
 
 }
 
