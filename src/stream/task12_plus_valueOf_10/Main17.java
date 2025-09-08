@@ -1,5 +1,7 @@
 package stream.task12_plus_valueOf_10;
 
+import java.util.List;
+
 public class Main17 {
     public void practice1() {
 
@@ -15,6 +17,13 @@ public class Main17 {
         String s2 = l1.toString();
         String s3 = String.valueOf(l2);
     }
+
+    public List <Long> practice3 () {
+        List<String> numbers = List.of("10", "20", "30");
+        return numbers.stream().mapToLong(Long::valueOf).boxed().toList();
+        //return numbers.stream().mapToLong(Long::valueOf).boxed().toList();
+    }
+
 
 }
 
