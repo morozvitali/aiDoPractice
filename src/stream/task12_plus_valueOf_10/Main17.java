@@ -37,5 +37,19 @@ public class Main17 {
                     }
                 });
     }
+
+    public void practice5 () {
+        int i = 1;
+        String s1 = String.valueOf(i);
+        String s2 = Integer.toString(i);
+        Integer in1 = Integer.parseInt(s1);
+        Integer in2 = Integer.valueOf(s1);
+        Long l1 = Long.valueOf(in1);
+        long l2 = Long.parseLong(String.valueOf(in2));
+    }
+
+
+
+
 }
 
