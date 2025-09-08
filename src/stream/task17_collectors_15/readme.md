@@ -350,10 +350,11 @@ a=[ant, axe, apple, alphabet],
 b=[bat, banana]
 📦 Початковий код:
 
-public Map<Character, List<String>> 
+public Map<Character, List<String>>
 groupAndSortWordsByLength() {
-List<String> words = List.of("apple", "ant", 
+List<String> words = List.of("apple", "ant",
 "alphabet", "axe", "banana", "bat");
+
 return words.stream()
 .collect(Collectors.groupingBy(
 word -> word.charAt(0),
