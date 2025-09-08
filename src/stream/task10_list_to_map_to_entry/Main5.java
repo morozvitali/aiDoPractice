@@ -57,6 +57,16 @@ public class Main5 {
                 .map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice7 () {
+        return List.of("alpha", "arena",
+                "java", "banana", "lava").stream()
+                .collect(Collectors.toMap(w->w, w->countLetter(w)))
+                .entrySet().stream().reduce((a,b) -> a.getValue() > b.getValue() ? a :b)
+                .map(Map.Entry::getKey).orElse("");
+    }
 
+    public long countLetter (String s) {
+        return s.chars().filter(c->c == 'a').count();
+    }
 
 }
