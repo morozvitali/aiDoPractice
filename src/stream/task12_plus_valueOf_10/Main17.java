@@ -108,4 +108,3 @@ public class Main17 {
         }).collect(Collectors.joining()));
     }
 }
-
