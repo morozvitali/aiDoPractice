@@ -29,6 +29,10 @@ public class Main22 {
                 .collect(Collectors.groupingBy(w->w%10, Collectors.summingInt(n->n)));
     }
 
-
+    public int practice6 () {
+        return Stream.of(1,2,2,3,3,3,4,4)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
+    }
 
 }
