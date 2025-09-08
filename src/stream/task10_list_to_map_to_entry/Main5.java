@@ -50,5 +50,13 @@ public class Main5 {
                 .entrySet().stream().reduce((a, b) -> a.getValue() < b.getValue() ? a : b).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice6 () {
+        List<String> list = List.of("abc", "aaa", "zzz");
+        return list.stream().collect(Collectors.toMap(w->w, w->w.chars().sum()))
+                .entrySet().stream().reduce((a,b)->a.getValue() > b.getValue() ? a:b)
+                .map(Map.Entry::getKey).orElse("");
+    }
+
+
 
 }
