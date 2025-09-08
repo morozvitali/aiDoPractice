@@ -24,5 +24,16 @@ public class Main5 {
                 .orElse("");
     }
 
+    public String practice3 () {
+        List<String> list = List.of("apple", "banana",
+                "orange", "blueberry");
+        return list.stream().collect(Collectors.toMap(w->w, this::countVowels))
+                .entrySet().stream().reduce((a,b) -> a.getValue() > b.getValue() ? a : b).map(Map.Entry::getKey).orElse("");
+    }
+
+    public Integer countVowels (String s) {
+        return (int) s.chars().filter(c->"aeiuo".indexOf(c) >=0).count();
+    }
+
 
 }
