@@ -6,11 +6,17 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main22 {
-    public Map<String, Boolean> practice0 () {
+    public Map<String, Boolean> practice0() {
         return Stream.of("sky", "apple",
-                "dry", "orange", "sun")
-                .collect(Collectors.toMap(Function.identity(), w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0)));
+                        "dry", "orange", "sun")
+                .collect(Collectors.toMap(Function.identity(), w -> w.chars().anyMatch(c -> "aeiou".indexOf(c) >= 0)));
     }
+
+    public long practice1(String s) {
+        return s.chars().mapToObj(c -> (char) c).collect(Collectors
+                .groupingBy(c -> c, Collectors.counting())).entrySet().stream().filter(e -> e.getValue() > 1).count();
+    }
+
 
 
 
