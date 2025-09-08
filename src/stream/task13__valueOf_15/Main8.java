@@ -24,4 +24,8 @@ public class Main8 {
                 .toList();
     }
 
+    public void practice4 () {
+
+    }
+
 }
