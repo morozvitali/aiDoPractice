@@ -1,4 +1,4 @@
-package stream.task11_somnitelno_10;
+package stream.task7_somnitelno_10;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
