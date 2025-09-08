@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -32,5 +33,21 @@ public class Main24 {
                 .collect(Collectors.toMap(Function.identity(), w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()));
     }
 
+    public Double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).filter(w->w.matches(".*[aeiuo].*"))
+                .mapToInt(w->w.length())
+                .summaryStatistics().getAverage();
+    }
+
+    public void practice5 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0)
+                .min(Comparator.comparingInt(String::length)).orElse("");
+    }
+
+    
 
 }
