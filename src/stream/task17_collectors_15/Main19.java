@@ -66,4 +66,15 @@ public class Main19 {
                 Collectors.toList()
         ));
     }
+
+    public Map <Integer, List <String>> practice11 () {
+        Map <Integer, List<String>> input = Map.of(
+                2, List.of("hi"),
+                3, List.of("sun", "day", "sky"),
+                4, List.of("book", "Java")
+        );
+        return input.entrySet().stream()
+                .sorted(Comparator.comparingInt(e->e.getValue().size()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a,b) -> b, LinkedHashMap::new));
+    }
 }
