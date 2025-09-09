@@ -31,4 +31,16 @@ public class Main6 {
     public static long getCount (String s) {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
+
+    public String practice4 () {
+        return Stream.of("apple", "pear",
+                "banana", "kiwi")
+                .collect(Collectors.toMap(Function.identity(), Main6::getCountLetters))
+                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
+    public static long getCountLetters(String s) {
+        return s.length() - s.chars().distinct().count();
+    }
+
+
 }
