@@ -68,5 +68,15 @@ public class Main4 {
                 .orElse("");
     }
 
+    public List<Integer> practice8 () {
+        return Stream.of(100, 1010, 5, 2000, 10)
+                .sorted(Comparator.comparing(Main4::getZeroCount))
+                .toList();
+    }
+
+    public static int getZeroCount (int n) {
+        return (int) String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
+    }
+
 
 }
