@@ -1,6 +1,7 @@
 package stream.task10_list_to_map_to_entry;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -59,6 +60,15 @@ public class Main6 {
                 .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice7 () {
+        return List.of("alpha", "arena",
+                "java", "banana", "lava").stream().collect(Collectors.toMap(Function.identity(), Main6::letterCounter))
+                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static int letterCounter (String s) {
+        return (int)s.chars().filter(c->c=='a').count();
+    }
 
 
 
