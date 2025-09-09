@@ -42,5 +42,19 @@ public class Main6 {
         return s.length() - s.chars().distinct().count();
     }
 
+    public String practice5() {
+        return Stream.of("apple",
+                "committee", "banana", "success")
+                .collect(Collectors.toMap(Function.identity(), Main6::getCountLetters))
+                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long getUnicCount (String s) {
+        return s.chars().distinct().count();
+    }
+
+
+
+
 
 }
