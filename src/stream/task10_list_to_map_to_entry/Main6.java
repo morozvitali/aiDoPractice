@@ -70,6 +70,10 @@ public class Main6 {
         return (int)s.chars().filter(c->c=='a').count();
     }
 
-
+    public String practice8 () {
+        return List.of("apple", "Tree",
+                "Java", "stream", "Engineer").stream().filter(w->Character.isUpperCase(w.charAt(0))).collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
 
 }
