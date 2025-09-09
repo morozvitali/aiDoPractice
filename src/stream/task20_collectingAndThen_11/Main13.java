@@ -32,4 +32,10 @@ public List<Integer> practice5 () {
                 .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
 }
 
+public Double practice6 () {
+        return Stream.of("code", "stream", "java")
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().mapToInt(String::length).average().orElse(-1)));
+}
+
+
 }
