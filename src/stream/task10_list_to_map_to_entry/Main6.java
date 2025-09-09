@@ -21,4 +21,14 @@ public class Main6 {
                 .collect(Collectors.toMap(Function.identity(), String::length))
                 .entrySet().stream().min(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("-1");
     }
+
+    public String practice3 () {
+        return Stream.of("apple", "banana",
+                "orange", "blueberry").collect(Collectors.toMap(Function.identity(), Main6::getCount))
+                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long getCount (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
 }
