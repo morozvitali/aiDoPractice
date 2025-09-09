@@ -1,5 +1,6 @@
 package stream.task12_plus_valueOf_10;
 
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.List;
@@ -33,7 +34,14 @@ public class Main18 {
                 .toList();
     }
 
-
+    public void practice4 () {
+        int value = 123;
+        String s = String.valueOf(value);
+        Long l = Long.parseLong(s);
+        Double d = l.doubleValue();
+        Double d2 = Double.valueOf(l);
+        BigDecimal bd = BigDecimal.valueOf(d);
+    }
 
 
 
