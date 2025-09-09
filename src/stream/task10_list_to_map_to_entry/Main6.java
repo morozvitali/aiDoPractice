@@ -53,6 +53,11 @@ public class Main6 {
         return s.chars().distinct().count();
     }
 
+    public String practice6 () {
+        return Stream.of("abc", "aaa", "zzz")
+                .collect(Collectors.toMap(Function.identity(), w->w.chars().sum()))
+                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
 
 
 
