@@ -54,7 +54,7 @@ List<String> words = List.of("apple", "ant",
 return words.stream()
 .collect(Collectors
 .toMap(a->a.charAt(0), 
-a->a.length()));
+a->a.length())
 
 ✅ Задача 3: partitioningBy з підрахунком
 -
