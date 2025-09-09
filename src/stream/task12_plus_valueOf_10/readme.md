@@ -1,131 +1,124 @@
-✅ Завдання 1: Конвертація String → long
+Я залишаю завдання ускладненими, 
+але тепер після кожного одразу 
+дам один робочий приклад коду, 
+щоб ви точно бачили хоча б один 
+правильний спосіб реалізації без помилок.
+
+🔥 Завдання 1: Конвертація з різними системами числення
 
 Умова:
-Дано:
-String input = "12345";
-Присвой значення input змінній long result.
+List<String> inputs = List.of("1010", "7B", "377", "42");
+List<Integer> bases = List.of(2, 16, 8, 10);
 
-Підказка:
-Використай Long.parseLong(...).
+Перетвори у List<Long> у десятковому вигляді.
 
-Рішення:
-long result = Long.parseLong(input);
+✅ Приклад рішення:
 
-Альтернативне рішення:
-long result = Long.valueOf(input); // auto-unboxing
+List<Long> result = IntStream.range(0, inputs.size())
+.mapToObj(i -> Long.parseLong(inputs.get(i), bases.get(i)))
+.toList();
 
-Теорія:
-Long.parseLong() повертає примітив long.
-Long.valueOf() повертає об'єкт Long, який автоматично 
-розпаковується (unboxed) до long.
+🔥 Завдання 2: Перетворення з форматуванням
 
-✅ Завдання 2: Конвертація long → String
 Умова:
-Є:
-long number = 98765L;
+long balance = 123456789L;
 
-Перетвори його в String.
-Підказка:
-Використай метод String.valueOf(...) або Long.toString(...).
+Вивести з розділенням тисяч.
 
-Рішення:
-String s = String.valueOf(number);
+✅ Приклад рішення:
 
-Альтернативне рішення:
-String s = Long.toString(number);
+NumberFormat nf = NumberFormat.getInstance(Locale.US);
+String formatted = nf.format(balance); // "123,456,789"
 
-Теорія:
-String.valueOf(...) працює з будь-яким типом. Long.toString(...) — специфічний для типу long.
+🔥 Завдання 3: Робота з nullable-значеннями
 
-✅ Завдання 3: Обробка списку строкових чисел 
--
-→ List<Long>
--
 Умова:
-Дано:
-List<String> numbers = List.of("10", "20", "30");
 
-Перетвори цей список у List<Long> через Stream API.
+List<String> numbers = Arrays.asList("10", null, "20", "", "30");
 
-Підказка:
-Stream + .map(...) + Long::valueOf
 
-Рішення:
+Відфільтруй null і пусті рядки.
+
+✅ Приклад рішення:
+
 List<Long> result = numbers.stream()
+.filter(Objects::nonNull)
+.filter(s -> !s.isBlank())
 .map(Long::valueOf)
-.collect(Collectors.toList());
+.toList();
 
-
-Альтернативне рішення:
-
-List<Long> result = numbers.stream()
-.map(s -> Long.parseLong(s))
-.boxed()
-.collect(Collectors.toList());
-
-Теорія:
-map(Long::valueOf) — обгортка.
-.boxed() після mapToLong конвертує примітив у об'єкт Long.
-
-Long::parseLong — це метод, який повертає примітив long.
--
-Але .map(...) завжди працює з об’єктами, тому long автоматично запаковується (autoboxing) в Long.
--
-
-✅ Завдання 4: Перевірка, чи всі строки в списку — валідні Long
+🔥 Завдання 4: Гібридне перетворення
 
 Умова:
-List<String> values = List.of("100", "abc", "300");
-Перевір, чи всі строки є дійсними long-значеннями.
 
-Підказка:
-Використай try-catch у Stream або метод з перевіркою.
+int value = 123;
 
-Рішення:
-boolean allValid = values.stream().allMatch(s -> {
+
+Послідовність: int → String → Long → Double → BigDecimal.
+
+✅ Приклад рішення:
+
+String str = String.valueOf(value);
+Long l = Long.valueOf(str);
+Double d = l.doubleValue();
+BigDecimal bd = BigDecimal.valueOf(d); // краще, ніж new BigDecimal(d)
+
+🔥 Завдання 5: Валідація та підрахунок
+
+Умова:
+
+List<String> values = List.of("100", "abc", "300", "-50", "9999999999999");
+
+
+✅ Приклад рішення:
+
+Map<Boolean, List<String>> partition = values.stream()
+.collect(Collectors.partitioningBy(s -> {
 try {
 Long.parseLong(s);
 return true;
 } catch (NumberFormatException e) {
 return false;
 }
-});
+}));
 
+List<Long> valid = partition.get(true).stream().map(Long::parseLong).toList();
 
-Альтернативне рішення:
-Створити утилітний метод isValidLong(String s) і викликати його у allMatch.
+LongSummaryStatistics stats = valid.stream().mapToLong(Long::longValue).summaryStatistics();
 
-Теорія:
-Long.parseLong(...) кидає виняток при невалідному числі.
-
-✅ Завдання 5: Різні типи – int → String → Integer → long
+🔥 Завдання 6: Конвертація у Map
 
 Умова:
-Змінна:
-int number = 42;
-Пройди такі перетворення:
 
-int → String
-String → Integer
-Integer → long
+List<String> inputs = List.of("1", "2", "2", "3", "3", "3");
 
-Підказка:
-Пам’ятай про автообгортку і авто-розпаковку.
 
-Рішення:
-String str = String.valueOf(number);
-Integer integer = Integer.valueOf(str);
-long result = integer.longValue();
+✅ Приклад рішення:
 
-Альтернативне рішення:
+Map<Long, Long> freq = inputs.stream()
+.map(Long::valueOf)
+.collect(Collectors.groupingBy(
+x -> x,
+Collectors.counting()
+));
 
-long result = Long.parseLong(String.valueOf(number));
+🔥 Завдання 7: Генерація та конвертація
 
-Теорія:
-int → String: String.valueOf(...)
-String → Integer: Integer.valueOf(...)
-Integer → long: .longValue()
+Умова:
+Згенеруй 100 випадкових int, від -100 до 100.
 
+✅ Приклад рішення:
+
+List<Long> top10 = new Random().ints(100, -100, 101)
+.mapToObj(String::valueOf)   // int → String
+.map(Long::valueOf)          // String → Long
+.filter(n -> n > 0)          // тільки позитивні
+.sorted(Comparator.reverseOrder())
+.limit(10)
+.toList();
+
+
+✨ От тепер ви маєте і цікаві завдання, і гарантовано робочий приклад рішення до кожного.
 ---------------------------------------------------
 
 🟡 Задача 1: Квадрат кожної цифри (square every digit)
