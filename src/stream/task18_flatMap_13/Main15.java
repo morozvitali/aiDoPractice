@@ -94,6 +94,10 @@ public class Main15 {
         return Stream.of("hello", 1, 2.5, true, "world").filter(s->s instanceof String).map(s->(String)s).toList();
     }
 
+    public List<Integer> practice10 () {
+        return Stream.of("a", 3, 15, 11, 9, "99")
+                .filter(a->a instanceof Integer && (Integer)a >10).map(a->(Integer)a).toList();
+    }
 
 
 }
