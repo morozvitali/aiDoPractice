@@ -14,13 +14,21 @@ public class Main18 {
                 .toList();
     }
 
-    public int practice1 (int number) {
+    public int practice2 (int number) {
         return Integer.parseInt(String.valueOf(Math.abs(number))
                 .chars().map(Character::getNumericValue)
                 .map(a->a*a)
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
+    public int practice3 (int number) {
+        return Integer.parseInt(String.valueOf(Math.abs(number))
+                .chars().map(Character::getNumericValue)
+                .map(a->a*a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
 
 
 }
