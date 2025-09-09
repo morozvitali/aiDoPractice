@@ -37,5 +37,17 @@ public class Main4 {
         return String.valueOf(Math.abs(n)).length() - String.valueOf(Math.abs(n)).chars().distinct().count();
     }
 
+    public String practice4 () {
+        return Stream.of("abc", "aaa", "zzz")
+                .collect(Collectors.toMap(Function.identity(), Main4::getCountAscii))
+                .entrySet().stream().max(Comparator.comparing(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
+
+    public static long getCountAscii (String s) {
+        return s.chars().sum();
+    }
+
 
 }
