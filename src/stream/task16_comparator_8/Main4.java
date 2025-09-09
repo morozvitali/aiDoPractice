@@ -2,6 +2,7 @@ package stream.task16_comparator_8;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main4 {
     public void practice1 () {
@@ -15,6 +16,11 @@ public class Main4 {
                 .count();
     }
 
+    public String practce2 () {
+        return Stream.of("alpha", "arena", "java", "banana", "lava").filter(w->getCharCount(w) >0).max(Comparator.comparingLong(Main4::getCharCount)).orElse("");
+    }
 
-
+    public static long getCharCount (String s) {
+        return s.chars().filter(c->c=='a').count();
+    }
 }
