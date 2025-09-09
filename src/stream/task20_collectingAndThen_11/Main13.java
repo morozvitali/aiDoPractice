@@ -22,6 +22,10 @@ public String practice3() {
     List<String> data = List.of("apple", "car", "banana", "hi", "cherry");
         return data.stream().sorted(Comparator.comparing(String::length).reversed()).collect(Collectors.collectingAndThen(Collectors.toList(), list->list.get(0)));
     }
+public int practice4 () {
+        return Stream.of(5, 3, 4, 4, 3, 6)
+                .distinct().collect(Collectors.collectingAndThen(Collectors.toList(), list->list.getFirst()));
+}
 
 
 }
