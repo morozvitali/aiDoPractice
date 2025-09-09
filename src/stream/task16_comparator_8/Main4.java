@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main4 {
-    public void practice1 () {
+    public List <String> practice1 () {
         List<String> words = List.of("sky", "banana",
                 "apple", "grape", "orange", "plum");
-        words.stream().sorted(Comparator.comparing(Main4::getCount)).toList();
+        return words.stream().sorted(Comparator.comparing(Main4::getCount)).toList();
     }
     public static long getCount (String s) {
         return s.chars()
@@ -19,7 +19,7 @@ public class Main4 {
                 .count();
     }
 
-    public String practce2 () {
+    public String practice2 () {
         return Stream.of("alpha", "arena", "java", "banana", "lava").filter(w->getCharCount(w) >0).max(Comparator.comparingLong(Main4::getCharCount)).orElse("");
     }
 
@@ -40,7 +40,7 @@ public class Main4 {
     public String practice4 () {
         return Stream.of("abc", "aaa", "zzz")
                 .collect(Collectors.toMap(Function.identity(), Main4::getCountAscii))
-                .entrySet().stream().max(Comparator.comparing(Map.Entry::getValue))
+                .entrySet().stream().max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey)
                 .orElse("");
     }
@@ -84,5 +84,6 @@ public class Main4 {
     public static long getVowelsCount (String s) {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
+
 
 }
