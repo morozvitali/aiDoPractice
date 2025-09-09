@@ -2,10 +2,7 @@ package stream.task12_plus_valueOf_10;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -43,7 +40,18 @@ public class Main18 {
         BigDecimal bd = BigDecimal.valueOf(d);
     }
 
+    public void practice5 () {
+        List<String> values = List.of("100", "abc", "300", "-50", "9999999999999");
 
+        Map<Boolean, List<String>> partition = values.stream().collect(Collectors.partitioningBy(s->{
+            try{
+                Long.parseLong(s);
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }));
+    }
 
 
 
