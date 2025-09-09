@@ -49,5 +49,12 @@ public class Main4 {
         return s.chars().sum();
     }
 
+    public String practice5 () {
+        return Stream.of("sun", "star", "supernova", "apple")
+                .filter(w->w.startsWith("s"))
+                .max(Comparator.comparing(String::length))
+                .orElse("екмає слів");
+    }
+
 
 }
