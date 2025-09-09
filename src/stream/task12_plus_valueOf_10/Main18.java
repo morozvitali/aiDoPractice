@@ -37,7 +37,12 @@ public class Main18 {
                 .collect(Collectors.joining()));
     }
 
-
+    public int practice1 (int number) {
+        return Integer.parseInt(String.valueOf(Math.abs(number))
+                .chars().map(Character::getNumericValue)
+                .mapToObj("*"::repeat)
+                .collect(Collectors.joining()));
+    }
 
 
 
