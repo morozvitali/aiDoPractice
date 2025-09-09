@@ -1,6 +1,8 @@
 package stream.task12_plus_valueOf_10;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -14,42 +16,55 @@ public class Main18 {
                 .toList();
     }
 
-    public int practice2 (int number) {
-        return Integer.parseInt(String.valueOf(Math.abs(number))
-                .chars().map(Character::getNumericValue)
-                .map(a->a*a)
-                .mapToObj(String::valueOf)
-                .collect(Collectors.joining()));
+    public void practice2 () {
+        long balance = 123456789L;
+        NumberFormat nf = NumberFormat.getInstance(Locale.US);
+        String formatted = nf.format(balance);
     }
-    public int practice3 (int number) {
+
+
+
+
+
+
+
+
+
+
+    public int practice8(int number) {
         return Integer.parseInt(String.valueOf(Math.abs(number))
                 .chars().map(Character::getNumericValue)
-                .map(a->a*a*a)
+                .map(a -> a * a)
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
 
-    public int practice4 (int number) {
+    public int practice9(int number) {
         return Integer.parseInt(String.valueOf(Math.abs(number))
                 .chars().map(Character::getNumericValue)
-                .filter(a->a%2==0)
+                .map(a -> a * a * a)
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
 
-    public int practice5 (int number) {
+    public int practice10(int number) {
+        return Integer.parseInt(String.valueOf(Math.abs(number))
+                .chars().map(Character::getNumericValue)
+                .filter(a -> a % 2 == 0)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+    public int practice11(int number) {
         return Integer.parseInt(String.valueOf(Math.abs(number))
                 .chars().map(Character::getNumericValue)
                 .mapToObj("*"::repeat)
                 .collect(Collectors.joining()));
     }
 
-    public int practice1 (int number) {
+    public int practice12(int number) {
         return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(number))).reverse().toString());
     }
-
-
-
 
 
 }
