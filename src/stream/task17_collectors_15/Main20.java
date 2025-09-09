@@ -67,8 +67,4 @@ public class Main20 {
                 "sun", "day", "Java", "sky");
         return words.stream().collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.toList()));
     }
-
-
-
-
 }
