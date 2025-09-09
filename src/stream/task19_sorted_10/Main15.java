@@ -11,11 +11,14 @@ public class Main15 {
                 .sorted(Comparator.comparingInt(String::length)).toList();
     }
 
-public List<Integer> practice2 () {
+public List<Integer> practice3 () {
     List<Integer> numbers = List.of(3, 7, 1, 9, 2);
     return numbers.stream().sorted(Comparator.reverseOrder()).toList();
 }
 
-
+public List <Integer> practice5 () {
+    List<Integer> numbers = List.of(3, 7, 1, 9, 2);
+    return numbers.stream().sorted(Comparator.comparingInt(n->(int)n%2).thenComparingInt(n->(int)n)).toList();
+}
 
 }
