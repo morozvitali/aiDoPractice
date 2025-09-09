@@ -1,8 +1,10 @@
 package stream.task12_plus_valueOf_10;
 
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -22,7 +24,14 @@ public class Main18 {
         String formatted = nf.format(balance);
     }
 
-
+    public void practice3 () {
+        List<String> numbers = Arrays.asList("10", null, "20", "", "30");
+        List<Long> result = numbers.stream()
+                .filter(Objects::nonNull)
+                .filter(s->!s.isBlank())
+                .map(Long::valueOf)
+                .toList();
+    }
 
 
 
