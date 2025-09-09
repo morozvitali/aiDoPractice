@@ -3,6 +3,7 @@ package stream.task12_plus_valueOf_10;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -53,6 +54,13 @@ public class Main18 {
         }));
     }
 
+    public Map<Long, Long> practice6 () {
+        List<String> inputs = List.of("1", "2",
+                "2", "3", "3", "3");
+        return inputs.stream()
+                .map(Long::valueOf)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
 
 
 

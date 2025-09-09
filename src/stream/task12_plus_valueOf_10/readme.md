@@ -90,7 +90,8 @@ LongSummaryStatistics stats = valid.stream().mapToLong(Long::longValue).summaryS
 
 Умова:
 
-List<String> inputs = List.of("1", "2", "2", "3", "3", "3");
+List<String> inputs = List.of("1", "2",
+"2", "3", "3", "3");
 
 
 ✅ Приклад рішення:
