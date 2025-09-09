@@ -1,9 +1,6 @@
 package stream.task17_collectors_15;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -63,8 +60,14 @@ public class Main20 {
                                 .stream().sorted(Comparator
                                         .comparingInt(String::length))
                                 .toList())));
-
     }
+
+    public Map <Integer, List <String>> pracice10 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(String::length, TreeMap::new, Collectors.toList()));
+    }
+
 
 
 
