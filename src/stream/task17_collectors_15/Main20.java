@@ -17,5 +17,11 @@ public class Main20 {
                 "banana", "bat", "car").collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(w->w.length(), Collectors.toList())));
     }
 
+    public Map <Boolean, Long> practice3 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
+        return numbers.stream().collect(Collectors.partitioningBy(n->n%2==0, Collectors.counting()));
+    }
+
+
 
 }
