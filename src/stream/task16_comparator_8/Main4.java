@@ -78,5 +78,11 @@ public class Main4 {
         return (int) String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
     }
 
+    public List <String> practice9 () {
+        return Stream.of("apple", "zebra", "sky", "education").sorted(Comparator.comparing(Main4::getVowelsCount)).toList();
+    }
+    public static long getVowelsCount (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
 
 }
