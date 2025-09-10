@@ -81,7 +81,4 @@ public class Main25 {
                 "Cherry", "date", "Eggplant"};
         return Arrays.stream(words).collect(Collectors.partitioningBy(w->Character.isUpperCase(w.charAt(0))));
     }
-
-
-
 }
