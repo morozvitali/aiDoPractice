@@ -31,39 +31,47 @@ public class Main9 {
         return text.chars().boxed().toList();
     }
 
-    public List<String> practice5 () {
+    public List<String> practice5() {
         String text = "Code";
         return text.chars()
-                .mapToObj(c->String.valueOf((char)(int)c))
+                .mapToObj(c -> String.valueOf((char) c))
                 .toList();
     }
 
-    public List <Integer> practice6 () {
+    public List<Integer> practice6() {
         String s = "abcxyz";
         return s.chars()
-                .map(c->c - 'a' + 1)
+                .map(c -> c - 'a' + 1)
                 .boxed()
                 .toList();
     }
 
-    public List <String> practice7 () {
+    public List<String> practice7() {
         String s = "java";
         return s.chars().map(Character::toUpperCase)
-                .mapToObj(c->String.valueOf((char)c))
+                .mapToObj(c -> String.valueOf((char) c))
                 .toList();
     }
 
-    public Map<Character, Long> practice8 () {
+    public Map<Character, Long> practice8() {
         String s = "banana";
-        return s.chars().filter(Character::isLetter).mapToObj(c->(char)c)
+        return s.chars().filter(Character::isLetter).mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-    public List <Character> practice9 () {
+    public List<Character> practice9() {
         String s = "a1b2c3d4";
-        return s.chars().filter(Character::isLetter).mapToObj(c->(char)c)
+        return s.chars().filter(Character::isLetter).mapToObj(c -> (char) c)
                 .toList();
     }
+
+    public int practice10() {
+        String s = "abc1d2e3f9";
+        return s.chars().filter(Character::isDigit).map(Character::getNumericValue).sum();
+    }
+
+
+
 
 
 }
