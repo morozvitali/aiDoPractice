@@ -33,9 +33,11 @@ public class Main23 {
         return s.chars().filter(Character::isDigit).map(Character::getNumericValue).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-    public void practice8 () {
-
+    public boolean practice8 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().anyMatch(e->e.getValue() >1);
     }
+
+
 
 
 }
