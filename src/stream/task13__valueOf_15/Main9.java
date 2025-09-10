@@ -59,5 +59,11 @@ public class Main9 {
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public List <Character> practice9 () {
+        String s = "a1b2c3d4";
+        return s.chars().filter(Character::isLetter).mapToObj(c->(char)c)
+                .toList();
+    }
+
 
 }
