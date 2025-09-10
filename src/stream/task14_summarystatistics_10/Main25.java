@@ -51,8 +51,15 @@ public class Main25 {
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 
+    public Long practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        return Arrays.stream(words).mapToLong(w->getClear(w)).summaryStatistics().getSum();
+    }
 
-
+    public static long getClear (String s) {
+        return s.chars().filter(c->"aeoiu".indexOf(c)>=0).count();
+    }
 
 
 
