@@ -42,4 +42,13 @@ public class Main9 {
                 .boxed()
                 .toList();
     }
+
+    public List <String> practice7 () {
+        String s = "java";
+        return s.chars().map(Character::toUpperCase)
+                .mapToObj(c->String.valueOf((char)c))
+                .toList();
+    }
+
+
 }
