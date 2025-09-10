@@ -243,6 +243,7 @@ String input = "ABCdefGHIjkl123";
 .filter(ch->Character.isLowerCase(ch))
 .mapToObj(a->String.valueOf((char)a))
 .collect(Collectors.joining());
+
 -----------------------------------------------------
 
 🧨 Завдання 12: Коди символів + 1
