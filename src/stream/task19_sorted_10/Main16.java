@@ -23,4 +23,9 @@ public class Main16 {
     }
 
 
+    public List <String> practice6 () {
+        List<String> words = List.of("kiwi", "apple",
+                "banana", "grape", "plum");
+        return words.stream().sorted(Comparator.comparing(w->w.charAt(w.length() -1))).toList();
+    }
 }
