@@ -23,6 +23,11 @@ public class Main23 {
                 .collect(Collectors.groupingBy(a->a%10, Collectors.summingInt(n->n)));
     }
 
+    public void practice6 () {
+        int[] numbers = {1, 2, 2, 3, 3, 3, 4, 4};
+        Arrays.stream(numbers).boxed().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse(-1);
+    }
 
 
 
