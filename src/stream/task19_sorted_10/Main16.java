@@ -11,6 +11,10 @@ public class Main16 {
                 .sorted(Comparator.comparing(String::length)).toList();
     }
 
+    public List <Integer> practice2 () {
+        List<Integer> numbers = List.of(3, 7, 1, 9, 2);
+        return numbers.stream().sorted(Comparator.reverseOrder()).toList();
 
+    }
 
 }
