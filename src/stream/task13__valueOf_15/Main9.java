@@ -16,5 +16,12 @@ public class Main9 {
                 .sorted().toList();
     }
 
+    public List <String> practice3 () {
+        String s = "abracadabra";
+        return s.chars().distinct().mapToObj(c->(char)c)
+                .map(String::valueOf)
+                .toList();
+    }
+
 
 }
