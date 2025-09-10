@@ -16,6 +16,11 @@ public class Main16 {
         return numbers.stream().sorted(Comparator.reverseOrder()).toList();
     }
 
+    public List <Integer> practice5 () {
+        List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
+        return nums.stream().sorted(Comparator.comparing(n->(int)n%3).thenComparing(n->(int)n))
+                .toList();
+    }
 
 
 }
