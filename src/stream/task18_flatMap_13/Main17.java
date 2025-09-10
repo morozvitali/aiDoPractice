@@ -2,6 +2,7 @@ package stream.task18_flatMap_13;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main17 {
     public List<String> practice1() {
@@ -76,7 +77,9 @@ public class Main17 {
         return b==0? a : gcd (b, a%b);
     }
 
-
+    public List <Integer> practice8 () {
+        return Stream.of(10, 42).filter(a->a instanceof Integer).map(a->(Integer)a).toList();
+    }
 
 
 
