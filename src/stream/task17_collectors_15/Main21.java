@@ -3,7 +3,7 @@ package stream.task17_collectors_15;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Min6 {
+public class Main21 {
     public String practice1() {
         List<String> names = List.of("Alice", "Bob", "Charlie");
         return names.stream().collect(Collectors.joining(", "));
