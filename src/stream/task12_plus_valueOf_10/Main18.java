@@ -64,6 +64,7 @@ public class Main18 {
 
 
 
+
     public int practice8(int number) {
         return Integer.parseInt(String.valueOf(Math.abs(number))
                 .chars().map(Character::getNumericValue)

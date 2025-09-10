@@ -15,7 +15,6 @@ codes.stream()
 .collect(Collectors.toList());
 
 🔎 Теорія:
-
 (char)(int)c — перетворення числа в символ. а далі → String.
 String.valueOf(char) — робить зі char → String.
 
