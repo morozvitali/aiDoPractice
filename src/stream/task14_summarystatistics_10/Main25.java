@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main25 {
     public long practice1 () {
@@ -8,6 +9,17 @@ public class Main25 {
         return Arrays.stream(numbers).distinct().summaryStatistics().getCount();
     }
 
+    public long practice2 () {
+        List<String> words = List.of("APPLE",
+                "Banana", "CHERRY", "kiwi", "PLUM");
+        return words.stream().filter(w->w.length()%2==0)
+                .mapToInt(String::length)
+                .summaryStatistics()
+                .getSum();
+    }
 
+    public void practice3 () {
+
+    }
 
 }
