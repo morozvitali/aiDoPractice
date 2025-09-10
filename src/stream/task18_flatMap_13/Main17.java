@@ -10,37 +10,54 @@ public class Main17 {
                 "Streams are cool",
                 "Java makes sense"
         );
-        return sentences.stream().flatMap(s->Arrays.stream(s.split(" "))).distinct().toList();
+        return sentences.stream().flatMap(s -> Arrays.stream(s.split(" "))).distinct().toList();
     }
 
-    public int practice () {
+    public int practice() {
 
         int[][] data = {
                 {3, 11},
                 {6, 7},
                 {10}
         };
-        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).min().orElse(-1);
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 2 == 0).min().orElse(-1);
     }
 
-    public int practice3 () {
+    public int practice3() {
         int[][] data = {
                 {-3, 5},
                 {2},
                 {-1, 4}
         };
-        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a>0)
-                .reduce((a,b)-> a*b).orElse(-1);
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a > 0)
+                .reduce((a, b) -> a * b).orElse(-1);
     }
 
-    public int practice4 () {
+    public int practice4() {
         int[][] data = {
                 {-3, 5},
                 {2},
                 {-1, 4}
         };
-        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a %3==0).max().orElse(-1)
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 3 == 0).max().orElse(-1)
     }
+
+    public int practice5() {
+        int[][] data = {
+                {-3, 5},
+                {2},
+                {-1, 4}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream)
+                .filter(a -> a % 2 == 0).map(a -> a * a).sum();
+    }
+
+
+
+
+
+
+
 
 
 
