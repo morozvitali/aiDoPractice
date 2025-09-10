@@ -40,7 +40,7 @@ public class Main17 {
                 {2},
                 {-1, 4}
         };
-        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 3 == 0).max().orElse(-1)
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 3 == 0).max().orElse(-1);
     }
 
     public int practice5() {
@@ -92,10 +92,12 @@ public class Main17 {
 
     public List<Boolean> practice11 () {
         return Stream.of("yes", true, false, true, 1)
-                .filter(a->a instanceof Boolean && (Boolean)a == true).toList();
+                .filter(a->a instanceof Boolean && (Boolean)a == true).map(a->(Boolean)a).toList();
     }
 
-
+    public List <String> practice12 () {
+        return Stream.of("hi", 123, "bye", false).filter(w-> w instanceof String).map(a-> ((String) a).toUpperCase ()).toList();
+    }
 
 
 }
