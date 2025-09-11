@@ -58,4 +58,8 @@ public class Main14 {
                 .collect(Collectors.collectingAndThen(Collectors.toList(), list->String.join(", " , list)));
     }
 
+    public Integer practice10 () {
+        return Stream.of("hi", "hello", "world", "no", "yes")
+                .collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
+    }
 }
