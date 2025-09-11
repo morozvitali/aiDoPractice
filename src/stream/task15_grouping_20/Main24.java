@@ -27,5 +27,9 @@ public class Main24 {
                 .entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(-1);
     }
 
+    public Integer practice5(String s) {
+        return s.chars().filter(Character::isDigit).map(Character::getNumericValue).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).size();
+    }
+
 
 }
