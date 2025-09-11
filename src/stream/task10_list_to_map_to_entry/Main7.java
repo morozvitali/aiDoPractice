@@ -49,7 +49,11 @@ public class Main7 {
                 .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
     }
 
-
+    public String practice7 () {
+        return Stream.of("alpha", "arena",
+                "java", "banana", "lava").collect(Collectors.toMap(Function.identity(), w->w.chars().filter(c->c=='a').count()))
+                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
 
 
 
