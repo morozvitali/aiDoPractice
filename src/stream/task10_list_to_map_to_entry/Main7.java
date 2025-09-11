@@ -12,7 +12,7 @@ public class Main7 {
         List<String> words = List.of("stream", "code",
                 "developer", "Engineer");
         return words.stream().collect(Collectors.toMap(Function.identity(), String::length))
-                .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+                .entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
     }
 
     public String practice2 () {
@@ -55,15 +55,8 @@ public class Main7 {
                 .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    public String practice8 () {
+        return Stream.of("apple", "Tree",
+                "Java", "stream", "Engineer").filter(w-> Character.isUpperCase(w.charAt(0))).collect(Collectors.toMap(Function.identity(), String::length)).entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
 }
