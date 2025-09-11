@@ -1,9 +1,6 @@
 package stream.task20_collectingAndThen_11;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -38,6 +35,11 @@ public class Main14 {
         return Stream.of("code", "stream", "java")
                 .map(String::length)
                 .collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.stream().mapToInt(a->a).summaryStatistics().getAverage()));
+    }
+
+    public Map <Character, List<String>> practice7 () {
+        return Stream.of("apple", "ant", "banana",
+                "bat", "car").collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), Collections::unmodifiableMap));
     }
 
 
