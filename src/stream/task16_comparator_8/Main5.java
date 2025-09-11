@@ -31,4 +31,17 @@ public class Main5 {
     public static long intCounter (String s) {
         return String.valueOf(s).chars().distinct().count();
     }
+
+    public void practice4 () {
+        Stream.of("abc", "aaa", "zzz").collect(Collectors.toMap(Function.identity(), Main5::asciiSum))
+                .entrySet().stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse("нема");
+    }
+
+    public static int asciiSum (String s) {
+        return s.chars().sum();
+    }
+
 }
