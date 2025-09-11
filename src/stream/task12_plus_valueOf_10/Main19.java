@@ -20,7 +20,7 @@ public class Main19 {
 
     public int practice3(int n) {
         return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
-                .filter(a->a%2==0)
+                .filter(a -> a % 2 == 0)
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
@@ -31,13 +31,13 @@ public class Main19 {
                 .collect(Collectors.joining());
     }
 
-    public int practice5 (int n) {
+    public int practice5(int n) {
         return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
     }
 
     public int practice6(int n) {
         return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
-                .map(a->a%2==0 ? a*a : a)
+                .map(a -> a % 2 == 0 ? a * a : a)
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
@@ -46,17 +46,22 @@ public class Main19 {
         String s = String.valueOf(Math.abs(n));
         return Integer.parseInt(IntStream.range(0, s.length()).mapToObj(i -> {
             int digit = Character.getNumericValue(s.charAt(i));
-            return String.valueOf(digit * (i+1));
+            return String.valueOf(digit * (i + 1));
         }).collect(Collectors.joining()));
     }
 
-    public int practice9 (int n){
+    public int practice9(int n) {
         return Integer.parseInt(String.valueOf(Math.abs(n))
                 .chars().map(Character::getNumericValue)
-                .map(a->Math.abs(a-5))
+                .map(a -> Math.abs(a - 5))
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
 
+    public String practice10(int n) {
+        return String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .mapToObj(a -> a > 5 ? "X" : "O")
+                .collect(Collectors.joining());
+    }
 
 }
