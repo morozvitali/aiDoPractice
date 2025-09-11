@@ -38,6 +38,15 @@ public class Main7 {
                 .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice5 () {
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        return list.stream().collect(Collectors.toMap(Function.identity(), w->w.chars().distinct().count())).entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
+
+
+
+
 
 
 
