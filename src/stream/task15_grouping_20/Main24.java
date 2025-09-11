@@ -44,5 +44,10 @@ public class Main24 {
         return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(a->a%3, Collectors.averagingInt(n->n)));
     }
 
+    public Character practice9 () {
+        return Stream.of("apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot").map(w->w.charAt(0)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(null);
+    }
+
 
 }
