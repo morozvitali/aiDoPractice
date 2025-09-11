@@ -31,5 +31,11 @@ public class Main10 {
                 .toList();
     }
 
+    public List<Integer> practice6 () {
+        String s = "abcxyz";
+        return s.chars().map(c->c - 'a' +1).boxed().toList();
+    }
+
+
 
 }
