@@ -19,4 +19,9 @@ public class Main10 {
         return s.chars().distinct().mapToObj(String::valueOf).collect(Collectors.joining());
     }
 
+    public List<Integer> practice4 () {
+        String text = "Code";
+        return text.chars().boxed().toList();
+    }
+
 }
