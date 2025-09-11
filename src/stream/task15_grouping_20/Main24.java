@@ -31,5 +31,8 @@ public class Main24 {
         return s.chars().filter(Character::isDigit).map(Character::getNumericValue).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).size();
     }
 
+    public long practice6 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(e->e.getValue() > 1).count();
+    }
 
 }
