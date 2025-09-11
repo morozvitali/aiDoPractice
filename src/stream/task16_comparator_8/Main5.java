@@ -22,4 +22,13 @@ public class Main5 {
         return s.chars().filter (c->c=='a').count();
     }
 
+    public Integer practice3 () {
+        return Stream.of(111, 123, 444, 1212)
+                .collect(Collectors.toMap(Function.identity(), Main4::getIntCount))
+                .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(-1);
+    }
+
+    public static long intCounter (String s) {
+        return String.valueOf(s).chars().distinct().count();
+    }
 }
