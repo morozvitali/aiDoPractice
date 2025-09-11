@@ -1,6 +1,8 @@
 package stream.task13__valueOf_15;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -40,5 +42,12 @@ public class Main10 {
         String s = "java";
         return s.chars().mapToObj(String::valueOf).toList();
     }
+
+    public Map<Character, Long> practice8 () {
+        String s = "banana";
+        return s.chars().filter(Character::isLetter).mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+
 
 }
