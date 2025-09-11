@@ -14,6 +14,12 @@ public class Main7 {
                 .entrySet().stream().max(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice2 () {
+        List <String> list = List.of("Java", "C",
+                "Python", "Go", "Kotlin");
+        return list.stream().collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().min(Comparator.comparing(e->e.getValue())).map(Map.Entry::getKey).orElse("");
+    }
 
 
 }
