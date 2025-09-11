@@ -50,4 +50,13 @@ public class Main19 {
         }).collect(Collectors.joining()));
     }
 
+    public int practice9 (int n){
+        return Integer.parseInt(String.valueOf(Math.abs(n))
+                .chars().map(Character::getNumericValue)
+                .map(a->Math.abs(a-5))
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+
 }
