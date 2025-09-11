@@ -34,7 +34,12 @@ public class Main19 {
         return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
     }
 
-
+    public int practice6(int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(a->a%2==0 ? a*a : a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
 
 
 
