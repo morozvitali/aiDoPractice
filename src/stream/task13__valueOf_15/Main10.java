@@ -1,6 +1,7 @@
 package stream.task13__valueOf_15;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main10 {
@@ -13,6 +14,9 @@ public class Main10 {
         return mixed.chars().filter(Character::isDigit).map(Character::getNumericValue).sorted().boxed().toList();
     }
 
-
+    public String practice3 () {
+        String s = "abracadabra";
+        return s.chars().distinct().mapToObj(String::valueOf).collect(Collectors.joining());
+    }
 
 }
