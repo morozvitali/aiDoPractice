@@ -46,9 +46,19 @@ public class Main18 {
                 .filter(a->a%3==0).max().orElse(-1);
     }
 
+    public long practice5 () {
+        int[][] data = {
+                {2, 3},
+                {4}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream)
+                .filter(a->a%2==0).sum();
+    }
 
 
 
+
+    }
 
 
 
