@@ -2,6 +2,7 @@ package stream.task18_flatMap_13;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main18 {
     public List <String> practice1 () {
@@ -14,7 +15,5 @@ public class Main18 {
                 .distinct().toList();
     }
 
-    public void practice2 (){
 
-    }
 }
