@@ -23,5 +23,9 @@ public class Main23 {
         return numbers.stream().collect(Collectors.partitioningBy(n->n%2==0, Collectors.counting()));
     }
 
-
+    public void practice4 () {
+        List<String> words = List.of("hi", "hi",
+                "book", "sun", "day", "Java", "sky");
+        words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
+    }
 }
