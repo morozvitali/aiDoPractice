@@ -22,6 +22,16 @@ public class Main8 {
                 .entrySet().stream().min(Comparator.comparingInt(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice3 () {
+        List<String> list = List.of("apple", "banana",
+                "orange", "blueberry");
+        return list.stream().collect(Collectors.toMap(Function.identity(), Main8::getCount))
+                .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long getCount (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
 
 
 
