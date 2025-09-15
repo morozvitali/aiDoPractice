@@ -3,6 +3,7 @@ package stream.task17_collectors_15;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main24 {
 
@@ -10,6 +11,11 @@ public class Main24 {
         List<String> words = List.of("apple",
                 "ant", "banana", "bat", "car");
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(w->w.toUpperCase(), Collectors.toList())));
+    }
+
+    public Map<Character, Integer> practice2 () {
+        return Stream.of("apple", "ant",
+                "banana", "bat", "car").collect(Collectors.toMap(w->w.charAt(0), String::length));
     }
 
 }
