@@ -52,4 +52,11 @@ public class Main24 {
     }
 
 
+    public String practice8 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.reducing("", (a,b)-> a.length() > b.length() ? a : b);
+    }
+
+
 }
