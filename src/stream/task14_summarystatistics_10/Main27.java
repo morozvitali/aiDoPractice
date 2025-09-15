@@ -28,5 +28,11 @@ public class Main27 {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
 
+    public Double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).filter(w->w.matches(".*[aeiou].*")).mapToInt(String::length).summaryStatistics().getAverage();
+    }
+
 
 }
