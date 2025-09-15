@@ -9,8 +9,9 @@ public class Main11 {
                 .toList();
     }
 
-    public void practice2 () {
-
+    public List <Integer> practice2 () {
+        String mixed = "a1b2c3x9z7";
+        return mixed.chars().filter(Character::isDigit).mapToObj(c->(int)c).sorted().toList();
     }
 
 
