@@ -73,4 +73,11 @@ public class Main8 {
         return s.chars().filter(c->c=='a').count();
     }
 
+    public String practice8 () {
+        return Stream.of("apple", "Tree",
+                "Java", "stream", "Engineer")
+                .collect(Collectors.toMap(Function.identity(), w->Character.isUpperCase(w.charAt(0))))
+                .entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
+
 }
