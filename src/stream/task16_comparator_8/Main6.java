@@ -35,4 +35,12 @@ public class Main6 {
     public static int numberCounter(int n) {
         return String.valueOf(Math.abs(n)).length();
     }
+
+    public String practice4 () {
+        return Stream.of("abc", "aaa", "zzz").collect(Collectors.toMap(Function.identity(), w->w.chars().sum()))
+                .entrySet().stream().max(Comparator.comparingInt(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
+
+
+
 }
