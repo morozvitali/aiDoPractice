@@ -48,4 +48,12 @@ public class Main11 {
                 .filter(Character::isLetter).mapToObj(c->(char)c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+    public String practice9 () {
+        String s = "a1b2c3d4";
+        return s.chars().filter(c->!Character.isDigit(c)).mapToObj(String::valueOf).collect(Collectors.joining());
+    }
+
+
+
 }
