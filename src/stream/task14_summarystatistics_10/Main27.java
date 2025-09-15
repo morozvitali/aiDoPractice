@@ -71,5 +71,4 @@ public class Main27 {
         return Arrays.stream(words).collect(Collectors.partitioningBy(w->Character.isUpperCase(w.charAt(0))));
     }
 
-
 }
