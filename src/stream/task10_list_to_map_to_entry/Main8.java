@@ -15,4 +15,14 @@ public class Main8 {
     }
 
 
+    public String practice2 () {
+        List<String> words = List.of("Java", "C",
+                "Python", "Go", "Kotlin");
+        return words.stream().collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().min(Comparator.comparingInt(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
+
+
+
+
 }
