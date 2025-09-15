@@ -77,7 +77,7 @@ return sentences.stream()
                 "Java makes sense"
         );
 
-        sentences.stream().flatMap(sentence -> Arrays.stream(sentence.split(""))).distinct().collect(Collectors.toList());
+        sentences.stream().flatMap(sentence -> Arrays.stream(sentence.split(" "))).distinct().collect(Collectors.toList());
     }
 
 
