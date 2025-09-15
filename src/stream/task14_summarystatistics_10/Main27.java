@@ -59,5 +59,13 @@ public class Main27 {
             .mapToInt(String::length).summaryStatistics();
     }
 
+    public void practice9 () {
+        String[] words = {"education", "questionnaire",
+                "house", "audio", "universe"};
+        Arrays.stream(words).filter(w->"aeiou".chars().allMatch(c->w.indexOf(c)>=0)).toList();
+    }
+
+
+
 
 }
