@@ -69,4 +69,14 @@ public class Main6 {
     public static long countOf(int n, char ch) {
         return String.valueOf(n).chars().filter(c->c == ch).count();
     }
+
+    public List <String> practice9 () {
+        return Stream.of("apple", "zebra", "sky", "education")
+                .sorted(Comparator.comparing(a->countVovels(a)))
+                .toList();
+    }
+
+    public static long countVovels (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c) >= 0).count();
+    }
 }
