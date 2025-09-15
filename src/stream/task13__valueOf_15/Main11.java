@@ -54,6 +54,9 @@ public class Main11 {
         return s.chars().filter(c->!Character.isDigit(c)).mapToObj(String::valueOf).collect(Collectors.joining());
     }
 
-
+    public int practice10 () {
+        String s = "abc1d2e3f9";
+        return s.chars().filter(Character::isDigit).map(Character::getNumericValue).sum();
+    }
 
 }
