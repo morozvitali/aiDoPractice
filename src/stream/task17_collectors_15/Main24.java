@@ -18,4 +18,10 @@ public class Main24 {
                 "banana", "bat", "car").collect(Collectors.toMap(w->w.charAt(0), String::length));
     }
 
+    public Map<Boolean, Long> practice3 () {
+        return Stream.of(1, 2, 3, 4, 5, 6)
+                .collect(Collectors.groupingBy(n->n%2==0, Collectors.counting()));
+    }
+
+
 }
