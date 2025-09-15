@@ -1,8 +1,10 @@
 package stream.task17_collectors_15;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -55,8 +57,13 @@ public class Main24 {
     public String practice8 () {
         List<String> words = List.of("hi", "book",
                 "sun", "day", "Java", "sky");
-        return words.stream().collect(Collectors.reducing("", (a,b)-> a.length() > b.length() ? a : b);
+        return words.stream().collect(Collectors.reducing("", (a,b)-> a.length() > b.length() ? a : b));
     }
 
 
+    public Map <Character, List<String>> practice9 () {
+        List<String> words = List.of("apple", "ant",
+                "alphabet", "axe", "banana", "bat");
+        return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.collectingAndThen(Collectors.toList(), list->list.stream().sorted(Comparator.comparingInt(String::length)).toList())));
+    }
 }
