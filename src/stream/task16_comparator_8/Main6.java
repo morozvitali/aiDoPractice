@@ -41,6 +41,14 @@ public class Main6 {
                 .entrySet().stream().max(Comparator.comparingInt(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice5 () {
+        return Stream.of("sun", "star", "supernova", "apple")
+                .filter(w->w.startsWith("s"))
+                .max(Comparator.comparing(String::length))
+                .orElse("");
+    }
+
+
 
 
 }
