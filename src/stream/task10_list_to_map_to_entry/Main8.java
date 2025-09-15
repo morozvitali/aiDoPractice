@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main8 {
     public String practice1() {
@@ -61,6 +62,15 @@ public class Main8 {
         return s.chars().sum();
     }
 
+    public String practice7 () {
+        return Stream.of("alpha", "arena",
+                "java", "banana", "lava")
+                .collect(Collectors.toMap(Function.identity(), Main8::getLetterCounter))
+                .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+        }
 
+    public static long getLetterCounter (String s) {
+        return s.chars().filter(c->c=='a').count();
+    }
 
 }
