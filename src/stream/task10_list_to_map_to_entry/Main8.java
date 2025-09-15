@@ -43,4 +43,14 @@ public class Main8 {
     public static long getUniqCounter (String s) {
         return s.chars().distinct().count();
     }
+
+    public String practice5 () {
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        return list.stream().collect(Collectors.toMap(Function.identity(), w->w.length()-getUniqCounter(w)))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+
+
 }
