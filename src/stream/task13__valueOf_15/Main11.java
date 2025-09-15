@@ -34,5 +34,8 @@ public class Main11 {
         return s.chars().mapToObj(c->c-'a'+1).toList();
     }
 
-
+    public List <String> practice7 () {
+        String s = "java";
+        return s.chars().map(Character::toUpperCase).mapToObj(String::valueOf).toList();
+    }
 }
