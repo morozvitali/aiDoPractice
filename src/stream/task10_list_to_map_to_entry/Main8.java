@@ -51,6 +51,16 @@ public class Main8 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice6 () {
+        List<String> list = List.of("abc", "aaa", "zzz");
+        return list.stream().collect(Collectors.toMap(Function.identity(), Main8::getASCII))
+                .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long getASCII (String s) {
+        return s.chars().sum();
+    }
+
 
 
 }
