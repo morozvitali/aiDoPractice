@@ -48,7 +48,17 @@ public class Main6 {
                 .orElse("");
     }
 
+    public List <String> practice6 () {
+        return Stream.of("abc", "def", "gka", "lol")
+                .sorted(Comparator.comparing(s->s.charAt(s.length()-1)))
+                .toList();
+    }
 
-
+    public String practice7 () {
+        return Stream.of("java", "hello", "me", "zebra")
+                .filter(w->w.contains("e"))
+                .min(Comparator.comparingInt(String::length))
+                .orElse("");
+    }
 
 }
