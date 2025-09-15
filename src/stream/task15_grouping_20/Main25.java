@@ -63,7 +63,6 @@ public class Main25 {
                         Map.Entry::getValue,
                         (o, n) -> o,
                         LinkedHashMap::new
-
                 ));
     }
 
