@@ -61,4 +61,12 @@ public class Main6 {
                 .orElse("");
     }
 
+    public List <Integer> practice8 () {
+        return Stream.of(100, 1010, 5, 2000, 10)
+                .sorted(Comparator.comparing(n->countOf(n, '0'))).toList();
+    }
+
+    public static long countOf(int n, char ch) {
+        return String.valueOf(n).chars().filter(c->c == ch).count();
+    }
 }
