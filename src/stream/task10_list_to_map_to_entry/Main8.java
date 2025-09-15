@@ -33,6 +33,14 @@ public class Main8 {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
 
+    public String practice4 () {
+        List<String> list = List.of("apple", "pear",
+                "banana", "kiwi");
+        return list.stream().collect(Collectors.toMap(Function.identity(), Main8::getUniqCounter))
+                .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("-1");
+    }
 
-
+    public static long getUniqCounter (String s) {
+        return s.chars().distinct().count();
+    }
 }
