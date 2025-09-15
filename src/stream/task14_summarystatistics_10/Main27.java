@@ -48,7 +48,12 @@ public class Main27 {
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 
-    public void practice7 () {
-
+    public Map <Character, Long> practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+
  }
