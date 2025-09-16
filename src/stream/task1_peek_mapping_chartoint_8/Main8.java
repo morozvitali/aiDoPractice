@@ -47,9 +47,11 @@ public Map <Integer, List <String>> practice7 () {
     return List.of("ivan@ukr.net", "olga@gmail.com", "petro@ukr.net")
             .stream().collect(Collectors.groupingBy(e->e.substring(0, e.indexOf("@"))
                     .length(), Collectors.toList()));
-
-
 }
 
+public void practice8 () {
+    List.of(1, 2, 3, 4, 5, 6).stream().peek(System.out::println)
+            .filter(a->a%2==0).forEach(System.out::println);
+}
 
 }
