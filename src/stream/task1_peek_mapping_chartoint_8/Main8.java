@@ -9,4 +9,10 @@ public int practice1 (int n) {
             //.map(d->d*d).sum();
 }
 
+
+public boolean practice2 (int n) {
+    return String.valueOf(Math.abs(n)).chars().map(c->c-'0').allMatch(c->c%2==0);
+}
+
+
 }
