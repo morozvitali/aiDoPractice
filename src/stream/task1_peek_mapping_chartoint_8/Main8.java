@@ -14,5 +14,9 @@ public boolean practice2 (int n) {
     return String.valueOf(Math.abs(n)).chars().map(c->c-'0').allMatch(c->c%2==0);
 }
 
+public int practice3 (int n) {
+    return String.valueOf(Math.abs(n)).chars().map(c->c-'0').max().orElse(-1);
+}
+
 
 }
