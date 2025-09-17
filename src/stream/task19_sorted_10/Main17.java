@@ -10,4 +10,11 @@ public class Main17 {
                 "fig", "grape", "banana");
         return words.stream().filter(w->w.length() > 3).sorted(Comparator.comparingInt(String::length)).toList();
     }
+
+    public List <Integer> practice2 () {
+        List<Integer> numbers = List.of(3, 7, 1, 9, 2);
+        return numbers.stream().sorted(Comparator.reverseOrder()).toList();
+    }
+
+
 }
