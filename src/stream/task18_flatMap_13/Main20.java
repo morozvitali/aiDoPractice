@@ -82,6 +82,10 @@ public class Main20 {
                 .toList();
     }
 
+    public List <Integer> practice10 () {
+        return Stream.of("hello", 1, 2.5, true, "world").filter(i->i instanceof Integer && (Integer)i > 10).map(i->(Integer)i).toList();
+    }
+
 
 
 }
