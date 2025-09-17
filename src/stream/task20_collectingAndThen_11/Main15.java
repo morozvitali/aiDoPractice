@@ -21,4 +21,9 @@ public class Main15 {
                 .collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.get(0)));
     }
 
+    public Integer practice4 () {
+        return Stream.of(5, 3, 4, 4, 3, 6).distinct().collect(Collectors.collectingAndThen(Collectors.toList(), list->list.get(0)));
+    }
+
+
 }
