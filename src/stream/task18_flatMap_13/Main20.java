@@ -90,6 +90,10 @@ public class Main20 {
         return Stream.of("yes", true, false, true, 1).filter(v->v instanceof Boolean && (Boolean)v == true).map(v->(Boolean)v).toList();
     }
 
+    public List <String> practice12 () {
+        return Stream.of("hi", 123, "bye", false).filter(s->s instanceof String).map(s->(String)s).map(String::toUpperCase).toList();
+    }
+
 
 
 }
