@@ -32,6 +32,11 @@ public class Main7 {
         return Stream.of(111, 123, 444, 1212).collect(Collectors.toMap(Function.identity(), v->String.valueOf(v).chars().distinct().count())).entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(-1);
     }
 
+    public String practice4 () {
+        return Stream.of("abc", "aaa", "zzz").collect(Collectors.toMap(Function.identity(), v->v.chars().sum())).entrySet().stream()
+                .max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
+
 
 
 }
