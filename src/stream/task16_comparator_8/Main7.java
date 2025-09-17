@@ -46,6 +46,11 @@ public class Main7 {
                 .map(Map.Entry::getKey).orElse("");
     }
 
+    public List <String> practice6 () {
+        return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparingInt(w->w.length()-1)).toList();
+    }
+
+
 
 
 }
