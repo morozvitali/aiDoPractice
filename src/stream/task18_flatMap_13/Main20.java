@@ -93,7 +93,4 @@ public class Main20 {
     public List <String> practice12 () {
         return Stream.of("hi", 123, "bye", false).filter(s->s instanceof String).map(s->(String)s).map(String::toUpperCase).toList();
     }
-
-
-
 }
