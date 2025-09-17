@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main25 {
     public Map<Character, List<String>> practice1 () {
@@ -27,6 +28,10 @@ public class Main25 {
         List<String> words = List.of("hi", "hi",
                 "book", "sun", "day", "Java", "sky");
         return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
+    }
+
+    public String practice5 () {
+        return Stream.of(4, 8, 15, 16, 23, 42).collect(Collectors.collectingAndThen(Collectors.counting(), count -> "counter " + count));
     }
 
 
