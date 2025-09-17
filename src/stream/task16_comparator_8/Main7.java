@@ -28,5 +28,10 @@ public class Main7 {
         return s.chars().filter(c->c=='a').count();
     }
 
+    public Integer practice3 () {
+        return Stream.of(111, 123, 444, 1212).collect(Collectors.toMap(Function.identity(), v->String.valueOf(v).chars().distinct().count())).entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(-1);
+    }
+
+
 
 }
