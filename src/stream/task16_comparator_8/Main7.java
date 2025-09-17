@@ -55,5 +55,9 @@ public class Main7 {
                 .entrySet().stream().min(Comparator.comparingInt(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
     }
 
+    public List <Integer> practice8 () {
+        return Stream.of(100, 1010, 5, 2000, 10).sorted(Comparator.comparingLong(n->String.valueOf(n).chars().filter(c->c=='0').count())).toList();
+    }
+
 
 }
