@@ -28,6 +28,10 @@ public class Main17 {
         return words.stream().filter(w->w.length() > 4).sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
     }
 
-
+    public List <String> practice5 () {
+        List<String> words = List.of("apple",
+                "banana", "cherry", "kiwi", "grape");
+        return words.stream().sorted(Comparator.comparing(w->w.chars().filter(c->"aeiou".indexOf(c) >=0).count())).toList();
+    }
 
 }
