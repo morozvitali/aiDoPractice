@@ -1,5 +1,6 @@
 package stream.task19_sorted_10;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -19,6 +20,12 @@ public class Main17 {
     public List<Integer> practice3 () {
         List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
         return nums.stream().sorted(Comparator.comparingInt(a->(int)a%2).thenComparingInt(n->(int)n)).toList();
+    }
+
+    public List<String> practice4 () {
+        List<String> words = List.of("kiwi", "apple",
+                "banana", "grape", "plum");
+        return words.stream().filter(w->w.length() > 4).sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
     }
 
 
