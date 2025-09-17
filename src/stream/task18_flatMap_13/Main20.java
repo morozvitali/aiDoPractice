@@ -86,6 +86,10 @@ public class Main20 {
         return Stream.of("hello", 1, 2.5, true, "world").filter(i->i instanceof Integer && (Integer)i > 10).map(i->(Integer)i).toList();
     }
 
+    public List<Boolean> practice11 () {
+        return Stream.of("yes", true, false, true, 1).filter(v->v instanceof Boolean && (Boolean)v == true).map(v->(Boolean)v).toList();
+    }
+
 
 
 }
