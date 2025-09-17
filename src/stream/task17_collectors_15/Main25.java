@@ -46,5 +46,11 @@ public class Main25 {
         return numbers.stream().collect(Collectors.groupingBy(w->w%3, Collectors.summingInt(n->n)));
     }
 
+    public String practice8 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.reducing("", (a,b)->a.length() > b.length() ? a : b));
+    }
+
 
 }
