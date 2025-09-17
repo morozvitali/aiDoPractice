@@ -16,5 +16,9 @@ public class Main15 {
     }
 
 
+    public String practice3 () {
+        return Stream.of("apple", "car", "banana", "hi", "cherry")
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.get(0)));
+    }
 
 }
