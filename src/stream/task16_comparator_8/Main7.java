@@ -38,5 +38,14 @@ public class Main7 {
     }
 
 
+    public String practice5 () {
+        return Stream.of("sun", "star", "supernova", "apple")
+                .filter(w->w.startsWith("s"))
+                .collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().max(Comparator.comparingInt(Map.Entry::getValue))
+                .map(Map.Entry::getKey).orElse("");
+    }
+
+
 
 }
