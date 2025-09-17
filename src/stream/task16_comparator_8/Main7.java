@@ -62,6 +62,4 @@ public class Main7 {
     public List <String> practice9 () {
         return Stream.of("apple", "zebra", "sky", "education").sorted(Comparator.comparingLong(w->w.chars().filter(c->"aioue".indexOf(c)>=0).count())).toList();
     }
-
-
 }
