@@ -50,7 +50,10 @@ public class Main7 {
         return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparingInt(w->w.length()-1)).toList();
     }
 
-
+    public String practice7 () {
+        return Stream.of("java", "hello", "me", "zebra").filter(w ->w.contains("e")).collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().min(Comparator.comparingInt(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
 
 
 }
