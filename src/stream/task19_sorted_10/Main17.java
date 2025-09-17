@@ -34,4 +34,11 @@ public class Main17 {
         return words.stream().sorted(Comparator.comparing(w->w.chars().filter(c->"aeiou".indexOf(c) >=0).count())).toList();
     }
 
+    public List <String> practice6 () {
+        List<String> words = List.of("tea", "watermelon",
+                "apple", "pear", "banana");
+        return words.stream().sorted().sorted(Comparator.comparingInt(String::length).reversed()).toList();
+
+    }
+
 }
