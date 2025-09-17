@@ -41,4 +41,10 @@ public class Main26 {
     public Map <String, List<Integer>> practice7 () {
         return Stream.of(1, 2, 3, 4, 5).collect(Collectors.groupingBy(n->n%2==0? "even" : "odd"));
     }
+
+    public Map <Integer, Double> practice8 () {
+        return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(n->n%3, Collectors.averagingInt(n->n)));
+    }
+
+
 }
