@@ -7,32 +7,39 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main25 {
-    public Map<Character, List<String>> practice1 () {
+    public Map<Character, List<String>> practice1() {
         List<String> words = List.of("apple",
                 "ant", "banana", "bat", "car");
-        return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(String::toUpperCase, Collectors.toList())));
+        return words.stream().collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.mapping(String::toUpperCase, Collectors.toList())));
     }
 
-    public Map <Character, List <Integer>> practice2 () {
+    public Map<Character, List<Integer>> practice2() {
         List<String> words = List.of("apple", "ant",
                 "banana", "bat", "car");
-        return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(String::length, Collectors.toList())));
+        return words.stream().collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.mapping(String::length, Collectors.toList())));
     }
 
-    public Map <Boolean, Long> practice3 () {
+    public Map<Boolean, Long> practice3() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
-        return numbers.stream().collect(Collectors.partitioningBy(a->a%2==0, Collectors.counting()));
+        return numbers.stream().collect(Collectors.partitioningBy(a -> a % 2 == 0, Collectors.counting()));
     }
 
-    public Map<Integer, Set<String>> practice4 () {
+    public Map<Integer, Set<String>> practice4() {
         List<String> words = List.of("hi", "hi",
                 "book", "sun", "day", "Java", "sky");
         return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
     }
 
-    public String practice5 () {
+    public String practice5() {
         return Stream.of(4, 8, 15, 16, 23, 42).collect(Collectors.collectingAndThen(Collectors.counting(), count -> "counter " + count));
     }
+
+    public Map<Character, String> practice6() {
+        return Stream.of("apple",
+                        "ant", "banana", "bat", "car")
+                .collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.joining(", ")));
+    }
+
 
 
 }
