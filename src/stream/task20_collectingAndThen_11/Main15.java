@@ -26,7 +26,13 @@ public class Main15 {
         return Stream.of(5, 3, 4, 4, 3, 6).distinct().collect(Collectors.collectingAndThen(Collectors.toList(), list->list.get(0)));
     }
 
-    public Set<String> practice5 () {
+    public Set<Integer> practice5 () {
         return Stream.of (2, 4, 10, 12, 14, 12, 4).collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
+
+    public Double practice6 () {
+        return Stream.of("code", "stream", "java").collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.stream().mapToInt(String::length).average().orElse(-1)));
+    }
+
+
 }
