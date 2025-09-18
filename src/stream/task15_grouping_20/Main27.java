@@ -32,4 +32,8 @@ public class Main27 {
         return "ab123cc44a77".chars().filter(Character::isDigit).mapToObj(Character::getNumericValue).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public Boolean practice6 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().anyMatch(e->e.getValue() >1);
+    }
 }
