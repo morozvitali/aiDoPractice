@@ -48,4 +48,9 @@ public class Main8 {
     public String practice6 () {
         return Stream.of("java", "hello", "me", "zebra").filter(w->w.contains("e")).min(Comparator.comparing(String::length)).orElse("");
     }
+
+    public List <String> practice7 () {
+        return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparing(s->s.charAt(s.length()-1)))
+                .toList();
+    }
 }
