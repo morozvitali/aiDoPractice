@@ -62,5 +62,9 @@ public class Main8 {
         return String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
 
     }
+
+    public List<String> practice10 () {
+        return List.of("apple", "zebra", "sky", "education").stream().sorted(Comparator.comparing(w->w.chars().filter(c->"aeiuo".indexOf(c)>=0).count())).toList();
+    }
 }
 
