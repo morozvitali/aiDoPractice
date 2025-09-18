@@ -2,6 +2,7 @@ package stream.task18_flatMap_13;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main21 {
 
@@ -84,6 +85,10 @@ public class Main21 {
         return input.stream().filter(s->s instanceof String).map(s->(String)s).toList();
     }
 
-
+    public List <Integer> practice10 () {
+        return Stream.of("a", 3, 15, 11, 9, "99")
+                .filter(a->a instanceof Integer && (Integer)a >10)
+                .map(a->(Integer)a).toList();
+    }
 
 }
