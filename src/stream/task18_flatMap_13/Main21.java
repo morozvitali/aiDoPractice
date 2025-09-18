@@ -91,4 +91,8 @@ public class Main21 {
                 .map(a->(Integer)a).toList();
     }
 
+    public List <Boolean> practice11 (List<Object> input) {
+        return input.stream().filter(v->v instanceof Boolean && (Boolean) v == true).map(v->(Boolean)v).toList();
+    }
+
 }
