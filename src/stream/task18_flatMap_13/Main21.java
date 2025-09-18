@@ -24,7 +24,14 @@ public class Main21 {
                 .min().orElse(-1);
     }
 
-
+    public Integer practice3 () {
+        int[][] data = {
+                {-3, 5},
+                {2},
+                {-1, 4}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a>0).reduce((a,b)->a*b).orElse(-1);
+    }
 
 
 
