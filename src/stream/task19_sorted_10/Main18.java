@@ -50,4 +50,8 @@ public List <String> practice7 () {
         return words.stream().sorted(Comparator.comparing(String::length).reversed()).toList();
     }
 
+    public List <Integer> practice9 () {
+        List<Integer> numbers = List.of(3, 2, 5, 6, 4, 1);
+        return numbers.stream().sorted(Comparator.comparing(v->(int)v%2).reversed()).toList();
+    }
 }
