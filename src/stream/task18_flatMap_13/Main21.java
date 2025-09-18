@@ -80,5 +80,10 @@ public class Main21 {
         return input.stream().filter(a-> a instanceof Integer).map(i -> (Integer) i).toList();
     }
 
+    public List<String> practice9 (List<Object> input) {
+        return input.stream().filter(s->s instanceof String).map(s->(String)s).toList();
+    }
+
+
 
 }
