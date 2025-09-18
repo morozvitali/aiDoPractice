@@ -53,4 +53,14 @@ public class Main8 {
         return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparing(s->s.charAt(s.length()-1)))
                 .toList();
     }
+
+    public List<Integer> practice8 () {
+        return Stream.of(100, 1010, 5, 2000, 10).sorted(Comparator.comparing(Main8::countOfZero)).toList();
+    }
+
+    public static long countOfZero (int n) {
+        return String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
+
+    }
 }
+
