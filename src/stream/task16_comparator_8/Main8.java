@@ -37,4 +37,10 @@ public class Main8 {
         return String.valueOf(Math.abs(n)).chars().distinct().count();
     }
 
+    public String practice4 () {
+        return Stream.of("abc", "aaa", "zzz").collect(Collectors.toMap(Function.identity(), w->w.chars().sum())).entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+
+
 }
