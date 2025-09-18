@@ -27,4 +27,14 @@ public class Main8 {
     public long countLetter (String s) {
         return s.chars().filter(a->a=='a').count();
     }
+
+    public int practice3 () {
+        return Stream.of(111, 123, 444, 1212).collect(Collectors.toMap(Function.identity(), Main8::getMaxCountc)).entrySet().stream()
+                .max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
+    }
+
+    public static long getMaxCountc (int n) {
+        return String.valueOf(Math.abs(n)).chars().distinct().count();
+    }
+
 }
