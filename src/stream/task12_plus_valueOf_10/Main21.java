@@ -27,6 +27,10 @@ public class Main21 {
         return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
     }
 
+    public int practice6 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).filter(a->a%2==0).map(m->m*m).mapToObj(String::valueOf).collect(Collectors.joining()));
+    }
+
 
 
 }
