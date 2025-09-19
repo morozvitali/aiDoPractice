@@ -19,6 +19,9 @@ public class Main12 {
         return s.chars().distinct().mapToObj(String::valueOf).toList();
     }
 
-
+    public List <Integer> practice4 () {
+        String text = "Code";
+        return text.chars().boxed().toList();
+    }
 
 }
