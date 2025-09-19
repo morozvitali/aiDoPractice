@@ -1,7 +1,6 @@
 package stream.task15_grouping_20;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -25,6 +24,11 @@ public class Main28 {
     public Integer practice4 () {
         return Stream.of(1,2,2,3,3,3,4,4).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
+    }
+
+    public Map<Integer, Long> practice5 () {
+        return "ab123cc44a77".chars().filter(Character::isDigit).mapToObj(c->(int)c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
 
