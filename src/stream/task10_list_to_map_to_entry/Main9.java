@@ -1,5 +1,6 @@
 package stream.task10_list_to_map_to_entry;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -48,6 +49,18 @@ public class Main9 {
         s.chars().forEach(c->set.add((char) c));
         assert set != null;
         return set.size();
+    }
+
+    public String practice5 () {
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        return list.stream().collect(Collectors.toMap(Function.identity(), w->getSame(w)))
+                .entrySet().stream().reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("empty");
+    }
+
+    public static long getSame (String s) {
+        return s.length() - s.chars().distinct().count();
     }
 
 
