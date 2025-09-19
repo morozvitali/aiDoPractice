@@ -31,6 +31,9 @@ public class Main21 {
         return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).filter(a->a%2==0).map(m->m*m).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
+    public int practice7 (int n) {
+        return String.valueOf(Math.abs(n)).length();
+    }
 
 
 }
