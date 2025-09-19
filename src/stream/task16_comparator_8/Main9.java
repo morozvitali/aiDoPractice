@@ -29,5 +29,11 @@ public class Main9 {
         return s.chars().distinct().count();
     }
 
+    public Integer practice4 () {
+        return List.of("abc", "aaa", "zzz").stream().mapToInt(w->w.chars().sum()).max().orElse(-1);
+    }
+
+
+
 
 }
