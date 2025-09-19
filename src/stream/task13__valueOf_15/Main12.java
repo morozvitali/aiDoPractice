@@ -14,6 +14,10 @@ public class Main12 {
         return mixed.chars().filter(Character::isDigit).map(Character::getNumericValue).boxed().toList();
     }
 
+    public List <String> practice3 () {
+        String s = "abracadabra";
+        return s.chars().distinct().mapToObj(String::valueOf).toList();
+    }
 
 
 
