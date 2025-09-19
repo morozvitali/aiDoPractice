@@ -66,5 +66,15 @@ public class Main9 {
         return Stream.of("abc", "aaa", "zzz").mapToInt(w->w.chars().sum()).max().orElse(-1);
     }
 
+    public String practice7 () {
+        return List.of("alpha", "arena",
+                "java", "banana", "lava").stream().collect(Collectors.toMap(Function.identity(), w->countLetterA(w)))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long countLetterA (String s) {
+        return s.chars().filter(c->c=='a').count();
+    }
+
 
 }
