@@ -24,4 +24,11 @@ public class Main12 {
         return text.chars().boxed().toList();
     }
 
+    public List <String> practice5 () {
+        String input = "hEllO WoRLd";
+        return input.chars().filter(Character::isUpperCase).mapToObj(String::valueOf).toList();
+    }
+
+
+
 }
