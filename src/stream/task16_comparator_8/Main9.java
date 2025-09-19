@@ -3,6 +3,7 @@ package stream.task16_comparator_8;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -24,8 +25,8 @@ public class Main9 {
         return s.chars().filter(c->c=='a').count();
     }
 
-    public void practice3 () {
-        return List.of(111, 123, 444, 1212).stream().map(String::valueOf).max(Comparator.comparing(w->getUniqCounter(w))).orElse(-1);
+    public String practice3 () {
+        return List.of(111, 123, 444, 1212).stream().map(String::valueOf).max(Comparator.comparing(w->getUniqCounter(w))).orElse("");
     }
 
     public static long getUniqCounter (String s) {
