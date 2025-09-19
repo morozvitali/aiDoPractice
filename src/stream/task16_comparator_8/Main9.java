@@ -33,6 +33,12 @@ public class Main9 {
         return List.of("abc", "aaa", "zzz").stream().mapToInt(w->w.chars().sum()).max().orElse(-1);
     }
 
+    public String practice5 () {
+        List<String> words = List.of("sun", "star", "supernova", "apple");
+        return words.stream().filter(w->w.startsWith("s")).max((Comparator.comparing(String::length))).orElse("");
+    }
+
+
 
 
 
