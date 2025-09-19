@@ -1,11 +1,9 @@
 package stream.task10_list_to_map_to_entry;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main9 {
     public String practice1 () {
@@ -61,6 +59,11 @@ public class Main9 {
 
     public static long getSame (String s) {
         return s.length() - s.chars().distinct().count();
+    }
+
+
+    public int practice6 () {
+        return Stream.of("abc", "aaa", "zzz").mapToInt(w->w.chars().sum()).max().orElse(-1);
     }
 
 
