@@ -13,6 +13,14 @@ public class Main9 {
                 .max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice2 () {
+        List<String> list = List.of("Java", "C",
+                "Python", "Go", "Kotlin");
+        //return list.stream().collect(Collectors.reducing((a,b)->a.length() > b.length() ? a : b)).orElse("");
+        return list.stream().collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey).orElse("");
+    }
 
 
 }
