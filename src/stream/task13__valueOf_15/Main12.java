@@ -1,6 +1,7 @@
 package stream.task13__valueOf_15;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main12 {
@@ -32,7 +33,11 @@ public class Main12 {
     public List <Integer> practice6 () {
         String s = "abcxyz";
         return s.chars().mapToObj(c->c-'a'+1).toList();
+    }
 
+    public List <String> practice7 () {
+        String s = "java";
+        return s.chars().map(Character::toUpperCase).mapToObj(c->String.valueOf((char)c)).toList();
     }
 
 }
