@@ -10,7 +10,18 @@ public class Main9 {
         return words.stream().sorted(Comparator.comparing(w->getCount(w))).toList();
     }
 
-    public long getCount (String s) {
-        s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    public static long getCount (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
+
+    public String practice2 () {
+        return List.of("alpha", "arena", "java", "banana", "lava").stream().max(Comparator.comparing(w->getCounterA(w))).orElse("");
+    }
+    public static long getCounterA (String s) {
+        return s.chars().filter(c->c=='a').count();
+    }
+
+
+
+
 }
