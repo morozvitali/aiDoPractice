@@ -1,7 +1,10 @@
 package stream.task16_comparator_8;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main9 {
     public List<String> practice1 () {
@@ -38,7 +41,9 @@ public class Main9 {
         return words.stream().filter(w->w.startsWith("s")).max((Comparator.comparing(String::length))).orElse("");
     }
 
-
+    public List <String> practice6 () {
+        return Stream.of("sun", "star", "supernova", "apple").sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
+    }
 
 
 
