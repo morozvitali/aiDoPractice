@@ -21,7 +21,13 @@ public class Main9 {
         return s.chars().filter(c->c=='a').count();
     }
 
+    public void practice3 () {
+        return List.of(111, 123, 444, 1212).stream().map(String::valueOf).max(Comparator.comparing(w->getUniqCounter(w))).orElse(-1);
+    }
 
+    public static long getUniqCounter (String s) {
+        return s.chars().distinct().count();
+    }
 
 
 }
