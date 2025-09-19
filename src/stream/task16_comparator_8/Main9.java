@@ -54,4 +54,7 @@ public class Main9 {
         return List.of(100, 1010, 5, 2000, 10).stream().sorted(Comparator.comparing(a->String.valueOf(a).chars().filter(c->c=='0').count())).toList();
     }
 
+    public List <String> practice9 () {
+        return List.of("apple", "zebra", "sky", "education").stream().sorted(Comparator.comparing(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count())).toList();
+    }
 }
