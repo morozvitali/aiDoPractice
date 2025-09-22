@@ -61,7 +61,11 @@ public class Main10 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
 
-
+    public String practice7 () {
+        return Stream.of("alpha", "arena",
+                "java", "banana", "lava").collect(Collectors.toMap(Function.identity(), w->w.chars().filter(c->c=='a').count()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
 
 
 }
