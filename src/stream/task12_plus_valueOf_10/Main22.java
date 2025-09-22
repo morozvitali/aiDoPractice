@@ -15,5 +15,10 @@ public class Main22 {
         return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).filter(a->a%2==0).mapToObj(String::valueOf).collect(Collectors.joining()));
     }
 
+    public String practice4 (int n) {
+        return String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+        .mapToObj("*"::repeat).collect(Collectors.joining());
+    }
+
 
 }
