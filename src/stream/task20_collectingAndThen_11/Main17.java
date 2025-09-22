@@ -51,5 +51,9 @@ public class Main17 {
         return Stream.of(1, 2, 3, 4, 5).filter(a->a%2==0).map(String::valueOf).collect(Collectors.collectingAndThen(Collectors.toList(), list -> String.join(", ", list)));
 
     }
+public Integer practice10 () {
+        return Stream.of("hi", "hello", "world", "no", "yes").collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
+}
+
 
 }
