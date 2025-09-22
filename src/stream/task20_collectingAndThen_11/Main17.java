@@ -36,6 +36,17 @@ public class Main17 {
                 "bat", "car").collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), Collections::unmodifiableMap));
     }
 
+    public String practice8 () {
+        return Stream.of("apple", "ant", "banana",
+                "bat", "car").filter(w->w.contains("z")).collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
+                    if (list.size() !=1) {
+                        throw  new IllegalStateException( "except only one letter z");
+                    }
+                        return list.get(0);
+        }
+        ));
+    }
+
 
 
 }
