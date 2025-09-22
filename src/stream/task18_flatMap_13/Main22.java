@@ -70,6 +70,10 @@ public class Main22 {
         return b==0? a : gcd (b, a%b);
     }
 
+    public List <Integer> practice8 (List <Object> list) {
+        return list.stream().filter(o->o instanceof Integer).map(o->(Integer)o).toList();
+    }
+
 
 
 }
