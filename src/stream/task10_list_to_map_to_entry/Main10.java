@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main10 {
     public String practice1() {
@@ -54,6 +55,13 @@ public class Main10 {
     public static long countSameLetters (String s) {
         return s.length() - s.chars().distinct().count();
     }
+
+    public String practice6 () {
+        return Stream.of("abc", "aaa", "zzz").collect(Collectors.toMap(Function.identity(), w->w.chars().sum()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+
 
 
 }
