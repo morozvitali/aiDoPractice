@@ -33,5 +33,15 @@ public class Main10 {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
 
+    public String practice4 () {
+        List<String> list = List.of("apple", "pear",
+                "banana", "kiwi");
+        return list.stream().collect(Collectors.toMap(Function.identity(), Main10::getUniqWord))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
 
+    public static long getUniqWord (String s) {
+        return s.chars().distinct().count();
+
+    }
 }
