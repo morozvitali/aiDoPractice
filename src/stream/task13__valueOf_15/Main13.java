@@ -33,4 +33,9 @@ public class Main13 {
         String s = "abcxyz";
         return s.chars().map(c->c-'a'+1).boxed().toList();
     }
+
+    public List <String> practice7 () {
+        String s = "java";
+        return s.chars().map(Character::toUpperCase).mapToObj(String::valueOf).toList();
+    }
 }
