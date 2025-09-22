@@ -86,6 +86,9 @@ public class Main22 {
         return list.stream().filter(o->o instanceof Boolean && (Boolean) o == true).map(o->(Boolean)o).toList();
     }
 
+    public List<String> practice12 (List <Object> list) {
+        return list.stream().filter(o->o instanceof String).map(o->((String)o).toUpperCase()).toList();
+    }
 
 
 }
