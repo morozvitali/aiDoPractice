@@ -8,17 +8,22 @@ public class Main19 {
         List<String> words = List.of("tea", "lemon",
                 "fig", "grape", "banana");
         return words.stream().filter(w->w.length()%3==0)
-                .sorted(Comparator.comparing(String::length)).toList()
+                .sorted(Comparator.comparing(String::length)).toList();
     }
     public List <String> practice2 () {
         List<String> words = List.of("tea", "lemon",
                 "fig", "grape", "banana");
-        return words.stream().map(w->w.toLowerCase()).sorted(Comparator.naturalOrder()).toList();
+        return words.stream().map(String::toLowerCase).sorted(Comparator.naturalOrder()).toList();
     }
 
     public List <Integer> practice3 () {
         List<Integer> numbers = List.of(3, 7, 1, 9, 2);
         return numbers.stream().sorted(Comparator.reverseOrder()).toList();
+    }
+
+    public List <Integer> practice4 () {
+        List<Integer> nums = List.of(3, 2, 5, 6, 1, 4);
+        return nums.stream().sorted(Comparator.comparing(n->(int)n%2).thenComparingInt(n->(int)n)).toList();
     }
 
 
