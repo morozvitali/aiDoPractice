@@ -20,5 +20,10 @@ public class Main17 {
         return Stream.of("sun", "supernova", "star").collect(Collectors.collectingAndThen(Collectors.toList(), list->list.stream().sorted(Comparator.comparing(String::length).reversed()).toList().getFirst()));
     }
 
+    public Integer practice4 () {
+        return Stream.of(5, 3, 4, 4, 3, 6).collect(Collectors.collectingAndThen(Collectors.toList(), list->list.stream().distinct().toList().getFirst()));
+    }
+
+
 
 }
