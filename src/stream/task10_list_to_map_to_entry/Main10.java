@@ -42,6 +42,18 @@ public class Main10 {
 
     public static long getUniqWord (String s) {
         return s.chars().distinct().count();
-
     }
+
+    public String practice5 () {
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        return list.stream().collect(Collectors.toMap(Function.identity(), Main10::countSameLetters))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long countSameLetters (String s) {
+        return s.length() - s.chars().distinct().count();
+    }
+
+
 }
