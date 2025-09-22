@@ -78,4 +78,10 @@ public class Main22 {
         return list.stream().filter(o->o instanceof String).map(o->(String)o).toList();
     }
 
+    public List<Integer> practice10 (List<Object> list) {
+        return list.stream().filter(o->o instanceof Integer && (Integer)o >10).map(o->(Integer)o).toList();
+    }
+
+
+
 }
