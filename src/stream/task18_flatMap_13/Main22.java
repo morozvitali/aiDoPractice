@@ -82,6 +82,10 @@ public class Main22 {
         return list.stream().filter(o->o instanceof Integer && (Integer)o >10).map(o->(Integer)o).toList();
     }
 
+    public List<Boolean> practice11 (List<Object>list) {
+        return list.stream().filter(o->o instanceof Boolean && (Boolean) o == true).map(o->(Boolean)o).toList();
+    }
+
 
 
 }
