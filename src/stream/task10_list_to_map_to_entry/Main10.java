@@ -32,4 +32,6 @@ public class Main10 {
     public static long getCount (String s) {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
+
+
 }
