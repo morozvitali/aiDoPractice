@@ -74,6 +74,8 @@ public class Main22 {
         return list.stream().filter(o->o instanceof Integer).map(o->(Integer)o).toList();
     }
 
-
+    public List <String> practice9 (List <Object> list) {
+        return list.stream().filter(o->o instanceof String).map(o->(String)o).toList();
+    }
 
 }
