@@ -10,7 +10,11 @@ public class Main19 {
         return words.stream().filter(w->w.length()%3==0)
                 .sorted(Comparator.comparing(String::length)).toList()
     }
-
+    public List <String> practice2 () {
+        List<String> words = List.of("tea", "lemon",
+                "fig", "grape", "banana");
+        return words.stream().map(w->w.toLowerCase()).sorted(Comparator.naturalOrder()).toList();
+    }
 
 
 }
