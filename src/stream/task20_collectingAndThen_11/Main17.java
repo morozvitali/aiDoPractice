@@ -47,6 +47,9 @@ public class Main17 {
         ));
     }
 
+    public String practice9 () {
+        return Stream.of(1, 2, 3, 4, 5).filter(a->a%2==0).map(String::valueOf).collect(Collectors.collectingAndThen(Collectors.toList(), list -> String.join(", ", list)));
 
+    }
 
 }
