@@ -11,5 +11,11 @@ public class Main28 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(String::toUpperCase, Collectors.toList())));
     }
 
+    public Map <Character, Integer> practice2 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.toMap(w->w.charAt(0), String::length));
+    }
+
 
 }
