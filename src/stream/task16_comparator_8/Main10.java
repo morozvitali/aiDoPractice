@@ -30,4 +30,7 @@ public class Main10 {
                 .distinct().count())).max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
     }
 
+    public String practice4 () {
+        return Stream.of("abc", "aaa", "zzz").map(w->Map.entry(w, w.chars().sum())).max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
 }
