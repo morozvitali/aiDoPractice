@@ -51,5 +51,15 @@ public class Main23 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 3 == 0).map(a -> a * a).sum();
     }
 
+    public Double practice6 () {
+        int[][] data = {
+                {3, 9},
+                {8, 12},
+                {7}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 2 == 1).summaryStatistics().getAverage();
+    }
+
+
 
 }
