@@ -18,6 +18,10 @@ public class Main30 {
         return s.chars().mapToObj(c->String.valueOf((char)(int)c)).distinct().toList();
     }
 
+    public List <Integer> practice4 () {
+        String text = "Code";
+        return text.chars().boxed().toList();
+    }
 
 
 
