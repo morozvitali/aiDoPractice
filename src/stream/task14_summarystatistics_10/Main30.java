@@ -13,6 +13,12 @@ public class Main30 {
         return mixed.chars().filter(Character::isDigit).mapToObj(Character::getNumericValue).sorted().toList();
     }
 
+    public List <String> practice3 () {
+        String s = "abracadabra";
+        return s.chars().mapToObj(c->String.valueOf((char)(int)c)).distinct().toList();
+    }
+
+
 
 
 }
