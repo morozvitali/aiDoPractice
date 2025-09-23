@@ -33,4 +33,10 @@ public class Main10 {
     public String practice4 () {
         return Stream.of("abc", "aaa", "zzz").map(w->Map.entry(w, w.chars().sum())).max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
+
+    public String practice5 () {
+        List<String> words =
+                List.of("sun", "star", "supernova", "apple");
+        return words.stream().filter(w->w.startsWith("s")).max(Comparator.comparing(String::length)).orElse("");
+    }
 }
