@@ -23,7 +23,11 @@ public class Main10 {
 
     public static long countA (String s) {
     return s.chars().filter(c->c=='a').count();
+    }
 
+    public Integer practice3 () {
+        return Stream.of(111, 123, 444, 1212).map(n->Map.entry(n, (int)String.valueOf(n).chars()
+                .distinct().count())).max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
     }
 
 }
