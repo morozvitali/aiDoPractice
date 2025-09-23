@@ -1,0 +1,17 @@
+package stream.task16_comparator_8;
+
+import java.util.Comparator;
+import java.util.List;
+
+public class Main10 {
+    public List <String> practice1 () {
+        List<String> words = List.of("sky", "banana",
+                "apple", "grape", "orange", "plum");
+        return words.stream().sorted(Comparator.comparing(Main10::count).thenComparing(Comparator.naturalOrder())).toList();
+    }
+
+    public static long count (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
+
+}
