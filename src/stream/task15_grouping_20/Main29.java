@@ -31,5 +31,12 @@ public class Main29 {
         return Stream.of(12, 23, 34, 45, 16, 7).collect(Collectors.groupingBy(a->a%3, Collectors.summingInt(n->n)));
     }
 
+    public Integer practice6 () {
+        return Stream.of(12, 23, 34, 45, 16, 7).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
+    }
+
+
+
 }
 
