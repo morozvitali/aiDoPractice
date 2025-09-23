@@ -21,6 +21,9 @@ public class Main29 {
                 .entrySet().stream().filter(e->e.getValue() >0).count();
     }
 
-
+    public String practice (String s) {
+        return Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
 
 }
