@@ -60,7 +60,7 @@ public class Main23 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 2 == 1).summaryStatistics().getAverage();
     }
 
-    public int practice6() {
+    public int practice7() {
         int[][] data = {
                 {3, 9},
                 {8, 12},
