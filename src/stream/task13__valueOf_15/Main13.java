@@ -67,7 +67,5 @@ public class Main13 {
         String input = "abc";
         return input.chars().boxed().toList();
     }
-
-
 }
 
