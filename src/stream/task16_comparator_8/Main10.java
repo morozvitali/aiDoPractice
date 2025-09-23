@@ -52,6 +52,8 @@ public class Main10 {
         return List.of(100, 1010, 5, 2000, 10).stream().sorted(Comparator.comparing(n->String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count())).toList();
     }
 
-
-
+    public List <String> practice9 () {
+        return Stream.of("apple", "zebra", "sky", "education")
+                .sorted(Comparator.comparing(w->count(w))).toList();
+    }
 }
