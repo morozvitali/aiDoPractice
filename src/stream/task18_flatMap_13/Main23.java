@@ -73,5 +73,10 @@ public class Main23 {
         return b==0 ? a : gcd (b, a%b);
     }
 
+    public List <Integer> practice (List <Object> list) {
+        return list.stream().filter(i -> i instanceof Integer).map(i->(Integer)i).toList();
+    }
+
+
 
 }
