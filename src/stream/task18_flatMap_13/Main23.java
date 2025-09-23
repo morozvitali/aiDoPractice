@@ -13,6 +13,14 @@ public class Main23 {
         return sentences.stream().flatMap(s->Arrays.stream(s.split(" "))).distinct().toList();
     }
 
+    public Integer practice2 () {
+        int[][] data = {
+                {3, 11},
+                {6, 7},
+                {10}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).min().orElse(-1);
+    }
 
 
 
