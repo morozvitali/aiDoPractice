@@ -30,5 +30,8 @@ public class Main18 {
         return Stream.of(2, 4, 10, 12, 14, 12, 4).filter(a->a>10).collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
 
+    public Double practice6 () {
+        return Stream.of("code", "stream", "java").collect(Collectors.collectingAndThen(Collectors.toList(), list->list.stream().mapToInt(String::length).summaryStatistics().getAverage()));
+    }
 
 }
