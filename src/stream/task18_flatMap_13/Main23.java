@@ -51,7 +51,7 @@ public class Main23 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 3 == 0).map(a -> a * a).sum();
     }
 
-    public Double practice6 () {
+    public Double practice6() {
         int[][] data = {
                 {3, 9},
                 {8, 12},
@@ -60,7 +60,7 @@ public class Main23 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 2 == 1).summaryStatistics().getAverage();
     }
 
-    public int practice6 () {
+    public int practice6() {
         int[][] data = {
                 {3, 9},
                 {8, 12},
@@ -69,16 +69,23 @@ public class Main23 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main23::gcd).orElse(-1);
     }
 
-    public static int gcd (int a, int b) {
-        return b==0 ? a : gcd (b, a%b);
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 
-    public List <Integer> practice8 (List <Object> list) {
-        return list.stream().filter(i -> i instanceof Integer).map(i->(Integer)i).toList();
+    public List<Integer> practice8(List<Object> list) {
+        return list.stream().filter(i -> i instanceof Integer).map(i -> (Integer) i).toList();
     }
 
-    public List <String> practice9 (List <Object> list) {
-        return list.stream().filter(s->s instanceof String).map(s->(String)s).toList();
+    public List<String> practice9(List<Object> list) {
+        return list.stream().filter(s -> s instanceof String).map(s -> (String) s).toList();
     }
+
+    public List<Integer> practice10(List<Object> list) {
+        return list.stream().filter(i -> i instanceof Integer && (Integer) i > 10).map(i -> (Integer) i).toList();
+    }
+
+
+
 
 }
