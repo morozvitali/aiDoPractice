@@ -28,5 +28,13 @@ public class Main11 {
         return s.chars().filter(c->c=='a').count();
     }
 
+    public Integer practice3 () {
+        return List.of(111, 123, 444, 1212).stream().collect(Collectors.toMap(Function.identity(), n->getUniqNumbersCounter(n)))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
+    }
 
+    public static long getUniqNumbersCounter(int n) {
+        String s = String.valueOf(Math.abs(n));
+        return s.length() - s.chars().distinct().count();
+    }
 }
