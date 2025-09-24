@@ -1,0 +1,16 @@
+package stream.task17_collectors_15;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Main29 {
+    public Map<Character, List<String>> practice1 () {
+        return Stream.of("apple",
+                "ant", "banana", "bat", "car").collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(w->w.toUpperCase(), Collectors.toList())));
+    }
+
+
+
+}
