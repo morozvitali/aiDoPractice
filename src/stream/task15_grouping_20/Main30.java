@@ -42,5 +42,8 @@ public class Main30 {
         return s.chars().filter(Character::isDigit).mapToObj(Character::isDigit).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-
+    public Boolean practice7 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().anyMatch(e->e.getValue() >1);
+    }
 }
