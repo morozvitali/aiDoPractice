@@ -11,10 +11,10 @@ public class Main24 {
                 "Streams are cool",
                 "Java makes sense"
         );
-        return sentences.stream().flatMap(w-> Arrays.stream(w.split(" "))).distinct().toList();
+        return sentences.stream().flatMap(w -> Arrays.stream(w.split(" "))).distinct().toList();
     }
 
-    public int practice2 () {
+    public int practice2() {
         int[][] data = {
                 {3, 11},
                 {6, 7},
@@ -23,15 +23,23 @@ public class Main24 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).min().orElse(-1);
     }
 
-    public int practice3 () {
+    public int practice3() {
         int[][] data = {
                 {3, 11},
                 {6, 7},
                 {10}
         };
-        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).min().orElse(-1);
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 2 == 0).min().orElse(-1);
     }
 
+    public int practice4() {
+        int[][] data = {
+                {3, 9},
+                {8, 12},
+                {7}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%3==0).max().orElse(-1);
+    }
 
 
 }
