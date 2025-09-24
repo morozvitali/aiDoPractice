@@ -39,7 +39,7 @@ public class Main30 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
     }
 
-    public Map <Integer, Long> practice6 (String s) {
+    public Map <Boolean, Long> practice6 (String s) {
         return s.chars().filter(Character::isDigit).mapToObj(Character::isDigit).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
@@ -56,5 +56,11 @@ public class Main30 {
         return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(a->a%3, Collectors.averagingInt(n->n)));
     }
 
+    public Character practice10 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(null);
+    }
 
 }
