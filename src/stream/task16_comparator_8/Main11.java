@@ -65,4 +65,10 @@ public class Main11 {
     public static long count0 (int n) {
         return String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
     }
+
+    public List <String> practice9 () {
+        return Stream.of ("apple", "zebra", "sky", "education").sorted(Comparator.comparing(Main11::getCount)).toList();
+    }
+
+
 }
