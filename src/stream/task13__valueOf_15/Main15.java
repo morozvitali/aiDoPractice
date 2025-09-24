@@ -63,4 +63,8 @@ public class Main15 {
         return input.chars().filter(Character::isAlphabetic).filter(Character::isLowerCase).mapToObj(String::valueOf).collect(Collectors.joining());
     }
 
+    public List <Integer> practice12 () {
+        String input = "abc";
+        return input.chars().map(c->c+1).boxed().toList();
+    }
 }
