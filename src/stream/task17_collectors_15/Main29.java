@@ -48,6 +48,11 @@ public class Main29 {
         return numbers.stream().collect(Collectors.groupingBy(n -> n % 3, Collectors.summingInt(n -> n)));
     }
 
+    public String practice8() {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.reducing((a,b)->a.length() > b.length() ? a : b)).orElse("");
+    }
 
 
 }
