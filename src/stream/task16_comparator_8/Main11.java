@@ -42,4 +42,14 @@ public class Main11 {
         return Stream.of("abc", "aaa", "zzz").collect(Collectors.toMap(Function.identity(), w->w.chars().sum()))
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
+
+    public String practice5 () {
+        List<String> words =
+                List.of("sun", "star", "supernova", "apple");
+        return words.stream().filter(w->w.startsWith("s"))
+                .collect(Collectors.toMap(Function.identity(), String::length))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+
 }
