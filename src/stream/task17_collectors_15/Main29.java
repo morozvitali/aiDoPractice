@@ -17,4 +17,11 @@ public class Main29 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(String::length, Collectors.toList())));
     }
 
+    public Map <Boolean, Long> practice3 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.groupingBy(a->a.length()%2 ==0, Collectors.counting()));
+    }
+
+
 }
