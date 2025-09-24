@@ -80,4 +80,7 @@ public class Main24 {
         return input.stream().filter(v->v instanceof Integer && (Integer) v >10).map(v->(Integer)v).toList();
     }
 
+    public List <Boolean> practice11 (List<Object> input) {
+        return input.stream().filter(b->b instanceof Boolean && (Boolean) b == true).map(b->(Boolean)b).toList();
+    }
 }
