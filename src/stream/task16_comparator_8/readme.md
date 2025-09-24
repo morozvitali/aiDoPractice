@@ -5,8 +5,7 @@
 
 📥 Вхід:
 
-List<String> words = List.of("sky", "banana",
-"apple", "grape", "orange", "plum");
+
 📤 Очікувано:
 
 sky
