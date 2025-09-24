@@ -37,4 +37,9 @@ public class Main11 {
         String s = String.valueOf(Math.abs(n));
         return s.length() - s.chars().distinct().count();
     }
+
+    public String practice4 () {
+        return Stream.of("abc", "aaa", "zzz").collect(Collectors.toMap(Function.identity(), w->w.chars().sum()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
 }
