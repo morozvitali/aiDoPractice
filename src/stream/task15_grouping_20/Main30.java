@@ -38,5 +38,9 @@ public class Main30 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
     }
 
+    public Map <Integer, Long> practice6 (String s) {
+        return s.chars().filter(Character::isDigit).mapToObj(Character::isDigit).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
 
 }
