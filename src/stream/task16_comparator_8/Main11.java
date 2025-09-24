@@ -59,5 +59,10 @@ public class Main11 {
         return Stream.of("java", "hello", "me", "zebra").filter(w->w.contains("e")).min(Comparator.comparing(String::length)).orElse("");
     }
 
-
+    public List <Integer> practice8 () {
+        return Stream.of(100, 1010, 5, 2000, 10).sorted(Comparator.comparing(Main11::count0)).toList();
+    }
+    public static long count0 (int n) {
+        return String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
+    }
 }
