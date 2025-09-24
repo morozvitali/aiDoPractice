@@ -23,6 +23,14 @@ public class Main24 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).min().orElse(-1);
     }
 
+    public int practice3 () {
+        int[][] data = {
+                {3, 11},
+                {6, 7},
+                {10}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).min().orElse(-1);
+    }
 
 
 
