@@ -15,5 +15,10 @@ public class Main15 {
                 .sorted().boxed().toList();
     }
 
+    public List <String> practice3 () {
+        String s = "abracadabra";
+        return s.chars().distinct().mapToObj(String::valueOf).toList();
+    }
+
 
 }
