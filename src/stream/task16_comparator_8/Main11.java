@@ -2,6 +2,10 @@ package stream.task16_comparator_8;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main11 {
     public List <String> practice1 () {
@@ -15,6 +19,14 @@ public class Main11 {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
 
+    public String practice2 () {
+        return Stream.of("alpha", "arena", "java", "banana", "lava").collect(Collectors.toMap(Function.identity(), Main11::getLetterCounter))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long getLetterCounter (String s) {
+        return s.chars().filter(c->c=='a').count();
+    }
 
 
 }
