@@ -21,4 +21,8 @@ public class Main3 {
         System.out.println(sb);
     }
 
+    public void practice5 () {
+        StringBuilder sb = new StringBuilder("orange").replace(2,5, "X");
+        System.out.println(sb);
+    }
 }
