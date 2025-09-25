@@ -31,5 +31,8 @@ public class Main3 {
         System.out.println(sb);
     }
 
-
+    public void practice7 () {
+        StringBuilder sb = new StringBuilder("sunshine").insert(3,"___");
+        System.out.println(sb);
+    }
 }
