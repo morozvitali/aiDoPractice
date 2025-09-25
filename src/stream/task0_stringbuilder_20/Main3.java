@@ -85,7 +85,17 @@ public class Main3 {
             }
             System.out.println(sb);
         }
-
-        return
+        return sb.toString();
     }
+
+    public String practice14 (String s) {
+        StringBuilder sb = new StringBuilder(s);
+        String sub = sb.substring(0,4);
+        sb.delete(0,5);
+        sb.append(" ").append(sub);
+        System.out.println(sb);
+        return sb.toString();
+    }
+
+
 }
