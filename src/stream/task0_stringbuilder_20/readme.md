@@ -309,8 +309,7 @@ Character.isDigit() перевіряє, чи символ — цифра.
 
 Завдання 16 Подвійне вставлення та заміна
 -
-       public class Task6 {
-       public static void main(String[] args) {
+
        StringBuilder sb = new StringBuilder("Winter");
        sb.insert(sb.length(), " cold");       
     // додаємо " cold"

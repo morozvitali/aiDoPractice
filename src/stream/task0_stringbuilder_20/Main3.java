@@ -110,6 +110,18 @@ public class Main3 {
         return sb.toString();
     }
 
+    public String practice17() {
+        String[] colors = {"red", "green", "blue"};
+        //return String.join("-", colors);
 
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i<colors.length; i++) {
+            sb.append(colors[i]);
+            if (i<colors.length -1) {
+                sb.append("-");
+            }
+        }
+        return sb.toString();
+    }
 
 }
