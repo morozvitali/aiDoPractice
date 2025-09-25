@@ -15,4 +15,10 @@ public class Main3 {
         StringBuilder sb = new StringBuilder("abcdef").delete(2,5);
         System.out.println(sb);
     }
+
+    public void practice4 () {
+        StringBuilder sb = new StringBuilder("level").reverse();
+        System.out.println(sb);
+    }
+
 }
