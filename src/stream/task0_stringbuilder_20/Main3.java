@@ -25,4 +25,11 @@ public class Main3 {
         StringBuilder sb = new StringBuilder("orange").replace(2,5, "X");
         System.out.println(sb);
     }
+
+    public void practice6 () {
+        StringBuilder sb = new StringBuilder("123").append(4).append(5).append(6);
+        System.out.println(sb);
+    }
+
+
 }
