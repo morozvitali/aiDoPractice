@@ -6,4 +6,10 @@ public class Main3 {
         System.out.println(sb);
     }
 
+    public void practice2 () {
+        StringBuilder sb = new StringBuilder("Java").insert(2, " cool ");
+        System.out.println(sb);
+    }
+
+
 }
