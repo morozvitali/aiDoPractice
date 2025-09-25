@@ -124,14 +124,11 @@ public class Main3 {
         return sb.toString();
     }
 
-    public void practice() {
+    public void practice18() {
         StringBuilder sb = new StringBuilder("Hello, Java");
         for (int i = 0; i<sb.length(); i++) {
             char c = sb.charAt(i);
             sb.setCharAt(i, (char)(c+1));
         }
     }
-
-
-
 }
