@@ -61,4 +61,14 @@ public class Main3 {
         }
     }
 
+    public void practice11 () {
+        StringBuilder sb = new StringBuilder("hello world");
+        int underscoreindex = sb.indexOf("_");
+        sb.deleteCharAt(underscoreindex);
+        sb.insert(underscoreindex, "_");
+        sb.append("!!!");
+    }
+
+
+
 }

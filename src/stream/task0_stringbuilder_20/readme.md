@@ -199,6 +199,11 @@ System.out.println(sb); // *br*c*d*br*
 
 Завдання 11 Комбінація insert + delete + append
 -
+Створити sb, 
+знайти індекс "_"
+видалити цей знак за індексом
+вставити на його місце пробіл
+додати і кінці !!!
 
    StringBuilder sb = new StringBuilder("hello_world");
    int underscoreIndex = sb.indexOf("_");
