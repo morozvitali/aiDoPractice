@@ -1,5 +1,7 @@
 package stream.task0_stringbuilder_20;
 
+import java.util.stream.Stream;
+
 public class Main3 {
     public void practice1() {
         StringBuilder sb = new StringBuilder("Hello").append(" world");
@@ -49,6 +51,14 @@ public class Main3 {
         return new StringBuilder(s).reverse().toString();
     }
 
-
+    public void practice10 () {
+        StringBuilder sb = new StringBuilder("abracadabra");
+        for (int i = 0; i < sb.length(); i++) {
+            if (sb.charAt(i) == 'a') {
+                sb.setCharAt(i, '*');
+            }
+            System.out.println(sb);
+        }
+    }
 
 }
