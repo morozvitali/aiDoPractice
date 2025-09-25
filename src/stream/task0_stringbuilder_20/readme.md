@@ -222,6 +222,12 @@ System.out.println(sb); // *br*c*d*br*
 
 Завдання 12 Реверс частини рядка
 -
+
+створити sb за стрінгом "abcdefg"
+вирізати частину = part з 2-6 (6 не включно) символи
+зробити реверс цього фрагменту
+заміни в первинному sb частину замість вирізаної на part 
+
    public class Task2 {
    public static void main(String[] args) {
    StringBuilder sb = new StringBuilder("abcdefg");

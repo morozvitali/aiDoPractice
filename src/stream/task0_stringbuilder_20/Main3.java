@@ -69,6 +69,13 @@ public class Main3 {
         sb.append("!!!");
     }
 
+    public void practice12 () {
+        StringBuilder sb = new StringBuilder("abcdefg");
+        String part = sb.substring(2,6);
+        String reversed = new StringBuilder(part).reverse().toString();
+        sb.replace(2, 6, reversed);
+        System.out.println(sb);
+    }
 
 
 }
