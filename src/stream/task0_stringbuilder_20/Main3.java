@@ -44,4 +44,11 @@ public class Main3 {
             }
         }
     }
+
+    public String practice9 (String s) {
+        return new StringBuilder(s).reverse().toString();
+    }
+
+
+
 }
