@@ -11,5 +11,8 @@ public class Main3 {
         System.out.println(sb);
     }
 
-
+    public void practice3 () {
+        StringBuilder sb = new StringBuilder("abcdef").delete(2,5);
+        System.out.println(sb);
+    }
 }
