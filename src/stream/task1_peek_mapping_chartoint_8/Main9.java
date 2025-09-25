@@ -18,5 +18,9 @@ return String.valueOf(Math.abs(n)).chars()
         return String.valueOf(Math.abs(n)).chars().max().orElse(-1);
     }
 
+    public long practice4 (int n) {
+        return String.valueOf(Math.abs(n)).chars().map(c->c-'0').filter(a->a>5).count();
+    }
+
 
 }
