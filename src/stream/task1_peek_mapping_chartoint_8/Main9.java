@@ -10,5 +10,9 @@ return String.valueOf(Math.abs(n)).chars()
         .sum();
     }
 
+    public Boolean practice2 (int n) {
+        return String.valueOf(Math.abs(n)).chars().map(c->c-'0').allMatch(a->a%2==0);
+    }
+
 
 }
