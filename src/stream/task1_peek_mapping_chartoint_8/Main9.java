@@ -14,5 +14,9 @@ return String.valueOf(Math.abs(n)).chars()
         return String.valueOf(Math.abs(n)).chars().map(c->c-'0').allMatch(a->a%2==0);
     }
 
+    public int practice3 (int n) {
+        return String.valueOf(Math.abs(n)).chars().max().orElse(-1);
+    }
+
 
 }
