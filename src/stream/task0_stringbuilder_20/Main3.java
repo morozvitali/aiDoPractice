@@ -77,5 +77,15 @@ public class Main3 {
         System.out.println(sb);
     }
 
+    public String practice13 (String s) {
+        StringBuilder sb = new StringBuilder("Tel: 123-456-789");
+        for (int i=0; i<sb.length(); i++) {
+            if (Character.isDigit(sb.charAt(i))) {
+                sb.setCharAt(i, '#');
+            }
+            System.out.println(sb);
+        }
 
+        return
+    }
 }
