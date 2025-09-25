@@ -97,5 +97,19 @@ public class Main3 {
         return sb.toString();
     }
 
+    public String practice15 () {
+        StringBuilder sb = new StringBuilder("apple\\nbanana\\ncherry");
+            int counter = 1;
+            sb.insert(0, counter++ + ". ");
+
+            for (int i = 0; i<sb.length(); i++) {
+                if (sb.charAt(i) == '\n') {
+                    sb.insert(i+1, counter++ + ". ");
+                }
+            }
+        return sb.toString();
+    }
+
+
 
 }
