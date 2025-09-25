@@ -91,9 +91,9 @@ public List<Boolean> practice11 () {
     return Stream.of("yes", true, false, true, 1).filter(value -> value instanceof Boolean && (Boolean) value == true).map(value->(Boolean)value).toList();
 }
 
-public List <String> practice12 () {
-    return Stream.of("hi", 123, "bye", false).filter(a->a instanceof String).map(value-> ((String)value).toUpperCase());
-}
+//public List <String> practice12 () {
+//    return Stream.of("hi", 123, "bye", false).filter(a->a instanceof String).map(value-> ((String)value).toUpperCase());
+//}
 
 
 }
