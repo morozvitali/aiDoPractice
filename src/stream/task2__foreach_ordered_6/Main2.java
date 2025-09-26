@@ -20,6 +20,8 @@ public class Main2 {
     }
 
     public void practice4 () {
-
+        List.of(1, 2, 3, 4).parallelStream().peek(a-> System.out.println("Обробляю: " + a)).forEachOrdered(a-> System.out.println("Обробляю: " + a));
     }
+
+
 }
