@@ -41,5 +41,8 @@ public class Main3 {
         return s.matches("([^0-9]*)$");
     }
 
+    public String practice12 (String s) {
+        return s.replaceAll("[^a-zA-Z0-9 ]", "");
+    }
 
 }
