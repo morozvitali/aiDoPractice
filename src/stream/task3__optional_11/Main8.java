@@ -49,5 +49,9 @@ public class Main8 {
         return Optional.of("UserName").map(String::toUpperCase).orElseThrow(()-> new NoSuchElementException("Name not found"));
     }
 
+    public Optional <String> practice10 () {
+        return Optional.of("UserLogin").map(value -> value.startsWith("admin") ? "Admin" : "User");
+    }
+
 
 }
