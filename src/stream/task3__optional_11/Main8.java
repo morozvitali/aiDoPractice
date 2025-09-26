@@ -32,10 +32,17 @@ public class Main8 {
         list.stream().max((a,b)-> a.compareTo(b)).ifPresentOrElse(value -> System.out.println("Max = " + value), ()-> System.out.println("немає значень"));
     }
 
-    public void practice6 () {
+    public void practice7 () {
         List <Integer> list = List.of(1, 2, 3, 4, 5);
         list.stream().min((a,b)->a < b ? a : b).ifPresentOrElse(value -> System.out.println("min " + value), () -> System.out.println("немає значень"));
     }
 
+    public void practice8 () {
+        List<String> words =  List.of("Java", "Spring");
+        words.stream().findFirst()
+                .map(value -> value.length()).ifPresentOrElse(
+                        len -> System.out.println("Length is " + len) , () -> System.out.println("list values is emty"));
+    }
 
+    
 }

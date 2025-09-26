@@ -121,7 +121,6 @@ return email
 ✅ Варіант 2: .min(Integer::compareTo)
 ✅ Варіант 3: .min(Comparator.comparing(...))
 ✅ Варіант 4: .collect(Collectors.minBy(...))
-
 ✅ ?Варіант 5: .min(Comparator.naturalOrder)
 
 
