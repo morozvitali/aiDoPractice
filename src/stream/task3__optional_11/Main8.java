@@ -15,11 +15,15 @@ public class Main8 {
         }
 
 
-    public void practice3 () {
-        Optional <String> value Optional.of("Helloworld").filter(w->w.length() >5).orElse("Short");
+    public String practice3 () {
+        Optional <String> value = Optional.of("Helloworld");
+        return value.filter(w->w.length() >5).orElse("Short");
     }
 
-    public void practice4 () {
-
+    public String practice4 () {
+        Optional <String> value = Optional.of("Vitali");
+        return value.map(name->"Hello " + name + "!").orElse("Hello, Guest!");
     }
+
+
 }
