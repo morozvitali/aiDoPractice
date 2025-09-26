@@ -8,4 +8,13 @@ public class Main2 {
         list.stream().forEach(System.out::println);
     }
 
+    public void practice2 () {
+        List<String> list = List.of("A", "B", "C", "D");
+        list.stream().forEach(System.out::println);
+        list.parallelStream().forEach(System.out::println);
+    }
+
+
+
+
 }
