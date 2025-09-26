@@ -1,0 +1,89 @@
+package stream.task60x24.x1.task16_comparator_8;
+
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Main4 {
+    public List <String> practice1 () {
+        List<String> words = List.of("sky", "banana",
+                "apple", "grape", "orange", "plum");
+        return words.stream().sorted(Comparator.comparing(Main4::getCount)).toList();
+    }
+    public static long getCount (String s) {
+        return s.chars()
+                .filter(c->"aeiou".indexOf(c)>=0)
+                .count();
+    }
+
+    public String practice2 () {
+        return Stream.of("alpha", "arena", "java", "banana", "lava").filter(w->getCharCount(w) >0).max(Comparator.comparingLong(Main4::getCharCount)).orElse("");
+    }
+
+    public static long getCharCount (String s) {
+        return s.chars().filter(c->c=='a').count();
+    }
+
+    public int practice3 () {
+        return Stream.of(111, 123, 444, 1212)
+                .collect(Collectors.toMap(Function.identity(), Main4::getIntCount))
+                .entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(-1);
+    }
+
+    public static long getIntCount(int n) {
+        return String.valueOf(Math.abs(n)).length() - String.valueOf(Math.abs(n)).chars().distinct().count();
+    }
+
+    public String practice4 () {
+        return Stream.of("abc", "aaa", "zzz")
+                .collect(Collectors.toMap(Function.identity(), Main4::getCountAscii))
+                .entrySet().stream().max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
+
+    public static long getCountAscii (String s) {
+        return s.chars().sum();
+    }
+
+    public String practice5 () {
+        return Stream.of("sun", "star", "supernova", "apple")
+                .filter(w->w.startsWith("s"))
+                .max(Comparator.comparing(String::length))
+                .orElse("екмає слів");
+    }
+
+    public List <String> practice6 () {
+        return Stream.of("abc", "def", "gka", "lol")
+                .sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
+    }
+
+    public String practice7 () {
+        return Stream.of("java", "hello", "me", "zebra")
+                .filter(w->w.contains("e"))
+                .max(Comparator.comparing(String::length))
+                .orElse("");
+    }
+
+    public List<Integer> practice8 () {
+        return Stream.of(100, 1010, 5, 2000, 10)
+                .sorted(Comparator.comparing(Main4::getZeroCount))
+                .toList();
+    }
+
+    public static int getZeroCount (int n) {
+        return (int) String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
+    }
+
+    public List <String> practice9 () {
+        return Stream.of("apple", "zebra", "sky", "education").sorted(Comparator.comparing(Main4::getVowelsCount)).toList();
+    }
+    public static long getVowelsCount (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
+
+
+}

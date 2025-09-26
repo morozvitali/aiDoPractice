@@ -40,4 +40,8 @@ return String.valueOf(Math.abs(n)).chars()
                 .filter(w->w.length()>3)
                 .forEach(System.out::println);
     }
+
+    public void practice7 () {
+
+    }
 }
