@@ -1,6 +1,7 @@
 package stream.task3__optional_11;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class Main8 {
@@ -44,5 +45,9 @@ public class Main8 {
                         len -> System.out.println("Length is " + len) , () -> System.out.println("list values is emty"));
     }
 
-    
+    public String practice9 () {
+        return Optional.of("UserName").map(String::toUpperCase).orElseThrow(()-> new NoSuchElementException("Name not found"));
+    }
+
+
 }
