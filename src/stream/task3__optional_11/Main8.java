@@ -31,4 +31,11 @@ public class Main8 {
         //return list.stream().mapToInt(a->a).max().orElse(-1);
         list.stream().max((a,b)-> a.compareTo(b)).ifPresentOrElse(value -> System.out.println("Max = " + value), ()-> System.out.println("немає значень"));
     }
+
+    public void practice6 () {
+        List <Integer> list = List.of(1, 2, 3, 4, 5);
+        list.stream().min((a,b)->a < b ? a : b).ifPresentOrElse(value -> System.out.println("min " + value), () -> System.out.println("немає значень"));
+    }
+
+
 }
