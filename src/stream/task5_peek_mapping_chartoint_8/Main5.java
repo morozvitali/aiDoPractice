@@ -1,6 +1,4 @@
-package stream.task1_peek_mapping_chartoint_8;
-
-import org.w3c.dom.ls.LSOutput;
+package stream.task5_peek_mapping_chartoint_8;
 
 import java.util.List;
 import java.util.stream.Collectors;

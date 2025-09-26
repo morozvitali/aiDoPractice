@@ -1,4 +1,4 @@
-package stream.task1_peek_mapping_chartoint_8;
+package stream.task5_peek_mapping_chartoint_8;
 
 import java.util.stream.IntStream;
 
