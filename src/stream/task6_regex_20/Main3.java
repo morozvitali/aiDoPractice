@@ -33,4 +33,7 @@ public class Main3 {
         return s.replaceAll("\\s+", "");
     }
 
+    public boolean practice10 (String s) {
+        return s.matches("^[a-яА-ЯіїєґІЇЄҐ]+$");
+    }
 }
