@@ -34,4 +34,12 @@ public class Main2 {
                 }
         );
     }
+
+    public void practice6 () {
+        StringBuilder sb = new StringBuilder();
+        List<String> list = List.of("A", "B", "C", "D");
+        list.parallelStream().forEach(sb::append);
+        System.out.println(sb);
+        list.parallelStream().forEachOrdered(sb::append);
+    }
 }
