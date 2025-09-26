@@ -22,7 +22,11 @@ public class Main3 {
     }
 
     public boolean practice7 (String s) {
-        return (s.matches("^\\d$"));
+        return s.matches("^\\d$");
+    }
+
+    public boolean practice8 (String s) {
+        return s.matches("^[a-zA-Z0-9]+$");
     }
 
 }
