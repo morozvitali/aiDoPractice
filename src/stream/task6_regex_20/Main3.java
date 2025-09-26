@@ -34,6 +34,12 @@ public class Main3 {
     }
 
     public boolean practice10 (String s) {
-        return s.matches("^[a-яА-ЯіїєґІЇЄҐ]+$");
+        return s.matches("^[a-яА-ЯіїєґІЇЄҐ0-9]+$");
     }
+
+    public boolean practice11 (String s) {
+        return s.matches("([^0-9]*)$");
+    }
+
+
 }
