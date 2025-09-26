@@ -29,4 +29,8 @@ public class Main3 {
         return s.matches("^[a-zA-Z0-9]+$");
     }
 
+    public String practice9 (String s) {
+        return s.replaceAll("\\s+", "");
+    }
+
 }
