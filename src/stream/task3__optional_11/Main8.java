@@ -8,9 +8,18 @@ public class Main8 {
         List<Integer> numbers = List.of(3, 8, 10, 15, 4);
         return numbers.stream().filter(a -> a % 5 == 0).findFirst().orElse(-1);
     }
-public int practice2 () {
-    Optional <Integer> value = Optional.of(7);
-    return value.map(v->v*2).orElse(-1);
+
+    public int practice2 () {
+        Optional <Integer> value = Optional.of(7);
+        return value.map(v->v*2).orElse(-1);
+        }
+
+
+    public void practice3 () {
+        Optional <String> value Optional.of("Helloworld").filter(w->w.length() >5).orElse("Short");
     }
 
+    public void practice4 () {
+
+    }
 }
