@@ -70,11 +70,20 @@ public class Main11 {
 
     public String practice7 () {
         return List.of("alpha", "arena",
-                "java", "banana", "lava").stream().map(w->Map.entry(w, w.chars().filter(c->c=='a').count()))
+                "java", "banana", "lava").stream()
+                .map(w->Map.entry(w, w.chars().filter(c->c=='a').count()))
                 .reduce((a, b) -> a.getValue() > b.getValue() ? a : b)
                 .map(Map.Entry::getKey)
                 .orElse("");
     }
-
+    public String practice8 () {
+        return List.of("alpha", "Arena",
+                "java", "Banana", "lava").stream()
+                .filter(w->Character.isUpperCase(w.charAt(0)))
+                .map(w->Map.entry(w, w.length()))
+                .reduce((a, b) -> a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
 
 }
