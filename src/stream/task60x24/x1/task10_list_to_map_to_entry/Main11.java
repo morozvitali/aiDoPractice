@@ -24,4 +24,23 @@ public class Main11 {
                 .map(Map.Entry::getKey)
                 .orElse("");
     }
+
+    public String practice3 () {
+        List<String> list = List.of("apple", "banana",
+                "orange", "blueberry");
+        return list.stream()
+                .map(w->Map.entry(w, getCount(w)))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a:b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+
+    }
+
+    public static long getCount (String s) {
+        return s.chars()
+                .filter(c->"aeiuo".indexOf(c)>=0)
+                .count();
+    }
+
+
 }
