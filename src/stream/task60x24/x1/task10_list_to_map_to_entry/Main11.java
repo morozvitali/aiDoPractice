@@ -14,4 +14,14 @@ public class Main11 {
                 .map(Map.Entry::getKey)
                 .orElse("");
     }
+
+    public String practice2 () {
+        List<String> list = List.of("Java", "C",
+                "Python", "Go", "Kotlin");
+        return list.stream()
+                .map(w->Map.entry(w, w.length()))
+                .reduce((a,b)->a.getValue() < b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
 }
