@@ -42,5 +42,14 @@ public class Main11 {
                 .count();
     }
 
+    public String practice4 () {
+        List<String> list = List.of("apple", "pear",
+                "banana", "kiwi");
+        return list.stream().map(w->Map.entry(w, w.chars().distinct().count()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
 
+    
 }
