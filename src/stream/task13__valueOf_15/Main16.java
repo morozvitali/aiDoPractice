@@ -12,4 +12,10 @@ public class Main16 {
         String mixed = "a1b2c3x9z7";
         return mixed.chars().filter(Character::isDigit).boxed().toList();
     }
+
+    public List <String> practice3 () {
+        String s = "abracadabra";
+        return s.chars().distinct().mapToObj(c->String.valueOf((char)c)).toList();
+    }
+
 }
