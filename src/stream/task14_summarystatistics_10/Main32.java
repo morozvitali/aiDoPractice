@@ -42,11 +42,15 @@ public class Main32 {
         return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).min(Comparator.comparing(String::length)).orElse("");
     }
 
-    public Map<Character, Long> pracvtice6 () {
+    public Map<Character, Double> practice6 () {
         String[] words = {"apple", "ant",
                 "banana", "blue", "berry", "dolphin"};
-        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length));
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 
-
+    public Map <Character, Long> practice7 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        return Arrays.stream(words).flatMap(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).mapToObj(c->(char)c)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
 }
