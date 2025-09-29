@@ -23,5 +23,12 @@ public class Main16 {
         return text.chars().boxed().toList();
     }
 
+    public List <String> practice5 () {
+        String input = "hEllO WoRLd";
+        return input.chars().filter(Character::isAlphabetic).mapToObj(String::valueOf).toList();
+    }
+
+
+
 
 }
