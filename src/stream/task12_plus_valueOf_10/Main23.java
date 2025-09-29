@@ -60,4 +60,16 @@ public class Main23 {
                 }
         ).collect(Collectors.joining());
     }
+
+    public int practice91 (int n) {
+        String result =String.valueOf(Math.abs(n))
+                .chars()
+                .map(Character::getNumericValue)
+                .map(a->Math.abs(a-5))
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining());
+        return n > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
+    }
+
+
 }
