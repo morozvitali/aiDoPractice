@@ -28,7 +28,10 @@ public class Main16 {
         return input.chars().filter(Character::isAlphabetic).mapToObj(String::valueOf).toList();
     }
 
-
+    public List <Integer> practice6 () {
+        String s = "abcxyz";
+        return s.chars().mapToObj(c->c-'a'+1).toList();
+    }
 
 
 }
