@@ -1,0 +1,12 @@
+package stream.task13__valueOf_15;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+public class Main16 {
+    public List<String> practice1 () {
+        return Stream.of(97, 98, 99, 100, 101).map(c->String.valueOf((char)(int)c)).toList();
+    }
+
+
+}

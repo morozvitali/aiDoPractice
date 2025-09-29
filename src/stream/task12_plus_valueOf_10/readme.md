@@ -428,5 +428,3 @@ return String.valueOf(digit * (i + 1));
         .mapToObj(d->d>5 ? "X" : "O")
         .collect(Collectors.joining());
     }
-
-
