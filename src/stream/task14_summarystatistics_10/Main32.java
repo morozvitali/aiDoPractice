@@ -52,5 +52,10 @@ public class Main32 {
     }
 
 
+    public IntSummaryStatistics practice8 () {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        return Arrays.stream(words).filter(w->w.length() - w.chars().distinct().count() > 1).mapToInt(String::length).summaryStatistics();
+    }
 
 }
