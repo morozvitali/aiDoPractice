@@ -71,5 +71,11 @@ public class Main23 {
         return n > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
     }
 
-
+    public String practice10 (int n) {
+        return String.valueOf(Math.abs(n))
+                .chars()
+                .map(Character::getNumericValue)
+                .mapToObj(a -> a> 5 ? "X" : "O")
+                .collect(Collectors.joining());
+    }
 }
