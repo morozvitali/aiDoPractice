@@ -1,9 +1,6 @@
 package stream.task14_summarystatistics_10;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -53,4 +50,7 @@ public class Main32 {
                 "banana", "umbrella"};
         return Arrays.stream(words).flatMap(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).mapToObj(c->(char)c)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+
+
 }
