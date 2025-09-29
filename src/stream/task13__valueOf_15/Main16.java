@@ -46,4 +46,11 @@ public class Main16 {
         return s.chars().filter(Character::isAlphabetic).mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
+    public String practice9 () {
+        String s = "banana";
+        return s.chars().filter(c->!Character.isDigit(c)).mapToObj(c->String.valueOf((char)c)).collect(Collectors.joining());
+    }
+
+
+
 }
