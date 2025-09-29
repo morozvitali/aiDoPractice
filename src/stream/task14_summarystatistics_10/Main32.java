@@ -58,4 +58,9 @@ public class Main32 {
         return Arrays.stream(words).filter(w->w.length() - w.chars().distinct().count() > 1).mapToInt(String::length).summaryStatistics();
     }
 
+    public Map <Boolean, List <String>> practice10 () {
+        String[] words = {"Apple", "banana",
+                "Cherry", "date", "Eggplant"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->Character.isLowerCase(w.charAt(0))));
+    }
 }
