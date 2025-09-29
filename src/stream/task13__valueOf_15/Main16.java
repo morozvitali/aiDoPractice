@@ -8,5 +8,8 @@ public class Main16 {
         return Stream.of(97, 98, 99, 100, 101).map(c->String.valueOf((char)(int)c)).toList();
     }
 
-
+    public List <Integer> practice2 () {
+        String mixed = "a1b2c3x9z7";
+        return mixed.chars().filter(Character::isDigit).boxed().toList();
+    }
 }
