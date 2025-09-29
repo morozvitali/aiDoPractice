@@ -56,5 +56,12 @@ public class Main16 {
         return s.chars().filter(Character::isDigit).map(Character::getNumericValue).sum();
     }
 
+    public String practice11 () {
+        String input = "ABCdefGHIjkl123";
+        return input.chars().filter(c->Character.isAlphabetic(c) && Character.isLowerCase(c)).mapToObj(String::valueOf).collect(Collectors.joining());
+    }
+
+
+
 
 }
