@@ -43,4 +43,8 @@ public class PhoneBook2 {
         return phoneBook.keySet().stream().sorted().toList();
     }
 
+    public int countPhones (String surname) {
+        return phoneBook.getOrDefault(surname, Collections.emptyList()).size();
+    }
+
 }

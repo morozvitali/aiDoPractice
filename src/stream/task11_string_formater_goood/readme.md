@@ -155,7 +155,7 @@ return phoneBook.keySet().stream()
 Приклад рішення:
 
 public int countPhones(String surname) {
-return phoneBook.getOrDefault(surname, Collections.emptySet()).size();
+return phoneBook.getOrDefault(surname, Collections.emptyList()).size();
 }
 
 7. Телефонний довідник із сортуванням за кількістю номерів
