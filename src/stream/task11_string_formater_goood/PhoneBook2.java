@@ -38,4 +38,9 @@ public class PhoneBook2 {
         }
         return result;
     }
+
+    public List <String> getAllSurnamesSorted() {
+        return phoneBook.keySet().stream().sorted().toList();
+    }
+
 }
