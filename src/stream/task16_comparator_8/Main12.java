@@ -42,5 +42,9 @@ public List<String> practice6 () {
 public String practice7 () {
     return Stream.of("java", "hello", "me", "zebra").filter(w->w.contains("e")).min(Comparator.comparing(String::length)).orElse("");
 }
+
+public List<Integer> practice8 () {
+    return Stream.of(100, 1010, 5, 2000, 10).sorted(Comparator.comparing(n->String.valueOf(n).chars().filter(c->c=='0').count())).toList();
+}
 }
 
