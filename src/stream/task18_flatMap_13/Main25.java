@@ -57,7 +57,7 @@ public class Main25 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 2 == 0).summaryStatistics();
     }
 
-    public int practice7 () {
+    public int practice7() {
         int[][] data = {
                 {12},
                 {24, 36}
@@ -65,26 +65,29 @@ public class Main25 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main25::gcd).orElse(-1);
     }
 
-    public static int gcd (int a, int b) {
-        return b==0 ? a : gcd (b, a%b);
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 
-    public List <Integer> practice8 (List <Object> input) {
-        return input.stream().filter(x-> x instanceof Integer).map(i->(Integer)i).toList();
+    public List<Integer> practice8(List<Object> input) {
+        return input.stream().filter(x -> x instanceof Integer).map(i -> (Integer) i).toList();
     }
 
-    public List <String> practice9 (List <Object> input) {
-        return input.stream().filter(x-> x instanceof String).map(i-> (String) i).toList();
+    public List<String> practice9(List<Object> input) {
+        return input.stream().filter(x -> x instanceof String).map(i -> (String) i).toList();
     }
 
-    public List <Integer> practice10 (List <Object> input) {
-        return input.stream().filter(x-> x instanceof Integer && (Integer)x >10 ).map(x->(Integer)x).toList();
+    public List<Integer> practice10(List<Object> input) {
+        return input.stream().filter(x -> x instanceof Integer && (Integer) x > 10).map(x -> (Integer) x).toList();
     }
 
-    public List <Boolean> practice11 (List <Object> input) {
-        return input.stream().filter(b->b instanceof Boolean && (Boolean)b == true).map(b->(Boolean)b).toList();
+    public List<Boolean> practice11(List<Object> input) {
+        return input.stream().filter(b -> b instanceof Boolean && (Boolean) b == true).map(b -> (Boolean) b).toList();
     }
 
+    public List<String> practice12(List<Object> input) {
+        return input.stream().filter(s -> s instanceof String).map(s -> ((String) s).toUpperCase()).toList();
+    }
 
 
 }
