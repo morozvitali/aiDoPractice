@@ -40,6 +40,13 @@ public class Main25 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 3 == 0).max().orElse(-1);
     }
 
+    public int practice5 () {
+        int[][] data = {
+                {2, 3},
+                {4}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).map(a->a*a).sum();
+    }
 
 
 
