@@ -22,4 +22,10 @@ public class PhoneBook2 {
         }
         return result;
     }
+
+    public void remove (String surname, String phone) {
+        if (phoneBook.containsKey(surname)) {
+            phoneBook.get(surname).remove(phone);
+        }
+    }
 }
