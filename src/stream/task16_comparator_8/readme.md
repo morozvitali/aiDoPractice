@@ -40,6 +40,8 @@ String result = words.stream()
 .map(Map.Entry::getKey)
 .orElse("нема");
 
+    return Stream.of("alpha", "arena", "java", "banana", "lava").max(Comparator.comparing(w->w.chars().filter(c->c=='a').count())).orElse("");
+
 --------------------------------------------------------
 
 🔹 Задача 3: Знайти число з найбільшою кількістю різних цифр
