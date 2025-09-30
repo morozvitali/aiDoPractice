@@ -1,6 +1,8 @@
 package stream.task16_comparator_8;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main12 {
 public List<String> practice1 () {
@@ -8,6 +10,11 @@ public List<String> practice1 () {
             "apple", "grape", "orange", "plum");
     return words.stream().sorted().toList();
 }
+
+public String practice2 () {
+    return Stream.of("alpha", "arena", "java", "banana", "lava").max(Comparator.comparing(w->w.chars().filter(c->c=='a').count())).orElse("");
+}
+
 
 }
 
