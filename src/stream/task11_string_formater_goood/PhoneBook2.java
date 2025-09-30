@@ -1,9 +1,7 @@
 package stream.task11_string_formater_goood;
 
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class PhoneBook2 {
@@ -69,6 +67,22 @@ public class PhoneBook2 {
             for (Map.Entry<String, List<String>> entry : phoneBook.entrySet()) {
                 writer.write(entry.getKey() + " -> " + entry.getValue());
                 writer.newLine();
+            }
+        }
+    }
+
+    public void importFromFile (String fileName) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = reader.readLine()) !=null) {
+                String [] parts = line.split("->");
+                if (parts.length ==2) {
+                    String surname = parts[0].trim();
+                    String phones = parts[1].replace("[", "").replace("]", "");
+                    for (String phone : phones.split(",")) {
+                        add(surname, phone.trim());
+                    }
+                }
             }
         }
     }
