@@ -29,5 +29,12 @@ public String practice4 () {
     return Stream.of("alpha", "arena", "java", "banana", "lava").collect(Collectors.toMap(Function.identity(), w->w.chars().sum())).entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
 }
 
+
+public String practice5 () {
+    return List.of("sun", "star", "supernova", "apple").stream().filter(w->w.startsWith("s")).collect(Collectors.toMap(Function.identity(), String::length)).entrySet()
+            .stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+}
+
+
 }
 
