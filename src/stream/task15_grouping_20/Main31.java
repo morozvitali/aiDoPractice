@@ -35,9 +35,12 @@ public class Main31 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
     }
 
-    public long practice6 () {
+    public Map <Character, Long> practice6 () {
         return "ab123cc44a77".chars().mapToObj(c->(char)c).filter(Character::isDigit).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-
+    public Boolean practice7 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().anyMatch(v->v.getValue() > 1);
+    }
 }
