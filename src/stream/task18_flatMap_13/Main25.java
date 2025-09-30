@@ -31,6 +31,15 @@ public class Main25 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a > 0).reduce((a, b) -> a * b).orElse(-1);
     }
 
+    public int practice4() {
+        int[][] data = {
+                {3, 11},
+                {6, 7},
+                {10}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a -> a % 3 == 0).max().orElse(-1);
+    }
+
 
 
 
