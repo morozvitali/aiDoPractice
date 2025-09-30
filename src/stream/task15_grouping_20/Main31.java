@@ -7,18 +7,20 @@ import java.util.stream.Collectors;
 
 public class Main31 {
 
-    public Map<String, Boolean> practice1 () {
+    public Map<String, Boolean> practice1() {
         String[] words = {"sky", "apple",
                 "dry", "orange", "sun"};
         return Arrays.stream(words)
-                .collect(Collectors.toMap(Function.identity(), w->w.chars()
-                        .anyMatch(c->"aeiou".indexOf(c)>=0)));
+                .collect(Collectors.toMap(Function.identity(), w -> w.chars()
+                        .anyMatch(c -> "aeiou".indexOf(c) >= 0)));
     }
 
-    public Map <Character, Long> practice2 (String s) {
-        return s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    public Map<Character, Long> practice2(String s) {
+        return s.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-
-
+    public String practice3() {
+        return Arrays.stream("java is fun and java is powerful".split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
 }
