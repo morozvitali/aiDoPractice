@@ -20,7 +20,10 @@ public String practice2 () {
             .entrySet().stream().max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("-1");
 }
 
-
+public int practice3 () {
+    return Stream.of(111, 123, 444, 1212).collect(Collectors.toMap(w->w, w->String.valueOf(w).chars().distinct().count()))
+            .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
+}
 
 }
 
