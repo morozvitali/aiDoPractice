@@ -89,5 +89,6 @@ public class Main25 {
         return input.stream().filter(s -> s instanceof String).map(s -> ((String) s).toUpperCase()).toList();
     }
 
+    public void practice13
 
 }
