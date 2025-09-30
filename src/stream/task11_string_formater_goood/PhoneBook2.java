@@ -64,5 +64,12 @@ public class PhoneBook2 {
         }
     }
 
-
+    public void exportToFile (String fileName) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            for (Map.Entry<String, List<String>> entry : phoneBook.entrySet()) {
+                writer.write(entry.getKey() + " -> " + entry.getValue());
+                writer.newLine();
+            }
+        }
+    }
 }
