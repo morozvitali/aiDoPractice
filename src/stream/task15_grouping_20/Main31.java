@@ -15,4 +15,10 @@ public class Main31 {
                         .anyMatch(c->"aeiou".indexOf(c)>=0)));
     }
 
+    public Map <Character, Long> practice2 (String s) {
+        return s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+
+
 }
