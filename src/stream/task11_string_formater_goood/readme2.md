@@ -58,17 +58,13 @@ return wordCount;
 }
 
 🔹 Завдання 3: Студенти і їхні оцінки
-
 Умова:
 Створіть Map<String, List<Integer>>, де ключ — це ім’я студента, а значення — список його оцінок.
 Зробіть метод getAverage(name), який повертає середню оцінку студента.
 
 Підказка:
-
 Значення в Map може бути колекцією.
-
 Приклад коду:
-
 class GradeBook {
 private Map<String, List<Integer>> grades = new HashMap<>();
 
@@ -93,23 +89,19 @@ private Map<String, List<Integer>> grades = new HashMap<>();
 TreeMap автоматично підтримує сортування ключів.
 
 🔹 Завдання 5: Кількість замовлень по містах
-
 Умова:
 Є список замовлень із містами (List<String>). Порахуйте, скільки замовлень з кожного міста, і виведіть топ-3 міста за кількістю.
-
 Теорія:
-
 Використовуємо Collectors.groupingBy() із counting().
-
 Приклад коду:
 
-Map<String, Long> cityStats = orders.stream()
-.collect(Collectors.groupingBy(city -> city, Collectors.counting()));
-
-cityStats.entrySet().stream()
-.sorted(Map.Entry.<String, Long>comparingByValue().reversed())
-.limit(3)
-.forEach(System.out::println);
+    Map<String, Long> cityStats = orders.stream()
+    .collect(Collectors.groupingBy(city -> city, Collectors.counting()));
+    
+    cityStats.entrySet().stream()
+    .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+    .limit(3)
+    .forEach(System.out::println);
 
 🔹 Завдання 6: Унікальні слова
 

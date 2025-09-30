@@ -29,8 +29,4 @@ public class ProductCatalog1 {
         }
         return wordCount;
     }
-
-
-
-
 }
