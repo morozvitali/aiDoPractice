@@ -47,4 +47,8 @@ public class PhoneBook2 {
         return phoneBook.getOrDefault(surname, Collections.emptyList()).size();
     }
 
+    public List <String> getSurrnamesSortedByPhones () {
+        return phoneBook.entrySet().stream().sorted((a,b)->Integer.compare(b.getValue().size(), a.getValue().size())).map(Map.Entry::getKey).toList();
+    }
+
 }
