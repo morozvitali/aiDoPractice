@@ -35,6 +35,10 @@ public String practice5 () {
             .stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
 }
 
+public List<String> practice6 () {
+    return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
+}
+
 
 }
 
