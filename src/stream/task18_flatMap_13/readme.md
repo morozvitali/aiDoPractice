@@ -62,7 +62,7 @@ data.stream()
 [java, is, powerful, streams, are, cool, makes, sense]
 
 💻 Початковий шаблон:
-public List<String> extractWords(List<String> sentences) {
+public List<String> extractWords() {
 return sentences.stream()
 .flatMap(sentence -> Arrays.stream(sentence.split(" ")))
 .map(String::toLowerCase)
