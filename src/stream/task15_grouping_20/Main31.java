@@ -1,7 +1,6 @@
 package stream.task15_grouping_20;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -51,6 +50,20 @@ public class Main31 {
 
     public Map<Integer, Double> practice9() {
         return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(n -> n % 3, Collectors.averagingInt(n -> n)));
+    }
+
+    public Character practice10 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        Map <Character, Long> map = Arrays.stream(words)
+                .collect(Collectors
+                        .groupingBy(w->w.charAt(0), Collectors.counting()));
+        for(var e : map.entrySet()) {
+            e.getValue();
+            e.getKey();
+            e.setValue(11L);
+        }
+        return map.entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(null);
     }
 
 
