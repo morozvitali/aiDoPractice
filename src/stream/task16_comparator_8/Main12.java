@@ -25,5 +25,9 @@ public int practice3 () {
             .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
 }
 
+public String practice4 () {
+    return Stream.of("alpha", "arena", "java", "banana", "lava").collect(Collectors.toMap(Function.identity(), w->w.chars().sum())).entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+}
+
 }
 
