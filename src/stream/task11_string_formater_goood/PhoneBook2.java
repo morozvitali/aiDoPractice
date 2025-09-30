@@ -28,4 +28,14 @@ public class PhoneBook2 {
             phoneBook.get(surname).remove(phone);
         }
     }
+
+    public List <String> findSurnameByPhone (String phone) {
+        List <String> result = new ArrayList<>();
+        for (Map.Entry <String, List <String>> entry : phoneBook.entrySet()) {
+            if(entry.getValue().contains(phone)) {
+                result.add(entry.getKey());
+            }
+        }
+        return result;
+    }
 }

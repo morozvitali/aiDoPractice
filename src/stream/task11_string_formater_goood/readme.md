@@ -113,7 +113,7 @@ entrySet() дозволяє працювати і з ключами, і зі з�
 
 public List<String> findSurnameByPhone(String phone) {
 List<String> result = new ArrayList<>();
-for (Map.Entry<String, Set<String>> entry : phoneBook.entrySet()) {
+for (Map.Entry<String, List<String>> entry : phoneBook.entrySet()) {
 if (entry.getValue().contains(phone)) {
 result.add(entry.getKey());
 }
