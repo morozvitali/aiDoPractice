@@ -69,6 +69,10 @@ public class Main25 {
         return b==0 ? a : gcd (b, a%b);
     }
 
+    public List <Integer> practice8 (List <Object> input) {
+        return input.stream().filter(x-> x instanceof Integer).map(i->(Integer)i).toList();
+    }
+
 
 
 }
