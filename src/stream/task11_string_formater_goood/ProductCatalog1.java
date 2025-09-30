@@ -5,12 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductCatalog1 {
-    private Map<String, Double> products = new HashMap <> ();
-    public void addProduct (String name, double price) {
+    private Map<String, Double> products = new HashMap<>();
+
+    public void addProduct(String name, double price) {
         products.put(name, price);
     }
 
-    public Double getPrice (String name) {
+    public Double getPrice(String name) {
         return products.get(name);
     }
 
@@ -20,6 +21,15 @@ public class ProductCatalog1 {
                 .map(Map.Entry::getKey)
                 .toList();
     }
+
+    public Map<String, Integer> countWords(String text) {
+        Map<String, Integer> wordCount = new HashMap<>();
+        for (String word : text.toLowerCase().split("\\W+")) {
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+        }
+        return wordCount;
+    }
+
 
 
 
