@@ -1,5 +1,22 @@
-1. Уникати дублювання номерів
 
+**original class for List <String>**
+-
+import java.util.*;
+public class PhoneBook2 {
+private Map<String, List<String>> phoneBook = new HashMap<>();
+public void add(String surname, String phone) {
+phoneBook.computeIfAbsent(surname, k -> new ArrayList<>()).add(phone);
+}
+public List<String> get(String surname) {
+return phoneBook.getOrDefault(surname, Collections.emptyList());
+}
+}
+
+
+
+**1. Уникати дублювання номерів**
+
+-
 Завдання:
 Зробіть так, щоб у телефонному довіднику у 
 одного прізвища не зберігалися дублікати телефонів.
