@@ -19,6 +19,10 @@ public class Main17 {
         return s.chars().distinct().mapToObj(c->String.valueOf((char)c)).toList();
     }
 
+    public int [] practice4 () {
+        String text = "Code";
+        return text.chars().toArray();
+    }
 
 
 }
