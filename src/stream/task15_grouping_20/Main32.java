@@ -13,6 +13,8 @@ public class Main32 {
         return Arrays.stream(words).collect(Collectors.toMap(Function.identity(), w->w.chars().filter(c->"aeiou".indexOf(c)>=0).findAny().isPresent()));
     }
 
-
+    public long practice2 (String s) {
+        return s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(e->e.getValue()>1).count();
+    }
 
 }
