@@ -25,4 +25,12 @@ public class Main33 {
                 "moon", "dry", "banana"};
         return Arrays.stream(words).filter(w->w.length() > 3).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+    public Double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).filter(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()>0).mapToInt(String::length).summaryStatistics().getAverage();
+    }
+
+
 }
