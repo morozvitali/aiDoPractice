@@ -31,4 +31,11 @@ public class Main32 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
     }
 
+    public Map <Integer, Long> practice6 () {
+        return "ab123cc44a77".chars().filter(Character::isDigit).boxed()
+                .collect(Collectors.groupingBy(
+                Function.identity(),
+                Collectors.counting()
+        ));
+    }
 }
