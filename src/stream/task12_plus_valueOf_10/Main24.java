@@ -43,4 +43,12 @@ public class Main24 {
                 .map(value->Math.abs(value -5)).mapToObj(String::valueOf).collect(Collectors.joining());
         return n > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
     }
+
+    public int practice10 (int  n) {
+        String result = Integer.toString(Math.abs(n)).chars().map(Character::getNumericValue)
+                .mapToObj(value->value > 5 ? "X" : "O").collect(Collectors.joining());
+        return n > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
+    }
+
+
 }
