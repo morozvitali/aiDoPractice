@@ -20,6 +20,8 @@ public class Main24 {
         return String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue).mapToObj("*"::repeat).collect(Collectors.joining());
     }
 
-
+    public int practice5 (int n) {
+        return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
+    }
 
 }
