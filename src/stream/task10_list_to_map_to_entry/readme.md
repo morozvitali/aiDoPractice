@@ -104,7 +104,7 @@ map(a->a.getKey()) ---> map(Map.Entry::getKey)
 
 💡 .mapToInt(c -> c) у chars() + .sum()
 
-    public void practice7 () {
+    public void practice6 () {
         List<String> list = List.of("abc", "aaa", "zzz");
         list.stream()
         .mapToInt(word -> countAscii(word))
