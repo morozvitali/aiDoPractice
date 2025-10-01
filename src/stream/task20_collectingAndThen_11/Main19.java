@@ -20,4 +20,7 @@ public class Main19 {
         return Stream.of("apple", "car", "banana", "hi", "cherry").sorted(Comparator.comparing(String::length).reversed()).collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
     }
 
+    public Integer practice4 () {
+        return Stream.of(5, 3, 4, 4, 3, 6).distinct().collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
+    }
 }
