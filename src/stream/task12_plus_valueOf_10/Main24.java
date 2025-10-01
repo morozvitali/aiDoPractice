@@ -38,5 +38,9 @@ public class Main24 {
                 }).collect(Collectors.joining()));
     }
 
-
+    public int practice9 (int  n) {
+        String result = Integer.toString(Math.abs(n)).chars().map(Character::getNumericValue)
+                .map(value->Math.abs(value -5)).mapToObj(String::valueOf).collect(Collectors.joining());
+        return n > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
+    }
 }
