@@ -20,6 +20,12 @@ public class Main20 {
         return nums.stream().sorted(Comparator.comparing(a->(int)a%2).thenComparing(n->(int)n)).toList();
     }
 
+    public List <String> practice6 () {
+        List<String> words = List.of("kiwi", "apple",
+                "banana", "grape", "plum");
+        return words.stream().sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
+    }
+
 
 
 }
