@@ -26,6 +26,13 @@ public class Main20 {
         return words.stream().sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
     }
 
+    public List <String> practice7 () {
+        List<String> words = List.of("apple",
+                "banana", "cherry", "kiwi", "grape");
+        return words.stream().sorted(Comparator.comparing(Main20::getCount)).toList();
+    }
 
-
+    public static long getCount (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
 }
