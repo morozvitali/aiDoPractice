@@ -24,5 +24,8 @@ public class Main17 {
         return text.chars().toArray();
     }
 
-
+    public List <String> practice5 () {
+        String input = "hEllO WoRLd";
+        return input.chars().filter(Character::isUpperCase).mapToObj(c-> String.valueOf((char)c)).toList();
+    }
 }
