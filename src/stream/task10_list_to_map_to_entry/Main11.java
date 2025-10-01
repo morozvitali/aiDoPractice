@@ -52,5 +52,11 @@ public class Main11 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice7 () {
+        List<String> words = List.of("stream", "code",
+                "developer", "Engineer");
+        return words.stream().collect(Collectors.toMap(Function.identity(), w->w.chars().filter(c->c=='a').count()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
 
 }
