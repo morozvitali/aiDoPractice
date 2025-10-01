@@ -28,4 +28,12 @@ public class Main17 {
         String input = "hEllO WoRLd";
         return input.chars().filter(Character::isUpperCase).mapToObj(c-> String.valueOf((char)c)).toList();
     }
+
+    public int [] practice6 () {
+        String s = "abcxyz";
+        return s.chars().map(c->c-'a'+1).toArray();
+    }
+
+
+
 }
