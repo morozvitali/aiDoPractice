@@ -20,4 +20,17 @@ public class Main11 {
                 .entrySet().stream().min(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
 
+    public String practice3 () {
+        List<String> words = List.of("stream", "code",
+                "developer", "Engineer");
+        return words.stream().collect(Collectors.toMap(Function.identity(), Main11::getCount))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long getCount (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
+
+
+
 }
