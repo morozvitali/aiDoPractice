@@ -31,6 +31,11 @@ public class Main11 {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
 
-
+    public String practice4 () {
+        List<String> words = List.of("stream", "code",
+                "developer", "Engineer");
+        return words.stream().collect(Collectors.toMap(Function.identity(), w->w.chars().distinct().count()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
 
 }
