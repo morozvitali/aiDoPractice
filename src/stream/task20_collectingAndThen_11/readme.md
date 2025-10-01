@@ -116,26 +116,25 @@ c=[car]
 
 Collections::unmodifiableMap => map -> Collections.unmodifiableMap(map)
 
-✅ Завдання 8: Знайти єдине слово з 'z' 📋 Умова:
+✅ Завдання 8: Знайти єдине слово з 'p' 📋 Умова:
 Знайди єдине слово зі списку, 
-яке містить літеру 'z', і поверни його. 
+яке містить літеру 'p', і поверни його. 
 Якщо таких більше — виняток.
 
-📥 Вхід: ["java", "zip", "jazz"] → виняток
-📥 Вхід: ["java", "zip"] → "zip"
+📥 Вхід: ["java", "zippo", "japan"] → виняток
 📌 Підказка: .collect(Collectors
 .collectingAndThen(Collectors.toList(), 
 list -> list.get(0))) — тільки якщо list.size() == 1
-List<String> data = List.of("java", "zip", "jazz");
+List<String> data = List.of("java", "pippo", "japan");
 
     String result = data.stream()
-            .filter(w -> w.contains("z"))
+            .filter(w -> w.contains("p"))
             .collect(Collectors.collectingAndThen(
                     Collectors.toList(),
                     list -> {
                         if (list.size() != 1) {
                             throw new IllegalStateException("Очікувалося 
-                            рівно одне слово з 'z'");
+                            рівно одне слово з 'p'");
                         }
                         return list.get(0);
                     }
