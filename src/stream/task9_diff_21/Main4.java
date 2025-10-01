@@ -31,7 +31,4 @@ public class Main4 {
         Set<Integer> two = sb.stream().filter(value -> !sa.contains(value)).collect(Collectors.toSet());
         return Stream.concat(one.stream(), two.stream()).toList();
     }
-
-
-
 }
