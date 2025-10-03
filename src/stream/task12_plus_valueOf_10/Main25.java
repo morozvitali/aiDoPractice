@@ -37,4 +37,7 @@ public class Main25 {
                 .mapToObj("*"::repeat)
                 .collect(Collectors.joining()));
     }
+
+
+
 }
