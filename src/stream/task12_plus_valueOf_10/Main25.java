@@ -74,6 +74,11 @@ public class Main25 {
                 .collect(Collectors.joining()));
     }
 
-}
-
+    public String practice10 (int n) {
+        return String.valueOf(Math.abs(n))
+                .chars()
+                .map(Character::getNumericValue)
+                .mapToObj(a->a>5 ? "X" : "O")
+                .collect(Collectors.joining());
+    }
 }
