@@ -21,5 +21,14 @@ public class Main25 {
                 .collect(Collectors.joining()));
     }
 
+    public int practice3 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n))
+                .chars()
+                .map(Character::getNumericValue)
+                .filter(a->a%2==0)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
 
 }
