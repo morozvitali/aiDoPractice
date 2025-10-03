@@ -65,6 +65,15 @@ public class Main25 {
     return n > 0 ? Integer.parseInt(result) : -Integer.parseInt(result);
     }
 
+    public int practice8 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n))
+                .chars()
+                .map(Character::getNumericValue)
+                .map(a->Math.abs(a-5))
+                .mapToObj("*"::repeat)
+                .collect(Collectors.joining()));
+    }
 
+}
 
 }
