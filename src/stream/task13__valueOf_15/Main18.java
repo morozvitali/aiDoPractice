@@ -33,6 +33,10 @@ public class Main18 {
         return s.chars().map(c->c-'a'+1).boxed().toList();
     }
 
+    public void prctice7 () {
+        String s = "java";
+        return s.chars().map(Character::toUpperCase).mapToObj(c->String.valueOf((char)c)).toList();
+    }
 
 
 }
