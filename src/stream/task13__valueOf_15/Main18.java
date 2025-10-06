@@ -1,6 +1,9 @@
 package stream.task13__valueOf_15;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main18 {
     public List <String> practice1 () {
@@ -38,7 +41,14 @@ public class Main18 {
         return s.chars().map(Character::toUpperCase).mapToObj(c->String.valueOf((char)c)).toList();
     }
 
-    public void practice8 () {
-
+    public Map<Character, Long> practice8 () {
+        String s = "banana";
+        return s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+    public void practice9 () {
+        String s = "a1b2c3d4";
+        s.chars().filter(c->!Character.isDigit(c)).mapToObj(c->String.valueOf((char)c)).collect(Collectors.joining());
+    }
+
 }
