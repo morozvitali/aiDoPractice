@@ -78,4 +78,13 @@ public class Main33 {
                 .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
     }
 
+    public String practice13 () {
+        Map<String, Long> map = Stream.of("dftgh", "fgh", "ouiyt", "tyuirty", "tryu", "tryu", "fgj").collect(Collectors.toMap(Function.identity(), Main33::getCount));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+    public boolean practice14 (Map <String, Integer> map) {
+        return map.entrySet().stream().allMatch(e->e.getValue()%2==0);
+    }
+
+
 }
