@@ -86,5 +86,10 @@ public class Main33 {
         return map.entrySet().stream().allMatch(e->e.getValue()%2==0);
     }
 
+    public Map <Integer, List <String>> practice15 () {
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(String::length));
+    }
 
 }
