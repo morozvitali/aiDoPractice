@@ -59,5 +59,21 @@ public class Main33 {
         return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 
+    public LinkedHashMap <Character, Long> practice11 () {
+        Map <Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
+            return map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                    .collect(Collectors.toMap(
+                            Map.Entry::getKey,
+                            Map.Entry::getValue,
+                            (o,n) ->o,
+                            LinkedHashMap::new
+                    ));
+    }
 
+    public void practice12 () {
+
+    }
 }
