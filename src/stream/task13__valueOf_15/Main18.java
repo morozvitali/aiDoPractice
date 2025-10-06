@@ -15,7 +15,14 @@ public class Main18 {
 
     public List<String> practice3 () {
         String s = "abracadabra";
-        s.chars().distinct().filter(Character::isLetter).mapToObj(String::valueOf).toList();
+        return s.chars().distinct().filter(Character::isLetter).mapToObj(String::valueOf).toList();
     }
+
+    public List <Integer> practice4 () {
+        String text = "Code";
+        return text.chars().boxed().toList();
+    }
+
+
 
 }
