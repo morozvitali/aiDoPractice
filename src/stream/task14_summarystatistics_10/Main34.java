@@ -10,6 +10,12 @@ public class Main34 {
         return Arrays.stream(numbers).distinct().summaryStatistics();
     }
 
+    public Long practice2 () {
+        List<String> words = List.of("APPLE",
+                "Banana", "CHERRY", "kiwi", "PLUM");
+        return words.stream().map(String::toLowerCase).mapToInt(String::length).summaryStatistics().getSum();
+    }
+
 
 
 
