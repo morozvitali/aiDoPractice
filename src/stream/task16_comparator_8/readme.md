@@ -82,7 +82,6 @@ Map.entry(123, 3).getKey() → 123
 
 🔹 Задача 5: Знайти найдовше слово, що починається на 's'
 -
-List<String> words = 
 List.of("sun", "star", "supernova", "apple");
 📤 "supernova"
 

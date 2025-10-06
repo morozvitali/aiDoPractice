@@ -54,4 +54,10 @@ public class Main13 {
         return s.chars().sum();
     }
 
+    public String practice5 () {
+        Map <String, Long> map = List.of("sun", "star", "supernova", "apple").stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
+
 }
