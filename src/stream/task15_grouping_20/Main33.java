@@ -73,7 +73,9 @@ public class Main33 {
                     ));
     }
 
-    public void practice12 () {
-
+    public Map<Character, Integer> practice12 () {
+        return Stream.of("a10","a20","b5","b7","c1","d5","i7")
+                .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
     }
+
 }
