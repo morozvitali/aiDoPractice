@@ -32,7 +32,7 @@ partitioningBy(...) з підрахунком.
 📌 Є список слів. Згрупуй слова за першою літерою, 
 але замість самих слів збережи лише їхню довжину.
 
-🔍 Підказка: groupingBy(..., mapping(...))
+🔍 Підказка: groupingBy(... mapping)
 
 List<String> words = List.of("apple", "ant",
 "banana", "bat", "car");
@@ -46,15 +46,16 @@ c=[3]
 
 📦 Початковий код:
 
-public Map<Character, List<Integer>> 
-groupByFirstLetterLength() {
-List<String> words = List.of("apple", "ant", 
-"banana", "bat", "car");
-
-return words.stream()
-.collect(Collectors
-.toMap(a->a.charAt(0), 
-a->a.length())
+    public Map<Character, List<Integer>> practice2 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream()
+                .collect(Collectors.groupingBy(
+                        w->w.charAt(0), 
+                        Collectors.mapping(
+                                String::length, 
+                                Collectors.toList())));
+    }
 
 ✅ Задача 3: partitioningBy з підрахунком
 -
