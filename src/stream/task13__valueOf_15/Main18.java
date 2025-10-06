@@ -77,4 +77,10 @@ public class Main18 {
         String input = "a1C!bZ2";
         return input.chars().filter(Character::isLetter).mapToObj(c->(char)c).sorted(Comparator.reverseOrder()).toList();
     }
+
+    public boolean practice15 () {
+        String input1 = "123456";
+        return input1.chars().allMatch(Character::isDigit);
+    }
+
 }
