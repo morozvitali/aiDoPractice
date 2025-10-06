@@ -75,5 +75,7 @@ public class Main13 {
         return String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
     }
 
-
+    public List<String> practice9 () {
+        return List.of("apple", "zebra", "sky", "education").stream().sorted(Comparator.comparing(Main13::getCount)).toList();
+    }
 }
