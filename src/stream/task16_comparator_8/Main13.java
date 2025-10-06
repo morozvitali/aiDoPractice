@@ -68,5 +68,12 @@ public class Main13 {
         return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 
+    public List<Integer> practice8 () {
+        return List.of(100, 1010, 5, 2000, 10).stream().sorted(Comparator.comparing(Main13::countZero)).toList();
+    }
+    public static long countZero (int n) {
+        return String.valueOf(Math.abs(n)).chars().filter(c->c=='0').count();
+    }
+
 
 }

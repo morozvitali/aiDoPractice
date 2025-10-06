@@ -129,6 +129,7 @@ List.of("sun", "star", "supernova", "apple");
     public long countOf (int n, char ch){
         return String.valueOf(n).chars().filter(c->c == ch).count();
     }
+
 ----------------------------------
 
 🔹 Задача 9: Сортувати слова за кількістю голосних у зростанні
