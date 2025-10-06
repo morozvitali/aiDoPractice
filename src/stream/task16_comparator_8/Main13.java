@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main13 {
 
@@ -26,11 +27,22 @@ public class Main13 {
                 .stream()
                 .collect(Collectors.toMap(Function.identity(), Main13::countLetter));
                 return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
-
     }
 
     public static long countLetter (String s) {
         return s.chars().filter(c->c=='a').count();
     }
+
+    public void practice3 () {
+        Map <Integer, Long> map = Stream.of(111, 123, 444, 1212)
+                .collect(Collectors.toMap(Function.identity(), Main13::countDigits));
+    }
+
+    public static long countDigits (int i) {
+        String s = String.valueOf(Math.abs(i));
+        return i > 0 ? s.length() - s.chars().distinct().count() : -(s.length() - s.chars().distinct().count());
+    }
+
+
 
 }
