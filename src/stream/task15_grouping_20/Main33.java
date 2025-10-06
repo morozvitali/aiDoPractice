@@ -41,4 +41,10 @@ public class Main33 {
     public Map <Integer, Long> practice6 () {
         return "ab123cc44a77".chars().filter(Character::isDigit).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
+
+    public boolean practice7 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().anyMatch(e->e.getValue() >1);
+    }
+
 }
