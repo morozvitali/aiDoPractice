@@ -60,7 +60,13 @@ public class Main13 {
     }
 
     public void practice6 () {
-        Stream.of("abc", "def", "gka", "lol").filter(w->w.startsWith("s")).max(Comparator.comparing(String::length)).orElse("");
+        Stream.of("abc", "def", "gka", "lol").filter(w->w.startsWith("s")).max(Comparator.comparing(w->w.charAt(w.length()-1))).orElse("");
     }
+
+    public String practice7 () {
+        Map <String, Long> map = Stream.of("java", "hello", "me", "zebra").collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
 
 }
