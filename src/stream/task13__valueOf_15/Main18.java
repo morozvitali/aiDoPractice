@@ -28,6 +28,11 @@ public class Main18 {
         return input.chars().filter(Character::isUpperCase).mapToObj(String::valueOf).toList();
     }
 
+    public List <Integer> practice6 () {
+        String s = "abcxyz";
+        return s.chars().map(c->c-'a'+1).boxed().toList();
+    }
+
 
 
 }
