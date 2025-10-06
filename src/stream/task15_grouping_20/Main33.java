@@ -38,4 +38,7 @@ public class Main33 {
         return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 
+    public Map <Integer, Long> practice6 () {
+        return "ab123cc44a77".chars().filter(Character::isDigit).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
 }
