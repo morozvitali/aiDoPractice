@@ -33,9 +33,11 @@ public class Main13 {
         return s.chars().filter(c->c=='a').count();
     }
 
-    public void practice3 () {
+    public Integer practice3 () {
         Map <Integer, Long> map = Stream.of(111, 123, 444, 1212)
                 .collect(Collectors.toMap(Function.identity(), Main13::countDigits));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+
     }
 
     public static long countDigits (int i) {
@@ -43,6 +45,13 @@ public class Main13 {
         return i > 0 ? s.length() - s.chars().distinct().count() : -(s.length() - s.chars().distinct().count());
     }
 
+    public String practice4 () {
+        Map <String, Long> map = List.of("alpha", "arena", "java", "banana", "lava").stream().collect(Collectors.toMap(Function.identity(), Main13::countAscii));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
 
+    public static long countAscii (String s) {
+        return s.chars().sum();
+    }
 
 }
