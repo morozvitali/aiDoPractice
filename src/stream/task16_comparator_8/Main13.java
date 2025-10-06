@@ -59,5 +59,8 @@ public class Main13 {
         return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 
+    public void practice6 () {
+        Stream.of("abc", "def", "gka", "lol").filter(w->w.startsWith("s")).max(Comparator.comparing(String::length)).orElse("");
+    }
 
 }
