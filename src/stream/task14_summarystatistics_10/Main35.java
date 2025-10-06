@@ -2,6 +2,9 @@ package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main35 {
     public Long practice1 () {
@@ -16,6 +19,13 @@ public class Main35 {
         return words.stream().filter(w->w.length() ==0).map(w->w.toLowerCase()).mapToInt(String::length).summaryStatistics().getSum();
     }
 
+    public Map<String, Long> practice3 () {
+        String[] words = {"sky", "apple",
+                "moon", "dry", "banana"};
+        return Arrays.stream(words).filter(w->w.length()>3 && getCount(w) >1).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
 
-
+    public static Long getCount (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
 }
