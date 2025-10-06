@@ -101,7 +101,13 @@ public class Main33 {
     public Map <Boolean, List <String>> practice17 () {
         String[] words = {"apple", "banana",
                 "dog", "kiwi", "plum"};
-        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0), Collectors.counting()));
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0)));
     }
 
+    public Map <Integer, Long> practice18 () {
+        String[] words = {"apple", "banana",
+                "orange", "umbrella",
+                "ant", "dog", "egg"};
+        return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).collect(Collectors.groupingBy(String::length, Collectors.counting()));
+    }
 }
