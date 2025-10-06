@@ -309,6 +309,7 @@ return input.chars()
 // сортуємо у зворотному порядку
 .collect(Collectors.toList());   
 // збираємо в список
+
 -----------------------------------------------------
 
 🎸 Завдання 15: Перевір,
@@ -325,7 +326,6 @@ String input2 = "12a3";
 
 true
 false
-
 
 better-->>) return input.chars()
 .allMatch(Character::isDigit);
