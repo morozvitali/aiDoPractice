@@ -1,6 +1,7 @@
 package stream.task14_summarystatistics_10;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -28,4 +29,18 @@ public class Main35 {
     public static Long getCount (String s) {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
+
+    public Double practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).filter(w->getCount(w)>0).mapToInt(String::length).average().orElse(-1);
+    }
+
+    public String practice5 () {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+        return Arrays.stream(words).filter(w->Character.isUpperCase(w.charAt(0))).min(Comparator.comparing(String::length)).orElse("");
+    }
+
+
 }
