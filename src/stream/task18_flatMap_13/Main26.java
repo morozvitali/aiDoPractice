@@ -72,4 +72,9 @@ public class Main26 {
         return input.stream().filter(x->x instanceof Integer).map(x->(Integer)x).toList();
     }
 
+    public List <String> practice9 (List<Object>input) {
+        return input.stream().filter(s->s instanceof String).map(s->(String)s).toList();
+    }
+
+
 }
