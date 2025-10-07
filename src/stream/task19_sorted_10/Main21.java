@@ -44,7 +44,4 @@ public class Main21 {
         return numbers.stream().sorted(Comparator.comparingInt((Integer a)->a%2).thenComparing(Comparator.reverseOrder()))
                 .collect(Collectors.toList());
     }
-
-
-
 }
