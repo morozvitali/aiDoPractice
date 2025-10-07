@@ -12,6 +12,9 @@ public class Main20 {
                 .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
     }
 
+    public Long practice2 () {
+        return Stream.of(3, 9, 2, 4, 6, 7, 12).filter(a->a%3==0).collect(Collectors.collectingAndThen(Collectors.toList(), List::size));
+    }
 
 
 }
