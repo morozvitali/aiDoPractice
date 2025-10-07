@@ -46,7 +46,6 @@ public class Main26 {
                 {4}
         };
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).map(a->a*a).sum();
-
     }
 
 
