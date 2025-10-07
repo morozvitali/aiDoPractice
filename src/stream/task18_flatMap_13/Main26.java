@@ -84,4 +84,7 @@ public class Main26 {
         return input.stream().filter(v->v instanceof Boolean & (Boolean) v == true).map(v->(Boolean)v).toList();
     }
 
+    public List <String> practice12 (List<Object> input) {
+        return input.stream().filter(w->w instanceof String).map(w->((String)w).toUpperCase()).toList();
+    }
 }
