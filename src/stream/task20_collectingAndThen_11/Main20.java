@@ -20,4 +20,11 @@ public class Main20 {
     public String practice3 () {
         return Stream.of("sun", "supernova", "star").collect(Collectors.collectingAndThen(Collectors.toList(), list-> list.stream().sorted(Comparator.comparingInt(String::length).thenComparing(Comparator.reverseOrder())).toList().getFirst()));
     }
+
+    public Integer practice4 () {
+        return Stream.of(5, 3, 4, 4, 3, 6).collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
+    }
+
+
+
 }
