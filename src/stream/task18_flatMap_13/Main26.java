@@ -48,5 +48,26 @@ public class Main26 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).map(a->a*a).sum();
     }
 
+    public Double practice6 () {
+        int[][] data = {
+                {3, 5},
+                {7}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==1).average().orElse(-1);
+    }
+
+    public int practice7 () {
+        int[][] data = {
+                {3, 5},
+                {7}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main26::gcd).orElse(-1);
+    }
+
+    public static int gcd (int a, int b) {
+        return b==0? a : gcd (b, a%b);
+    }
+
+
 
 }
