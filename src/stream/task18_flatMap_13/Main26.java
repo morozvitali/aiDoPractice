@@ -2,6 +2,9 @@ package stream.task18_flatMap_13;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main26 {
     public List <String> practice1 () {
@@ -86,5 +89,10 @@ public class Main26 {
 
     public List <String> practice12 (List<Object> input) {
         return input.stream().filter(w->w instanceof String).map(w->((String)w).toUpperCase()).toList();
+    }
+
+    public String practice13 (String s) {
+        Map<Character, Long> map =  s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+        return s.chars().mapToObj(c->map.get(c) > 1 ? "(" : ")" ).collect(Collectors.joining());
     }
 }
