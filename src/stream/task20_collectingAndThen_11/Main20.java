@@ -3,6 +3,7 @@ package stream.task20_collectingAndThen_11;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -25,6 +26,8 @@ public class Main20 {
         return Stream.of(5, 3, 4, 4, 3, 6).collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
     }
 
-
+    public Set<Integer> practice5 () {
+            return Stream.of(2, 4, 10, 12, 14, 12, 4).collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
+    }
 
 }
