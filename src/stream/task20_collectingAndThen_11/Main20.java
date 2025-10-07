@@ -35,5 +35,17 @@ public class Main20 {
         return Stream.of("code", "stream", "java").collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), Collections::unmodifiableMap));
     }
 
+    public String practice8 () {
+        return Stream.of("java", "zippo", "japan").filter(w -> w.contains("p"))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
+                            if (list.size() != 1) {
+                                throw new IllegalStateException("except one 'p");
+                            }
+                            return list.getFirst();
+                        }
+                ));
+    }
+
+
 
 }
