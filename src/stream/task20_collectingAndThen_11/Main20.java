@@ -46,6 +46,10 @@ public class Main20 {
                 ));
     }
 
+public String practice9 () {
+    List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+    return numbers.stream().map(String::valueOf).collect(Collectors.collectingAndThen(Collectors.toList(), list -> String.join(", " , list)));
 
+}
 
 }
