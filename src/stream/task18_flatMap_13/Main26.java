@@ -79,8 +79,8 @@ public class Main26 {
         return input.stream().filter(s->s instanceof String).map(s->(String)s).toList();
     }
 
-    public void practice10 (List <Object> input) {
-        return input.stream().filter(i->i instanceof Integer && (Integer) i > 10).map(i->(Integer)i).toList()
+    public List <Integer> practice10 (List <Object> input) {
+        return input.stream().filter(i->i instanceof Integer && (Integer) i > 10).map(i->(Integer)i).toList();
     }
 
     public List<Boolean> practice11 (List<Object>input) {
@@ -92,7 +92,7 @@ public class Main26 {
     }
 
     public String practice13 (String s) {
-        Map<Character, Long> map =  s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+        Map<Character, Long> map =  s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         return s.chars().mapToObj(c->map.get(c) > 1 ? "(" : ")" ).collect(Collectors.joining());
     }
 }
