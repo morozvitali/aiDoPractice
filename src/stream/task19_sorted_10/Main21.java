@@ -15,5 +15,8 @@ public class Main21 {
         return numbers.stream().sorted(Comparator.reverseOrder()).toList();
     }
 
-
+    public List <Integer> practice5 () {
+        List<Integer> numbers = List.of(3, 7, 1, 9, 2);
+        return numbers.stream().sorted(Comparator.comparingInt(a->(int)a%2).thenComparingInt(n->(int)n)).toList();
+    }
 }
