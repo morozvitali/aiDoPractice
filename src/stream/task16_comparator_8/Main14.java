@@ -50,5 +50,9 @@ public class Main14 {
         return List.of("sun", "star", "supernova", "apple").stream().filter(w->w.startsWith("s")).max(Comparator.comparing(String::length)).orElse("");
     }
 
+    public List <String> practice6 () {
+        return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
+    }
+
 
 }
