@@ -17,6 +17,12 @@ public class Main1 {
         return s.toLowerCase().chars().distinct().count();
     }
 
-
-
+    public Character practice2 () {
+        List<String> words = List.of("apple", "banana", "grape", "pear");
+        return words.stream().flatMap(w->w.chars().mapToObj(c->(char)c))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse('?');
+    }
 }
