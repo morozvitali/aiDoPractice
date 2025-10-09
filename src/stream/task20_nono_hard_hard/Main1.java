@@ -32,5 +32,10 @@ public class Main1 {
         return words.stream().sorted(Comparator.comparing(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count())).toList();
     }
 
+    public Double practice4 () {
+        List<String> words = List.of("sun", "moon", "sun", "sky", "star");
+        return words.stream().distinct().mapToInt(String::length).average().orElse(-1);
+    }
+
 
 }
