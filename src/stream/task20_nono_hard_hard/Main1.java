@@ -1,9 +1,6 @@
 package stream.task20_nono_hard_hard;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -46,6 +43,12 @@ public class Main1 {
         String text = "banana";
         return text.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(e->e.getValue() == 2).map(Map.Entry::getKey).toList();
     }
+
+    public List <String> practice7 () {
+        List<String> phrases = List.of("I love Java", "Java is great", "I love streams");
+        return phrases.stream().flatMap(s-> Arrays.stream(s.split(" "))).map(String::toLowerCase).distinct().toList();
+    }
+
 
 
 }
