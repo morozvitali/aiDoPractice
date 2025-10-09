@@ -46,5 +46,9 @@ public class Main14 {
         return s.chars().sum();
     }
 
+    public String practice5 () {
+        return List.of("sun", "star", "supernova", "apple").stream().filter(w->w.startsWith("s")).max(Comparator.comparing(String::length)).orElse("");
+    }
+
 
 }
