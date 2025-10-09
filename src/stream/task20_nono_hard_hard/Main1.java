@@ -49,6 +49,9 @@ public class Main1 {
         return phrases.stream().flatMap(s-> Arrays.stream(s.split(" "))).map(String::toLowerCase).distinct().toList();
     }
 
-
+    public Map <Integer, List <String>> prctice8 () {
+        List<String> words = List.of("sun", "sky", "blue", "cloud", "rain");
+        return words.stream().collect(Collectors.groupingBy(String::length));
+    }
 
 }
