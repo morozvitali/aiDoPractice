@@ -27,7 +27,9 @@
 📤 Вихід: "1; 9; 25"
 
 📌
-.filter(n->n%2!=0).map(n->n*n+"").collect(collectingAndThen(toList(), list -> String.join("; ", list)))
+.filter(n->n%2!=0)
+.map(n->n*n+"")
+.collect(collectingAndThen(toList(), list -> String.join("; ", list)))
 
 ✅ Завдання 10 (оновлене):
 
