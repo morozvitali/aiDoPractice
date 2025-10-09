@@ -42,5 +42,10 @@ public class Main1 {
         return words.stream().filter(w->"aeiou".indexOf(w.charAt(0))>=0).min(Comparator.comparing(String::length)).orElse("");
     }
 
+    public List <Character> practice6 () {
+        String text = "banana";
+        return text.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(e->e.getValue() == 2).map(Map.Entry::getKey).toList();
+    }
+
 
 }
