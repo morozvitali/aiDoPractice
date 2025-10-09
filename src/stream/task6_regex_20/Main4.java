@@ -9,4 +9,7 @@ public class Main4 {
         return s.matches("^[a-zA-Z0-9_-]{3,20}$");
     }
 
+    public boolean practice15 (String s) {
+        return s.matches("^\\S+$");
+    }
 }
