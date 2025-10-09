@@ -1,5 +1,6 @@
 package stream.task20_collectingAndThen_11;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,7 +24,10 @@ public class Main21 {
         return Stream.of("hi", "hello", "mango", "go", "halo", "yo").collect(Collectors.collectingAndThen(Collectors.groupingBy( w->w.charAt(w.length()-1)), Map::size));
     }
 
-
+    public List <String> practice4 () {
+        return Stream.of("apple", "car", "banana",
+                "hi", "cherry").filter(w->w.length() >4).collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
+    }
 
 
 }
