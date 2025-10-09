@@ -39,6 +39,8 @@ public class Main21 {
         return data.stream().collect(Collectors.collectingAndThen(Collectors.toList(), list->list.stream().sorted(Comparator.comparing(String::length).thenComparing(Comparator.reverseOrder())))).toList().getFirst();
     }
 
-
+    public Integer practice7 () {
+        return Stream.of(5, 3, 4, 4, 3, 6).distinct().collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
+    }
 
 }
