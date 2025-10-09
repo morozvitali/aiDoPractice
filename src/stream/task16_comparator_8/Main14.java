@@ -57,4 +57,12 @@ public class Main14 {
     public String practice7 () {
         return List.of("java", "hello", "me", "zebra").stream().filter(w->w.contains("e")).min(Comparator.comparing(String::length)).orElse("");
     }
+
+    public List <Integer> practice8 () {
+        return List.of(100, 1010, 5, 2000, 10).stream().sorted(Comparator.comparing(a->countZeros(a))).toList();
+    }
+
+    public static long countZeros (int n) {
+        return String.valueOf(Math.abs(n)).chars().filter(c->c =='0').count();
+    }
 }
