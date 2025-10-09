@@ -54,4 +54,11 @@ public class Main1 {
         return words.stream().collect(Collectors.groupingBy(String::length));
     }
 
+    public Long practice9 (String s) {
+        List<String> words = List.of("apple", "banana", "grape", "pear", "plum");
+        return words.stream().filter(w->w.contains(s)).count();
+    }
+
+
+
 }

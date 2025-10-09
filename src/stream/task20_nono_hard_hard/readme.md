@@ -144,7 +144,6 @@ flatMap() “розплющує” усі слова з речень у єдин
 -
 List<String> words = List.of("sun", "sky", "blue", "cloud", "rain");
 
-
 💡 Підказка: використовуй Collectors.groupingBy(String::length).
 
 ✅ Рішення:
