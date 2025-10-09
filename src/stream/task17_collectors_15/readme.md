@@ -385,7 +385,7 @@ List<String> words = List.of("hi", "book",
 3=[sun, day, sky],
 4=[book, Java]
 }
-
+TreeMap<Integer, List <String>>
 📦 Початковий код:
 
         List<String> words = List.of("hi", "book",
