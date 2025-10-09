@@ -33,17 +33,27 @@
 
 ✅ Завдання 10 (оновлене):
 
-Порахуй кількість груп за останньою літерою, але тільки для слів довших за 2 символи.
+Порахуй кількість груп за останньою літерою
 
 📥 Вхід: ["hi", "hello", "mango", "go", "halo", "yo"]
 📤 Вихід: 3
 (бо групи: "o" → [hello, mango, halo], "i" → [hi], "o" → [go, yo] — але короткі відкинуті)
 
 📌
-filter(w -> w.length() > 2)
 groupingBy(w -> w.charAt(w.length()-1))
 collectingAndThen(Map::size)
 
+public Integer practice3 () {
+return Stream.of("hi", "hello", "mango", "go", "halo", "yo").collect(Collectors.groupingBy(w->w.charAt(w.length()-1), Collectors.collectingAndThen(Map::size)));
+}
+
+        return Stream.of("hi", "hello", "mango", "go", "halo", "yo")
+                .collect(Collectors.collectingAndThen(
+                        Collectors.groupingBy(w -> w.charAt(w.length() - 1)),
+                        Map::size
+                ));
+    }
+}
 --------------------------------------------------------------
 
 🔟 Задач на тему collectingAndThen
