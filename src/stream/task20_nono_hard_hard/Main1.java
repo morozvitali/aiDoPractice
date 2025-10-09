@@ -59,6 +59,10 @@ public class Main1 {
         return words.stream().filter(w->w.contains(s)).count();
     }
 
+    public Double practice10 () {
+        String text = "Java makes coding elegant and expressive";
+        return Arrays.stream(text.split(" ")).mapToInt(String::length).average().orElse(0);
+    }
 
 
 }
