@@ -48,6 +48,8 @@ public class Main34 {
         return Stream.of(1, 2, 3, 4, 5).collect(Collectors.groupingBy(v->v%2==0 ? "even" : "odd"));
     }
 
-
+    public Map <Integer, Double> practice9 () {
+        return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(n->n%3, Collectors.averagingInt(n->(int)n)));
+    }
 
 }
