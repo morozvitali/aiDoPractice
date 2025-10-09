@@ -65,6 +65,11 @@ public class Main34 {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (old, newValue) ->old, LinkedHashMap::new));
     }
 
+    public Map <Character, Integer> practice12 () {
+        return  Stream.of("a10", "a20", "b5", "b7").collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1))));
+
+    }
+
 
 
 }
