@@ -44,6 +44,10 @@ public class Main21 {
         return Stream.of(2, 4, 10, 12, 14, 12, 4).collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
     }
 
+    public String practice9 () {
+        return Stream.of(1, 2, 3, 4, 5).map(String::valueOf).collect(Collectors.collectingAndThen(Collectors.toList(), list -> String.join(", ", list)));
+    }
+
 
 
 }
