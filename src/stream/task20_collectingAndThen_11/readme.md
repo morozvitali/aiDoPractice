@@ -8,6 +8,17 @@
 📌 Використай .filter(w -> w.replaceAll("[^aeiouAEIOU]", "").length() == 2)
 Потім collectingAndThen → якщо list.size()!=1, кинути IllegalStateException.
 
+    public static String findWordWithTwoVowels(List<String> words) {
+        return words.stream()
+                .filter(w -> w.replaceAll("[^aeiouAEIOU]", "").length() == 2)
+                .collect(Collectors.collectingAndThen(
+                        Collectors.toList(),
+                        list -> {
+                            if (list.size() != 1) {
+                                throw new IllegalStateException("Expected exactly one word with 2 vowels, found: " + list);
+                            }
+                            return list.get(0);
+
 ✅ Завдання 9 (оновлене):
 
 Список чисел → непарні підняти до квадрату → створити рядок “числа через ;”
