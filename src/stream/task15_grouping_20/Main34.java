@@ -56,7 +56,7 @@ public class Main34 {
         return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 
-    public LinkedHashMap <Character, Long> practice () {
+    public LinkedHashMap <Character, Long> practice11 () {
         Map <Character, Long> map = new HashMap<>();
         map.put('a', 2L);
         map.put('b', 5L);
