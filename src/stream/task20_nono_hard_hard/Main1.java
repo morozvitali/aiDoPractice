@@ -37,5 +37,10 @@ public class Main1 {
         return words.stream().distinct().mapToInt(String::length).average().orElse(-1);
     }
 
+    public String practice5 () {
+        List<String> words = List.of("apple", "grape", "sky", "cloud", "orange");
+        return words.stream().filter(w->"aeiou".indexOf(w.charAt(0))>=0).min(Comparator.comparing(String::length)).orElse("");
+    }
+
 
 }
