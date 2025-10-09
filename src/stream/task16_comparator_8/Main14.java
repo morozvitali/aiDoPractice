@@ -38,5 +38,13 @@ public class Main14 {
     }
 
 
+    public String practice4 (List <String> list) {
+        return list.stream().map(w->Map.entry(w, w.chars().sum())).max(Comparator.comparing(Map.Entry::getValue)).map(Map.Entry::getKey).orElse("");
+    }
+
+    public static long getAscii (String s) {
+        return s.chars().sum();
+    }
+
 
 }
