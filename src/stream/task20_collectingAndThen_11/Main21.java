@@ -29,5 +29,10 @@ public class Main21 {
                 "hi", "cherry").filter(w->w.length() >4).collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
     }
 
+    public Integer practice5 () {
+        return Stream.of(3, 9, 2, 4, 6, 7, 12).collect(Collectors.collectingAndThen(Collectors.toList(), List::size));
+    }
+
+
 
 }
