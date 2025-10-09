@@ -1,6 +1,7 @@
 package stream.task15_grouping_20;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -18,5 +19,11 @@ public class Main34 {
         Map <Character, Long> map = s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         return map.entrySet().stream().filter(e->e.getValue() > 1).count();
     }
+
+    public String practice3 (String s) {
+        Map <String, Long> map = Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
 
 }
