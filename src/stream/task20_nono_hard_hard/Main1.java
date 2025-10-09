@@ -1,6 +1,7 @@
 package stream.task20_nono_hard_hard;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -25,4 +26,11 @@ public class Main1 {
                 .map(Map.Entry::getKey)
                 .orElse('?');
     }
+
+    public List <String> practice3 () {
+        List<String> words = List.of("moon", "sky", "cloud", "aeroplane", "tree");
+        return words.stream().sorted(Comparator.comparing(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count())).toList();
+    }
+
+
 }
