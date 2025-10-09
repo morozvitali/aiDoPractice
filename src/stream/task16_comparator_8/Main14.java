@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main14 {
     public List<String> practice1 () {
@@ -27,6 +28,14 @@ public class Main14 {
         return s.chars().filter(c->c=='a').count();
     }
 
+    public int practice3 () {
+        Map <Integer, Long> map = Stream.of(111, 123, 444, 1212).collect(Collectors.toMap(Function.identity(), this::getLength));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
+    public long getLength (int i) {
+        return String.valueOf(i).chars().distinct().count();
+    }
 
 
 
