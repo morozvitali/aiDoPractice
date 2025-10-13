@@ -24,7 +24,6 @@ StringBuilder::append,        // combiner
 StringBuilder::toString       // finisher
 ));
 
-
 📤 Очікуване: "Java Stream API "
 
 ✅ Завдання 2 — Колектор для суми
