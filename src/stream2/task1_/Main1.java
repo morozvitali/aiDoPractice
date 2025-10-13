@@ -75,21 +75,44 @@ public class Main1 {
         ));
     }
 
-    public void practice6 () {
+    public void practice6() {
         List<String> words = List.of("apple", "banana", "pear");
         Map<Character, Integer> map = words.stream().collect(Collector.of(HashMap::new,
-                (m,s) -> m.put(s.charAt(0), s.length()),
-                (m1,m2) -> {m1.putAll(m2); return m1; }
-                ));
+                (m, s) -> m.put(s.charAt(0), s.length()),
+                (m1, m2) -> {
+                    m1.putAll(m2);
+                    return m1;
+                }
+        ));
     }
 
-    public void practice7 () {
+    public void practice7() {
         List<String> list = List.of("a", "b", "c");
-        List <String> upper = list.stream().collect(Collector.of(
+        List<String> upper = list.stream().collect(Collector.of(
                 ArrayList::new,
                 List::add,
-                (a,b) -> {a.addAll(b); return a; },
-                l->l.stream().map(w->((String)w).toUpperCase()).toList()
+                (a, b) -> {
+                    a.addAll(b);
+                    return a;
+                },
+                l -> l.stream().map(w -> ((String) w).toUpperCase()).toList()
+        ));
+    }
+
+    public void practice8b() {
+        List<String> names = List.of("Mark", "Luke", "John");
+        String joined = names.stream().collect(Collector.of(
+                StringBuilder::new,
+                (sb, s) -> {
+                    if (sb.length() > 0) sb.append(", ");
+                    sb.append(s);
+                },
+                (a, b) -> {
+                    if (a.length() > 0 && b.length() > 0)a.append(", ");
+                    a.append(b);
+                    return a;
+                },
+                StringBuilder::toString
         ));
     }
 
