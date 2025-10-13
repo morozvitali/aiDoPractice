@@ -1,9 +1,6 @@
 package stream2.task1_;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collector;
 
 public class Main1 {
@@ -76,6 +73,16 @@ public class Main1 {
                 }
         ));
     }
+
+    public void practice6 () {
+        List<String> words = List.of("apple", "banana", "pear");
+        Map<Character, Integer> map = words.stream().collect(Collector.of(HashMap::new,
+                (m,s) -> m.put(s.charAt(0), s.length()),
+                (m1,m2) -> {m1.putAll(m2); return m1; }
+                ));
+    }
+
+
 
 
 }
