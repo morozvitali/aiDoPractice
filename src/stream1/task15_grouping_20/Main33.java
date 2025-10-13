@@ -1,0 +1,113 @@
+package stream1.task15_grouping_20;
+
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Main33 {
+    public Map<String, Boolean> practice1 () {
+        String[] words = {"sky", "apple",
+                "dry", "orange", "sun"};
+        return Arrays.stream(words).collect(Collectors.toMap(Function.identity(), w->getCount(w)>0));
+    }
+
+    public static Long getCount (String s) {
+        return  s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
+
+    public Long practice2 (String s) {
+        return s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().filter(e->e.getValue() >1).count();
+    }
+
+    public String practice3 () {
+        Map<String, Long> map = Arrays.stream("java is fun and java is powerful".split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
+    public Map <Integer, Integer> practice4 () {
+        return Stream.of(12, 23, 34, 45, 16, 7).collect(Collectors.groupingBy(a->a%10, Collectors.summingInt(n->n)));
+    }
+
+    public Integer practice5 () {
+        Map <Integer, Long>map = Stream.of(1,2,2,3,3,3,4,4).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
+    public Map <Integer, Long> practice6 () {
+        return "ab123cc44a77".chars().filter(Character::isDigit).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public boolean practice7 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().anyMatch(e->e.getValue() >1);
+    }
+
+    public Map <String, List<Integer>> practice8 () {
+        return Stream.of(1, 2, 3, 4, 5).collect(Collectors.groupingBy(n->n%2==0 ? "even" : "odd"));
+    }
+
+    public Map <Integer, Double> practice9 () {
+        return Stream.of (3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(v->v%3, Collectors.averagingInt(n->n)));
+    }
+
+    public Character practice10 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        Map <Character, Long> map = Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+
+    public LinkedHashMap <Character, Long> practice11 () {
+        Map <Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
+            return map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                    .collect(Collectors.toMap(
+                            Map.Entry::getKey,
+                            Map.Entry::getValue,
+                            (o,n) ->o,
+                            LinkedHashMap::new
+                    ));
+    }
+
+    public Map<Character, Integer> practice12 () {
+        return Stream.of("a10","a20","b5","b7","c1","d5","i7")
+                .collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
+    }
+
+    public String practice13 () {
+        Map<String, Long> map = Stream.of("dftgh", "fgh", "ouiyt", "tyuirty", "tryu", "tryu", "fgj").collect(Collectors.toMap(Function.identity(), Main33::getCount));
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
+    }
+    public boolean practice14 (Map <String, Integer> map) {
+        return map.entrySet().stream().allMatch(e->e.getValue()%2==0);
+    }
+
+    public Map <Integer, List <String>> practice15 () {
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(String::length));
+    }
+
+    public Map <Integer, Long> practice16 (){
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
+        return Arrays.stream(words).filter(w->w.chars().anyMatch(c->"aeiou".indexOf(c) >=0)).collect(Collectors.groupingBy(String::length, Collectors.counting()));
+    }
+
+    public Map <Boolean, List <String>> practice17 () {
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0)));
+    }
+
+    public Map <Integer, Long> practice18 () {
+        String[] words = {"apple", "banana",
+                "orange", "umbrella",
+                "ant", "dog", "egg"};
+        return Arrays.stream(words).filter(w->"aeiou".indexOf(w.charAt(0))>=0).collect(Collectors.groupingBy(String::length, Collectors.counting()));
+    }
+}

@@ -642,7 +642,7 @@ public double area() { return w * h; }
 
 class AreaCalculator {
 public double totalArea(List<Shape> shapes) {
-return shapes.stream().mapToDouble(Shape::area).sum();
+return shapes.stream1().mapToDouble(Shape::area).sum();
 }
 }
 🟢 Ми можемо додати Triangle, Hexagon — і не чіпати AreaCalculator!

@@ -9,7 +9,7 @@ boolean test(T t);
 🔧 Використовується:
 
 ✅ 1. Stream API:
-list.stream().filter(s -> s.length() > 3).toList();
+list.stream1().filter(s -> s.length() > 3).toList();
 
 ✅ 2. List.removeIf(Predicate<T>):
 list.removeIf(s -> s.isEmpty());
@@ -19,7 +19,7 @@ Optional<String> name = Optional.of("Vitalii");
 name.filter(n -> n.length() > 5);
 
 ✅ 4. Method references:
-list.stream().filter(String::isEmpty);
+list.stream1().filter(String::isEmpty);
 
 🛠 Додаткові (дефолтні) методи Predicate<T>:`
 
@@ -72,7 +72,7 @@ System.out.println(isVitalii.test("Vitalii")); // true
 System.out.println(isVitalii.test("Marichka")); // false
 🔸 Часто використовується, якщо хочеш зробити порівняння як Predicate, наприклад:
 
-list.stream().filter(Predicate.isEqual("admin")).toList();
+list.stream1().filter(Predicate.isEqual("admin")).toList();
 🔹 Частина 3: Predicate у реальному проєкті / Spring
 Ось де Predicate справді живе у продакшені:
 
@@ -104,7 +104,7 @@ System.out.println("Skip");
 У сервісах, коли фільтрують результати з бази:
 
 List<User> activeUsers = userRepository.findAll()
-.stream()
+.stream1()
 .filter(user -> user.isActive() && user.getRole().equals("ADMIN"))
 .collect(Collectors.toList());
 Тут user -> user.isActive() — по суті, Predicate.

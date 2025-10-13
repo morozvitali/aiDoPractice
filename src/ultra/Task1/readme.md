@@ -138,7 +138,7 @@ java
 Копіювати
 Редагувати
 import java.util.*;
-import java.util.stream.*;
+import java.util.stream1.*;
 
 public class LongestWordsFinder {
 
@@ -150,11 +150,11 @@ public class LongestWordsFinder {
         String[] words = clean.split(" ");
 
         // Групування за довжиною
-        Map<Integer, List<String>> groupedByLength = Arrays.stream(words)
+        Map<Integer, List<String>> groupedByLength = Arrays.stream1(words)
                 .collect(Collectors.groupingBy(String::length));
 
         // Пошук максимальної довжини
-        int maxLength = groupedByLength.keySet().stream()
+        int maxLength = groupedByLength.keySet().stream1()
                 .max(Integer::compareTo)
                 .orElse(0);
 

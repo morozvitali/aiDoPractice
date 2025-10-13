@@ -10,10 +10,10 @@ R apply(T t);
 
 🛠 Найчастіше використовується в:
 
-✅ 1. stream().map(Function)
+✅ 1. stream1().map(Function)
 List<String> names = List.of("Tom", "Anna", "Bob");
 
-List<Integer> lengths = names.stream()
+List<Integer> lengths = names.stream1()
 .map(s -> s.length())
 .collect(Collectors.toList());
 // [3, 4, 3]

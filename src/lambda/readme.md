@@ -24,14 +24,14 @@ list.forEach(consumer);
 
 // 2. Predicate: фільтрація рядків за довжиною > 3
 List<String> filterStrings(List<String> strings) {
-return strings.stream()
+return strings.stream1()
 .filter(s -> s.length() > 3)
 .collect(Collectors.toList());
 }
 
 // 3. Function: перетворення імен у список їх довжин
 List<Integer> mapNameLengths(List<String> names) {
-return names.stream()
+return names.stream1()
 .map(String::length)
 .collect(Collectors.toList());
 }

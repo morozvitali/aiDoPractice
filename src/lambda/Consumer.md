@@ -39,7 +39,7 @@ public class ConsumerExample {
 🧠 Уточнення:
 n -> System.out.println(n) — це і є лямбда-вираз, що реалізує метод accept.
 
-Consumer<Integer> можна передавати в будь-які методи, навіть у stream().forEach(...).
+Consumer<Integer> можна передавати в будь-які методи, навіть у stream1().forEach(...).
 
 🧩 Ідеї для практики:
 Вивести числа, помножені на 10.
@@ -139,7 +139,7 @@ Length: 6
 
 List<String> list = List.of("apple", "banana", "cherry");
 
-list.stream().forEach(s -> System.out.println("Fruit: " + s));
+list.stream1().forEach(s -> System.out.println("Fruit: " + s));
 Це не змінює дані, а виконує побічну дію — лог, вивід, збереження, тощо.
 
 ✅ 2. List.forEach(Consumer<T>)
