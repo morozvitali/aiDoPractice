@@ -41,5 +41,11 @@ public class Main1 {
         System.out.println(content);
     }
 
+    public void practice6 () {
+        List<Integer> temps = List.of(15, 16, 18, 21, 19, 17);
+        List <Integer> morning = temps.stream().takeWhile(t->t<=20).toList();
+        System.out.println(morning);
+    }
+
 
 }
