@@ -9,6 +9,10 @@ public class Main1 {
                 .forEach(System.out::print);
     }
 
-
+    public void practice2 () {
+        Stream.of(1, 2, 3, 6, 2, 1)
+                .dropWhile(n->n<5)
+                .forEach(System.out::println);
+    }
 
 }
