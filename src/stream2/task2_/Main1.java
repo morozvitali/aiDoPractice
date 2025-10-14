@@ -1,5 +1,6 @@
 package stream2.task2_;
 
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 public class Main1 {
@@ -12,5 +13,14 @@ public void practice2 () {
     int sum = IntStream.rangeClosed(1,5).map(n->n*n).sum();
     System.out.println(sum);
 }
+
+public void practice3 () {
+    DoubleStream.generate(Math::random)
+            .limit(5)
+            .forEach(System.out::println);
+}
+
+
+
 
 }
