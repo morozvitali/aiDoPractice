@@ -59,5 +59,16 @@ public class Main1 {
         System.out.println(beforeStop);
     }
 
+    public void practice9 () {
+        List<Integer> nums = List.of(-3, -2, -1, 0, 5, -4, 7);
+        List <Integer> abs = nums.stream().dropWhile(n->n<0).map(Math::abs).toList();
+    }
 
+    public void practice10 () {
+        List<Integer> temps = List.of(10, 12, 15, 20, 25, 30, 32, 28);
+        List <Integer> comb = temps.stream()
+                .dropWhile(t->t<15)
+                .takeWhile(t->t<30)
+                .toList();
+    }
 }
