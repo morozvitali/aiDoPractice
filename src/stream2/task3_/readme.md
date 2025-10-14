@@ -54,7 +54,8 @@ takeWhile() зупиняється після першого порушення 
 
 List<Integer> nums = List.of(1, 2, 3, 5, 2, 6, 7);
 List<Integer> rising = nums.stream()
-.takeWhile(new int[]{Integer.MIN_VALUE}::equals) // 🤔 неправильний варіант, дивись нижче
+.takeWhile(new int[]{Integer.MIN_VALUE}::equals) 
+// 🤔 неправильний варіант, дивись нижче
 
 
 🛠 Правильніше:
