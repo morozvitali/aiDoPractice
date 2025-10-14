@@ -36,6 +36,10 @@ public class Main1 {
     }
 
     public void practice5 () {
-
+        List<String> lines = List.of("", "", "Hello", "World", "!");
+        List <String> content = lines.stream().dropWhile(String::isEmpty).toList();
+        System.out.println(content);
     }
+
+
 }
