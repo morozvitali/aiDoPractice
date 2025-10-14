@@ -1,5 +1,6 @@
 package stream2.task2_;
 
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
@@ -48,7 +49,23 @@ public void practice7 () {
     System.out.println(list);
 }
 
+    public void practice8 () {
+        List <Integer> list = DoubleStream.generate(Math::random)
+                .limit(5)
+                .map(d->d*10)
+                .mapToInt(d->(int) Math.round(d))
+                .boxed()
+                .toList();
+        System.out.println(list);
+    }
+
+    public void practice9 () {
+        IntSummaryStatistics stats = IntStream.of(2, 4, 6 ,8 , 10)
+                .summaryStatistics();
+        System.out.println(stats.getAverage());
+        System.out.println(stats.getCount());
+    }
 
 
 
-}
+ }
