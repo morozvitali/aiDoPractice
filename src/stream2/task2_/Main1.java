@@ -66,6 +66,13 @@ public void practice7 () {
         System.out.println(stats.getCount());
     }
 
-
+    public void practice10 () {
+        DoubleStream.generate(() -> Math.random() * 100)
+                .limit(10)
+                .mapToLong(Math::round)
+                .asDoubleStream()
+                .average()
+                .orElse(0);
+    }
 
  }
