@@ -1,5 +1,6 @@
 package stream2.task4_;
 
+import java.util.UUID;
 import java.util.stream.Stream;
 
 public class Main1 {
@@ -28,4 +29,9 @@ public class Main1 {
                 .forEach(System.out::println);
     }
 
+    public void practice5 () {
+        Stream.generate(UUID::randomUUID)
+                .limit(3)
+                .forEach(System.out::println);
+    }
 }
