@@ -51,6 +51,11 @@ public class Main1 {
                 .forEach(n-> System.out.println("Tick " + n));
     }
 
+    public void practice8 () {
+        Stream.iterate(1, n-> n+3)
+                .takeWhile(n->n<20)
+                .forEach(System.out::println);
+    }
 
 
 }
