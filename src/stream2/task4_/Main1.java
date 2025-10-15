@@ -1,5 +1,6 @@
 package stream2.task4_;
 
+import java.util.Random;
 import java.util.UUID;
 import java.util.stream.Stream;
 
@@ -57,5 +58,13 @@ public class Main1 {
                 .forEach(System.out::println);
     }
 
+    public void practice9 () {
+        Random random = new Random();
+        double avg = Stream.generate(()->random.nextInt(100))
+                .limit(100)
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
+    }
 
 }
