@@ -15,6 +15,12 @@ public class Main1 {
                 .forEach(System.out::println);
     }
 
+    public void practice3 () {
+        Stream.iterate(1, n->n+1)
+                .map(n->n*n)
+                .limit(5)
+                .forEach(System.out::println);
+    }
 
 
 }
