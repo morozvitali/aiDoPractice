@@ -42,5 +42,15 @@ public class Main1 {
                 .forEach(System.out::println);
     }
 
+    public void practice7 () {
+        Stream.iterate(1, n->n+1)
+                .peek(n->{
+                    try {Thread.sleep(1000); } catch (InterruptedException e) {}
+                })
+                .limit(5)
+                .forEach(n-> System.out.println("Tick " + n));
+    }
+
+
 
 }
