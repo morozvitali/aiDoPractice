@@ -25,8 +25,7 @@ public class Main1 {
                 .limit(5)
                 .forEach(System.out::println);
     }
-
-
+    
     public void practice4 () {
         Stream.iterate(1, n->n <=10, n-> n+2)
                 .forEach(System.out::println);
