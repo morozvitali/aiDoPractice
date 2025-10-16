@@ -1,5 +1,6 @@
 package stream2.task6_;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collector;
@@ -56,9 +57,19 @@ public class Main1 {
                         f->1L,
                         Long::sum
                 ));
-
-
-
+        System.out.println(map);
     }
+
+    public void practice6 () {
+        List<String> words = List.of("cat", "cow", "dog", "duck");
+        Map <Character, List <String>> map = words.stream()
+                .collect(Collectors.toMap(
+                        w->w.charAt(0),
+                        w-> new ArrayList<>(List.of(w)),
+                        (list1, list2) -> {list1.addAll(list2); return list1;}
+                ));
+        System.out.println(map);
+    }
+
 
 }
