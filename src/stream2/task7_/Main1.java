@@ -75,4 +75,16 @@ public class Main1 {
         System.out.println(result);
     }
 
+    public void practice9 () {
+        Map <String, Integer> map = Stream.of("Mars", "Venus", "Earth")
+                .collect(Collectors.toUnmodifiableMap(
+                   s->s.toUpperCase(),
+                        String::length
+                ));
+
+        System.out.println(map);
+        map.replace("MARS", 10); // exception
+    }
+
+
 }
