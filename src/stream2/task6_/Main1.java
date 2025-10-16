@@ -16,6 +16,14 @@ public class Main1 {
         System.out.println(map);
     }
 
-
+    public void practice2 () {
+        List <String> names = List.of("Bob", "Bill", "Anna");
+        Map<Character, String> map = names.stream()
+                .collect(Collectors.toMap(
+                        name -> name.charAt(0),
+                        name->name
+                ));
+        System.out.println(map);
+    }
 
 }
