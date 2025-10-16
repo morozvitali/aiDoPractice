@@ -71,5 +71,21 @@ public class Main1 {
         System.out.println(map);
     }
 
+    public void practice7 () {
+        List<Map<String, Integer>> maps = List.of(
+                Map.of("A", 1, "B", 2),
+                Map.of("B", 3, "C", 4)
+        );
+
+        Map <String, Integer> merged = maps.stream()
+                .flatMap(m->m.entrySet().stream())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        Integer::sum
+                ));
+        System.out.println(merged);
+    }
+
 
 }
