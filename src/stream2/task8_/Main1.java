@@ -19,4 +19,14 @@ public class Main1 {
         Optional <List<Integer>> maybeList = Optional.of(List.of(1,2,3));
         maybeList.stream().flatMap(List::stream).forEach(System.out::println);
     }
+
+    public void practice4 () {
+        List<String> words = List.of("cat", "apple", "pear");
+        Optional <String> found = words.stream().filter(w->w.length() >4).findFirst();
+        found.stream().forEach(System.out::println);
+    }
+
+
+
+
 }
