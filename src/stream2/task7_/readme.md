@@ -55,10 +55,10 @@ s -> s
 
 
 💥 IllegalStateException: duplicate key 'a'
-
 🧠 Ті ж правила, що й у toMap() — колізії не прощаються.
 
 ✅ Завдання 5 — Використання mergeFunction
+
 Map<Character, String> map = Stream.of("apple", "apricot")
 .collect(Collectors.toUnmodifiableMap(
 s -> s.charAt(0),
