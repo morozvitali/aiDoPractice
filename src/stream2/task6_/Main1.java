@@ -48,6 +48,17 @@ public class Main1 {
         ));
     }
 
+    public void practice5 () {
+        List<String> fruits = List.of("apple", "pear", "apple", "banana", "pear");
+        Map <String, Long> map = fruits.stream()
+                .collect(Collectors.toMap(
+                        f->f,
+                        f->1L,
+                        Long::sum
+                ));
 
+
+
+    }
 
 }
