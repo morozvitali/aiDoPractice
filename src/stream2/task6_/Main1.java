@@ -39,6 +39,15 @@ public class Main1 {
         System.out.println(map);
     }
 
+    public void practice4 () {
+        List<String> names = List.of("Bob", "Bill", "Benjamin");
+        Map <Character, String> map = names.stream().collect(Collectors.toMap(
+                s->s.charAt(0),
+                s->s,
+                (a,b) -> a.length() <= b.length() ? a:b
+        ));
+    }
+
 
 
 }
