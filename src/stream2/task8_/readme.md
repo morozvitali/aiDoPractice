@@ -4,11 +4,8 @@
 Цей модуль навчить:
 
 перетворювати Optional у потік;
-
 витягувати колекції з Optional;
-
 поєднувати декілька Optional без if/else;
-
 і робити ланцюжки .flatMap(Optional::stream) як профі.
 
 ⚙️ Модуль №8 — Optional + Stream
