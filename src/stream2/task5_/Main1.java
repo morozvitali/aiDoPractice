@@ -56,5 +56,12 @@ Stream.concat(java.stream().map(j->"java" + j), js.stream().map((j->"js" + j))).
         Stream.concat(names, ages.map(String::valueOf)).forEach(System.out::println);
     }
 
+    public void practice8 () {
+        Stream<String> names = Stream.of("Bob", "Ann");
+        Stream<Integer> ages = Stream.of(25, 30);
+        Stream.concat(names, ages.map(String::valueOf)).forEach(System.out::println);
+    }
+
+
 
 }
