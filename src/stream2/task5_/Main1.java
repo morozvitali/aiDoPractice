@@ -77,5 +77,15 @@ Stream.concat(java.stream().map(j->"java" + j), js.stream().map((j->"js" + j))).
         }
     }
 
+    public void practice10 () {
+        Stream <String> numbers = Stream.of("1", "2");
+        Stream <String> letters = Stream.of("A", "B");
+        Stream <String> sighs = Stream.of("!", "?");
 
+        String merged = Stream.of(numbers, letters, sighs)
+                .reduce(Stream::concat)
+                .orElse(Stream.empty())
+                .collect(Collectors.joining(" "));
+        System.out.println(merged);
+    }
 }
