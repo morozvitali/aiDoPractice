@@ -50,4 +50,16 @@ public class Main1 {
         System.out.println(map);
     }
 
+    public void practice6 () {
+        Map <Character, List <String>> map = Stream.of("cat", "cow", "dog")
+                .collect(Collectors.toUnmodifiableMap(
+                        w->w.charAt(0),
+                        w->List.of(w),
+                        (l1,l2) -> Stream.concat(l1.stream(), l2.stream()).toList()
+                ));
+        System.out.println(map);
+    }
+
+
+
 }
