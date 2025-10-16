@@ -1,5 +1,6 @@
 package stream2.task7_;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -67,6 +68,11 @@ public class Main1 {
         unmodifiable.add("C");
     }
 
-
+    public void practice8 () {
+        List<String> source = new ArrayList<>(List.of("A", "B", "C"));
+        List <String> result = source.stream().collect(Collectors.toUnmodifiableList());
+        source.add("D");
+        System.out.println(result);
+    }
 
 }
