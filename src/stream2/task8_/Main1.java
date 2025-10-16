@@ -44,6 +44,16 @@ public class Main1 {
                 .forEach(System.out::println);
     }
 
+    public void practice7 () {
+        List<String> users = List.of("Bob", "Alexander", "Tom");
+        String result = users.stream()
+                .filter(u->u.length() > 5)
+                .findFirst()
+                .orElse("none");
+        System.out.println(result);
+    }
 
+    public void practice8 () {
 
+    }
 }
