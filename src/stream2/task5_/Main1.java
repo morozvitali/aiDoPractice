@@ -1,7 +1,11 @@
 package stream2.task5_;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -62,6 +66,16 @@ Stream.concat(java.stream().map(j->"java" + j), js.stream().map((j->"js" + j))).
         Stream.concat(names, ages.map(String::valueOf)).forEach(System.out::println);
     }
 
+    public void practice9 () {
+        try (
+                Stream <String> file1 = Files.lines(Path.of("a.txt"));
+                Stream <String> file2 = Files.lines(Path.of("b.txt"))) {
+            Stream.concat(file1, file2).forEach(System.out::println);
+            }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 }
