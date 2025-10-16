@@ -37,5 +37,13 @@ public class Main1 {
         System.out.println(list);
     }
 
+    public void practice6 () {
+        Optional <Optional<String>> nested = Optional.of(Optional.of("Hello"));
+        nested.stream()
+                .flatMap(Optional::stream)
+                .forEach(System.out::println);
+    }
+
+
 
 }
