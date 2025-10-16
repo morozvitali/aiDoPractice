@@ -29,12 +29,19 @@ public class Main1 {
     }
 
     public void practice4 () {
-
         Stream<String> s1 = Stream.of("a");
         Stream<String> s2 = Stream.of("b");
         Stream<String> s3 = Stream.of("c");
         Stream <String> merged = Stream.of(s1, s2, s3).reduce(Stream::concat).orElse(Stream.empty());
         merged.forEach(System.out::println);
     }
+
+    public  void practice5 () {
+        List<String> java = List.of("Spring", "Hibernate");
+        List<String> js = List.of("React", "Vue");
+Stream.concat(java.stream().map(j->"java" + j), js.stream().map((j->"js" + j))).forEach(System.out::println);
+    }
+
+
 
 }
