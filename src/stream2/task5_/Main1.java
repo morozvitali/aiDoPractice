@@ -2,6 +2,7 @@ package stream2.task5_;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main1 {
@@ -36,12 +37,18 @@ public class Main1 {
         merged.forEach(System.out::println);
     }
 
-    public  void practice5 () {
+    public void practice5 () {
         List<String> java = List.of("Spring", "Hibernate");
         List<String> js = List.of("React", "Vue");
 Stream.concat(java.stream().map(j->"java" + j), js.stream().map((j->"js" + j))).forEach(System.out::println);
     }
 
+    public void practice6 () {
+        IntStream evens = IntStream.of(2, 4, 6);
+        IntStream odds = IntStream.of(1, 3, 5);
+
+        IntStream.concat(odds, evens).sorted().forEach(System.out::println);
+    }
 
 
 }
