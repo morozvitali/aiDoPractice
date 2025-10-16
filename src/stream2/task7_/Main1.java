@@ -29,5 +29,15 @@ public class Main1 {
                 ));
     }
 
+    public void practice4 () {
+        List<String> list = List.of("apple", "apricot");
+        Map <Character, String> map = list.stream()
+                .collect(Collectors.toUnmodifiableMap(
+                        s->s.charAt(0),
+                        s->s
+                ));
+            // Illegal State Exception, dublicate key 'a'
+
+    }
 
 }

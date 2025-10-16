@@ -43,6 +43,8 @@ map.put("D", 2); // 💥 UnsupportedOperationException
 
 🎯 Мета: переконатися, що без mergeFunction toUnmodifiableMap падає.
 
+# що таке mergeFunction ?? чому падає
+
 List<String> list = List.of("apple", "apricot");
 
 Map<Character, String> map = list.stream()
