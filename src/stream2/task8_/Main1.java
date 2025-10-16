@@ -2,6 +2,7 @@ package stream2.task8_;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Main1 {
 
@@ -26,7 +27,15 @@ public class Main1 {
         found.stream().forEach(System.out::println);
     }
 
-
+    public void practice5 () {
+        Stream <Optional <String>> optionals = Stream.of(
+          Optional.of("A"),
+          Optional.empty(),
+          Optional.of("A")
+        );
+        List <String> list = optionals.flatMap(Optional::stream).toList();
+        System.out.println(list);
+    }
 
 
 }
