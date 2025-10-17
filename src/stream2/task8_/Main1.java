@@ -52,8 +52,4 @@ public class Main1 {
                 .orElse("none");
         System.out.println(result);
     }
-
-    public void practice8 () {
-
-    }
 }
