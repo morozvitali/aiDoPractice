@@ -32,6 +32,9 @@ public class Main33 {
         return list.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Counter" + count));
     }
 
+    public void practice6 (List <String> list) {
+        list.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.joining(", ")));
+    }
 
 
 }
