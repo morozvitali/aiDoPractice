@@ -75,5 +75,7 @@ public class Main35 {
                 ));
     }
 
-
+    public Map <Character, Integer> practice12 (String[] list) {
+        return Arrays.stream(list).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
+    }
 }
