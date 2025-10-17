@@ -49,5 +49,10 @@ public class Main15 {
         return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
         }
 
+    public String practice7 (List <String> list) {
+        return list.stream().filter(w->w.contains("e")).min(Comparator.comparing(String::length)).orElse("");
+    }
+
+
 
 }
