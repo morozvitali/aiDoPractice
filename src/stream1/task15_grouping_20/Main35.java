@@ -60,6 +60,20 @@ public class Main35 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse('0');
     }
 
+    public LinkedHashMap <Character, Long> practice11 () {
+        Map <Character, Long> map = new HashMap<>();
+        map.put('a', 2L);
+        map.put('b', 5L);
+        map.put('c', 1L);
+
+        return map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue,
+                        LinkedHashMap::new
+                ));
+    }
 
 
 }
