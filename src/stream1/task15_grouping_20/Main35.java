@@ -78,4 +78,12 @@ public class Main35 {
     public Map <Character, Integer> practice12 (String[] list) {
         return Arrays.stream(list).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.summingInt(w->Integer.parseInt(w.substring(1)))));
     }
+
+    public String practice13 (List <String> list) {
+        return list.stream().collect(Collectors.toMap(Function.identity(), Main35::getCount)).entrySet().stream()
+                .max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+
+
 }
