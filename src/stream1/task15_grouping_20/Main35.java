@@ -40,7 +40,12 @@ public class Main35 {
     }
 
     public Map <Integer, Long> practice6 (String s) {
-        return s.chars().filter(Character::isDigit).map(Character::getNumericValue).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return s.chars().filter(Character::isDigit).mapToObj(Character::getNumericValue).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public boolean practice7 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().anyMatch(entry -> entry.getValue() >1);
     }
 
 
