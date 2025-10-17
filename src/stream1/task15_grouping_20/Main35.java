@@ -84,6 +84,10 @@ public class Main35 {
                 .max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
     }
 
+    public Boolean practice14 (Map <String, Integer> map) {
+        return map.entrySet().stream().allMatch(value-> value.getValue() %2 == 0);
+    }
+
 
 
 }
