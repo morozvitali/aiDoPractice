@@ -3,6 +3,7 @@ package stream1.task17_collectors_15_firstMaking;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class Main33 {
@@ -55,6 +56,13 @@ public class Main33 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.collectingAndThen(Collectors.toList(), list -> list.stream().sorted(Comparator.comparing(String::length)).toList())));
     }
 
-
-
+    public TreeMap <Integer, List <String>> practice10 () {
+        List <String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+            return words.stream().collect(Collectors.groupingBy(
+                    String::length,
+                    TreeMap::new,
+                    Collectors.toList()
+            ));
+    }
 }
