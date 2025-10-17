@@ -26,6 +26,12 @@ public class Main33 {
         List<String> words = List.of("hi", "hi",
                 "book", "sun", "day", "Java", "sky");
         words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
-
     }
+
+    public String practice5 (List <Integer> list) {
+        return list.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "Counter" + count));
+    }
+
+
+
 }
