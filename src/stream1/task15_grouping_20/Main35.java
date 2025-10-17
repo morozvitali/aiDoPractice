@@ -1,6 +1,7 @@
 package stream1.task15_grouping_20;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -15,6 +16,13 @@ public class Main35 {
     public static long getCount(String s) {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
+
+    public long practice2 (String s) {
+        return s.chars().mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().filter(e->e.getValue() > 1).count();
+    }
+
 
 
 }
