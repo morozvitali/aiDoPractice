@@ -53,6 +53,12 @@ public class Main35 {
         return Stream.of(3, 6, 7, 8, 9, 10, 12).collect(Collectors.groupingBy(a->a%3, Collectors.averagingInt(n->n)));
     }
 
+    public Character practice10 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse('0');
+    }
 
 
 
