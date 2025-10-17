@@ -1,9 +1,6 @@
 package stream1.task15_grouping_20;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -47,6 +44,11 @@ public class Main35 {
         return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().anyMatch(entry -> entry.getValue() >1);
     }
+
+    public Map <String, List<Integer>> practice8 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(n->n%2==0 ? "even" : "odd"));
+    }
+
 
 
 }
