@@ -2,6 +2,7 @@ package stream1.task16_comparator_8;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class Main15 {
@@ -21,5 +22,13 @@ public class Main15 {
                 .orElse("");
     }
 
-
+    public Integer practice3 () {
+        return Stream.of(111, 123, 444, 1212).map(n -> Map.entry(n,
+                        (int) String.valueOf(n)
+                                .chars()
+                                .distinct()
+                                .count()))
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey).orElse(-1);
+    }
 }
