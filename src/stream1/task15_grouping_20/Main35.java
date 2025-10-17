@@ -94,5 +94,12 @@ public class Main35 {
         return Arrays.stream(words).collect(Collectors.groupingBy(String::length));
     }
 
+    public Map <Integer, Long> practice16 () {
+        String[] words = {"apple", "banana",
+                "dog", "kiwi", "plum"};
+        return Arrays.stream(words).filter(w->getCount(w)>0).collect(Collectors.groupingBy(String::length, Collectors.counting()));
+    }
+
+
 
 }
