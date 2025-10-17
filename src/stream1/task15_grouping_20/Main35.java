@@ -100,6 +100,10 @@ public class Main35 {
         return Arrays.stream(words).filter(w->getCount(w)>0).collect(Collectors.groupingBy(String::length, Collectors.counting()));
     }
 
-
+    public Map<Boolean, List<String>> practice17 () {
+        String[] words = {"apple", "sky",
+                "banana", "dry", "orange"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->getCount(w) >0));
+    }
 
 }
