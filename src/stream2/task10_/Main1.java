@@ -51,7 +51,10 @@ public class Main1 {
         return items.stream().collect(Collectors.groupingBy(Product::getFruit, Collectors.counting()));
     }
 
-
+    public void practice6 () {
+        List<String> words = List.of("apple", "ape", "banana", "ball", "berry");
+        Map <Character, Double> map = words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
 
 
 }
