@@ -59,5 +59,16 @@ public class Main1 {
         int len = word.stream().map(String::length).findFirst().orElse(0);
     }
 
-
+    public void practice10() {
+        List<Optional<String>> optionals = List.of(
+                Optional.of("red"),
+                Optional.empty(),
+                Optional.of("green"),
+                Optional.of("blue")
+        );
+        String result = optionals.stream()
+                .flatMap(Optional::stream)
+                .collect(Collectors.joining(", "));
+        System.out.println(result);
+    }
 }
