@@ -21,6 +21,12 @@ public class Main1 {
                 .forEachOrdered(System.out::println);
     }
 
+    public void practice4 () {
+        List.of("A", "B", "C","D")
+                .parallelStream()
+                .forEach(s-> System.out.println(Thread.currentThread().getName() + "->" + s));
+    }
+
 
 
 }
