@@ -77,4 +77,10 @@ public class Main1 {
         System.out.println(sum);
     }
 
+    public void practice10 () {
+        int result = IntStream.rangeClosed(1,5)
+                .parallel()
+                .reduce(0, (a,b) -> a-b);
+        System.out.println(result);
+    }
 }
