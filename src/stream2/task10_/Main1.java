@@ -77,6 +77,16 @@ public class Main1 {
         System.out.println(s1);
     }
 
+    public Map <String, IntSummaryStatistics> practice10 () {
+        List<Product> data = List.of(
+                new Product("A", 5),
+                new Product("A", 15),
+                new Product("B", 10),
+                new Product("B", 20)
+        );
+
+        return data.stream().collect(Collectors.groupingBy(Product::getFruit, Collectors.summarizingInt(Product::getPrice)));
+    }
 }
 
 class Product {
