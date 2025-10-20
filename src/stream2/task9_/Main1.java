@@ -48,6 +48,15 @@ public class Main1 {
         System.out.println(result);// Може бути неповним або кинути Exception
     }
 
+    public void practice7 () {
+        List <Integer> result = IntStream.range(1,10)
+                .parallel()
+                .boxed()
+                .toList();
+        System.out.println(result);
+    }
+
+
 
 
 }
