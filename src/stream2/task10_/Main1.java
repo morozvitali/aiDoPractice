@@ -60,6 +60,18 @@ public class Main1 {
         List<String> words = List.of("apple", "ape", "banana", "ball", "berry");
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(String::length, Collectors.summarizingInt(Integer::intValue))));
     }
+
+    public Map <Boolean, IntSummaryStatistics> practice8 () {
+        List<Product> items = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5)
+        );
+        return items.stream().collect(Collectors.partitioningBy(p->p.getPrice() >= 10, Collectors.summarizingInt(Product::getPrice)));
+    }
+
+
+
 }
 
 class Product {
