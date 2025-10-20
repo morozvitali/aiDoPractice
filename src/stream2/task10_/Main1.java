@@ -70,7 +70,12 @@ public class Main1 {
         return items.stream().collect(Collectors.partitioningBy(p->p.getPrice() >= 10, Collectors.summarizingInt(Product::getPrice)));
     }
 
-
+    public void practice9 () {
+        IntSummaryStatistics s1 = IntStream.of(1, 2, 3).summaryStatistics();
+        IntSummaryStatistics s2 = IntStream.of(4, 5, 6).summaryStatistics();
+        s1.combine(s2);
+        System.out.println(s1);
+    }
 
 }
 
