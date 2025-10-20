@@ -33,7 +33,14 @@ public class Main1 {
         return items.stream().collect(Collectors.groupingBy(Product::getFruit, Collectors.averagingInt(Product::getPrice)));
     }
 
-
+    public Map <String, IntSummaryStatistics> practice4 () {
+        List<Product> items = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5)
+        );
+        return items.stream().collect(Collectors.groupingBy(Product::getFruit, Collectors.summarizingInt(Product::getPrice)));
+    }
 
 
 
