@@ -1,5 +1,6 @@
 package stream2.task9_;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -40,5 +41,13 @@ public class Main1 {
         System.out.println("Normal " + (t2 -t1) + "ms");
         System.out.println("Normal " + (t3 -t2) + "ms");
     }
+
+    public void practice6 () {
+        List <Integer> result = new ArrayList<>();
+        IntStream.range(1,10).parallel().forEach(result::add);
+        System.out.println(result);// Може бути неповним або кинути Exception
+    }
+
+
 
 }
