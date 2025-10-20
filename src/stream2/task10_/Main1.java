@@ -56,7 +56,10 @@ public class Main1 {
         Map <Character, Double> map = words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 
-
+    public Map <Character, IntSummaryStatistics> practice7 () {
+        List<String> words = List.of("apple", "ape", "banana", "ball", "berry");
+        return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(String::length, Collectors.summarizingInt(Integer::intValue))));
+    }
 }
 
 class Product {
