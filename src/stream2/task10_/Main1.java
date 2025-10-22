@@ -84,7 +84,6 @@ public class Main1 {
                 new Product("B", 10),
                 new Product("B", 20)
         );
-
         return data.stream().collect(Collectors.groupingBy(Product::getFruit, Collectors.summarizingInt(Product::getPrice)));
     }
 }
