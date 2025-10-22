@@ -342,7 +342,7 @@ x instanceof String
 
     public List <String> practice9 () {
         List <Object> list = List.of("hello", 1, 2.5, true, "world");
-        return list.stream1().filter(value-> value instanceof String).map(value-> (String) value).toList();
+        return list.stream().filter(value-> value instanceof String).map(value-> (String) value).toList();
     }
 📌 Пояснення:
 .filter(value -> value instanceof String) — залишаємо лише рядки
