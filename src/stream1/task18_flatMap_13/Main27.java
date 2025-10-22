@@ -90,4 +90,7 @@ public class Main27 {
         return list.stream().filter(b->b instanceof Boolean && b == (Boolean)true).map(b->(Boolean)b).toList();
     }
 
+    public List <String> practice12 (List <Object> list) {
+        return list.stream().filter(w->w instanceof String).map(w-> ((String)w).toUpperCase()).toList();
+    }
 }
