@@ -2,6 +2,7 @@ package stream1.task17_collectors_15_firstMaking;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Main34 {
@@ -20,6 +21,12 @@ public class Main34 {
     public Map <Boolean, Long> practice3 () {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6);
         return numbers.stream().collect(Collectors.partitioningBy(a->a%2==0, Collectors.counting()));
+    }
+
+    public Map <Integer, Set <String>> practice4 () {
+        List<String> words = List.of("hi", "hi",
+                "book", "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
     }
 
 
