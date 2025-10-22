@@ -84,8 +84,8 @@ sorted(Comparator.comparing(...))	Сортування за певним пол�
 📥 Вхід:
 
 List<String> words = List.of("tea", "lemon", 
-"fig", "grape", "banana");
-📤 Очікувано:
+"fig", "grape", "banana");`
+📤 Очікувано:`
 
 [lemon, grape, banana]
 💡 Підказка:
