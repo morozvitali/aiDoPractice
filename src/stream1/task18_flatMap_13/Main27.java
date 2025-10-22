@@ -62,6 +62,18 @@ public class Main27 {
                 .average().orElse(0);
     }
 
+    public void practice7 () {
+        int[][] data = {
+                {12},
+                {24, 36}
+        };
+        Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main27::gcd).orElse(-1);
+    }
+
+    public static int gcd (int a, int b) {
+        return b==0 ? a : gcd (b, a%b);
+    }
+
 
 
 }
