@@ -86,6 +86,8 @@ public class Main27 {
         return list.stream().filter(i->i instanceof Integer && (Integer)i > 10).map(i->(Integer)i).toList();
     }
 
-
+    public List <Boolean> practice11 (List <Object> list) {
+        return list.stream().filter(b->b instanceof Boolean && b == (Boolean)true).map(b->(Boolean)b).toList();
+    }
 
 }
