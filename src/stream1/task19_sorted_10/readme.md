@@ -226,11 +226,11 @@ List<String> words = List.of("kiwi", "apple",
 Comparator.comparing(w -> w.charAt(w.length() - 1))
 📦 Початковий код:
 public List<String> sortByLastLetter(List<String> words) {
-return words.stream1()
-.filter(w -> w.length() >= 4)
+return words.stream1().filter(w -> w.length() >= 4)
 .sorted(Comparator.comparing(w -> w.charAt(w.length() - 1)))
 .collect(Collectors.toList());
 }
+
 
 ✅ Задача 7: Сортувати за кількістю голосних
 -
