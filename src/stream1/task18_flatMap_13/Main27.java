@@ -82,5 +82,10 @@ public class Main27 {
         return list.stream().filter(value-> value instanceof String).map(value-> (String) value).toList();
     }
 
+    public List <Integer> practice10 (List <Object> list) {
+        return list.stream().filter(i->i instanceof Integer && (Integer)i > 10).map(i->(Integer)i).toList();
+    }
+
+
 
 }
