@@ -39,5 +39,18 @@ public class Main34 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.joining(", ")));
     }
 
+    public Map <Integer, Integer> practice7 () {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        return numbers.stream().collect(Collectors.groupingBy(a->a%3, Collectors.reducing(0, Integer::sum)));
+    }
+
+    public String practice8 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.reducing("", (a, b) -> a.length() > b. length() ? a : b));
+    }
+
+
+
 
 }
