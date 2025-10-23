@@ -74,21 +74,30 @@ public class Main2 {
         ));
     }
 
-    public void practice6 () {
+    public Map<Character, Integer> practice6() {
         List<String> words = List.of("apple", "banana", "pear");
 
         Map<Character, Integer> map = words.stream().collect(Collector.of(
                 HashMap::new,
-                (m,s) -> m.put(s.charAt(0), s.length()),
-                (m1,m2) -> { m1.putAll(m2); return m1;}));
+                (m, s) -> m.put(s.charAt(0), s.length()),
+                (m1, m2) -> {
+                    m1.putAll(m2);
+                    return m1;
+                }));
+
+        return map;
     }
 
-
-
-
-
-
-
+    public List<String> practice7() {
+        List<String> list = List.of("a", "b", "c");
+        List<String> upper = list.stream().collect(Collector.of(
+                ArrayList::new,
+                List::add,
+                (a, b) -> { a.addAll(b); return a; },
+                l -> l.stream().map(w-> ((String) w).toUpperCase()).toList()
+        ));
+        return upper;
+    }
 
 
 
