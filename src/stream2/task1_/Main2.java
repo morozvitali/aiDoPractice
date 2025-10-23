@@ -93,10 +93,30 @@ public class Main2 {
         List<String> upper = list.stream().collect(Collector.of(
                 ArrayList::new,
                 List::add,
-                (a, b) -> { a.addAll(b); return a; },
-                l -> l.stream().map(w-> ((String) w).toUpperCase()).toList()
+                (a, b) -> {
+                    a.addAll(b);
+                    return a;
+                },
+                l -> l.stream().map(w -> ((String) w).toUpperCase()).toList()
         ));
         return upper;
+    }
+
+    public void practice8() {
+        List<String> names = List.of("Mark", "Luke", "John");
+        String joined = names.stream().collect(Collector.of(
+                StringBuilder::new,
+                (sb, s) -> {
+                    if (sb.length() > 0) sb.append(", ");
+                    sb.append(s);
+                },
+                (a, b) -> {
+                    if (a.length() > 0 && b.length() > 0) a.append(", ");
+                    a.append(b);
+                    return a;
+                },
+                StringBuilder::toString
+        ));
     }
 
 
