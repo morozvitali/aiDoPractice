@@ -27,7 +27,7 @@ public class Main2 {
         return sum;
     }
 
-    public void practice3 () {
+    public double practice3 () {
         List<Integer> list = List.of(5, 10, 15);
         double avg = list.stream().collect(Collector.of(
                 () -> new int [2],
@@ -35,6 +35,7 @@ public class Main2 {
                 (a1,a2) -> {a1[0] +=a2[0]; a1[1]+=a2[1]; return a1;},
                 a->(double)a[0]/a[1]
         ));
+        return avg;
     }
 
 
