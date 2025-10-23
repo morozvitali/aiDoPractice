@@ -119,6 +119,16 @@ public class Main2 {
         ));
     }
 
+    public void practice9 () {
+        List<Integer> nums = List.of(10, 20, 30);
+        Map <String, Double> result = nums.stream().collect(Collector.of(
+                () -> new double[2],
+                (a,n) -> {a[0]+= n; a[1]++; },
+                (a1,a2) -> {a1[0]+= a2[0];a1[1]+=a2[1]; return a1;},
+                a->Map.of("sum", a[0], "avg", a[0]/a[1])
+        ));
+    }
+
 
 
 }
