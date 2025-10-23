@@ -202,4 +202,5 @@ a -> a[0]
 
 Кожен колектор має 3 фази: накопичення, об’єднання, фінішування.
 
-Ви можете створити свій “mini-joining”, “mini-summarizing” або навіть Collector.toImmutableMap().
+Ви можете створити свій “mini-joining”, “mini-summarizing” 
+або навіть Collector.toImmutableMap().
