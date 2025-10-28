@@ -1,5 +1,6 @@
 package stream2.task2_;
 
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.DoubleStream;
@@ -51,6 +52,11 @@ public class Main2 {
                 .toList();
 
         System.out.println(rounded);
+    }
+
+    public void practice9 () {
+        IntSummaryStatistics stats = IntStream.of(2, 4, 6, 8, 10).summaryStatistics();
+        System.out.println(stats.getMax());
     }
 
 
