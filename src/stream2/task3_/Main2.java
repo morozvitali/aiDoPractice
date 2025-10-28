@@ -15,5 +15,11 @@ public class Main2 {
                 .forEach(System.out::println);
     }
 
+    public void practice3 () {
+        Stream.of(1,2,3,5,6,7,2)
+                .filter(a->a<5)
+                .forEach(System.out::println);
+    }
+
 
 }
