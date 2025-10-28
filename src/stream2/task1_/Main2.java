@@ -139,11 +139,4 @@ public class Main2 {
                         a->a[0]
                 ));
     }
-
-
-
-
-
-
-
 }
