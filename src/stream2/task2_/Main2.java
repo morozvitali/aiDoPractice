@@ -2,6 +2,7 @@ package stream2.task2_;
 
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 public class Main2 {
     public void practice1() {
@@ -25,7 +26,10 @@ public class Main2 {
         System.out.println(result);
     }
 
-
+    public void practice5 () {
+        long factorial = LongStream.rangeClosed(1,5).reduce(1, (a,b)->a*b);
+        System.out.println(factorial);
+    }
 
 
 
