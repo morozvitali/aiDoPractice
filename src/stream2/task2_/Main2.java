@@ -42,5 +42,17 @@ public class Main2 {
         System.out.println(list);
     }
 
+    public void practice8 () {
+        List <Integer> rounded = DoubleStream.generate(Math::random)
+                .limit(5)
+                .map(d->d*10)
+                .mapToInt(d->(int) Math.round(d))
+                .boxed()
+                .toList();
+
+        System.out.println(rounded);
+    }
+
+
 
 }
