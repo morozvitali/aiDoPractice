@@ -3,6 +3,7 @@ package stream1.task17_collectors_15_firstMaking;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Main35 {
@@ -27,9 +28,13 @@ public class Main35 {
         List<String> words = List.of("hi", "hi",
                 "book", "sun", "day", "Java", "sky");
         return words.stream().collect(Collectors.groupingBy(String::length, Collectors.toSet()));
-
-
-
     }
+
+    public String practice5 () {
+        List<Integer> numbers = List.of(4, 8, 15, 16, 23, 42);
+        return numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count-> " Count " + count));
+    }
+
+
 
 }
