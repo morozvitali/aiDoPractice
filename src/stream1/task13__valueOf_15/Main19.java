@@ -76,5 +76,8 @@ public class Main19 {
         return input.chars().filter(Character::isLetter).mapToObj(c->(char)c).sorted().toList();
     }
 
-
+    public boolean practice15 () {
+        String input1 = "123456";
+        return input1.chars().allMatch(Character::isDigit);
+    }
 }
