@@ -6,17 +6,21 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Main36 {
-    public Map<String, Boolean> practice1 () {
+    public Map<String, Boolean> practice1() {
         String[] words = {"sky", "apple", "dry", "orange", "sun"};
-        return Arrays.stream(words).collect(Collectors.toMap(Function.identity(), w->getCount(w)>0));
+        return Arrays.stream(words).collect(Collectors.toMap(Function.identity(), w -> getCount(w) > 0));
     }
 
     public static long getCount(String s) {
-        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+        return s.chars().filter(c -> "aeiou".indexOf(c) >= 0).count();
     }
 
-    public Long practice2 (String s) {
-        return s.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(v->v.getValue() > 1).count();
+    public Long practice2(String s) {
+        return s.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().filter(v -> v.getValue() > 1).count();
+    }
+
+    public String practice3(String s) {
+        return Arrays.stream(s.split(" ")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("-1");
     }
 
 
