@@ -51,4 +51,10 @@ public class Main16 {
     }
 
 
+    public String practice7 () {
+        return Stream.of("abc", "def", "gka", "lol").filter(w->w.contains("e")).min(Comparator.comparing(String::length)).orElse("");
+    }
+
+
+
 }
