@@ -15,6 +15,17 @@ public class Main28 {
     }
 
 
+public Integer practice2 () {
+        int[][] data = {
+                {3, 11},
+                {6, 7},
+                {10}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).min().orElse(-1);
+}
+
+
+
 
 
 
