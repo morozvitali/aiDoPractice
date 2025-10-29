@@ -55,6 +55,8 @@ public class Main16 {
         return Stream.of("abc", "def", "gka", "lol").filter(w->w.contains("e")).min(Comparator.comparing(String::length)).orElse("");
     }
 
-
+    public List <Integer> practice8 () {
+        return List.of(100, 1010, 5, 2000, 10).stream().sorted(Comparator.comparing(a->String.valueOf(a).chars().filter(c->c=='0').count())).toList();
+    }
 
 }
