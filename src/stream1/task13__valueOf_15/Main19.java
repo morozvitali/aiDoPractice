@@ -46,5 +46,8 @@ public class Main19 {
                 .mapToObj(c->(char)c).collect(Collectors.groupingBy(c->c, Collectors.counting()));
     }
 
-
+    public String practice9 () {
+        String s = "a1b2c3d4";
+        return s.chars().filter(c->!Character.isDigit(c)).mapToObj(String::valueOf).collect(Collectors.joining());
+    }
 }
