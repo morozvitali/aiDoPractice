@@ -51,4 +51,9 @@ public Integer practice2 () {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).map(a->a*a).sum();
     }
 
+    public List <Integer> practice8 (List <Object> list) {
+        return list.stream().filter(a->a instanceof Integer).map(a->(Integer)a).toList();
+    }
+
+
 }
