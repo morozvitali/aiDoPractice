@@ -1,6 +1,8 @@
 package stream1.task13__valueOf_15;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main19 {
     public List <String> practice1 () {
@@ -36,6 +38,12 @@ public class Main19 {
     public List <String> practice7 () {
         String s = "java";
         return s.chars().mapToObj(String::valueOf).map(String::toUpperCase).toList();
+    }
+
+    public Map <Character, Long> practice8 () {
+        String s = "banana";
+        return s.chars().filter(Character::isLetter)
+                .mapToObj(c->(char)c).collect(Collectors.groupingBy(c->c, Collectors.counting()));
     }
 
 
