@@ -66,6 +66,11 @@ public class Main19 {
         return input.chars().mapToObj(c->String.valueOf(c) + (int)c+1).toList();
     }
 
+    public List <Character> practice13 () {
+        List<Integer> digits = List.of(1, 2, 3, 9);
+        return digits.stream().map(c->(char)('0'+c)).toList();
+    }
+
 
 
 }
