@@ -55,6 +55,4 @@ public class Main36 {
         return Arrays.stream(words).collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()))
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse('0');
     }
-
-
 }
