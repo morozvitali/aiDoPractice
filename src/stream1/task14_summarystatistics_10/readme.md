@@ -274,7 +274,6 @@ false = [banana, date]
 .collect(Collectors.partitioningBy(w -> Character
 .isUpperCase(w.charAt(0))))
 
-
     public Map<Boolean, List<String>> practice10 () {
         String[] words = {"Apple", "banana",
                 "Cherry", "date", "Eggplant"};
