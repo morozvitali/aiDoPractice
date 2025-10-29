@@ -14,6 +14,14 @@ public class Main16 {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
 
+    public List<String> practice2 () {
+        return List.of("alpha", "arena", "java", "banana", "lava").stream().sorted(Comparator.comparing(w->aCounter(w))).toList();
+    }
+
+    public static long aCounter (String s) {
+        return s.chars().filter(c->c=='a').count();
+    }
+
 
 
 }
