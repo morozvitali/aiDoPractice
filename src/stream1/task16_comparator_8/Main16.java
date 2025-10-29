@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main16 {
     public List <String> practice1 () {
@@ -44,7 +45,10 @@ public class Main16 {
                 .max(Comparator.comparing(String::length)).orElse("");
     }
 
-
+    public List<String> practice6 () {
+        return Stream.of("abc", "def", "gka", "lol")
+                .sorted(Comparator.comparing(w->w.charAt(0))).toList();
+    }
 
 
 }
