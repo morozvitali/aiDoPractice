@@ -1,9 +1,6 @@
 package stream1.task17_collectors_15_firstMaking;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -60,11 +57,16 @@ public class Main35 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.collectingAndThen(Collectors.toList(), list->list.stream().sorted(Comparator.comparing(String::length)).toList())));
     }
 
-    public void practic10 () {
-        List<String> words = List.of("apple", "ant",
-                "alphabet", "axe", "banana", "bat");
-
-
+    public TreeMap<Integer, List<String>> practic10 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.groupingBy(
+                String::length,
+                TreeMap::new,
+                Collectors.toList()
+        ));
     }
+
+
 
 }
