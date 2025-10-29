@@ -33,10 +33,12 @@ public class Main36 {
     }
 
     public Map <Integer, Long> practice6 (String s) {
-        return s.chars().filter(Character::isDigit).map(Character::getNumericValue).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return s.chars().filter(Character::isDigit).map(Character::getNumericValue).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-
+    public Boolean practice7 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream().anyMatch(v->v.getValue() >1);
+    }
 
 
 }
