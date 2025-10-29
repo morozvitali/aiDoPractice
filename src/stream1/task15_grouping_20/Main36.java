@@ -49,7 +49,12 @@ public class Main36 {
         return Stream.of(1, 2, 3, 4, 5).collect(Collectors.groupingBy(a->a%3, Collectors.averagingInt(n->n)));
     }
 
-
+    public Character practice10 () {
+        String[] words = {"apple", "banana", "avocado",
+                "blueberry", "bleuberry", "apricot"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse('0');
+    }
 
 
 }
