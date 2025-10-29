@@ -60,6 +60,11 @@ public class Main35 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.collectingAndThen(Collectors.toList(), list->list.stream().sorted(Comparator.comparing(String::length)).toList())));
     }
 
+    public void practic10 () {
+        List<String> words = List.of("apple", "ant",
+                "alphabet", "axe", "banana", "bat");
 
+
+    }
 
 }
