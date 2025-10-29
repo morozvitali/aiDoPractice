@@ -31,5 +31,16 @@ public class Main16 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
     }
 
+    public String practice4 (List <String> list) {
+        return list.stream()
+                .map(w->Map.entry(w, w.chars().sum()))
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
+
+
+
+
 
 }
