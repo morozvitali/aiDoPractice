@@ -71,6 +71,10 @@ public class Main19 {
         return digits.stream().map(c->(char)('0'+c)).toList();
     }
 
+    public List <Character> practice14 () {
+        String input = "a1C!bZ2";
+        return input.chars().filter(Character::isLetter).mapToObj(c->(char)c).sorted().toList();
+    }
 
 
 }
