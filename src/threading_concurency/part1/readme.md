@@ -31,7 +31,6 @@ for (int i = 1; i <= 5; i++) {
 System.out.println(Thread.currentThread().getName() + " → " + i);
 }
 };
-        // реалізація Runnable через клас
         Thread t = new Thread(job);
         t.start();
 
