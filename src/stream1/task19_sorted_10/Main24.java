@@ -11,4 +11,14 @@ public class Main24 {
     return words.stream().filter(w->w.length() >3).sorted(Comparator.comparing(String::length)).toList();
     }
 
+    public List <Integer> practice2 () {
+        List<Integer> numbers = List.of(3, 7, 1, 9, 2);
+        return numbers.stream().sorted(Comparator.reverseOrder()).toList();
+    }
+
+
+
+
+
+
 }
