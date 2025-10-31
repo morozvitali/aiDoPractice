@@ -27,6 +27,14 @@ public class Main24 {
         return words.stream().sorted(  Comparator.comparing(w->w.charAt(w.length()-1))).toList();
     }
 
+    public void practice7 () {
+        List<String> words = List.of("apple",
+                "banana", "cherry", "kiwi", "grape");
+        words.stream().sorted(Comparator.comparing(w->countVovels(w)));
+    }
 
+    public static long countVovels (String s) {
+        return s.chars().filter(c->"aeoui".indexOf(c)>=0).count();
+    }
 
 }
