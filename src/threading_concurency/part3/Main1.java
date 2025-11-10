@@ -1,15 +1,17 @@
 package threading_concurency.part3;
 
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.stream.IntStream;
 
 public class Main1 {
 
     public static void main(String[] args) throws Exception {
         ExecutorService executor = Executors.newFixedThreadPool(3);
-        for (int i = 1; i<=5; i++) {
+        for (int i = 1; i <= 5; i++) {
             int taskId = i;
             executor.submit(() -> System.out.println(Thread.currentThread().getName() + " -> Task " + taskId));
         }
@@ -18,11 +20,13 @@ public class Main1 {
 
         System.out.println("//----------------------------------------//");
         futureDemo();
+        System.out.println("//----------------------------------------//");
+        compareStreams();
     }
 
-    public static void futureDemo () throws Exception {
+    public static void futureDemo() throws Exception {
         ExecutorService exec = Executors.newSingleThreadExecutor();
-        Callable <Integer> task = () -> {
+        Callable<Integer> task = () -> {
             System.out.println("Calculating...");
             Thread.sleep(1000);
             return 42;
@@ -31,5 +35,17 @@ public class Main1 {
         Future<Integer> result = exec.submit(task);
         System.out.println("Result " + result.get());
         exec.shutdown();
+
+    }
+
+    public static void compareStreams() {
+        List<Integer> data = IntStream.rangeClosed(1, 10_000_000).boxed().toList();
+        long t1 = System.currentTimeMillis();
+        data.stream().map(x -> x * x).toList();
+        long t2 = System.currentTimeMillis();
+        data.parallelStream().map(x -> x * x).toList();
+        long t3 = System.currentTimeMillis();
+        System.out.println("stream " + (t2 - t1) + " ms");
+        System.out.println("parallelStream " + (t3 - t2) + " ms");
     }
 }
