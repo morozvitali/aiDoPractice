@@ -10,7 +10,7 @@
 
 # Runnable — це функціональний інтерфейс в Java,
 # який використовується для опису задачі,
-# що може виконуватися в окремому потоці (thread). 
+# що може виконуватися в окремому потоці (thread).
 # Він знаходиться в пакеті java.lang і виглядає так:
 
 @FunctionalInterface
@@ -28,7 +28,7 @@ public class Task1 {
 public static void main(String[] args) {
 Runnable job = () -> {
 for (int i = 1; i <= 5; i++) {
-System.out.println(Thread.currentThread().getName() + " → " + i);
+System.out.println(Thread.currentThread().getName() + " → mesasage # " + i);
 }
 };
         Thread t = new Thread(job);

@@ -1,4 +1,4 @@
-package threading_concurency.part1;
+package threading_concurency.part1.a1;
 
 public class Main1 {
     public static void main(String[] args) {
