@@ -19,15 +19,19 @@ public class Main1 {
             }
         };
 
-        Thread t1 = new Thread(task);
-        Thread t2 = new Thread(task);
-        t1.start();
-        t2.start();
-        t1.join();
-        t2.join();
-        System.out.println("counter " + counter);
+        Runnable task2 = () -> {
+            if (lock.tryLock()) {
+                try {
+                    System.out.println(Thread.currentThread().getName() + " got the lock");
+                } finally {
+                    lock.unlock();
+                }
+            } else {
+                System.out.println(Thread.currentThread().getName() + " skipped (lock busy)");
+            }
+        };
 
-
+        new Thread(task2, "T1").start();
+        new Thread(task2, "T2").start();
     }
-
 }
