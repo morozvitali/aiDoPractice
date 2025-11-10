@@ -99,7 +99,7 @@ parallelStream: 90 ms
 🧠 parallelStream() розбиває роботу на частини та виконує їх через ForkJoinPool.commonPool.
 Але виграш є лише при достатньо великих даних або CPU-bound обчисленнях.
 
-✅ Завдання 14 — Обмеження кількості потоків у parallelStream
+# ✅ Завдання 14 — Обмеження кількості потоків у parallelStream
 
 📋 Умова: зміни розмір ForkJoinPool вручну.
 
@@ -113,8 +113,9 @@ ForkJoinPool customPool = new ForkJoinPool(2);
         customPool.submit(() -> {
             IntStream.rangeClosed(1, 10)
                 .parallel()
-                .forEach(i ->
-                    System.out.println(Thread.currentThread().getName() + " → " + i)
+                .forEach(i -> System.out.println(Thread
+                        .currentThread()
+                        .getName() + " → " + i)
                 );
         }).get();
 

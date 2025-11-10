@@ -1,10 +1,7 @@
 package threading_concurency.part3;
 
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import java.util.stream.IntStream;
 
 public class Main1 {
@@ -16,12 +13,16 @@ public class Main1 {
             executor.submit(() -> System.out.println(Thread.currentThread().getName() + " -> Task " + taskId));
         }
 
-        executor.shutdown();
+        //executor.shutdown();
+        //System.out.println("//----------------------------------------//");
+        //futureDemo();
+        //System.out.println("//----------------------------------------//");
+        //compareStreams();
+        System.out.println("//----------------------------------------//");
+        customPoolDemo();
 
-        System.out.println("//----------------------------------------//");
-        futureDemo();
-        System.out.println("//----------------------------------------//");
-        compareStreams();
+
+
     }
 
     public static void futureDemo() throws Exception {
@@ -48,4 +49,20 @@ public class Main1 {
         System.out.println("stream " + (t2 - t1) + " ms");
         System.out.println("parallelStream " + (t3 - t2) + " ms");
     }
+
+
+    public static void customPoolDemo () throws ExecutionException, InterruptedException {
+        ForkJoinPool customPool = new ForkJoinPool(2);
+        customPool.submit(()-> {
+            IntStream.rangeClosed(1,10)
+                    .parallel()
+                    .forEach(i-> System.out.println(Thread
+                            .currentThread()
+                            .getName() + " -> " + i)
+                    );
+        }).get();
+        customPool.shutdown();
+    }
+
+
 }
