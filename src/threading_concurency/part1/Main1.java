@@ -1,4 +1,4 @@
-package threading_concurency.part1.a2;
+package threading_concurency.part1;
 
 public class Main1 {
     static int counter = 0;
