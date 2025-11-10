@@ -22,7 +22,6 @@ public class Main1 {
         customPoolDemo();
 
 
-
     }
 
     public static void futureDemo() throws Exception {
@@ -51,12 +50,12 @@ public class Main1 {
     }
 
 
-    public static void customPoolDemo () throws ExecutionException, InterruptedException {
+    public static void customPoolDemo() throws ExecutionException, InterruptedException {
         ForkJoinPool customPool = new ForkJoinPool(2);
-        customPool.submit(()-> {
-            IntStream.rangeClosed(1,10)
+        customPool.submit(() -> {
+            IntStream.rangeClosed(1, 10)
                     .parallel()
-                    .forEach(i-> System.out.println(Thread
+                    .forEach(i -> System.out.println(Thread
                             .currentThread()
                             .getName() + " -> " + i)
                     );
@@ -65,4 +64,28 @@ public class Main1 {
     }
 
 
+    public void completableDemo() throws ExecutionException, InterruptedException {
+        CompletableFuture<Integer> task1 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Task1");
+            sleep(500);
+            return 10;
+        });
+
+        CompletableFuture<Integer> task2 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Task2");
+            sleep(300);
+            return 20;
+        });
+
+        CompletableFuture<Integer> result = task1.thenCombine(task2, Integer::sum);
+        System.out.println("Result " + result.get());
+
+    }
+
+    public static void sleep(long ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException ignored) {
+        }
+    }
 }
