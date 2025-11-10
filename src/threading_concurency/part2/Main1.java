@@ -5,13 +5,16 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Main1 {
 
-    static int counter =0;
+    static int counter = 0;
     static ReentrantLock lock = new ReentrantLock();
     static AtomicInteger counter3 = new AtomicInteger(0);
 
+    static int syncCounter = 0;
+    static AtomicInteger atomicCounter = new AtomicInteger(0);
+
     public static void main(String[] args) throws InterruptedException {
         Runnable task = () -> {
-            for (int i = 0; i<1000; i++) {
+            for (int i = 0; i < 1000; i++) {
                 lock.lock();
                 try {
                     counter++;
@@ -38,13 +41,33 @@ public class Main1 {
                 counter3.incrementAndGet();
             }
         };
+        long start, end;
 
-        Thread t1 = new Thread(task3);
-        Thread t2 = new Thread(task3);
-        t1.start(); t2.start();
-        t1.join(); t2.join();
+        Runnable syncTask = () -> {for (int i =0; i<1_000_000; i++) incSync();};
+        Runnable atomicTask = () -> {for (int i = 0; i<1_000_000; i++) atomicCounter.incrementAndGet();};
 
 
-        System.out.println("Counter = " + counter3.get());
+
+        Thread t1 = new Thread(syncTask);
+        Thread t2 = new Thread(syncTask);
+
+        start = System.currentTimeMillis();
+        t1.start();t2.start();t1.join();t2.join();
+        end = System.currentTimeMillis();
+        System.out.println("synchronized " + (end - start) + " ms");
+
+        t1 = new Thread(atomicTask);
+        t2 = new Thread(atomicTask);
+        start = System.currentTimeMillis();
+        t1.start(); t2.start(); t1.join(); t2.join();
+        end = System.currentTimeMillis();
+        System.out.println("AtomicInteger " + (end - start) + " ms");
     }
+
+    public static synchronized void incSync() {syncCounter++;}
+
+
+
+
 }
+
