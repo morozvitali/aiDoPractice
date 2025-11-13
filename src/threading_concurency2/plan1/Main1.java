@@ -1,12 +1,13 @@
 package threading_concurency2.plan1;
 
 import java.util.Random;
+import java.util.Set;
 
 public class Main1 {
 
     public static void main(String[] args) throws InterruptedException {
         Main1 main1 = new Main1();
-        main1.task4();
+        main1.task5();
     }
 
     public void task1() throws InterruptedException {
@@ -112,8 +113,6 @@ public class Main1 {
 
     public void task4 () throws InterruptedException {
         Thread daemon = new Thread( () -> {
-
-
             while(true) {
             System.out.println("♥ heartbeat");
             try {
@@ -125,9 +124,11 @@ public class Main1 {
         daemon.start();
         Thread.sleep(5000);
         System.out.println("main done");
-
     }
 
 
-
+    public void task5 () {
+        Set<Thread> threads = Thread.getAllStackTraces().keySet();
+        threads.forEach(t-> System.out.println(t.getName() + " | " + (t.isDaemon() ? "daemon" : "user") + " | " + t.getState()));
+    }
 }
