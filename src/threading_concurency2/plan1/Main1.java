@@ -6,7 +6,7 @@ public class Main1 {
 
     public static void main(String[] args) throws InterruptedException {
         Main1 main1 = new Main1();
-        main1.task2();
+        main1.task3();
 
     }
 
@@ -79,4 +79,38 @@ public class Main1 {
         System.out.println(counter);
 
     }
+
+    public void task3 () {
+        Thread t1 = new Thread( ()-> {
+            System.out.println("start");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+        });
+
+        Thread t2 = new Thread( () -> {
+            try {
+                t1.join();
+                System.out.println("middle");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }  );
+
+        Thread t3 = new Thread( () -> {
+            try {
+                t2.join();
+                System.out.println("end");
+            } catch (InterruptedException e) {
+            }
+        });
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+
+
+
 }
