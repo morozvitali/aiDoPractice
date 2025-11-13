@@ -6,8 +6,7 @@ public class Main1 {
 
     public static void main(String[] args) throws InterruptedException {
         Main1 main1 = new Main1();
-        main1.task3();
-
+        main1.task4();
     }
 
     public void task1() throws InterruptedException {
@@ -109,6 +108,24 @@ public class Main1 {
         t1.start();
         t2.start();
         t3.start();
+    }
+
+    public void task4 () throws InterruptedException {
+        Thread daemon = new Thread( () -> {
+
+
+            while(true) {
+            System.out.println("♥ heartbeat");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+        }});
+        daemon.setDaemon(true);
+        daemon.start();
+        Thread.sleep(5000);
+        System.out.println("main done");
+
     }
 
 
