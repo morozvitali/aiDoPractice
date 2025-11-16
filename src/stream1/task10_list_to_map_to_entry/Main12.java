@@ -70,7 +70,15 @@ public class Main12 {
                 .orElse("");
     }
 
-
+    public String task8 () {
+        return List.of("apple", "Tree",
+                "Java", "stream1", "Engineer").stream()
+                .filter(w->Character.isUpperCase(w.charAt(0)))
+                .map(w->Map.entry(w,w.length()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
 
 
 }
