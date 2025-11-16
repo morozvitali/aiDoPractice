@@ -54,6 +54,12 @@ public class Main12 {
                 .orElse("");
     }
 
+    public String task6 () {
+        return List.of("abc", "aaa", "zzz").stream().map(w->Map.entry(w, w.chars().sum()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
 
 
 
