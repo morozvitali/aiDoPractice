@@ -61,6 +61,16 @@ public class Main12 {
                 .orElse("");
     }
 
+    public String task7 () {
+        return List.of("alpha", "arena",
+                "java", "banana", "lava").stream()
+                .map(w->Map.entry(w, w.chars().filter(c->c=='a').count()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
+
+
 
 
 }
