@@ -10,6 +10,7 @@ public class Main1 {
         };
         Thread t = new Thread(job);
         t.start();
+        t.run();
     }
 
     public static void main(String[] args) {
