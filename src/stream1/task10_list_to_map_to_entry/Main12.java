@@ -37,12 +37,24 @@ public class Main12 {
         List<String> list = List.of("apple", "pear",
                 "banana", "kiwi");
         return list.stream().map(w->Map.entry(w, getCount(w)))
-                .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+                .reduce((a,b)->a.getValue() < b.getValue() ? a : b)
                 .map(Map.Entry::getKey).orElse("");
     }
 
     public long getCount(String s) {
         return s.length() - s.chars().distinct().count();
     }
+
+    public String task5 () {
+        List<String> list = List.of("apple",
+                "committee", "banana", "success");
+        return list.stream().map(w->Map.entry(w, w.length() - w.chars().distinct().count()))
+                .reduce((a,b)-> a.getValue() > b.getValue() ? a : b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
+
+
+
 
 }

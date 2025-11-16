@@ -106,7 +106,7 @@ map(a->a.getKey()) ---> map(Map.Entry::getKey)
 
     public void practice6 () {
         List<String> list = List.of("abc", "aaa", "zzz");
-        list.stream1()
+        list.stream()
         .mapToInt(word -> countAscii(word))
         .max();
     }
