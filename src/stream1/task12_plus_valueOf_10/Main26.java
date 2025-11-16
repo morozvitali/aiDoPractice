@@ -43,6 +43,10 @@ public class Main26 {
                 .mapToObj("*"::repeat).collect(Collectors.joining()));
     }
 
+    public int task05 (int n) {
+        return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(n))).reverse().toString());
+    }
+
 
 }
 
