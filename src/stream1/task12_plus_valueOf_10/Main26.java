@@ -23,6 +23,25 @@ public class Main26 {
                 .collect(Collectors.joining()));
     }
 
+    public int task02 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars()
+                .map(Character::getNumericValue)
+                .map(a->a*a*a)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+    public int task03 (int n) {
+        return Integer.parseInt(String.valueOf(n).chars().map(Character::getNumericValue)
+                .filter(a->a%2==0)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+    public int task04 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n)).chars().map(Character::getNumericValue)
+                .mapToObj("*"::repeat).collect(Collectors.joining()));
+    }
 
 
 }
