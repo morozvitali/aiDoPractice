@@ -32,4 +32,12 @@ public class Main37 {
     public long count (String s) {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
+
+    public double task4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        return Arrays.stream(words).filter(w->count(w)>0).mapToInt(String::length).summaryStatistics().getAverage();
+    }
+
+
 }
