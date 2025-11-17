@@ -37,4 +37,13 @@ public class Main20 {
         return s.chars().mapToObj(c->c-'a').toList();
     }
 
+    public List <String> task7 () {
+        String s = "java";
+        return s.chars().mapToObj(Character::toUpperCase)
+        .map(String::valueOf)
+        .toList();
+    }
+
+
+
 }
