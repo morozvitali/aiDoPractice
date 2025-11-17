@@ -68,6 +68,15 @@ public class Main20 {
                 .sum();
     }
 
+    public String task11 () {
+        String input = "ABCdefGHIjkl123";
+        return input.chars()
+                .filter(Character::isLetter)
+                .filter(Character::isLowerCase)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining());
+    }
+
 
 
 }
