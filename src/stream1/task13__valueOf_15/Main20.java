@@ -61,5 +61,13 @@ public class Main20 {
                 .collect(Collectors.joining());
     }
 
+    public int task10 () {
+        String s = "abc1d2e3f9";
+        return s.chars().filter(Character::isDigit)
+                .map(Character::getNumericValue)
+                .sum();
+    }
+
+
 
 }
