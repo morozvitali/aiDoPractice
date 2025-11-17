@@ -19,5 +19,11 @@ public class Main20 {
         return s.chars().distinct().mapToObj(String::valueOf).toList();
     }
 
+    public List <Integer> task4 () {
+        String text = "Code";
+        return text.chars().boxed().toList();
+    }
+
+
 
 }
