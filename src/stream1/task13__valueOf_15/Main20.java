@@ -32,4 +32,9 @@ public class Main20 {
     }
 
 
+    public List <Integer> task6 () {
+        String s = "abcxyz";
+        return s.chars().mapToObj(c->c-'a').toList();
+    }
+
 }
