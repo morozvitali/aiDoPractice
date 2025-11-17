@@ -97,5 +97,8 @@ public class Main20 {
                 .toList();
     }
 
-
+    public boolean task15() {
+        String input = "123456";
+        return input.chars().allMatch(Character::isDigit);
+    }
 }
