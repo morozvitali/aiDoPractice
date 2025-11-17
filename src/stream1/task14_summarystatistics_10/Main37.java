@@ -48,10 +48,16 @@ public class Main37 {
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 
-    public Map <Character, Long> task8 () {
+    public Map <Character, Long> task7 () {
         String[] words = {"apple", "orange",
                 "banana", "umbrella"};
         return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    public IntSummaryStatistics task8 () {
+        String[] words = {"apple", "moon",
+                "sky", "banana", "loop"};
+        return Arrays.stream(words).filter(w->(w.length() - w.chars().distinct().count()) > 2).mapToInt(String::length).summaryStatistics();
     }
 
 
