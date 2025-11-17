@@ -82,4 +82,11 @@ public class Main20 {
         return input.chars().map(c->c+1).boxed().toList();
     }
 
+    public List<Character> task13 () {
+        List<Integer> digits =
+                List.of(1, 2, 3, 9);
+        return digits.stream().map(d->(char)('0'+d)).toList();
+    }
+
+
 }
