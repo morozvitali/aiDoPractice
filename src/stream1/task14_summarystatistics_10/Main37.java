@@ -1,9 +1,6 @@
 package stream1.task14_summarystatistics_10;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -39,5 +36,11 @@ public class Main37 {
         return Arrays.stream(words).filter(w->count(w)>0).mapToInt(String::length).summaryStatistics().getAverage();
     }
 
+    public String task5 () {
+        String[] words = {"apple", "orange", "banana",
+                "ice", "umbrella", "echo"};
+        return Arrays.stream(words).min(Comparator.comparing(String::length)).orElse("empty");
+    }
 
+    public
 }
