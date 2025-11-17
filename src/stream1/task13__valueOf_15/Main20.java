@@ -8,6 +8,11 @@ public class Main20 {
         return codes.stream().map(String::valueOf).toList();
     }
 
+    public List <Integer> task2 () {
+        String mixed = "a1b2c3x9z7";
+        return mixed.chars().filter(Character::isDigit)
+                .mapToObj(Character::getNumericValue).toList();
+    }
 
 
 
