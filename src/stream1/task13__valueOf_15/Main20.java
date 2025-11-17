@@ -77,6 +77,9 @@ public class Main20 {
                 .collect(Collectors.joining());
     }
 
-
+    public List <Integer> task12 () {
+        String input = "abc";
+        return input.chars().map(c->c+1).boxed().toList();
+    }
 
 }
