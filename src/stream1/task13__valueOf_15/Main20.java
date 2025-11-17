@@ -14,6 +14,10 @@ public class Main20 {
                 .mapToObj(Character::getNumericValue).toList();
     }
 
+    public List <String> task3 () {
+        String s = "abracadabra";
+        return s.chars().distinct().mapToObj(String::valueOf).toList();
+    }
 
 
 }
