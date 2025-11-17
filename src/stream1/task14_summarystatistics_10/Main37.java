@@ -42,5 +42,17 @@ public class Main37 {
         return Arrays.stream(words).min(Comparator.comparing(String::length)).orElse("empty");
     }
 
-    public
+    public Map <Character, Double> task6 () {
+        String[] words = {"apple", "ant",
+                "banana", "blue", "berry", "dolphin"};
+        return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
+
+    public Map <Character, Long> task8 () {
+        String[] words = {"apple", "orange",
+                "banana", "umbrella"};
+        return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+
 }
