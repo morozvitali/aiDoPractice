@@ -227,7 +227,7 @@ public Map<Character, String>
 groupAndJoinByFirstLetter() {
 List<String> words = List.of("apple", "ant", 
 "banana", "bat", "car");
-return words.stream1()
+return words.stream()
 .collect(Collectors.groupingBy(
 word -> word.charAt(0),
 Collectors.joining(", ")

@@ -35,4 +35,11 @@ public class Main36 {
         return numbers.stream().collect(Collectors.collectingAndThen(Collectors.counting(), count -> "count " + count));
     }
 
+    public Map <Character, String> task6 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.joining(", ")));
+    }
+
+
 }
