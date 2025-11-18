@@ -48,6 +48,11 @@ public class Main17 {
         return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
     }
 
+    public String task7 () {
+        return Stream.of("java", "hello", "me", "zebra").filter(w->w.contains("e"))
+                .min(Comparator.comparing(w->w.length())).orElse("empty");
+    }
+
 
 
 }
