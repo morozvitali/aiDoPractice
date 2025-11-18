@@ -44,5 +44,10 @@ public class Main17 {
                 .orElse("");
     }
 
+    public List <String> task6 () {
+        return Stream.of("abc", "def", "gka", "lol").sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
+    }
+
+
 
 }
