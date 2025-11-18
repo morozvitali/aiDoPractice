@@ -1,5 +1,6 @@
 package stream1.task17_collectors_15_firstMaking;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -45,6 +46,12 @@ public class Main36 {
         List<Integer> numbers = List.of(1, 2, 3, 4,
                 5, 6, 7, 8, 9);
         return numbers.stream().collect(Collectors.groupingBy(a->a%3, Collectors.summingInt(n->n)));
+    }
+
+    public String task8 () {
+        List<String> words = List.of("hi", "book",
+                "sun", "day", "Java", "sky");
+        return words.stream().collect(Collectors.reducing("", (a,b)-> a.length() > b.length() ? a : b));
     }
 
 
