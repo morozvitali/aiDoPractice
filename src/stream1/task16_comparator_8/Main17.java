@@ -53,6 +53,10 @@ public class Main17 {
                 .min(Comparator.comparing(w->w.length())).orElse("empty");
     }
 
+    public List <Integer> task8 () {
+        return List.of(100, 1010, 5, 2000, 10).stream().sorted(Comparator.comparing(a->String.valueOf(a).chars().filter(c->c=='0').count())).toList();
+    }
+
 
 
 }
