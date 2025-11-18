@@ -3,6 +3,8 @@ package stream1.task16_comparator_8;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main17 {
     public List<String> task1 () {
@@ -24,5 +26,11 @@ public class Main17 {
     public static long countLetter (String s) {
         return s.chars().filter(c->c=='a').count();
     }
+
+    public int task3 () {
+        return List.of(111, 123, 444, 1212).stream().collect(Collectors.toMap(Function.identity(), a->String.valueOf(a).chars().distinct().count()))
+                .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
+    }
+
 
 }
