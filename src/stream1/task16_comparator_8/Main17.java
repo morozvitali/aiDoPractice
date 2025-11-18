@@ -60,5 +60,4 @@ public class Main17 {
     public List <String> task9 () {
         return List.of("apple", "zebra", "sky", "education").stream().sorted(Comparator.comparing(w->countWovels(w))).toList();
     }
-
 }
