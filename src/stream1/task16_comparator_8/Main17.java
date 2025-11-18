@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main17 {
     public List<String> task1 () {
@@ -34,6 +35,13 @@ public class Main17 {
 
     public String task4 (List <String> s) {
         return s.stream().map(w->Map.entry(w, w.chars().sum())).max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
+    public String task5 () {
+        return Stream.of("sun", "star", "supernova", "apple")
+                .filter(w->w.startsWith("s"))
+                .max(Comparator.comparing(String::length))
+                .orElse("");
     }
 
 
