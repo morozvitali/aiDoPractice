@@ -51,14 +51,24 @@ public class Main37 {
     public Map <Character, Long> task7 () {
         String[] words = {"apple", "orange",
                 "banana", "umbrella"};
-        return Arrays.stream(words).flatMap(w->w.chars().mapToObj(c->(char)c)).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return Arrays.stream(words)
+                .flatMap(w->w.chars().mapToObj(c->(char)c))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
     public IntSummaryStatistics task8 () {
         String[] words = {"apple", "moon",
                 "sky", "banana", "loop"};
-        return Arrays.stream(words).filter(w->(w.length() - w.chars().distinct().count()) > 2).mapToInt(String::length).summaryStatistics();
+        return Arrays.stream(words)
+                .filter(w->(w.length() - w.chars().distinct().count()) > 2)
+                .mapToInt(String::length)
+                .summaryStatistics();
     }
 
+    public List <String> task9 () {
+        String[] words = {"education", "questionnaire",
+                "house", "audio", "universe"};
+        return Arrays.stream(words).filter(w->"aeiou".chars().allMatch(c->w.indexOf(c) >=0)).toList();
+    }
 
 }
