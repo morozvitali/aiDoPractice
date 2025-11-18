@@ -32,5 +32,9 @@ public class Main17 {
                 .entrySet().stream().max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse(-1);
     }
 
+    public String task4 (List <String> s) {
+        return s.stream().map(w->Map.entry(w, w.chars().sum())).max(Map.Entry.comparingByValue()).map(Map.Entry::getKey).orElse("");
+    }
+
 
 }
