@@ -46,5 +46,8 @@ public class Main37 {
         return s.chars().filter(Character::isDigit).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
-
+    public boolean task7 () {
+        return Stream.of(1, 2, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().anyMatch(a->a.getValue() >1);
+    }
 }
