@@ -11,6 +11,11 @@ public class Main36 {
         return words.stream().collect(Collectors.groupingBy(w->w.charAt(0)));
     }
 
+    public Map <Character, List<Integer>> task2 () {
+        List<String> words = List.of("apple", "ant",
+                "banana", "bat", "car");
+        return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.mapping(String::length, Collectors.toList())));
+    }
 
 
 
