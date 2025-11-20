@@ -89,6 +89,4 @@ public class Main29 {
     public List<String> task12 (List <Object> list) {
         return list.stream().filter(a->a instanceof String).map(s->((String)s).toUpperCase()).toList();
     }
-
-
 }
