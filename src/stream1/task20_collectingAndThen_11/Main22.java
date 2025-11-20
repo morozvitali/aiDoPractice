@@ -48,8 +48,8 @@ public class Main22 {
         return list.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), Collections::unmodifiableMap));
     }
 
-    public String task10 (List <String> list) {
-        return list.stream().filter(w->w.contains("p")).collect(Collectors.collectingAndThen(Collectors.toList(), list ->{
+    public String task10 (List <String> l) {
+        return l.stream().filter(w->w.contains("p")).collect(Collectors.collectingAndThen(Collectors.toList(), list ->{
             if (list.size() != 1) {
                 throw new IllegalStateException("no no");
             }
@@ -57,6 +57,9 @@ public class Main22 {
         }));
     }
 
+    public String task11 (List <Integer> l) {
+        return l.stream().filter(a->a%2==0).map(String::valueOf).collect(Collectors.collectingAndThen(Collectors.toList(), list->String.join(", ", list)))
+    }
 
 
 }
