@@ -19,6 +19,11 @@ public class Main25 {
         return List.of(3, 2, 5, 6, 1, 4).stream().sorted(Comparator.comparing((Integer a)->a%2).thenComparing(n->n)).collect(Collectors.toList());
     }
 
+    public List <String> task4 () {
+        List<String> words = List.of("kiwi", "apple",
+                "banana", "grape", "plum");
+        return words.stream().sorted(Comparator.comparing(w->w.charAt(w.length()-1))).toList();
+    }
 
 
 }
