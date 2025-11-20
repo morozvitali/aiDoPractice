@@ -58,8 +58,11 @@ public class Main22 {
     }
 
     public String task11 (List <Integer> l) {
-        return l.stream().filter(a->a%2==0).map(String::valueOf).collect(Collectors.collectingAndThen(Collectors.toList(), list->String.join(", ", list)))
+        return l.stream().filter(a->a%2==0).map(String::valueOf).collect(Collectors.collectingAndThen(Collectors.toList(), list->String.join(", ", list)));
     }
 
+    public Integer rask12 (List <String> l) {
+        return l.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
+    }
 
 }
