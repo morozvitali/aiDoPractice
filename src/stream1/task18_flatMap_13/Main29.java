@@ -82,10 +82,13 @@ public class Main29 {
         return list.stream().filter(a -> a instanceof Integer && (Integer) a > 10).map(a -> (Integer) a).toList();
     }
 
-    public List<Integer> task11(List<Object> list) {
+    public List<Boolean> task11(List<Object> list) {
         return list.stream().filter(b -> b instanceof Boolean && (Boolean) b == true).map(b -> (Boolean) b).toList();
     }
 
+    public List<String> task12 (List <Object> list) {
+        return list.stream().filter(a->a instanceof String).map(s->((String)s).toUpperCase()).toList();
+    }
 
 
 }
