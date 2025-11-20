@@ -35,4 +35,21 @@ public class Main29 {
     }
 
 
+    public int task4 () {
+        int[][] data = {
+                {3, 9},
+                {8, 12},
+                {7}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%3==0).max().orElse(-1);
+    }
+
+
+    public int task5 () {
+        int[][] data = {{2,3},{4}};
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==0).map(a->a*a).sum();
+    }
+
+
+
 }
