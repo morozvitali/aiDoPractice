@@ -38,6 +38,10 @@ public class Main22 {
         return data.stream().sorted(Comparator.reverseOrder()).collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
         }
 
+        public Integer task7 () {
+        return Stream.of(5, 3, 4, 4, 3, 6).distinct().collect(Collectors.collectingAndThen(Collectors.toList(), List::getFirst));
+        }
+
 
 
 }
