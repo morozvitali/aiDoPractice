@@ -70,6 +70,9 @@ public class Main29 {
         return b==0 ? a : gcd (b, a%b);
     }
 
+    public List<Integer> task8 (List <Object> list) {
+        return list.stream().filter(a->a instanceof Integer).map(a->(Integer)a).toList();
+    }
 
 
 }
