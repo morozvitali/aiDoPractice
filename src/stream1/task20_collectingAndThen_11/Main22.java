@@ -1,5 +1,6 @@
 package stream1.task20_collectingAndThen_11;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -19,10 +20,13 @@ public String task2 () {
         return List.of(1, 2, 3, 4, 5).stream().filter(a->a%2==0).map(a->a*a + "").collect(Collectors.collectingAndThen(Collectors.toList(), list-> String.join("; ", list)));
 }
 
-public Long task3 () {
+public Integer task3 () {
         return Stream.of("java", "code", "loop", "sky").collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(w.length()-1)), Map::size));
 }
 
+public List <String> task4 () {
+        return Stream.of("java", "code", "loop", "sky").collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
+}
 
 
 }
