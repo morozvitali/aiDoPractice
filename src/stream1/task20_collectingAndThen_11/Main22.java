@@ -44,4 +44,9 @@ public class Main22 {
     }
 
 
+    public Map <Character, List <String>> task9 (List <String> list) {
+        return list.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(w->w.charAt(0)), Collections::unmodifiableMap));
+    }
+
+
 }
