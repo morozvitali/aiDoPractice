@@ -10,6 +10,11 @@ public class Main25 {
                 "fig", "grape", "banana").sorted(Comparator.comparing(String::length)).toList();
     }
 
+    public List <Integer> task2 () {
+        return Stream.of(3, 7, 1, 9, 2).sorted(Comparator.reverseOrder()).toList();
+    }
+
+
 
 
 
