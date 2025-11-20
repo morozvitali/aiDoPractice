@@ -75,7 +75,11 @@ public class Main29 {
     }
 
     public List<String> task9(List<Object> list) {
-            return list.stream().filter(s->s instanceof String).map(s->(String)s).toList();
+        return list.stream().filter(s -> s instanceof String).map(s -> (String) s).toList();
+    }
+
+    public List<Integer> task10(List<Object> list) {
+        return list.stream().filter(a -> a instanceof Integer && (Integer) a > 10).map(a -> (Integer) a).toList();
     }
 
 
