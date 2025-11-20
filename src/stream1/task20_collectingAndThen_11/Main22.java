@@ -1,5 +1,6 @@
 package stream1.task20_collectingAndThen_11;
 
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,6 +13,11 @@ public class Main22 {
             return list.get(0);
         }));
     }
+
+public String task2 () {
+        return List.of(1, 2, 3, 4, 5).stream().filter(a->a%2==0).map(a->a*a + "").collect(Collectors.collectingAndThen(Collectors.toList(), list-> String.join("; ", list)));
+}
+
 
 
 }
