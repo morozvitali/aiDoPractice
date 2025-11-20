@@ -58,6 +58,18 @@ public class Main29 {
         return Arrays.stream(data).flatMapToInt(Arrays::stream).filter(a->a%2==1).average().orElse(-1);
     }
 
+    public int task7 () {
+        int[][] data = {
+                {12},
+                {24, 36}
+        };
+        return Arrays.stream(data).flatMapToInt(Arrays::stream).reduce(Main29::gcd).orElse(-1);
+    }
+
+    public static int gcd(int a, int b) {
+        return b==0 ? a : gcd (b, a%b);
+    }
+
 
 
 }
