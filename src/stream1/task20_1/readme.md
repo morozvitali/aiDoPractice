@@ -4,8 +4,7 @@
 
 ⚡ Завдання 1:
 
-Список слів → відфільтруй тільки ті, що мають більше 3 голосних, перетвори в lowerCase,
-посортуй за кількістю голосних (спаданням), а потім зроби unmodifiableList із перших трьох.
+Список слів → відфільтруй тільки ті, що мають більше 3 голосних, перетвори в lowerCase, посортуй за кількістю голосних (спаданням), а потім зроби unmodifiableList із перших трьох.
 
 📥 ["cooperation", "stream1", "banana", "supernova", "moon", "queueing", "idealism"]
 📤 ["queueing", "cooperation", "supernova"]
@@ -36,20 +35,22 @@ Map<довжина слова, середня кількість голосни�
 groupingBy(String::length, collectingAndThen(toList(), list -> ...average...))
 Потім — collectingAndThen із Collections::unmodifiableMap.
 
-    public static Map<Integer, Double> practice2() {
+        public Map<Integer, Double> practice2() {
         return Stream.of("hi", "code", "moon", "room", "idea", "sky")
-                .collect(collectingAndThen(
-                        groupingBy(String::length,
-                                collectingAndThen(toList(), list ->
-                                        list.stream1()
-                                                .mapToDouble(w -> w.chars()
-                                                        .filter(c -> "aeiou".indexOf(c) >= 0)
-                                                        .count())
-                                                .average().orElse(0.0)
-                                )),
+            .collect(Collectors.collectingAndThen(
+                Collectors.groupingBy(
+                    String::length,
+                        Collectors.averagingLong(this::vowelCount)
+                    ),
                         Collections::unmodifiableMap
-                ));
-    }
+                    ));
+                }
+
+        private long vowelCount(String w) {
+            return w.chars()
+            .filter(c -> "aeiou".indexOf(c) >= 0)
+            .count();
+        }
 
 ---------------
 
