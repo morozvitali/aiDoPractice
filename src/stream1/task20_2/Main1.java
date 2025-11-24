@@ -1,4 +1,4 @@
-package stream1.task20_nono_hard_hard;
+package stream1.task20_2;
 
 import java.util.*;
 import java.util.function.Function;

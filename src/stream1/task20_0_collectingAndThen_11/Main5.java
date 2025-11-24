@@ -1,4 +1,4 @@
-package stream1.task20_collectingAndThen_11;
+package stream1.task20_0_collectingAndThen_11;
 
 import java.util.Collections;
 import java.util.Comparator;

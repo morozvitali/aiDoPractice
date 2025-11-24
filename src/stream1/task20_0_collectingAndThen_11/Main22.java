@@ -1,4 +1,4 @@
-package stream1.task20_collectingAndThen_11;
+package stream1.task20_0_collectingAndThen_11;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -61,7 +61,7 @@ public class Main22 {
         return l.stream().filter(a->a%2==0).map(String::valueOf).collect(Collectors.collectingAndThen(Collectors.toList(), list->String.join(", ", list)));
     }
 
-    public Integer rask12 (List <String> l) {
+    public Integer task12 (List <String> l) {
         return l.stream().collect(Collectors.collectingAndThen(Collectors.groupingBy(String::length), Map::size));
     }
 
