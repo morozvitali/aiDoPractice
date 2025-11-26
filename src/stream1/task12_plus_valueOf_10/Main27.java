@@ -52,4 +52,7 @@ public class Main27 {
                 .mapToObj("*"::repeat).collect(Collectors.joining());
     }
 
+    public int practice7 (int number) {
+        return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(number))).reverse().toString());
+    }
 }
