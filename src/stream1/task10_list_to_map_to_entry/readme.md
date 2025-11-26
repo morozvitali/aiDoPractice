@@ -31,7 +31,7 @@ map(a->a.getKey()) ---> map(Map.Entry::getKey)
 
 💡 Підказка: .reduce(...) з a.getValue() <= b.getValue()
 
-    list.stream1()
+    list.stream()
     .map(w->Map.entry(w, w.length()))
     .reduce((a,b) -> a.getValue() <= b.getValue() ? a:b)
     .map(Map.Entry::getKey).orElse("");
