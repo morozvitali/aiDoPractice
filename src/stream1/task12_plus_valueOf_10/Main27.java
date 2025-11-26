@@ -47,5 +47,9 @@ public class Main27 {
                 .collect(Collectors.joining()));
     }
 
+    public String practice6 (int number) {
+        return String.valueOf(Math.abs(number)).chars().map(Character::getNumericValue)
+                .mapToObj("*"::repeat).collect(Collectors.joining());
+    }
 
 }
