@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main27 {
     public Map<Integer, Long> practice1 () {
@@ -63,6 +64,12 @@ public class Main27 {
                 .collect(Collectors.joining()));
     }
 
+    public int practice9 (int number) {
+        String str = String.valueOf(number);
 
-
+        return Integer.parseInt(IntStream.range(0, str.length()).mapToObj(i->{
+            int digit = Character.getNumericValue(str.charAt(i));
+            return String.valueOf(digit * (i+1));
+            }).collect(Collectors.joining()));
+    }
 }
