@@ -2,6 +2,7 @@ package stream1.task10_list_to_map_to_entry;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Main13 {
     public String practice1 () {
@@ -53,6 +54,14 @@ public String practice5 () {
 public String practice6 () {
         return List.of("abc", "aaa", "zzz").stream()
                 .map(w->Map.entry(w, w.chars().sum()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a:b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+}
+
+public String practice7 () {
+        return Stream.of("alpha", "arena",
+                "java", "banana", "lava").map(w->Map.entry(w, w.chars().filter(c->c=='a').count()))
                 .reduce((a,b)->a.getValue() > b.getValue() ? a:b)
                 .map(Map.Entry::getKey)
                 .orElse("");
