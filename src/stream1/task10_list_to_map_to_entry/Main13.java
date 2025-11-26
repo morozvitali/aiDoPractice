@@ -67,5 +67,17 @@ public String practice7 () {
                 .orElse("");
 }
 
+public String practice8 () {
+        return List.of("apple", "Tree",
+                "Java", "stream1", "Engineer")
+                .stream()
+                .filter(w->Character.isUpperCase(w.charAt(0)))
+                .map(w->Map.entry(w, w.length()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a:b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+}
+
+
 
 }
