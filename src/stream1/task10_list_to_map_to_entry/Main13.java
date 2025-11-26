@@ -50,5 +50,13 @@ public String practice5 () {
             .map(Map.Entry::getKey).orElse("");
 }
 
+public String practice6 () {
+        return List.of("abc", "aaa", "zzz").stream()
+                .map(w->Map.entry(w, w.chars().sum()))
+                .reduce((a,b)->a.getValue() > b.getValue() ? a:b)
+                .map(Map.Entry::getKey)
+                .orElse("");
+}
+
 
 }
