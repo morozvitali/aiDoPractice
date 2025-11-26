@@ -20,7 +20,17 @@ public class Main13 {
                 .map(Map.Entry::getKey).orElse("");
     }
 
+public String practice3 () {
+    List<String> list = List.of("apple", "banana",
+            "orange", "blueberry");
+    return list.stream().map(w->Map.entry(w, counter(w)))
+            .reduce((a,b)->a.getValue() > b.getValue() ? a : b)
+            .map(Map.Entry::getKey)
+            .orElse("");
+}
 
-
+public static long counter (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+}
 
 }
