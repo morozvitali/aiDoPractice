@@ -33,7 +33,12 @@ public class Main27 {
                 .collect(Collectors.joining()));
     }
 
-
+    public int practice4 (int number) {
+        return Integer.parseInt(String.valueOf(Math.abs(number)).chars().map(Character::getNumericValue)
+                .map(d->d*d*d)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
 
 
 
