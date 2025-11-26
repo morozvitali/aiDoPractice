@@ -55,4 +55,14 @@ public class Main27 {
     public int practice7 (int number) {
         return Integer.parseInt(new StringBuilder(String.valueOf(Math.abs(number))).reverse().toString());
     }
+
+    public int practice8 (int number) {
+        return Integer.parseInt(String.valueOf(Math.abs(number))
+                .chars().map(Character::getNumericValue)
+                .map(a->a*a).mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
+
+
+
 }
