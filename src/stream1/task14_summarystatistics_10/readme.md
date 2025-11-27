@@ -33,7 +33,7 @@ Arrays.stream1(numbers)
 
 ✅ Завдання 2 : Збери слова з парною довжиною 
 в нижньому регістрі і поверни також загальну 
-кількість символів 
+кількість символів
 
 List<String> words = List.of("APPLE", 
 "Banana", "CHERRY", "kiwi", "PLUM");
