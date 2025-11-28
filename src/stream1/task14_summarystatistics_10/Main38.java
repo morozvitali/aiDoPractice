@@ -34,4 +34,13 @@ public class Main38 {
         return s.chars().filter(c->"aeiou".indexOf(c) >=0).count();
     }
 
+    public void practice4 () {
+        String[] words = {"sky", "apple", "moon",
+                "dry", "sun"};
+        Arrays.stream(words).filter(w->counter(w) >0).mapToInt(String::length)
+                .summaryStatistics().getAverage();
+    }
+
+
+
 }
