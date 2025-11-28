@@ -51,3 +51,5 @@ public class Main38 {
         return Arrays.stream(words).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 }
+
+
