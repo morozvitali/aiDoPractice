@@ -18,10 +18,6 @@ System.out.println(field.getName() + " = " + field.get(o));
 
 Теорія: через Class.newInstance() або getDeclaredConstructor().newInstance() можна створювати об’єкти без явного new.
 Завдання: Написати фабрику Object create(String className).
-public static Object create(String className) throws Exception {
-Class<?> cls = Class.forName(className);
-return cls.getDeclaredConstructor().newInstance();
-}
 
 ✅ Створення об’єкта за назвою класу
 public static Object create(String className) throws Exception {

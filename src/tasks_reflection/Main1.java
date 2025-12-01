@@ -12,7 +12,10 @@ public class Main1 {
         }
     }
 
-
+    public static Object create (String className) throws Exception {
+        Class <?> cls = Class.forName(className);
+        return cls.getDeclaredConstructor().newInstance();
+    }
 
 
 }
