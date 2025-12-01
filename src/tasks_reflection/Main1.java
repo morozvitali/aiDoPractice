@@ -17,5 +17,12 @@ public class Main1 {
         return cls.getDeclaredConstructor().newInstance();
     }
 
+    public static void callSecret (Object o) throws Exception {
+        var method = o.getClass().getDeclaredMethod("secret");
+        method.setAccessible(true);
+        method.invoke(o);
+    }
+
+
 
 }
