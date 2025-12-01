@@ -23,6 +23,13 @@ public class Main1 {
         method.invoke(o);
     }
 
+    public static Object readPrivate (Object o, String fieldName) throws Exception {
+        var field = o.getClass().getDeclaredField(fieldName);
+        field.setAccessible(true);
+        return field.get(o);
+    }
+
+
 
 
 }
