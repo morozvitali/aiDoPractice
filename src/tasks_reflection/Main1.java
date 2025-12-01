@@ -1,5 +1,10 @@
 package tasks_reflection;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 public class Main1 {
     public static void main(String[] args) {
     }
@@ -29,7 +34,19 @@ public class Main1 {
         return field.get(o);
     }
 
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target(ElementType.FIELD)
+    public @interface NotEmpty {}
 
-
-
+    public static void validate (Object o) throws Exception {
+        for (var field : o.getClass().getDeclaredFields()) {
+            if (field.isAnnotationPresent(NotEmpty.class)) {
+                field.setAccessible(true);
+                Object value = field.get(o);
+                if (value == null || value.toString().isEmpty()) {
+                    throw new RuntimeException("Field " + field.getName() + " is empty!");
+                }
+            }
+        }
+    }
 }
