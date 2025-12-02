@@ -77,7 +77,11 @@ public class Main1 {
         }
     }
 
-
+    public static void loadPlugin (String className) throws Exception {
+        Class <?> cls = Class.forName(className);
+        Object plugin = cls.getDeclaredConstructor().newInstance();
+        cls.getMethod("execute").invoke(plugin);
+    }
 
 
 
