@@ -4,31 +4,32 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Map;
 
 public class Main1 {
     public static void main(String[] args) {
     }
 
-    public static void printFields (Object o) throws Exception {
-        Class <?> cls = o.getClass();
+    public static void printFields(Object o) throws Exception {
+        Class<?> cls = o.getClass();
         for (var field : cls.getDeclaredFields()) {
             field.setAccessible(true);
             System.out.println(field.getName() + " = " + field.get(o));
         }
     }
 
-    public static Object create (String className) throws Exception {
-        Class <?> cls = Class.forName(className);
+    public static Object create(String className) throws Exception {
+        Class<?> cls = Class.forName(className);
         return cls.getDeclaredConstructor().newInstance();
     }
 
-    public static void callSecret (Object o) throws Exception {
+    public static void callSecret(Object o) throws Exception {
         var method = o.getClass().getDeclaredMethod("secret");
         method.setAccessible(true);
         method.invoke(o);
     }
 
-    public static Object readPrivate (Object o, String fieldName) throws Exception {
+    public static Object readPrivate(Object o, String fieldName) throws Exception {
         var field = o.getClass().getDeclaredField(fieldName);
         field.setAccessible(true);
         return field.get(o);
@@ -36,9 +37,10 @@ public class Main1 {
 
     @Retention(RetentionPolicy.RUNTIME)
     @Target(ElementType.FIELD)
-    public @interface NotEmpty {}
+    public @interface NotEmpty {
+    }
 
-    public static void validate (Object o) throws Exception {
+    public static void validate(Object o) throws Exception {
         for (var field : o.getClass().getDeclaredFields()) {
             if (field.isAnnotationPresent(NotEmpty.class)) {
                 field.setAccessible(true);
@@ -49,4 +51,18 @@ public class Main1 {
             }
         }
     }
+
+    public static void fill(Object o, Map<String, Object> values) throws Exception {
+        Class<?> cls = o.getClass();
+        for (var entry : values.entrySet()) {
+            try {
+                var field = cls.getDeclaredField(entry.getKey());
+                field.setAccessible(true);
+                field.set(o, entry.getValue());
+            } catch (NoSuchFieldException ignored) {
+            }
+        }
+    }
+
+
 }
