@@ -93,4 +93,19 @@ public class Main1 {
         return false;
     }
 
+    public static String autoToString (Object o) throws Exception {
+        StringBuilder sb = new StringBuilder(o.getClass().getSimpleName() + "{");
+        for (var field : o.getClass().getDeclaredFields()) {
+            field.setAccessible(true);
+            sb.append(field.getName())
+                    .append("=")
+                    .append(field.get(o))
+                    .append(", ");
+            if (sb.length() > 2) {sb.setLength((sb.length()) - 2);
+            sb.append("}");
+            return sb.toString();
+            }
+        }
+        return "false";
+    }
 }
