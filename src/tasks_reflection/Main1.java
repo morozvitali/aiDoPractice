@@ -64,5 +64,21 @@ public class Main1 {
         }
     }
 
+        @Retention(RetentionPolicy.RUNTIME)
+        @Target(ElementType.METHOD)
+        public @interface RunMe {}
+
+    public static void runTests (Object o) throws Exception {
+        for (var method : o.getClass().getDeclaredMethods()) {
+            if (method.isAnnotationPresent(RunMe.class)) {
+                method.setAccessible(true);
+                method.invoke(o);
+            }
+        }
+    }
+
+
+
+
 
 }
