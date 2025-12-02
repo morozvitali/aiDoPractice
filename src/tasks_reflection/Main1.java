@@ -83,6 +83,14 @@ public class Main1 {
         cls.getMethod("execute").invoke(plugin);
     }
 
+    public static boolean supports (Object o, String iface) throws Exception {
+        Class <?> cls  = o.getClass();
+        Class <?> target = Class.forName(iface);
 
+        for (var i : cls.getInterfaces()) {
+            if (i.equals(target)) return true;
+        }
+        return false;
+    }
 
 }

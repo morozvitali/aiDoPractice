@@ -132,15 +132,15 @@ cls.getMethod("execute").invoke(plugin);
 Завдання: Метод boolean supports(Object o, String interfaceName).
 
 ✅ Перевірити, чи реалізує об’єкт певний інтерфейс
-public static boolean supports(Object o, String iface) throws Exception {
-Class<?> cls = o.getClass();
-    Class<?> target = Class.forName(iface);
+        public static boolean supports(Object o, String iface) throws Exception {
+        Class<?> cls = o.getClass();
+            Class<?> target = Class.forName(iface);
+            for (var i : cls.getInterfaces()) {
+                if (i.equals(target)) return true;
+            }
+            return false;
+        }
 
-    for (var i : cls.getInterfaces()) {
-        if (i.equals(target)) return true;
-    }
-    return false;
-}
 ### 10. Створення універсального toString()
 
 Теорія: рефлексія дозволяє згенерувати toString навіть без Lombok.
