@@ -185,7 +185,7 @@ List<String> upper = list.stream().collect(Collector.of(
 ArrayList::new,
 List::add,
 (a, b) -> { a.addAll(b); return a; },
-l -> l.stream().map(String::toUpperCase).toList()
+l -> l.stream().map(w -> ((String) w).toUpperCase()).toList()
 ));
 
 
