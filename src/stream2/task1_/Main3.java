@@ -1,6 +1,8 @@
 package stream2.task1_;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collector;
 
 public class Main3 {
@@ -33,6 +35,19 @@ public class Main3 {
                 (a1, a2) -> {a1[0]+=a2[0]; a1[1]+=a2[1]; return a1; },
                 a->(double)a[0]/a[1]
         ));
+    }
+
+    public void practice4 () {
+        List<String> words = List.of("a", "b", "a", "c");
+        Set<String> set = words.stream().collect(Collector.of(
+                HashSet::new,
+                Set::add,
+                (s1,s2) -> {s1.addAll(s2); return s1;}
+        ));
+
+
+
+
     }
 
 }
