@@ -1,5 +1,6 @@
 package stream2.task1_;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -44,10 +45,17 @@ public class Main3 {
                 Set::add,
                 (s1,s2) -> {s1.addAll(s2); return s1;}
         ));
-
-
-
-
     }
+
+    public void practice5 () {
+        List<Integer> nums = List.of(1, 2, 3, 4, 5);
+        List <Integer> evens = nums.stream().collect(Collector.of(
+                ArrayList::new,
+                (list, n) -> {if (n%2 == 0) list.add(n);},
+                (l1,l2) -> {l1.addAll(l2); return l1;}
+        ));
+    }
+
+
 
 }
