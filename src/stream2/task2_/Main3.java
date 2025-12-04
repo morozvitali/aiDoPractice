@@ -8,7 +8,11 @@ public class Main3 {
         IntStream.rangeClosed(1,5).forEach(System.out::println);
     }
 
-
+    public void practice2 () {
+        int sum = IntStream.rangeClosed(1,5)
+                .map(n->n*n)
+                .sum();
+    }
 
 
 }

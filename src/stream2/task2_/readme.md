@@ -6,10 +6,10 @@
 
 🎯 Мета: зрозуміти range() vs rangeClosed().
 
-IntStream.range(1, 5).forEach(System.out::print);      // 1234
-System.out.println();
-IntStream.rangeClosed(1, 5).forEach(System.out::print); // 12345
-
+    public void practice1 () {
+        IntStream.range(1,5).forEach(System.out::println);
+        IntStream.rangeClosed(1,5).forEach(System.out::println);
+    }
 
 🧠 Різниця — rangeClosed() включає кінцеве число.
 
@@ -20,10 +20,13 @@ IntStream.rangeClosed(1, 5).forEach(System.out::print); // 12345
 
 📋 Умова: знайди суму квадратів чисел від 1 до 5.
 
-int sum = IntStream.rangeClosed(1, 5)
-.map(n -> n * n)
-.sum();
-System.out.println(sum); // 55
+    public void practice2 () {
+        int sum = IntStream.rangeClosed(1,5)
+                .map(n->n*n)
+                .sum();
+    }
+
+
 
 ✅ Завдання 3 — DoubleStream.generate()
 
