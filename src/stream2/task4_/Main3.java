@@ -9,13 +9,18 @@ public class Main3 {
                 .forEach(System.out::println);
     }
 
-    public void practice2 () {
-        Stream.generate(()->(int)(Math.random()*10))
+    public void practice2() {
+        Stream.generate(() -> (int) (Math.random() * 10))
                 .limit(5)
                 .forEach(System.out::println);
     }
 
-
+    public void practice3() {
+        Stream.iterate(1, n -> n + 1)
+                .map(n -> n * n)
+                .limit(5)
+                .forEach(System.out::println);
+    }
 
 
 

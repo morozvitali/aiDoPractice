@@ -9,11 +9,11 @@
 
 🎯 Мета: зрозуміти базову логіку.
 
-            public void practice1() {
-                Stream.iterate(0, n -> n + 2)
+     public void practice1() {
+          Stream.iterate(0, n -> n + 2)
                 .limit(5)
                 .forEach(System.out::println);
-            }
+     }
     // 02468
 
 
@@ -23,10 +23,11 @@
 
 🎯 Мета: побачити, що generate() не має залежності між елементами.
 
-Stream.generate(() -> (int)(Math.random() * 10))
-.limit(5)
-.forEach(System.out::print);
-
+    public void practice2 () {
+        Stream.generate(()->(int)(Math.random()*10))
+                .limit(5)
+                .forEach(System.out::println);
+    }
 
 📤 Результат: 5 випадкових чисел від 0 до 9.
 
@@ -34,10 +35,12 @@ Stream.generate(() -> (int)(Math.random() * 10))
 
 🎯 Мета: створити послідовність квадратів.
 
-Stream.iterate(1, n -> n + 1)
-.map(n -> n * n)
-.limit(5)
-.forEach(System.out::println);
+    public void practice3() {
+        Stream.iterate(1, n -> n + 1)
+                .map(n -> n * n)
+                .limit(5)
+                .forEach(System.out::println);
+    }
 // 1 4 9 16 25
 
 ## ✅ Завдання 4 — Умовне iterate (Java 9+)
