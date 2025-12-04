@@ -126,14 +126,14 @@ Tick 2
 
 🎯 Мета: згенерувати 100 випадкових чисел і знайти середнє.
 
-Random random = new Random();
-double avg = Stream.generate(() -> random.nextInt(100))
-.limit(100)
-.mapToInt(Integer::intValue)
-.average()
-.orElse(0);
-
-System.out.println(avg);
+    public void practice9 () {
+        Random random = new Random();
+        double avg = Stream.generate(()->random.nextInt(100)).limit(100)
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
+        System.out.println(avg);
+    }
 
 ✅ Завдання 10 — Комбіноване: iterate → mapToObj → filter → collect
 
