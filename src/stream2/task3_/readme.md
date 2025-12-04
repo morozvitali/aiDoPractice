@@ -136,11 +136,12 @@ System.out.println(content); // [Hello, World, !]
 📋 Умова:
 Є температури за день. Виведи лише “ранкові” значення (до першого >20°C).
 
-List<Integer> temps = List.of(15, 16, 18, 21, 19, 17);
-
-List<Integer> morning = temps.stream()
-.takeWhile(t -> t <= 20)
-.toList();
+    public void practice6() {
+        List<Integer> temps = List.of(15, 16, 18, 21, 19, 17);
+        List<Integer> morning = temps.stream()
+                .takeWhile(t->t <=20)
+                .toList();
+    }
 
 System.out.println(morning); // [15, 16, 18]
 
