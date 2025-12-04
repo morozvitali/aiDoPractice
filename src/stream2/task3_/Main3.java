@@ -50,7 +50,13 @@ public class Main3 {
                 .toList();
     }
 
-
+    public void practice7() {
+        List<Integer> nums = List.of(0, 0, 0, 4, 5, 0, 6);
+        List <Integer> clean = nums.stream()
+                .dropWhile(n->n==0)
+                .toList();
+        System.out.println(clean);
+    }
 
 
 }
