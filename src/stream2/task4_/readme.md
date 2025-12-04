@@ -145,11 +145,13 @@ Tick 2
 → перетвори їх у текст “Num: X”
 → збери в список.
 
-List<String> result = IntStream.iterate(1, n -> n + 1)
-.takeWhile(n -> n <= 100)
-.filter(n -> n % 7 == 0)
-.mapToObj(n -> "Num: " + n)
-.toList();
+    public void practice10 () {
+        List<String> result = IntStream.iterate(1, n->n+1)
+                .takeWhile(n->n<=100)
+                .filter(n->n%7==0)
+                .mapToObj(n-> "Num " + n)
+                .toList();
+    }
 
 System.out.println(result);
 

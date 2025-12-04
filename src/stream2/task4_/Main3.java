@@ -1,7 +1,9 @@
 package stream2.task4_;
 
+import java.util.List;
 import java.util.Random;
 import java.util.UUID;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main3 {
@@ -72,7 +74,10 @@ public class Main3 {
     }
 
     public void practice10 () {
-
+        List<String> result = IntStream.iterate(1, n->n+1)
+                .takeWhile(n->n<=100)
+                .filter(n->n%7==0)
+                .mapToObj(n-> "Num " + n)
+                .toList();
     }
-
 }
