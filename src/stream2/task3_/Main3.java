@@ -58,6 +58,14 @@ public class Main3 {
         System.out.println(clean);
     }
 
+    public void practice8 () {
+        List <String> words = List
+                .of("start", "read", "analyze", "STOP", "finalize");
+        List <String> beforeStop = words.stream()
+                .takeWhile(w->!w.equals("STOP"))
+                .toList();
+    }
+
 
 }
 
