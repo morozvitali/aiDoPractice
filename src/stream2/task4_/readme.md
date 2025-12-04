@@ -61,9 +61,11 @@
 
 🎯 Мета: створювати унікальні значення.
 
-Stream.generate(UUID::randomUUID)
-.limit(3)
-.forEach(System.out::println);
+    public void practice5 () {
+        Stream.generate(UUID::randomUUID)
+                .limit(3)
+                .forEach(System.out::println);
+    }
 
 
 📤 3 випадкові UUID — зручно для тестів або фіктивних ID.
