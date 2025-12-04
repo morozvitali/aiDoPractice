@@ -129,9 +129,17 @@ public class Main3 {
         ));
     }
 
-
-
-
+    public void practice10 () {
+        String text = "banana";
+        long vowels = text.chars()
+                .mapToObj(c->(char)c)
+                .collect(Collector.of(
+                        ()->new long [1],
+                        (a, ch) -> {if ("aeiou".indexOf(ch) >=0) {a[0]++;}},
+                        (a1, a2) -> {a1[0]+=a2[0]; return a1;},
+                        a-> a[0]
+                ));
+    }
 }
 
 
