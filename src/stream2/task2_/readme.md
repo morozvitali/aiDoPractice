@@ -112,12 +112,13 @@ Math.round(d) - округляє до найближчого цілого і п�
 
 📋 Умова: отримай статистику чисел (мін, макс, середнє).
 
-IntSummaryStatistics stats = IntStream.of(2, 4, 6, 8, 10)
-.summaryStatistics();
-
-System.out.println(stats.getAverage()); // 6.0
-System.out.println(stats.getSum());     // 30
-System.out.println(stats.getMax());     // 10
+    public void practice9 () {
+        IntSummaryStatistics stats = IntStream.of(2,4,6,8,10)
+                .summaryStatistics();
+        System.out.println(stats.getAverage());
+        System.out.println(stats.getMax());
+        System.out.println(stats.getMin());
+    }
 
 ✅ Завдання 10 — Комбіноване завдання: Random → обробка → результат
 🎯 Мета: використати всі три типи потоків.
