@@ -27,4 +27,17 @@ public class Main3 {
                 .forEach(System.out::println);
     }
 
+    public void practice6 () {
+        Stream.iterate(
+                new int[]{0, 1},
+                        a -> new int[]{a[1],
+                                a[0] + a[1]})
+                .limit(10)
+                .map(a->a[0])
+                .forEach(System.out::println);
+    }
+
+
+
+
 }

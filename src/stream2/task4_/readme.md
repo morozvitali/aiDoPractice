@@ -72,10 +72,15 @@ Stream.generate(UUID::randomUUID)
 
 🎯 Мета: комбінувати iterate() і масив для стану.
 
-Stream.iterate(new int[]{0, 1}, a -> new int[]{a[1], a[0] + a[1]})
-.limit(10)
-.map(a -> a[0])
-.forEach(System.out::print); // 01123581321
+    public void practice6 () {
+        Stream.iterate(
+                new int[]{0, 1}, 
+                        a -> new int[]{a[1], 
+                                a[0] + a[1]})
+                .limit(10)
+                .map(a->a[0])
+                .forEach(System.out::println);
+    } // 01123581321
 
 
 🧠 Тут a — пара [попереднє, наступне].
