@@ -91,12 +91,16 @@
 
 🎯 Мета: створити послідовність із затримкою.
 
-Stream.iterate(1, n -> n + 1)
-.peek(n -> {
-try { Thread.sleep(1000); } catch (InterruptedException e) {}
-})
-.limit(5)
-.forEach(n -> System.out.println("Tick " + n));
+    public void practice7() {
+        Stream.iterate(1, n -> n + 1)
+                .peek(n -> {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                    }
+                }).limit(5)
+                .forEach(n -> System.out.println("tick " + n));
+    }
 
 
 📤 Вивід:
