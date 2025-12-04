@@ -127,14 +127,15 @@ Math.round(d) - округляє до найближчого цілого і п�
 Перетвори їх у long (округливши).
 Поверни середнє цих значень.
 
-double avg = DoubleStream.generate(() -> Math.random() * 100)
-.limit(10)
-.mapToLong(Math::round)
-.asDoubleStream()
-.average()
-.orElse(0);
-
-System.out.println(avg);
+    public void practice10 () {
+        double avg = DoubleStream.generate(()-> Math.random()*100)
+                .limit(10)
+                .mapToLong(Math::round)
+                .asDoubleStream()
+                .average()
+                .orElse(0);
+        System.out.println(avg);
+    }
 
 🧠 Після виконання всіх 10 завдань ви:
 повністю відчуєте різницю між Stream<T> і примітивними потоками;
