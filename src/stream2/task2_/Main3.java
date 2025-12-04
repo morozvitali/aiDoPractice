@@ -1,5 +1,6 @@
 package stream2.task2_;
 
+import java.util.OptionalDouble;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
@@ -33,5 +34,12 @@ public class Main3 {
                 .reduce((a,b)-> a * b).orElse(-1);
         System.out.println(factirial);
     }
+
+    public void practice6 () {
+        OptionalDouble avg = IntStream.of(10, 20, 30, 40).average();
+        System.out.println(avg.getAsDouble());
+    }
+
+
 
 }

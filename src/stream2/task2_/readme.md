@@ -69,8 +69,10 @@ Math.round(d) - округляє до найближчого цілого і п�
 
 🎯 Мета: робота з average().
 
-OptionalDouble avg = IntStream.of(10, 20, 30, 40).average();
-System.out.println(avg.getAsDouble()); // 25.0
+    public void practice6 () {
+        OptionalDouble avg = IntStream.of(10, 20, 30, 40).average();
+        System.out.println(avg.getAsDouble());
+    }
 
 ✅ Завдання 7 — Конвертація у Stream<String>
 
