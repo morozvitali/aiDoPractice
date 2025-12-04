@@ -2,6 +2,7 @@ package stream2.task2_;
 
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 
 public class Main3 {
     public void practice1 () {
@@ -27,6 +28,10 @@ public class Main3 {
                 .sum();
     }
 
-
+    public void practice5 () {
+        long factirial = LongStream.rangeClosed(1,5)
+                .reduce((a,b)-> a * b).orElse(-1);
+        System.out.println(factirial);
+    }
 
 }

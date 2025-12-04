@@ -59,9 +59,11 @@ Math.round(d) - округляє до найближчого цілого і п�
 
 📋 Умова: обчисли 5! (факторіал числа 5).
 
-long factorial = LongStream.rangeClosed(1, 5)
-.reduce(1, (a, b) -> a * b);
-System.out.println(factorial); // 120
+    public void practice5 () {
+        long factirial = LongStream.rangeClosed(1,5)
+                .reduce((a,b)-> a * b).orElse(-1);
+        System.out.println(factirial);
+    }
 
 ✅ Завдання 6 — Знайти середнє
 
