@@ -10,7 +10,9 @@ public class Main3 {
     }
 
     public void practice2 () {
-
+        Stream.generate(()->(int)(Math.random()*10))
+                .limit(5)
+                .forEach(System.out::println);
     }
 
 
