@@ -112,9 +112,11 @@ Tick 2
 ✅ Завдання 8 — takeWhile + iterate
 🎯 Мета: поєднати дві концепції.
 
-Stream.iterate(1, n -> n + 3)
-.takeWhile(n -> n < 20)
-.forEach(System.out::println);
+    public void practice8 () {
+        Stream.iterate(1, n->n+3)
+                .takeWhile(n->n<20)
+                .forEach(System.out::println);
+    }
 // 1 4 7 10 13 16 19
 
 
