@@ -1,5 +1,6 @@
 package stream2.task2_;
 
+import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
@@ -40,6 +41,33 @@ public class Main3 {
         System.out.println(avg.getAsDouble());
     }
 
+    public void practice7 () {
+        List<String> list = IntStream.rangeClosed(1,3)
+                .mapToObj(i-> "Num " + i)
+                .toList();
+        System.out.println(list);
+    }
+
+
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
