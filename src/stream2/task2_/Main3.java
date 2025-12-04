@@ -1,5 +1,6 @@
 package stream2.task2_;
 
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 public class Main3 {
@@ -14,5 +15,10 @@ public class Main3 {
                 .sum();
     }
 
+    public void practice3 () {
+        DoubleStream.generate(Math::random)
+                .limit(5)
+                .forEach(System.out::println);
+    }
 
 }

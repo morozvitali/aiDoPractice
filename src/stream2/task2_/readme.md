@@ -32,10 +32,11 @@
 
 🎯 Мета: створити нескінченний потік випадкових чисел і обмежити його 5 одиницями.
 
-DoubleStream.generate(Math::random)
-.limit(5)
-.forEach(System.out::println);
-
+    public void practice3 () {
+        DoubleStream.generate(Math::random)
+                .limit(5)
+                .forEach(System.out::println);
+    }
 
 🧠 Генерація без колекцій, але завжди використовуйте .limit()!
 
