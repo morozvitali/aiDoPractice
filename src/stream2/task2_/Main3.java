@@ -21,4 +21,12 @@ public class Main3 {
                 .forEach(System.out::println);
     }
 
+    public void practice4 () {
+        int result =DoubleStream.of(1.2, 2.5, 3.8)
+                .mapToInt(d->(int) Math.round(d))
+                .sum();
+    }
+
+
+
 }
