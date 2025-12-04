@@ -66,6 +66,14 @@ public class Main3 {
                 .toList();
     }
 
+    public void practice9 () {
+        List<Integer> nums = List.of(-3, -2, -1, 0, 5, -4, 7);
+        List <Integer> abs = nums.stream()
+                .dropWhile(n->n<0)
+                .map(Math::abs)
+                .toList();
+    }
+
 
 }
 
