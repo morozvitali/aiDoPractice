@@ -196,14 +196,16 @@ System.out.println(abs); // [0, 5, 4, 7]
 
 Потім бери, поки не буде спека (takeWhile(t < 30)).
 
-List<Integer> temps = List.of(10, 12, 15, 20, 25, 30, 32, 28);
+    public void practice10 () {
+        List<Integer> temps = List.of(10, 12, 15, 20, 25, 30, 32, 28);
+        List <Integer> mild = temps.stream()
+                .dropWhile(t->t<15)
+                .takeWhile(t->t<30)
+                .toList();
+        System.out.println(mild);
+    }
 
-List<Integer> mild = temps.stream()
-.dropWhile(t -> t < 15)
-.takeWhile(t -> t < 30)
-.toList();
-
-System.out.println(mild); // [15, 20, 25]
+// [15, 20, 25]
 
 🧠 Різниця між ними в трьох словах:
 Метод	Дія	Зупинка

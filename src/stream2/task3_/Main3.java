@@ -74,7 +74,14 @@ public class Main3 {
                 .toList();
     }
 
-
+    public void practice10 () {
+        List<Integer> temps = List.of(10, 12, 15, 20, 25, 30, 32, 28);
+        List <Integer> mild = temps.stream()
+                .dropWhile(t->t<15)
+                .takeWhile(t->t<30)
+                .toList();
+        System.out.println(mild);
+    }
 }
 
 
