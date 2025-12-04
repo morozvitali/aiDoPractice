@@ -47,8 +47,12 @@
 
 🎯 Мета: використати форму iterate з умовою зупинки.
 
-Stream.iterate(1, n -> n <= 10, n -> n + 2)
-.forEach(System.out::print); // 13579
+    public void practice4 () {
+        Stream.iterate(1, n->n<=10, n-> n+2)
+                .forEach(System.out::println);
+    }
+
+// 13579
 
 
 🧠 Java 9+ дозволяє одразу вказати умову завершення, без .limit().
