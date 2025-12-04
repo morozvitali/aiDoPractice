@@ -80,11 +80,12 @@ Math.round(d) - округляє до найближчого цілого і п�
 
 📋 Умова: створити рядки типу "Num: X" для кожного елемента.
 
-List<String> list = IntStream.rangeClosed(1, 3)
-.mapToObj(i -> "Num: " + i)
-.toList();
-
-System.out.println(list); // [Num: 1, Num: 2, Num: 3]
+    public void practice7 () {
+        List<String> list = IntStream.rangeClosed(1,3)
+                .mapToObj(i-> "Num " + i)
+                .toList();
+        System.out.println(list);
+    } // [Num: 1, Num: 2, Num: 3]
 
 ✅ Завдання 8 — Комбінування IntStream і DoubleStream
 
@@ -92,14 +93,15 @@ System.out.println(list); // [Num: 1, Num: 2, Num: 3]
 
 📋 Умова: згенеруй випадкові double і перетвори їх у int.
 
-List<Integer> rounded = DoubleStream.generate(Math::random)
-.limit(5)
-.map(d -> d * 10)
-.mapToInt(d -> (int) Math.round(d))
-.boxed()
-.toList();
-
-System.out.println(rounded);
+    public void practice8() {
+        List<Integer> rounded = DoubleStream.generate(Math::random)
+                .limit(5)
+                .map(d -> d * 10)
+                .mapToInt(d -> (int) Math.round(d))
+                .boxed()
+                .toList();
+        System.out.println(rounded);
+    }
 
 
 🧠 Зверни увагу: .mapToInt() → потім .boxed() (бо IntStream не є Stream<Integer>).
