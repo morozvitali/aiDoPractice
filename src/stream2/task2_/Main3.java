@@ -67,8 +67,15 @@ public class Main3 {
         System.out.println(stats.getMin());
     }
 
-
-
+    public void practice10 () {
+        double avg = DoubleStream.generate(()-> Math.random()*100)
+                .limit(10)
+                .mapToLong(Math::round)
+                .asDoubleStream()
+                .average()
+                .orElse(0);
+        System.out.println(avg);
+    }
 }
 
 
