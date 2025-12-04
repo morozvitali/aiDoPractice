@@ -80,31 +80,54 @@ takeWhile() зупиняється після першого порушення 
 📋 Умова:
 Порахуй скільки елементів іде підряд у зростанні.
 
-AtomicInteger prev = new AtomicInteger(0);
-List<Integer> result = nums.stream()
-.takeWhile(n -> {
-boolean ok = n > prev.get();
-prev.set(n);
-return ok;
-})
-.toList();
+    public void practice4 () {
+        List<Integer> nums = List.of(1, 2, 3, 2, 5);
+        AtomicInteger prev = new AtomicInteger(0);
+        List <Integer> result = nums.stream()
+                .takeWhile(n->{
+                    boolean ok = n > prev.get();
+                    prev.set(n);
+                    return ok;
+                }).toList();
+        System.out.println(result);
+    }
 
 [prev — це змінна, яка зберігає попередній елемент із потоку.
 Вона змінюється при кожній ітерації.
-Без AtomicInteger не можна, бо звичайну int prev = 0 
+Без AtomicInteger не можна, бо звичайну int prev = 0
 Java НЕ дозволить змінювати всередині лямбди]
 
-System.out.println(result); // [1, 2, 3, 5]
+Ітерації:
+prev = 0
+1 > 0 → ✔ береться
+- prev = 1]
+
+prev = 1
+2 > 1 → ✔ береться
+prev = 2
+
+prev = 2
+3 > 2 → ✔ береться
+prev = 3
+
+prev = 3
+2 > 3 → ❌ стоп → takeWhile обриває стрім
+(5 вже не аналізується!)
+
+Результат:
+[1, 2, 3]]
 
 ✅ Завдання 5 — dropWhile для пропуску “заголовків”
 
 📋 Умова:
 Пропусти порожні рядки, поки не почався контент.
 
-List<String> lines = List.of("", "", "Hello", "World", "!");
-List<String> content = lines.stream()
-.dropWhile(String::isEmpty)
-.toList();
+    public void practice5() {
+        List<String> lines = List.of("", "", "Hello", "World", "!");
+        List<String> content = lines.stream()
+                .dropWhile(String::isEmpty)
+                .toList();
+    }
 
 System.out.println(content); // [Hello, World, !]
 
