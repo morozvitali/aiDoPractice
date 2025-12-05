@@ -11,38 +11,46 @@ public class Main3 {
         Stream.concat(a, b).forEach(System.out::println);
     }
 
-    public void practice2 () {
+    public void practice2() {
         List<String> one = List.of("apple", "banana", "cherry");
         List<String> two = List.of("banana", "date", "apple");
-        List <String> list = Stream.concat(one.stream(), two.stream())
+        List<String> list = Stream.concat(one.stream(), two.stream())
                 .distinct()
                 .toList();
         System.out.println(list);
     }
 
-    public void practice3 () {
+    public void practice3() {
         List<List<String>> lists = List.of(
                 List.of("A", "B"),
                 List.of("C", "D", "E")
         );
 
-        List <String> result = lists.stream()
+        List<String> result = lists.stream()
                 .flatMap(Collection::stream)
                 .toList();
 
         System.out.println(result);
     }
 
-    public void practice4 () {
-        Stream <String> s1 = Stream.of("a");
-        Stream <String> s2 = Stream.of("b");
-        Stream <String> s3 = Stream.of("c");
+    public void practice4() {
+        Stream<String> s1 = Stream.of("a");
+        Stream<String> s2 = Stream.of("b");
+        Stream<String> s3 = Stream.of("c");
 
-        Stream <String> merged = Stream.of(s1,s2,s3)
+        Stream<String> merged = Stream.of(s1, s2, s3)
                 .reduce(Stream::concat)
                 .orElse(Stream.empty());
         merged.forEach(System.out::println);
     }
 
+    public void practice5() {
+        List<String> java = List.of("Spring", "Hibernate");
+        List<String> js = List.of("React, Vue");
+        Stream.concat(
+                        java.stream().map(j -> "[JAVA] " + j),
+                        js.stream().map(j -> "[JS ]" + j))
+                .forEach(System.out::println);
+    }
 }
 

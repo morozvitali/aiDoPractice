@@ -38,14 +38,16 @@
 
 🎯 Мета: поєднати кілька колекцій у потік без Stream.concat.
 
-List<List<String>> lists = List.of(
-List.of("A", "B"),
-List.of("C", "D", "E")
-);
-
-List<String> result = lists.stream()
-.flatMap(Collection::stream)
-.toList();
+    public void practice3() {
+        List<List<String>> lists = List.of(
+                List.of("A", "B"),
+                List.of("C", "D", "E")
+        );
+        List<String> result = lists.stream()
+                .flatMap(Collection::stream)
+                .toList();
+        System.out.println(result);
+    }
 
 System.out.println(result); // [A, B, C, D, E]
 
@@ -53,28 +55,30 @@ System.out.println(result); // [A, B, C, D, E]
 
 🎯 Мета: динамічно поєднувати більше ніж 2 потоки.
 
-Stream<String> s1 = Stream.of("a");
-Stream<String> s2 = Stream.of("b");
-Stream<String> s3 = Stream.of("c");
+    public void practice4() {
+        Stream<String> s1 = Stream.of("a");
+        Stream<String> s2 = Stream.of("b");
+        Stream<String> s3 = Stream.of("c");
 
-Stream<String> merged = Stream.of(s1, s2, s3)
-.reduce(Stream::concat)
-.orElse(Stream.empty());
-
-merged.forEach(System.out::print); // abc
+        Stream<String> merged = Stream.of(s1, s2, s3)
+                .reduce(Stream::concat)
+                .orElse(Stream.empty());
+        merged.forEach(System.out::println);
+    }
+// abc
 
 ✅ Завдання 5 — Маркування джерел
 
 🎯 Мета: після злиття знати, з якого потоку елемент.
 
-List<String> java = List.of("Spring", "Hibernate");
-List<String> js = List.of("React", "Vue");
-
-Stream.concat(
-java.stream().map(j -> "[Java] " + j),
-js.stream().map(j -> "[JS] " + j)
-)
-.forEach(System.out::println);
+    public void practice5() {
+        List<String> java = List.of("Spring", "Hibernate");
+        List<String> js = List.of("React, Vue");
+        Stream.concat(
+                        java.stream().map(j -> "[JAVA] " + j),
+                        js.stream().map(j -> "[JS ]" + j))
+                .forEach(System.out::println);
+    }
 
 
 📤
