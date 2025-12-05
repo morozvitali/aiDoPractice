@@ -44,27 +44,46 @@ public class Main3 {
         System.out.println(map);
     }
 
-    public void practice5 () {
+    public void practice5() {
         List<String> fruits = List.of("apple", "pear", "apple", "banana", "pear");
         Map<String, Long> freq = fruits.stream().collect(Collectors.toMap(
                 f -> f,
-                _ ->1L,
+                _ -> 1L,
                 Long::sum
-                ));
+        ));
         System.out.println(freq);
     }
 
 
-    public void practice6 () {
+    public void practice6() {
         List<String> words = List.of("cat", "cow", "dog", "duck");
-        Map <Character, List<String>> map = words.stream()
+        Map<Character, List<String>> map = words.stream()
                 .collect(Collectors.toMap(
-                        w->w.charAt(0),
-                        w->new ArrayList<>(List.of(w)),
-                        (list1, list2) -> {list1.addAll(list2); return list1;}
+                        w -> w.charAt(0),
+                        w -> new ArrayList<>(List.of(w)),
+                        (list1, list2) -> {
+                            list1.addAll(list2);
+                            return list1;
+                        }
                 ));
         System.out.println(map);
     }
+
+    public void practice7() {
+        List<Map<String, Integer>> maps = List.of(
+                Map.of("A", 1, "B", 2),
+                Map.of("B", 3, "C", 4)
+        );
+        Map<String, Integer> merged = maps.stream()
+                .flatMap(m -> m.entrySet().stream())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        Integer::sum
+                ));
+        System.out.println(merged);
+    }
+
 
 
 }

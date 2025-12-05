@@ -108,36 +108,39 @@ System.out.println(map); // {Bob=3, Anna=4, John=4}
 
 🎯 Мета: перетворити список Map у одну велику Map.
 
-List<Map<String, Integer>> maps = List.of(
-Map.of("A", 1, "B", 2),
-Map.of("B", 3, "C", 4)
-);
+    public void practice7() {
+        List<Map<String, Integer>> maps = List.of(
+                Map.of("A", 1, "B", 2),
+                Map.of("B", 3, "C", 4)
+        );
 
-Map<String, Integer> merged = maps.stream()
-.flatMap(m -> m.entrySet().stream())
-.collect(Collectors.toMap(
-Map.Entry::getKey,
-Map.Entry::getValue,
-Integer::sum
-));
 
-System.out.println(merged);
+        Map<String, Integer> merged = maps.stream()
+                .flatMap(m -> m.entrySet().stream())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        Integer::sum
+                ));
+        System.out.println(merged);
+    }
+
 // {A=1, B=5, C=4}
 
 ✅ Завдання 8 — Підрахунок сум за ключем
 
 🎯 Мета: схоже до “groupingBy + summingInt”, але вручну.
 
-List<String> items = List.of("apple", "apple", "pear", "apple", "pear");
-
-Map<String, Integer> result = items.stream()
-.collect(Collectors.toMap(
-s -> s,
-s -> 1,
-Integer::sum
-));
-
-System.out.println(result);
+    public void practice8() {
+        List<String> items = List.of("apple", "apple", "pear", "apple", "pear");
+        Map<String, Integer> result = items.stream()
+                .collect(Collectors.toMap(
+                        s -> s,
+                        s -> 1,
+                        Integer::sum
+                ));
+        System.out.println(result);
+    }
 // {apple=3, pear=2}
 
 ✅ Завдання 9 — Злиття і форматування результатів
