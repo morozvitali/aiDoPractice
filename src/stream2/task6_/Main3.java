@@ -106,6 +106,8 @@ public class Main3 {
                 ));
     }
 
+    public void practice10 () {
 
+    }
 
 }
