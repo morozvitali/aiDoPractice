@@ -10,10 +10,11 @@
 📋 Умова:
 Об’єднай два списки і виведи всі елементи.
 
-Stream<String> a = Stream.of("A", "B", "C");
-Stream<String> b = Stream.of("D", "E");
-
-Stream.concat(a, b).forEach(System.out::print);
+    public void practice1() {
+        Stream<String> a = Stream.of("A", "B", "C");
+        Stream<String> b = Stream.of("D", "F");
+        Stream.concat(a, b).forEach(System.out::println);
+    }
 // ABCDE
 
 
