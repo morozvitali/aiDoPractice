@@ -11,13 +11,14 @@
 📋 Умова:
 Зроби Map з імен → довжина імені.
 
-List<String> names = List.of("Bob", "Anna", "John");
-
-Map<String, Integer> map = names.stream()
-.collect(Collectors.toMap(
-name -> name,
-String::length
-));
+    public void practice1 () {
+        List<String> names = List.of("Bob", "Anna", "John");
+        Map<String, Integer> map = names.stream().collect(Collectors.toMap(
+                name -> name,
+                String::length
+        ));
+        System.out.println(map);
+    }
 
 System.out.println(map); // {Bob=3, Anna=4, John=4}
 
@@ -28,13 +29,12 @@ System.out.println(map); // {Bob=3, Anna=4, John=4}
 📋 Умова:
 Спробуй створити мапу за першою літерою імені.
 
-List<String> names = List.of("Bob", "Bill", "Anna");
-
-Map<Character, String> map = names.stream()
-.collect(Collectors.toMap(
-name -> name.charAt(0),
-name -> name
-));
+    public void practice2() {
+        List<String> names = List.of("Bob", "Bill", "Anna");
+        Map<Character, String> map = names.stream()
+                .collect(Collectors.toMap(name -> name.charAt(0),
+                        name -> name));
+    }
 
 
 💥 Результат: IllegalStateException: Duplicate key B

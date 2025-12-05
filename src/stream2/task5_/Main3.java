@@ -83,7 +83,7 @@ public class Main3 {
         }
     }
 
-    public void practic9 () {
+    public void practice9 () {
         List <Integer> l1 = List.of(5,2,8);
         Set<Integer> l2 = Set.of(3,8,1);
         List <Integer> sorted = Stream.concat(l1.stream(), l2.stream())
