@@ -77,32 +77,31 @@ System.out.println(map); // {Bob=3, Anna=4, John=4}
 
 🎯 Мета: створити частотну мапу.
 
-List<String> fruits = List.of("apple", "pear", "apple", "banana", "pear");
-
-Map<String, Long> freq = fruits.stream()
-.collect(Collectors.toMap(
-f -> f,
-f -> 1L,
-Long::sum
-));
-
-System.out.println(freq);
+    public void practice5 () {
+        List<String> fruits = List.of("apple", "pear", "apple", "banana", "pear");
+        Map<String, Long> freq = fruits.stream().collect(Collectors.toMap(
+                f -> f,
+                f->1L,
+                Long::sum
+                ));
+        System.out.println(freq);
+    }
 // {banana=1, apple=2, pear=2}
 
 ✅ Завдання 6 — Групування по першій літері + список
 
 🎯 Мета: створити Map<Character, List<String>> без groupingBy.
 
-List<String> words = List.of("cat", "cow", "dog", "duck");
-
-Map<Character, List<String>> map = words.stream()
-.collect(Collectors.toMap(
-w -> w.charAt(0),
-w -> new ArrayList<>(List.of(w)),
-(list1, list2) -> { list1.addAll(list2); return list1; }
-));
-
-System.out.println(map);
+    public void practice6 () {
+        List<String> words = List.of("cat", "cow", "dog", "duck");
+        Map <Character, List<String>> map = words.stream()
+                .collect(Collectors.toMap(
+                        w->w.charAt(0),
+                        w->new ArrayList<>(List.of(w)),
+                        (list1, list2) -> {list1.addAll(list2); return list1;}
+                ));
+        System.out.println(map);
+    }
 // {c=[cat, cow], d=[dog, duck]}
 
 ✅ Завдання 7 — Злиття Map через toMap()
