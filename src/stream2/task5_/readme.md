@@ -136,16 +136,16 @@ Ann
 
 🧠 Ідеально для логів, статистики, великих текстових об’єднань.
 
-✅ Завдання 9 — Злиття та сортування різних колекцій
-List<Integer> l1 = List.of(5, 2, 8);
-Set<Integer> l2 = Set.of(3, 8, 1);
-
-List<Integer> sorted = Stream.concat(l1.stream(), l2.stream())
-.distinct()
-.sorted()
-.toList();
-
-System.out.println(sorted); // [1, 2, 3, 5, 8]
+    public void practic9 () {
+        List <Integer> l1 = List.of(5,2,8);
+        Set<Integer> l2 = Set.of(3,8,1);
+        List <Integer> sorted = Stream.concat(l1.stream(), l2.stream())
+                .distinct()
+                .sorted()
+                .toList();
+        System.out.println(sorted);
+    }
+// [1, 2, 3, 5, 8]
 
 ✅ Завдання 10 — Комбіноване: 3 типи + обробка + колект
 

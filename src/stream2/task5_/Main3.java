@@ -1,10 +1,12 @@
 package stream2.task5_;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -79,6 +81,19 @@ public class Main3 {
             throw new RuntimeException(e);
         }
     }
+
+    public void practic9 () {
+        List <Integer> l1 = List.of(5,2,8);
+        Set<Integer> l2 = Set.of(3,8,1);
+        List <Integer> sorted = Stream.concat(l1.stream(), l2.stream())
+                .distinct()
+                .sorted()
+                .toList();
+        System.out.println(sorted);
+    }
+
+
+
 
 
 }
