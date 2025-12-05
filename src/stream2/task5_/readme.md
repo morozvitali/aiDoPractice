@@ -124,13 +124,15 @@ Ann
 
 🎯 Мета: об’єднати два текстових файли в один потік.
 
-try (Stream<String> file1 = Files.lines(Path.of("a.txt"));
-Stream<String> file2 = Files.lines(Path.of("b.txt"))) {
-
-    Stream.concat(file1, file2)
-        .forEach(System.out::println);
-
-}
+    public void practice8 () {
+        try (Stream <String> file1 = Files.lines(Path.of("a.txt"));
+        Stream <String> file2 = Files.lines(Path.of("b.txt"))
+        ) {
+            Stream.concat(file1, file2).forEach(System.out::println);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 🧠 Ідеально для логів, статистики, великих текстових об’єднань.
 
