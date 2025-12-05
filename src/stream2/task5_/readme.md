@@ -24,14 +24,15 @@
 📋 Умова:
 Об’єднай два списки і залиш тільки унікальні елементи.
 
-List<String> one = List.of("apple", "banana", "cherry");
-List<String> two = List.of("banana", "date", "apple");
-
-List<String> merged = Stream.concat(one.stream(), two.stream())
-.distinct()
-.toList();
-
-System.out.println(merged); // [apple, banana, cherry, date]
+    public void practice2 () {
+        List<String> one = List.of("apple", "banana", "cherry");
+        List<String> two = List.of("banana", "date", "apple");
+        List <String> list = Stream.concat(one.stream(), two.stream())
+                .distinct()
+                .toList();
+        System.out.println(list);
+    }
+// [apple, banana, cherry, date]
 
 ✅ Завдання 3 — Використання flatMap для злиття
 
