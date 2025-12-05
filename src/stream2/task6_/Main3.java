@@ -24,10 +24,24 @@ public class Main3 {
 
     public void pracvtice3() {
         List<String> names = List.of("Bob", "Bill", "Anna");
-        Map <Character, String> map = names.stream()
+        Map<Character, String> map = names.stream()
                 .collect(Collectors.toMap(name -> name.charAt(0),
                         name -> name,
-                        (v1,v2)->v1 + ", " + v2));
+                        (v1, v2) -> v1 + ", " + v2));
         System.out.println(map);
     }
+
+    public void practice4() {
+        List<String> names = List.of("Bob", "Bill", "Benjamin");
+        Map<Character, String> map = names.stream()
+                .collect(Collectors.toMap(
+                        s -> s.charAt(0),
+                        s -> s,
+                        (a, b) -> a.length() <= b.length() ? a : b
+                ));
+        System.out.println(map);
+    }
+
+
+
 }

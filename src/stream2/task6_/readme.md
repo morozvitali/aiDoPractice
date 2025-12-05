@@ -46,16 +46,14 @@ System.out.println(map); // {Bob=3, Anna=4, John=4}
 📋 Умова:
 Якщо ключ повторюється — з’єднати значення комою.
 
-List<String> names = List.of("Bob", "Bill", "Anna");
-
-Map<Character, String> map = names.stream()
-.collect(Collectors.toMap(
-name -> name.charAt(0),
-name -> name,
-(v1, v2) -> v1 + ", " + v2
-));
-
-System.out.println(map);
+    public void pracvtice3() {
+        List<String> names = List.of("Bob", "Bill", "Anna");
+        Map <Character, String> map = names.stream()
+                .collect(Collectors.toMap(name -> name.charAt(0),
+                        name -> name,
+                        (v1,v2)->v1 + ", " + v2));
+        System.out.println(map);
+    }
 // {A=Anna, B=Bob, Bill}
 
 ✅ Завдання 4 — Вибір найкоротшого значення при колізії
@@ -63,16 +61,16 @@ System.out.println(map);
 📋 Умова:
 Якщо ключ повторюється, залиш коротше ім’я.
 
-List<String> names = List.of("Bob", "Bill", "Benjamin");
-
-Map<Character, String> map = names.stream()
-.collect(Collectors.toMap(
-s -> s.charAt(0),
-s -> s,
-(a, b) -> a.length() <= b.length() ? a : b
-));
-
-System.out.println(map);
+    public void practice4() {
+        List<String> names = List.of("Bob", "Bill", "Benjamin");
+        Map<Character, String> map = names.stream()
+                .collect(Collectors.toMap(
+                        s -> s.charAt(0),
+                        s -> s,
+                        (a, b) -> a.length() <= b.length() ? a : b
+                ));
+        System.out.println(map);
+    }
 // {B=Bob}
 
 ✅ Завдання 5 — Підрахунок повторів
