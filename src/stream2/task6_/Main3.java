@@ -22,4 +22,12 @@ public class Main3 {
                         name -> name));
     }
 
+    public void pracvtice3() {
+        List<String> names = List.of("Bob", "Bill", "Anna");
+        Map <Character, String> map = names.stream()
+                .collect(Collectors.toMap(name -> name.charAt(0),
+                        name -> name,
+                        (v1,v2)->v1 + ", " + v2));
+        System.out.println(map);
+    }
 }
