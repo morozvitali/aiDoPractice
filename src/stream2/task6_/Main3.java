@@ -96,4 +96,16 @@ public class Main3 {
     }
 
 
+    public void practice9 () {
+        List <String> words = List.of("java", "jungle", "joy");
+        Map <Character, String> result = words.stream()
+                .collect(Collectors.toMap(
+                        w->w.charAt(0),
+                        w->w+"(" + w.length()+")",
+                        (a,b) -> a + ";" + b
+                ));
+    }
+
+
+
 }
