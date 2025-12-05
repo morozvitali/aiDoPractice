@@ -106,14 +106,12 @@ System.out.println(result); // [A, B, C, D, E]
 
 🎯 Мета: перетворити типи перед злиттям.
 
-Stream<String> names = Stream.of("Bob", "Ann");
-Stream<Integer> ages = Stream.of(25, 30);
-
-Stream.concat(
-names,
-ages.map(String::valueOf)
-)
-.forEach(System.out::println);
+    public void practice7() {
+        Stream<String> names = Stream.of("Bob", "Ann");
+        Stream<Integer> ages = Stream.of(25, 30);
+        Stream.concat(names, ages.map(String::valueOf))
+                .forEach(System.out::println);
+    }
 
 📤
 
