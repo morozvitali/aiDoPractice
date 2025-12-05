@@ -151,16 +151,16 @@ Ann
 
 🎯 Мета: об’єднати числа, слова і символи.
 
-Stream<String> numbers = Stream.of("1", "2");
-Stream<String> letters = Stream.of("A", "B");
-Stream<String> signs = Stream.of("!", "?");
-
-String merged = Stream.of(numbers, letters, signs)
-.reduce(Stream::concat)
-.orElse(Stream.empty())
-.collect(Collectors.joining(", "));
-
-System.out.println(merged);
+    public void practice10 () {
+        Stream <String> numbers = Stream.of("1", "2");
+        Stream <String> letters = Stream.of("A", "B");
+        Stream <String> signs = Stream.of("!", "?");
+        
+        String merged = Stream.of(numbers, letters, signs)
+                .reduce(Stream::concat)
+                .orElse(Stream.empty())
+                .collect(Collectors.joining(", "));
+        System.out.println(merged);
 // 1, 2, A, B, !, ?
 
 🧠 Різниця між підходами

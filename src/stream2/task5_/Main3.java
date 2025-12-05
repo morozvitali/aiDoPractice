@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -92,7 +93,19 @@ public class Main3 {
         System.out.println(sorted);
     }
 
+    public void practice10 () {
+        Stream <String> numbers = Stream.of("1", "2");
+        Stream <String> letters = Stream.of("A", "B");
+        Stream <String> signs = Stream.of("!", "?");
 
+        String merged = Stream.of(numbers, letters, signs)
+                .reduce(Stream::concat)
+                .orElse(Stream.empty())
+                .collect(Collectors.joining(", "));
+        System.out.println(merged);
+
+
+    }
 
 
 
