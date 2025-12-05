@@ -165,16 +165,16 @@ System.out.println(result);
 Створи мапу, де ключ — перша літера,
 значення — унікальні слова у списку.
 
-List<String> words = List.of("apple", "apricot", "banana", "blueberry", "apple");
+    public void practice10 () {
+        List<String> words = List.of("apple", "apricot", "banana", "blueberry", "apple");
+        Map <Character, Set<String>> map = words.stream()
+                .collect(Collectors.toMap(
+                        w -> w.charAt(0),
+                        w -> new HashSet<>(Set.of(w)),
+                        (set1, set2) -> { set1.addAll(set2); return set1; } 
+                ));
+    }
 
-Map<Character, Set<String>> map = words.stream()
-.collect(Collectors.toMap(
-w -> w.charAt(0),
-w -> new HashSet<>(Set.of(w)),
-(set1, set2) -> { set1.addAll(set2); return set1; }
-));
-
-System.out.println(map);
 // {a=[apple, apricot], b=[banana, blueberry]}
 
 💡 Підсумок

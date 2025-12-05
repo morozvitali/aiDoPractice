@@ -1,8 +1,6 @@
 package stream2.task6_;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main3 {
@@ -89,7 +87,7 @@ public class Main3 {
         Map<String, Integer> result = items.stream()
                 .collect(Collectors.toMap(
                         s -> s,
-                        s -> 1,
+                        _ -> 1,
                         Integer::sum
                 ));
         System.out.println(result);
@@ -104,10 +102,16 @@ public class Main3 {
                         w->w+"(" + w.length()+")",
                         (a,b) -> a + ";" + b
                 ));
+        System.out.println(result);
     }
 
     public void practice10 () {
-
+        List<String> words = List.of("apple", "apricot", "banana", "blueberry", "apple");
+        Map <Character, Set<String>> map = words.stream()
+                .collect(Collectors.toMap(
+                        w -> w.charAt(0),
+                        w -> new HashSet<>(Set.of(w)),
+                        (set1, set2) -> { set1.addAll(set2); return set1; }
+                ));
     }
-
 }
