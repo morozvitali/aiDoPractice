@@ -84,6 +84,16 @@ public class Main3 {
         System.out.println(merged);
     }
 
+    public void practice8() {
+        List<String> items = List.of("apple", "apple", "pear", "apple", "pear");
+        Map<String, Integer> result = items.stream()
+                .collect(Collectors.toMap(
+                        s -> s,
+                        s -> 1,
+                        Integer::sum
+                ));
+        System.out.println(result);
+    }
 
 
 }
