@@ -1,5 +1,7 @@
 package stream2.task10_;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
@@ -63,7 +65,14 @@ public class Main3 {
         System.out.println(map);
     }
 
-
+    public void practice6 () {
+        List<String> words = List.of("apple", "ape", "banana", "ball", "berry");
+        Map<Character, Double> map = words.stream()
+                .collect(Collectors
+                        .groupingBy(w -> w.charAt(0),
+                                Collectors.averagingInt(String::length)));
+        System.out.println(map);
+    }
 
 
 }

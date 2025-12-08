@@ -73,7 +73,7 @@ class Product (String category, int price) {}
 
 // {fruit=15.0, veg=5.0}
 
-✅ Завдання 4 — summaryStatistics() по групах
+## ✅ Завдання 4 — summaryStatistics() по групах
 
 📋 Умова:
 Збери IntSummaryStatistics для кожної категорії.
@@ -92,31 +92,40 @@ class Product (String category, int price) {}
 fruit → 15.0  
 veg → 5.0
 
-✅ Завдання 5 — Підрахунок кількості товарів по групах (counting)
+## ✅ Завдання 5 — Підрахунок кількості товарів по групах (counting)
 
-Map<String, Long> countByCat = items.stream()
-.collect(Collectors.groupingBy(
-Item::category,
-Collectors.counting()
-));
+    public void practice5 () {
+        List<Product> products = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5));
 
-System.out.println(countByCat); // {fruit=2, veg=1}
+        Map <String, Long> map = products.stream()
+                .collect(Collectors.groupingBy(
+                        Product::getCategory,
+                        Collectors.counting()
+                ));
+        System.out.println(map);
+    }
+
+// {fruit=2, veg=1}
 
 
 🧠 counting() — один із найчастіших допоміжних колекторів.
 
-✅ Завдання 6 — Середня довжина слів по першій літері
-List<String> words = List.of("apple", "ape", "banana", "ball", "berry");
+## ✅ Завдання 6 — Середня довжина слів по першій літері
+    public void practice6 () {
+        List<String> words = List.of("apple", "ape", "banana", "ball", "berry");
+        Map<Character, Double> map = words.stream()
+                .collect(Collectors
+                        .groupingBy(w -> w.charAt(0),
+                                Collectors.averagingInt(String::length)));
+        System.out.println(map);
+    }
 
-Map<Character, Double> avgLen = words.stream()
-.collect(Collectors.groupingBy(
-w -> w.charAt(0),
-Collectors.averagingInt(String::length)
-));
+// {a=4.0, b=5.0}
 
-System.out.println(avgLen); // {a=4.0, b=5.0}
-
-✅ Завдання 7 — Комбінований колектор (mapping + summarizing)
+## ✅ Завдання 7 — Комбінований колектор (mapping + summarizing)
 
 📋 Умова:
 Зроби статистику довжин слів по першій літері.
