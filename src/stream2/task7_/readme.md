@@ -20,8 +20,12 @@ names.add("Jack"); // 💥 UnsupportedOperationException
 🧠 Колекція створена, але змінювати її не можна.
 
 ✅ Завдання 2 — Незмінна множина
-Set<Integer> set = Stream.of(1, 2, 3, 2)
+
+public void practice2 () {
+Set <Integer> set = Stream.of(1,2,3,2)
 .collect(Collectors.toUnmodifiableSet());
+System.out.println(set);
+}
 
 System.out.println(set); // [1, 2, 3]
 set.remove(1); // 💥 UnsupportedOperationException
