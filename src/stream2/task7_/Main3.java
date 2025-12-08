@@ -1,5 +1,6 @@
 package stream2.task7_;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -61,6 +62,13 @@ public class Main3 {
     public void practice7 () {
         var modifiable = Stream.of("A", "B").collect(Collectors.toList());
         var unmodifiable = Stream.of("A", "B").collect(Collectors.toUnmodifiableList());
+    }
+
+    public void practice8 () {
+        List <String> sourse = new ArrayList<>(List.of("A", "B", "C"));
+        List <String> result = sourse.stream().collect(Collectors.toUnmodifiableList());
+        sourse.add("D");
+        System.out.println(result);
     }
 
 
