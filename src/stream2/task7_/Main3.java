@@ -39,7 +39,15 @@ public class Main3 {
         System.out.println(map);
     }
 
-
+    public void practice5 () {
+        Map<Character, String> map = Stream.of("apple", "apricot")
+        .collect(Collectors.toUnmodifiableMap(
+                s->s.charAt(0),
+                s->s,
+                (a,b) -> a+ ", " + b
+        ));
+        System.out.println(map);
+    }
 
 
 }

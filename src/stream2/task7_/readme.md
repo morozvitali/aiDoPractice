@@ -35,11 +35,11 @@ set.remove(1); // 💥 UnsupportedOperationException
 ✅ Завдання 3 — Незмінна мапа
 
     public void practice3 () {
-    Map<String, Integer> map = Stream.of("A", "B", "C")
-    .collect(Collectors.toUnmodifiableMap(
-    s->s,
-    String::length
-    ));
+        Map<String, Integer> map = Stream.of("A", "B", "C")
+                .collect(Collectors.toUnmodifiableMap(
+                        s->s,
+                        String::length
+                ));
     }
 
 System.out.println(map); // {A=1, B=1, C=1}
@@ -51,14 +51,15 @@ map.put("D", 2); // 💥 UnsupportedOperationException
 
 # що таке mergeFunction ?? чому падає
 
-List<String> list = List.of("apple", "apricot");
-
-Map<Character, String> map = list.stream()
-.collect(Collectors.toUnmodifiableMap(
-s -> s.charAt(0),
-s -> s
-));
-
+    public void ptactice4 () {
+        List<String> list = List.of("apple", "apricot");
+        Map <Character, String> map = list.stream()
+                .collect(Collectors.toUnmodifiableMap(
+                        s-> s.charAt(0),
+                        s->s
+                ));
+        System.out.println(map);
+    }
 
 💥 IllegalStateException: duplicate key 'a'
 🧠 Ті ж правила, що й у toMap() — колізії не прощаються.
