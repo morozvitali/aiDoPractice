@@ -16,4 +16,12 @@ public class Main3 {
                 .forEach(System.out::println);
     }
 
+    public void practice3 () {
+        List.of(1,2,3,4,5)
+                .parallelStream()
+                .forEachOrdered(System.out::println);
+    }
+
+
+
 }
