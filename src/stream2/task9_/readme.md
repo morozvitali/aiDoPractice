@@ -110,17 +110,18 @@ ForkJoinPool.commonPool-worker-7 → D
 📋 Умова:
 Спробуй додавати елементи в List усередині parallelStream.
 
-List<Integer> result = new ArrayList<>();
+    public void practice6 () {
+        List <Integer> result = new ArrayList<>();
+        IntStream.range(1,10).parallel().forEach(result::add);
+        System.out.println(result);
+    }
 
-IntStream.range(1, 10).parallel().forEach(result::add);
-
-System.out.println(result); // 😱 Може бути неповним або кинути Exception
-
+// 😱 Може бути неповним або кинути Exception
 
 🧠 Помилка: паралельне додавання в ArrayList не є безпечним.
 Використовуйте ConcurrentLinkedQueue або колектори.
 
-✅ Завдання 7 — Правильне збирання в колекцію
+## ✅ Завдання 7 — Правильне збирання в колекцію
 
 📋 Умова:
 Використай Collector (thread-safe збирання).
