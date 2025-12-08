@@ -71,16 +71,14 @@ public class Main3 {
         System.out.println(result);
     }
 
-
-
-
-
-
-
-
-
-
-
+    public void practice9 () {
+        Map<String, Integer> map = Stream.of("Mars", "Venus", "Earth")
+                .collect(Collectors.toUnmodifiableMap(
+                        s->s.toUpperCase(),
+                        String::length
+                ));
+        System.out.println();
+    }
 
 
 }

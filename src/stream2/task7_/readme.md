@@ -129,11 +129,14 @@ System.out.println(result); // [A, B, C]
 📋 Умова:
 Зроби мапу з назви → довжина → незмінну.
 
-Map<String, Integer> map = Stream.of("Mars", "Venus", "Earth")
-.collect(Collectors.toUnmodifiableMap(
-s -> s.toUpperCase(),
-String::length
-));
+    public void practice9 () {
+        Map<String, Integer> map = Stream.of("Mars", "Venus", "Earth")
+                .collect(Collectors.toUnmodifiableMap(
+                        s->s.toUpperCase(),
+                        String::length
+                ));
+        System.out.println();
+    }
 
 System.out.println(map); // {MARS=4, VENUS=5, EARTH=5}
 map.replace("MARS", 10); // 💥 Exception
