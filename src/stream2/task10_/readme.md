@@ -54,24 +54,24 @@ record Product(String name, int price) {}
 
 📋 Умова:
 
-record Item(String category, int price) {}
+class Product (String category, int price) {}
 
 
 Порахуйте середню ціну в кожній категорії.
 
-List<Item> items = List.of(
-new Item("fruit", 10),
-new Item("fruit", 20),
-new Item("veg", 5)
-);
+    public void practice3 () {
+        List<Product> items = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5)
+        );
+        Map<String, Double> avgPrice = items.stream()
+                .collect(Collectors.groupingBy(Product::getFruit,
+                        Collectors.averagingInt(Product::getPrice)));
+        System.out.println(avgPrice);
+    }
 
-Map<String, Double> avgPrice = items.stream()
-.collect(Collectors.groupingBy(
-Item::category,
-Collectors.averagingInt(Item::price)
-));
-
-System.out.println(avgPrice); // {fruit=15.0, veg=5.0}
+// {fruit=15.0, veg=5.0}
 
 ✅ Завдання 4 — summaryStatistics() по групах
 

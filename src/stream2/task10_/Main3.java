@@ -2,6 +2,7 @@ package stream2.task10_;
 
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -21,6 +22,19 @@ public class Main3 {
         IntSummaryStatistics stats = products.stream()
                 .collect(Collectors.summarizingInt(Product::getPrice));
         System.out.println(stats);
+    }
+
+
+    public void practice3 () {
+        List<Product> items = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5)
+        );
+        Map<String, Double> avgPrice = items.stream()
+                .collect(Collectors.groupingBy(Product::getFruit,
+                        Collectors.averagingInt(Product::getPrice)));
+        System.out.println(avgPrice);
     }
 
 }
