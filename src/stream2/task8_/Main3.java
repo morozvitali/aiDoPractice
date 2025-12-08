@@ -3,6 +3,7 @@ package stream2.task8_;
 import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main3 {
@@ -74,5 +75,17 @@ public class Main3 {
                 .forEach(System.out::println);
     }
 
+    public void practice10 () {
+        List <Optional<String>> optionals = List.of(
+                Optional.of("red"),
+                Optional.empty(),
+                Optional.of("green"),
+                Optional.of("blue"));
+
+        String result = optionals.stream()
+                .flatMap(Optional::stream)
+                .collect(Collectors.joining(", "));
+        System.out.println(result);
+    }
 
 }

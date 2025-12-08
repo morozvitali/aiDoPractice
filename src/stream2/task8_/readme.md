@@ -164,18 +164,20 @@ Optional<Optional<String>> nested = Optional.of(Optional.of("Hello"));
 📋 Умова:
 Є список Optional-значень. Збери всі непорожні у строку через кому.
 
-List<Optional<String>> optionals = List.of(
-Optional.of("red"),
-Optional.empty(),
-Optional.of("green"),
-Optional.of("blue")
-);
+    public void practice10 () {
+        List <Optional<String>> optionals = List.of(
+                Optional.of("red"),
+                Optional.empty(),
+                Optional.of("green"),
+                Optional.of("blue"));
+                
+        String result = optionals.stream()
+                .flatMap(Optional::stream)
+                .collect(Collectors.joining(", "));
+        System.out.println(result);
+    }
 
-String result = optionals.stream()
-.flatMap(Optional::stream)
-.collect(Collectors.joining(", "));
-
-System.out.println(result); // red, green, blue
+// red, green, blue
 
 💡 Підсумок
 Приклад	Опис
