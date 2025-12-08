@@ -130,13 +130,16 @@ veg → 5.0
 📋 Умова:
 Зроби статистику довжин слів по першій літері.
 
-Map<Character, IntSummaryStatistics> stats = words.stream()
-.collect(Collectors.groupingBy(
-w -> w.charAt(0),
-Collectors.mapping(String::length, Collectors.summarizingInt(Integer::intValue))
-));
+    public void practice7 () {
+        List<String> words = List.of("apple", "ape", "banana", "ball", "berry");
+        words.stream()
+                .collect(Collectors
+                        .groupingBy(w->w.charAt(0), 
+                                Collectors.mapping(String::length, 
+                                        Collectors.summarizingInt(Integer::intValue))));
+    }
 
-System.out.println(stats.get('b').getAverage()); // 5.0
+// 5.0
 
 
 🧠 mapping() трансформує елемент перед передачею у внутрішній колектор.

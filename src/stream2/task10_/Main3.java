@@ -74,5 +74,17 @@ public class Main3 {
         System.out.println(map);
     }
 
+    public void practice7 () {
+        List<String> words = List.of("apple", "ape", "banana", "ball", "berry");
+        words.stream()
+                .collect(Collectors
+                        .groupingBy(w->w.charAt(0),
+                                Collectors.mapping(String::length,
+                                        Collectors.summarizingInt(Integer::intValue))));
+    }
+
+
+
+
 
 }
