@@ -80,5 +80,13 @@ public class Main3 {
         System.out.println();
     }
 
-
+    public void practice10 () {
+        Map<String, String> config = Stream.of("host=localhost", "port=8080", "mode=dev")
+                .map(s->s.split("="))
+                .collect(Collectors.toUnmodifiableMap(
+                        arr -> arr[0],
+                        arr-> arr[1]
+                ));
+        System.out.println(config);
+    }
 }
