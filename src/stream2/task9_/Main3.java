@@ -1,6 +1,7 @@
 package stream2.task9_;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Main3 {
 
@@ -28,6 +29,19 @@ public class Main3 {
                 .forEach(s ->
                         System.out.println(Thread.currentThread()
                                 .getName() + " -> " + s));
+    }
+
+    public void practice5 () {
+        List <Integer> nums = IntStream.range(0, 1_000_000).boxed().toList();
+        long t1 = System.currentTimeMillis();
+        nums.stream().map(Math::sqrt).toList();
+        long t2 = System.currentTimeMillis();
+
+        nums.parallelStream().map(Math::sqrt).toList();
+        long t3 = System.currentTimeMillis();
+
+        System.out.println("Normal " + (t2-t1) + "ms");
+        System.out.println("Parallel " + (t3-t2) + "ms");
     }
 
 }
