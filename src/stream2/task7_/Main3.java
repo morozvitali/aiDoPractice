@@ -1,6 +1,7 @@
 package stream2.task7_;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -21,7 +22,13 @@ public class Main3 {
     }
 
     public void practice3 () {
-
+        Map<String, Integer> map = Stream.of("A", "B", "C")
+                .collect(Collectors.toUnmodifiableMap(
+                        s->s,
+                        String::length
+                ));
     }
+
+
 
 }
