@@ -17,10 +17,11 @@
 📋 Умова:
 Отримай статистику для чисел 5, 10, 15, 20.
 
-IntSummaryStatistics stats = IntStream.of(5, 10, 15, 20)
-.summaryStatistics();
+    public void practice1 () {
+        IntSummaryStatistics stats = IntStream.of(5,109,15,20).summaryStatistics()
+        System.out.println(stats);
+    }
 
-System.out.println(stats);
 // IntSummaryStatistics{count=4, sum=50, min=5, average=12.5, max=20}
 
 
