@@ -94,24 +94,27 @@ public class Main3 {
     }
 
 
-    public void practice9 () {
-        List <String> words = List.of("java", "jungle", "joy");
-        Map <Character, String> result = words.stream()
+    public void practice9() {
+        List<String> words = List.of("java", "jungle", "joy");
+        Map<Character, String> result = words.stream()
                 .collect(Collectors.toMap(
-                        w->w.charAt(0),
-                        w->w+"(" + w.length()+")",
-                        (a,b) -> a + ";" + b
+                        w -> w.charAt(0),
+                        w -> w + "(" + w.length() + ")",
+                        (a, b) -> a + ";" + b
                 ));
         System.out.println(result);
     }
 
-    public void practice10 () {
+    public void practice10() {
         List<String> words = List.of("apple", "apricot", "banana", "blueberry", "apple");
-        Map <Character, Set<String>> map = words.stream()
+        Map<Character, Set<String>> map = words.stream()
                 .collect(Collectors.toMap(
                         w -> w.charAt(0),
                         w -> new HashSet<>(Set.of(w)),
-                        (set1, set2) -> { set1.addAll(set2); return set1; }
+                        (set1, set2) -> {
+                            set1.addAll(set2);
+                            return set1;
+                        }
                 ));
     }
 }
