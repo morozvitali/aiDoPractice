@@ -21,5 +21,15 @@ public class Main3 {
                 .forEach(System.out::println);
     }
 
+    public void practice4 () {
+        List<String> words = List.of("cat", "apple", "pear");
+
+        Optional <String> found = words.stream()
+                .filter(w->w.length() > 4)
+                .findFirst();
+        found.stream().forEach(System.out::println);
+    }
+
+
 
 }
