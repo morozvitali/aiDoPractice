@@ -50,9 +50,11 @@
 📋 Умова:
 Збережи початковий порядок у паралельному потоці.
 
-List.of(1, 2, 3, 4, 5)
-.parallelStream()
-.forEachOrdered(System.out::print);
+    public void practice3() {
+        List.of(1, 2, 3, 4, 5)
+                .parallelStream()
+                .forEachOrdered(System.out::println);
+    }
 
 // 12345
 
@@ -64,11 +66,13 @@ List.of(1, 2, 3, 4, 5)
 📋 Умова:
 Покажи, у якому потоці працює кожен елемент.
 
-List.of("A", "B", "C", "D")
-.parallelStream()
-.forEach(s ->
-System.out.println(Thread.currentThread().getName() + " → " + s)
-);
+    public void practice4() {
+        List.of("a", "b", "c", "d")
+                .parallelStream()
+                .forEach(s ->
+                        System.out.println(Thread.currentThread()
+                                .getName() + " -> " + s));
+    }
 
 
 📤 Наприклад:
