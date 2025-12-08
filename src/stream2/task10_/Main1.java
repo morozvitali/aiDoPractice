@@ -91,10 +91,12 @@ public class Main1 {
 class Product {
     String fruit;
     static int number;
+    String category;
 
     Product(String fruit, int number) {
         this.fruit = fruit;
         this.number = number;
+        this.category = "value";
     }
 
     public int getPrice() {
@@ -104,4 +106,7 @@ class Product {
     public String getFruit () {
         return fruit;
     }
+
+    public String getCategory() {return category;}
+
 }

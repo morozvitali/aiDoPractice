@@ -32,7 +32,7 @@ public class Main3 {
                 new Product("veg", 5)
         );
         Map<String, Double> avgPrice = products.stream()
-                .collect(Collectors.groupingBy(Product::getFruit,
+                .collect(Collectors.groupingBy(Product::getCategory,
                         Collectors.averagingInt(Product::getPrice)));
         System.out.println(avgPrice);
     }
@@ -42,11 +42,28 @@ public class Main3 {
                     new Product("fruit", 10),
                     new Product("fruit", 20),
                     new Product("veg", 5));
-        Map <String, IntSummaryStatistics> statsByCat = products.stream()
+        Map <String, IntSummaryStatistics> map = products.stream()
                 .collect(Collectors.groupingBy(
-                        Product::getFruit,
+                        Product::getCategory,
                         Collectors.summarizingInt(Product::getPrice)));
-        statsByCat.forEach((k,v)-> System.out.println(k + "->" + v.getAverage()));
+        map.forEach((k,v)-> System.out.println(k + "->" + v.getAverage()));
     }
+
+    public void practice5 () {
+        List<Product> products = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5));
+
+        Map <String, Long> map = products.stream()
+                .collect(Collectors.groupingBy(
+                        Product::getCategory,
+                        Collectors.counting()
+                ));
+        System.out.println(map);
+    }
+
+
+
 
 }

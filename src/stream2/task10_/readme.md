@@ -66,7 +66,7 @@ class Product (String category, int price) {}
                 new Product("veg", 5)
         );
         Map<String, Double> avgPrice = products.stream()
-                .collect(Collectors.groupingBy(Product::getFruit,
+                .collect(Collectors.groupingBy(Product::getCategory,
                         Collectors.averagingInt(Product::getPrice)));
         System.out.println(avgPrice);
     }
@@ -78,23 +78,22 @@ class Product (String category, int price) {}
 📋 Умова:
 Збери IntSummaryStatistics для кожної категорії.
 
-Map<String, IntSummaryStatistics> statsByCat = items.stream()
-.collect(Collectors.groupingBy(
-Item::category,
-Collectors.summarizingInt(Item::price)
-));
-
-statsByCat.forEach((k, v) ->
-System.out.println(k + " → " + v.getAverage())
-);
-
-
-📤
+        List<Product> products = List.of(
+                    new Product("fruit", 10),
+                    new Product("fruit", 20),
+                    new Product("veg", 5));
+        Map <String, IntSummaryStatistics> statsByCat = products.stream()
+                .collect(Collectors.groupingBy(
+                        Product::getCategory,
+                        Collectors.summarizingInt(Product::getPrice)));
+        statsByCat.forEach((k,v)-> System.out.println(k + "->" + v.getAverage()));
+    }
 
 fruit → 15.0  
 veg → 5.0
 
 ✅ Завдання 5 — Підрахунок кількості товарів по групах (counting)
+
 Map<String, Long> countByCat = items.stream()
 .collect(Collectors.groupingBy(
 Item::category,
