@@ -30,11 +30,13 @@
 🧠 Optional.stream() — це потік із 0 або 1 елемента.
 
 ✅ Завдання 2 — Optional.empty() не виводить нічого
-Optional<String> empty = Optional.empty();
 
-empty.stream().forEach(System.out::println);
+    public void practice2 () {
+        Optional <String> empty = Optional.empty();
+        empty.stream().forEach(System.out::println);
+    }
+
 // (нічого не виводить)
-
 
 🧠 Безпечний спосіб обробки без перевірки isPresent().
 
@@ -43,11 +45,13 @@ empty.stream().forEach(System.out::println);
 📋 Умова:
 Є Optional<List<Integer>>, виведи всі елементи списку.
 
-Optional<List<Integer>> maybeList = Optional.of(List.of(1, 2, 3));
+    public void practice3 () {
+        Optional <List<Integer>> maybeList = Optional.of(List.of(1,2,3));
+        maybeList.stream()
+                .flatMap(List::stream)
+                .forEach(System.out::println);
+    }
 
-maybeList.stream()
-.flatMap(List::stream)
-.forEach(System.out::println);
 // 1 2 3
 
 

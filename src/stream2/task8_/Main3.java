@@ -1,5 +1,6 @@
 package stream2.task8_;
 
+import java.util.List;
 import java.util.Optional;
 
 public class Main3 {
@@ -13,7 +14,12 @@ public class Main3 {
         empty.stream().forEach(System.out::println);
     }
 
-
+    public void practice3 () {
+        Optional <List<Integer>> maybeList = Optional.of(List.of(1,2,3));
+        maybeList.stream()
+                .flatMap(List::stream)
+                .forEach(System.out::println);
+    }
 
 
 }
