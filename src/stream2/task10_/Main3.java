@@ -104,4 +104,16 @@ public class Main3 {
         System.out.println(s1);
     }
 
+    public void practice10 () {
+        List<Product> products = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5));
+        Map <String, IntSummaryStatistics> stats = products.stream()
+                .collect((Collectors.groupingBy(
+                        Product::getCategory,
+                        Collectors.summarizingInt((Product::getPrice)))));
+        stats.forEach((k,v)-> System.out.printf(
+                "%s -> avg=%1f, min=%d, max=%d%n", k, v.getAverage(), v.getMin(), v.getMax()));
+    }
 }

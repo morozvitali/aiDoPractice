@@ -187,12 +187,7 @@ veg → 5.0
 
 record Item(String category, int price) {}
 
-List<Item> data = List.of(
-new Item("A", 5),
-new Item("A", 15),
-new Item("B", 10),
-new Item("B", 20)
-);
+
 
 Map<String, IntSummaryStatistics> stats = data.stream()
 .collect(Collectors.groupingBy(
