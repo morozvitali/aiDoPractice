@@ -160,11 +160,13 @@ ForkJoinPool.commonPool-worker-7 → D
 📋 Умова:
 Обчисли суму з асоціативною операцією.
 
-int sum = IntStream.rangeClosed(1, 5)
-.parallel()
-.reduce(0, Integer::sum);
-
-System.out.println(sum); // 15 ✅
+    public void practice9 () {
+        int sum = IntStream.rangeClosed(1,5)
+                .parallel()
+                .reduce(0,Integer::sum);
+        System.out.println(sum);
+    }
+// 15 ✅
 
 
 🧠 reduce у паралелі безпечний тільки з асоціативними операціями (+, *, min, max).

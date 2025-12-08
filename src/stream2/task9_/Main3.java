@@ -72,7 +72,12 @@ public class Main3 {
                 .forEachOrdered(System.out::println);
     }
 
-
+    public void practice9 () {
+        int sum = IntStream.rangeClosed(1,5)
+                .parallel()
+                .reduce(0,Integer::sum);
+        System.out.println(sum);
+    }
 
 
 
