@@ -61,13 +61,13 @@
 📋 Умова:
 Знайди перше слово довше за 4 літери.
 
-List<String> words = List.of("cat", "apple", "pear");
-
-Optional<String> found = words.stream()
-.filter(w -> w.length() > 4)
-.findFirst();
-
-found.stream().forEach(System.out::println);
+    public void practice4() {
+        List<String> words = List.of("cat", "apple", "pear");
+        Optional<String> found = words.stream()
+                .filter(w -> w.length() > 4)
+                .findFirst();
+        found.stream().forEach(System.out::println);
+    }
 // apple
 
 
@@ -78,17 +78,14 @@ found.stream().forEach(System.out::println);
 📋 Умова:
 Є кілька Optional — об’єднай їх у один Stream.
 
-Stream<Optional<String>> optionals = Stream.of(
-Optional.of("A"),
-Optional.empty(),
-Optional.of("B")
-);
-
-List<String> list = optionals
-.flatMap(Optional::stream)
-.toList();
-
-System.out.println(list); // [A, B]
+        Stream<Optional<String>> optionals = Stream.of(
+                Optional.of("A"),
+                Optional.empty(),
+                Optional.of("B")
+        );
+        List<String> list = optionals.flatMap(Optional::stream).toList();
+        System.out.println(list);
+    } // [A, B]
 
 
 🧠 “Розпаковуємо” Optionals потоком, без перевірок.
@@ -100,9 +97,12 @@ System.out.println(list); // [A, B]
 
 Optional<Optional<String>> nested = Optional.of(Optional.of("Hello"));
 
-nested.stream()
-.flatMap(Optional::stream)
-.forEach(System.out::println);
+    public void practice6() {
+        Optional<Optional<String>> nested = Optional.of(Optional.of("Hello"));
+        nested.stream()
+                .flatMap(Optional::stream)
+                .forEach(System.out::println);
+    }
 // Hello
 
 
@@ -113,14 +113,16 @@ nested.stream()
 📋 Умова:
 Є список користувачів, знайди першого з іменем довше 5 символів або "none".
 
-List<String> users = List.of("Bob", "Alexander", "Tom");
+    public void practice7 () {
+        List<String> users = List.of("Bob", "Alexander", "Tom");
+        String result = users.stream()
+                .filter(u->u.length() >5)
+                .findFirst()
+                .orElse("none");
+        System.out.println(result);
+    }
 
-String result = users.stream()
-.filter(u -> u.length() > 5)
-.findFirst()
-.orElse("none");
-
-System.out.println(result); // Alexander
+// Alexander
 
 
 🧠 .findFirst() повертає Optional, який легко обробити.
@@ -130,14 +132,16 @@ System.out.println(result); // Alexander
 📋 Умова:
 Отримай довжину слова, якщо воно є.
 
-Optional<String> word = Optional.of("Stream");
+    public void practice8 () {
+        Optional <String> word = Optional.of("Stream");
+        int len = word.stream()
+                .map(String::length)
+                .findFirst()
+                .orElse(0);
+        System.out.println(len);
+    }
 
-int len = word.stream()
-.map(String::length)
-.findFirst()
-.orElse(0);
-
-System.out.println(len); // 6
+// 6
 
 
 🧠 Optional.stream() дозволяє “продовжити” роботу в потоці без unwrap.

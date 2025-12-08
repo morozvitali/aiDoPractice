@@ -47,8 +47,24 @@ public class Main3 {
         nested.stream()
                 .flatMap(Optional::stream)
                 .forEach(System.out::println);
-
     }
 
+    public void practice7 () {
+        List<String> users = List.of("Bob", "Alexander", "Tom");
+        String result = users.stream()
+                .filter(u->u.length() >5)
+                .findFirst()
+                .orElse("none");
+        System.out.println(result);
+    }
+
+    public void practice8 () {
+        Optional <String> word = Optional.of("Stream");
+        int len = word.stream()
+                .map(String::length)
+                .findFirst()
+                .orElse(0);
+        System.out.println(len);
+    }
 
 }
