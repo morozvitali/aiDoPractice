@@ -12,7 +12,7 @@
 
 опанувати вкладені колектори для глибокої обробки даних.
 
-✅ Завдання 1 — summaryStatistics() базовий приклад
+## ✅ Завдання 1 — summaryStatistics() базовий приклад
 
 📋 Умова:
 Отримай статистику для чисел 5, 10, 15, 20.
@@ -27,7 +27,7 @@
 
 🧠 Усі параметри одразу доступні: getCount(), getSum(), getAverage(), getMin(), getMax().
 
-✅ Завдання 2 — summaryStatistics() з колекції об’єктів
+## ✅ Завдання 2 — summaryStatistics() з колекції об’єктів
 
 📋 Умова:
 Є клас:
@@ -37,18 +37,20 @@ record Product(String name, int price) {}
 
 Знайди статистику цін:
 
-List<Product> products = List.of(
-new Product("Apple", 10),
-new Product("Pear", 8),
-new Product("Mango", 12)
-);
+        List<Product> products = List.of(
+                new Product("Apple", 10),
+                new Product("Pear", 8),
+                new Product("Mango", 12)
+        );
+        
+        IntSummaryStatistics stats = products.stream()
+                .collect(Collectors.summarizingInt(Product::getPrice));
+        System.out.println(stats);
+    }
 
-IntSummaryStatistics stats = products.stream()
-.collect(Collectors.summarizingInt(Product::price));
+// count=3, sum=30, average=10.0
 
-System.out.println(stats); // count=3, sum=30, average=10.0
-
-✅ Завдання 3 — Середня ціна по категорії (groupingBy + averagingInt)
+## ✅ Завдання 3 — Середня ціна по категорії (groupingBy + averagingInt)
 
 📋 Умова:
 
