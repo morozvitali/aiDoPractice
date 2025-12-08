@@ -26,15 +26,27 @@ public class Main3 {
 
 
     public void practice3 () {
-        List<Product> items = List.of(
+        List<Product> products = List.of(
                 new Product("fruit", 10),
                 new Product("fruit", 20),
                 new Product("veg", 5)
         );
-        Map<String, Double> avgPrice = items.stream()
+        Map<String, Double> avgPrice = products.stream()
                 .collect(Collectors.groupingBy(Product::getFruit,
                         Collectors.averagingInt(Product::getPrice)));
         System.out.println(avgPrice);
+    }
+
+    public void practice4 () {
+            List<Product> products = List.of(
+                    new Product("fruit", 10),
+                    new Product("fruit", 20),
+                    new Product("veg", 5));
+        Map <String, IntSummaryStatistics> statsByCat = products.stream()
+                .collect(Collectors.groupingBy(
+                        Product::getFruit,
+                        Collectors.summarizingInt(Product::getPrice)));
+        statsByCat.forEach((k,v)-> System.out.println(k + "->" + v.getAverage()));
     }
 
 }
