@@ -126,12 +126,15 @@ ForkJoinPool.commonPool-worker-7 → D
 📋 Умова:
 Використай Collector (thread-safe збирання).
 
-List<Integer> result = IntStream.range(1, 10)
-.parallel()
-.boxed()
-.collect(Collectors.toList());
+    public void practice7 () {
+        List <Integer> list = IntStream.range(1,10)
+                .parallel()
+                .boxed()
+                .collect(Collectors.toList());
+        System.out.println(list);
+    }
 
-System.out.println(result); // усі елементи присутні
+// усі елементи присутні
 
 ✅ Завдання 8 — Змішаний порядок і forEachOrdered
 

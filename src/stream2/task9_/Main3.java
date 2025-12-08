@@ -2,6 +2,7 @@ package stream2.task9_;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main3 {
@@ -50,6 +51,15 @@ public class Main3 {
         IntStream.range(1,10).parallel().forEach(result::add);
         System.out.println(result);
     }
+
+    public void practice7 () {
+        List <Integer> list = IntStream.range(1,10)
+                .parallel()
+                .boxed()
+                .collect(Collectors.toList());
+        System.out.println(list);
+    }
+
 
 
 }
