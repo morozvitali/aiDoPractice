@@ -33,8 +33,8 @@ public class Main3 {
                                 .getName() + " -> " + s));
     }
 
-    public void practice5 () {
-        List <Integer> nums = IntStream.range(0, 1_000_000).boxed().toList();
+    public void practice5() {
+        List<Integer> nums = IntStream.range(0, 1_000_000).boxed().toList();
         long t1 = System.currentTimeMillis();
         nums.stream().map(Math::sqrt).toList();
         long t2 = System.currentTimeMillis();
@@ -42,23 +42,37 @@ public class Main3 {
         nums.parallelStream().map(Math::sqrt).toList();
         long t3 = System.currentTimeMillis();
 
-        System.out.println("Normal " + (t2-t1) + "ms");
-        System.out.println("Parallel " + (t3-t2) + "ms");
+        System.out.println("Normal " + (t2 - t1) + "ms");
+        System.out.println("Parallel " + (t3 - t2) + "ms");
     }
 
-    public void practice6 () {
-        List <Integer> result = new ArrayList<>();
-        IntStream.range(1,10).parallel().forEach(result::add);
+    public void practice6() {
+        List<Integer> result = new ArrayList<>();
+        IntStream.range(1, 10).parallel().forEach(result::add);
         System.out.println(result);
     }
 
-    public void practice7 () {
-        List <Integer> list = IntStream.range(1,10)
+    public void practice7() {
+        List<Integer> list = IntStream.range(1, 10)
                 .parallel()
                 .boxed()
                 .collect(Collectors.toList());
         System.out.println(list);
     }
+
+    public void practice8() {
+        List.of("a", "b", "c", "d")
+                .parallelStream()
+                .peek(s -> System.out.println("peek" + s))
+                .forEach(System.out::println);
+
+        List.of("a", "b", "c", "d")
+                .parallelStream()
+                .peek(s-> System.out.println("peek " + s))
+                .forEachOrdered(System.out::println);
+    }
+
+
 
 
 

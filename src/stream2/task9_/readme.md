@@ -141,18 +141,17 @@ ForkJoinPool.commonPool-worker-7 → D
 📋 Умова:
 Побач різницю між двома викликами.
 
-List.of("a", "b", "c", "d")
-.parallelStream()
-.peek(s -> System.out.println("peek: " + s))
-.forEach(System.out::println);
+    public void practice8() {
+        List.of("a", "b", "c", "d")
+                .parallelStream()
+                .peek(s -> System.out.println("peek" + s))
+                .forEach(System.out::println);
 
-System.out.println("---");
-
-List.of("a", "b", "c", "d")
-.parallelStream()
-.peek(s -> System.out.println("peek: " + s))
-.forEachOrdered(System.out::println);
-
+        List.of("a", "b", "c", "d")
+                .parallelStream()
+                .peek(s-> System.out.println("peek " + s))
+                .forEachOrdered(System.out::println);
+    }
 
 🧠 peek завжди паралельний, але forEachOrdered виводить у правильній черзі.
 
