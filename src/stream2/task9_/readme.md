@@ -34,9 +34,11 @@
 📋 Умова:
 Запусти той самий код із parallelStream().
 
-List.of(1, 2, 3, 4, 5)
-.parallelStream()
-.forEach(System.out::print);
+    public void practice2 () {
+        List.of(1,2,3,4,5)
+                .parallelStream()
+                .forEach(System.out::println);
+    }
 
 // Наприклад: 43125 (порядок випадковий)
 

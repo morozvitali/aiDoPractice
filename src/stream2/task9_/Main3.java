@@ -10,5 +10,10 @@ public class Main3 {
                 .forEach(System.out::println);
     }
 
+    public void practice2 () {
+        List.of(1,2,3,4,5)
+                .parallelStream()
+                .forEach(System.out::println);
+    }
 
 }
