@@ -168,12 +168,14 @@ veg → 5.0
 📋 Умова:
 Зли дві IntSummaryStatistics у одну.
 
-IntSummaryStatistics s1 = IntStream.of(1, 2, 3).summaryStatistics();
-IntSummaryStatistics s2 = IntStream.of(4, 5, 6).summaryStatistics();
+    public void practice9 () {
+        IntSummaryStatistics s1 = IntStream.of(1, 2, 3).summaryStatistics();
+        IntSummaryStatistics s2 = IntStream.of(4, 5, 6).summaryStatistics();
+        s1.combine(s2);
+        System.out.println(s1);
+    }
 
-s1.combine(s2);
-
-System.out.println(s1); // count=6, sum=21, avg=3.5
+// count=6, sum=21, avg=3.5
 
 
 🧠 .combine() об’єднує результати — ідеально для паралельних потоків.
