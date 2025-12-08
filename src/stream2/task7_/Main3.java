@@ -58,6 +58,10 @@ public class Main3 {
         System.out.println(map);
     }
 
+    public void practice7 () {
+        var modifiable = Stream.of("A", "B").collect(Collectors.toList());
+        var unmodifiable = Stream.of("A", "B").collect(Collectors.toUnmodifiableList());
+    }
 
 
 

@@ -80,12 +80,14 @@ System.out.println(map); // {a=apple,apricot}
 📋 Умова:
 Зроби незмінну мапу, де значення — список слів на ту саму літеру.
 
-Map<Character, List<String>> map = Stream.of("cat", "cow", "dog")
-.collect(Collectors.toUnmodifiableMap(
-w -> w.charAt(0),
-w -> List.of(w),
-(l1, l2) -> Stream.concat(l1.stream(), l2.stream()).toList()
-));
+    public void practice6() {
+        Map<Character, List<String>> map = Stream.of("cat", "cow", "dog")
+                .collect(Collectors.toUnmodifiableMap(
+                        w -> w.charAt(0),
+                        w -> List.of(w),
+                        (l1, l2) -> Stream.concat(l1.stream(), l2.stream()).toList()));
+        System.out.println(map);
+    }
 
 System.out.println(map); // {c=[cat, cow], d=[dog]}
 map.get('c').add("cup"); // 💥 UnsupportedOperationException
@@ -97,8 +99,10 @@ map.get('c').add("cup"); // 💥 UnsupportedOperationException
 
 🎯 Мета: побачити різницю між колекторами.
 
-var modifiable = Stream.of("A", "B").collect(Collectors.toList());
-var unmodifiable = Stream.of("A", "B").collect(Collectors.toUnmodifiableList());
+    public void practice7 () {
+        var modifiable = Stream.of("A", "B").collect(Collectors.toList());
+        var unmodifiable = Stream.of("A", "B").collect(Collectors.toUnmodifiableList());
+    }
 
 modifiable.add("C"); // ✅ можна
 unmodifiable.add("C"); // 💥 не можна
