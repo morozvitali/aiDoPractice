@@ -83,7 +83,19 @@ public class Main3 {
                                         Collectors.summarizingInt(Integer::intValue))));
     }
 
-
+    public void practice8 () {
+        List<Product> products = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5));
+        Map <Boolean, IntSummaryStatistics> priceStats = products.stream()
+                .collect(Collectors.partitioningBy(
+                        p->p.getPrice() > 10,
+                        Collectors.summarizingInt(Product::getPrice)
+                ));
+        System.out.println(" Cheap " + priceStats.get(false));
+        System.out.println(" Expencive " + priceStats.get(true));
+    }
 
 
 

@@ -149,14 +149,19 @@ veg → 5.0
 📋 Умова:
 Відокрем продукти за ціною — дешеві (<=10) і дорогі (>10).
 
-Map<Boolean, IntSummaryStatistics> priceStats = products.stream()
-.collect(Collectors.partitioningBy(
-p -> p.price() > 10,
-Collectors.summarizingInt(Product::price)
-));
-
-System.out.println("Cheap: " + priceStats.get(false));
-System.out.println("Expensive: " + priceStats.get(true));
+    public void practice8 () {
+        List<Product> products = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5));
+        Map <Boolean, IntSummaryStatistics> priceStats = products.stream()
+                .collect(Collectors.partitioningBy(
+                        p->p.getPrice() > 10,
+                        Collectors.summarizingInt(Product::getPrice)
+                ));
+        System.out.println(" Cheap " + priceStats.get(false));
+        System.out.println(" Expencive " + priceStats.get(true));
+    }
 
 ✅ Завдання 9 — Об’єднання двох статистик вручну
 
