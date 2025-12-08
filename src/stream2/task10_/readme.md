@@ -185,20 +185,18 @@ veg → 5.0
 📋 Умова:
 Створи форматований звіт по категоріях із середнім, мінімальним і максимальним значеннями.
 
-record Item(String category, int price) {}
-
-
-
-Map<String, IntSummaryStatistics> stats = data.stream()
-.collect(Collectors.groupingBy(
-Item::category,
-Collectors.summarizingInt(Item::price)
-));
-
-stats.forEach((cat, s) -> System.out.printf(
-"%s → avg=%.1f, min=%d, max=%d%n",
-cat, s.getAverage(), s.getMin(), s.getMax()
-));
+    public void practice10 () {
+        List<Product> products = List.of(
+                new Product("fruit", 10),
+                new Product("fruit", 20),
+                new Product("veg", 5));
+        Map <String, IntSummaryStatistics> stats = products.stream()
+                .collect((Collectors.groupingBy(
+                        Product::getCategory,
+                        Collectors.summarizingInt((Product::getPrice)))));
+        stats.forEach((k,v)-> System.out.printf(
+                "%s -> avg=%1f, min=%d, max=%d%n", k, v.getAverage(), v.getMin(), v.getMax()));
+    } 
 
 
 📤
