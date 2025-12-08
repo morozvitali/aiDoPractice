@@ -151,11 +151,12 @@ Optional<Optional<String>> nested = Optional.of(Optional.of("Hello"));
 📋 Умова:
 Виведи користувача лише якщо ім’я починається з великої літери.
 
-Optional<String> name = Optional.of("Vitalii");
+    public void practtice9 () {
+        Optional <String> name = Optional.of("Vitalii");
+        name.stream().filter(w->Character.isUpperCase(w.charAt(0)))
+                .forEach(System.out::println);
+    }
 
-name.stream()
-.filter(n -> Character.isUpperCase(n.charAt(0)))
-.forEach(System.out::println);
 // Vitalii
 
 ✅ Завдання 10 — Комбіноване: Optional → Stream → collect

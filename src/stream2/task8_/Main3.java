@@ -67,4 +67,12 @@ public class Main3 {
         System.out.println(len);
     }
 
+
+    public void practtice9 () {
+        Optional <String> name = Optional.of("Vitalii");
+        name.stream().filter(w->Character.isUpperCase(w.charAt(0)))
+                .forEach(System.out::println);
+    }
+
+
 }
