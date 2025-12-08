@@ -29,6 +29,17 @@ public class Main3 {
                 ));
     }
 
+    public void ptactice4 () {
+        List<String> list = List.of("apple", "apricot");
+        Map <Character, String> map = list.stream()
+                .collect(Collectors.toUnmodifiableMap(
+                        s-> s.charAt(0),
+                        s->s
+                ));
+        System.out.println(map);
+    }
+
+
 
 
 }

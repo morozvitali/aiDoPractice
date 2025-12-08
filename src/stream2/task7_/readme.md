@@ -21,24 +21,26 @@ names.add("Jack"); // 💥 UnsupportedOperationException
 
 ✅ Завдання 2 — Незмінна множина
 
-public void practice2 () {
-Set <Integer> set = Stream.of(1,2,3,2)
-.collect(Collectors.toUnmodifiableSet());
-System.out.println(set);
-}
+    public void practice2 () {
+        Set <Integer> set = Stream.of(1,2,3,2)
+                .collect(Collectors.toUnmodifiableSet());
+        System.out.println(set);
+    }
 
-System.out.println(set); // [1, 2, 3]
+// [1, 2, 3]
 set.remove(1); // 💥 UnsupportedOperationException
-
 
 🧠 toUnmodifiableSet() автоматично унікалізує дані, але не дозволяє їх змінювати.
 
 ✅ Завдання 3 — Незмінна мапа
-Map<String, Integer> map = Stream.of("A", "B", "C")
-.collect(Collectors.toUnmodifiableMap(
-s -> s,
-String::length
-));
+
+    public void practice3 () {
+    Map<String, Integer> map = Stream.of("A", "B", "C")
+    .collect(Collectors.toUnmodifiableMap(
+    s->s,
+    String::length
+    ));
+    }
 
 System.out.println(map); // {A=1, B=1, C=1}
 map.put("D", 2); // 💥 UnsupportedOperationException
