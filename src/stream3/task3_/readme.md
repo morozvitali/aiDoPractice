@@ -3,9 +3,12 @@
 Умова: повернути Map<String,Boolean>.
 Рішення:
 
-return Arrays.stream(words)
-.collect(Collectors.toMap(Function.identity(),
-w -> w.chars().anyMatch(c -> "aeiou".indexOf(c) >= 0)));
+    public Map<String, Boolean> practice1 () {
+        String [] words = new String[] {"Aa", "Bba", "Cec"};
+        return Arrays.stream(words)
+                        .collect(Collectors.toMap(Function.identity(),
+                                w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0)));
+    }
 
 
 Коментар: toMap з булевою функцією.
@@ -15,10 +18,12 @@ w -> w.chars().anyMatch(c -> "aeiou".indexOf(c) >= 0)));
 Умова: partitioningBy → Map<Boolean,List<String>>.
 Рішення:
 
-return Arrays.stream(words)
-.collect(Collectors.partitioningBy(w -> w.chars()
-.anyMatch(c -> "aeiou".indexOf(c) >=0)));
-
+    public Map <Boolean, List<String>> practice2 () {
+        String [] array = new String [] {"Aa", "Bba", "Cec"};
+        return Arrays.stream(array)
+                .collect(Collectors.partitioningBy(w->w.chars()
+                        .anyMatch(c->"aeiou".indexOf(c)>=0)));
+    }
 
 Теорія: partitioningBy швидкий для true/false.
 

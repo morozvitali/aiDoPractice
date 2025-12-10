@@ -1,6 +1,7 @@
 package stream3.task3_;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -13,7 +14,13 @@ public class Main1 {
                                 w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0)));
     }
 
+    public Map <Boolean, List<String>> practice2 () {
+        String [] array = new String [] {"Aa", "Bba", "Cec"};
+        return Arrays.stream(array)
+                .collect(Collectors.partitioningBy(w->w.chars()
+                        .anyMatch(c->"aeiou".indexOf(c)>=0)));
+    }
 
-
+    public
 
 }
