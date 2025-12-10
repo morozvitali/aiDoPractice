@@ -46,7 +46,13 @@ public class Main1 {
                 .toList();
     }
 
-
+    public Integer practice6 (int n) {
+        return Integer.parseInt(
+                new StringBuilder(String
+                        .valueOf(Math.abs(n)))
+                        .reverse()
+                        .toString());
+    }
 
 
 

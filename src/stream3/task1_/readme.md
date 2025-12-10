@@ -78,27 +78,32 @@
 .mapToObj(Character::getNumericValue)
 Рішення:
 
-return s.chars()
-.filter(Character::isDigit)
-.map(Character::getNumericValue)
-.distinct()
-.sorted()
-.boxed()
-.collect(Collectors.toList());
+    public List<Integer> practice5 (String s) {
+        return s.chars()
+                .filter(Character::isDigit)
+                .map(Character::getNumericValue)
+                .distinct()
+                .sorted()
+                .boxed()
+                .toList();
+    }
 
 
 Коментар: distinct + sorted — отримуємо унікальні цифри в порядку.
 
-1.6 — Перевернути цифри числа
+1.6 — Перевернути цифри числа навпаки
 
 Умова: 1234 → 4321 (з урахуванням знаків).
 Підказка: StringBuilder(...).reverse()
 Рішення:
 
-String s = String.valueOf(Math.abs(n));
-int result = Integer.parseInt(new StringBuilder(s).reverse().toString());
-return n < 0 ? -result : result;
-
+    public Integer practice6 (int n) {
+        return Integer.parseInt(
+                new StringBuilder(String
+                        .valueOf(Math.abs(n)))
+                        .reverse()
+                        .toString());
+    }
 
 Коментар: простий спосіб, але обережно з переповненням для дуже великих чисел.
 
