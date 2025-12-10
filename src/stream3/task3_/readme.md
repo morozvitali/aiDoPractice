@@ -16,7 +16,8 @@ w -> w.chars().anyMatch(c -> "aeiou".indexOf(c) >= 0)));
 Рішення:
 
 return Arrays.stream(words)
-.collect(Collectors.partitioningBy(w -> w.chars().anyMatch(c -> "aeiou".indexOf(c) >=0)));
+.collect(Collectors.partitioningBy(w -> w.chars()
+.anyMatch(c -> "aeiou".indexOf(c) >=0)));
 
 
 Теорія: partitioningBy швидкий для true/false.
