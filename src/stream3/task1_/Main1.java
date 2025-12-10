@@ -1,6 +1,5 @@
 package stream3.task1_;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -12,6 +11,12 @@ public class Main1 {
                 .toList();
     }
 
-
+    public List <String> practice2() {
+        List<String> list = List.of("A", "B", "C");
+        return list.stream()
+                .map(String::toLowerCase)
+                .sorted()
+                .toList();
+    }
 
 }

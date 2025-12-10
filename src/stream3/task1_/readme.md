@@ -27,11 +27,13 @@
 Підказка: .map(String::toLowerCase).sorted()
 Рішення:
 
-return words.stream()
-.map(String::toLowerCase)
-.sorted()
-.collect(Collectors.toList());
-
+    public List <String> practice2() {
+        List<String> list = List.of("A", "B", "C");
+        return list.stream()
+                .map(String::toLowerCase)
+                .sorted()
+                .toList();
+    }
 
 Коментар: map змінює елементи; сортування працює з рядками.
 
