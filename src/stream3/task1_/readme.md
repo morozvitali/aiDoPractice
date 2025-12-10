@@ -21,7 +21,7 @@
 Коментар: базове фільтрування → сортування; 
 використовуй method reference для читабельності.
 
-1.2 — Алфавітно (toLowerCase)
+## 1.2 — Алфавітно (toLowerCase)
 
 Умова: Привести слова до lower-case і відсортувати алфавітно.
 Підказка: .map(String::toLowerCase).sorted()
@@ -37,17 +37,19 @@
 
 Коментар: map змінює елементи; сортування працює з рядками.
 
-1.3 — Найдовше слово (через Map.entry)
+## 1.3 — Найдовше слово (через Map.entry)
 
 Умова: Знайти слово з максимальною довжиною.
 Підказка: .map(w->Map.entry(w,w.length())).max(...)
 Рішення:
 
-return words.stream()
-.map(w -> Map.entry(w, w.length()))
-.max(Comparator.comparingInt(Map.Entry::getValue))
-.map(Map.Entry::getKey)
-.orElse("");
+    public String practice3 () {
+        List<String> list = List.of("Aa", "Bob", "Coca");
+        return list.stream().map(w-> Map.entry(w, w.length()))
+                .max(Comparator.comparingInt(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse("");
+    }
 
 
 Коментар: корисний шаблон — пара (ключ,значення) для max/min за значенням.
