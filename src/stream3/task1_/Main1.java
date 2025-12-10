@@ -36,7 +36,15 @@ public class Main1 {
                 .sum();
     }
 
-
+    public List<Integer> practice5 (String s) {
+        return s.chars()
+                .filter(Character::isDigit)
+                .map(Character::getNumericValue)
+                .distinct()
+                .sorted()
+                .boxed()
+                .toList();
+    }
 
 
 

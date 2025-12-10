@@ -60,18 +60,22 @@
 Підказка: String.valueOf(n).chars() → c - '0'
 Рішення:
 
-return String.valueOf(n).chars()
-.map(c -> c - '0')
-.map(d -> d * d)
-.sum();
+    public Integer practice4 (Integer n) {
+        return String.valueOf(Math.abs(n))
+                .chars()
+                .map(c->c-'0')
+                .map(d->d*d)
+                .sum();
+    }
 
 
 Коментар: chars дає IntStream; перетворення від символу до цифри — c - '0'.
 
-1.5 — Витягти цифри з рядка (sorted unique)
+1.5 — Витягти унікальні цифри з рядка (sorted unique)
 
 Умова: "a1b2c3x9z7" → [1,2,3,7,9] (відсортовано).
-Підказка: .filter(Character::isDigit).mapToObj(Character::getNumericValue)
+Підказка: .filter(Character::isDigit)
+.mapToObj(Character::getNumericValue)
 Рішення:
 
 return s.chars()
