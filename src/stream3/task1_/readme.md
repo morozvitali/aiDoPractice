@@ -113,12 +113,13 @@
 Підказка: .filter(d -> d % 2 == 0)
 Рішення:
 
-String result = String.valueOf(Math.abs(n)).chars()
-.map(c -> c - '0')
-.filter(d -> d % 2 == 0)
-.mapToObj(String::valueOf)
-.collect(Collectors.joining());
-return result.isEmpty() ? -1 : Integer.parseInt(result);
+    public Integer practice7 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n))
+                .chars()
+                .filter(a->a%2==0)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
 
 
 Коментар: повертаємо -1, якщо немає парних цифр — це обрана поведінка.

@@ -3,6 +3,7 @@ package stream3.task1_;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main1 {
     public List<String> practice1() {
@@ -54,7 +55,13 @@ public class Main1 {
                         .toString());
     }
 
-
+    public Integer practice7 (int n) {
+        return Integer.parseInt(String.valueOf(Math.abs(n))
+                .chars()
+                .filter(a->a%2==0)
+                .mapToObj(String::valueOf)
+                .collect(Collectors.joining()));
+    }
 
 
 
