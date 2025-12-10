@@ -21,6 +21,13 @@ public class Main1 {
                         .anyMatch(c->"aeiou".indexOf(c)>=0)));
     }
 
-    public
+    public void practice3 () {
+        String [] array = new String [] {"Aa", "Bba", "Cec"};
+        return Arrays.stream(array).
+                filter(w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0))
+                .collect(Collectors.groupingBy(String::length, Collectors.counting()))
+    }
+
+
 
 }

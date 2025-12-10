@@ -32,10 +32,12 @@
 Умова: groupingBy length + counting.
 Рішення:
 
-return Arrays.stream(words)
-.filter(w -> w.chars().anyMatch(c -> "aeiou".indexOf(c) >=0))
-.collect(Collectors.groupingBy(String::length, Collectors.counting()));
-
+    public void practice3 () {
+        String [] array = new String [] {"Aa", "Bba", "Cec"};
+        return Arrays.stream(array).
+                filter(w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0))
+                .collect(Collectors.groupingBy(String::length, Collectors.counting()))
+    }
 
 Коментар: комбінуємо фільтр і groupingBy.
 
