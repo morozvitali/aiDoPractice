@@ -93,8 +93,8 @@ public class Main3 {
                         p->p.getPrice() > 10,
                         Collectors.summarizingInt(Product::getPrice)
                 ));
-        System.out.println(" Cheap " + priceStats.get(false));
-        System.out.println(" Expencive " + priceStats.get(true));
+        System.out.println("Cheap " + priceStats.get(false));
+        System.out.println("Expencive " + priceStats.get(true));
     }
 
     public void practice9 () {
