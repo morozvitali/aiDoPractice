@@ -27,4 +27,28 @@ public class Main1 {
                 .map(Map.Entry::getKey)
                 .orElse("");
     }
+
+    public Integer practice4 (Integer n) {
+        return String.valueOf(Math.abs(n))
+                .chars()
+                .map(c->c-'0')
+                .map(d->d*d)
+                .sum();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
