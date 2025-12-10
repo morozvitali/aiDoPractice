@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Main1 {
     public List<String> practice1() {
@@ -13,7 +14,7 @@ public class Main1 {
                 .toList();
     }
 
-    public List <String> practice2() {
+    public List<String> practice2() {
         List<String> list = List.of("A", "B", "C");
         return list.stream()
                 .map(String::toLowerCase)
@@ -21,23 +22,23 @@ public class Main1 {
                 .toList();
     }
 
-    public String practice3 () {
+    public String practice3() {
         List<String> list = List.of("Aa", "Bob", "Coca");
-        return list.stream().map(w-> Map.entry(w, w.length()))
+        return list.stream().map(w -> Map.entry(w, w.length()))
                 .max(Comparator.comparingInt(Map.Entry::getValue))
                 .map(Map.Entry::getKey)
                 .orElse("");
     }
 
-    public Integer practice4 (Integer n) {
+    public Integer practice4(Integer n) {
         return String.valueOf(Math.abs(n))
                 .chars()
-                .map(c->c-'0')
-                .map(d->d*d)
+                .map(c -> c - '0')
+                .map(d -> d * d)
                 .sum();
     }
 
-    public List<Integer> practice5 (String s) {
+    public List<Integer> practice5(String s) {
         return s.chars()
                 .filter(Character::isDigit)
                 .map(Character::getNumericValue)
@@ -47,7 +48,7 @@ public class Main1 {
                 .toList();
     }
 
-    public Integer practice6 (int n) {
+    public Integer practice6(int n) {
         return Integer.parseInt(
                 new StringBuilder(String
                         .valueOf(Math.abs(n)))
@@ -55,21 +56,22 @@ public class Main1 {
                         .toString());
     }
 
-    public Integer practice7 (int n) {
+    public Integer practice7(int n) {
         return Integer.parseInt(String.valueOf(Math.abs(n))
                 .chars()
-                .filter(a->a%2==0)
+                .filter(a -> a % 2 == 0)
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining()));
     }
 
-
-
-
-
-
-
-
+    public int practice8(int n) {
+        String s = String.valueOf(Math.abs(n));
+        String result = IntStream.range(0, s.length())
+                .mapToObj(i ->
+                        String.valueOf((s.charAt(i) - '0') * (i + 1)))
+                .collect(Collectors.joining());
+        return n < 0 ? -Integer.parseInt(result) : Integer.parseInt(result);
+    }
 
 
 }

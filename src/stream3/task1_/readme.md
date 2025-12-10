@@ -130,12 +130,14 @@
 Підказка: IntStream.range(0, s.length())
 Рішення:
 
-String s = String.valueOf(Math.abs(n));
-String res = IntStream.range(0, s.length())
-.mapToObj(i -> String.valueOf((s.charAt(i)-'0') * (i+1)))
-.collect(Collectors.joining());
-return n < 0 ? -Integer.parseInt(res) : Integer.parseInt(res);
-
+    public int practice8(int n) {
+        String s = String.valueOf(Math.abs(n));
+        String result = IntStream.range(0, s.length())
+                .mapToObj(i ->
+                        String.valueOf((s.charAt(i) - '0') * (i + 1)))
+                .collect(Collectors.joining());
+        return n < 0 ? -Integer.parseInt(result) : Integer.parseInt(result);
+    }
 
 Коментар: позиції зліва направо з 1; збираємо як рядок.
 
