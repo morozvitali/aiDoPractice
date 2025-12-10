@@ -73,5 +73,18 @@ public class Main1 {
         return n < 0 ? -Integer.parseInt(result) : Integer.parseInt(result);
     }
 
+    public long practice9(int n) {
+        return String.valueOf(Math.abs(n))
+                .chars()
+                .map(c -> c - '0')
+                .filter(d -> d > 5)
+                .count();
+    }
 
+    public String practice10(int n) {
+        return String.valueOf(Math.abs(n)).chars()
+                .map(c -> c - '0')
+                .mapToObj(d -> d > 5 ? "X" : "0")
+                .collect(Collectors.joining());
+    }
 }

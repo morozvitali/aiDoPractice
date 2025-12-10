@@ -18,7 +18,7 @@
                 .toList();
     }
 
-Коментар: базове фільтрування → сортування; 
+Коментар: базове фільтрування → сортування;
 використовуй method reference для читабельності.
 
 ## 1.2 — Алфавітно (toLowerCase)
@@ -51,7 +51,6 @@
                 .orElse("");
     }
 
-
 Коментар: корисний шаблон — пара (ключ,значення) для max/min за значенням.
 
 1.4 — Сума квадратів цифр числа
@@ -67,7 +66,6 @@
                 .map(d->d*d)
                 .sum();
     }
-
 
 Коментар: chars дає IntStream; перетворення від символу до цифри — c - '0'.
 
@@ -87,7 +85,6 @@
                 .boxed()
                 .toList();
     }
-
 
 Коментар: distinct + sorted — отримуємо унікальні цифри в порядку.
 
@@ -121,7 +118,6 @@
                 .collect(Collectors.joining()));
     }
 
-
 Коментар: повертаємо -1, якщо немає парних цифр — це обрана поведінка.
 
 1.8 — Помнож кожну цифру на її позицію
@@ -147,11 +143,13 @@
 Підказка: .filter(d -> d > 5).count()
 Рішення:
 
-return (int) String.valueOf(Math.abs(n)).chars()
-.map(c -> c - '0')
-.filter(d -> d > 5)
-.count();
-
+    public long practice (int n) {
+        return String.valueOf(Math.abs(n))
+                .chars()
+                .map(c->c-'0')
+                .filter(d->d>5)
+                .count();
+    }
 
 Коментар: простий приклад лічильника через stream.
 
@@ -161,7 +159,9 @@ return (int) String.valueOf(Math.abs(n)).chars()
 Підказка: тернарний оператор у mapToObj.
 Рішення:
 
-return String.valueOf(Math.abs(n)).chars()
-.map(c -> c - '0')
-.mapToObj(d -> d > 5 ? "X" : "O")
-.collect(Collectors.joining());
+    public String practice10 (int n) {
+        return String.valueOf(Math.abs(n)).chars()
+                .map(c->c-'0')
+                .mapToObj(d->d > 5 ? "X" : "0")
+                .collect(Collectors.joining());
+    }
