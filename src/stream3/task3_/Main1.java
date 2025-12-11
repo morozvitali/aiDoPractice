@@ -1,9 +1,6 @@
 package stream3.task3_;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -48,7 +45,20 @@ public class Main1 {
     public Map<Integer, List<String>> practice6 () {
         String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
         return Arrays.stream(array)
-                .collect(Collectors.groupingBy(String::length, Collectors.mapping(String::toUpperCase, Collectors.toList())));
+                .collect(Collectors
+                        .groupingBy(String::length,
+                                Collectors.mapping(String::toUpperCase,
+                                        Collectors.toList())));
     }
 
+    public IntSummaryStatistics practice7 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        return Arrays.stream(array).filter(w->hasRepeatingLetters(w))
+                .mapToInt(String::length)
+                .summaryStatistics();
+    }
+
+    public static Boolean hasRepeatingLetters(String w) {
+        return w.length() - w.chars().distinct().count() == 0;
+    }
 }

@@ -78,18 +78,22 @@
 але значення — uppercase списки.
 Рішення:
 
-return Arrays.stream(words)
-.collect(Collectors
-.groupingBy(String::length, 
-Collectors.mapping(String::toUpperCase, 
-Collectors.toList())));
+    public Map<Integer, List<String>> practice6 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        return Arrays.stream(array)
+                .collect(Collectors
+                        .groupingBy(String::length, 
+                                Collectors.mapping(String::toUpperCase, 
+                                        Collectors.toList())));
+    }
 
 Теорія: mapping використовується 
 для трансформації елементів перед колекцією.
 
 3.7 — IntSummaryStatistics по довжинах слів з повторюваними буквами
 
-Умова: відфільтрувати слова з повторюваними буквами → summaryStatistics по довжинах.
+Умова: відфільтрувати слова з повторюваними буквами → 
+summaryStatistics по довжинах.
 Рішення:
 
 return Arrays.stream(words)
@@ -98,14 +102,17 @@ return Arrays.stream(words)
 .summaryStatistics();
 
 
-Коментар: hasRepeatingLetters — допоміжний метод, що перевіряє дублікати.
+Коментар: hasRepeatingLetters — допоміжний метод, 
+що перевіряє дублікати.
 
-3.8 — Побудувати Map<Boolean,List<String>> — починаються з великої літери
+3.8 — Побудувати Map<Boolean,List<String>> — 
+починаються з великої літери
 
 Умова: розділити по першому символу UpperCase.
 Рішення:
 
-return Arrays.stream(words).collect(Collectors.partitioningBy(w -> Character.isUpperCase(w.charAt(0))));
+return Arrays.stream(words).collect(Collectors
+.partitioningBy(w -> Character.isUpperCase(w.charAt(0))));
 
 
 Коментар: зручне для UI/форматування.
