@@ -21,11 +21,16 @@ public class Main1 {
                         .anyMatch(c->"aeiou".indexOf(c)>=0)));
     }
 
-    public void practice3 () {
+    public Map <Integer, Long> practice3 () {
         String [] array = new String [] {"Aa", "Bba", "Cec"};
         return Arrays.stream(array).
                 filter(w->w.chars().anyMatch(c->"aeiou".indexOf(c)>=0))
-                .collect(Collectors.groupingBy(String::length, Collectors.counting()))
+                .collect(Collectors.groupingBy(String::length, Collectors.counting()));
+    }
+
+    public Map <Character, Double> practice4() {
+        String [] array = new String [] {"Aa", "Bba", "Cec"};
+        return Arrays.stream(array).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
     }
 
 

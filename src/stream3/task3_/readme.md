@@ -1,4 +1,4 @@
-3.1 — Map слово → чи має голосні
+## 3.1 — Map слово → чи має голосні
 
 Умова: повернути Map<String,Boolean>.
 Рішення:
@@ -13,7 +13,7 @@
 
 Коментар: toMap з булевою функцією.
 
-3.2 — Розділити слова на ті, що містять голосну і ні
+## 3.2 — Розділити слова на ті, що містять голосну і ні
 
 Умова: partitioningBy → Map<Boolean,List<String>>.
 Рішення:
@@ -27,7 +27,7 @@
 
 Теорія: partitioningBy швидкий для true/false.
 
-3.3 — Порахувати кількість слів за довжиною (ті, що містять голосну)
+## 3.3 — Порахувати кількість слів за довжиною (ті, що містять голосну)
 
 Умова: groupingBy length + counting.
 Рішення:
@@ -41,14 +41,14 @@
 
 Коментар: комбінуємо фільтр і groupingBy.
 
-3.4 — Map<перша літера, середня довжина>
+## 3.4 — Map<перша літера, середня довжина>
 
 Умова: для кожної першої літери порахувати average length.
 Рішення:
 
 return Arrays.stream(words)
-.collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.averagingInt(String::length)));
-
+.collect(Collectors.groupingBy(w -> w.charAt(0),
+Collectors.averagingInt(String::length)));
 
 Теорія: averagingInt дає Double.
 
