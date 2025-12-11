@@ -90,22 +90,28 @@
 Теорія: mapping використовується 
 для трансформації елементів перед колекцією.
 
-3.7 — IntSummaryStatistics по довжинах слів з повторюваними буквами
+## 3.7 — IntSummaryStatistics по довжинах слів з повторюваними буквами
 
 Умова: відфільтрувати слова з повторюваними буквами → 
 summaryStatistics по довжинах.
 Рішення:
 
-return Arrays.stream(words)
-.filter(w -> hasRepeatingLetters(w))
-.mapToInt(String::length)
-.summaryStatistics();
+    public IntSummaryStatistics practice7 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        return Arrays.stream(array).filter(w->hasRepeatingLetters(w))
+                .mapToInt(String::length)
+                .summaryStatistics();
+    }
+
+    public static Boolean hasRepeatingLetters(String w) {
+        return w.length() - w.chars().distinct().count() == 0;
+    }
 
 
 Коментар: hasRepeatingLetters — допоміжний метод, 
 що перевіряє дублікати.
 
-3.8 — Побудувати Map<Boolean,List<String>> — 
+## 3.8 — Побудувати Map<Boolean,List<String>> — 
 починаються з великої літери
 
 Умова: розділити по першому символу UpperCase.
@@ -120,7 +126,7 @@ return Arrays.stream(words)
 
 Коментар: зручне для UI/форматування.
 
-3.9 — Найдовше слово, що починається з великої літери
+## 3.9 — Найдовше слово, що починається з великої літери
 
 Умова: знайти найбільше слово серед тих,
 що починаються з UpperCase.
@@ -138,7 +144,7 @@ return Arrays.stream(words)
 
 Коментар: подібний шаблон для будь-якого фільтру + max.
 
-3.10 — Map<довжина, середня кількість голосних> — unmodifiable
+## 3.10 — Map<довжина, середня кількість голосних> — unmodifiable
 
 Умова: зробити результат незмінним Map.
 Рішення:

@@ -77,4 +77,11 @@ public class Main1 {
                 .orElse("");
     }
 
+    public Map <Integer, Double> practice10 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        return Arrays.stream(array).collect(Collectors.collectingAndThen(
+                Collectors.groupingBy(String::length, Collectors.averagingInt(
+                        w->(int)w.chars().filter(c -> "aeiou".indexOf(c) >= 0).count())),
+                Collections::unmodifiableMap));
+    }
 }
