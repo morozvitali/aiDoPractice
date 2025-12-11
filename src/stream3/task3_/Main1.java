@@ -45,6 +45,10 @@ public class Main1 {
                 .orElse(null);
     }
 
-
+    public Map<Integer, List<String>> practice6 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        return Arrays.stream(array)
+                .collect(Collectors.groupingBy(String::length, Collectors.mapping(String::toUpperCase, Collectors.toList())));
+    }
 
 }

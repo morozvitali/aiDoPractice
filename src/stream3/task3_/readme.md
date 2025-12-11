@@ -74,13 +74,18 @@
 
 ## 3.6 — Map довжина → words (але в UpperCase)
 
-Умова: згрупувати слова за довжиною, але значення — uppercase списки.
+Умова: згрупувати слова за довжиною, 
+але значення — uppercase списки.
 Рішення:
 
-return Arrays.stream(words).collect(Collectors.groupingBy(String::length, Collectors.mapping(String::toUpperCase, Collectors.toList())));
+return Arrays.stream(words)
+.collect(Collectors
+.groupingBy(String::length, 
+Collectors.mapping(String::toUpperCase, 
+Collectors.toList())));
 
-
-Теорія: mapping використовується для трансформації елементів перед колекцією.
+Теорія: mapping використовується 
+для трансформації елементів перед колекцією.
 
 3.7 — IntSummaryStatistics по довжинах слів з повторюваними буквами
 
