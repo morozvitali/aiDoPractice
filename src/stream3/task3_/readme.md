@@ -46,24 +46,33 @@
 Умова: для кожної першої літери порахувати average length.
 Рішення:
 
-return Arrays.stream(words)
-.collect(Collectors.groupingBy(w -> w.charAt(0),
-Collectors.averagingInt(String::length)));
+    public Map <Character, Double> practice4() {
+        String [] array = new String [] {"Aa", "Bba", "Cec"};
+        return Arrays.stream(array).collect(Collectors.groupingBy(w->w.charAt(0), Collectors.averagingInt(String::length)));
+    }
 
 Теорія: averagingInt дає Double.
 
-3.5 — Найчастіший перший символ
+## 3.5 — Найчастіший перший символ
 
 Умова: знайти символ найчастіше на початку слів.
 Рішення:
 
-Map<Character, Long> map = Arrays.stream(words).collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()));
-return map.entrySet().stream().max(Comparator.comparingLong(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(null);
+    public Character practice5() {
+        String[] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        return Arrays.stream(array)
+                .collect(Collectors.groupingBy(w -> w.charAt(0), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .max(Comparator.comparing(Map.Entry::getValue))
+                .map(Map.Entry::getKey)
+                .orElse(null);
+    }
 
 
 Коментар: два кроки: grouping -> max.
 
-3.6 — Map довжина → words (але в UpperCase)
+## 3.6 — Map довжина → words (але в UpperCase)
 
 Умова: згрупувати слова за довжиною, але значення — uppercase списки.
 Рішення:
