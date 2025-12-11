@@ -111,9 +111,11 @@ return Arrays.stream(words)
 Умова: розділити по першому символу UpperCase.
 Рішення:
 
-return Arrays.stream(words).collect(Collectors
-.partitioningBy(w -> Character.isUpperCase(w.charAt(0))));
-
+    public Map <Boolean, List<String>> practice8 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        return Arrays.stream(array)
+                .collect(Collectors.partitioningBy(w->Character.isUpperCase(w.charAt(0))));
+    }
 
 Коментар: зручне для UI/форматування.
 

@@ -61,4 +61,13 @@ public class Main1 {
     public static Boolean hasRepeatingLetters(String w) {
         return w.length() - w.chars().distinct().count() == 0;
     }
+
+    public Map <Boolean, List<String>> practice8 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        return Arrays.stream(array)
+                .collect(Collectors.partitioningBy(w->Character.isUpperCase(w.charAt(0))));
+    }
+
+
+
 }
