@@ -114,20 +114,26 @@ return Arrays.stream(words)
     public Map <Boolean, List<String>> practice8 () {
         String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
         return Arrays.stream(array)
-                .collect(Collectors.partitioningBy(w->Character.isUpperCase(w.charAt(0))));
+                .collect(Collectors
+        .partitioningBy(w->Character.isUpperCase(w.charAt(0))));
     }
 
 Коментар: зручне для UI/форматування.
 
 3.9 — Найдовше слово, що починається з великої літери
 
-Умова: знайти найбільше слово серед тих, що починаються з UpperCase.
+Умова: знайти найбільше слово серед тих,
+що починаються з UpperCase.
 Рішення:
 
-return Arrays.stream(words)
-.filter(w -> Character.isUpperCase(w.charAt(0)))
-.max(Comparator.comparingInt(String::length))
-.orElse("");
+    public void practice9 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        Arrays.stream(array).filter(w->Character
+                        .isUpperCase(w
+                                .charAt(0)))
+                .max(Comparator.comparingInt(String::length))
+                .orElse("");
+    }
 
 
 Коментар: подібний шаблон для будь-якого фільтру + max.

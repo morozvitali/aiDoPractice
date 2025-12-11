@@ -68,6 +68,13 @@ public class Main1 {
                 .collect(Collectors.partitioningBy(w->Character.isUpperCase(w.charAt(0))));
     }
 
-
+    public void practice9 () {
+        String [] array = new String[]{"Aa", "Bba", "Cec", "Aata"};
+        Arrays.stream(array).filter(w->Character
+                        .isUpperCase(w
+                                .charAt(0)))
+                .max(Comparator.comparingInt(String::length))
+                .orElse("");
+    }
 
 }
