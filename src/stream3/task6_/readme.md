@@ -28,10 +28,13 @@ edge-cases, collectingAndThen validation.
 Умова: знайти слова, що містять всі голосні.
 Рішення:
 
-return Arrays.stream(words)
-.filter(w -> "aeiou".chars().allMatch(c -> w.indexOf(c) >= 0))
-.collect(Collectors.toList());
-
+    public List <String> practice2 (List <String> words) {
+        return words.stream()
+                .filter(w->"aeiou"
+                        .chars()
+                        .allMatch(c->w.indexOf(c)>=0))
+                .toList();
+    }
 
 Коментар: allMatch по символам — досить жорсткий фільтр.
 
@@ -39,13 +42,15 @@ return Arrays.stream(words)
 
 Рішення:
 
-List<Long> top10 = new Random().ints(100, -100, 101)
-.mapToObj(String::valueOf)
-.map(Long::valueOf)
-.filter(n -> n > 0)
-.sorted(Comparator.reverseOrder())
-.limit(10)
-.collect(Collectors.toList());
+    public void practice3 () {
+        List<Long> top10 = new Random().ints(100, -100, 101)
+                .mapToObj(String::valueOf)
+                .map(Long::valueOf)
+                .filter(n->n>0)
+                .sorted(Comparator.reverseOrder())
+                .limit(10)
+                .toList();
+    }
 
 
 Теорія: демонстрація pipeline з рандомом.
@@ -55,10 +60,11 @@ List<Long> top10 = new Random().ints(100, -100, 101)
 Умова: ["hi","hello","mango","go","halo","yo"] → 3
 Рішення:
 
-return Stream.of("hi","hello","mango","go","halo","yo")
-.collect(Collectors.groupingBy(w->w.charAt(w.length()-1)))
-.size();
-
+    public Integer practice4 () {
+        return Stream.of("hi","hello","mango","go","halo","yo")
+                .collect(Collectors.groupingBy(w->w.charAt(w.length()-1)))
+                .size();
+    }
 
 Коментар: groupingBy + size для кількості груп.
 

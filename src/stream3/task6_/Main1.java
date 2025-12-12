@@ -1,7 +1,10 @@
 package stream3.task6_;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main1 {
 
@@ -23,6 +26,16 @@ public class Main1 {
                 .filter(w->"aeiou"
                         .chars()
                         .allMatch(c->w.indexOf(c)>=0))
+                .toList();
+    }
+
+    public void practice3 () {
+        List<Long> top10 = new Random().ints(100, -100, 101)
+                .mapToObj(String::valueOf)
+                .map(Long::valueOf)
+                .filter(n->n>0)
+                .sorted(Comparator.reverseOrder())
+                .limit(10)
                 .toList();
     }
 
