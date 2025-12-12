@@ -54,7 +54,10 @@ public class Main1 {
                 .toList();
     }
 
-
+    public int practice6 (int n) {
+        int [] digits = String.valueOf(n).chars().map(c->c-'0').toArray();
+        return IntStream.range(0, digits.length).filter(i->i%2==1).map(i->digits[i]).reduce(1,(a,b)->a*b);
+    }
 
 
 
