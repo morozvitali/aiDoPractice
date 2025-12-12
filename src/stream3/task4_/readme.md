@@ -33,16 +33,20 @@
 Умова: вибрати топ-3 по кількості голосних, lowerCase.
 Рішення:
 
-return Stream.of("cooperation", "stream", "banana", 
-"supernova", "moon", "queueing", "idealism")
-.filter(w -> w.chars().filter(c -> "aeiou".indexOf(c) >=0)
-.count() > 1)
-.map(String::toLowerCase)
-.sorted(Comparator.comparingLong((String w) -> w.chars()
-.filter(c -> "aeiou".indexOf(c) >=0).count()).reversed())
-.limit(3)
-.collect(Collectors.collectingAndThen(Collectors.toList(),
-Collections::unmodifiableList));
+    public List <String> practice3 () {
+        return Stream.of("cooperation", "stream", "banana",
+                "supernova", "moon", "queueing", "idealism")
+                .map(String::toLowerCase)
+                .sorted(Comparator.comparing(Main1::count).reversed())
+                .limit(3)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
+    }
+
+    public static long count (String s) {
+        return s.chars()
+                .filter(c->"aeiou".indexOf(c)>=0)
+                .count();
+    }
 
 
 Коментар: приклад advanced collectingAndThen.
@@ -52,12 +56,12 @@ Collections::unmodifiableList));
 Умова: [1,2,3,4,5] → "1, 3, 5".
 Рішення:
 
-String result = List.of(1,2,3,4,5).stream()
-.filter(n -> n % 2 != 0)
-.map(String::valueOf)
-.collect(Collectors.collectingAndThen(Collectors.toList(), 
-list -> String.join(", ", list)));
-
+    public String practice4() {
+        return Stream.of(1, 2, 3, 4, 5)
+                .filter(n -> n % 2 != 0)
+                .map(n->n+"")
+                .collect(Collectors.joining(", "));
+    }
 
 Коментар: простий шаблон для перетворення list→string.
 
