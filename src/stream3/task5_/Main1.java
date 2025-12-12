@@ -52,7 +52,9 @@ public class Main1 {
                 .max(Comparator.comparing(w->w.chars().filter(c->c=='a').count())).orElse("");
     }
 
-
+    public List <String> practice7 (List <String> words) {
+        return words.stream().sorted(Comparator.comparing(Main1::count).thenComparing(String::length)).toList();
+    }
 
 
 
