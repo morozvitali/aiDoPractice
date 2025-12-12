@@ -38,10 +38,13 @@
 Умова: повернути LinkedHashMap в порядку зростання розміру списків.
 Рішення:
 
-return input.entrySet().stream()
-.sorted(Comparator.comparingInt(e -> e.getValue().size()))
-.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, 
-(a,b)->b, LinkedHashMap::new));
+    public LinkedHashMap<Integer, List<String>> practice3(Map<Integer, List<String>> input) {
+        return input
+                .entrySet()
+                .stream()
+                .sorted(Comparator.comparing(e -> e.getValue().size()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (a, b) -> b, LinkedHashMap::new));
 
 
 Теорія: .entrySet().stream() — шаблон для сортування map.
