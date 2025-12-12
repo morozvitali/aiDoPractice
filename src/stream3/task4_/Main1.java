@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main1 {
     public List <Integer> practice1 () {
@@ -13,6 +14,15 @@ public class Main1 {
                 .collect(Collectors.collectingAndThen(Collectors.toList(),
                         Collections::unmodifiableList));
     }
+
+    public String practice2 () {
+        return Stream.of("Dog", "Cat", "Mister", "Thea", "Dinner", "Architector")
+                .filter(w->w.length() > 6)
+                .collect(Collectors.collectingAndThen(Collectors.toList(),
+                        list-> list.isEmpty() ? "empty" : list.get(0)));
+    }
+
+
 
 
 

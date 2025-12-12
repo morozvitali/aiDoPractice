@@ -1,15 +1,16 @@
-4.1 — Відфільтрувати >50, відсортувати спаданням,
+## 4.1 — Відфільтрувати >50, відсортувати спаданням,
 повернути unmodifiable List
 
 Умова: [10,70,20,90,55,30] → [90,70,55] (unmodifiable).
 Рішення:
 
-return numbers.stream()
-.filter(n -> n > 50)
-.sorted(Comparator.reverseOrder())
-.collect(Collectors.collectingAndThen(Collectors.toList(), 
-Collections::unmodifiableList));
-
+    public List <Integer> practice1 () {
+        return List.of(10,70,20,90,55,30).stream()
+                .filter(a->a>50)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.collectingAndThen(Collectors.toList(),
+                        Collections::unmodifiableList));
+    }
 
 Теорія: приклад з файлу — стандартний use-case.
 
@@ -18,11 +19,12 @@ Collections::unmodifiableList));
 Умова: зібрати слова довше за 6 → повернути перший або "empty".
 Рішення:
 
-return Stream.of(words)
-.filter(w -> w.length() > 6)
-.collect(Collectors.collectingAndThen(Collectors.toList(), 
-list -> list.isEmpty() ? "empty" : list.get(0)));
-
+    public String practice2 () {
+        return Stream.of("Dog", "Cat", "Mister", "Thea", "Dinner", "Architector")
+                .filter(w->w.length() > 6)
+                .collect(Collectors.collectingAndThen(Collectors.toList(),
+                        list-> list.isEmpty() ? "empty" : list.get(0)));
+    }
 
 Коментар: безпечна витяжка з колекції.
 
