@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main1 {
@@ -29,8 +30,8 @@ public class Main1 {
                 .toList();
     }
 
-    public void practice3 () {
-        List<Long> top10 = new Random().ints(100, -100, 101)
+    public List<Long> practice3 () {
+        return new Random().ints(100, -100, 101)
                 .mapToObj(String::valueOf)
                 .map(Long::valueOf)
                 .filter(n->n>0)
@@ -44,6 +45,16 @@ public class Main1 {
                 .collect(Collectors.groupingBy(w->w.charAt(w.length()-1)))
                 .size();
     }
+
+    public List <String> practice5 (List <String> words) {
+        return words.stream().peek(w-> System.out.println("Begin " + w))
+                .map(String::toUpperCase)
+                .peek(w-> System.out.println(" upper " + w))
+                .filter(w->w.length() > 3)
+                .toList();
+    }
+
+
 
 
 
