@@ -22,6 +22,20 @@ public class Main1 {
                         list-> list.isEmpty() ? "empty" : list.get(0)));
     }
 
+    public List <String> practice3 () {
+        return Stream.of("cooperation", "stream", "banana",
+                "supernova", "moon", "queueing", "idealism")
+                .map(String::toLowerCase)
+                .sorted(Comparator.comparing(Main1::count).reversed())
+                .limit(3)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), Collections::unmodifiableList));
+    }
+
+    public static long count (String s) {
+        return s.chars()
+                .filter(c->"aeiou".indexOf(c)>=0)
+                .count();
+    }
 
 
 
