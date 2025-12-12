@@ -8,10 +8,10 @@
 Рішення:
 
 return words.stream()
-.sorted(Comparator.comparingInt((String w) -> (int)w.chars().filter(c->"aeiou".indexOf(c)>=0).count())
+.sorted(Comparator.comparingInt((String w) -> 
+(int)w.chars().filter(c->"aeiou".indexOf(c)>=0).count())
 .thenComparing(Comparator.naturalOrder()))
 .collect(Collectors.toList());
-
 
 Коментар: multi-criteria sorting.
 
@@ -20,7 +20,8 @@ return words.stream()
 Рішення: (як у твоєму файлі)
 
 return numbers.stream()
-.sorted(Comparator.comparingInt((Integer n)-> n % 2).thenComparing(Comparator.reverseOrder()))
+.sorted(Comparator.comparingInt((Integer n)-> n % 2)
+.thenComparing(Comparator.reverseOrder()))
 .collect(Collectors.toList());
 
 
@@ -33,7 +34,8 @@ return numbers.stream()
 
 return input.entrySet().stream()
 .sorted(Comparator.comparingInt(e -> e.getValue().size()))
-.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a,b)->b, LinkedHashMap::new));
+.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, 
+(a,b)->b, LinkedHashMap::new));
 
 
 Теорія: .entrySet().stream() — шаблон для сортування map.
@@ -42,7 +44,8 @@ return input.entrySet().stream()
 
 Рішення:
 
-return words.stream().sorted(Comparator.comparing(String::length).reversed()).collect(Collectors.toList());
+return words.stream().sorted(Comparator.comparing(String::length)
+.reversed()).collect(Collectors.toList());
 
 
 Коментар: reversed() інвертує порядок.
@@ -54,7 +57,8 @@ return words.stream().sorted(Comparator.comparing(String::length).reversed()).co
 
 return map.entrySet().stream()
 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,(e1,e2)->e1,LinkedHashMap::new));
+.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+(e1,e2)->e1,LinkedHashMap::new));
 
 
 Теорія: зберігаємо порядок через LinkedHashMap.
@@ -64,7 +68,8 @@ return map.entrySet().stream()
 Умова: List.of("alpha","arena","java","banana","lava") → "banana"
 Рішення:
 
-return words.stream().max(Comparator.comparingLong(w -> w.chars().filter(c->c=='a').count())).orElse("");
+return words.stream().max(Comparator.comparingLong(w -> w.chars()
+.filter(c->c=='a').count())).orElse("");
 
 
 Коментар: map->count pattern, потім max.
@@ -74,7 +79,8 @@ return words.stream().max(Comparator.comparingLong(w -> w.chars().filter(c->c=='
 Умова: спочатку за кількістю голосних, якщо рівно — за довжиною.
 Рішення:
 
-return words.stream().sorted(Comparator.comparingInt((String w)-> countVowels(w)).thenComparingInt(String::length)).collect(Collectors.toList());
+return words.stream().sorted(Comparator.comparingInt((String w)->
+countVowels(w)).thenComparingInt(String::length)).collect(Collectors.toList());
 
 
 Коментар: thenComparingInt прискорює для int.
@@ -98,7 +104,8 @@ return map.entrySet().stream()
 Умова: ["1","2","2","3","3","3"] → Map<Long,Long> (value→count).
 Рішення:
 
-return inputs.stream().map(Long::valueOf).collect(Collectors.groupingBy(x->x, Collectors.counting()));
+return inputs.stream().map(Long::valueOf).collect(Collectors.groupingBy(x->x, 
+Collectors.counting()));
 
 
 Коментар: стандартна побудова frequency map.
