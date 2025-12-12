@@ -39,7 +39,11 @@ public class Main1 {
                 .toList();
     }
 
-
+    public Integer practice4 () {
+        return Stream.of("hi","hello","mango","go","halo","yo")
+                .collect(Collectors.groupingBy(w->w.charAt(w.length()-1)))
+                .size();
+    }
 
 
 
