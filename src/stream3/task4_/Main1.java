@@ -90,5 +90,14 @@ public class Main1 {
                                 LinkedHashMap::new));
     }
 
-
+    public List <String> practice9 (List <String> sentences, int n) {
+                return sentences.stream()
+                        .flatMap(s->Arrays.stream(s.split("\\s+")))
+                        .map(String::toLowerCase)
+                        .distinct()
+                        .limit(n)
+                        .collect(Collectors.collectingAndThen(Collectors.toList(),
+                                Collections::unmodifiableList
+                                ));
+    }
 }

@@ -151,9 +151,8 @@ return sentences.stream()
 .map(String::toLowerCase)
 .distinct()
 .limit(n)
-.collect(Collectors.collectingAndThen(Collectors.toList(), 
+.collect(Collectors.collectingAndThen(Collectors.toList(),
 Collections::unmodifiableList));
-
 
 Коментар: limit після distinct — важливо для очікуваного результату.
 
