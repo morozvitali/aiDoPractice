@@ -65,11 +65,12 @@
 Умова: {a=2,b=5,c=1} → b,a,c
 Рішення: (аналогічно 4.8)
 
-return map.entrySet().stream()
-.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-(e1,e2)->e1,LinkedHashMap::new));
-
+    public LinkedHashMap <Character, Integer> practice5 (Map <Character, Integer> map) {
+        return  map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1,e2)->e1, LinkedHashMap::new
+                        ));
+    }
 
 Теорія: зберігаємо порядок через LinkedHashMap.
 
@@ -78,9 +79,10 @@ return map.entrySet().stream()
 Умова: List.of("alpha","arena","java","banana","lava") → "banana"
 Рішення:
 
-return words.stream().max(Comparator.comparingLong(w -> w.chars()
-.filter(c->c=='a').count())).orElse("");
-
+    public String practice6 () {
+        return List.of("alpha","arena","java","banana","lava").stream()
+                .max(Comparator.comparing(w->w.chars().filter(c->c=='a').count())).orElse("");
+    }
 
 Коментар: map->count pattern, потім max.
 

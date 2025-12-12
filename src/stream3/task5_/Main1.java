@@ -47,7 +47,10 @@ public class Main1 {
                         ));
     }
 
-
+    public String practice6 () {
+        return List.of("alpha","arena","java","banana","lava").stream()
+                .max(Comparator.comparing(w->w.chars().filter(c->c=='a').count())).orElse("");
+    }
 
 
 
