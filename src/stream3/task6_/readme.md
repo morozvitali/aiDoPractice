@@ -114,12 +114,14 @@ edge-cases, collectingAndThen validation.
 
 6.8 — Знайти число з найбільшою кількістю різних цифр
 
-Умова: List.of(111,123,444,9087) → 9087 (має 4 різні цифри).
-Рішення:
-
-return numbers.stream()
-.max(Comparator.comparingInt(n -> String.valueOf(Math.abs(n)).chars().distinct().map(c->c-'0').count()))
-.orElse(0);
+    public Integer practice8 () {
+        return Stream.of(111,123,444,9087).max(Comparator.comparing(
+                a->String.valueOf(Math.abs(a))
+                        .chars()
+                        .distinct()
+                        .map(c->c-'0').count()))
+                .orElse(-1);
+    }
 
 
 Коментар: distinct() по chars дає різні символи.
@@ -134,20 +136,24 @@ return people.stream()
 .collect(Collectors.groupingBy(h -> h.charAt(0), Collectors.toSet()));
 
 
-Теорія: flatMapping також існує як вбудований колектор (Java16+), але flatMap + groupingBy — універсальний варіант.
+Теорія: flatMapping також існує як вбудований колектор (Java16+), але flatMap 
++ groupingBy — універсальний варіант.
 
 6.10 — Final challenge: складний pipeline (filter+map+group+collectingAndThen)
 
-Умова: відфільтрувати слова з >2 голосними, привести до lowerCase, згрупувати по останній літері, для кожної групи повернути список унікальних слів і зробити map незмінним.
+Умова: відфільтрувати слова з >2 голосними, привести до lowerCase, згрупувати 
+по останній літері, для кожної групи повернути список унікальних слів і зробити 
+map незмінним.
 Рішення:
 
-return Stream.of(words)
-.filter(w -> w.chars().filter(c->"aeiou".indexOf(c)>=0).count() > 2)
-.map(String::toLowerCase)
-.collect(Collectors.collectingAndThen(
-Collectors.groupingBy(w->w.charAt(w.length()-1), Collectors.mapping(Function.identity(), Collectors.toSet())),
-Collections::unmodifiableMap
-));
+    public Map<Character, Set<String>> practice10 (List <String> words) {
+        return words.stream().filter(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()>2)
+                .map(String::toLowerCase)
+                .collect(Collectors.collectingAndThen(
+                        Collectors.groupingBy(w->w.charAt(w.length()-1),
+                                Collectors.mapping(Function.identity(), Collectors.toSet())), Collections::unmodifiableMap
+                ));
+    }
 
 
 Коментар: комбінуємо кілька концептів в одному pipe — ідеальний підсумковий приклад.

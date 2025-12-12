@@ -1,6 +1,7 @@
 package stream3.task6_;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -66,6 +67,14 @@ public class Main1 {
         return new StringBuilder(s).reverse().equals(s);
     }
 
+    public Integer practice8 () {
+        return Stream.of(111,123,444,9087).max(Comparator.comparing(
+                a->String.valueOf(Math.abs(a))
+                        .chars()
+                        .distinct()
+                        .map(c->c-'0').count()))
+                .orElse(-1);
+    }
 
 
 }
