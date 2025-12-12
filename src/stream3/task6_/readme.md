@@ -73,12 +73,13 @@ edge-cases, collectingAndThen validation.
 Умова: надрукувати початкові слова, upper-case, і фінальний список >3.
 Рішення: (шаблон)
 
-List<String> result = words.stream()
-.peek(w -> System.out.println("Початкове: " + w))
-.map(String::toUpperCase)
-.peek(w -> System.out.println("Upper: " + w))
-.filter(w -> w.length() > 3)
-.collect(Collectors.toList());
+    public List <String> practice5 (List <String> words) {
+        return words.stream().peek(w-> System.out.println("Begin " + w))
+                .map(String::toUpperCase)
+                .peek(w-> System.out.println(" upper " + w))
+                .filter(w->w.length() > 3)
+                .toList();
+    }
 
 
 Теорія: peek — корисний для debug pipeline.
@@ -88,9 +89,10 @@ List<String> result = words.stream()
 Умова: n=123456 → product of digits at indexes 1,3,5 → 246 = 48.
 Рішення:
 
-int[] digits = String.valueOf(n).chars().map(c->c-'0').toArray();
-return IntStream.range(0, digits.length).filter(i->i%2==1).map(i->digits[i]).reduce(1,(a,b)->a*b);
-
+    public int practice6 (int n) {
+        int [] digits = String.valueOf(n).chars().map(c->c-'0').toArray();
+        return IntStream.range(0, digits.length).filter(i->i%2==1).map(i->digits[i]).reduce(1,(a,b)->a*b);
+    }
 
 Коментар: комбінуємо range + index lookup.
 
@@ -99,10 +101,14 @@ return IntStream.range(0, digits.length).filter(i->i%2==1).map(i->digits[i]).red
 Умова: згрупувати за довжиною, ігнорувати пусті та palindrome.
 Рішення:
 
-return Arrays.stream(words)
-.filter(w -> !w.isBlank() && !isPalindrome(w))
-.collect(Collectors.groupingBy(String::length));
+    public Map <Integer, List<String>> practice7 (List <String> words) {
+        return words.stream().filter(w-> !w.isBlank() && !isPalindrome(w))
+                .collect(Collectors.groupingBy(String::length));
+    }
 
+    public static boolean isPalindrome (String s) {
+        return new StringBuilder(s).reverse().equals(s);
+    }
 
 Теорія: демонструє поєднання фільтрів з groupingBy.
 

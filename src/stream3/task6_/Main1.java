@@ -1,8 +1,6 @@
 package stream3.task6_;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -57,6 +55,15 @@ public class Main1 {
     public int practice6 (int n) {
         int [] digits = String.valueOf(n).chars().map(c->c-'0').toArray();
         return IntStream.range(0, digits.length).filter(i->i%2==1).map(i->digits[i]).reduce(1,(a,b)->a*b);
+    }
+
+    public Map <Integer, List<String>> practice7 (List <String> words) {
+        return words.stream().filter(w-> !w.isBlank() && !isPalindrome(w))
+                .collect(Collectors.groupingBy(String::length));
+    }
+
+    public static boolean isPalindrome (String s) {
+        return new StringBuilder(s).reverse().equals(s);
     }
 
 
