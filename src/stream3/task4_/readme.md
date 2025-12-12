@@ -146,13 +146,16 @@ set -> set.iterator().next()));
 Умова: обмежити до N унікальних після distinct.
 Рішення:
 
-return sentences.stream()
-.flatMap(s -> Arrays.stream(s.split("\\s+")))
-.map(String::toLowerCase)
-.distinct()
-.limit(n)
-.collect(Collectors.collectingAndThen(Collectors.toList(),
-Collections::unmodifiableList));
+    public List <String> practice9 (List <String> sentences, int n) {
+                return sentences.stream()
+                        .flatMap(s->Arrays.stream(s.split("\\s+")))
+                        .map(String::toLowerCase)
+                        .distinct()
+                        .limit(n)
+                        .collect(Collectors.collectingAndThen(Collectors.toList(),
+                                Collections::unmodifiableList
+                                ));
+    }
 
 Коментар: limit після distinct — важливо для очікуваного результату.
 
@@ -162,8 +165,12 @@ Collections::unmodifiableList));
 Умова: зібрати List → повернути його розмір (Integer).
 Рішення:
 
-return data.stream().collect(Collectors
-.collectingAndThen(Collectors.toList(), List::size));
+    public void practice10 (List<Integer> data) {
+        data.stream()
+                .collect(Collectors
+                        .collectingAndThen(Collectors.toList(), 
+                        List::size));
+    }
 
 
 Теорія: класичний приклад перетворення результату.
