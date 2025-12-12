@@ -76,6 +76,16 @@ public class Main1 {
                 .orElse(-1);
     }
 
+    public void practice9 () {
 
+    }
+
+    public Map<Character, Set<String>> practice10 (List <String> words) {
+        return words.stream().filter(w->w.chars().filter(c->"aeiou".indexOf(c)>=0).count()>2)
+                .map(String::toLowerCase)
+                .collect(Collectors.collectingAndThen(
+                        Collectors.groupingBy(w->w.charAt(w.length()-1),
+                                Collectors.mapping(Function.identity(), Collectors.toSet())), Collections::unmodifiableMap
+                ));
+    }
 }
-
