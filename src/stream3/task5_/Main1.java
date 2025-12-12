@@ -40,7 +40,12 @@ public class Main1 {
                 .reversed()).toList();
     }
 
-
+    public LinkedHashMap <Character, Integer> practice5 (Map <Character, Integer> map) {
+        return  map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (e1,e2)->e1, LinkedHashMap::new
+                        ));
+    }
 
 
 
