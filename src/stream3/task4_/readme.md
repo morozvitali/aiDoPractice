@@ -71,15 +71,12 @@ IllegalStateException, якщо не точно одне)
 Умова: якщо більше або менше — помилка.
 Рішення:
 
-return words.stream()
-.filter(w -> w.replaceAll("[^aeiouAEIOU]", "")
-.length() == 2)
-.collect(Collectors.collectingAndThen(Collectors.toList(),
-list -> {
-if (list.size() != 1) throw 
-new IllegalStateException("Expected exactly one");
-return list.get(0);
-}));
+    public String practice5 () {
+        return Stream.of("cooperation", "stream", "banana",
+                "supernova", "moon", "queueing", "idealism")
+                .filter(s->count(s) == 2)
+                .collect(Collectors.collectingAndThen(Collectors.toList(), list-> {if (list.size() == 1) {throw new IllegalStateException("Expected exactly one"); } return list.get(0);}));
+    }
 
 
 Коментар: показує як через collectingAndThen виконувати валідацію.

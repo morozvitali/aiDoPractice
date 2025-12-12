@@ -44,6 +44,17 @@ public class Main1 {
                 .collect(Collectors.joining(", "));
     }
 
+    public String practice5 () {
+        return Stream.of("cooperation", "stream", "banana",
+                "supernova", "moon", "queueing", "idealism")
+                .filter(s->count(s) == 2)
+                .collect(Collectors
+                        .collectingAndThen(Collectors.toList(),
+                                list-> {if (list.size() == 1) {
+                                    throw new IllegalStateException("Expected exactly one"); }
+                                    return list.get(0);}));
+    }
+
 
 
 
