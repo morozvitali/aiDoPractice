@@ -129,12 +129,15 @@ set -> set.iterator().next()));
 Умова: посортувати мапу за значенням і повернути LinkedHashMap.
 Рішення:
 
-return map.entrySet().stream()
-.sorted(Map.Entry.<String,Long>comparingByValue(Comparator
-.reverseOrder()))
-.collect(Collectors.toMap(Map.Entry::getKey, 
-Map.Entry::getValue, (a,b)->a, LinkedHashMap::new));
-
+    public LinkedHashMap<String, Long> practice8() {
+        Map<String, Long> map = new HashMap<>();
+        return map.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors
+                        .toMap(Map.Entry::getKey,
+                                Map.Entry::getValue, (a, b) -> a,
+                                LinkedHashMap::new));
+    }
 
 Теорія: toMap з LinkedHashMap зберігає порядок вставки.
 

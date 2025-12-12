@@ -74,14 +74,21 @@ public class Main1 {
                 );
     }
 
-    public String practice7 () {
+    public String practice7() {
         return List.of("Aa", "Bba", "Cec", "Aata").stream()
                 .collect(Collectors.collectingAndThen(Collectors.toSet(),
-                        set->set.iterator().next()));
+                        set -> set.iterator().next()));
     }
 
-
-
+    public LinkedHashMap<String, Long> practice8() {
+        Map<String, Long> map = new HashMap<>();
+        return map.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors
+                        .toMap(Map.Entry::getKey,
+                                Map.Entry::getValue, (a, b) -> a,
+                                LinkedHashMap::new));
+    }
 
 
 }
