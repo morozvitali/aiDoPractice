@@ -7,11 +7,16 @@
 Умова: custom comparator через thenComparing.
 Рішення:
 
-return words.stream()
-.sorted(Comparator.comparingInt((String w) -> 
-(int)w.chars().filter(c->"aeiou".indexOf(c)>=0).count())
-.thenComparing(Comparator.naturalOrder()))
-.collect(Collectors.toList());
+    public List<String> practice1 () {
+        return Stream.of("cooperation", "stream", "banana",
+                "supernova", "moon", "queueing", "idealism")
+                .sorted(Comparator.comparing(Main1::count).thenComparing(Comparator.naturalOrder()))
+                .collect(Collectors.toList());
+    }
+
+    public static Long count (String s) {
+        return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
+    }
 
 Коментар: multi-criteria sorting.
 
@@ -19,10 +24,11 @@ return words.stream()
 
 Рішення: (як у твоєму файлі)
 
-return numbers.stream()
-.sorted(Comparator.comparingInt((Integer n)-> n % 2)
-.thenComparing(Comparator.reverseOrder()))
-.collect(Collectors.toList());
+    public List <Integer> practice2 (List <Integer> numbers) {
+        return numbers.stream().sorted(Comparator.comparing((Integer n)->n%2==0)
+                .thenComparing(Comparator.reverseOrder()))
+                .toList();
+    }
 
 
 Коментар: використовуємо два критерії.

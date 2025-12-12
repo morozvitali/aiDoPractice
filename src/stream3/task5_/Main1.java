@@ -18,7 +18,11 @@ public class Main1 {
         return s.chars().filter(c->"aeiou".indexOf(c)>=0).count();
     }
 
-
+    public List <Integer> practice2 (List <Integer> numbers) {
+        return numbers.stream().sorted(Comparator.comparing((Integer n)->n%2==0)
+                .thenComparing(Comparator.reverseOrder()))
+                .toList();
+    }
 
 
 
