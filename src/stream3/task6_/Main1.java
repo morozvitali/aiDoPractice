@@ -18,5 +18,17 @@ public class Main1 {
                 ));
     }
 
+    public List <String> practice2 (List <String> words) {
+        return words.stream()
+                .filter(w->"aeiou"
+                        .chars()
+                        .allMatch(c->w.indexOf(c)>=0))
+                .toList();
+    }
+
+
+
+
 
 }
+
