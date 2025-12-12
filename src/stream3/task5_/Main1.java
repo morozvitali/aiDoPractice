@@ -63,6 +63,14 @@ public class Main1 {
                 .toList();
     }
 
+    public Map <Long, Long> practice9 (List <Long> inputs) {
+        return inputs
+                .stream()
+                .map(Long::valueOf)
+                .collect(Collectors
+                        .groupingBy(x->x,
+                                Collectors.counting()));
+    }
 
 
 
