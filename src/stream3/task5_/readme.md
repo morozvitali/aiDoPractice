@@ -106,12 +106,12 @@
 Умова: повернути keys top-N за value.
 Рішення:
 
-return map.entrySet().stream()
-.sorted(Map.Entry.<K,Long>comparingByValue().reversed())
-.limit(n)
-.map(Map.Entry::getKey)
-.collect(Collectors.toList());
-
+    public List <String> practice8 (Map <String, Long> map, int n) {
+        return map.entrySet().stream().sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                .limit(n)
+                .map(Map.Entry::getKey)
+                .toList();
+    }
 
 Теорія: часто корисно у frequency-based задачах.
 
@@ -120,9 +120,14 @@ return map.entrySet().stream()
 Умова: ["1","2","2","3","3","3"] → Map<Long,Long> (value→count).
 Рішення:
 
-return inputs.stream().map(Long::valueOf).collect(Collectors.groupingBy(x->x, 
-Collectors.counting()));
-
+    public Map <Long, Long> practice9 (List <Long> inputs) {
+        return inputs
+                .stream()
+                .map(Long::valueOf)
+                .collect(Collectors
+                        .groupingBy(x->x,
+                                Collectors.counting()));
+    }
 
 Коментар: стандартна побудова frequency map.
 

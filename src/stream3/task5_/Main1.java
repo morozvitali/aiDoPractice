@@ -72,6 +72,10 @@ public class Main1 {
                                 Collectors.counting()));
     }
 
-
-
+    public Character practice10 (List <String> words) {
+        return words.stream().collect(Collectors.groupingBy(w->w.charAt(0), Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .orElse(null);
+    }
 }
