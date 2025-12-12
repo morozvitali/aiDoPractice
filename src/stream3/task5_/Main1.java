@@ -56,7 +56,12 @@ public class Main1 {
         return words.stream().sorted(Comparator.comparing(Main1::count).thenComparing(String::length)).toList();
     }
 
-
+    public List <String> practice8 (Map <String, Long> map, int n) {
+        return map.entrySet().stream().sorted(Map.Entry.<String, Long>comparingByValue().reversed())
+                .limit(n)
+                .map(Map.Entry::getKey)
+                .toList();
+    }
 
 
 

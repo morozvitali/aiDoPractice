@@ -91,9 +91,13 @@
 Умова: спочатку за кількістю голосних, якщо рівно — за довжиною.
 Рішення:
 
-return words.stream().sorted(Comparator.comparingInt((String w)->
-countVowels(w)).thenComparingInt(String::length)).collect(Collectors.toList());
-
+    public List <String> practice7 (List <String> words) {
+        return words.stream()
+        .sorted(Comparator
+            .comparing(Main1::count)
+            .thenComparing(String::length))
+        .toList();
+    }
 
 Коментар: thenComparingInt прискорює для int.
 
