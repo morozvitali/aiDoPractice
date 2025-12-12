@@ -83,8 +83,33 @@ IllegalStateException, якщо не точно одне)
 
 4.6 — Map довжина → average vowels → unmodifiableMap
 
-Умова: як у 3.10, але через nested collectingAndThen.
+Умова:
+
+вибрати топ-3 слова за кількістю голосних
+привести їх до lowerCase()
+згрупувати за середньою кількістю голосних
+обгорнути результат у unmodifiableMap
+через nested collectingAndThen
+
 Рішення: (див. 3.10) — те ж саме, але обгорнуте в unmodifiableMap.
+
+    public Map<Long, List<String>> practice6() {
+        String[] array = {"Aa", "Bba", "Cec", "Aata"};
+
+        return Arrays.stream(array)
+                .map(String::toLowerCase)
+                .sorted(Comparator.comparing(Main1::count).reversed())
+                .limit(3)
+                .collect(
+                        Collectors.collectingAndThen(
+                                Collectors.groupingBy(
+                                        Main1::count,
+                                        Collectors.toList()
+                                ),
+                                Collections::unmodifiableMap
+                        )
+                );
+    }
 
 4.7 — Зібрати Set та витягнути перший елемент (без гарантій)
 
@@ -92,7 +117,7 @@ IllegalStateException, якщо не точно одне)
 Рішення:
 
 return list.stream().collect(Collectors
-.collectingAndThen(Collectors.toSet(), 
+.collectingAndThen(Collectors.toSet(),
 set -> set.iterator().next()));
 
 

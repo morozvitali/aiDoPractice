@@ -1,8 +1,6 @@
 package stream3.task4_;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -40,20 +38,48 @@ public class Main1 {
     public String practice4() {
         return Stream.of(1, 2, 3, 4, 5)
                 .filter(n -> n % 2 != 0)
-                .map(n->n+"")
+                .map(n -> n + "")
                 .collect(Collectors.joining(", "));
     }
 
-    public String practice5 () {
+    public String practice5() {
         return Stream.of("cooperation", "stream", "banana",
-                "supernova", "moon", "queueing", "idealism")
-                .filter(s->count(s) == 2)
+                        "supernova", "moon", "queueing", "idealism")
+                .filter(s -> count(s) == 2)
                 .collect(Collectors
                         .collectingAndThen(Collectors.toList(),
-                                list-> {if (list.size() == 1) {
-                                    throw new IllegalStateException("Expected exactly one"); }
-                                    return list.get(0);}));
+                                list -> {
+                                    if (list.size() == 1) {
+                                        throw new IllegalStateException("Expected exactly one");
+                                    }
+                                    return list.get(0);
+                                }));
     }
+
+    public Map<Long, List<String>> practice6() {
+        String[] array = {"Aa", "Bba", "Cec", "Aata"};
+
+        return Arrays.stream(array)
+                .map(String::toLowerCase)
+                .sorted(Comparator.comparing(Main1::count).reversed())
+                .limit(3)
+                .collect(
+                        Collectors.collectingAndThen(
+                                Collectors.groupingBy(
+                                        Main1::count,
+                                        Collectors.toList()
+                                ),
+                                Collections::unmodifiableMap
+                        )
+                );
+    }
+
+    public String practice7 () {
+        return List.of("Aa", "Bba", "Cec", "Aata").stream()
+                .collect(Collectors.collectingAndThen(Collectors.toSet(),
+                        set->set.iterator().next()));
+    }
+
 
 
 
