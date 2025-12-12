@@ -1,21 +1,29 @@
 Блок 6 — Advanced / Challenges / Mixed (10 задач)
 
-Мета: комбіновані приклади, custom checks, edge-cases, collectingAndThen validation.
+Мета: комбіновані приклади, custom checks, 
+edge-cases, collectingAndThen validation.
 
-6.1 — Знайти єдине слово, що містить 'p' (інакше виняток)
+## 6.1 — Знайти єдине слово, що містить 'p' (інакше виняток)
 
 Умова: якщо не рівно одне — кидати IllegalStateException.
 Рішення:
 
-String res = data.stream().filter(w -> w.contains("p")).collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
-if (list.size()!=1) throw new IllegalStateException("Expected exactly one word with 'p'");
-return list.get(0);
-}));
+    public String practice1(List<String> data) {
+        return data.stream().filter(w -> w.contains("p"))
+                .collect(Collectors.collectingAndThen(Collectors.toList(),
+                        list -> {
+                            if (list.size() != 1) {
+                                throw new IllegalStateException("Expected only one word with 'p'");
+                            }
+                            return list.get(0);
+                        }
+                ));
+    }
 
 
 Теорія: демонстрація валідації після collect.
 
-6.2 — Слова, що містять усі голосні (a,e,i,o,u)
+## 6.2 — Слова, що містять усі голосні (a,e,i,o,u)
 
 Умова: знайти слова, що містять всі голосні.
 Рішення:
