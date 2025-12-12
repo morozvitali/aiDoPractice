@@ -35,6 +35,20 @@ public class Main1 {
                         (a, b) -> b, LinkedHashMap::new));
     }
 
+    public List <String> practice4 (List <String> words) {
+        return words.stream().sorted(Comparator.comparing(String::length)
+                .reversed()).toList();
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 }

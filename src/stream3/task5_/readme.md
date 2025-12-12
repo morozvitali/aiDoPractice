@@ -53,9 +53,10 @@
 
 Рішення:
 
-return words.stream().sorted(Comparator.comparing(String::length)
-.reversed()).collect(Collectors.toList());
-
+    public List <String> practice4 (List <String> words) {
+        return words.stream().sorted(Comparator.comparing(String::length)
+                .reversed()).toList();
+    }
 
 Коментар: reversed() інвертує порядок.
 
